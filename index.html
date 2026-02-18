@@ -21,9 +21,18 @@
         
         .milestone-box { background: var(--accent); color: #000; padding: 20px; border-radius: 15px; margin-top: 25px; display: inline-block; font-weight: 800; box-shadow: 0 10px 20px rgba(255,153,0,0.3); }
 
-        .about-detailed { padding: 80px 8%; line-height: 1.8; }
+        .about-detailed { padding: 80px 8%; line-height: 1.8; border-bottom: 1px solid #eee; }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
         .expertise-card { background: var(--card); padding: 30px; border-radius: 20px; border-left: 5px solid var(--accent); }
+
+        /* Blog Section Styles */
+        .blog-section { padding: 80px 8%; background: #fff; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+        .blog-card { background: var(--card); border-radius: 20px; padding: 30px; border: 1px solid #eee; transition: 0.3s; }
+        .blog-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .blog-tag { color: var(--accent); font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+        .blog-card h3 { margin: 15px 0; font-size: 22px; line-height: 1.3; }
+        .blog-card p { color: var(--text-gray); font-size: 15px; }
 
         .reviews-section { background: #000; color: #fff; padding: 80px 8%; }
         .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
@@ -42,8 +51,9 @@
     <div class="logo">Abdullah Gull</div>
     <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#blog">Blog</a>
         <a href="#reviews">Reviews</a>
-        <a href="https://wa.me/YOUR_NUMBER" class="btn-black">Hire Me</a>
+        <a href="https://wa.me/92XXXXXXXXXX" class="btn-black">Hire Me</a>
     </div>
 </header>
 
@@ -60,16 +70,37 @@
         <div>
             <h2 style="font-size:35px; font-weight:900;">About Me</h2>
             <p style="font-size:18px; color:#444;">I am a professional Amazon Virtual Assistant dedicated to building and scaling brands through data-driven strategies. Working under the expert mentorship of my Sir at <b>Alpha Spikes</b>, I have gained hands-on experience in managing high-volume Private Label accounts.</p>
-            <p>My contribution includes handling daily operations for large-scale accounts, implementing ranking & PPC techniques, and tracking sales health for consistent results.</p>
+            <p>I believe in "Discipline Creates Results"—treating every project as my own to turn Private Label businesses into profitable assets.</p>
         </div>
         <div class="expertise-card">
-            <h3 style="color:var(--accent)">🛠️ Core Expertise</h3>
+            <h3 style="color:var(--accent)">🛠️ My Core Expertise</h3>
             <ul style="list-style:none; padding:0; font-weight:600;">
                 <li>🔍 Product Research: High-demand, Low-competition.</li>
                 <li>📦 Sourcing & Logistics: Efficient Inventory Flow.</li>
-                <li>📈 PPC & Ranking: Optimizing for Max Visibility.</li>
-                <li>⚙️ A-Z Account Management: Precision & Health.</li>
+                <li>📈 PPC & Ranking: Optimizing for Max ROI (Low ACOS).</li>
+                <li>⚙️ A-Z Account Management: Precision & Performance.</li>
             </ul>
+        </div>
+    </div>
+</section>
+
+<section class="blog-section" id="blog">
+    <h2 style="font-size:35px; font-weight:900; text-align:center;">Insights & Case Studies</h2>
+    <div class="blog-grid">
+        <div class="blog-card">
+            <span class="blog-tag">Upwork Strategy</span>
+            <h3>How I Build My Winning Strategy on Upwork</h3>
+            <p>Competition is fierce, but projects are awarded to "Brands." I focus on clarity, trust, and showcasing a systematic portfolio to transform businesses.</p>
+        </div>
+        <div class="blog-card">
+            <span class="blog-tag">Case Study</span>
+            <h3>$727K+ Sales & 4% ACOS: Scaling Success</h3>
+            <p>Generated $727,178 in sales in just 25 days. Our team at Alpha Spikes used precision targeting and aggressive budget optimization for this milestone.</p>
+        </div>
+        <div class="blog-card">
+            <span class="blog-tag">Amazon Ads Specialist</span>
+            <h3>Mastering Amazon Global Selling & ACOS</h3>
+            <p>From USA to UAE markets—learn how localized keyword strategies and negative pruning can crush your ACOS and scale profits globally.</p>
         </div>
     </div>
 </section>
@@ -79,36 +110,33 @@
     <div class="review-grid">
         <div class="review-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Exceptional ROI! Abdullah helped scale our sales to $727,178 in just 25 days with a 4.02% ACOS. His volume management is world-class."</p>
+            <p>"Exceptional ROI! Abdullah helped scale our sales to $727,178 with an incredible 4.02% ACOS. His management is world-class."</p>
             <h4 style="margin-bottom:0;">E-commerce Brand Owner</h4>
-            <small style="color:var(--text-gray)">UK/USA Market</small>
         </div>
         <div class="review-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Managing 26,000+ clicks requires skill. Abdullah's strategic bidding saved us thousands in wasted spend. A true PPC expert."</p>
+            <p>"Abdullah’s strategic approach to bidding saved us thousands of dollars. He is a true Amazon PPC expert."</p>
             <h4 style="margin-bottom:0;">Private Label Seller</h4>
-            <small style="color:var(--text-gray)">USA Market</small>
         </div>
         <div class="review-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"He understands the whole funnel—from A+ Content to technical PPC adjustments. Our brand has seen consistent growth."</p>
+            <p>"Our brand has seen consistent growth under his guidance. He knows how to convert clicks into customers."</p>
             <h4 style="margin-bottom:0;">FBA Brand Manager</h4>
-            <small style="color:var(--text-gray)">Alpha Spikes Partner</small>
         </div>
     </div>
 </section>
 
 <footer class="footer-main">
     <div style="flex:1.5">
-        <h2 style="font-weight:900;">Ready to Scale?</h2>
-        <p>If you're looking for someone who understands how to handle big accounts and deliver results, I am here to help you achieve your goals.</p>
+        <h2 style="font-weight:900;">Ready to Scale Your Brand?</h2>
+        <p>If you're looking for someone who understands how to handle big accounts and deliver results, let's connect.</p>
         <div style="margin:20px 0;">
-            <a href="https://wa.me/YOUR_NUMBER" class="btn-black" style="background:var(--green)">Contact via WhatsApp</a>
+            <a href="https://wa.me/92XXXXXXXXXX" class="btn-black" style="background:var(--green)">Contact via WhatsApp</a>
             <a href="https://www.linkedin.com/in/abdullah-gull/" style="margin-left:20px; font-weight:bold; color:#000;">LinkedIn Profile →</a>
         </div>
     </div>
     <div class="footer-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13488.08259468694!2d73.7486443871582!3d32.844111300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f093f417f7d95%3A0x6a0c5c361661616!2sSarai%20Alamgir%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d435519.2274193583!2d74.05419999120664!3d31.482635227749062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc202c601b518b97d!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </footer>
 
