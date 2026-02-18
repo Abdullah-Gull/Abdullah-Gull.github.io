@@ -13,9 +13,30 @@
         body { 
             font-family: 'Inter', sans-serif; 
             line-height: 1.6; 
-            color: var(--primary); 
-            background: var(--white);
-            overflow-x: hidden;
+            /* --- Slider & Branding Fix --- */
+.slider-outer-container {
+  width: 100%;
+  margin-top: -10px; 
+  overflow: hidden;
+  background: transparent;
+  position: relative;
+}
+
+.slider-inner-box {
+  height: 140px; /* Logos ke liye sahi height */
+  overflow: hidden;
+  position: relative;
+}
+
+/* "Free Widget" tag aur extra links ko hide karne ke liye */
+.slider-inner-box a, 
+div[class*="elfsight-app"] + a,
+a[href*="elfsight.com"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
         }
 
         /* --- Full Width Header --- */
