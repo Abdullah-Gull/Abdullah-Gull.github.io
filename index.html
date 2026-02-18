@@ -17,10 +17,16 @@
         nav button { background: none; border: none; color: #fff; font-weight: 700; margin-left: 20px; cursor: pointer; font-size: 14px; transition: 0.3s; }
         nav button:hover, nav button.active { color: var(--accent); }
 
-        /* Content Visibility - Is se page alag alag lageinge */
+        /* Content Visibility */
         .page { display: none; padding: 60px 8%; animation: fadeIn 0.5s ease; }
         .page.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Elfsight Slider Specific Styling (Aapka Diya Hua Code) */
+        .main-container { width: 100%; margin-top: -30px !important; position: relative; z-index: 99; margin-bottom: 40px; }
+        .slider-wrapper { height: 110px; overflow: hidden !important; background: transparent !important; }
+        a[href*="elfsight.com"] { display: none !important; opacity: 0 !important; visibility: hidden !important; }
+        ::-webkit-scrollbar { display: none !important; }
 
         /* Hero / Home Section */
         .hero { background: #000; color: #fff; padding: 100px 8%; text-align: left; }
@@ -48,8 +54,6 @@
         .blog-post { margin-bottom: 80px; border-bottom: 2px solid #eee; padding-bottom: 40px; }
         .blog-post h2 { font-size: 32px; font-weight: 900; color: var(--accent); margin-bottom: 15px; }
         .blog-img { width: 100%; height: 350px; background: #eee; margin: 20px 0; display: flex; align-items: center; justify-content: center; border: 2px dashed #ccc; border-radius: 15px; }
-        .blog-post h4 { margin-top: 20px; font-weight: 800; font-size: 20px; }
-        .blog-post ul { margin: 15px 0 15px 25px; }
 
         /* Reviews */
         .review-card { background: #f9f9f9; border-left: 5px solid var(--accent); padding: 30px; margin-bottom: 20px; border-radius: 0 15px 15px 0; }
@@ -81,10 +85,16 @@
     <div class="hero">
         <h2>AMAZON FBA SPECIALIST</h2>
         <h1><span>Building Brands,</span><br>Scaling Amazon Success.</h1>
-        <p>PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert</p>
+        <p>Amazon FBA Specialist | PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert</p>
     </div>
 
-    <section style="padding-top: 50px;">
+    <div class="main-container">
+        <div class="slider-wrapper">
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div class="elfsight-app-db523cb0-3ec2-4f87-a8ee-975fa08a02fa" data-elfsight-app-lazy></div>
+        </div>
+    </div>
+    <section>
         <h2 style="font-size: 32px; font-weight: 900; border-left: 6px solid var(--accent); padding-left: 15px;">Top Skills</h2>
         <div class="skills-grid">
             <div class="skill-card"><h4>✅ Amazon FBA Private Label Specialist</h4><p>(Zero to Launch Expert)</p></div>
@@ -97,17 +107,12 @@
         </div>
     </section>
 
-    <section style="padding-top: 80px;" id="reviews">
+    <section style="padding-top: 80px;">
         <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 30px;">What Our Clients & Partners Say</h2>
         <div class="review-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
             <p>"Abdullah Gull and the team at Alpha Spikes helped us achieve a phenomenal milestone. We scaled our sales to $727,178.38 in just 25 days with an incredible 4.02% ACOS."</p>
             <p style="margin-top:10px; font-weight: 900;">— E-commerce Brand Owner (UK/USA Market)</p>
-        </div>
-        <div class="review-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Managing over 26,000 clicks requires serious skill. Abdullah’s strategic approach to bidding and keyword pruning saved us thousands of dollars."</p>
-            <p style="margin-top:10px; font-weight: 900;">— Private Label Seller (USA Market)</p>
         </div>
     </div>
 </div>
@@ -115,23 +120,14 @@
 <div id="about" class="page">
     <h1 style="font-size: 40px; font-weight: 900; margin-bottom: 20px;">About Me</h1>
     <h3 style="color: var(--accent); font-size: 24px; margin-bottom: 15px;">🚀 Amazon Private Label Specialist</h3>
-    <p style="font-size: 18px; margin-bottom: 20px;">I am a professional Amazon Virtual Assistant dedicated to building and scaling brands through data-driven strategies. My focus is on turning Private Label businesses into profitable assets by implementing proven growth techniques learned through hands-on experience.</p>
+    <p style="font-size: 18px; margin-bottom: 20px;">I am a professional Amazon Virtual Assistant dedicated to building and scaling brands through data-driven strategies. My focus is on turning Private Label businesses into profitable assets.</p>
 
     <div class="milestone">
         <h3>🏆 Team Milestone: $727K+ In Total Sales</h3>
-        <p>As a core member of the Alpha Spikes team and working under the expert mentorship of my Sir, I have been part of managing a single Amazon account that generated $727,454.49 in total sales.</p>
+        <p>Generated $727,454.49 in total sales working under expert mentorship at Alpha Spikes.</p>
     </div>
-
-    <p style="margin-bottom: 20px;">🔹 2+ years of Amazon FBA experience 🔹 Launched & ranked multiple successful products 🔹 Skilled in PPC, keyword research & SEO 🔹 Expert in Seller Central, A+ Content & storefronts.</p>
-    <p>I’m Abdullah Gull, an Amazon Growth Specialist with a proven track record of helping brands scale through strategy-driven execution. My experience spans across full account management, from product research and keyword optimization to PPC campaign structuring and review-building strategies.</p>
+    <p>I’m Abdullah Gull, an Amazon Growth Specialist with a proven track record of helping brands scale through strategy-driven execution. My experience spans across full account management, from product research to PPC campaign structuring.</p>
     
-    <h3 style="margin-top: 40px; font-weight: 900;">My contribution in this achievement:</h3>
-    <ul>
-        <li>Handling daily tasks for large-volume Private Label accounts.</li>
-        <li>Implementing ranking and PPC techniques under professional supervision.</li>
-        <li>Tracking sales performance and account health for consistent results.</li>
-    </ul>
-
     <h2 style="margin-top: 50px; font-size: 32px; font-weight: 900;">🛠️ My Core Expertise</h2>
     <div class="expertise-box">
         <div class="exp-item">🔍 Product Research</div>
@@ -142,114 +138,55 @@
 </div>
 
 <div id="experience" class="page">
-    <h1 style="font-size: 40px; font-weight: 900;">Experience</h1>
+    <h1 style="font-size: 40px; font-weight: 900;">Work Experience</h1>
     <div class="exp-detail">
-        <h3>Amazon Expert</h3>
-        <p style="font-weight: 900; color: #fff; font-size: 18px;">Alpha Spikes · Full-time</p>
-        <p style="color: var(--accent);">Oct 2025 to Present · 5 mos | Punjab, Pakistan</p>
+        <h3>Amazon Expert @ Alpha Spikes</h3>
+        <p style="color: var(--accent);">Oct 2025 to Present | Punjab, Pakistan</p>
         <ul style="margin-top: 20px; margin-left: 20px;">
-            <li>Amazon FBA Specialist | PPC, Listing Optimization and Ranking Expert</li>
-            <li>Amazon Web Services (AWS)</li>
-            <li>Amazon VA</li>
+            <li>Amazon FBA Specialist | PPC & Listing Ranking</li>
+            <li>Amazon Web Services (AWS) Technical Management</li>
+            <li>Full Amazon Account VA Services</li>
         </ul>
     </div>
 </div>
 
 <div id="blog" class="page">
     <h1 style="font-size: 40px; font-weight: 900; margin-bottom: 40px;">Blogs & Case Studies</h1>
-    
     <div class="blog-post">
         <h2>1. Success on Upwork Strategy</h2>
-        <div class="blog-img">Success on Upwork Image Here</div>
-        <p>In the world of freelancing, especially on Upwork, competition is fierce. Thousands of bids are placed daily, but projects are awarded only to those who present themselves as a "Brand." I, Abdullah Gull, firmly believe that you shouldn't just know how to use tools—you must know how to grow a client's business.</p>
-        <h4>My Principle: Trust First</h4>
-        <p>Clients look for clarity. I have established my identity as an Amazon Expert, and I live by the motto: "Discipline Creates Results."</p>
-        <h4>How I Transform Businesses</h4>
-        <p>PPC Optimization: Lowering ACoS and maximizing ROI. A-Z Management: Peace of mind for clients knowing their store is in expert hands.</p>
+        <div class="blog-img">Upwork Strategy Image Placeholder</div>
+        <p>In the world of freelancing, especially on Upwork, competition is fierce. I, Abdullah Gull, believe in presenting yourself as a "Brand."</p>
     </div>
-
     <div class="blog-post">
-        <h2>2. Amazon Ads Specialist - $727K+ Sales</h2>
-        <div class="blog-img">Ads Performance Image Here</div>
-        <p>Our team at Alpha Spikes recently proved that with a data-driven approach, extraordinary results are possible. We generated $727,178.38 in sales in just 25 days this past December.</p>
-        <ul style="background: #f0f0f0; padding: 20px; border-radius: 10px; list-style: none;">
-            <li><strong>Total Sales:</strong> $727,178.38</li>
-            <li><strong>Total Orders:</strong> 20,601</li>
-            <li><strong>ACOS:</strong> 4.02% | <strong>ROAS:</strong> 24.89</li>
-        </ul>
-        <h4>The Three Pillars of Success</h4>
-        <ul>
-            <li>Precision Targeting: No "spray and pray."</li>
-            <li>Aggressive Budget Optimization: Analyzing bids daily.</li>
-            <li>Data-Driven Decisions: Analyzing 26,000+ clicks.</li>
-        </ul>
-    </div>
-
-    <div class="blog-post">
-        <h2>3. Mastering Amazon Global Selling</h2>
-        <div class="blog-img">Global Selling Image Here</div>
-        <p>Selling on Amazon is easy, but staying profitable is the real challenge. Whether in USA, UK, or UAE, controlling ACOS is key.</p>
-        <h4>1. Global Keyword Strategy</h4>
-        <p>USA searches for "Sweater," UK searches for "Jumper." UAE requires English and Arabic mix.</p>
-        <h4>2. Negative Keyword Pruning</h4>
-        <p>Any keyword with 8-10 clicks and zero sales is moved to Negative Exact Match immediately.</p>
-        <h4>3. Dynamic Bidding</h4>
-        <p>Start with "Dynamic Bids - Down Only" to protect your budget.</p>
+        <h2>2. $727K+ Sales Case Study</h2>
+        <div class="blog-img">Case Study Image Placeholder</div>
+        <p>Our team at Alpha Spikes generated $727,178.38 in sales in just 25 days with 4.02% ACOS.</p>
     </div>
 </div>
 
 <footer>
     <div>
         <h4>Amazon Seller Central</h4>
-        <ul>
-            <li>Full Service Management</li>
-            <li>SEO for better visibility</li>
-            <li>PPC Management</li>
-            <li>Listing Optimization</li>
-            <li>A+ Content / EBC</li>
-            <li>Store Front Creation</li>
-        </ul>
+        <ul><li>PPC Management</li><li>SEO Visibility</li><li>A+ Content</li><li>Store Front</li></ul>
     </div>
     <div>
         <h4>Amazon Vendor Central</h4>
-        <ul>
-            <li>Vendor Onboarding</li>
-            <li>Inventory Management</li>
-            <li>Retail Content & Ads</li>
-            <li>PO & Invoice Management</li>
-            <li>Data-Driven Performance</li>
-        </ul>
+        <ul><li>Vendor Onboarding</li><li>Inventory Management</li><li>PO Management</li></ul>
     </div>
     <div>
         <h4>Marketplaces</h4>
-        <ul>
-            <li>Amazon | Shopify | Walmart</li>
-            <li>eBay | Etsy | Wayfair</li>
-            <li>Home Depot | Newegg</li>
-        </ul>
+        <ul><li>Amazon | Shopify</li><li>Walmart | eBay</li><li>Etsy | Newegg</li></ul>
     </div>
 </footer>
 
-<div class="footer-bottom">
-    © 2026 Abdullah Gull | Amazon Growth Specialist. All Rights Reserved.
-</div>
+<div class="footer-bottom">© 2026 Abdullah Gull | Amazon Growth Specialist. All Rights Reserved.</div>
 
 <script>
     function showPage(pageId) {
-        // Hide all pages
-        document.querySelectorAll('.page').forEach(page => {
-            page.classList.remove('active');
-        });
-        // Show selected page
+        document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
         document.getElementById(pageId).classList.add('active');
-        
-        // Update nav buttons
-        document.querySelectorAll('nav button').forEach(btn => {
-            btn.classList.remove('active');
-        });
+        document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
         document.getElementById('btn-' + pageId).classList.add('active');
-        
-        // Scroll to top
         window.scrollTo(0, 0);
     }
 </script>
