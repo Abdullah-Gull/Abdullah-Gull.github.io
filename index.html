@@ -3,79 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah Gull | Amazon Growth Specialist</title>
+    <title>Abdullah Gull | Amazon Expert Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
             --primary: #ffffff; 
             --accent: #ff9900; 
-            --purple-bg: #1a0129; 
-            --card-bg: rgba(255, 255, 255, 0.08);
-            --text-gray: #dddddd; 
+            --purple-deep: #12011d; 
+            --purple-glow: #2e0249;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --green: #28a745;
         }
 
         * { box-sizing: border-box; }
         body { 
-            margin: 0; 
-            font-family: 'Inter', sans-serif; 
-            background: radial-gradient(circle at center, #2e0249 0%, #1a0129 100%);
-            background-attachment: fixed;
-            color: var(--primary); 
-            scroll-behavior: smooth; 
-            line-height: 1.6; 
+            margin: 0; font-family: 'Inter', sans-serif; 
+            background: linear-gradient(135deg, var(--purple-deep) 0%, #000000 100%);
+            color: var(--primary); scroll-behavior: smooth; line-height: 1.6;
         }
 
-        /* Navbar */
+        /* Navigation */
         header { 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 20px 8%; background: rgba(0, 0, 0, 0.85); 
-            position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 15px 8%; background: rgba(0,0,0,0.9); 
+            position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,153,0,0.2);
         }
         .logo { font-weight: 900; font-size: 24px; color: #fff; text-decoration: none; }
-        .nav-links a { margin-left: 25px; text-decoration: none; color: #fff; font-weight: 600; font-size: 14px; }
-        .btn-hire { background: var(--accent); color: #000; padding: 10px 25px; border-radius: 50px; font-weight: bold; text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: #fff; font-weight: 600; font-size: 14px; }
+        .hire-btn { background: var(--accent); color: #000; padding: 10px 20px; border-radius: 50px; font-weight: bold; text-decoration: none; }
 
-        /* Hero */
-        .hero { padding: 100px 8% 60px; text-align: left; }
-        .hero .tagline { background: rgba(255,153,0,0.2); color: var(--accent); padding: 5px 15px; border-radius: 5px; font-size: 14px; font-weight: 700; display: inline-block; margin-bottom: 15px; }
-        .hero h1 { font-size: 55px; font-weight: 900; line-height: 1.2; margin: 0; }
-        .hero p { font-size: 20px; color: var(--text-gray); max-width: 800px; margin: 20px 0; }
+        /* Hero Section */
+        .hero { min-height: 80vh; padding: 100px 8%; display: flex; align-items: center; background: radial-gradient(circle at top right, var(--purple-glow), transparent); }
+        .hero-content { max-width: 900px; }
+        .hero h2 { color: var(--accent); font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+        .hero h1 { font-size: clamp(40px, 6vw, 65px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .hero p { font-size: 20px; color: #ccc; margin-bottom: 30px; }
+        .tagline-box { background: #000; border: 1px solid var(--accent); color: #fff; display: inline-block; padding: 8px 15px; border-radius: 5px; font-weight: bold; margin-bottom: 20px; }
 
-        /* Sections */
-        .section { padding: 80px 8%; }
-        .section-title { font-size: 32px; font-weight: 900; margin-bottom: 40px; color: #fff; border-left: 5px solid var(--accent); padding-left: 15px; }
-
-        /* Data Boxes (High Contrast) */
-        .milestone-box { 
-            background: linear-gradient(90deg, #ff9900, #e68a00); 
-            color: #000; padding: 30px; border-radius: 15px; 
-            font-weight: 800; margin-top: 30px; box-shadow: 0 10px 30px rgba(255,153,0,0.3);
-        }
+        /* About Section */
+        .section { padding: 80px 8%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .section-title { font-size: 36px; font-weight: 900; margin-bottom: 30px; border-left: 6px solid var(--accent); padding-left: 20px; }
         
+        .milestone-card { 
+            background: var(--accent); color: #000; padding: 30px; border-radius: 15px; 
+            margin-top: 30px; box-shadow: 0 10px 30px rgba(255,153,0,0.2);
+        }
+
+        /* Skills Grid */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .skill-card { 
-            background: var(--card-bg); border: 1px solid rgba(255,255,255,0.15); 
+        .skill-item { 
+            background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); 
             padding: 25px; border-radius: 15px; transition: 0.3s;
         }
-        .skill-card:hover { border-color: var(--accent); background: rgba(255,255,255,0.12); }
-        .skill-card h4 { margin: 0; color: var(--accent); font-size: 19px; }
-        .skill-card p { margin: 10px 0 0; color: #fff; font-size: 15px; }
+        .skill-item:hover { border-color: var(--accent); background: rgba(255,255,255,0.1); transform: translateY(-5px); }
+        .skill-item h4 { margin: 0; color: var(--accent); font-size: 18px; margin-bottom: 5px; }
+        .skill-item p { margin: 0; color: #eee; font-size: 14px; }
 
-        /* Experience */
-        .exp-card { 
-            background: rgba(0,0,0,0.5); border: 2px solid var(--accent); 
-            padding: 40px; border-radius: 20px; 
-        }
-        .exp-card h3 { color: var(--accent); font-size: 28px; margin-top: 0; }
+        /* Experience Box */
+        .exp-box { background: rgba(255,255,255,0.03); border: 1px solid var(--accent); padding: 40px; border-radius: 20px; }
+        .exp-box h3 { color: var(--accent); font-size: 28px; margin: 0; }
+        .exp-meta { display: block; margin: 10px 0 20px; color: #888; font-weight: bold; }
         .exp-list { list-style: none; padding: 0; }
-        .exp-list li { margin-bottom: 12px; padding-left: 25px; position: relative; color: #fff; font-size: 17px; }
-        .exp-list li::before { content: '✔'; position: absolute; left: 0; color: var(--accent); font-weight: 900; }
+        .exp-list li { margin-bottom: 12px; padding-left: 25px; position: relative; }
+        .exp-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 900; }
+
+        /* Blog Section */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .blog-card { background: #000; padding: 30px; border-radius: 15px; border-top: 4px solid var(--accent); }
+        .blog-card h3 { color: var(--accent); margin-top: 0; }
 
         /* Footer */
-        footer { background: #000; padding: 60px 8%; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
-        .whatsapp-btn { background: #28a745; color: #fff; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 800; display: inline-block; font-size: 18px; }
+        footer { padding: 80px 8%; background: #000; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+        .wa-btn { background: var(--green); color: #fff; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 800; display: inline-block; }
 
-        @media (max-width: 768px) { .hero h1 { font-size: 35px; } .nav-links { display: none; } }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 35px; } }
     </style>
 </head>
 <body>
@@ -86,65 +87,96 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
-        <a href="https://wa.me/92XXXXXXXXXX" class="btn-hire">Hire Me</a>
+        <a href="#blog">Blog</a>
+        <a href="https://wa.me/923XXXXXXXXX" class="hire-btn">Hire Me</a>
     </nav>
 </header>
 
 <section class="hero" id="home">
-    <div class="tagline">AMAZON FBA SPECIALIST</div>
-    <h1>Building Brands, <br><span style="color:var(--accent)">Scaling Success.</span></h1>
-    <p>PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert at Alpha Spikes</p>
-    <div class="milestone-box">
-        🚀 TEAM MILESTONE: $727,454 IN TOTAL SALES ACHIEVED!
+    <div class="hero-content">
+        <h2>Professional Portfolio</h2>
+        <h1>Building Brands, <br>Scaling <span style="color:var(--accent)">Amazon Success.</span></h1>
+        <p>Amazon FBA Specialist | PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert</p>
+        <div class="tagline-box">Discipline Creates Results, Luck Never Can.</div>
+        <div style="margin-top: 20px;">
+            <a href="#experience" class="hire-btn">View Experience</a>
+            <a href="#skills" style="color: #fff; margin-left: 20px; font-weight: bold; text-decoration: none;">My Skills →</a>
+        </div>
     </div>
 </section>
 
 <section class="section" id="about">
-    <h2 class="section-title">About My Expertise</h2>
+    <h2 class="section-title">About Me</h2>
     <div style="max-width: 900px;">
-        <p style="font-size: 19px;">I am a professional Amazon Virtual Assistant dedicated to scaling Private Label brands. Working under expert mentorship at <b>Alpha Spikes</b>, I focus on ACOS reduction and data-driven growth.</p>
+        <p style="font-size: 20px; font-weight: 600; color: var(--accent);">🚀 Amazon Private Label Specialist</p>
+        <p>I am a professional Amazon Virtual Assistant dedicated to building and scaling brands through data-driven strategies. My focus is on turning Private Label businesses into profitable assets by implementing proven growth techniques learned through hands-on experience.</p>
+        
+        <div class="milestone-card">
+            <h3 style="margin: 0;">🏆 Team Milestone: $727,454 In Total Sales</h3>
+            <p style="margin: 10px 0 0 0; font-weight: 700;">Working under the expert mentorship of my Sir at Alpha Spikes, I helped manage an account that generated $727,454 in sales.</p>
+        </div>
     </div>
 </section>
 
-<section class="section" id="skills" style="background: rgba(0,0,0,0.2);">
-    <h2 class="section-title">Top Skills (My Expertise)</h2>
+<section class="section" id="skills">
+    <h2 class="section-title">Top Skills</h2>
     <div class="skills-grid">
-        <div class="skill-card"><h4>✅ Amazon FBA Private Label</h4><p>Zero to Launch Expert (A-Z Management)</p></div>
-        <div class="skill-card"><h4>✅ Advanced PPC Strategy</h4><p>ACOS Reduction and Scalable Growth Specialist</p></div>
-        <div class="skill-card"><h4>✅ Data-Driven Product Hunting</h4><p>High Demand, Low Competition Research</p></div>
-        <div class="skill-card"><h4>✅ Listing SEO & A+ Content</h4><p>EBC Optimization for higher Conversion Rates</p></div>
-        <div class="skill-card"><h4>✅ Helium 10 Expert</h4><p>Competitor Analysis and Keyword Gap Strategy</p></div>
-        <div class="skill-card"><h4>✅ AWS Management</h4><p>Cloud Solutions and Technical Support Specialist</p></div>
+        <div class="skill-item"><h4>✅ Amazon FBA Private Label</h4><p>Zero to Launch Expert (A-Z Management)</p></div>
+        <div class="skill-item"><h4>✅ Advanced PPC Strategy</h4><p>ACOS Reduction & Growth Optimization</p></div>
+        <div class="skill-item"><h4>✅ Product Hunting</h4><p>Data-Driven (High Demand, Low Competition)</p></div>
+        <div class="skill-item"><h4>✅ Listing SEO & A+ Content</h4><p>EBC Optimization & Conversion Ranking</p></div>
+        <div class="skill-item"><h4>✅ Competitor Analysis</h4><p>Helium 10 Expert & Market Research</p></div>
+        <div class="skill-item"><h4>✅ External Traffic</h4><p>Amazon Attribution & Multi-channel Growth</p></div>
+        <div class="skill-item"><h4>✅ AWS Management</h4><p>Cloud Solutions & Technical Backend Support</p></div>
     </div>
 </section>
 
 <section class="section" id="experience">
-    <h2 class="section-title">Work Experience</h2>
-    <div class="exp-card">
-        <h3>Amazon Expert @ Alpha Spikes</h3>
-        <p style="font-weight: bold; color: #ccc;">Oct 2025 - Present (Full-time) | Punjab, Pakistan</p>
+    <h2 class="section-title">Experience</h2>
+    <div class="exp-box">
+        <h3>Amazon Expert</h3>
+        <span class="exp-meta">Alpha Spikes · Full-time | Oct 2025 to Present · 5 mos</span>
+        <p style="color: #ccc; font-size: 18px; margin-bottom: 20px;">Punjab, Pakistan</p>
         <ul class="exp-list">
-            <li>Amazon FBA Specialist: Managing PPC, Ranking & Listing Optimization.</li>
-            <li>Amazon Web Services (AWS): Technical backend management.</li>
-            <li>Amazon Virtual Assistant (VA): Complete account A-Z handling.</li>
+            <li>Amazon FBA Specialist | PPC, Listing Optimization and Ranking Expert</li>
+            <li>Amazon Web Services (AWS) Management</li>
+            <li>Professional Amazon Virtual Assistant (VA)</li>
         </ul>
     </div>
 </section>
 
-<footer>
-    <div style="flex: 1; min-width: 300px;">
-        <h2 style="font-size: 30px; margin: 0;">Ready to Scale Your Brand?</h2>
-        <p style="color: var(--text-gray); margin: 15px 0 25px;">Let's connect and turn your business into a profitable asset.</p>
-        <a href="https://wa.me/92XXXXXXXXXX" class="whatsapp-btn">Contact on WhatsApp</a>
+<section class="section" id="blog">
+    <h2 class="section-title">Latest Blog & Insights</h2>
+    <div class="blog-grid">
+        <div class="blog-card">
+            <h3>Upwork Strategy</h3>
+            <p>How I build my winning strategy on Upwork by presenting myself as a brand.</p>
+        </div>
+        <div class="blog-card">
+            <h3>Amazon Ads Specialist</h3>
+            <p>$727K+ Sales and 4% ACOS: How our team scaled an Amazon brand.</p>
+        </div>
+        <div class="blog-card">
+            <h3>Global Selling</h3>
+            <p>Mastering Amazon Global Selling: How to crush ACOS in USA, UK, and UAE.</p>
+        </div>
     </div>
-    <div style="text-align: right; flex: 1; min-width: 250px;">
-        <p><b>Email:</b> your-email@example.com</p>
+</section>
+
+<footer>
+    <div>
+        <h2 style="font-size: 35px; font-weight: 900; margin: 0;">Ready to Scale Your Brand?</h2>
+        <p style="color: #888; margin-bottom: 30px;">Professional Amazon VA at your service.</p>
+        <a href="https://wa.me/923XXXXXXXXX" class="wa-btn">Contact on WhatsApp</a>
+    </div>
+    <div style="text-align: right;">
+        <p><b>Email:</b> abdullah@example.com</p>
         <p><b>Location:</b> Punjab, Pakistan</p>
-        <a href="https://linkedin.com/in/abdullah-gull" style="color: var(--accent); font-weight: bold; text-decoration: none;">LinkedIn Profile →</a>
+        <a href="https://www.linkedin.com/in/abdullah-gull/" style="color: var(--accent); font-weight: bold; text-decoration: none;">LinkedIn Profile →</a>
     </div>
 </footer>
 
-<div style="text-align: center; padding: 20px; background: #000; color: #666; font-size: 12px; border-top: 1px solid #111;">
+<div style="text-align: center; padding: 20px; background: #000; color: #444; font-size: 11px;">
     © 2026 Abdullah Gull | Amazon Growth Specialist. All Rights Reserved.
 </div>
 
