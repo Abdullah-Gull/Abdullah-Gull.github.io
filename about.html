@@ -1,120 +1,273 @@
+<!-- index.html - Home Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Abdullah Gull - Amazon Growth Expert</title>
-    <link rel="stylesheet" href="styles.css"> <!-- External CSS for styling -->
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height:1.6; color:#333; background:#fff; }
+        a { text-decoration:none; color:inherit; }
+        .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+
+        /* Header / Nav */
+        header {
+            position:fixed; width:100%; top:0; z-index:1000;
+            background:rgba(0,0,0,0.85); color:white; padding:1rem 0;
+            transition:0.3s;
+        }
+        header.scrolled { background:#000; }
+        nav { display:flex; justify-content:space-between; align-items:center; }
+        .logo { font-size:2rem; font-weight:bold; }
+        .nav-links { display:flex; gap:2rem; }
+        .nav-links a { font-weight:500; transition:0.3s; }
+        .nav-links a:hover { color:#00aaff; }
+        .cta-btn { background:#00aaff; color:white; padding:0.8rem 1.8rem; border-radius:50px; font-weight:bold; transition:0.3s; }
+        .cta-btn:hover { background:#0088cc; transform:translateY(-3px); }
+
+        /* Hero */
+        #hero {
+            height:100vh; min-height:700px;
+            background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size:cover; background-position:center;
+            color:white; text-align:center; display:flex; align-items:center;
+        }
+        #hero .content { max-width:800px; margin:0 auto; padding:0 20px; }
+        #hero h1 { font-size:4.5rem; margin-bottom:1rem; }
+        #hero p { font-size:1.6rem; margin-bottom:2.5rem; }
+
+        /* Sections */
+        section { padding:120px 0; }
+        h2 { text-align:center; font-size:3.2rem; margin-bottom:3.5rem; color:#000; }
+        .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:2.5rem; }
+
+        /* Trusted Brands with Slider */
+        #trusted { background:#f8f9fa; text-align:center; }
+        .slider-outer-container {
+            width: 100%;
+            margin: 20px 0;
+            overflow: hidden;
+            background: #fff;
+        }
+        .slider-inner-box {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slider-inner-box a[href*="elfsight.com"] {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+        }
+
+        /* Skills Section */
+        #skills { background:#fff; }
+        #skills ul { list-style:none; max-width:800px; margin:0 auto; font-size:1.2rem; }
+        #skills li { margin:1rem 0; display:flex; align-items:center; }
+        #skills li:before { content:'✅'; margin-right:1rem; }
+
+        /* Experience Section */
+        #experience { background:#f8f9fa; }
+        #experience .exp-card { max-width:800px; margin:0 auto; padding:2rem; background:#fff; border-radius:16px; box-shadow:0 8px 25px rgba(0,0,0,0.1); }
+
+        /* Projects / Recent Work (Placeholder - Add your projects if needed) */
+        #projects .card { background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 8px 25px rgba(0,0,0,0.12); transition:0.4s; }
+        #projects .card:hover { transform:translateY(-15px); box-shadow:0 15px 35px rgba(0,0,0,0.2); }
+        #projects img { width:100%; height:320px; object-fit:cover; }
+        .card-content { padding:2rem; text-align:center; }
+        .card-content h3 { margin-bottom:1rem; font-size:1.6rem; }
+
+        /* Services */
+        .service-card { background:#000; color:white; padding:2.5rem; border-radius:16px; text-align:center; transition:0.4s; }
+        .service-card:hover { background:#111; transform:scale(1.05); }
+        .service-card h3 { margin:1.2rem 0; font-size:2rem; }
+        .expand { cursor:pointer; color:#00aaff; font-weight:bold; font-size:1.2rem; }
+
+        /* Stats */
+        #stats { background:#000; color:white; text-align:center; }
+        .stats-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:4rem; }
+        .stat { font-size:4rem; font-weight:bold; }
+
+        /* Testimonials */
+        #testimonials .testimonial { background:#f8f9fa; padding:2.5rem; border-radius:16px; text-align:center; box-shadow:0 8px 25px rgba(0,0,0,0.1); }
+
+        /* Footer */
+        footer { background:#111; color:white; padding:5rem 0 3rem; }
+        .footer-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:4rem; }
+        .footer-grid h4 { margin-bottom:2rem; font-size:1.4rem; }
+        .footer-grid ul { list-style:none; }
+        .footer-grid li { margin:1rem 0; font-size:1.1rem; }
+        .social { text-align:center; margin:4rem 0 2rem; font-size:2rem; display:flex; justify-content:center; gap:2rem; }
+        .social a { color:white; transition:0.3s; }
+        .social a:hover { color:#00aaff; }
+
+        @media (max-width:768px) {
+            #hero h1 { font-size:3rem; }
+            #hero p { font-size:1.3rem; }
+            .nav-links { gap:1.2rem; font-size:0.95rem; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Navigation -->
-    <header>
+
+    <header id="header">
         <div class="container">
             <nav>
                 <div class="logo">Abdullah Gull</div>
                 <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="about.html">About</a> <!-- Link to separate About page -->
                 </div>
+                <a href="#contact" class="cta-btn">Get in Touch</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="hero">
-        <div class="hero-content">
-            <h1>We Elevate Amazon Brand Success</h1>
-            <p>We help brands grow on Amazon with advanced strategies and proven results.</p>
-            <a href="projects.html" class="cta-btn">View Our Work</a>
+        <div class="content">
+            <h1>Abdullah Gull</h1>
+            <p>Amazon FBA Specialist | PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert</p>
+            <a href="#contact" class="cta-btn" style="font-size:1.4rem; padding:1.2rem 3rem;">Let's Talk</a>
         </div>
     </section>
 
-    <!-- Recent Work Section -->
-    <section id="recent-work">
+    <section id="trusted">
         <div class="container">
-            <h2>Recent Work</h2>
-            <div class="projects">
-                <!-- Each project card -->
-                <div class="project-card">
-                    <img src="project1.jpg" alt="Project 1">
-                    <div class="project-info">
-                        <h3>Project Name</h3>
-                        <p>Brief description of the project and its results.</p>
-                    </div>
+            <h2>Trusted by Leading Brands</h2>
+            <div class="slider-outer-container">
+                <div class="slider-inner-box">
+                    <script src="https://elfsightcdn.com/platform.js" async></script>
+                    <div class="elfsight-app-db523cb0-3ec2-4f87-a8ee-975fa08a02fa" data-elfsight-app-lazy></div>
                 </div>
-                <!-- Add more project cards as needed -->
             </div>
         </div>
     </section>
 
-    <!-- Proven Results Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Top Skills</h2>
+            <ul>
+                <li>Amazon FBA Private Label Specialist (Zero to Launch Expert)</li>
+                <li>Advanced PPC Strategy (ACOS Reduction and Scalable Growth)</li>
+                <li>Data-Driven Product Hunting (High Demand, Low Competition)</li>
+                <li>Listing SEO and A+ Content (EBC) Optimization</li>
+                <li>Competitor Analysis and Keyword Gap Strategy (Helium 10 Expert)</li>
+                <li>External Traffic Management (Amazon Attribution and Social Media)</li>
+                <li>Amazon Web Services (AWS) Management (Cloud Solutions and Technical Support)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="exp-card">
+                <h3>Amazon Expert</h3>
+                <p>Alpha Spikes · Full-time</p>
+                <p>Oct 2025 to Present · 5 mos</p>
+                <p>Punjab, Pakistan</p>
+                <p>Amazon FBA Specialist | PPC, Listing Optimization and Ranking Expert</p>
+                <p>Amazon Web Services (AWS)</p>
+                <p>Amazon VA</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Recent Projects / Work</h2>
+            <div class="grid">
+                <!-- Apne projects yahan add kar sakte ho, abhi placeholders -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/450x320?text=Your+Project+1" alt="Project 1">
+                    <div class="card-content">
+                        <h3>Project Name 1</h3>
+                        <p>Amazon Storefront & PPC Strategy – Revenue Boost Example</p>
+                        <a href="#" class="cta-btn" style="display:inline-block; margin-top:1.2rem;">Click Here</a>
+                    </div>
+                </div>
+                <!-- Aur add karo -->
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="background:#f8f9fa;">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="grid">
+                <div class="service-card">
+                    <h3>Amazon Seller Central</h3>
+                    <p>PPC Management, Listing Optimization, A+ Content, Image Design + More</p>
+                    <span class="expand">+ Explore Details</span>
+                </div>
+                <!-- Aur services add kar sakte ho -->
+            </div>
+        </div>
+    </section>
+
     <section id="stats">
         <div class="container">
             <h2>Proven Results</h2>
             <div class="stats-grid">
-                <div class="stat">
-                    <h3>4+</h3>
-                    <p>Years of Experience</p>
-                </div>
-                <div class="stat">
-                    <h3>$11M+</h3>
-                    <p>Revenue Generated</p>
-                </div>
+                <div class="stat">500+ <br><small>Brands Supported</small></div>
+                <!-- Apne real stats update kar do -->
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Clients Say</h2>
+            <div class="grid">
+                <div class="testimonial">
+                    <p>"Abdullah Gull turned our Amazon performance around – from $900K to $3.7M revenue. True expert!"</p>
+                    <strong>– Client Name, Senior Lead</strong>
+                </div>
+                <!-- Aur add kar do -->
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2026 Abdullah Gull. All Rights Reserved.</p>
-                <div class="social-links">
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Instagram</a>
+            <div class="footer-grid">
+                <div>
+                    <h4>Amazon Seller Central</h4>
+                    <ul>
+                        <li>PPC Management</li>
+                        <li>Listing Optimization</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Abdullah Gull</h4>
+                    <p>Email: your@email.com</p>
+                    <p>Book a Free Strategy Call</p>
                 </div>
             </div>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/abdullah-gull/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.tiktok.com/@abdxxah_965?_r=1&_t=ZT-93qAhYuCQSz" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://snapchat.com/t/v1C05LBv" title="Snapchat"><i class="fab fa-snapchat"></i></a>
+                <a href="https://x.com/abdullahamazon?s=21" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/abdxxah_965/" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/1JTa6K2z5A/?mibextid=wwXIfr" title="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p style="text-align:center; margin-top:3rem;">© 2026 Abdullah Gull. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script> <!-- External JavaScript for interaction -->
+    <script>
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 100);
+        });
+    </script>
+
 </body>
 </html>
-
-/* General Styles */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; }
-.container { width: 80%; margin: 0 auto; padding: 20px; }
-
-a { text-decoration: none; color: inherit; }
-
-header { background: #333; color: white; padding: 1rem 0; }
-header .logo { font-size: 1.8rem; font-weight: bold; }
-header .nav-links { display: flex; gap: 1rem; justify-content: center; }
-
-header .nav-links a { color: white; padding: 0.5rem 1rem; }
-header .nav-links a:hover { background: #00aaff; border-radius: 5px; }
-
-/* Hero Section */
-#hero { background: #333 url('your-image.jpg') no-repeat center center/cover; color: white; text-align: center; padding: 100px 0; }
-#hero .cta-btn { background: #00aaff; color: white; padding: 1rem 2rem; font-weight: bold; text-transform: uppercase; border-radius: 30px; }
-
-/* Projects Section */
-#recent-work { background: #f4f4f4; padding: 80px 0; }
-#recent-work .projects { display: flex; gap: 2rem; justify-content: space-between; }
-.project-card { background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
-.project-card img { width: 100%; height: auto; border-radius: 10px; }
-
-#stats { background: #333; color: white; padding: 80px 0; text-align: center; }
-#stats .stats-grid { display: flex; justify-content: center; gap: 4rem; }
-.stat { font-size: 3rem; font-weight: bold; }
-
-/* Footer Section */
-footer { background: #111; color: white; padding: 2rem 0; text-align: center; }
-footer .social-links a { color: white; font-size: 1.5rem; margin: 0 1rem; }
-footer .social-links a:hover { color: #00aaff; }
 
 
