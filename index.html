@@ -1,4 +1,3 @@
-<!-- index.html - Home Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,19 +72,6 @@
         #experience { background:#f8f9fa; }
         #experience .exp-card { max-width:800px; margin:0 auto; padding:2rem; background:#fff; border-radius:16px; box-shadow:0 8px 25px rgba(0,0,0,0.1); }
 
-        /* Projects / Recent Work (Placeholder - Add your projects if needed) */
-        #projects .card { background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 8px 25px rgba(0,0,0,0.12); transition:0.4s; }
-        #projects .card:hover { transform:translateY(-15px); box-shadow:0 15px 35px rgba(0,0,0,0.2); }
-        #projects img { width:100%; height:320px; object-fit:cover; }
-        .card-content { padding:2rem; text-align:center; }
-        .card-content h3 { margin-bottom:1rem; font-size:1.6rem; }
-
-        /* Services */
-        .service-card { background:#000; color:white; padding:2.5rem; border-radius:16px; text-align:center; transition:0.4s; }
-        .service-card:hover { background:#111; transform:scale(1.05); }
-        .service-card h3 { margin:1.2rem 0; font-size:2rem; }
-        .expand { cursor:pointer; color:#00aaff; font-weight:bold; font-size:1.2rem; }
-
         /* Stats */
         #stats { background:#000; color:white; text-align:center; }
         .stats-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:4rem; }
@@ -118,12 +104,13 @@
             <nav>
                 <div class="logo">Abdullah Gull</div>
                 <div class="nav-links">
-                    <a href="#home">Home</a>
-                    <a href="#services">Services</a>
-                    <a href="#projects">Projects</a>
-                    <a href="about.html">About</a> <!-- Link to separate About page -->
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="about.html">About</a>
+                    <a href="blog.html">Blog</a>
                 </div>
-                <a href="#contact" class="cta-btn">Get in Touch</a>
+                <a href="contact.html" class="cta-btn">Get in Touch</a> <!-- Changed to contact.html -->
             </nav>
         </div>
     </header>
@@ -132,7 +119,7 @@
         <div class="content">
             <h1>Abdullah Gull</h1>
             <p>Amazon FBA Specialist | PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert</p>
-            <a href="#contact" class="cta-btn" style="font-size:1.4rem; padding:1.2rem 3rem;">Let's Talk</a>
+            <a href="contact.html" class="cta-btn" style="font-size:1.4rem; padding:1.2rem 3rem;">Let's Talk</a>
         </div>
     </section>
 
@@ -178,38 +165,6 @@
         </div>
     </section>
 
-    <section id="projects">
-        <div class="container">
-            <h2>Recent Projects / Work</h2>
-            <div class="grid">
-                <!-- Apne projects yahan add kar sakte ho, abhi placeholders -->
-                <div class="card">
-                    <img src="https://via.placeholder.com/450x320?text=Your+Project+1" alt="Project 1">
-                    <div class="card-content">
-                        <h3>Project Name 1</h3>
-                        <p>Amazon Storefront & PPC Strategy – Revenue Boost Example</p>
-                        <a href="#" class="cta-btn" style="display:inline-block; margin-top:1.2rem;">Click Here</a>
-                    </div>
-                </div>
-                <!-- Aur add karo -->
-            </div>
-        </div>
-    </section>
-
-    <section id="services" style="background:#f8f9fa;">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="grid">
-                <div class="service-card">
-                    <h3>Amazon Seller Central</h3>
-                    <p>PPC Management, Listing Optimization, A+ Content, Image Design + More</p>
-                    <span class="expand">+ Explore Details</span>
-                </div>
-                <!-- Aur services add kar sakte ho -->
-            </div>
-        </div>
-    </section>
-
     <section id="stats">
         <div class="container">
             <h2>Proven Results</h2>
@@ -234,73 +189,290 @@
     </section>
 
     <footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div>
-                <h4>Amazon Seller Central</h4>
-                <ul>
-                    <li>Full Service Management</li>
-                    <li>SEO for better visibility</li>
-                    <li>PPC Management</li>
-                    <li>Listing Optimization</li>
-                    <li>Image Design (CTR Main Image Hack)</li>
-                    <li>A+ Content / EBC</li>
-                    <li>Amazon Store Front Creation</li>
-                </ul>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Amazon Seller Central</h4>
+                    <ul>
+                        <li>Full Service Management</li>
+                        <li>SEO for better visibility</li>
+                        <li>PPC Management</li>
+                        <li>Listing Optimization</li>
+                        <li>Image Design (CTR Main Image Hack)</li>
+                        <li>A+ Content / EBC</li>
+                        <li>Amazon Store Front Creation</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Amazon Vendor Central</h4>
+                    <ul>
+                        <li>Vendor Onboarding</li>
+                        <li>Inventory Management</li>
+                        <li>Retail Content & Advertising</li>
+                        <li>A+ Content Creation</li>
+                        <li>Sponsored Products & Brands Ads</li>
+                        <li>Product Listings Optimization</li>
+                        <li>Purchase Order Management</li>
+                        <li>Invoice Management</li>
+                        <li>Data-Driven Performance Analytics</li>
+                        <li>Shipment & Delivery Optimization</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Marketplaces</h4>
+                    <ul>
+                        <li>Amazon</li>
+                        <li>Shopify</li>
+                        <li>Wayfair</li>
+                        <li>Walmart</li>
+                        <li>Home Depot</li>
+                        <li>eBay</li>
+                        <li>Etsy</li>
+                        <li>Asenda</li>
+                        <li>Newegg</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Abdullah Gull</h4>
+                    <p>Email: your@email.com</p>
+                    <p>Book a Free Strategy Call</p>
+                </div>
             </div>
-            <div>
-                <h4>Amazon Vendor Central</h4>
-                <ul>
-                    <li>Vendor Onboarding</li>
-                    <li>Inventory Management</li>
-                    <li>Retail Content & Advertising</li>
-                    <li>A+ Content Creation</li>
-                    <li>Sponsored Products & Brands Ads</li>
-                    <li>Product Listings Optimization</li>
-                    <li>Purchase Order Management</li>
-                    <li>Invoice Management</li>
-                    <li>Data-Driven Performance Analytics</li>
-                    <li>Shipment & Delivery Optimization</li>
-                </ul>
-            </div>
-            <div>
-                <h4>Marketplaces</h4>
-                <ul>
-                    <li>Amazon</li>
-                    <li>Shopify</li>
-                    <li>Wayfair</li>
-                    <li>Walmart</li>
-                    <li>Home Depot</li>
-                    <li>eBay</li>
-                    <li>Etsy</li>
-                    <li>Asenda</li>
-                    <li>Newegg</li>
-                </ul>
-            </div>
-            <div>
-                <h4>Contact Abdullah Gull</h4>
-                <p>Email: your@email.com</p>
-                <p>Book a Free Strategy Call</p>
-            </div>
-        </div>
 
-        <div class="social">
-            <a href="https://www.linkedin.com/in/abdullah-gull/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.tiktok.com/@abdxxah_965?_r=1&_t=ZT-93qAhYuCQSz" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://snapchat.com/t/v1C05LBv" title="Snapchat"><i class="fab fa-snapchat"></i></a>
-            <a href="https://x.com/abdullahamazon?s=21" title="X"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://www.instagram.com/abdxxah_965/" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/share/1JTa6K2z5A/?mibextid=wwXIfr" title="Facebook"><i class="fab fa-facebook"></i></a>
-        </div>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/abdullah-gull/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.tiktok.com/@abdxxah_965?_r=1&_t=ZT-93qAhYuCQSz" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://snapchat.com/t/v1C05LBv" title="Snapchat"><i class="fab fa-snapchat"></i></a>
+                <a href="https://x.com/abdullahamazon?s=21" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/abdxxah_965/" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/1JTa6K2z5A/?mibextid=wwXIfr" title="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
 
-        <p style="text-align:center; margin-top:3rem;">© 2026 Abdullah Gull. All Rights Reserved.</p>
-    </div>
-</footer>
+            <p style="text-align:center; margin-top:3rem;">© 2026 Abdullah Gull. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script>
         window.addEventListener('scroll', () => {
             document.getElementById('header').classList.toggle('scrolled', window.scrollY > 100);
         });
+    </script>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Services - Abdullah Gull</title>
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Same style as index.html - copy from above */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height:1.6; color:#333; background:#fff; }
+        a { text-decoration:none; color:inherit; }
+        .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+
+        header { /* Same as above */ }
+        /* ... (paste full style from index.html here) */
+        /* For brevity, assume same style pasted here */
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">Abdullah Gull</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="about.html">About</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+                <a href="contact.html" class="cta-btn">Get in Touch</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="services" style="background:#f8f9fa; padding-top:150px;"> <!-- Extra padding for header -->
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="grid">
+                <div class="service-card">
+                    <h3>Amazon Seller Central</h3>
+                    <p>PPC Management, Listing Optimization, A+ Content, Image Design + More</p>
+                    <span class="expand">+ Explore Details</span>
+                </div>
+                <!-- Aur services add kar sakte ho, jaise Vendor Central card copy-paste kar lo -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Same footer as index.html - paste here -->
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 100);
+        });
+    </script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Projects - Abdullah Gull</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Same style as index.html */
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <!-- Same header as above -->
+    </header>
+
+    <section id="projects" style="padding-top:150px;">
+        <div class="container">
+            <h2>Recent Projects / Work</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://via.placeholder.com/450x320?text=Your+Project+1" alt="Project 1">
+                    <div class="card-content">
+                        <h3>Project Name 1</h3>
+                        <p>Amazon Storefront & PPC Strategy – Revenue Boost Example</p>
+                        <a href="#" class="cta-btn" style="display:inline-block; margin-top:1.2rem;">Click Here</a>
+                    </div>
+                </div>
+                <!-- Aur projects cards add kar do -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Same footer -->
+    </footer>
+
+    <script>
+        /* Same script */
+    </script>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Blog - Abdullah Gull</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Same style as index.html */
+        .blog-post { background:#fff; padding:2rem; border-radius:16px; box-shadow:0 8px 25px rgba(0,0,0,0.1); margin-bottom:3rem; }
+        .blog-post h3 { font-size:2rem; margin-bottom:1rem; }
+        .blog-post p { font-size:1.2rem; }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <!-- Same header -->
+    </header>
+
+    <section id="blog" style="padding-top:150px; background:#f8f9fa;">
+        <div class="container">
+            <h2>My Blog</h2>
+            <div class="blog-post">
+                <h3>Blog Post Title 1</h3>
+                <p>Date: February 19, 2026</p>
+                <p>Short excerpt: Amazon PPC tips... (Apna full article yahan likh do)</p>
+                <a href="#" class="cta-btn">Read More</a>
+            </div>
+            <div class="blog-post">
+                <h3>Blog Post Title 2</h3>
+                <p>Date: January 1, 2026</p>
+                <p>Short excerpt: Listing optimization guide...</p>
+                <a href="#" class="cta-btn">Read More</a>
+            </div>
+            <!-- Aur posts add kar sakte ho -->
+        </div>
+    </section>
+
+    <footer>
+        <!-- Same footer -->
+    </footer>
+
+    <script>
+        /* Same script */
+    </script>
+
+</body>
+</html>
+
+<!-- Previous about.html, but update nav to include Blog and full links -->
+<!-- Paste the full code from previous, change nav to match above -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact - Abdullah Gull</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        /* Same style */
+        form { max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:1.5rem; }
+        input, textarea { padding:1rem; border:1px solid #ddd; border-radius:8px; font-size:1rem; }
+        button { background:#00aaff; color:white; border:none; padding:1rem; border-radius:50px; cursor:pointer; font-size:1.1rem; }
+        button:hover { background:#0088cc; }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <!-- Same header -->
+    </header>
+
+    <section id="contact" style="padding-top:150px;">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="https://formspree.io/f/your-form-id" method="POST"> <!-- Free Formspree use kar sakte ho for real submissions -->
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Same footer -->
+    </footer>
+
+    <script>
+        /* Same script */
     </script>
 
 </body>
