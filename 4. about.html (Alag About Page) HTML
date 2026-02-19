@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About - Abdullah Gull</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        /* Same CSS */
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+
+    <section id="about" style="padding-top:150px;">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="content">
+                <p>🚀 Amazon Private Label Specialist</p>
+                <p>I am a professional Amazon Virtual Assistant dedicated to building and scaling brands through data-driven strategies...</p>
+                <!-- Tumhara poora About text yahan paste kar do jo pehle diya tha -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+</body>
+</html>
