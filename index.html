@@ -24,25 +24,53 @@
             overflow-x: hidden; 
         }
 
-        /* --- Slider Fix: Clear Branding --- */
+        /* --- Slider Fix --- */
         .slider-outer-container { width: 100%; overflow: hidden; background: transparent; position: relative; margin: 10px 0; }
         .slider-inner-box { height: 140px; overflow: hidden; position: relative; }
-        .slider-inner-box a, div[class*="elfsight-app"] + a, a[href*="elfsight.com"], 
-        div[class*="Common__Component"], div[class*="WidgetTitle"], a[aria-label*="elfsight"] {
-            display: none !important; opacity: 0 !important; visibility: hidden !important; height: 0 !important; pointer-events: none !important;
+        .slider-inner-box a, div[class*="elfsight-app"] + a, a[href*="elfsight.com"] {
+            display: none !important; opacity: 0 !important; visibility: hidden !important;
         } 
 
+        /* --- Updated Premium Header with Real Logo --- */
         header { 
-            background: rgba(0, 0, 0, 0.8); 
-            backdrop-filter: blur(20px);
-            padding: 20px 8%; display: flex; 
+            background: rgba(0, 0, 0, 0.85); 
+            backdrop-filter: blur(25px);
+            padding: 15px 8%; display: flex; 
             justify-content: space-between; align-items: center; 
             position: sticky; top: 0; z-index: 1000; 
             border-bottom: 2px solid var(--accent); width: 100%;
         }
-        .logo { color: #fff; font-weight: 900; font-size: 24px; text-transform: uppercase; display: flex; align-items: center; gap: 12px; }
-        .logo span { color: var(--accent); }
-        .logo img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        .logo-frame {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            padding: 2px;
+            background: rgba(255, 153, 0, 0.1);
+            box-shadow: 0 0 15px rgba(255, 153, 0, 0.3);
+            overflow: hidden;
+        }
+        .logo-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+        .logo-text {
+            color: #fff;
+            font-weight: 900;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .logo-text span { color: var(--accent); }
         
         nav button { 
             background: none; border: none; color: #fff; font-weight: 700; 
@@ -58,7 +86,6 @@
         section { padding: 60px 8%; }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
         
-        /* Tagri Glass Card */
         .skill-card { 
             background: var(--glass);
             backdrop-filter: blur(10px);
@@ -78,7 +105,6 @@
         }
         .milestone h3 { font-size: 28px; font-weight: 900; }
 
-        /* Review Glass Card */
         .review-card { 
             background: var(--glass);
             backdrop-filter: blur(10px);
@@ -124,10 +150,12 @@
 <body>
 
 <header>
-    <div class="logo">
-        <img src="https://i.ibb.co/QvBvs5Kk/Abdullah-Gull.jpg" alt="Abdullah Gull">
-        <div>Abdullah <span>Gull</span></div>
-    </div>
+    <a href="#" class="logo-container">
+        <div class="logo-frame">
+            <img src="https://i.ibb.co/QvBvs5Kk/Abdullah-Gull.jpg" alt="Abdullah Gull">
+        </div>
+        <div class="logo-text">Abdullah <span>Gull</span></div>
+    </a>
     <nav>
         <button onclick="showPage('home')" id="btn-home" class="active">HOME</button>
         <button onclick="showPage('about')" id="btn-about">ABOUT</button>
@@ -185,19 +213,16 @@
 
 <section style="padding: 60px 8%;">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; align-items: center;">
-        
         <div class="skill-card">
             <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 20px;">Comprehensive <span style="color: var(--accent);">Account Audits</span></h2>
             <p style="margin-bottom: 20px; color: #ccc;">Reviewing listings, keywords, ads, and health to uncover hidden opportunities for your Amazon store.</p>
             <img src="https://i.ibb.co/8b1a41r/image-8b1a41.png" alt="Amazon Audit Data" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         </div>
-
         <div class="skill-card">
             <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 20px;">Crafting Engaging <span style="color: var(--accent);">A+ Content</span></h2>
             <p style="margin-bottom: 20px; color: #ccc;">Mobile-friendly layouts designed to boost customer trust and conversion rates.</p>
             <img src="https://i.ibb.co/image_d53643.png" alt="A+ Content Design" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         </div>
-
     </div>
 </section>
 </div>
@@ -251,7 +276,6 @@
 <div id="blog" class="page">
     <section>
         <h1 style="font-size: 40px; font-weight: 900; margin-bottom: 40px;">Blogs & Case Studies</h1>
-        
         <div class="blog-post" style="border-bottom: none;">
             <h2 style="color: var(--accent); font-size: 32px; margin-bottom: 20px;">Success on Upwork: How I, Abdullah Gull, Build My Winning Strategy</h2>
             <p style="font-size: 18px; line-height: 1.8; margin-bottom: 25px; color: #ccc;">
