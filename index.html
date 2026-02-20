@@ -3,135 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah Gull | Amazon Predator</title>
+    <title>Abdullah Gull | Amazon Brand Architect</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --neon: #ff9900;
-            --neon-glow: rgba(255, 153, 0, 0.6);
-            --bg-black: #050505;
-            --card-bg: rgba(20, 20, 20, 0.8);
-        }
+        :root { --gold: #ff9900; --dark: #000000; --light-gray: #111111; --text-gray: #a0a0a0; }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--dark); color: white; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
-        body { background: var(--bg-black); color: white; font-family: 'Segoe UI', Roboto, sans-serif; overflow-x: hidden; }
+        /* Smooth Section Transitions */
+        section { padding: 100px 10%; opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        section.visible { opacity: 1; transform: translateY(0); }
 
-        /* Background Particle Effect */
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
+        /* Navigation */
+        nav { padding: 30px 10%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); }
+        .logo { font-weight: 800; font-size: 24px; letter-spacing: -1px; }
+        .logo span { color: var(--gold); }
 
-        /* Floating Header */
-        header {
-            padding: 30px 10%; display: flex; justify-content: space-between; align-items: center;
-            position: fixed; width: 100%; top: 0; z-index: 100;
-        }
-        .logo { font-size: 28px; font-weight: 900; letter-spacing: 2px; color: var(--neon); text-shadow: 0 0 10px var(--neon-glow); }
+        /* Hero - Minimalist & Bold */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; background: radial-gradient(circle at bottom right, #1a1a1a 0%, #000 70%); }
+        .hero h2 { color: var(--gold); text-transform: uppercase; font-size: 14px; letter-spacing: 4px; margin-bottom: 20px; font-weight: 700; }
+        .hero h1 { font-size: clamp(45px, 7vw, 90px); font-weight: 800; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px; }
+        
+        /* The Clean Slider (No Invert, Just Real Colors) */
+        .brand-strip { background: #080808; padding: 60px 0; border-y: 1px solid #222; overflow: hidden; white-space: nowrap; }
+        .slider-track { display: flex; width: calc(300px * 14); animation: scroll 25s linear infinite; align-items: center; }
+        .slider-track img { height: 55px; margin: 0 50px; opacity: 0.7; transition: 0.4s; filter: brightness(1.2); }
+        .slider-track img:hover { opacity: 1; transform: scale(1.05); }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; background: radial-gradient(circle, rgba(255,153,0,0.05) 0%, transparent 70%);
-        }
-        .hero h1 { 
-            font-size: clamp(50px, 10vw, 100px); font-weight: 900; line-height: 0.9;
-            text-transform: uppercase; -webkit-text-stroke: 1px var(--neon); color: transparent;
-            transition: 0.5s;
-        }
-        .hero h1 span { color: var(--neon); text-shadow: 0 0 20px var(--neon-glow); }
-        .hero p { font-size: 1.5rem; color: #888; margin-top: 20px; letter-spacing: 5px; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-300px * 7)); } }
 
-        /* --- THE INFINITE LOGO WALL --- */
-        .logo-wall {
-            background: rgba(255,255,255,0.02); padding: 40px 0; border-top: 1px solid var(--neon); border-bottom: 1px solid var(--neon);
-            overflow: hidden; box-shadow: 0 0 20px var(--neon-glow); transform: rotate(-2deg); width: 110%; margin-left: -5%;
-        }
-        .wall-track { display: flex; width: calc(250px * 14); animation: scrollWall 20s linear infinite; }
-        .wall-track img { height: 50px; margin: 0 60px; filter: drop-shadow(0 0 5px var(--neon)); }
+        /* Professional Grid */
+        .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
+        .work-card { background: var(--light-gray); border-radius: 24px; padding: 40px; border: 1px solid #222; transition: 0.4s; }
+        .work-card:hover { border-color: var(--gold); background: #161616; }
+        .work-card h3 { font-size: 28px; margin-bottom: 15px; font-weight: 700; }
+        .work-card p { color: var(--text-gray); margin-bottom: 25px; font-size: 18px; }
+        .work-card img { width: 100%; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
 
-        @keyframes scrollWall { 
-            0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 7)); } 
-        }
+        /* Status Pills */
+        .pill { display: inline-block; padding: 8px 16px; border-radius: 100px; background: rgba(255, 153, 0, 0.1); color: var(--gold); font-size: 12px; font-weight: 700; margin-bottom: 15px; }
 
-        /* Expert Cards */
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 100px 10%; }
-        .card {
-            background: var(--card-bg); padding: 50px; border-radius: 5px; border-left: 5px solid var(--neon);
-            transition: 0.4s; position: relative; overflow: hidden;
-        }
-        .card:hover { transform: translateY(-15px) scale(1.05); background: #111; box-shadow: 10px 10px 0px var(--neon); }
-        .card h3 { font-size: 24px; margin-bottom: 15px; color: var(--neon); }
-        .card img { width: 100%; border: 1px solid #333; margin-top: 20px; }
+        /* CTA Button */
+        .btn-prime { background: var(--gold); color: black; padding: 18px 45px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 18px; transition: 0.3s; display: inline-block; }
+        .btn-prime:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255, 153, 0, 0.3); }
 
-        /* Neon Button */
-        .neon-btn {
-            padding: 20px 50px; border: 2px solid var(--neon); color: var(--neon); text-decoration: none;
-            font-weight: 900; letter-spacing: 3px; position: relative; transition: 0.5s; overflow: hidden;
-        }
-        .neon-btn:hover { background: var(--neon); color: black; box-shadow: 0 0 50px var(--neon); }
-
-        footer { text-align: center; padding: 50px; color: #444; font-size: 12px; }
     </style>
 </head>
 <body>
 
-    <div id="particles-js"></div>
+    <nav>
+        <div class="logo">ABDULLAH<span>GULL</span></div>
+        <a href="https://wa.me/yournumber" class="btn-prime" style="padding: 12px 25px; font-size: 14px;">GET IN TOUCH</a>
+    </nav>
 
-    <header>
-        <div class="logo">AG_SYSTEMS</div>
-        <a href="#" class="neon-btn">CONTACT_OPERATOR</a>
-    </header>
-
-    <section class="hero">
-        <p>AMAZON FBA ARCHITECT</p>
-        <h1>Building <span>Brands</span></h1>
-        <h1>Scaling <span>Success</span></h1>
+    <section class="hero visible">
+        <h2>Amazon FBA Specialist</h2>
+        <h1>Building Brands.<br>Engineering Results.</h1>
+        <p style="font-size: 20px; color: var(--text-gray); max-width: 650px; margin-bottom: 40px;">
+            Expert management for Private Label brands. We don't just optimize listings; we build market leaders.
+        </p>
+        <a href="#work" class="btn-prime">VIEW CASE STUDIES</a>
     </section>
 
-    <div class="logo-wall">
-        <div class="wall-track">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Logo">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Logo">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Logo">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Logo">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Logo">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Logo">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Logo">
+    <div class="brand-strip">
+        <div class="slider-track">
+            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
         </div>
     </div>
 
-    <section class="grid-container">
-        <div class="card">
-            <h3>ACCOUNT_AUDIT</h3>
-            <p>Scanning for system vulnerabilities and keyword gaps. Maximize profitability with 100% precision.</p>
-            <img src="https://i.ibb.co/GvBvs5Kk/image-d53669.png" alt="Audit">
-        </div>
-        <div class="card">
-            <h3>A+ CONTENT</h3>
-            <p>Visual domination. Creating EBC layouts that convert traffic into revenue instantly.</p>
-            <img src="https://i.ibb.co/GvBvs5Kk/image-d53643.png" alt="A+">
-        </div>
-        <div class="card" style="border-color: #fff;">
-            <h3 style="color: #fff;">$727K_SALES</h3>
-            <p>Proven track record of scaling Amazon brands to half a million dollars plus in gross revenue.</p>
+    <section id="work" class="visible">
+        <div class="work-grid">
+            <div class="work-card">
+                <div class="pill">STRATEGY & AUDIT</div>
+                <h3>E-commerce Audits</h3>
+                <p>Identifying bottlenecks and unlocking hidden revenue streams through data-driven analysis.</p>
+                <img src="https://i.ibb.co/GvBvs5Kk/image-d53669.png" alt="Audit Report">
+            </div>
+            <div class="work-card">
+                <div class="pill">CONVERSION DESIGN</div>
+                <h3>A+ Content Mastery</h3>
+                <p>High-end visual storytelling that doubles your conversion rate and builds customer trust.</p>
+                <img src="https://i.ibb.co/GvBvs5Kk/image-d53643.png" alt="EBC Design">
+            </div>
         </div>
     </section>
 
-    <footer style="margin-top: 100px;">
-        <p>© 2026 ABDULLAH GULL | ALL RIGHTS RESERVED | ENCRYPTED CONNECTION</p>
+    <section class="visible" style="text-align: center; background: #050505;">
+        <h2 style="font-size: 50px; margin-bottom: 20px;">Ready to scale to $1M?</h2>
+        <p style="margin-bottom: 40px; color: var(--text-gray);">Currently accepting 2 new high-potential brands for Q3 2026.</p>
+        <a href="#" class="btn-prime">BOOK A DISCOVERY CALL</a>
+    </section>
+
+    <footer style="padding: 50px 10%; border-top: 1px solid #222; text-align: center; color: #555;">
+        <p>© 2026 Abdullah Gull. All Rights Reserved.</p>
     </footer>
 
     <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 80 },
-                "color": { "value": "#ff9900" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5 },
-                "size": { "value": 3 },
-                "line_linked": { "enable": true, "distance": 150, "color": "#ff9900", "opacity": 0.4, "width": 1 },
-                "move": { "enable": true, "speed": 4 }
-            }
-        });
+        // Smooth scroll appearance
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => observer.observe(section));
     </script>
+
 </body>
 </html>
