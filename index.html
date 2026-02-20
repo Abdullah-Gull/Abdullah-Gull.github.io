@@ -7,53 +7,53 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #000; --accent: #ff9900; --white: #ffffff; --bg-gray: #f9f9f9; }
+        :root { --primary: #000; --accent: #ff9900; --white: #ffffff; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Inter', sans-serif; line-height: 1.6; background: var(--white); overflow-x: hidden; }
 
-        /* --- FIXED SLIDER CSS --- */
+        /* --- FIXED SLIDER WITH NEW LINK --- */
         .brands-slider-section { 
             background: #111; 
-            padding: 30px 0; 
+            padding: 25px 0; 
             overflow: hidden; 
-            border-bottom: 2px solid var(--accent);
+            border-bottom: 3px solid var(--accent);
         }
-        .slider-wrapper { display: flex; width: 200%; animation: slide-brands 25s linear infinite; }
-        .slider-wrapper img { height: 50px; margin: 0 40px; filter: brightness(0.9); }
+        .slider-wrapper { display: flex; width: 200%; animation: slide-brands 20s linear infinite; align-items: center; }
+        .slider-wrapper img { height: 60px; margin: 0 50px; filter: brightness(1); }
+        
         @keyframes slide-brands {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
 
         header { 
-            background: #000; padding: 20px 8%; display: flex; 
+            background: #000; padding: 15px 8%; display: flex; 
             justify-content: space-between; align-items: center; 
             position: sticky; top: 0; z-index: 1000; 
             border-bottom: 3px solid var(--accent);
         }
-        .logo { color: #fff; font-weight: 900; font-size: 24px; text-transform: uppercase; display: flex; align-items: center; gap: 12px; }
+        .logo { color: #fff; font-weight: 900; font-size: 24px; text-transform: uppercase; display: flex; align-items: center; gap: 12px; text-decoration: none; }
         .logo span { color: var(--accent); }
         .logo img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; }
         
         nav button { background: none; border: none; color: #fff; font-weight: 700; margin-left: 20px; cursor: pointer; transition: 0.3s; }
-        nav button:hover, nav button.active { color: var(--accent); }
+        nav button.active { color: var(--accent); }
 
-        .hero { background: #000; color: #fff; padding: 80px 8% 40px; }
-        .hero h1 { font-size: clamp(30px, 5vw, 55px); font-weight: 900; margin-bottom: 20px; }
+        .hero { background: #000; color: #fff; padding: 100px 8% 60px; }
+        .hero h1 { font-size: clamp(35px, 6vw, 60px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
         .hero span { color: var(--accent); }
+        .hero p { font-size: 18px; color: #ccc; max-width: 850px; }
 
-        section { padding: 60px 8%; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .skill-card { border: 1px solid #ddd; padding: 25px; border-radius: 10px; transition: 0.3s; }
-        .skill-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        section { padding: 80px 8%; }
+        .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
+        .work-card h2 { font-size: 32px; font-weight: 900; margin-bottom: 15px; }
+        .work-card p { color: #555; margin-bottom: 20px; }
+        .work-card img { width: 100%; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); border: 1px solid #eee; }
 
-        /* Review and Milestone */
-        .milestone { background: var(--accent); color: #000; padding: 40px; border-radius: 15px; margin: 30px 0; font-weight: 700; }
-        .review-card { background: #f9f9f9; border-left: 5px solid var(--accent); padding: 30px; margin-bottom: 20px; }
-
-        footer { background: #000; color: #fff; padding: 60px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-        .social-icons a { color: #fff; font-size: 20px; margin-right: 15px; transition: 0.3s; }
-        .social-icons a:hover { color: var(--accent); }
+        footer { background: #000; color: #fff; padding: 60px 8%; text-align: center; border-top: 1px solid #222; }
+        .social-icons { margin: 25px 0; }
+        .social-icons a { color: #fff; font-size: 24px; margin: 0 15px; transition: 0.3s; }
+        .social-icons a:hover { color: var(--accent); transform: translateY(-5px); }
 
         .page { display: none; }
         .page.active { display: block; }
@@ -62,10 +62,10 @@
 <body>
 
 <header>
-    <div class="logo">
+    <a href="#" class="logo">
         <img src="https://i.ibb.co/QvBvs5Kk/Abdullah-Gull.jpg" alt="Abdullah Gull">
         <div>Abdullah <span>Gull</span></div>
-    </div>
+    </a>
     <nav>
         <button onclick="showPage('home')" id="btn-home" class="active">HOME</button>
         <button onclick="showPage('about')" id="btn-about">ABOUT</button>
@@ -77,71 +77,51 @@
     <div class="hero">
         <h2>AMAZON FBA SPECIALIST</h2>
         <h1><span>Building Brands,</span><br>Scaling Amazon Success.</h1>
-        <p>PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience</p>
+        <p>PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert</p>
     </div>
 
     <div class="brands-slider-section">
         <div class="slider-wrapper">
-            <img src="https://i.ibb.co/LhzTFLBF/image.png" alt="Brands Banner">
-            <img src="https://i.ibb.co/LhzTFLBF/image.png" alt="Brands Banner">
+            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Trusted Brands">
+            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Trusted Brands">
         </div>
     </div>
 
     <section>
-        <h2 style="border-left: 6px solid var(--accent); padding-left: 15px; margin-bottom: 30px;">Top Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card"><h4>✅ Amazon FBA Private Label Specialist</h4></div>
-            <div class="skill-card"><h4>✅ Advanced PPC Strategy</h4></div>
-            <div class="skill-card"><h4>✅ Data-Driven Product Hunting</h4></div>
-            <div class="skill-card"><h4>✅ Listing SEO and A+ Content</h4></div>
-        </div>
-    </section>
-
-    <section style="background: #fff;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
-            <div>
-                <h2 style="font-weight: 900;">Comprehensive <span style="color: var(--accent);">Account Audits</span></h2>
-                <p>Reviewing listings, keywords, and health to uncover hidden opportunities.</p>
-                <img src="https://i.ibb.co/GvBvs5Kk/image-d53669.png" style="width: 100%; border-radius: 15px; margin-top: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+        <div class="work-grid">
+            <div class="work-card">
+                <h2>Comprehensive <span style="color: var(--accent);">Account Audits</span></h2>
+                <p>Reviewing listings, keywords, ads, and health to uncover hidden opportunities for your Amazon store.</p>
+                <img src="https://i.ibb.co/GvBvs5Kk/image-d53669.png" alt="Audit Sheet">
             </div>
-            <div>
-                <h2 style="font-weight: 900;">Crafting Engaging <span style="color: var(--accent);">A+ Content</span></h2>
-                <p>Mobile-friendly layouts designed to boost customer trust and conversion.</p>
-                <img src="https://i.ibb.co/GvBvs5Kk/image-d53643.png" style="width: 100%; border-radius: 15px; margin-top: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+
+            <div class="work-card">
+                <h2>Crafting Engaging <span style="color: var(--accent);">A+ Content</span></h2>
+                <p>Mobile-friendly layouts designed to boost customer trust and conversion rates.</p>
+                <img src="https://i.ibb.co/GvBvs5Kk/image-d53643.png" alt="A+ Content Sample">
             </div>
         </div>
     </section>
 </div>
-
-<div id="about" class="page">
-    <section>
-        <h1>About Abdullah Gull</h1>
-        <p>Amazon Private Label Specialist with 2+ years of experience...</p>
-        <div class="milestone">
-            <h3>🏆 Team Milestone: $727K+ In Total Sales</h3>
-        </div>
-    </section>
-</div>
-
-<footer>
-    <div>
-        <h4>Connect</h4>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/abdullah-gull/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/share/1JTa6K2z5A/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-        </div>
-    </div>
-    <p>© 2026 Abdullah Gull | Amazon Growth Specialist</p>
-</footer>
 
 <script>
     function showPage(pageId) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         document.getElementById(pageId).classList.add('active');
         document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-        document.getElementById('btn-' + (pageId === 'home' ? 'home' : 'about')).classList.add('active');
+        event.target.classList.add('active');
         window.scrollTo(0, 0);
     }
 </script>
+
+<footer>
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/abdullah-gull/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/share/1JTa6K2z5A/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/abdxxah_965/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <p>© 2026 Abdullah Gull | Amazon Growth Specialist</p>
+</footer>
+
 </body>
 </html>
