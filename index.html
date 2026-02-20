@@ -10,141 +10,71 @@
         :root { 
             --primary: #000; 
             --accent: #ff9900; 
-            --white: #ffffff; 
             --glass: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        
         body { 
             font-family: 'Inter', sans-serif; 
-            line-height: 1.6; 
             background: radial-gradient(circle at top right, #1a1a1a, #000); 
-            color: #fff;
-            overflow-x: hidden; 
+            color: #fff; overflow-x: hidden; 
         }
 
-        /* --- Slider Fix --- */
-        .slider-outer-container { width: 100%; overflow: hidden; background: transparent; position: relative; margin: 10px 0; }
-        .slider-inner-box { height: 140px; overflow: hidden; position: relative; }
-        .slider-inner-box a, div[class*="elfsight-app"] + a, a[href*="elfsight.com"] {
-            display: none !important; opacity: 0 !important; visibility: hidden !important;
-        } 
-
-        /* --- Updated Premium Header with Real Logo --- */
+        /* --- Logo & Header --- */
         header { 
-            background: rgba(0, 0, 0, 0.85); 
-            backdrop-filter: blur(25px);
-            padding: 15px 8%; display: flex; 
-            justify-content: space-between; align-items: center; 
-            position: sticky; top: 0; z-index: 1000; 
-            border-bottom: 2px solid var(--accent); width: 100%;
+            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(20px);
+            padding: 15px 8%; display: flex; justify-content: space-between; 
+            align-items: center; position: sticky; top: 0; z-index: 1000; 
+            border-bottom: 2px solid var(--accent);
         }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
+        .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-frame { 
+            width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--accent); 
+            padding: 2px; background: #000; overflow: hidden;
         }
-        .logo-frame {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            border: 2px solid var(--accent);
-            padding: 2px;
-            background: rgba(255, 153, 0, 0.1);
-            box-shadow: 0 0 15px rgba(255, 153, 0, 0.3);
-            overflow: hidden;
-        }
-        .logo-frame img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-        }
-        .logo-text {
-            color: #fff;
-            font-weight: 900;
-            font-size: 22px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .logo-frame img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        .logo-text { color: #fff; font-weight: 900; font-size: 20px; text-transform: uppercase; }
         .logo-text span { color: var(--accent); }
-        
+
         nav button { 
             background: none; border: none; color: #fff; font-weight: 700; 
-            margin-left: 20px; cursor: pointer; font-size: 14px; transition: 0.3s; 
+            margin-left: 20px; cursor: pointer; transition: 0.3s; 
         }
-        nav button:hover, nav button.active { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+        nav button.active { color: var(--accent); }
 
-        .hero { background: transparent; color: #fff; padding: 100px 8% 60px; width: 100%; }
-        .hero h1 { font-size: clamp(30px, 5vw, 55px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        /* --- Hero Section --- */
+        .hero { padding: 80px 8% 40px; }
+        .hero h2 { font-size: 14px; letter-spacing: 2px; color: #fff; margin-bottom: 10px; }
+        .hero h1 { font-size: clamp(32px, 5vw, 55px); font-weight: 900; line-height: 1.1; }
         .hero span { color: var(--accent); }
-        .hero p { font-size: 18px; color: #ccc; max-width: 800px; }
+        .hero p { color: #ccc; margin-top: 15px; max-width: 700px; }
 
-        section { padding: 60px 8%; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
-        
-        .skill-card { 
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border); 
+        /* --- Trusted Brands (FIXED) --- */
+        .brands-section { 
+            background: #111; padding: 30px 0; border-top: 1px solid var(--glass-border); 
+            border-bottom: 1px solid var(--glass-border); margin: 20px 0;
+        }
+        .brands-slider { width: 100%; overflow: hidden; white-space: nowrap; }
+        /* Automatic Scrolling Animation */
+        .brands-track { display: inline-block; animation: scroll 30s linear infinite; }
+        .brands-track img { height: 40px; margin: 0 40px; opacity: 0.6; filter: grayscale(1); }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        /* --- Work Cards --- */
+        .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 40px 8%; }
+        .work-card { 
+            background: var(--glass); border: 1px solid var(--glass-border); 
             padding: 25px; border-radius: 15px; transition: 0.3s; 
         }
-        .skill-card:hover { 
-            border-color: var(--accent); 
-            transform: translateY(-5px); 
-            box-shadow: 0 10px 30px rgba(255, 153, 0, 0.1); 
-        }
-        .skill-card h4 { font-weight: 800; margin-bottom: 10px; color: var(--accent); }
+        .work-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .work-card h3 { font-size: 24px; margin-bottom: 10px; }
+        .work-card h3 span { color: var(--accent); }
+        .work-card p { color: #aaa; font-size: 14px; margin-bottom: 20px; }
+        .work-card img { width: 100%; border-radius: 10px; display: block; border: 1px solid #333; }
 
-        .milestone { 
-            background: linear-gradient(135deg, var(--accent), #e68a00); 
-            color: #000; padding: 40px; border-radius: 15px; margin: 30px 0; font-weight: 700; 
-        }
-        .milestone h3 { font-size: 28px; font-weight: 900; }
-
-        .review-card { 
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border); 
-            border-left: 5px solid var(--accent); 
-            padding: 30px; margin-bottom: 20px; border-radius: 0 15px 15px 0; 
-        }
-        .stars { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
-
-        .blog-post { margin-bottom: 80px; border-bottom: 1px solid var(--glass-border); padding-bottom: 40px; }
-        .blog-post h2 { font-size: 32px; font-weight: 900; color: var(--accent); margin-bottom: 15px; }
-        .blog-img { width: 100%; margin: 25px 0; border-radius: 15px; overflow: hidden; border: 1px solid var(--glass-border); }
-        .blog-img img { width: 100%; display: block; }
-
-        footer { 
-            background: rgba(0, 0, 0, 0.9); padding: 80px 8%; 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; 
-            width: 100%; border-top: 1px solid var(--glass-border);
-        }
-        footer h4 { color: var(--accent); margin-bottom: 20px; text-transform: uppercase; font-size: 16px; }
-        footer ul { list-style: none; }
-        footer li { margin-bottom: 10px; color: #888; font-size: 14px; }
-
-        .social-icons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
-        .social-icons a { 
-            color: #fff; font-size: 20px; width: 42px; height: 42px; 
-            background: var(--glass);
-            border: 1px solid var(--glass-border); 
-            border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-            transition: 0.3s; text-decoration: none !important;
-        }
-        .social-icons a:hover { background: var(--accent); color: #000; border-color: var(--accent); transform: translateY(-5px); }
-
-        .footer-bottom { background: #000; color: #555; text-align: center; padding: 25px; border-top: 1px solid #111; font-size: 12px; }
-
-        .page { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .page { display: none; }
         .page.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        @media (max-width: 768px) { header { flex-direction: column; text-align: center; gap: 15px; } nav button { margin: 5px; } }
+        @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } }
     </style>
 </head>
 <body>
@@ -157,10 +87,8 @@
         <div class="logo-text">Abdullah <span>Gull</span></div>
     </a>
     <nav>
-        <button onclick="showPage('home')" id="btn-home" class="active">HOME</button>
-        <button onclick="showPage('about')" id="btn-about">ABOUT</button>
-        <button onclick="showPage('experience')" id="btn-experience">EXPERIENCE</button>
-        <button onclick="showPage('blog')" id="btn-blog">BLOG</button>
+        <button onclick="showPage('home')" class="active">HOME</button>
+        <button onclick="showPage('about')">ABOUT</button>
     </nav>
 </header>
 
@@ -171,180 +99,36 @@
         <p>PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert</p>
     </div>
 
-    <div class="slider-outer-container">
-        <div class="slider-inner-box">
-            <script src="https://elfsightcdn.com/platform.js" async></script>
-            <div class="elfsight-app-db523cb0-3ec2-4f87-a8ee-975fa08a02fa" data-elfsight-app-lazy></div>
+    <div class="brands-section">
+        <div class="brands-slider">
+            <div class="brands-track">
+                <img src="https://i.ibb.co/6R8mD90d/image-266b78.png" alt="Brands">
+                <img src="https://i.ibb.co/6R8mD90d/image-266b78.png" alt="Brands"> </div>
         </div>
     </div>
 
-    <section>
-        <h2 style="font-size: 32px; font-weight: 900; border-left: 6px solid var(--accent); padding-left: 15px;">Top Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card"><h4>✅ Amazon FBA Private Label Specialist</h4><p>(Zero to Launch Expert)</p></div>
-            <div class="skill-card"><h4>✅ Advanced PPC Strategy</h4><p>(ACOS Reduction and Scalable Growth)</p></div>
-            <div class="skill-card"><h4>✅ Data-Driven Product Hunting</h4><p>(High Demand, Low Competition)</p></div>
-            <div class="skill-card"><h4>✅ Listing SEO and A+ Content</h4><p>(EBC) Optimization</p></div>
-            <div class="skill-card"><h4>✅ Competitor Analysis</h4><p>Keyword Gap Strategy (Helium 10 Expert)</p></div>
-            <div class="skill-card"><h4>✅ External Traffic Management</h4><p>(Amazon Attribution and Social Media)</p></div>
-            <div class="skill-card"><h4>✅ AWS Management</h4><p>(Cloud Solutions and Technical Support)</p></div>
-            <div class="skill-card"><h4>✅ A-Z Account Management</h4><p>Full Store Operations Expert</p></div>
+    <div class="work-grid">
+        <div class="work-card">
+            <h3>Comprehensive <span>Account Audits</span></h3>
+            <p>Reviewing listings, keywords, ads, and health to uncover hidden opportunities for your Amazon store.</p>
+            <img src="https://i.ibb.co/GvBvs5Kk/image-d53669.png" alt="Audit Proof">
         </div>
-    </section>
 
-    <section id="reviews">
-        <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 30px;">What Our Clients & Partners Say</h2>
-        <div class="review-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Abdullah Gull and the team at Alpha Spikes helped us achieve a phenomenal milestone. We scaled our sales to $727,178.38 in just 25 days with an incredible 4.02% ACOS."</p>
-            <p style="margin-top:10px; font-weight: 900;">— E-commerce Brand Owner (UK/USA Market)</p>
-        </div>
-        <div class="review-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Managing over 26,000 clicks requires serious skill. Abdullah’s strategic approach to bidding and keyword pruning saved us thousands of dollars."</p>
-            <p style="margin-top:10px; font-weight: 900;">— Private Label Seller (USA Market)</p>
-        </div>
-        <div class="review-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"His expertise in A+ content and listing optimization transformed our conversion rate. A true professional who understands the Amazon algorithm."</p>
-            <p style="margin-top:10px; font-weight: 900;">— Brand Director (UAE Marketplace)</p>
-        </div>
-    </section>
-
-<section style="padding: 60px 8%;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; align-items: center;">
-        <div class="skill-card">
-            <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 20px;">Comprehensive <span style="color: var(--accent);">Account Audits</span></h2>
-            <p style="margin-bottom: 20px; color: #ccc;">Reviewing listings, keywords, ads, and health to uncover hidden opportunities for your Amazon store.</p>
-            <img src="https://i.ibb.co/8b1a41r/image-8b1a41.png" alt="Amazon Audit Data" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-        </div>
-        <div class="skill-card">
-            <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 20px;">Crafting Engaging <span style="color: var(--accent);">A+ Content</span></h2>
-            <p style="margin-bottom: 20px; color: #ccc;">Mobile-friendly layouts designed to boost customer trust and conversion rates.</p>
-            <img src="https://i.ibb.co/image_d53643.png" alt="A+ Content Design" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <div class="work-card">
+            <h3>Crafting Engaging <span>A+ Content</span></h3>
+            <p>Mobile-friendly layouts designed to boost customer trust and conversion rates.</p>
+            <img src="https://i.ibb.co/GvBvs5Kk/image-d53643.png" alt="A+ Content Proof">
         </div>
     </div>
-</section>
-</div>
-
-<div id="about" class="page">
-    <section>
-        <h1 style="font-size: 40px; font-weight: 900;">About Me</h1>
-        <h3 style="color: var(--accent); margin-top:10px;">🚀 Amazon Private Label Specialist</h3>
-        <p style="font-size: 18px; margin-top: 20px;">I am a professional Amazon Virtual Assistant dedicated to building and scaling brands through data-driven strategies. My focus is on turning Private Label businesses into profitable assets.
-            
-🔹 2+ years of Amazon FBA experience🔹 Launched & ranked multiple successful products🔹 Skilled in PPC, keyword research & SEO🔹 Expert in Seller Central, A+ Content & storefronts, I’m Abdullah Gull, an Amazon Growth Specialist with a proven track record of helping brands scale through strategy-driven execution. My experience spans across full account management, from product research and keyword optimization to PPC campaign structuring and review-building strategies.With a deep understanding of Amazon's ecosystem, I help brands stand out by improving product visibility, driving targeted traffic, and optimizing listings for conversion. Whether you're launching your first product or scaling an existing catalog, I apply tested methods that enhance ACoS, boost rankings, and ultimately increase sales performance.</p>
-        
-        <div class="milestone">
-            <h3>🏆 Team Milestone: $727K+ In Total Sales</h3>
-            <p>As a core member of the Alpha Spikes team, I have been part of managing a single Amazon account that generated $727,454.49 in total sales.</p>
-        </div>
-
-        <p style="font-weight: bold; margin-bottom: 20px;">My contribution in this achievement:</p>
-        <ul style="margin-left: 20px; margin-bottom: 30px; color: #ccc;">
-            <li>Handling daily tasks for large-volume Private Label accounts.</li>
-            <li>Implementing ranking and PPC techniques under professional supervision.</li>
-            <li>Tracking sales performance and account health for consistent results.</li>
-        </ul>
-
-        <h2>🛠️ My Core Expertise</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
-            <div class="skill-card" style="border-left: 5px solid var(--accent);">🔍 Product Research</div>
-            <div class="skill-card" style="border-left: 5px solid var(--accent);">📦 Sourcing and Logistics</div>
-            <div class="skill-card" style="border-left: 5px solid var(--accent);">📈 PPC and Ranking</div>
-            <div class="skill-card" style="border-left: 5px solid var(--accent);">⚙️ A-Z Management</div>
-        </div>
-    </section>
-</div>
-
-<div id="experience" class="page">
-    <section>
-        <h1 style="font-size: 40px; font-weight: 900;">Experience</h1>
-        <div class="skill-card" style="margin-top: 30px; border-left: 5px solid var(--accent);">
-            <h3 style="color: var(--accent); font-size: 26px;">Amazon Expert</h3>
-            <p style="font-weight: 900; font-size: 18px;">Alpha Spikes · Full-time</p>
-            <p style="color: var(--accent);">Oct 2025 to Present | Punjab, Pakistan</p>
-            <ul style="margin-top: 20px; margin-left: 20px; color: #ccc;">
-                <li>Amazon FBA Specialist | PPC, Listing Optimization and Ranking Expert</li>
-                <li>Amazon Web Services (AWS) Management</li>
-                <li>Amazon VA Operations</li>
-            </ul>
-        </div>
-    </section>
-</div>
-
-<div id="blog" class="page">
-    <section>
-        <h1 style="font-size: 40px; font-weight: 900; margin-bottom: 40px;">Blogs & Case Studies</h1>
-        <div class="blog-post" style="border-bottom: none;">
-            <h2 style="color: var(--accent); font-size: 32px; margin-bottom: 20px;">Success on Upwork: How I, Abdullah Gull, Build My Winning Strategy</h2>
-            <p style="font-size: 18px; line-height: 1.8; margin-bottom: 25px; color: #ccc;">
-                In the world of freelancing, especially on Upwork, competition is fierce. Thousands of bids are placed daily, but projects are awarded only to those who present themselves as a <strong>"Brand."</strong> I, Abdullah Gull, firmly believe that you shouldn't just know how to use tools—you must know how to grow a client's business.
-            </p>
-            <div class="blog-img">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Amazon Results Proof">
-            </div>
-            <div class="review-card"><h4 style="color: var(--accent);">1. My Principle: Trust First, Work Follows</h4><p>On Upwork, the first impact comes from your Profile and Portfolio...</p></div>
-            <div class="review-card"><h4 style="color: var(--accent);">2. The Power of a Portfolio</h4><p>I showcase my professional portfolio in Amazon FBA...</p></div>
-            <div class="milestone" style="text-align: center;">
-                <h4>"Discipline Creates Results, Luck Never Can."</h4>
-                <p>Are You Ready to Scale Your Brand?</p>
-            </div>
-        </div>
-    </section>
-</div>
-
-<footer>
-    <div>
-        <h4>Amazon Seller Central</h4>
-        <ul>
-            <li>Full Service Management</li>
-            <li>SEO for visibility</li>
-            <li>PPC Management</li>
-            <li>Listing Optimization</li>
-            <li>A+ Content / EBC</li>
-            <li>Store Front Creation</li>
-        </ul>
-    </div>
-    <div>
-        <h4>Amazon Vendor Central</h4>
-        <ul>
-            <li>Vendor Onboarding</li>
-            <li>Inventory Management</li>
-            <li>Retail Content & Ads</li>
-            <li>PO & Invoice Management</li>
-            <li>Data-Driven Performance</li>
-        </ul>
-    </div>
-    <div>
-        <h4>Marketplaces</h4>
-        <ul>
-            <li>Amazon | Shopify | Walmart</li>
-            <li>eBay | Etsy | Wayfair</li>
-        </ul>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/abdullah-gull/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://www.facebook.com/share/1JTa6K2z5A/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/abdxxah_965/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://x.com/abdullahamazon" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.tiktok.com/@abdxxah_965" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://snapchat.com/t/v1C05LBv" target="_blank"><i class="fa-brands fa-snapchat-ghost"></i></a>
-        </div>
-    </div>
-</footer>
-
-<div class="footer-bottom">
-    © 2026 Abdullah Gull | Amazon Growth Specialist. All Rights Reserved.
 </div>
 
 <script>
     function showPage(pageId) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         document.getElementById(pageId).classList.add('active');
-        document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-        document.getElementById('btn-' + pageId).classList.add('active');
         window.scrollTo(0, 0);
     }
 </script>
+
 </body>
 </html>
