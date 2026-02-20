@@ -10,111 +10,160 @@
         :root { --gold: #ff9900; --dark: #000000; --light-gray: #111111; --text-gray: #a0a0a0; }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--dark); color: white; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; }
-
-        /* Smooth Section Transitions */
-        section { padding: 100px 10%; opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        section.visible { opacity: 1; transform: translateY(0); }
+        body { background-color: var(--dark); color: white; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; overflow-x: hidden; }
 
         /* Navigation */
-        nav { padding: 30px 10%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); }
-        .logo { font-weight: 800; font-size: 24px; letter-spacing: -1px; }
+        nav { padding: 25px 10%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(0,0,0,0.9); backdrop-filter: blur(15px); border-bottom: 1px solid #222; }
+        .logo { font-weight: 800; font-size: 22px; cursor: pointer; }
         .logo span { color: var(--gold); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 600; font-size: 14px; cursor: pointer; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
 
-        /* Hero - Minimalist & Bold */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; background: radial-gradient(circle at bottom right, #1a1a1a 0%, #000 70%); }
-        .hero h2 { color: var(--gold); text-transform: uppercase; font-size: 14px; letter-spacing: 4px; margin-bottom: 20px; font-weight: 700; }
-        .hero h1 { font-size: clamp(45px, 7vw, 90px); font-weight: 800; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px; }
+        /* Page Handling */
+        .page { display: none; padding-top: 120px; min-height: 100vh; }
+        .page.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        section { padding: 60px 10%; }
+        h1 { font-size: clamp(40px, 6vw, 80px); font-weight: 800; margin-bottom: 20px; letter-spacing: -2px; }
+        .gold-txt { color: var(--gold); }
+
+        /* Home Specific */
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; }
         
-        /* The Clean Slider (No Invert, Just Real Colors) */
-        .brand-strip { background: #080808; padding: 60px 0; border-y: 1px solid #222; overflow: hidden; white-space: nowrap; }
-        .slider-track { display: flex; width: calc(300px * 14); animation: scroll 25s linear infinite; align-items: center; }
-        .slider-track img { height: 55px; margin: 0 50px; opacity: 0.7; transition: 0.4s; filter: brightness(1.2); }
-        .slider-track img:hover { opacity: 1; transform: scale(1.05); }
-
+        /* Brand Slider */
+        .brand-strip { background: #080808; padding: 50px 0; border-y: 1px solid #222; overflow: hidden; margin: 40px 0; }
+        .slider-track { display: flex; width: calc(300px * 14); animation: scroll 25s linear infinite; }
+        .slider-track img { height: 50px; margin: 0 50px; opacity: 0.6; filter: brightness(1.2); }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-300px * 7)); } }
 
-        /* Professional Grid */
-        .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
-        .work-card { background: var(--light-gray); border-radius: 24px; padding: 40px; border: 1px solid #222; transition: 0.4s; }
-        .work-card:hover { border-color: var(--gold); background: #161616; }
-        .work-card h3 { font-size: 28px; margin-bottom: 15px; font-weight: 700; }
-        .work-card p { color: var(--text-gray); margin-bottom: 25px; font-size: 18px; }
-        .work-card img { width: 100%; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        /* Experience Timeline */
+        .timeline { border-left: 2px solid var(--gold); padding-left: 30px; margin-left: 20px; }
+        .time-item { margin-bottom: 40px; position: relative; }
+        .time-item::before { content: ""; position: absolute; left: -41px; top: 5px; width: 20px; height: 20px; background: var(--gold); border-radius: 50%; }
 
-        /* Status Pills */
-        .pill { display: inline-block; padding: 8px 16px; border-radius: 100px; background: rgba(255, 153, 0, 0.1); color: var(--gold); font-size: 12px; font-weight: 700; margin-bottom: 15px; }
+        /* Blog Grid */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .blog-card { background: var(--light-gray); border-radius: 20px; overflow: hidden; border: 1px solid #222; transition: 0.3s; }
+        .blog-card:hover { border-color: var(--gold); transform: translateY(-10px); }
+        .blog-content { padding: 25px; }
 
-        /* CTA Button */
-        .btn-prime { background: var(--gold); color: black; padding: 18px 45px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 18px; transition: 0.3s; display: inline-block; }
-        .btn-prime:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255, 153, 0, 0.3); }
-
+        /* Footer */
+        footer { padding: 50px 10%; text-align: center; border-top: 1px solid #222; color: #555; }
+        .btn-prime { background: var(--gold); color: black; padding: 15px 35px; border-radius: 10px; text-decoration: none; font-weight: 800; display: inline-block; margin-top: 20px; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">ABDULLAH<span>GULL</span></div>
-        <a href="https://wa.me/yournumber" class="btn-prime" style="padding: 12px 25px; font-size: 14px;">GET IN TOUCH</a>
+        <div class="logo" onclick="showPage('home')">ABDULLAH<span>GULL</span></div>
+        <div class="nav-links">
+            <a onclick="showPage('home')" id="link-home" class="active">Home</a>
+            <a onclick="showPage('about')" id="link-about">About</a>
+            <a onclick="showPage('experience')" id="link-experience">Experience</a>
+            <a onclick="showPage('blog')" id="link-blog">Blog</a>
+        </div>
     </nav>
 
-    <section class="hero visible">
-        <h2>Amazon FBA Specialist</h2>
-        <h1>Building Brands.<br>Engineering Results.</h1>
-        <p style="font-size: 20px; color: var(--text-gray); max-width: 650px; margin-bottom: 40px;">
-            Expert management for Private Label brands. We don't just optimize listings; we build market leaders.
-        </p>
-        <a href="#work" class="btn-prime">VIEW CASE STUDIES</a>
-    </section>
+    <div id="home" class="page active">
+        <section class="hero">
+            <h2 class="gold-txt" style="letter-spacing: 5px;">STRATEGIC GROWTH</h2>
+            <h1>Scale Your Brand<br>To The Next Level.</h1>
+            <p style="max-width: 600px; color: var(--text-gray);">Expert Amazon FBA management with a focus on data, ranking, and aggressive PPC scaling.</p>
+            <a href="https://wa.me/yournumber" class="btn-prime">START GROWING</a>
+        </section>
 
-    <div class="brand-strip">
-        <div class="slider-track">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+        <div class="brand-strip">
+            <div class="slider-track">
+                <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+                <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+                <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+                <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+                <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+                <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+                <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Client">
+            </div>
         </div>
     </div>
 
-    <section id="work" class="visible">
-        <div class="work-grid">
-            <div class="work-card">
-                <div class="pill">STRATEGY & AUDIT</div>
-                <h3>E-commerce Audits</h3>
-                <p>Identifying bottlenecks and unlocking hidden revenue streams through data-driven analysis.</p>
-                <img src="https://i.ibb.co/GvBvs5Kk/image-d53669.png" alt="Audit Report">
+    <div id="about" class="page">
+        <section>
+            <h2 class="gold-txt">WHO IS ABDULLAH?</h2>
+            <h1>Driven by Data,<br>Proven by Results.</h1>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 40px;">
+                <p style="color: var(--text-gray); font-size: 18px;">
+                    With over 2 years of intensive experience in the Amazon ecosystem, I've mastered the art of brand building. My approach combines technical SEO with aggressive PPC management to ensure maximum visibility and ROI.
+                </p>
+                <div style="background: var(--light-gray); padding: 30px; border-radius: 20px;">
+                    <h3 class="gold-txt" style="font-size: 40px;">$727K+</h3>
+                    <p>Managed Revenue for Private Label Brands across US/UK markets.</p>
+                </div>
             </div>
-            <div class="work-card">
-                <div class="pill">CONVERSION DESIGN</div>
-                <h3>A+ Content Mastery</h3>
-                <p>High-end visual storytelling that doubles your conversion rate and builds customer trust.</p>
-                <img src="https://i.ibb.co/GvBvs5Kk/image-d53643.png" alt="EBC Design">
+        </section>
+    </div>
+
+    <div id="experience" class="page">
+        <section>
+            <h2 class="gold-txt">CAREER PATH</h2>
+            <h1>Professional Journey.</h1>
+            <div class="timeline" style="margin-top: 50px;">
+                <div class="time-item">
+                    <h3>Senior Amazon Consultant</h3>
+                    <p class="gold-txt">2023 - Present</p>
+                    <p style="color: var(--text-gray);">Managing A-Z operations for 5+ high-ticket brands, focusing on ranking and inventory health.</p>
+                </div>
+                <div class="time-item">
+                    <h3>PPC Specialist</h3>
+                    <p class="gold-txt">2022 - 2023</p>
+                    <p style="color: var(--text-gray);">Reduced ACOS by 15% on average for clients while maintaining 25% month-on-month growth.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <section class="visible" style="text-align: center; background: #050505;">
-        <h2 style="font-size: 50px; margin-bottom: 20px;">Ready to scale to $1M?</h2>
-        <p style="margin-bottom: 40px; color: var(--text-gray);">Currently accepting 2 new high-potential brands for Q3 2026.</p>
-        <a href="#" class="btn-prime">BOOK A DISCOVERY CALL</a>
-    </section>
+    <div id="blog" class="page">
+        <section>
+            <h2 class="gold-txt">INSIGHTS</h2>
+            <h1>Amazon Mastery Blog.</h1>
+            <div class="blog-grid" style="margin-top: 50px;">
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <span class="gold-txt" style="font-size: 12px; font-weight: 700;">STRATEGY</span>
+                        <h3 style="margin: 10px 0;">How to Scale PPC in 2026</h3>
+                        <p style="color: var(--text-gray); font-size: 14px;">Discover the latest algorithmic shifts in Amazon advertising...</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <span class="gold-txt" style="font-size: 12px; font-weight: 700;">DESIGN</span>
+                        <h3 style="margin: 10px 0;">A+ Content Secrets</h3>
+                        <p style="color: var(--text-gray); font-size: 14px;">Why visual storytelling is the key to 20% higher conversion...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-    <footer style="padding: 50px 10%; border-top: 1px solid #222; text-align: center; color: #555;">
-        <p>© 2026 Abdullah Gull. All Rights Reserved.</p>
+    <footer>
+        <p>© 2026 Abdullah Gull. Built for High-Performance Brands.</p>
     </footer>
 
     <script>
-        // Smooth scroll appearance
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('section').forEach(section => observer.observe(section));
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            // Remove active class from links
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+            
+            // Show requested page
+            document.getElementById(pageId).classList.add('active');
+            // Set nav link active
+            document.getElementById('link-' + pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
     </script>
 
 </body>
