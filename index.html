@@ -9,51 +9,67 @@
     <style>
         :root { --primary: #000; --accent: #ff9900; --white: #ffffff; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; background: var(--white); overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); overflow-x: hidden; }
 
-        /* --- FIXED SLIDER WITH NEW LINK --- */
-        .brands-slider-section { 
-            background: #111; 
-            padding: 25px 0; 
-            overflow: hidden; 
-            border-bottom: 3px solid var(--accent);
+        /* --- 2nd IMAGE STYLE SLIDER (White/Light Background) --- */
+        .brands-section { 
+            background: #f4f4f4; /* Light background jaisa 2nd image mein hai */
+            padding: 40px 0; 
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
         }
-        .slider-wrapper { display: flex; width: 200%; animation: slide-brands 20s linear infinite; align-items: center; }
-        .slider-wrapper img { height: 60px; margin: 0 50px; filter: brightness(1); }
-        
-        @keyframes slide-brands {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        .brands-section h3 { 
+            font-size: 18px; 
+            font-weight: 800; 
+            color: #333; 
+            margin-bottom: 25px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .brands-section h3 span { color: var(--accent); }
+
+        .slider-container { width: 100%; overflow: hidden; white-space: nowrap; position: relative; }
+        .slider-track { display: inline-block; animation: scroll 30s linear infinite; }
+        .slider-track img { 
+            height: 45px; /* Logo size */
+            margin: 0 40px; 
+            display: inline-block;
+            vertical-align: middle;
+            filter: grayscale(1); /* Professional look */
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+        .slider-track img:hover { filter: grayscale(0); opacity: 1; }
+
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
         }
 
+        /* --- Header & Hero --- */
         header { 
             background: #000; padding: 15px 8%; display: flex; 
             justify-content: space-between; align-items: center; 
-            position: sticky; top: 0; z-index: 1000; 
-            border-bottom: 3px solid var(--accent);
+            position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--accent);
         }
-        .logo { color: #fff; font-weight: 900; font-size: 24px; text-transform: uppercase; display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo { color: #fff; font-weight: 900; font-size: 24px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
         .logo span { color: var(--accent); }
-        .logo img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; }
-        
-        nav button { background: none; border: none; color: #fff; font-weight: 700; margin-left: 20px; cursor: pointer; transition: 0.3s; }
+        .logo img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--accent); }
+
+        nav button { background: none; border: none; color: #fff; font-weight: 700; margin-left: 20px; cursor: pointer; }
         nav button.active { color: var(--accent); }
 
-        .hero { background: #000; color: #fff; padding: 100px 8% 60px; }
-        .hero h1 { font-size: clamp(35px, 6vw, 60px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .hero { background: #000; color: #fff; padding: 80px 8% 50px; }
+        .hero h1 { font-size: clamp(30px, 5vw, 55px); font-weight: 900; line-height: 1.1; }
         .hero span { color: var(--accent); }
-        .hero p { font-size: 18px; color: #ccc; max-width: 850px; }
+        .hero p { color: #ccc; margin-top: 15px; max-width: 800px; }
 
-        section { padding: 80px 8%; }
-        .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
-        .work-card h2 { font-size: 32px; font-weight: 900; margin-bottom: 15px; }
-        .work-card p { color: #555; margin-bottom: 20px; }
-        .work-card img { width: 100%; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); border: 1px solid #eee; }
-
-        footer { background: #000; color: #fff; padding: 60px 8%; text-align: center; border-top: 1px solid #222; }
-        .social-icons { margin: 25px 0; }
-        .social-icons a { color: #fff; font-size: 24px; margin: 0 15px; transition: 0.3s; }
-        .social-icons a:hover { color: var(--accent); transform: translateY(-5px); }
+        /* Work Grid */
+        section { padding: 60px 8%; }
+        .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .work-card h2 { font-size: 28px; font-weight: 900; margin-bottom: 10px; }
+        .work-card img { width: 100%; border-radius: 10px; margin-top: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
         .page { display: none; }
         .page.active { display: block; }
@@ -63,13 +79,12 @@
 
 <header>
     <a href="#" class="logo">
-        <img src="https://i.ibb.co/QvBvs5Kk/Abdullah-Gull.jpg" alt="Abdullah Gull">
+        <img src="https://i.ibb.co/QvBvs5Kk/Abdullah-Gull.jpg" alt="Logo">
         <div>Abdullah <span>Gull</span></div>
     </a>
     <nav>
-        <button onclick="showPage('home')" id="btn-home" class="active">HOME</button>
-        <button onclick="showPage('about')" id="btn-about">ABOUT</button>
-        <button onclick="showPage('experience')">EXPERIENCE</button>
+        <button onclick="showPage('home')" class="active">HOME</button>
+        <button onclick="showPage('about')">ABOUT</button>
     </nav>
 </header>
 
@@ -77,28 +92,32 @@
     <div class="hero">
         <h2>AMAZON FBA SPECIALIST</h2>
         <h1><span>Building Brands,</span><br>Scaling Amazon Success.</h1>
-        <p>PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert</p>
+        <p>PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience</p>
     </div>
 
-    <div class="brands-slider-section">
-        <div class="slider-wrapper">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Trusted Brands">
-            <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Trusted Brands">
+    <div class="brands-section">
+        <h3>BRANDS I HAVE <span>WORKED WITH</span></h3>
+        <div class="slider-container">
+            <div class="slider-track">
+                <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Brand Logo">
+                <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Brand Logo">
+                <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Brand Logo">
+                <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Brand Logo">
+            </div>
         </div>
     </div>
 
     <section>
         <div class="work-grid">
             <div class="work-card">
-                <h2>Comprehensive <span style="color: var(--accent);">Account Audits</span></h2>
-                <p>Reviewing listings, keywords, ads, and health to uncover hidden opportunities for your Amazon store.</p>
-                <img src="https://i.ibb.co/GvBvs5Kk/image-d53669.png" alt="Audit Sheet">
+                <h2>Account <span>Audits</span></h2>
+                <p>Data-driven insights for store growth.</p>
+                <img src="https://i.ibb.co/GvBvs5Kk/image-d53669.png" alt="Audit">
             </div>
-
             <div class="work-card">
-                <h2>Crafting Engaging <span style="color: var(--accent);">A+ Content</span></h2>
-                <p>Mobile-friendly layouts designed to boost customer trust and conversion rates.</p>
-                <img src="https://i.ibb.co/GvBvs5Kk/image-d53643.png" alt="A+ Content Sample">
+                <h2>A+ <span>Content</span></h2>
+                <p>High-converting brand storytelling.</p>
+                <img src="https://i.ibb.co/GvBvs5Kk/image-d53643.png" alt="A+ Content">
             </div>
         </div>
     </section>
@@ -108,20 +127,9 @@
     function showPage(pageId) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         document.getElementById(pageId).classList.add('active');
-        document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-        event.target.classList.add('active');
         window.scrollTo(0, 0);
     }
 </script>
-
-<footer>
-    <div class="social-icons">
-        <a href="https://www.linkedin.com/in/abdullah-gull/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://www.facebook.com/share/1JTa6K2z5A/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/abdxxah_965/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-    </div>
-    <p>© 2026 Abdullah Gull | Amazon Growth Specialist</p>
-</footer>
 
 </body>
 </html>
