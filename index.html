@@ -246,50 +246,206 @@
     </section>
 </div>
 
+<style>
+    /* --- Professional Footer Styling --- */
+    footer {
+        background: #000;
+        color: #fff;
+        padding: 60px 8% 30px;
+        font-family: 'Inter', sans-serif;
+        border-top: 1px solid #222;
+        width: 100%;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+
+    .footer-column h4 {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        text-transform: none; /* Exact as image */
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 12px;
+        color: #888;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .footer-column ul li:hover {
+        color: var(--accent);
+        padding-left: 5px;
+    }
+
+    /* --- AI & Social Section --- */
+    .footer-bottom-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding-top: 40px;
+        border-top: 1px solid #111;
+    }
+
+    .ai-section h5, .social-section h5 {
+        font-size: 16px;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .icon-group {
+        display: flex;
+        gap: 15px;
+    }
+
+    .ai-icon {
+        width: 40px;
+        height: 40px;
+        background: #1a1a1a;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: #fff;
+        border: 1px solid #333;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+        background: #1a1a1a; /* Dark as per image */
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s;
+        border: 1px solid #333;
+    }
+
+    .social-btn:hover {
+        background: var(--accent);
+        color: #000;
+    }
+
+    .legal-footer {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        color: #555;
+        font-size: 12px;
+        border-top: 1px solid #111;
+        padding-top: 20px;
+    }
+</style>
+
 <footer>
-    <div>
-        <h4>Amazon Seller Central</h4>
-        <ul>
-            <li>Full Service Management</li>
-            <li>SEO for visibility</li>
-            <li>PPC Management</li>
-            <li>Listing Optimization</li>
-            <li>A+ Content / EBC</li>
-            <li>Store Front Creation</li>
-        </ul>
-    </div>
-    <div>
-        <h4>Amazon Vendor Central</h4>
-        <ul>
-            <li>Vendor Onboarding</li>
-            <li>Inventory Management</li>
-            <li>Retail Content & Ads</li>
-            <li>PO & Invoice Management</li>
-            <li>Data-Driven Performance</li>
-        </ul>
-    </div>
-    <div>
-        <h4>Marketplaces</h4>
-        <ul>
-            <li>Amazon | Shopify | Walmart</li>
-            <li>eBay | Etsy | Wayfair</li>
-            <li>Home Depot | Newegg</li>
-        </ul>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/abdullah-gull/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://www.facebook.com/share/1JTa6K2z5A/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/abdxxah_965/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://x.com/abdullahamazon" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.tiktok.com/@abdxxah_965" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://snapchat.com/t/v1C05LBv" target="_blank"><i class="fa-brands fa-snapchat-ghost"></i></a>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h4>Amazon Seller Central</h4>
+            <ul>
+                <li>Full Service Management</li>
+                <li>SEO for better visibility</li>
+                <li>PPC Management</li>
+                <li>Listing Optimization</li>
+                <li>Image Design (CTR Main Image Hack)</li>
+                <li>A+ Content / EBC</li>
+                <li>Amazon Store Front Creation</li>
+                <li>Account Suspension Assistance</li>
+                <li>Listing Reinstatement</li>
+                <li>Trademark Registration</li>
+                <li>UPC to GS1 Barcode Change</li>
+                <li>Clawback Lost Shipment</li>
+                <li>Book a Coaching Call</li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Amazon Vendor Central</h4>
+            <ul>
+                <li>Vendor Onboarding</li>
+                <li>Inventory Management</li>
+                <li>Retail Content & Advertising</li>
+                <li>A+ Content Creation</li>
+                <li>Sponsored Products & Brands Ads</li>
+                <li>Product Listings Optimization</li>
+                <li>Purchase Order Management</li>
+                <li>Invoice Management</li>
+                <li>Data-Driven Performance Analytics</li>
+                <li>Shipment & Delivery Optimization</li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Marketplaces</h4>
+            <ul>
+                <li>Amazon</li>
+                <li>Shopify</li>
+                <li>Wayfair</li>
+                <li>Walmart</li>
+                <li>Home Depot</li>
+                <li>eBay</li>
+                <li>Etsy</li>
+                <li>Asenda</li>
+                <li>Newegg</li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+                <li>Case Studies</li>
+                <li>Testimonials</li>
+                <li>Leadership</li>
+                <li>Jobs</li>
+                <li>History</li>
+                <li>Press</li>
+                <li>Articles</li>
+                <li>News</li>
+                <li>Events</li>
+            </ul>
         </div>
     </div>
+
+    <div class="footer-bottom-row">
+        <div class="ai-section">
+            <h5>Ask AI for a summary of AlphaSpikes</h5>
+            <div class="icon-group">
+                <div class="ai-icon"><i class="fa-solid fa-ghost"></i></div> <div class="ai-icon"><i class="fa-solid fa-sun"></i></div>   <div class="ai-icon"><i class="fa-solid fa-brain"></i></div> <div class="ai-icon"><i class="fa-solid fa-sparkles"></i></div> <div class="ai-icon"><i class="fa-solid fa-circle"></i></div>  </div>
+        </div>
+
+        <div class="social-section">
+            <h5>Follow us on our social accounts</h5>
+            <div class="icon-group">
+                <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="legal-footer">
+        <div>Term & Conditions | Privacy Policies</div>
+        <div>@2025, all rights are reserved by AlphaSpikes.</div>
+    </div>
 </footer>
-
-<div class="footer-bottom">
-    © 2026 Abdullah Gull | Amazon Growth Specialist. All Rights Reserved.
-</div>
-
 <script>
     function showPage(pageId) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
