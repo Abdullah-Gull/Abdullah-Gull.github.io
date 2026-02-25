@@ -3,66 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ABDULLAH GULL – Amazon & Freelance Expert</title>
-    <meta name='robots' content='index, follow' />
+    <title>Abdullah Gull – Amazon Growth Expert</title>
     
     <style>
         :root {
-            --primary-color: #BFF747; /* Neon Green for accent */
-            --bg-color: #000000;
-            --text-color: #ffffff;
+            --primary-color: #D4AF37; /* Gold */
+            --secondary-color: #1a1a1a; /* Dark Grey */
+            --text-white: #ffffff;
+            --accent-green: #BFF747; /* Jo aapne pehle dikhaya tha */
         }
+
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--secondary-color);
+            color: var(--text-white);
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
+            padding: 0;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+
+        /* Nav Bar Style */
+        header {
+            background: rgba(0, 0, 0, 0.8);
             padding: 20px;
-            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
         }
-        .nav-link {
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-weight: 500;
         }
-        .nav-link:hover {
-            color: var(--primary-color);
+
+        nav a:hover {
+            color: var(--accent-green);
         }
-        ::selection {
+
+        /* Tagra Portfolio Hero Section */
+        .hero {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1200x400'); /* Yahan apni photo lagayein */
+            background-size: cover;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .btn-touch {
             background-color: var(--primary-color);
-            color: #000000;
+            color: black;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Selection Color */
+        ::selection {
+            background-color: var(--accent-green);
+            color: #000;
         }
     </style>
 </head>
 
 <body>
-    <header style="padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333;">
-        <div class="logo">
-            <h2 style="margin: 0; color: var(--primary-color);">ABDULLAH GULL</h2>
-        </div>
+
+    <header>
+        <div class="logo">Abdullah Gull</div>
         <nav>
-            <a href="#" class="nav-link">Home</a>
-            <a href="#" class="nav-link">Amazon Services</a>
-            <a href="#" class="nav-link">Portfolio</a>
-            <a href="https://linktr.ee/abdullahgull1" target="_blank" class="nav-link" style="background: var(--primary-color); color: black; padding: 8px 15px; border-radius: 5px;">Contact Me</a>
+            <a href="#">Home</a>
+            <a href="#">Amazon Services</a>
+            <a href="#">PPC Case Studies</a>
+            <a href="#">Contact</a>
         </nav>
     </header>
 
-    <main style="padding: 50px 20px; text-align: center;">
-        <div class="glass-card" style="max-width: 800px; margin: auto;">
-            <h1 style="font-size: 3rem;">Amazon Expert & Freelancer</h1>
-            <p style="font-size: 1.2rem; color: #ccc;">Helping Brands Scale on Amazon with Data-Driven Strategies.</p>
-            <div style="margin-top: 30px;">
-                <p>Specializing in: Product Hunting | PPC Management | Listing Optimization</p>
-            </div>
-        </div>
-    </main>
+    <section class="hero">
+        <h1>Building Brands on Amazon</h1>
+        <p>Expert in FBA Wholesale, Private Label, and Scalable PPC Strategies.</p>
+        <a href="#" class="btn-touch">Let's Talk Business</a>
+    </section>
+
+    <div style="padding: 50px; text-align: center;">
+        <h2 style="color: var(--primary-color);">My Amazon Expertise</h2>
+        <p>I help sellers scale their businesses using data-driven insights and clean structure.</p>
+    </div>
+
 </body>
 </html>
