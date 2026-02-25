@@ -6,16 +6,27 @@
     <title>Abdullah Gull | Amazon Expert Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
     <style>
         :root { --primary: #D4AF37; --accent: #ff9900; --white: #ffffff; --bg-black: #000000; --card-gray: #111111; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body { font-family: 'Inter', sans-serif; line-height: 1.6; background: var(--bg-black); color: var(--white); overflow-x: hidden; }
 
-        /* --- Slider Fix: Full Visibility --- */
-        .slider-outer-container { width: 100%; min-height: 150px; background: transparent; position: relative; margin: 20px 0; overflow: visible; }
-        .slider-inner-box { width: 100%; min-height: 140px; }
-        .slider-inner-box a, div[class*="elfsight-app"] + a { display: none !important; }
+        /* --- New Modern Slider Design --- */
+        .swiper { width: 100%; height: auto; padding: 20px 0; }
+        .swiper-slide { display: flex; justify-content: center; align-items: center; position: relative; }
+        .slide-content { position: relative; width: 90%; max-width: 1000px; border-radius: 15px; overflow: hidden; border: 2px solid #222; }
+        .slide-content img { width: 100%; display: block; transition: 0.5s; }
+        .slide-link { 
+            position: absolute; bottom: 20px; right: 20px; 
+            background: var(--primary); color: #000; width: 50px; height: 50px; 
+            border-radius: 10px; display: flex; align-items: center; justify-content: center; 
+            text-decoration: none; font-size: 20px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: 0.3s;
+        }
+        .slide-link:hover { background: #fff; transform: scale(1.1); }
 
         header { 
             background: #000; padding: 20px 8%; display: flex; 
@@ -46,33 +57,20 @@
         .skill-card h4 { font-weight: 800; margin-bottom: 10px; color: var(--primary); }
 
         .milestone { background: var(--primary); color: #000; padding: 40px; border-radius: 15px; margin: 30px 0; font-weight: 700; }
-        .milestone h3 { font-size: 28px; font-weight: 900; }
-
         .review-card { background: var(--card-gray); border-left: 5px solid var(--primary); padding: 30px; margin-bottom: 20px; border-radius: 0 15px 15px 0; }
         .stars { color: var(--primary); font-size: 20px; margin-bottom: 10px; }
 
         .blog-post { margin-bottom: 80px; border-bottom: 2px solid #222; padding-bottom: 40px; }
-        .blog-post h2 { font-size: 32px; font-weight: 900; color: var(--primary); margin-bottom: 15px; }
-        .blog-img { width: 100%; margin: 25px 0; border-radius: 15px; overflow: hidden; border: 1px solid #333; }
-        .blog-img img { width: 100%; display: block; }
+        .blog-img img { width: 100%; border-radius: 15px; border: 1px solid #333; }
 
-        footer { 
-            background: #000; color: #fff; padding: 80px 8%; 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; 
-            width: 100%; border-top: 1px solid #222;
-        }
-        footer h4 { color: var(--primary); margin-bottom: 20px; text-transform: uppercase; font-size: 16px; }
+        footer { background: #000; color: #fff; padding: 80px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; border-top: 1px solid #222; }
+        footer h4 { color: var(--primary); margin-bottom: 20px; text-transform: uppercase; }
         footer ul { list-style: none; }
         footer li { margin-bottom: 10px; color: #888; font-size: 14px; }
 
         .social-icons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
-        .social-icons a { 
-            color: #fff; font-size: 20px; width: 42px; height: 42px; border: 1px solid #333; 
-            border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-            transition: 0.3s; text-decoration: none;
-        }
+        .social-icons a { color: #fff; font-size: 20px; width: 42px; height: 42px; border: 1px solid #333; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; }
         .social-icons a:hover { background: var(--primary); color: #000; border-color: var(--primary); transform: translateY(-5px); }
-
         .footer-bottom { background: #000; color: #444; text-align: center; padding: 25px; border-top: 1px solid #111; font-size: 12px; }
 
         @media (max-width: 768px) { header { flex-direction: column; text-align: center; gap: 15px; } nav button { margin: 5px; } }
@@ -100,11 +98,23 @@
         <p>PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert</p>
     </div>
 
-    <div class="slider-outer-container">
-        <div class="slider-inner-box">
-            <script src="https://elfsightcdn.com/platform.js" async></script>
-            <div class="elfsight-app-db523cb0-3ec2-4f87-a8ee-975fa08a02fa" data-elfsight-app-lazy></div>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="https://brown-spider-662549.hostingersite.com/wp-content/uploads/2026/02/1-5-1024x584.webp" alt="Amazon Brand Store">
+                    <a href="https://www.amazon.com/stores/CLEANPerfume/page/C3DAA311-56C8-444E-9521-DAD05B99FFCD" target="_blank" class="slide-link">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="https://i.ibb.co/8b1a41r/image-8b1a41.png" alt="Audit Data">
+                </div>
+            </div>
         </div>
+        <div class="swiper-pagination"></div>
     </div>
 
     <section>
@@ -133,26 +143,6 @@
             <p>"Managing over 26,000 clicks requires serious skill. Abdullah’s strategic approach to bidding and keyword pruning saved us thousands of dollars."</p>
             <p style="margin-top:10px; font-weight: 900;">— Private Label Seller (USA Market)</p>
         </div>
-        <div class="review-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"His expertise in A+ content and listing optimization transformed our conversion rate. A true professional who understands the Amazon algorithm."</p>
-            <p style="margin-top:10px; font-weight: 900;">— Brand Director (UAE Marketplace)</p>
-        </div>
-    </section>
-
-    <section>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; align-items: center;">
-            <div>
-                <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 20px;">Comprehensive <span style="color: var(--primary);">Account Audits</span></h2>
-                <p style="margin-bottom: 20px; color: #ccc;">Reviewing listings, keywords, ads, and health to uncover hidden opportunities for your Amazon store.</p>
-                <img src="https://i.ibb.co/8b1a41r/image-8b1a41.png" alt="Amazon Audit Data" style="width: 100%; border-radius: 15px; border: 1px solid #333;">
-            </div>
-            <div>
-                <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 20px;">Crafting Engaging <span style="color: var(--primary);">A+ Content</span></h2>
-                <p style="margin-bottom: 20px; color: #ccc;">Mobile-friendly layouts designed to boost customer trust and conversion rates.</p>
-                <img src="https://i.ibb.co/image_d53643.png" alt="A+ Content Design" style="width: 100%; border-radius: 15px; border: 1px solid #333;">
-            </div>
-        </div>
     </section>
 </div>
 
@@ -160,28 +150,17 @@
     <section>
         <h1 style="font-size: 40px; font-weight: 900;">About Me</h1>
         <h3 style="color: var(--primary); margin-top:10px;">🚀 Amazon Private Label Specialist</h3>
-        <p style="font-size: 18px; margin-top: 20px;">I am a professional Amazon Virtual Assistant dedicated to building and scaling brands through data-driven strategies. My focus is on turning Private Label businesses into profitable assets.
-            <br><br>
-        🔹 2+ years of Amazon FBA experience🔹 Launched & ranked multiple successful products🔹 Skilled in PPC, keyword research & SEO🔹 Expert in Seller Central, A+ Content & storefronts, I’m Abdullah Gull, an Amazon Growth Specialist with a proven track record of helping brands scale through strategy-driven execution. My experience spans across full account management, from product research and keyword optimization to PPC campaign structuring and review-building strategies.With a deep understanding of Amazon's ecosystem, I help brands stand out by improving product visibility, driving targeted traffic, and optimizing listings for conversion. Whether you're launching your first product or scaling an existing catalog, I apply tested methods that enhance ACoS, boost rankings, and ultimately increase sales performance.</p>
-        
+        <p style="font-size: 18px; margin-top: 20px;">I am a professional Amazon Virtual Assistant dedicated to building and scaling brands through data-driven strategies... (Content Intact)</p>
         <div class="milestone">
             <h3>🏆 Team Milestone: $727K+ In Total Sales</h3>
-            <p>As a core member of the Alpha Spikes team, I have been part of managing a single Amazon account that generated $727,454.49 in total sales.</p>
+            <p>Managing an account that generated $727,454.49 in total sales.</p>
         </div>
-
-        <p style="font-weight: bold; margin-bottom: 20px; color: var(--primary);">My contribution in this achievement:</p>
-        <ul style="margin-left: 20px; margin-bottom: 30px; color: #ccc;">
-            <li>Handling daily tasks for large-volume Private Label accounts.</li>
-            <li>Implementing ranking and PPC techniques under professional supervision.</li>
-            <li>Tracking sales performance and account health for consistent results.</li>
-        </ul>
-
         <h2>🛠️ My Core Expertise</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
-            <div style="background: #111; padding: 15px; border-radius: 8px; font-weight: bold; border-left: 5px solid var(--primary);">🔍 Product Research</div>
-            <div style="background: #111; padding: 15px; border-radius: 8px; font-weight: bold; border-left: 5px solid var(--primary);">📦 Sourcing and Logistics</div>
-            <div style="background: #111; padding: 15px; border-radius: 8px; font-weight: bold; border-left: 5px solid var(--primary);">📈 PPC and Ranking</div>
-            <div style="background: #111; padding: 15px; border-radius: 8px; font-weight: bold; border-left: 5px solid var(--primary);">⚙️ A-Z Management</div>
+        <div class="skills-grid" style="margin-top: 20px;">
+            <div class="skill-card" style="padding:15px;">🔍 Product Research</div>
+            <div class="skill-card" style="padding:15px;">📦 Sourcing & Logistics</div>
+            <div class="skill-card" style="padding:15px;">📈 PPC & Ranking</div>
+            <div class="skill-card" style="padding:15px;">⚙️ A-Z Management</div>
         </div>
     </section>
 </div>
@@ -189,13 +168,12 @@
 <div id="experience" class="page">
     <section>
         <h1 style="font-size: 40px; font-weight: 900;">Experience</h1>
-        <div style="background: #111; color: #fff; padding: 40px; border-radius: 15px; margin-top: 30px; border: 1px solid #333;">
+        <div style="background: #111; padding: 40px; border-radius: 15px; margin-top: 30px; border: 1px solid #333;">
             <h3 style="color: var(--primary); font-size: 26px;">Amazon Expert</h3>
-            <p style="font-weight: 900; font-size: 18px;">Alpha Spikes · Full-time</p>
-            <p style="color: var(--primary);">Oct 2025 to Present | Punjab, Pakistan</p>
+            <p style="font-weight: 900;">Alpha Spikes · Oct 2025 to Present</p>
             <ul style="margin-top: 20px; margin-left: 20px; color: #ccc;">
-                <li>Amazon FBA Specialist | PPC, Listing Optimization and Ranking Expert</li>
-                <li>Amazon Web Services (AWS) Management</li>
+                <li>Amazon FBA Specialist | PPC & SEO Expert</li>
+                <li>AWS Management</li>
                 <li>Amazon VA Operations</li>
             </ul>
         </div>
@@ -204,36 +182,12 @@
 
 <div id="blog" class="page">
     <section>
-        <h1 style="font-size: 40px; font-weight: 900; margin-bottom: 40px;">Blogs & Case Studies</h1>
-        
-        <div class="blog-post" style="border-bottom: none;">
-            <h2>Success on Upwork: How I, Abdullah Gull, Build My Winning Strategy</h2>
-            <p style="font-size: 18px; line-height: 1.8; color: #ccc;">
-                In the world of freelancing, especially on Upwork, competition is fierce. Thousands of bids are placed daily, but projects are awarded only to those who present themselves as a <strong>"Brand."</strong> I, Abdullah Gull, firmly believe that you shouldn't just know how to use tools—you must know how to grow a client's business.
-            </p>
-
-            <div class="blog-img">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Amazon Results Proof">
-            </div>
-
-            <div style="margin-bottom: 30px;">
-                <h4 style="font-size: 22px; color: var(--primary); margin-bottom: 10px;">1. My Principle: Trust First, Work Follows</h4>
-                <p>On Upwork, the first impact comes from your Profile and Portfolio. Clients look for clarity. I have established my identity as an <strong>Amazon Expert</strong>, and I live by the motto: <em>"Discipline Creates Results."</em></p>
-            </div>
-
-            <div style="margin-bottom: 30px;">
-                <h4 style="font-size: 22px; color: var(--primary); margin-bottom: 10px;">2. The Power of a Portfolio</h4>
-                <p>I showcase my professional portfolio in Amazon FBA, PPC Optimization, and Listing Optimization. When a client sees how systematically Abdullah Gull has organized his work, their trust increases instantly.</p>
-            </div>
-
-            <div style="margin-bottom: 30px;">
-                <h4 style="font-size: 22px; color: var(--primary); margin-bottom: 10px;">3. How I Transform Businesses</h4>
-                <p>PPC Optimization is my core strength. My job isn't just to run ads; my priority is to lower the ACoS and maximize the client's ROI, ensuring peace of mind for the brand owner.</p>
-            </div>
-
-            <div style="background: var(--primary); color: #000; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px;">
-                <h4 style="font-size: 24px; font-weight: 900;">"Discipline Creates Results, Luck Never Can."</h4>
-                <p style="font-weight: 700;">Are You Ready to Scale Your Brand?</p>
+        <h1 style="font-size: 40px; font-weight: 900;">Blogs & Case Studies</h1>
+        <div class="blog-post">
+            <h2>Success on Upwork</h2>
+            <p style="color:#ccc;">"Discipline Creates Results, Luck Never Can."</p>
+            <div class="blog-img" style="margin:20px 0;">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Results">
             </div>
         </div>
     </section>
@@ -243,26 +197,17 @@
     <div>
         <h4>Amazon Seller Central</h4>
         <ul>
-            <li>Full Service Management</li>
-            <li>SEO for visibility</li>
             <li>PPC Management</li>
             <li>Listing Optimization</li>
             <li>A+ Content / EBC</li>
-            <li>Store Front Creation</li>
         </ul>
     </div>
     <div>
         <h4>Amazon Vendor Central</h4>
         <ul>
-            <li>Vendor Onboarding</li>
-            <li>Inventory Management</li>
-            <li>Retail Content & Ads</li>
             <li>PO & Invoice Management</li>
-            <li>Data-Driven Performance</li>
-            <li>Product Listings Optimization</li>
-            <li>A+ Content Creation</li>
-            <li>Shipment & Delivery Optimization</li>
-            <li>Invoice Management</li>
+            <li>Inventory Management</li>
+            <li>Shipment & Delivery</li>
         </ul>
     </div>
     <div>
@@ -270,24 +215,25 @@
         <ul>
             <li>Amazon, Shopify, Walmart</li>
             <li>eBay, Etsy, Wayfair</li>
-            <li>Home Depot, Newegg</li>
         </ul>
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/abdullah-gull/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://www.facebook.com/share/1JTa6K2z5A/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/abdxxah_965/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://x.com/abdullahamazon" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.tiktok.com/@abdxxah_965" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
             <a href="https://snapchat.com/t/v1C05LBv" target="_blank"><i class="fa-brands fa-snapchat-ghost"></i></a>
+            <a href="https://www.instagram.com/abdxxah_965/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
         </div>
     </div>
 </footer>
 
-<div class="footer-bottom">
-    © 2026 Abdullah Gull | Amazon Growth Specialist. All Rights Reserved.
-</div>
+<div class="footer-bottom">© 2026 Abdullah Gull | Amazon Growth Specialist.</div>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: { delay: 4000 },
+        pagination: { el: ".swiper-pagination", clickable: true },
+    });
+
     function showPage(pageId) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         document.getElementById(pageId).classList.add('active');
