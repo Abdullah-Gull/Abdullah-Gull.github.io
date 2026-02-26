@@ -16,20 +16,39 @@
 
         /* Navigation */
 header { 
-    background: rgba(0, 0, 0, 0.85); /* Modern Glass Look */
-    backdrop-filter: blur(8px); 
-    padding: 8px 8% 15px; /* Pehle ye 50px tha, ab 15px kar diya taake faisla kam ho jaye */
+    background: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(10px); 
+    /* Padding ko balance kiya taake upar se jagah banay */
+    padding: 20px 8% 25px; 
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
     position: sticky; 
     top: 0; 
     z-index: 1000; 
-    border-radius: 0 0 60px 60px; /* Stylish Curve */
+    border-radius: 0 0 60px 60px; 
     border-bottom: 2px solid var(--primary);
-    height: 70px; /* Header ki total height ko fix kar diya */
+    /* Height ko auto rakhein taake content khud ko adjust kare */
+    height: auto; 
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Logo ko thoda niche push karne ke liye */
+    margin-top: 5px; 
+}
+
+.logo img { 
+    width: 50px !important; 
+    height: 50px !important; 
+    border-radius: 50%; 
+    border: 2px solid var(--primary); 
+    object-fit: cover;
+    object-position: top;
+    display: block !important;
+}
 .logo {
     display: flex;
     align-items: center;
