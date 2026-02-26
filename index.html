@@ -18,8 +18,7 @@
 header { 
     background: rgba(0, 0, 0, 0.85); 
     backdrop-filter: blur(10px); 
-    /* Padding ko balance kiya taake upar se jagah banay */
-    padding: 20px 8% 25px; 
+    padding: 15px 8% 25px; /* Upar niche barabar space */
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
@@ -28,8 +27,22 @@ header {
     z-index: 1000; 
     border-radius: 0 0 60px 60px; 
     border-bottom: 2px solid var(--primary);
-    /* Height ko auto rakhein taake content khud ko adjust kare */
-    height: auto; 
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img { 
+    width: 50px !important; 
+    height: 50px !important; 
+    border-radius: 50%; 
+    border: 2px solid var(--primary); 
+    object-fit: cover;
+    object-position: top;
+    display: block !important; /* Image ko force karne ke liye */
 }
 
 .logo {
