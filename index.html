@@ -18,7 +18,25 @@
         header { background: #000; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--primary); }
         .logo { font-weight: 900; font-size: 24px; display: flex; align-items: center; gap: 12px; text-transform: uppercase; }
         .logo span { color: var(--primary); }
-        .logo img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--primary); object-fit: cover; }
+        .logo img { 
+    width: 45px; 
+    height: 45px; 
+    border-radius: 50%; 
+    border: 2px solid var(--primary); 
+    object-fit: cover;
+    transform: scale(1.4); /* Ye grey circle ko bahar nikaal dega */
+}
+
+/* Container overflow hide karna zaroori hai */
+.logo {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
         nav button { background: none; border: none; color: #fff; font-weight: 700; margin-left: 20px; cursor: pointer; transition: 0.3s; }
         nav button.active, nav button:hover { color: var(--primary); }
 
