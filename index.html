@@ -16,17 +16,35 @@
 
         /* Navigation */
 header { 
-    background: rgba(0, 0, 0, 0.7); /* Glass Effect */
+    background: rgba(0, 0, 0, 0.8); /* Dark Glass Look */
     backdrop-filter: blur(10px); 
-    padding: 15px 8% 40px; 
+    padding: 10px 8% 25px; /* Spacing kam kar di taake fit lage */
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
     position: sticky; 
     top: 0; 
     z-index: 1000; 
-    border-radius: 0 0 50px 50px; /* Curl Shape Line */
+    border-radius: 0 0 80px 80px; /* Perfect Curve Shape */
     border-bottom: 2px solid var(--primary);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column; /* Image aur naam ko upar niche kiya spacing bachane ke liye */
+    align-items: center;
+    gap: 5px;
+}
+
+.logo img { 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    border: 2px solid var(--primary); 
+    object-fit: cover;
+    object-position: top;
+    display: block !important;
 }
 
 .logo img { 
