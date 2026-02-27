@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah Gull | Amazon Expert Portfolio</title>
-   <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/QvBvs5Kk/Abdullah-Gull.jpg">
-<link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/QvBvs5Kk/Abdullah-Gull.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/QvBvs5Kk/Abdullah-Gull.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/QvBvs5Kk/Abdullah-Gull.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -15,58 +15,43 @@
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; line-height: 1.6; overflow-x: hidden; }
 
         /* Navigation */
-header { 
-    background: rgba(0, 0, 0, 0.85); 
-    backdrop-filter: blur(10px); 
-    padding: 15px 8% 25px; /* Upar niche barabar space */
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
-    border-radius: 0 0 60px 60px; 
-    border-bottom: 2px solid var(--primary);
-}
+        header { 
+            background: rgba(0, 0, 0, 0.85); 
+            backdrop-filter: blur(10px); 
+            padding: 15px 8% 25px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-radius: 0 0 60px 60px; 
+            border-bottom: 2px solid var(--primary);
+        }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.logo img { 
-    width: 50px !important; 
-    height: 50px !important; 
-    border-radius: 50%; 
-    border: 2px solid var(--primary); 
-    object-fit: cover;
-    object-position: top;
-    display: block !important; /* Image ko force karne ke liye */
-}
+        .logo { display: flex; align-items: center; gap: 15px; font-weight: 700; }
+        .logo img { 
+            width: 50px; height: 50px; 
+            border-radius: 50%; border: 2px solid var(--primary); 
+            object-fit: cover; object-position: top;
+        }
 
         nav button { background: none; border: none; color: #fff; font-weight: 700; margin-left: 20px; cursor: pointer; transition: 0.3s; }
         nav button.active, nav button:hover { color: var(--primary); }
 
-        /* Pages */
+        /* Pages logic */
         .page { display: none; animation: fadeIn 0.5s ease; }
         .page.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Hero */
+        /* Hero & Content */
         .hero { padding: 100px 8% 60px; text-align: center; }
         .hero h2 { color: var(--primary); font-size: 18px; letter-spacing: 4px; margin-bottom: 10px; }
         .hero h1 { font-size: clamp(35px, 6vw, 65px); font-weight: 900; line-height: 1.1; }
         .hero p { max-width: 800px; margin: 20px auto; color: var(--text); font-size: 18px; }
 
-        /* Logo Slider (Moving Marquee) */
-        .logo-slider { background: #080808; padding: 40px 0; border-y: 1px solid #222; overflow: hidden; }
-        .swiper-wrapper { transition-timing-function: linear !important; }
-        .swiper-slide { width: auto; display: flex; align-items: center; padding: 0 50px; }
-        .swiper-slide img { height: 45px; filter: brightness(0) invert(1); opacity: 0.7; transition: 0.4s; }
-        .swiper-slide img:hover { opacity: 1; filter: none; }
-
-        /* Sections */
+        .logo-slider { background: #080808; padding: 40px 0; border-top: 1px solid #222; border-bottom: 1px solid #222; overflow: hidden; }
+        
         section { padding: 80px 8%; }
         .sec-title { font-size: 36px; font-weight: 900; margin-bottom: 40px; border-left: 8px solid var(--primary); padding-left: 20px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
@@ -74,44 +59,24 @@ header {
         .card:hover { border-color: var(--primary); transform: translateY(-10px); }
         .card h4 { color: var(--primary); margin-bottom: 15px; font-size: 20px; font-weight: 800; }
 
-        /* Results Milestone */
         .milestone { background: var(--primary); color: #000; padding: 50px; border-radius: 20px; margin: 40px 0; }
-        .milestone h3 { font-size: 32px; font-weight: 900; margin-bottom: 10px; }
-        .milestone p { font-size: 18px; font-weight: 700; }
 
-        /* --- NEW PROPER FOOTER STYLING --- */
+        /* Footer */
         .main-footer { background: #000; padding: 80px 8% 20px; border-top: 3px solid var(--primary); margin-top: 50px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
         .footer-col h4 { color: #fff; font-size: 16px; font-weight: 800; margin-bottom: 20px; text-transform: uppercase; border-bottom: 1px solid var(--primary); display: inline-block; padding-bottom: 5px; }
         .footer-col ul { list-style: none; }
-        .footer-col li { color: #888; font-size: 14px; margin-bottom: 10px; transition: 0.3s; }
-        .footer-col li:hover { color: var(--primary); }
+        .footer-col li { color: #888; font-size: 14px; margin-bottom: 10px; }
 
-        .footer-middle { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; padding: 40px 0; border-top: 1px solid #111; border-bottom: 1px solid #111; margin-top: 50px; }
-        .footer-box-title { font-weight: 700; color: #fff; margin-bottom: 15px; display: block; }
-        
-        .icon-group { display: flex; gap: 10px; flex-wrap: wrap; }
-        .ai-icon { width: 45px; height: 45px; background: #111; border: 1px solid #333; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-        
-        .soc-btn { width: 45px; height: 45px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 20px; text-decoration: none; transition: 0.3s; }
-        .fb-bg { background: #1877F2; }
-        .li-bg { background: #0A66C2; }
-        .in-bg { background: #E4405F; }
-        .tk-bg { background: #000; border: 1px solid #333; }
-        .sc-bg { background: #FFFC00; color: #000; }
-        .soc-btn:hover { transform: translateY(-5px); filter: brightness(1.2); }
-
-        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; font-size: 12px; color: #555; }
-
-        @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } nav button { margin: 5px; } .footer-bottom { flex-direction: column; gap: 10px; text-align: center; } }
+        @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } nav button { margin: 5px; } }
     </style>
 </head>
 <body>
 
 <header>
     <div class="logo">
-<img src="https://i.ibb.co/V0Y5qP0y/download-77.jpg" alt="Abdullah Gull">        
-        <div>Abdullah <span>Gull</span></div>
+        <img src="https://i.ibb.co/V0Y5qP0y/download-77.jpg" alt="Abdullah Gull">        
+        <div>Abdullah <span style="color:var(--primary)">Gull</span></div>
     </div>
     <nav>
         <button onclick="showPage('home')" id="btn-home" class="active">HOME</button>
@@ -125,406 +90,94 @@ header {
     <div class="hero">
         <h2>AMAZON FBA SPECIALIST</h2>
         <h1><span>Building Brands,</span><br>Scaling Amazon Success.</h1>
-        <p>PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert</p>
-    </div>
-
-    <div class="logo-slider">
-        <div class="swiper logoSwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
-                <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Walmart_logo.svg" alt="Walmart"></div>
-                <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" alt="eBay"></div>
-                <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify"></div>
-                <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Etsy_logo.svg" alt="Etsy"></div>
-                <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Wayfair_logo.svg" alt="Wayfair"></div>
-             <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
-           <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" alt="eBay"></div>
-            </div>
-        </div>
+        <p>PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience</p>
     </div>
 
     <section>
         <h2 class="sec-title">Top Skills</h2>
         <div class="grid">
-            <div class="card"><h4>✅ Amazon FBA Private Label Specialist</h4><p>(Zero to Launch Expert)</p></div>
-            <div class="card"><h4>✅ Advanced PPC Strategy</h4><p>(ACOS Reduction and Scalable Growth)</p></div>
-            <div class="card"><h4>✅ Data-Driven Product Hunting</h4><p>(High Demand, Low Competition)</p></div>
-            <div class="card"><h4>✅ Listing SEO and A+ Content</h4><p>(EBC) Optimization</p></div>
-            <div class="card"><h4>✅ Competitor Analysis</h4><p>Keyword Gap Strategy (Helium 10 Expert)</p></div>
-            <div class="card"><h4>✅ External Traffic Management</h4><p>(Amazon Attribution and Social Media)</p></div>
-            <div class="card"><h4>✅ AWS Management</h4><p>(Cloud Solutions and Technical Support)</p></div>
-            <div class="card"><h4>✅ A-Z Account Management</h4><p>Full Store Operations Expert</p></div>
+            <div class="card"><h4>✅ Amazon FBA Private Label</h4><p>(Zero to Launch Expert)</p></div>
+            <div class="card"><h4>✅ Advanced PPC Strategy</h4><p>(ACOS Reduction)</p></div>
+            <div class="card"><h4>✅ Data-Driven Hunting</h4><p>(High Demand, Low Competition)</p></div>
+            <div class="card"><h4>✅ Listing SEO</h4><p>(A+ Content / EBC)</p></div>
         </div>
-         <section style="padding: 60px 8%; background: #080808;">
-    <h2 style="color: #D4AF37; font-size: 28px; margin-bottom: 40px; text-align: center; font-weight: 700;">
-        <i class="fas fa-chart-line"></i> EXPERT PERFORMANCE DASHBOARD
-    </h2>
+    </section>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        
-        <div style="background: #111; padding: 25px; border-radius: 15px; border: 1px solid #333; position: relative; overflow: hidden;">
-            <div style="position: absolute; top: 10px; right: 10px; color: #00ff00; font-size: 12px; font-weight: bold;">● LIVE HEALTHY</div>
-            <h3 style="color: #fff; margin-bottom: 20px; font-size: 18px;">Account Health Status</h3>
-            <div style="display: flex; flex-direction: column; gap: 15px;">
-                <div>
-                    <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 5px;"><span>Order Defect Rate (ODR)</span><span style="color: #00ff00;">< 1%</span></div>
-                    <div style="width: 100%; height: 6px; background: #222; border-radius: 10px;"><div style="width: 95%; height: 100%; background: #00ff00; border-radius: 10px;"></div></div>
-                </div>
-                <div>
-                    <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 5px;"><span>Late Shipment Rate</span><span style="color: #00ff00;">< 4%</span></div>
-                    <div style="width: 100%; height: 6px; background: #222; border-radius: 10px;"><div style="width: 98%; height: 100%; background: #00ff00; border-radius: 10px;"></div></div>
-                </div>
-                <div>
-                    <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 5px;"><span>Valid Tracking Rate</span><span style="color: #00ff00;">> 95%</span></div>
-                    <div style="width: 100%; height: 6px; background: #222; border-radius: 10px;"><div style="width: 99%; height: 100%; background: #00ff00; border-radius: 10px;"></div></div>
-                </div>
+    <section style="background: #080808;">
+        <h2 style="color: #D4AF37; text-align: center; margin-bottom: 40px;">EXPERT PERFORMANCE DASHBOARD</h2>
+        <div class="grid">
+            <div class="card" style="border: 1px solid var(--primary);">
+                <h3 style="color: #D4AF37;">Case Study Results</h3>
+                <p>ACoS: 45% ➔ 14%</p>
+                <p>ROAS: 2.1x ➔ 7.8x</p>
             </div>
         </div>
-
-        <div style="background: #111; padding: 25px; border-radius: 15px; border: 1px solid #D4AF37;">
-            <h3 style="color: #D4AF37; margin-bottom: 20px; font-size: 18px;">Optimization Results (Case Study)</h3>
-            <table style="width: 100%; border-collapse: collapse; font-size: 14px; color: #ccc;">
-                <tr style="border-bottom: 1px solid #333;">
-                    <th style="text-align: left; padding: 10px 0; color: #fff;">Metric</th>
-                    <th style="padding: 10px 0; color: #ff4d4d;">Before</th>
-                    <th style="padding: 10px 0; color: #00ff00;">After</th>
-                </tr>
-                <tr>
-                    <td style="padding: 12px 0;">PPC ACoS</td>
-                    <td style="text-align: center; color: #ff4d4d;">45%</td>
-                    <td style="text-align: center; font-weight: bold; color: #00ff00;">14%</td>
-                </tr>
-                <tr>
-                    <td style="padding: 12px 0;">Conversion Rate</td>
-                    <td style="text-align: center; color: #ff4d4d;">5.2%</td>
-                    <td style="text-align: center; font-weight: bold; color: #00ff00;">18.5%</td>
-                </tr>
-                <tr>
-                    <td style="padding: 12px 0;">ROAS</td>
-                    <td style="text-align: center; color: #ff4d4d;">2.1x</td>
-                    <td style="text-align: center; font-weight: bold; color: #00ff00;">7.8x</td>
-                </tr>
-            </table>
-        </div>
-
-        
-        
-<div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 20px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);">
-    <h3 style="color: #D4AF37; margin-bottom: 25px; font-size: 20px;"><i class="fas fa-tools"></i> Premium Tool Stack</h3>
-    
-    <div style="display: flex; flex-direction: column; gap: 20px;">
-        
-        <div style="display: flex; align-items: center; gap: 15px; background: rgba(212, 175, 55, 0.05); padding: 12px; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.1);">
-            <div style="width: 40px; height: 40px; background: #D4AF37; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #000; font-weight: 900; font-size: 18px;">H</div>
-            <div>
-                <span style="display: block; font-size: 14px; font-weight: bold; color: #fff;">Helium 10</span>
-                <span style="font-size: 11px; color: #D4AF37;">Cerebro & Magnet Expert</span>
-            </div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 15px; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
-            <div style="width: 40px; height: 40px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #000; font-weight: 900; font-size: 18px;">J</div>
-            <div>
-                <span style="display: block; font-size: 14px; font-weight: bold; color: #fff;">Jungle Scout</span>
-                <span style="font-size: 11px; color: #D4AF37;">Market Intelligence Specialist</span>
-            </div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 15px; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
-            <div style="width: 40px; height: 40px; background: #222; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #D4AF37; border: 1px solid #D4AF37; font-weight: 900; font-size: 18px;">K</div>
-            <div>
-                <span style="display: block; font-size: 14px; font-weight: bold; color: #fff;">Keepa</span>
-                <span style="font-size: 11px; color: #D4AF37;">Data Tracking & Buy-Box Analysis</span>
-            </div>
-        </div>
-
-    </div>
-</div>
-        
-        <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 20px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);">
-    <h3 style="color: #D4AF37; margin-bottom: 20px; font-size: 20px;"><i class="fas fa-sync-alt"></i> Management Workflow</h3>
-    
-    <div style="display: flex; flex-direction: column; gap: 10px;">
-        
-        <details style="background: rgba(255,255,255,0.03); border: 1px solid #333; border-radius: 8px; overflow: hidden;" open>
-            <summary style="padding: 15px; cursor: pointer; color: #D4AF37; font-weight: bold; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                01. DAILY MONITORING <i class="fas fa-chevron-down" style="font-size: 12px;"></i>
-            </summary>
-            <div style="padding: 15px; color: #ccc; font-size: 14px; border-top: 1px solid #333; background: rgba(0,0,0,0.2);">
-                Real-time tracking of PPC Bids, Sales Velocity, and Buy-Box health to ensure consistent growth.
-            </div>
-        </details>
-
-        <details style="background: rgba(255,255,255,0.03); border: 1px solid #333; border-radius: 8px; overflow: hidden;">
-            <summary style="padding: 15px; cursor: pointer; color: #D4AF37; font-weight: bold; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                02. WEEKLY OPTIMIZATION <i class="fas fa-chevron-down" style="font-size: 12px;"></i>
-            </summary>
-            <div style="padding: 15px; color: #ccc; font-size: 14px; border-top: 1px solid #333; background: rgba(0,0,0,0.2);">
-                Negative keyword pruning, listing A/B testing, and ACoS reduction strategies to save budget.
-            </div>
-        </details>
-
-        <details style="background: rgba(255,255,255,0.03); border: 1px solid #333; border-radius: 8px; overflow: hidden;">
-            <summary style="padding: 15px; cursor: pointer; color: #D4AF37; font-weight: bold; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                03. MONTHLY SCALING <i class="fas fa-chevron-down" style="font-size: 12px;"></i>
-            </summary>
-            <div style="padding: 15px; color: #ccc; font-size: 14px; border-top: 1px solid #333; background: rgba(0,0,0,0.2);">
-                Detailed Inventory planning, market expansion, and comprehensive sales growth reporting.
-            </div>
-        </details>
-
-    </div>
-</div>
-</section>
-<div id="about" class="page">
+    </section>
+</div> <div id="about" class="page">
     <section>
         <h2 class="sec-title">About Me</h2>
-        
-        <div class="grid">
-            <div class="card" style="grid-column: span 2; border-left: 5px solid var(--primary);">
-                <h4>🚀 Amazon Private Label Specialist</h4>
-                <p style="font-size: 17px; color: #fff; margin-bottom: 15px;">
-                    I am a professional **Amazon Virtual Assistant** dedicated to building and scaling brands through data-driven strategies. My focus is on turning Private Label businesses into profitable assets by implementing proven growth techniques learned through hands-on experience.
-                </p>
-                <p style="color: var(--text);">
-                    I’m **Abdullah Gull**, an Amazon Growth Specialist with a proven track record of helping brands scale through strategy-driven execution. My experience spans across full account management, from product research and keyword optimization to PPC campaign structuring and review-building strategies.
-                </p>
-                <p style="color: var(--text); margin-top: 10px;">
-                    With a deep understanding of Amazon's ecosystem, I help brands stand out by improving product visibility, driving targeted traffic, and optimizing listings for conversion. Whether you're launching your first product or scaling an existing catalog, I apply tested methods that enhance ACoS, boost rankings, and ultimately increase sales performance.
-                </p>
-            </div>
-
-            <div class="milestone" style="grid-column: span 2; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: #000; text-align: left; padding: 40px; border-radius: 20px;">
-                <h3 style="margin-bottom: 15px;">🏆 Team Milestone: $727K+ In Total Sales</h3>
-                <p style="font-size: 18px; line-height: 1.4; font-weight: 600;">
-                    As a core member of the **Alpha Spikes** team and working under the expert mentorship of my Sir, I have been part of managing a single Amazon account that generated **$727,454.49** in total sales.
-                </p>
-                <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; font-weight: 700;">
-                    <span>🔹 2+ Years FBA Experience</span>
-                    <span>🔹 Launched & Ranked Multiple Products</span>
-                    <span>🔹 PPC & SEO Expert</span>
-                    <span>🔹 A+ Content & Storefronts Specialist</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <h4>🔍 Product Research</h4>
-                <p>Finding high-demand, low-competition products for maximum ROI using data-driven tools.</p>
-            </div>
-            <div class="card">
-                <h4>📦 Sourcing & Logistics</h4>
-                <p>Managing supplier relations and ensuring efficient inventory flow for uninterrupted sales.</p>
-            </div>
-            <div class="card">
-                <h4>📈 PPC & Ranking</h4>
-                <p>Optimizing campaigns to boost visibility and organic ranking while maintaining healthy ACoS.</p>
-            </div>
-            <div class="card">
-                <h4>⚙️ A-Z Account Management</h4>
-                <p>Handling account health, daily operations, and customer support with 100% precision.</p>
-            </div>
-
-            <div class="card" style="grid-column: span 2; border: 1px dashed var(--primary); background: rgba(212, 175, 55, 0.05);">
-                <h4>My Contribution in this Achievement:</h4>
-                <ul style="list-style: none; margin-top: 15px; color: var(--text);">
-                    <li style="margin-bottom: 10px;">✅ **Assisting in High-Scale Operations:** Handling daily tasks for large-volume Private Label accounts.</li>
-                    <li style="margin-bottom: 10px;">✅ **Execution of Growth Strategies:** Implementing ranking and PPC techniques under professional supervision.</li>
-                    <li style="margin-bottom: 10px;">✅ **Data Management:** Tracking sales performance and account health for consistent results.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div style="margin-top: 50px; text-align: center; background: #111; padding: 40px; border-radius: 20px; border: 1px solid #222;">
-            <h3 style="color: var(--primary); margin-bottom: 15px;">🤝 Ready to Scale Your Brand</h3>
-            <p style="color: var(--text); font-size: 18px; max-width: 900px; margin: 0 auto;">
-                Being part of **Alpha Spikes** has given me the unique advantage of learning from the best in the industry. If you are looking for someone who understands how to handle big accounts and deliver results, I am here to help you achieve your goals.
-            </p>
+        <div class="card">
+            <h4>🚀 Abdullah Gull</h4>
+            <p>I am a professional Amazon Virtual Assistant with 2+ years of experience in the FBA ecosystem.</p>
         </div>
     </section>
 </div>
-    
+
 <div id="experience" class="page">
     <section>
         <h2 class="sec-title">Work Experience</h2>
         <div class="card">
-            <h3 style="color:var(--primary); font-size: 24px;">Amazon Expert</h3>
-            <p><strong>Alpha Spikes · Full-time</strong></p>
-            <p style="color: #888;">Oct 2025 to Present | Punjab, Pakistan</p>
-            <ul style="margin: 25px 0 0 20px; color: var(--text);">
-                <li>Amazon FBA Specialist | PPC & Listing Expert</li>
-                <li>Amazon Web Services (AWS) Management</li>
-                <li>Amazon VA Operations</li>
-            </ul>
+            <h3>Amazon Expert @ Alpha Spikes</h3>
+            <p>Oct 2025 - Present</p>
         </div>
     </section>
 </div>
 
 <div id="blog" class="page">
     <section>
-        <h2 class="sec-title">Success on Upwork & Case Studies</h2>
-
-        <div class="card" style="margin-bottom: 50px; border-left: 5px solid var(--primary); background: #080808;">
-            <h3 style="color: var(--primary); font-size: 26px; margin-bottom: 15px;">Success on Upwork: How I, Abdullah Gull, Build My Winning Strategy</h3>
-            <p style="font-size: 17px; color: #fff; line-height: 1.7;">
-                In the world of freelancing, especially on Upwork, competition is fierce. Thousands of bids are placed daily, but projects are awarded only to those who present themselves as a <strong>"Brand."</strong> I, Abdullah Gull, firmly believe that you shouldn't just know how to use tools—you must know how to grow a client's business.
-            </p>
-            
-            <div style="margin-top: 25px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <div style="background: #111; padding: 20px; border-radius: 10px;">
-                    <h5 style="color: var(--primary); margin-bottom: 10px;">1. Trust First, Work Follows</h5>
-                    <p style="font-size: 14px; color: var(--text);">Clients look for clarity. I live by the motto: <strong>"Discipline Creates Results."</strong></p>
-                </div>
-                <div style="background: #111; padding: 20px; border-radius: 10px;">
-                    <h5 style="color: var(--primary); margin-bottom: 10px;">2. Power of a Portfolio</h5>
-                    <p style="font-size: 14px; color: var(--text);">I showcase my skills in Amazon FBA, PPC, and Listing Optimization systematically.</p>
-                </div>
-                <div style="background: #111; padding: 20px; border-radius: 10px;">
-                    <h5 style="color: var(--primary); margin-bottom: 10px;">3. Transforming Businesses</h5>
-                    <p style="font-size: 14px; color: var(--text);">My focus is always on lowering ACoS and maximizing ROI for peace of mind.</p>
-                </div>
-            </div>
+        <h2 class="sec-title">Success Stories</h2>
+        <div class="card">
+            <h3>$727K Sales Milestone</h3>
+            <p>Successfully managed high-ticket accounts with 4% ACOS.</p>
         </div>
-
-        <hr style="border: 0; border-top: 1px solid #222; margin-bottom: 50px;">
-
-        <div class="card" style="margin-bottom: 50px; background: #0a0a0a; border: 1px solid #333;">
-            <h3 style="color: #fff; font-size: 26px; margin-bottom: 10px;">Amazon Ads Specialist: $727K+ Sales & 4% ACOS</h3>
-            <p style="color: var(--text); margin-bottom: 25px;">
-                Our team at <strong>Alpha Spikes</strong> recently proved that with a data-driven approach, extraordinary results are possible. We generated <strong>$727,178.38 in sales in just 25 days</strong> this past December.
-            </p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 30px;">
-                <div style="background: #111; padding: 20px; border-radius: 10px; border-bottom: 3px solid #2ecc71; text-align: center;">
-                    <small>TOTAL SALES</small><br><strong style="font-size: 22px; color: #fff;">$727,178</strong>
-                </div>
-                <div style="background: #111; padding: 20px; border-radius: 10px; border-bottom: 3px solid var(--primary); text-align: center;">
-                    <small>TOTAL ORDERS</small><br><strong style="font-size: 22px; color: #fff;">20,601</strong>
-                </div>
-                <div style="background: #111; padding: 20px; border-radius: 10px; border-bottom: 3px solid #e74c3c; text-align: center;">
-                    <small>ACOS</small><br><strong style="font-size: 22px; color: #2ecc71;">4.02%</strong>
-                </div>
-                <div style="background: #111; padding: 20px; border-radius: 10px; border-bottom: 3px solid #3498db; text-align: center;">
-                    <small>ROAS</small><br><strong style="font-size: 22px; color: #fff;">24.89</strong>
-                </div>
-            </div>
-
-            <h4 style="color: var(--primary); margin-bottom: 15px;">Our Winning Pillars:</h4>
-            <ul style="color: var(--text); line-height: 1.8; margin-left: 20px; margin-bottom: 20px;">
-                <li><strong>Precision Targeting:</strong> Every dollar directed toward buyers with high intent.</li>
-                <li><strong>Aggressive Budget Optimization:</strong> Cutting waste and scaling the "Winners."</li>
-                <li><strong>Data-Driven Decisions:</strong> No guesswork, only performance-backed adjustments.</li>
-            </ul>
-            
-            <p style="font-style: italic; color: var(--primary); border: 1px dashed #444; padding: 15px; border-radius: 8px; text-align: center;">
-                "Discipline Creates Results, Luck Never Can."
-            </p>
-        </div>
-
-        <hr style="border: 0; border-top: 1px solid #222; margin-bottom: 50px;">
-
-        <div class="card" style="border-top: 5px solid var(--primary);">
-            <h3 style="color: #fff; font-size: 26px; margin-bottom: 10px;">Mastering Amazon Global Selling</h3>
-            <p style="color: var(--primary); font-weight: 700; margin-bottom: 20px;">By: Abdullah Gull (Amazon Private Label Expert)</p>
-            
-            <div style="color: var(--text); line-height: 1.7;">
-                <p style="margin-bottom: 20px;">Whether you are in the <strong>USA, UK, or UAE</strong>, controlling your ACOS is the key to success. Here are my exact strategies:</p>
-                
-                <h5 style="color: #fff; margin: 15px 0 5px;">1. Global Keyword Strategy</h5>
-                <p style="font-size: 14px;">Localization is key. USA uses "Sweater", UK uses "Jumper", and UAE needs a mix of Arabic + English.</p>
-
-                <h5 style="color: #fff; margin: 15px 0 5px;">2. Negative Keyword Pruning</h5>
-                <p style="font-size: 14px;">I analyze reports weekly. 8-10 clicks with 0 sales? Move to Negative Exact Match immediately to stop wasted spend.</p>
-
-                <h5 style="color: #fff; margin: 15px 0 5px;">3. Dynamic Bidding (Down Only)</h5>
-                <p style="font-size: 14px;">I recommend "Down Only" to protect your budget from window shoppers and high-cost clicks.</p>
-
-                <h5 style="color: #fff; margin: 15px 0 5px;">4. Listing Optimization</h5>
-                <p style="font-size: 14px;">Conversion is the foundation. High-quality A+ Content can boost conversion by 15%, which pulls ACOS down.</p>
-            </div>
-            
-            <div style="margin-top: 30px; text-align: center; background: rgba(212, 175, 55, 0.1); padding: 20px; border-radius: 10px;">
-                <p style="font-weight: 800; color: var(--primary);">Success in Amazon Global Selling is hidden in the data!</p>
-            </div>
-        </div>
-
     </section>
 </div>
-    
+
 <footer class="main-footer">
     <div class="footer-grid">
         <div class="footer-col">
-            <h4>Amazon Seller Central</h4>
-            <ul>
-                <li>Full Service Management</li><li>SEO for better visibility</li><li>PPC Management</li><li>Listing Optimization</li><li>Image Design (CTR Main Image Hack)</li><li>A+ Content / EBC</li><li>Amazon Store Front Creation</li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Amazon Vendor Central</h4>
-            <ul>
-                <li>Vendor Onboarding</li><li>Inventory Management</li><li>Retail Content & Advertising</li><li>A+ Content Creation</li><li>Sponsored Products & Brands Ads</li><li>Product Listings Optimization</li><li>Purchase Order Management</li><li>Invoice Management</li><li>Data-Driven Performance Analytics</li><li>Shipment & Delivery Optimization</li>
-            </ul>
+            <h4>Services</h4>
+            <ul><li>PPC Management</li><li>SEO Optimization</li><li>A+ Content</li></ul>
         </div>
         <div class="footer-col">
             <h4>Marketplaces</h4>
-            <ul>
-                <li>Amazon</li><li>Shopify</li><li>Wayfair</li><li>Walmart</li><li>Home Depot</li><li>eBay</li><li>Etsy</li><li>Asenda</li><li>Newegg</li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Company</h4>
-            <ul>
-                <li>Case Studies</li><li>Testimonials</li><li>Leadership</li><li>Jobs</li><li>History</li><li>Press</li><li>Articles</li><li>News</li><li>Events</li>
-            </ul>
+            <ul><li>Amazon</li><li>Walmart</li><li>eBay</li></ul>
         </div>
     </div>
-
-    <div class="footer-middle">
-        <div>
-            <span class="footer-box-title">Ask AI for a summary of Abdullah Gull</span>
-            <div class="icon-group">
-                <div class="ai-icon"><i class="fa-solid fa-ghost"></i></div>
-                <div class="ai-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                <div class="ai-icon"><i class="fa-solid fa-brain"></i></div>
-                <div class="ai-icon"><i class="fa-solid fa-bolt"></i></div>
-                <div class="ai-icon"><i class="fa-solid fa-microchip"></i></div>
-            </div>
-        </div>
-        <div>
-            <span class="footer-box-title">Follow us on our social accounts</span>
-            <div class="icon-group">
-                <a href="https://facebook.com/share/1JTa6K2z5A/" class="soc-btn fb-bg"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://linkedin.com/in/abdullah-gull/" class="soc-btn li-bg"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://instagram.com/abdxxah_965/" class="soc-btn in-bg"><i class="fab fa-instagram"></i></a>
-                <a href="https://tiktok.com/@abdxxah_965" class="soc-btn tk-bg"><i class="fab fa-tiktok"></i></a>
-                <a href="https://snapchat.com/t/v1C05LBv" class="soc-btn sc-bg"><i class="fab fa-snapchat-ghost"></i></a>
-                <a href="https://x.com/abdullahamazon?s=21" class="soc-btn tk-bg" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div>Term & Conditions | Privacy Policies</div>
-        <div>© 2026 Abdullah Gull | Abdullah Gull All Rights Reserved.</div>
+    <div style="text-align: center; margin-top: 40px; color: #555; font-size: 12px;">
+        © 2026 Abdullah Gull | Powered by Alpha Spikes
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-    var swiper = new Swiper(".logoSwiper", {
-        slidesPerView: "auto",
-        loop: true,
-        speed: 5000,
-        autoplay: { delay: 0, disableOnInteraction: false },
-        allowTouchMove: false,
-    });
-
     function showPage(pageId) {
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        // Hide all pages
+        document.querySelectorAll('.page').forEach(page => {
+            page.classList.remove('active');
+        });
+        // Show selected page
         document.getElementById(pageId).classList.add('active');
-        document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+
+        // Update buttons
+        document.querySelectorAll('nav button').forEach(btn => {
+            btn.classList.remove('active');
+        });
         document.getElementById('btn-' + pageId).classList.add('active');
+        
+        // Scroll to top
         window.scrollTo(0, 0);
     }
 </script>
+
 </body>
 </html>
