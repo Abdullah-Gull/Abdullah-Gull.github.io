@@ -347,18 +347,20 @@ header {
 </section> 
 
         
-        <section style="background: #000; padding: 100px 8%; color: #fff; font-family: 'Inter', sans-serif;">
-    <div style=align-items: start; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start;">
+       <section style="background: #000; padding: 100px 5%; color: #fff; font-family: 'Inter', sans-serif;">
+    
+    <div style="display: grid; grid-template-columns: 350px 1fr; gap: 80px; align-items: start; max-width: 1200px; margin: 0 auto;">
         
-        <div style="position: sticky; top: 100px; background: #080808; border: 2px solid #1a1a1a; padding: 40px; border-radius: 30px;">
-            <div style="display: inline-block; background: #D4AF37; color: #000; padding: 5px 15px; border-radius: 5px; font-weight: 900; font-size: 12px; margin-bottom: 20px;">
+        <div style="position: sticky; top: 50px; background: #080808; border: 1px solid #1a1a1a; padding: 40px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+            <div style="display: inline-block; background: #D4AF37; color: #000; padding: 4px 12px; border-radius: 4px; font-weight: 800; font-size: 11px; margin-bottom: 20px; letter-spacing: 1px;">
                 STRATEGIC PARTNER
             </div>
-            <h3 style="font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 20px;">
+            <h3 style="font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 25px; color: #fff;">
                 I Scale <br><span style="color: #D4AF37;">Amazon Brands</span> <br>With Data.
             </h3>
-            <div style="border-top: 1px solid #222; padding-top: 20px; margin-top: 20px;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            
+            <div style="border-top: 1px solid #222; padding-top: 25px; margin-top: 10px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
                     <span style="color: #666; font-size: 14px;">Average ACoS Reduction</span>
                     <span style="color: #00ff00; font-weight: 700;">-14.02%</span>
                 </div>
@@ -367,131 +369,56 @@ header {
                     <span style="color: #D4AF37; font-weight: 700;">99%</span>
                 </div>
             </div>
+            <p style="color: #444; font-size: 11px; margin-top: 30px; line-height: 1.4;">
+                *Audited Seller Central results from active partnerships.
+            </p>
         </div>
 
         <div>
-            <h2 style="font-size: 40px; font-weight: 900; margin-bottom: 40px; text-transform: uppercase; letter-spacing: -1px;">
+            <h2 style="font-size: 42px; font-weight: 900; margin-bottom: 40px; text-transform: uppercase; letter-spacing: -1px;">
                 Your Questions, <br><span style="color: #D4AF37;">My Answers</span>
             </h2>
 
-            <div id="faq-accordion">
-                <div style="border-bottom: 1px solid #1a1a1a;">
-                    <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 18px; font-weight: 700;">How do you decrease ACoS without killing organic ranking velocity?</span>
-                        <span class="sign" style="color: #D4AF37; font-size: 24px;">+</span>
+            <div id="faq-container">
+                <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 10px;">
+                    <button onclick="toggleAction(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; transition: 0.3s;">
+                        <span style="font-size: 18px; font-weight: 700; padding-right: 20px;">How do you decrease ACoS without killing organic ranking velocity?</span>
+                        <span class="symbol" style="color: #D4AF37; font-size: 28px; font-family: monospace;">+</span>
                     </button>
-                    <div class="ans" style="display: none; padding-bottom: 25px; color: #888; line-height: 1.8;">
-                        We implement "Precision Pruning" by negating non-converting terms and re-allocating budget to high-intent keywords, improving conversion rates which naturally maintains organic rank while lowering ad spend.
+                    <div class="answerbox" style="display: none; padding-bottom: 30px; color: #999; line-height: 1.8; font-size: 16px;">
+                        Main "Precision Pruning" technique use karta hoon. Hum high-ACoS keywords ko foran negative nahi karte, balkay unka bid shaving karte hain taake rank maintain rahe aur profit barh jaye.
                     </div>
                 </div>
 
-                <div style="border-bottom: 1px solid #1a1a1a;">
-                    <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 18px; font-weight: 700;">What is your data-backed approach to ranking new product listings?</span>
-                        <span class="sign" style="color: #D4AF37; font-size: 24px;">+</span>
+                <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 10px;">
+                    <button onclick="toggleAction(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 18px; font-weight: 700; padding-right: 20px;">What is your data-backed approach to ranking new product listings?</span>
+                        <span class="symbol" style="color: #D4AF37; font-size: 28px; font-family: monospace;">+</span>
                     </button>
-                    <div class="ans" style="display: none; padding-bottom: 25px; color: #888; line-height: 1.8;">
-                        We mine Search Query Performance data to identify market gaps, using a mix of external traffic and highly targeted PPC to force the algorithm to recognize your listing for top-tier keywords.
+                    <div class="answerbox" style="display: none; padding-bottom: 30px; color: #999; line-height: 1.8; font-size: 16px;">
+                        Main Search Query Performance (SQP) reports ka analysis karke un keywords ko target karta hoon jin par competitors weak hain. Isse kam budget mein fast ranking milti hai.
                     </div>
                 </div>
 
-                <div style="border-bottom: 1px solid #1a1a1a;">
-                    <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 18px; font-weight: 700;">Can optimized EBC/A+ Content truly improve conversion rate metrics?</span>
-                        <span class="sign" style="color: #D4AF37; font-size: 24px;">+</span>
-                    </button>
-                    <div class="ans" style="display: none; padding-bottom: 25px; color: #888; line-height: 1.8;">
-                        Yes, using consumer psychology-based design increases your "Unit Session Percentage." High-quality visuals answer customer objections before they ask, leading to double-digit conversion growth.
-                    </div>
                 </div>
-
-                <div style="border-bottom: 1px solid #1a1a1a;">
-                    <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 18px; font-weight: 700;">How do you handle Amazon Hijackers and Buy Box suppression?</span>
-                        <span class="sign" style="color: #D4AF37; font-size: 24px;">+</span>
-                    </button>
-                    <div class="ans" style="display: none; padding-bottom: 25px; color: #888; line-height: 1.8;">
-                        We utilize Brand Registry tools like Project Zero and manage case logs daily to ensure your brand is protected and you own 100% of the Buy Box.
-                    </div>
-                </div>
-
-                <div style="border-bottom: 1px solid #1a1a1a;">
-                    <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 18px; font-weight: 700;">What is the difference between TACOS and ACoS in your strategy?</span>
-                        <span class="sign" style="color: #D4AF37; font-size: 24px;">+</span>
-                    </button>
-                    <div class="ans" style="display: none; padding-bottom: 25px; color: #888; line-height: 1.8;">
-                        ACoS measures ad efficiency, but TACOS measures overall profitability. Our goal is to lower your TACOS by increasing the share of organic sales.
-                    </div>
-                </div>
-
-                <div style="border-bottom: 1px solid #1a1a1a;">
-                    <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 18px; font-weight: 700;">Do you manage Amazon DSP ads for scaling?</span>
-                        <span class="sign" style="color: #D4AF37; font-size: 24px;">+</span>
-                    </button>
-                    <div class="ans" style="display: none; padding-bottom: 25px; color: #888; line-height: 1.8;">
-                        Yes, we use DSP for retargeting customers who viewed your listing and to reach new audiences outside of Amazon to dominate your niche.
-                    </div>
-                </div>
-
-                <div style="border-bottom: 1px solid #1a1a1a;">
-                    <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 18px; font-weight: 700;">How do you optimize inventory to avoid stockouts?</span>
-                        <span class="sign" style="color: #D4AF37; font-size: 24px;">+</span>
-                    </button>
-                    <div class="ans" style="display: none; padding-bottom: 25px; color: #888; line-height: 1.8;">
-                        We use predictive forecasting based on seasonal trends and historical velocity to ensure you never pay for excess storage while avoiding ranking drops.
-                    </div>
-                </div>
-
-                <div style="border-bottom: 1px solid #1a1a1a;">
-                    <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 18px; font-weight: 700;">Can you help with Brand Story and Storefront design?</span>
-                        <span class="sign" style="color: #D4AF37; font-size: 24px;">+</span>
-                    </button>
-                    <div class="ans" style="display: none; padding-bottom: 25px; color: #888; line-height: 1.8;">
-                        Absolutely. Immersive Storefronts act as your website inside Amazon, increasing cross-selling opportunities and Average Order Value (AOV).
-                    </div>
-                </div>
-
-                <div style="border-bottom: 1px solid #1a1a1a;">
-                    <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 18px; font-weight: 700;">How long does it take to see a significant ROI?</span>
-                        <span class="sign" style="color: #D4AF37; font-size: 24px;">+</span>
-                    </button>
-                    <div class="ans" style="display: none; padding-bottom: 25px; color: #888; line-height: 1.8;">
-                        PPC optimization shows results within 15-30 days, while full organic ranking and TACOS stabilization typically take 60-90 days.
-                    </div>
-                </div>
-
-                <div style="border-bottom: 1px solid #1a1a1a;">
-                    <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 18px; font-weight: 700;">What metrics do you report on a weekly basis?</span>
-                        <span class="sign" style="color: #D4AF37; font-size: 24px;">+</span>
-                    </button>
-                    <div class="ans" style="display: none; padding-bottom: 25px; color: #888; line-height: 1.8;">
-                        We report on TACOS, ACoS, Session Percentage, Organic Rank, and Profit/Loss analysis to focus on the metrics that impact your bottom line.
-                    </div>
-                </div>
-
-            </div>
         </div>
     </div>
 </section>
 
 <script>
-function toggleFaq(btn) {
-    const ans = btn.nextElementSibling;
-    const sign = btn.querySelector('.sign');
+function toggleAction(btn) {
+    const box = btn.nextElementSibling;
+    const sym = btn.querySelector('.symbol');
     
-    // Smooth Toggle Logic
-    if (ans.style.display === "block") {
-        ans.style.display = "none";
-        sign.innerHTML = "+";
+    // Close all other open boxes first (Optional, for a cleaner feel)
+    // Agar aap chahte hain ke ek waqt mein sirf ek khule, toh niche wali logic add karein.
+    
+    if (box.style.display === "block") {
+        box.style.display = "none";
+        sym.innerHTML = "+";
     } else {
-        ans.style.display = "block";
-        sign.innerHTML = "-";
+        box.style.display = "block";
+        sym.innerHTML = "-";
     }
 }
 </script>
