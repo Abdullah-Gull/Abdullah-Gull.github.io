@@ -349,76 +349,99 @@ header {
         
        <section style="background: #000; padding: 100px 5%; color: #fff; font-family: 'Inter', sans-serif;">
     
-    <div style="display: grid; grid-template-columns: 350px 1fr; gap: 80px; align-items: start; max-width: 1200px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 380px 1fr; gap: 100px; align-items: start; max-width: 1250px; margin: 0 auto;">
         
-        <div style="position: sticky; top: 50px; background: #080808; border: 1px solid #1a1a1a; padding: 40px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
-            <div style="display: inline-block; background: #D4AF37; color: #000; padding: 4px 12px; border-radius: 4px; font-weight: 800; font-size: 11px; margin-bottom: 20px; letter-spacing: 1px;">
+        <div style="position: sticky; top: 100px; background: #080808; border: 1px solid #D4AF37; padding: 45px; border-radius: 30px; box-shadow: 0 15px 50px rgba(212, 175, 55, 0.1);">
+            <div style="display: inline-block; background: #D4AF37; color: #000; padding: 6px 15px; border-radius: 5px; font-weight: 900; font-size: 11px; margin-bottom: 25px; letter-spacing: 2px;">
                 STRATEGIC PARTNER
             </div>
-            <h3 style="font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 25px; color: #fff;">
+            <h3 style="font-size: 36px; font-weight: 900; line-height: 1.1; margin-bottom: 25px;">
                 I Scale <br><span style="color: #D4AF37;">Amazon Brands</span> <br>With Data.
             </h3>
             
-            <div style="border-top: 1px solid #222; padding-top: 25px; margin-top: 10px;">
+            <div style="border-top: 1px solid #222; padding-top: 30px; margin-top: 10px;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                    <span style="color: #666; font-size: 14px;">Average ACoS Reduction</span>
-                    <span style="color: #00ff00; font-weight: 700;">-14.02%</span>
+                    <span style="color: #888; font-size: 15px;">Target TACOS</span>
+                    <span style="color: #00ff00; font-weight: 700;">8% - 12%</span>
                 </div>
                 <div style="display: flex; justify-content: space-between;">
-                    <span style="color: #666; font-size: 14px;">Client Retention Rate</span>
-                    <span style="color: #D4AF37; font-weight: 700;">99%</span>
+                    <span style="color: #888; font-size: 15px;">Client Retention</span>
+                    <span style="color: #D4AF37; font-weight: 700;">99% Verified</span>
                 </div>
             </div>
-            <p style="color: #444; font-size: 11px; margin-top: 30px; line-height: 1.4;">
-                *Audited Seller Central results from active partnerships.
-            </p>
         </div>
 
         <div>
-            <h2 style="font-size: 42px; font-weight: 900; margin-bottom: 40px; text-transform: uppercase; letter-spacing: -1px;">
-                Your Questions, <br><span style="color: #D4AF37;">My Answers</span>
+            <h2 style="font-size: 45px; font-weight: 900; margin-bottom: 50px; text-transform: uppercase; letter-spacing: -2px;">
+                Strategic <span style="color: #D4AF37;">Insights</span>
             </h2>
 
-            <div id="faq-container">
-                <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 10px;">
-                    <button onclick="toggleAction(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; transition: 0.3s;">
-                        <span style="font-size: 18px; font-weight: 700; padding-right: 20px;">How do you decrease ACoS without killing organic ranking velocity?</span>
-                        <span class="symbol" style="color: #D4AF37; font-size: 28px; font-family: monospace;">+</span>
+            <div id="faq-v2">
+                <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 5px;">
+                    <button onclick="handleFaq(this)" style="width: 100%; background: none; border: none; padding: 30px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 20px; font-weight: 700;">How do you balance aggressive ranking with long-term account health?</span>
+                        <span class="ico" style="color: #D4AF37; font-size: 30px;">+</span>
                     </button>
-                    <div class="answerbox" style="display: none; padding-bottom: 30px; color: #999; line-height: 1.8; font-size: 16px;">
-                        Main "Precision Pruning" technique use karta hoon. Hum high-ACoS keywords ko foran negative nahi karte, balkay unka bid shaving karte hain taake rank maintain rahe aur profit barh jaye.
+                    <div style="display: none; padding-bottom: 35px; color: #aaa; line-height: 1.8; font-size: 17px;">
+                        Main "Safe-Velocity" model use karta hoon. Hum sirf PPC spending nahi barhate, balkay Search Query Performance data ko use karke conversion-intent keywords par focus karte hain taake Amazon ka algorithm organic rank natural samjhe.
                     </div>
                 </div>
 
-                <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 10px;">
-                    <button onclick="toggleAction(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                        <span style="font-size: 18px; font-weight: 700; padding-right: 20px;">What is your data-backed approach to ranking new product listings?</span>
-                        <span class="symbol" style="color: #D4AF37; font-size: 28px; font-family: monospace;">+</span>
+                <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 5px;">
+                    <button onclick="handleFaq(this)" style="width: 100%; background: none; border: none; padding: 30px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 20px; font-weight: 700;">What is your protocol for managing TACOS during a scaling phase?</span>
+                        <span class="ico" style="color: #D4AF37; font-size: 30px;">+</span>
                     </button>
-                    <div class="answerbox" style="display: none; padding-bottom: 30px; color: #999; line-height: 1.8; font-size: 16px;">
-                        Main Search Query Performance (SQP) reports ka analysis karke un keywords ko target karta hoon jin par competitors weak hain. Isse kam budget mein fast ranking milti hai.
+                    <div style="display: none; padding-bottom: 35px; color: #aaa; line-height: 1.8; font-size: 17px;">
+                        Scaling ke waqt ACoS temporary barh sakta hai, lekin mera focus TACOS (Total ACoS) par rehta hai. Main PPC ko "Organic Fuel" ke taur par use karta hoon taake aapka total profit margin 15% se niche na gire.
                     </div>
                 </div>
 
+                <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 5px;">
+                    <button onclick="handleFaq(this)" style="width: 100%; background: none; border: none; padding: 30px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 20px; font-weight: 700;">How do you protect 7-figure listings from hijackers and price wars?</span>
+                        <span class="ico" style="color: #D4AF37; font-size: 30px;">+</span>
+                    </button>
+                    <div style="display: none; padding-bottom: 35px; color: #aaa; line-height: 1.8; font-size: 17px;">
+                        Brand Registry 2.0 aur Project Zero ke saath main proactive monitoring karta hoon. Main aapke "Buy Box" ko protect karne ke liye daily health checks aur automated IP complaints handle karta hoon.
+                    </div>
                 </div>
+
+                <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 5px;">
+                    <button onclick="handleFaq(this)" style="width: 100%; background: none; border: none; padding: 30px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 20px; font-weight: 700;">What is your strategy for increasing Unit Session Percentage (CR)?</span>
+                        <span class="ico" style="color: #D4AF37; font-size: 30px;">+</span>
+                    </button>
+                    <div style="display: none; padding-bottom: 35px; color: #aaa; line-height: 1.8; font-size: 17px;">
+                        Main images aur EBC (A+) content ko "Objection Handling" ke liye optimize karta hoon. Jab listing customer ke darr aur sawalon ko pehle hi khatam kar deti hai, toh conversion rate naturally 25% tak touch karta hai.
+                    </div>
+                </div>
+
+                <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 5px;">
+                    <button onclick="handleFaq(this)" style="width: 100%; background: none; border: none; padding: 30px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 20px; font-weight: 700;">How do you integrate PPC data with inventory forecasting?</span>
+                        <span class="ico" style="color: #D4AF37; font-size: 30px;">+</span>
+                    </button>
+                    <div style="display: none; padding-bottom: 35px; color: #aaa; line-height: 1.8; font-size: 17px;">
+                        OOS (Out of Stock) hona gunah hai. Main future sales velocity ko current PPC trends ke saath map karta hoon taake aapka stock hamesha sales demand se 30 din aage rahe.
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </section>
 
 <script>
-function toggleAction(btn) {
+function handleFaq(btn) {
     const box = btn.nextElementSibling;
-    const sym = btn.querySelector('.symbol');
-    
-    // Close all other open boxes first (Optional, for a cleaner feel)
-    // Agar aap chahte hain ke ek waqt mein sirf ek khule, toh niche wali logic add karein.
-    
+    const ico = btn.querySelector('.ico');
     if (box.style.display === "block") {
         box.style.display = "none";
-        sym.innerHTML = "+";
+        ico.innerHTML = "+";
     } else {
         box.style.display = "block";
-        sym.innerHTML = "-";
+        ico.innerHTML = "-";
     }
 }
 </script>
