@@ -853,6 +853,83 @@ function handleFaq(btn) {
                 </ul>
             </div>
         </div>
+
+        <section style="background: #000; padding: 100px 5%; color: #fff; font-family: 'Inter', sans-serif;">
+    <div style="max-width: 1100px; margin: 0 auto; background: #fff; border-radius: 12px; display: flex; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.5); min-height: 450px;">
+        
+        <div style="flex: 1; padding: 50px; color: #000; display: flex; flex-direction: column; justify-content: center;">
+            <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 20px;">My 3-part process</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: #444; margin-bottom: 35px;">
+                I take time to fully understand your brand. Once I identify your goals, I create and execute an Amazon strategy tailored for sustainable growth.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <button onclick="openProcess(event, 'onboarding')" class="tablinks active-tab" style="padding: 15px 25px; border: 1px solid #ddd; background: #fff; cursor: pointer; display: flex; align-items: center; gap: 15px; font-weight: 700; border-radius: 4px; transition: 0.3s; text-align: left; font-size: 14px;">
+                    <span style="font-size: 18px;">🚀</span> Onboarding
+                </button>
+                <button onclick="openProcess(event, 'optimisation')" class="tablinks" style="padding: 15px 25px; border: 1px solid #ddd; background: #fff; cursor: pointer; display: flex; align-items: center; gap: 15px; font-weight: 700; border-radius: 4px; transition: 0.3s; text-align: left; font-size: 14px;">
+                    <span style="font-size: 18px;">⚖️</span> Optimisation
+                </button>
+                <button onclick="openProcess(event, 'results')" class="tablinks" style="padding: 15px 25px; border: 1px solid #ddd; background: #fff; cursor: pointer; display: flex; align-items: center; gap: 15px; font-weight: 700; border-radius: 4px; transition: 0.3s; text-align: left; font-size: 14px;">
+                    <span style="font-size: 18px;">📈</span> Results
+                </button>
+            </div>
+
+            <div id="process-content" style="margin-top: 30px; padding: 20px; background: #f9f9f9; border-left: 4px solid #D4AF37; border-radius: 4px;">
+                <h4 id="tab-title" style="margin: 0 0 10px 0; font-size: 16px; font-weight: 800;">Laying the foundation for success:</h4>
+                <ul id="tab-list" style="margin: 0; padding-left: 20px; font-size: 14px; color: #555; line-height: 1.8;">
+                    <li>Kick Off</li>
+                    <li>Account audit</li>
+                    <li>Strategy setup</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="flex: 1; background: #000; display: flex; align-items: center; justify-content: center; padding: 40px; position: relative;">
+            <div style="width: 100%; max-width: 450px; border: 8px solid #333; border-radius: 20px; overflow: hidden; box-shadow: 0 0 50px rgba(212, 175, 55, 0.2);">
+                <img src="https://i.ibb.co/L5k6W6k/amazon-ads-dashboard.png" alt="Amazon Dashboard" style="width: 100%; display: block; filter: contrast(1.1);">
+            </div>
+            <div style="position: absolute; bottom: 30px; width: 100px; height: 10px; background: #333; border-radius: 10px;"></div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    .active-tab {
+        border-color: #000 !important;
+        background: #f0f0f0 !important;
+        box-shadow: inset 5px 0 0 #D4AF37;
+    }
+    .tablinks:hover {
+        background: #f5f5f5;
+    }
+</style>
+
+<script>
+function openProcess(evt, tabName) {
+    var i, tablinks;
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
+    }
+    evt.currentTarget.className += " active-tab";
+
+    const title = document.getElementById('tab-title');
+    const list = document.getElementById('tab-list');
+
+    if (tabName === 'onboarding') {
+        title.innerHTML = "Laying the foundation for success:";
+        list.innerHTML = "<li>Kick Off</li><li>Account audit</li><li>Strategy setup</li>";
+    } else if (tabName === 'optimisation') {
+        title.innerHTML = "Continuous cycle of improvement:";
+        list.innerHTML = "<li>PPC Optimization</li><li>SEO & Keyword Ranking</li><li>Conversion Enhancement</li>";
+    } else if (tabName === 'results') {
+        title.innerHTML = "Scaling your brand revenue:";
+        list.innerHTML = "<li>Traffic & Sales Lift</li><li>Profitability Reports</li><li>Brand Growth Milestone</li>";
+    }
+}
+</script>
         
         <section style="background: #000; padding: 100px 5%; color: #fff; font-family: 'Inter', sans-serif;">
     <div style="max-width: 1200px; margin: 0 auto;">
