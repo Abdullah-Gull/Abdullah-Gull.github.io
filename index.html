@@ -1054,52 +1054,7 @@ function handleFaq(btn) {
     </section>
 </div>
 
-   <div id="Contact Us" class="page">
-    <h2 class="sec-title">Get In <span style="color: var(--primary);">Touch</span></h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        <div class="card">
-            <h4>Let's Talk Business</h4>
-            <p style="color: #888; margin-top: 10px;">Ready to scale your brand? Send a message and let's discuss your strategy.</p>
-        </div>
-        <div class="card" style="background: #0a0a0a;">
-            <form action="https://formspree.io/f/mojpjjqk" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <textarea name="message" placeholder="How can I help you?" required></textarea>
-                <button type="submit" class="submit-btn">Send Message Now</button>
-            </form>
-        </div>
-    </div>
-</div>
-
-<script>
-    function showPage(pageId) {
-        // 1. Hide all pages
-        const pages = document.querySelectorAll('.page');
-        pages.forEach(page => {
-            page.style.display = 'none';
-            page.classList.remove('active');
-        });
-
-        // 2. Remove active class from buttons
-        const buttons = document.querySelectorAll('nav button');
-        buttons.forEach(btn => btn.classList.remove('active'));
-
-        // 3. Show selected page
-        const selectedPage = document.getElementById(pageId);
-        if (selectedPage) {
-            selectedPage.style.display = 'block';
-            selectedPage.classList.add('active');
-        }
-
-        // 4. Highlight current button
-        const activeBtn = document.getElementById('btn-' + pageId);
-        if (activeBtn) {
-            activeBtn.classList.add('active');
-        }
-    }
-</script>
-
+  
     
 <footer class="main-footer">
     <div class="footer-grid">
