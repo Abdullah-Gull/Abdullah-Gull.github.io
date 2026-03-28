@@ -24,53 +24,28 @@
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; line-height: 1.6; overflow-x: hidden; zoom: 0.85; -moz-transform: scale(0.85); -moz-transform-origin: top center; }
 
         /* Navigation */
-header {
-    background: rgba(255, 255, 255, 0.03); /* Bohat halka white */
-    backdrop-filter: blur(12px); /* Glass blur effect */
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Patli glass line */
-    padding: 15px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-        .nav-capsule {
-    display: flex;
-    gap: 5px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(212, 175, 55, 0.2); /* Halki golden border */
-    padding: 5px 10px;
-    border-radius: 50px;
-    transition: all 0.4s ease;
-}
+header { 
+            /* Transparent White Glass Base */
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(15px); 
+            -webkit-backdrop-filter: blur(15px);
+            padding: 20px 8%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
 
-/* Hover karne par capsule glow kare */
-.nav-capsule:hover {
-    border-color: rgba(212, 175, 55, 0.5);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
-}
-        .nav-link {
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+            /* --- U-SHAPE PATH (DYNAMIC) --- */
+            /* Is path se header nichay se curved (U-shaped) nazar aayega */
+            clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%);
+            -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%);
 
-.nav-link:hover {
-    background: rgba(212, 175, 55, 0.1); /* Halka golden background */
-    color: #D4AF37;
-    transform: translateY(-2px); /* Thora sa upar move hoga */
-}
-
-.nav-link.active {
-    background: #D4AF37;
-    color: #000;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-}
+            /* Patli border lines taake curve mazeed pop-up ho */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+            border-radius: 0 0 30px 30px;
+        }
 
 .logo {
     display: flex;
