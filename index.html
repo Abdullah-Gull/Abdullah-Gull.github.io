@@ -24,18 +24,43 @@
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; line-height: 1.6; overflow-x: hidden; zoom: 0.85; -moz-transform: scale(0.85); -moz-transform-origin: top center; }
 
         /* Navigation */
-header { 
-    background: rgba(0, 0, 0, 0.85); 
-    backdrop-filter: blur(10px); 
-    padding: 15px 8% 25px; /* Upar niche barabar space */
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
-    border-radius: 0 0 60px 60px; 
-    border-bottom: 2px solid var(--primary);
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    position: relative; /* Nav-container ko align karne ke liye */
+}
+
+/* Navigation ko screen ke bilkul center mein lane ke liye */
+.nav-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-capsule {
+    display: flex;
+    gap: 10px;
+    border: 1px solid #333;
+    padding: 5px 20px;
+    border-radius: 50px; /* Pill shape design */
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-capsule button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+/* Active ya Hover par golden color */
+.nav-capsule button.active, .nav-capsule button:hover {
+    color: #D4AF37;
 }
 
 .logo {
@@ -152,24 +177,27 @@ header {
 </head>
 <body>
 
-<header>
+<<header>
     <div class="logo">
-<div class="logo">
-    <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">        
-    <div>Abdullah <span>Gull</span></div>
-</div>        
-    
+        <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">
+        <div>Abdullah <span>Gull</span></div>
     </div>
-    <nav>
-        <button onclick="showPage('home')" id="btn-home" class="active">Home</button>
-        <button onclick="showPage('about')" id="btn-about">About</button>
-        <button onclick="showPage('experience')" id="btn-experience">Experience</button>
-        <button onclick="showPage('blog')" id="btn-blog">Blog</button>
-        <button onclick="showPage('contact')" id="btn-contact" class="nav-link">Contact us</button>
-        <button onclick="showPage('contact')" class="get-in-touch-btn">Get In Touch</button>
-    </nav>
-</header>
 
+    <div class="nav-container">
+        <nav class="nav-capsule">
+            <button onclick="showPage('home')" id="btn-home" class="active">Home</button>
+            <button onclick="showPage('about')" id="btn-about">About</button>
+            <button onclick="showPage('experience')" id="btn-experience">Experience</button>
+            <button onclick="showPage('blog')" id="btn-blog">Blog</button>
+            <button onclick="showPage('contact')" id="btn-contact" class="nav-link">Contact us</button>
+        </nav>
+    </div>
+
+    <div class="header-right">
+        <button onclick="showPage('contact')" class="get-in-touch-btn">Get In Touch</button>
+    </div>
+</header>
+    
 <div id="home" class="page active">
     <div class="hero">
         <h2>AMAZON FBA SPECIALIST</h2>
