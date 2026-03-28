@@ -19,56 +19,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
-        :root { --primary: #D4AF37; --bg: #000000; --card: #111111; --text: #cccccc; }
+       :root { --primary: #D4AF37; --bg: #000000; --card: #111111; --text: #cccccc; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; line-height: 1.6; overflow-x: hidden; zoom: 0.85; -moz-transform: scale(0.85); -moz-transform-origin: top center; }
 
         /* Navigation */
 header { 
-            /* Transparent White Glass Base */
-            background: rgba(255, 255, 255, 0.03); 
-            backdrop-filter: blur(15px); 
-            -webkit-backdrop-filter: blur(15px);
-            padding: 20px 8%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-
-
-/* 3. Navigation Container Center Fix */
-.nav-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.nav-capsule {
-    display: flex;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 5px 15px;
-    border-radius: 50px; /* Perfect Pill Shape */
-}
-
-.nav-capsule button {
-    background: none;
-    border: none;
-    color: #fff;
-    padding: 8px 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.nav-capsule button:hover, .nav-capsule button.active {
-    color: #D4AF37;
-}
-
-.nav-link:hover {
-    color: #D4AF37; /* Golden hover */
+    background: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(10px); 
+    padding: 15px 8% 25px; /* Upar niche barabar space */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    border-radius: 0 0 60px 60px; 
+    border-bottom: 2px solid var(--primary);
 }
 
 .logo {
@@ -86,6 +53,7 @@ header {
     object-position: top;
     display: block !important; /* Image ko force karne ke liye */
 }
+
 nav button { background: none; border: none; color: #fff; font-weight: 700; margin-left: 20px; cursor: pointer; transition: 0.3s; }
         nav button.active, nav button:hover { color: var(--primary); }
 
