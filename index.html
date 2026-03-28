@@ -37,29 +37,15 @@ header {
             top: 0; 
             z-index: 1000; 
 
-            /* --- U-SHAPE PATH (DYNAMIC) --- */
-            /* Is path se header nichay se curved (U-shaped) nazar aayega */
-            clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%);
-            -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%);
+/* Resetting defaults to remove dots/arrows */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+nav, button { list-style: none !important; border: none; outline: none; }
 
-            /* Patli border lines taake curve mazeed pop-up ho */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-            border-radius: 0 0 30px 30px;
-        }
-
-/* 1. Dot Fix: Is se har kism ka extra bullet ya dot khatam ho jayega */
-nav, ul, li, header, div {
-    list-style: none !important;
-    list-style-type: none !important;
-    text-decoration: none;
-}
-
-/* 2. U-Shape Header Fix */
-header {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(15px);
+.dynamic-glass-header {
+    background: rgba(255, 255, 255, 0.02); /* Super subtle white */
+    backdrop-filter: blur(15px); /* Strong glass effect */
     -webkit-backdrop-filter: blur(15px);
-    padding: 15px 8% 45px 8%; /* Bottom padding zyada rakhi hai curve ke liye */
+    padding: 15px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,11 +53,82 @@ header {
     top: 0;
     z-index: 1000;
     
-    /* Dynamic U-Shape Path */
-    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Straight Bottom Border with subtle glow */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Logo Styling */
+.logo { display: flex; align-items: center; gap: 12px; font-weight: 700; color: #fff; }
+.logo img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid #D4AF37; object-fit: cover; }
+.logo span { color: #D4AF37; }
+
+/* Dynamic Navigation Capsule */
+.nav-container {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-capsule {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+}
+
+/* Capsule Hover Effect */
+.nav-capsule:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+.nav-capsule button {
+    background: none;
+    color: #eee;
+    padding: 8px 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+    border-radius: 50px;
+}
+
+/* Active Link Glow */
+.nav-capsule button.active {
+    color: #D4AF37;
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.nav-capsule button:hover {
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+/* "Get In Touch" Dynamic Button */
+.get-in-touch-btn {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid #D4AF37;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.get-in-touch-btn:hover {
+    background: #D4AF37;
+    color: #000;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    transform: scale(1.05);
+}
+    
 /* 3. Navigation Container Center Fix */
 .nav-container {
     position: absolute;
