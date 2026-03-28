@@ -115,6 +115,25 @@ header {
 
         @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } nav button { margin: 5px; } .footer-bottom { flex-direction: column; gap: 10px; text-align: center; } }
     </style>
+        /* Get In Touch Button Style */
+.get-in-touch-btn {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #D4AF37; 
+    padding: 8px 20px;
+    border-radius: 50px; 
+    font-weight: 700;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.get-in-touch-btn:hover {
+    background: #D4AF37;
+    color: #000;
+}
 </head>
 <body>
 
@@ -132,7 +151,8 @@ header {
         <button onclick="showPage('experience')" id="btn-experience">Experience</button>
         <button onclick="showPage('blog')" id="btn-blog">Blog</button>
         <button onclick="showPage('contact us')" id="btn-contact us">Contact us</button>
-        <button onclick="showPage('contact')" class="nav-link" style="font-weight: 700;">Get In Touch</button>
+        <button onclick="showPage('contact')" class="get-in-touch-btn">Get In Touch</button>
+</nav>
     </nav>
 </header>
 
