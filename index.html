@@ -25,42 +25,51 @@
 
         /* Navigation */
 header {
+    background: rgba(255, 255, 255, 0.03); /* Bohat halka white */
+    backdrop-filter: blur(12px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Patli glass line */
+    padding: 15px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 8%;
-    position: relative; /* Nav-container ko align karne ke liye */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-
-/* Navigation ko screen ke bilkul center mein lane ke liye */
-.nav-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.nav-capsule {
+        .nav-capsule {
     display: flex;
-    gap: 10px;
-    border: 1px solid #333;
-    padding: 5px 20px;
-    border-radius: 50px; /* Pill shape design */
+    gap: 5px;
     background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2); /* Halki golden border */
+    padding: 5px 10px;
+    border-radius: 50px;
+    transition: all 0.4s ease;
 }
 
-.nav-capsule button {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 8px 15px;
+/* Hover karne par capsule glow kare */
+.nav-capsule:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+}
+        .nav-link {
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
     font-weight: 600;
-    transition: 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Active ya Hover par golden color */
-.nav-capsule button.active, .nav-capsule button:hover {
+.nav-link:hover {
+    background: rgba(212, 175, 55, 0.1); /* Halka golden background */
     color: #D4AF37;
+    transform: translateY(-2px); /* Thora sa upar move hoga */
+}
+
+.nav-link.active {
+    background: #D4AF37;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 .logo {
