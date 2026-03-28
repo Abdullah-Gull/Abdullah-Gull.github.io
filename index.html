@@ -88,19 +88,7 @@ header {
         .milestone { background: var(--primary); color: #000; padding: 50px; border-radius: 20px; margin: 40px 0; }
         .milestone h3 { font-size: 32px; font-weight: 900; margin-bottom: 10px; }
         .milestone p { font-size: 18px; font-weight: 700; }
-        
-        /* --- SERVICES GRID --- */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .service-card { background: var(--card); padding: 40px; border-radius: 20px; border: 1px solid #1a1a1a; transition: 0.4s; }
-        .service-card:hover { border-color: var(--primary); transform: translateY(-8px); }
-        .service-card i { color: var(--primary); font-size: 35px; margin-bottom: 20px; }
 
-        /* --- CONTACT BOX (WHITE) --- */
-        .contact-box { background: #fff; color: #000; border-radius: 30px; display: flex; overflow: hidden; }
-        .contact-left { padding: 60px; width: 45%; background: #f9f9f9; }
-        .contact-right { padding: 60px; width: 55%; }
-        .input-field { width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; }
-     
         /* --- NEW PROPER FOOTER STYLING --- */
         .main-footer { background: #000; padding: 80px 8% 20px; border-top: 3px solid var(--primary); margin-top: 50px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
@@ -171,15 +159,15 @@ header {
     <div>Abdullah <span>Gull</span></div>
 </div>        
     
-    <</div>
-    <nav class="nav-capsule">
-        <button onclick="showPage('home')" class="nav-link active" id="btn-home">Home</button>
-        <button onclick="showPage('about')" class="nav-link" id="btn-about">About</button>
-        <button onclick="showPage('services')" class="nav-link" id="btn-services">Services</button>
-        <button onclick="showPage('blog')" class="nav-link" id="btn-blog">Blog</button>
-        <button onclick="showPage('contact-us')" class="nav-link" id="btn-contact-us">Contact us</button>
+    </div>
+    <nav>
+        <button onclick="showPage('home')" id="btn-home" class="active">Home</button>
+        <button onclick="showPage('about')" id="btn-about">About</button>
+        <button onclick="showPage('experience')" id="btn-experience">Experience</button>
+        <button onclick="showPage('blog')" id="btn-blog">Blog</button>
+        <button onclick="showPage('contact')" id="btn-contact" class="nav-link">Contact us</button>
+        <button onclick="showPage('contact')" class="get-in-touch-btn">Get In Touch</button>
     </nav>
-    <button onclick="showPage('meeting')" class="get-in-touch-btn">Get In Touch</button>
 </header>
 
 <div id="home" class="page active">
@@ -1062,15 +1050,6 @@ function handleFaq(btn) {
     </section>
 </div>
 
-    <div id="services" class="page">
-    <h1 class="section-title">My <span>Services</span></h1>
-    <div class="services-grid">
-        <div class="service-card"><i class="fas fa-search-dollar"></i><h3>Product Research</h3><p>Winning products find karna jo low competition aur high demand hoon.</p></div>
-        <div class="service-card"><i class="fas fa-ad"></i><h3>PPC Management</h3><p>Amazon Ads ko optimize karna taake sales barhein aur ACOS kam ho.</p></div>
-        <div class="service-card"><i class="fas fa-pen-nib"></i><h3>Listing Optimization</h3><p>SEO aur high-CTR images ke saath listings ko behtar banana.</p></div>
-    </div>
-</div>
-
 <div id="blog" class="page">
     <section>
         <h1 style="font-size: 40px; font-weight: 900; margin-bottom: 40px;">Blogs & Case Studies</h1>
@@ -1110,24 +1089,6 @@ function handleFaq(btn) {
     </section>
 </div>
 
-<div id="contact-us" class="page">
-    <div style="display: flex; gap: 10px;">
-                <input type="text" placeholder="First Name" class="field">
-                <input type="text" placeholder="Last Name" class="field">
-            </div>
-            <input type="email" placeholder="Email Address" class="field">
-            <textarea placeholder="Your Message" rows="4" class="field"></textarea>
-            <button class="btn-send">Send Message</button>
-        </div>
-    </div>
-</section>
-
-<section id="meeting">
-    <h1 class="section-title">Book a <span>Meeting</span></h1>
-    <div style="background: #fff; border-radius: 20px; overflow: hidden; height: 750px;">
-        <iframe src="https://cal.com/abdullah-gull/30min" style="width: 100%; height: 100%; border: none;"></iframe>
-    </div>
-</section>
     
 <footer class="main-footer">
     <div class="footer-grid">
