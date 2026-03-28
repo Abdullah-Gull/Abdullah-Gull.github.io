@@ -47,6 +47,53 @@ header {
             border-radius: 0 0 30px 30px;
         }
 
+        /* Dots hatane ke liye special fix */
+nav, ul, li {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* U-Shape Header with Glass Effect */
+header {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    padding: 20px 8% 40px 8%; /* Nichay padding thori zyada taake curve sahi lage */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    /* DYNAMIC U-SHAPE */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Nav Pill Shape */
+.nav-capsule {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 50px; /* Ye hai woh circle/pill shape */
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #D4AF37; /* Golden hover */
+}
+
 .logo {
     display: flex;
     align-items: center;
