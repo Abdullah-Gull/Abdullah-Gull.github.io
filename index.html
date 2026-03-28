@@ -47,47 +47,58 @@ header {
             border-radius: 0 0 30px 30px;
         }
 
-        /* Dots hatane ke liye special fix */
-nav, ul, li {
+/* 1. Dot Fix: Is se har kism ka extra bullet ya dot khatam ho jayega */
+nav, ul, li, header, div {
     list-style: none !important;
     list-style-type: none !important;
-    margin: 0;
-    padding: 0;
+    text-decoration: none;
 }
 
-/* U-Shape Header with Glass Effect */
+/* 2. U-Shape Header Fix */
 header {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(15px);
-    padding: 20px 8% 40px 8%; /* Nichay padding thori zyada taake curve sahi lage */
+    -webkit-backdrop-filter: blur(15px);
+    padding: 15px 8% 45px 8%; /* Bottom padding zyada rakhi hai curve ke liye */
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-
-    /* DYNAMIC U-SHAPE */
-    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%);
+    
+    /* Dynamic U-Shape Path */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Nav Pill Shape */
+/* 3. Navigation Container Center Fix */
+.nav-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .nav-capsule {
     display: flex;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 5px 15px;
-    border-radius: 50px; /* Ye hai woh circle/pill shape */
+    border-radius: 50px; /* Perfect Pill Shape */
 }
 
-.nav-link {
+.nav-capsule button {
+    background: none;
+    border: none;
     color: #fff;
-    text-decoration: none;
-    padding: 8px 18px;
-    font-size: 14px;
+    padding: 8px 15px;
     font-weight: 600;
+    cursor: pointer;
     transition: 0.3s;
+}
+
+.nav-capsule button:hover, .nav-capsule button.active {
+    color: #D4AF37;
 }
 
 .nav-link:hover {
