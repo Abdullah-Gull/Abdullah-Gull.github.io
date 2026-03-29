@@ -294,54 +294,233 @@
 .logo-item.shopify img {
     filter: brightness(0) invert(1) drop-shadow(0 0 1px lightgreen); /* Make it lighter on dark background */
 }
+    /* --- CSS Reset --- */
+body, h1, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* Deep black background */
+    color: #fff;
+    overflow-x: hidden; /* Hide page-level horizontal scroll */
+    line-height: 1.2;
+}
+
+/* --- Top Header Section --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+    border-bottom: 1px solid rgba(247, 214, 109, 0.1); /* Subtle gold separation line */
+}
+
+.header-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Key feature: Gold Primary Button */
+.btn-gold {
+    background-color: #f7d66d; /* The specific gold from image_11.png */
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-gold:hover {
+    background-color: #e5c461; /* Darker gold on hover */
+}
+
+.btn-black-outlined {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #f7d66d; /* Gold outlined button */
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.btn-black-outlined:hover {
+    border-color: #fff;
+}
+
+/* Gold portrait frame */
+.profile-container {
+    width: 150px;
+    height: 150px;
+    border: 3px solid #f7d66d; /* Specific gold frame thickness and color */
+    border-radius: 8px; /* Slight rounded corners */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Title Section --- */
+.title-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    position: relative;
+    padding: 0 60px;
+}
+
+.title-container h1 {
+    font-size: 48px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Sparkle icon accent (static position) */
+.sparkle-icons {
+    position: absolute;
+    right: 120px;
+    top: 20px;
+    display: flex;
+    gap: 5px;
+    opacity: 0.8;
+}
+
+/* --- Slider Section --- */
+.slider-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Slider Arrow Styling */
+.slider-arrow {
+    color: #f7d66d; /* Specific gold color */
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color 0.2s, opacity 0.2s;
+}
+
+.slider-arrow:hover {
+    color: #fff;
+}
+
+/* The Container that holds the row of boxes */
+.logo-slider-container {
+    flex-grow: 1;
+    overflow-x: auto; /* Allows horizontal scroll */
+    display: flex;
+    gap: 15px; /* Spacing between logos */
+    padding: 10px 0;
+    -webkit-overflow-scrolling: touch; /* Smooth mobile scroll */
+    scrollbar-width: thin; /* Clean scrollbar */
+}
+
+/* Hide default scrollbar but keep functionality */
+.logo-slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Key feature: The Gold-Bordered Box */
+.logo-box {
+    width: 180px; /* Consistent box size */
+    height: 120px;
+    background-color: #111; /* Dark background to pop the gold outline */
+    border: 1px solid #f7d66d; /* Key requirement: Gold outline */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-shrink: 0; /* Box cannot shrink */
+    transition: transform 0.2s;
+}
+
+.logo-box:hover {
+    transform: scale(1.05); /* Zoom on hover */
+}
+
+/* Logo Image Styling */
+.logo-box img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Maintain aspect ratio */
+}
 </style>
 </style>
 <body>
     <div id="home" class="page active">
-    <section class="logo-slider-section">
-    <div class="logo-slider-title">Marketplaces We Dominate</div>
-    
-    <div class="slider-container">
-        <<div class="logo-bar">
-    <div class="logo-item amazon">
-        <img src="path/to/amazon-logo.png" alt="Amazon Logo">
+    <div class="title-container">
+        <h1>PREMIUM BRANDS WE TRUST</h1>
+        <div class="sparkle-icons">&#x2728; &#x2728; &#x2728;</div>
     </div>
-    <div class="logo-item shopify">
-        <img src="path/to/shopify-logo.png" alt="Shopify Logo">
-    </div>
-    <div class="logo-item wayfair">
-        <img src="path/to/wayfair-logo.png" alt="Wayfair Logo">
-    </div>
-    <div class="logo-item walmart">
-        <img src="path/to/walmart-logo.png" alt="Walmart Logo">
-    </div>
-    <div class="logo-item home-depot">
-        <img src="path/to/home-depot-logo.png" alt="Home Depot Logo">
-    </div>
-    <div class="logo-item dove">
-        <img src="path/to/dove-logo.png" alt="Dove Logo">
-    </div>
-    <div class="logo-item bestway">
-        <img src="path/to/bestway-logo.png" alt="Bestway Logo">
-    </div>
-    <div class="logo-item adidas">
-        <img src="path/to/adidas-logo.png" alt="Adidas Logo">
-    </div>
-    <div class="logo-item triple-eight">
-        <img src="path/to/triple-eight-logo.png" alt="Triple Eight Logo">
-    </div>
-    <div class="logo-item gsm-outdoors">
-        <img src="path/to/gsm-outdoors-logo.png" alt="GSM Outdoors Logo">
-    </div>
-    <div class="logo-item intex">
-        <img src="path/to/intex-logo.png" alt="Intex Logo">
-    </div>
-    <div class="logo-item safr">
-        <img src="path/to/safr-logo.png" alt="Safr Logo">
-    </div>
-</div>
-    </div>
-</section>
+
+    <div class="slider-section">
+        <button class="slider-arrow" id="slide-left">&#x2039;</button> <div class="logo-slider-container" id="logo-slider">
+            <div class="logo-box">
+                <img src="path_to_amazon_logo.png" alt="Amazon Logo">
+            </div>
+            <div class="logo-box">
+                <img src="path_to_shopify_logo.png" alt="Shopify Logo">
+            </div>
+            <div class="logo-box">
+                <img src="path_to_wayfair_logo.png" alt="Wayfair Logo">
+            </div>
+            <div class="logo-box">
+                <img src="path_to_walmart_logo.png" alt="Walmart Logo">
+            </div>
+            <div class="logo-box">
+                <img src="path_to_home_depot_logo.png" alt="Home Depot Logo">
+            </div>
+            <div class="logo-box">
+                <img src="path_to_ebay_logo.png" alt="eBay Logo">
+            </div>
+            <div class="logo-box">
+                <img src="path_to_etsy_logo.png" alt="Etsy Logo">
+            </div>
+            <div class="logo-box">
+                <img src="path_to_asenda_logo.png" alt="Asenda Logo">
+            </div>
+            <div class="logo-box">
+                <img src="path_to_newegg_logo.png" alt="Newegg Logo">
+            </div>
+        </div>
+        
+        <button class="slider-arrow" id="slide-right">&#x203A;</button> </div>
+
+    <script>
+        // Placeholder script for sliding functionality
+        document.getElementById('slide-left').onclick = () => {
+            document.getElementById('logo-slider').scrollBy({ left: -220, behavior: 'smooth' });
+        };
+        document.getElementById('slide-right').onclick = () => {
+            document.getElementById('logo-slider').scrollBy({ left: 220, behavior: 'smooth' });
+        };
+    </script>
     </div>
 </body>
 
