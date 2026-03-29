@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="y1q1dcrXaLMTTUpBn4ZAqFOn8_tzt710IFcoDVw_cq8" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZZJMV9V17"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VZZJMV9V17');
+    </script>
+    <title>Abdullah Gull | Amazon Expert Portfolio</title>
+    </head>
+
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">
+                <span class="logo-text">Abdullah <span>Gull</span></span>
+            </div>
+
+            <nav class="nav-capsule">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About us</a>
+                <a href="services.html"class="nav-link active">Services</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact us</a>
+            </nav>
+
+            <div class="header-right">
+                <a href="contact.html" class="get-in-touch-btn">Get In Touch</a>
+            </div>
+        </div>
+    </header>
