@@ -254,69 +254,46 @@
         image-rendering: pixelated; /* Works best for low-res but sharp images */
         display: block;
     }
-
-    /* Rest of the CSS for buttons and experience badge is same as before */
-    /* ... (rest of CSS) ... */
-    <style>
-/* --- Logo Slider Styling --- */
-.logo-slider-section {
-    padding: 60px 0;
-    background: #000;
-    overflow: hidden;
-    position: relative;
-    border-top: 1px solid rgba(255,255,255,0.05);
+/* Basic styling for the entire logo bar container */
+.logo-bar {
+    display: flex; /* Key part: puts items horizontally */
+    flex-wrap: nowrap; /* Prevents wrapping, key for a straight bar */
+    justify-content: center; /* Centers the logos or use space-around for even spacing */
+    align-items: center; /* Aligns vertically */
+    background-color: #333; /* Dark background from original image */
+    padding: 10px 0; /* Add top and bottom padding */
+    width: 100%; /* Full width */
+    overflow-x: auto; /* Adds a scrollbar if the logos are too wide for the screen, like the original */
 }
 
-.logo-slider-title {
-    text-align: center;
-    color: #666;
-    font-size: 13px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-    font-weight: 700;
-}
-
-.slider-container {
+/* Individual styling for each logo item */
+.logo-item {
+    padding: 0 15px; /* Space between logos, avoids broken look */
+    /* Ensure the container doesn't create unwanted borders or boxes */
     display: flex;
-    /* Ab 9 logos hain to width us hisab se adjust ki hai */
-    width: calc(250px * 18); 
-    animation: scroll 40s linear infinite; /* 40s takay smooth chalay */
-}
-
-.slide {
-    width: 250px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 0 35px;
+    align-items: center;
 }
 
-.slide img {
-    max-width: 130px;
-    max-height: 45px;
-    filter: brightness(0) invert(1); /* All logos white for professional look */
-    opacity: 0.6;
-    transition: 0.3s ease;
+/* Specific styling to handle the unique shapes of each logo */
+.logo-item img {
+    height: 40px; /* Set a consistent height for a clean look, adjust as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
+    /* Special fix: prevent any native CSS from breaking the logo structure */
+    mix-blend-mode: normal; 
 }
 
-.slide img:hover {
-    opacity: 1;
-    transform: scale(1.1);
+/* (Optional) Adjust unique logos that are too wide or tall at 40px */
+.logo-item.amazon img,
+.logo-item.bestway img {
+    height: 35px; /* Adjust height for these specifically to align visually */
 }
 
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    /* Adhay raste par animation reset hogi loop ke liye */
-    100% { transform: translateX(calc(-250px * 9)); }
+/* Custom color styling for individual logos (example) */
+.logo-item.shopify img {
+    filter: brightness(0) invert(1) drop-shadow(0 0 1px lightgreen); /* Make it lighter on dark background */
 }
-
-/* Gradient shadows for smooth entry/exit */
-.logo-slider-section::before, .logo-slider-section::after {
-    content: ""; height: 100%; position: absolute; width: 150px; z-index: 2; top: 0;
-}
-.logo-slider-section::before { left: 0; background: linear-gradient(to right, #000, transparent); }
-.logo-slider-section::after { right: 0; background: linear-gradient(to left, #000, transparent); }
 </style>
 </style>
 <body>
@@ -325,25 +302,44 @@
     <div class="logo-slider-title">Marketplaces We Dominate</div>
     
     <div class="slider-container">
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Shopify_logo_2018.svg" alt="Shopify"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Wayfair_logo_2024.svg" alt="Wayfair"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Walmart_logo.svg" alt="Walmart"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/The_Home_Depot.svg" alt="Home Depot"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" alt="eBay"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Etsy_logo.svg" alt="Etsy"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Newegg_logo.svg" alt="Newegg"></div>
-        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6A7p8Pz-m_K5A9rR0aVn6Z5lM9Xn6X5lM9A&s" alt="Asenda"></div>
-
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Shopify_logo_2018.svg" alt="Shopify"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Wayfair_logo_2024.svg" alt="Wayfair"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Walmart_logo.svg" alt="Walmart"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/The_Home_Depot.svg" alt="Home Depot"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" alt="eBay"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Etsy_logo.svg" alt="Etsy"></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Newegg_logo.svg" alt="Newegg"></div>
-        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6A7p8Pz-m_K5A9rR0aVn6Z5lM9Xn6X5lM9A&s" alt="Asenda"></div>
+        <<div class="logo-bar">
+    <div class="logo-item amazon">
+        <img src="path/to/amazon-logo.png" alt="Amazon Logo">
+    </div>
+    <div class="logo-item shopify">
+        <img src="path/to/shopify-logo.png" alt="Shopify Logo">
+    </div>
+    <div class="logo-item wayfair">
+        <img src="path/to/wayfair-logo.png" alt="Wayfair Logo">
+    </div>
+    <div class="logo-item walmart">
+        <img src="path/to/walmart-logo.png" alt="Walmart Logo">
+    </div>
+    <div class="logo-item home-depot">
+        <img src="path/to/home-depot-logo.png" alt="Home Depot Logo">
+    </div>
+    <div class="logo-item dove">
+        <img src="path/to/dove-logo.png" alt="Dove Logo">
+    </div>
+    <div class="logo-item bestway">
+        <img src="path/to/bestway-logo.png" alt="Bestway Logo">
+    </div>
+    <div class="logo-item adidas">
+        <img src="path/to/adidas-logo.png" alt="Adidas Logo">
+    </div>
+    <div class="logo-item triple-eight">
+        <img src="path/to/triple-eight-logo.png" alt="Triple Eight Logo">
+    </div>
+    <div class="logo-item gsm-outdoors">
+        <img src="path/to/gsm-outdoors-logo.png" alt="GSM Outdoors Logo">
+    </div>
+    <div class="logo-item intex">
+        <img src="path/to/intex-logo.png" alt="Intex Logo">
+    </div>
+    <div class="logo-item safr">
+        <img src="path/to/safr-logo.png" alt="Safr Logo">
+    </div>
+</div>
     </div>
 </section>
     </div>
