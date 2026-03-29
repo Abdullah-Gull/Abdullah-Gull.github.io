@@ -54,8 +54,31 @@ header {
     display: block !important; /* Image ko force karne ke liye */
 }
 
-nav button { background: none; border: none; color: #fff; font-weight: 700; margin-left: 20px; cursor: pointer; transition: 0.3s; }
-        nav button.active, nav button:hover { color: var(--primary); }
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Capsule Circle Design */
+    background: rgba(255, 255, 255, 0.05); /* Halka glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Barik border */
+    padding: 8px 25px;
+    border-radius: 50px; /* Is se capsule/circle shape banegi */
+    backdrop-filter: blur(10px);
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Home ya active link ka color golden rakhne ke liye */
+nav button.active, nav button:hover {
+    color: #D4AF37; 
+}
 
         /* Pages */
         .page { display: none; animation: fadeIn 0.5s ease; }
