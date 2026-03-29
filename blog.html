@@ -6,7 +6,42 @@
     <title>Blog - Abdullah Gull</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <style>
-        /* Same CSS + blog-post style jo pehle diya tha */
+        :root {
+        --gold: #D4AF37;
+        --dark: #000000;
+        --glass: rgba(255, 255, 255, 0.05);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--dark); color: #fff; overflow-x: hidden; }
+
+    /* Floating Capsule Header */
+    .main-header { position: fixed; top: 20px; width: 100%; z-index: 1000; }
+    .header-container {
+        max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+        align-items: center; background: rgba(0,0,0,0.8); backdrop-filter: blur(15px);
+        padding: 10px 25px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo-area { display: flex; align-items: center; gap: 10px; }
+    .logo-area img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--gold); }
+    .logo-text { font-weight: 700; font-size: 18px; }
+    .logo-text span { color: var(--gold); }
+
+    .nav-capsule { display: flex; background: var(--glass); padding: 5px; border-radius: 50px; gap: 5px; }
+    .nav-link { color: #ccc; text-decoration: none; padding: 8px 18px; font-size: 14px; border-radius: 50px; transition: 0.3s; }
+    .nav-link.active, .nav-link:hover { background: var(--gold); color: #000; font-weight: 600; }
+
+    .get-in-touch-btn { 
+        text-decoration: none; color: #fff; border: 1.5px solid var(--gold); 
+        padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; transition: 0.3s;
+    }
+    .get-in-touch-btn:hover { background: var(--gold); color: #000; }
+
+    /* About Section Preview */
+    .about-preview { padding: 120px 10% 80px; display: flex; align-items: center; gap: 50px; }
+    .about-content h1 { font-size: 45px; margin-bottom: 20px; }
+    .about-content p { color: #aaa; line-height: 1.6; margin-bottom: 30px; }
     </style>
 </head>
 <body>
