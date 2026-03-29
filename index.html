@@ -257,10 +257,95 @@
 
     /* Rest of the CSS for buttons and experience badge is same as before */
     /* ... (rest of CSS) ... */
+    <style>
+/* --- Logo Slider Styling --- */
+.logo-slider-section {
+    padding: 60px 0;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo-slider-title {
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.slider-container {
+    display: flex;
+    /* Ab 9 logos hain to width us hisab se adjust ki hai */
+    width: calc(250px * 18); 
+    animation: scroll 40s linear infinite; /* 40s takay smooth chalay */
+}
+
+.slide {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 35px;
+}
+
+.slide img {
+    max-width: 130px;
+    max-height: 45px;
+    filter: brightness(0) invert(1); /* All logos white for professional look */
+    opacity: 0.6;
+    transition: 0.3s ease;
+}
+
+.slide img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    /* Adhay raste par animation reset hogi loop ke liye */
+    100% { transform: translateX(calc(-250px * 9)); }
+}
+
+/* Gradient shadows for smooth entry/exit */
+.logo-slider-section::before, .logo-slider-section::after {
+    content: ""; height: 100%; position: absolute; width: 150px; z-index: 2; top: 0;
+}
+.logo-slider-section::before { left: 0; background: linear-gradient(to right, #000, transparent); }
+.logo-slider-section::after { right: 0; background: linear-gradient(to left, #000, transparent); }
+</style>
 </style>
 <body>
     <div id="home" class="page active">
+    <section class="logo-slider-section">
+    <div class="logo-slider-title">Marketplaces We Dominate</div>
     
+    <div class="slider-container">
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Shopify_logo_2018.svg" alt="Shopify"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Wayfair_logo_2024.svg" alt="Wayfair"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Walmart_logo.svg" alt="Walmart"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/The_Home_Depot.svg" alt="Home Depot"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" alt="eBay"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Etsy_logo.svg" alt="Etsy"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Newegg_logo.svg" alt="Newegg"></div>
+        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6A7p8Pz-m_K5A9rR0aVn6Z5lM9Xn6X5lM9A&s" alt="Asenda"></div>
+
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Shopify_logo_2018.svg" alt="Shopify"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Wayfair_logo_2024.svg" alt="Wayfair"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Walmart_logo.svg" alt="Walmart"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/The_Home_Depot.svg" alt="Home Depot"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" alt="eBay"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Etsy_logo.svg" alt="Etsy"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Newegg_logo.svg" alt="Newegg"></div>
+        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6A7p8Pz-m_K5A9rR0aVn6Z5lM9Xn6X5lM9A&s" alt="Asenda"></div>
+    </div>
+</section>
     </div>
 </body>
 
