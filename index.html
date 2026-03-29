@@ -267,6 +267,55 @@
     max-height: 80px; /* Logo ko box se bahar jane se rokta hai */
     object-fit: contain;
 }
+         /* Background and spacing */
+.logo-slider {
+    background-color: #000;
+    padding: 60px 0;
+}
+
+/* Gold Box Styling */
+.swiper-slide {
+    background: #0d0d0d; 
+    border: 1.5px solid #f7d66d; /* Gold Border */
+    border-radius: 12px;
+    height: 110px; /* Sahi size */
+    width: 200px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Brand Text Styling - Isse text 'Logo' jaisa lagega */
+.brand-text {
+    color: #f7d66d; /* Gold Text */
+    font-size: 24px;
+    font-weight: 800; /* Bold Look */
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', Roboto, sans-serif; /* Clean Font */
+}
+
+/* Hover effect */
+.swiper-slide:hover {
+    background: #f7d66d; /* Hover pe box gold ho jayega */
+    transform: translateY(-5px);
+}
+
+.swiper-slide:hover .brand-text {
+    color: #000; /* Hover pe text black ho jayega */
+}
+         <script>
+  var swiper = new Swiper(".logoSwiper", {
+    slidesPerView: "auto",
+    spaceBetween: 25,
+    loop: true,
+    autoplay: {
+      delay: 1500,
+      disableOnInteraction: false,
+    },
+  });
+</script>
 </style>
     
 <body>
