@@ -316,6 +316,33 @@
     },
   });
 </script>
+         .logo-slider {
+    width: 100%;
+    overflow: hidden; /* Ye line slide ko row mein rakhegi */
+    background-color: #000;
+    padding: 40px 0;
+}
+
+.swiper-wrapper {
+    transition-timing-function: linear !important; /* Smooth moving ke liye */
+}
+
+.swiper-slide {
+    width: 200px !important; /* Box ki fix width */
+    height: 100px;
+    background: #0d0d0d;
+    border: 1.5px solid #f7d66d;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-text {
+    color: #f7d66d;
+    font-weight: bold;
+    font-size: 20px;
+}
 </style>
     
 <body>
@@ -615,7 +642,9 @@ body {
 </style>
 <body>
     <div id="home" class="page active">
-   <div class="logo-slider">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<div class="logo-slider">
     <div class="swiper logoSwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><span class="brand-text">Amazon</span></div>
@@ -623,13 +652,29 @@ body {
             <div class="swiper-slide"><span class="brand-text">Wayfair</span></div>
             <div class="swiper-slide"><span class="brand-text">Walmart</span></div>
             <div class="swiper-slide"><span class="brand-text">Home Depot</span></div>
-            <div class="swiper-slide"><span class="brand-text">eBay</span></div>
+            <div class="swiper-slide"><span class="brand-text">EBay</span></div>
             <div class="swiper-slide"><span class="brand-text">Etsy</span></div>
             <div class="swiper-slide"><span class="brand-text">Asenda</span></div>
             <div class="swiper-slide"><span class="brand-text">Newegg</span></div>
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+  const swiper = new Swiper(".logoSwiper", {
+    slidesPerView: "auto", // Boxes ko width ke hisab se adjust karega
+    spaceBetween: 20,      // Boxes ke darmiyan gap
+    centeredSlides: false,
+    loop: true,            // Khatam hone par dobara shuru ho jayega
+    speed: 4000,           // Speed kitni fast ho
+    autoplay: {
+      delay: 0,            // 0 delay se slider "continuous" chalta rehta hai (smooth motion)
+      disableOnInteraction: false,
+    },
+    freeMode: true,        // Smooth scrolling ke liye
+  });
+</script>
     
 
 </body>
