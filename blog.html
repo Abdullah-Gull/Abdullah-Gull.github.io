@@ -1,139 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Blog - Abdullah Gull</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-   <style>
-    /* Blog Section Container */
-    .blog-section {
-        padding: 80px 10%;
-        max-width: 1300px;
-        margin: 0 auto;
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="y1q1dcrXaLMTTUpBn4ZAqFOn8_tzt710IFcoDVw_cq8" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZZJMV9V17"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VZZJMV9V17');
+    </script>
+    <title>Abdullah Gull | Amazon Expert Portfolio</title>
+    </head>
+    <style>
+    :root {
+        --gold: #D4AF37;
+        --dark: #000000;
+        --glass: rgba(255, 255, 255, 0.05);
     }
 
-    .blog-header {
-        text-align: center;
-        margin-bottom: 60px;
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--dark); color: #fff; overflow-x: hidden; }
+
+    /* Floating Capsule Header */
+    .main-header { position: fixed; top: 20px; width: 100%; z-index: 1000; }
+    .header-container {
+        max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+        align-items: center; background: rgba(0,0,0,0.8); backdrop-filter: blur(15px);
+        padding: 10px 25px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .blog-header h1 {
-        font-size: 45px;
-        margin-bottom: 15px;
-    }
+    .logo-area { display: flex; align-items: center; gap: 10px; }
+    .logo-area img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--gold); }
+    .logo-text { font-weight: 700; font-size: 18px; }
+    .logo-text span { color: var(--gold); }
 
-    .blog-header h1 span {
-        color: var(--gold);
-    }
+    .nav-capsule { display: flex; background: var(--glass); padding: 5px; border-radius: 50px; gap: 5px; }
+    .nav-link { color: #ccc; text-decoration: none; padding: 8px 18px; font-size: 14px; border-radius: 50px; transition: 0.3s; }
+    .nav-link.active, .nav-link:hover { background: var(--gold); color: #000; font-weight: 600; }
 
-    /* Grid Layout */
-    .blog-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
+    .get-in-touch-btn { 
+        text-decoration: none; color: #fff; border: 1.5px solid var(--gold); 
+        padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; transition: 0.3s;
     }
+    .get-in-touch-btn:hover { background: var(--gold); color: #000; }
 
-    /* Blog Card Style */
-    .blog-card {
-        background: var(--glass);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        overflow: hidden;
-        transition: 0.4s ease;
-        text-decoration: none;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-    }
+    /* About Section Preview */
+    .about-preview { padding: 120px 10% 80px; display: flex; align-items: center; gap: 50px; }
+    .about-content h1 { font-size: 45px; margin-bottom: 20px; }
+    .about-content p { color: #aaa; line-height: 1.6; margin-bottom: 30px; }
+</style>
 
-    .blog-card:hover {
-        transform: translateY(-10px);
-        border-color: var(--gold);
-        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
-    }
-
-    .blog-image {
-        width: 100%;
-        height: 200px;
-        background-color: #111;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .blog-content {
-        padding: 25px;
-    }
-
-    .blog-category {
-        color: var(--gold);
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
-        display: block;
-    }
-
-    .blog-title {
-        font-size: 20px;
-        font-weight: 700;
-        margin-bottom: 15px;
-        line-height: 1.4;
-    }
-
-    .blog-excerpt {
-        color: #aaa;
-        font-size: 14px;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
-
-    .read-more {
-        color: #fff;
-        font-weight: 600;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .read-more:after {
-        content: '→';
-        transition: 0.3s;
-    }
-
-    .blog-card:hover .read-more:after {
-        margin-left: 5px;
-    }
-</style></head>
 <body>
-
-    <!-- Header -->
-
-    <section id="blog" style="padding-top:150px; background:#f8f9fa;">
-        <div class="container">
-            <h2>My Blog & Insights</h2>
-
-            <div class="blog-post">
-                <h3>How I Reduced ACoS from 45% to 12% in 30 Days</h3>
-                <p><small>February 10, 2026</small></p>
-                <p>Real case study: High-competition supplement product pe PPC tweaks se ACoS slash kiya aur sales 180% barhaya...</p>
-                <a href="#" class="cta-btn">Read Full Article</a>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">
+                <span class="logo-text">Abdullah <span>Gull</span></span>
             </div>
 
-            <div class="blog-post">
-                <h3>Amazon Product Research Tools 2026 – Free vs Paid</h3>
-                <p><small>January 25, 2026</small></p>
-                <p>Helium 10 Black Box, Jungle Scout, Keepa, Google Trends – Pakistan se kaun sa best hai beginners ke liye...</p>
-                <a href="#" class="cta-btn">Read Full Article</a>
-            </div>
+            <nav class="nav-capsule">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="contact.html" class="nav-link">Contact us</a>
+            </nav>
 
-            <!-- Aur posts add karo -->
+            <div class="header-right">
+                <a href="contact.html" class="get-in-touch-btn">Get In Touch</a>
+            </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-
-</body>
-</html>
+    </header>
