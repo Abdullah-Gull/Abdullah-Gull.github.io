@@ -49,6 +49,20 @@
     .about-preview { padding: 120px 10% 80px; display: flex; align-items: center; gap: 50px; }
     .about-content h1 { font-size: 45px; margin-bottom: 20px; }
     .about-content p { color: #aaa; line-height: 1.6; margin-bottom: 30px; }
+
+        /* Hero */
+        .hero { padding: 100px 8% 60px; text-align: center; }
+        .hero h2 { color: var(--primary); font-size: 18px; letter-spacing: 4px; margin-bottom: 10px; }
+        .hero h1 { font-size: clamp(35px, 6vw, 65px); font-weight: 900; line-height: 1.1; }
+        .hero p { max-width: 800px; margin: 20px auto; color: var(--text); font-size: 18px; }
+
+        /* Logo Slider (Moving Marquee) */
+        .logo-slider { background: #080808; padding: 40px 0; border-y: 1px solid #222; overflow: hidden; }
+        .swiper-wrapper { transition-timing-function: linear !important; }
+        .swiper-slide { width: auto; display: flex; align-items: center; padding: 0 50px; }
+        .swiper-slide img { height: 45px; filter: brightness(0) invert(1); opacity: 0.7; transition: 0.4s; }
+        .swiper-slide img:hover { opacity: 1; filter: none; }
+
 </style>
 
 <body>
@@ -72,3 +86,30 @@
             </div>
         </div>
     </header>
+<body>
+    <div id="home" class="page active">
+    <div class="hero">
+        <h2>AMAZON FBA SPECIALIST</h2>
+        <h1><span>Building Brands</span><br>Scaling Amazon Success<span style="color: var(--primary);">.</span></h1>
+        <p>PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert</p>
+    </div>
+
+    <div class="logo-slider">
+        <div class="swiper logoSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
+                <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Walmart_logo.svg" alt="Walmart"></div>
+                <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" alt="eBay"></div>
+                <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify"></div>
+                <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Etsy_logo.svg" alt="Etsy"></div>
+                <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Wayfair_logo.svg" alt="Wayfair"></div>
+             <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
+           <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" alt="eBay"></div>
+          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify"></div>
+          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Wayfair_logo.svg" alt="Wayfair"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+    
