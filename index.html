@@ -231,6 +231,42 @@
     },
   });
 </script>
+         /* Slider Container */
+.logo-slider {
+    background-color: #000;
+    padding: 40px 0;
+    width: 100%;
+    overflow: hidden; /* Extra logos ko hide karne ke liye */
+}
+
+/* Swiper wrapper ko horizontal karne ke liye */
+.swiper-wrapper {
+    display: flex !important;
+    flex-direction: row !important; /* Force horizontal alignment */
+}
+
+/* Individual Slide (Gold Box) */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0a0a0a; /* Dark background */
+    border: 1.5px solid #f7d66d; /* Premium Gold Border */
+    border-radius: 12px;
+    height: 140px; /* Sahi height */
+    width: 220px !important; /* Sahi width */
+    padding: 20px;
+    margin-right: 20px; /* Boxes ke darmiyan gap */
+    transition: 0.3s;
+}
+
+/* Logo Image ko box ke andar fit karne ke liye */
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 80px; /* Logo ko box se bahar jane se rokta hai */
+    object-fit: contain;
+}
 </style>
     
 <body>
@@ -554,6 +590,9 @@ body {
           <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify"></div>
           <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Wayfair_logo.svg" alt="Wayfair"></div>
             </div>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         </div>
     </div>
 
