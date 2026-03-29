@@ -665,11 +665,7 @@ function handleFaq(btn) {
 
     </div>
 
-    <div style="text-align: center; margin-top: 60px;">
-        <a href="#contact" style="background: #D4AF37; color: #000; padding: 18px 50px; border-radius: 5px; text-decoration: none; font-weight: 900; font-size: 14px; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);">SCALE YOUR PERFORMANCE NOW</a>
-    </div>
-
-    <section class="results-milestone">
+  <section class="results-milestone">
     <div class="results-container">
         <h2 class="results-title">It is all about results</h2>
         <p class="results-subtitle">Our success is directly tied to the growth and expansion of our amazing clients.</p>
@@ -690,95 +686,127 @@ function handleFaq(btn) {
         </div>
 
         <div class="partners-bar">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Walmart_logo.svg" alt="Walmart">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Ads" style="filter: brightness(0) invert(1);">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/AWS_logo_SMILE_2021.pk.svg" alt="AWS Partner" style="filter: brightness(0) invert(1);">
-            <div class="agency-name">Abdullah Gull Agency</div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_Advertising_Logo.svg" alt="Amazon Ads">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Global Selling">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Partner">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+            <div class="h10-logo-custom">Helium <span>10</span></div>
         </div>
     </div>
 </section>
 
 <style>
+    /* --- THEME MATCHING STYLES --- */
     .results-milestone {
-        padding: 80px 8%;
-        background: #000;
+        padding: 80px 5%;
+        background: #000; /* Dark Mode */
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         color: #fff;
-        text-align: center;
     }
 
     .results-container {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.02); /* Glassmorphism */
+        border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 20px;
         padding: 60px 40px;
+        text-align: center;
         backdrop-filter: blur(10px);
     }
 
     .results-title {
-        font-size: clamp(28px, 4vw, 42px);
+        font-size: 38px;
         font-weight: 800;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+        letter-spacing: -0.5px;
     }
 
     .results-subtitle {
         color: #888;
-        font-size: 16px;
-        margin-bottom: 50px;
+        font-size: 15px;
+        margin-bottom: 60px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 30px;
-        margin-bottom: 60px;
-    }
-
-    .stat-card h3 {
-        font-size: 48px;
-        color: #fff;
-        font-weight: 900;
-        margin-bottom: 10px;
-    }
-
-    .stat-card p {
-        color: #aaa;
-        font-weight: 600;
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .partners-bar {
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
         gap: 30px;
-        padding-top: 40px;
+        margin-bottom: 70px;
+    }
+
+    .stat-card h3 {
+        font-size: 52px;
+        font-weight: 900;
+        margin-bottom: 8px;
+        color: #fff;
+    }
+
+    .stat-card p {
+        color: #D4AF37; /* Golden Accent */
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+    }
+
+    /* --- LOGO BAR (NO BREAKDOWN) --- */
+    .partners-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap; /* Forces single line */
+        gap: 25px;
+        padding-top: 45px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
+        overflow-x: auto; /* Scroll for mobile instead of breaking */
+    }
+
+    .partners-bar::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for cleaner look */
     }
 
     .partners-bar img {
-        height: 35px;
-        opacity: 0.6;
-        transition: 0.3s;
+        height: 32px;
+        filter: brightness(0) invert(1); /* Pure white logos */
+        opacity: 0.7;
+        transition: 0.3s ease;
     }
 
     .partners-bar img:hover {
         opacity: 1;
+        transform: scale(1.05);
     }
 
-    .agency-name {
-        font-family: 'serif';
-        font-style: italic;
-        color: #D4AF37; /* Golden Theme */
+    /* Helium 10 Custom Logo Look */
+    .h10-logo-custom {
+        font-size: 20px;
+        font-weight: 800;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+    .h10-logo-custom span {
+        background: #fff;
+        color: #000;
+        padding: 1px 6px;
+        margin-left: 6px;
+        border-radius: 3px;
         font-size: 18px;
-        opacity: 0.8;
     }
 
+    /* Responsive adjustments */
     @media (max-width: 768px) {
-        .stats-grid { grid-template-columns: 1fr; }
-        .partners-bar { flex-direction: column; }
+        .stats-grid { flex-direction: column; gap: 50px; }
+        .stat-card h3 { font-size: 42px; }
+        .results-container { padding: 40px 20px; }
     }
 </style>
     
