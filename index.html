@@ -165,6 +165,72 @@
     align-items: center;
     /* ... rest of the code ... */
 }
+         /* Slider Container */
+.logo-slider {
+    background-color: #000; /* Black background */
+    padding: 50px 0;
+    width: 100%;
+}
+
+/* Swiper Container */
+.logoSwiper {
+    padding: 20px 0;
+}
+
+/* Swiper Slide - Individual Logo Box */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111; /* Dark grey box background */
+    border: 1px solid #f7d66d; /* Gold border exactly like image */
+    border-radius: 12px;
+    height: 120px; /* Fixed height for consistency */
+    width: 200px !important; /* Box width */
+    padding: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Effect: Box thora zoom hoga aur border chamkegi */
+.swiper-slide:hover {
+    transform: scale(1.05);
+    border-color: #fff;
+    box-shadow: 0 0 15px rgba(247, 214, 109, 0.3);
+}
+
+/* Logo Image Styling */
+.swiper-slide img {
+    max-width: 85%;
+    max-height: 70%;
+    object-fit: contain;
+    filter: brightness(1.2); /* Logos ko thora bright karne ke liye */
+}
+
+/* Optional: Agar aapne Swiper ki dots (pagination) ya arrows use karni hain */
+.swiper-button-next, .swiper-button-prev {
+    color: #f7d66d !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #f7d66d !important;
+}
+         <script>
+  var swiper = new Swiper(".logoSwiper", {
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: { slidesPerView: 2 },
+      768: { slidesPerView: 4 },
+      1024: { slidesPerView: 5 },
+    },
+  });
+</script>
 </style>
     
 <body>
