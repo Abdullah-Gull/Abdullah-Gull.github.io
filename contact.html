@@ -54,6 +54,20 @@
     padding: 80px 20px;
     font-family: 'Helvetica', Arial, sans-serif;
 }
+        header, .navbar { /* Jo bhi aapke header ki class hai use yahan likhain */
+    position: fixed; /* Header ko top par fix karne ke liye */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Taake header baki content (contact section) ke upar rahe */
+    background: #111; /* Header ka background color dark rakhen taake content peeche hide ho */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Thora premium shadow */
+}
+
+/* Kyunke header ab screen par fix hai, to content ko thora niche push karna hoga */
+body {
+    padding-top: 80px; /* Jitni aapke header ki height hai utna padding dain */
+}
 
 /* Custom Fonts and Colors */
 :root {
