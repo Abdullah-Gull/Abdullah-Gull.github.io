@@ -72,3 +72,213 @@
             </div>
         </div>
     </header>
+
+
+    <body> 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Abdullah Gull | Amazon Expert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #d1b162;
+            --dark-bg: #000000;
+            --card-bg: #0a0a0a;
+            --input-bg: #111111;
+            --border-color: rgba(209, 177, 98, 0.3);
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* --- STICKY HEADER FIX --- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo { font-weight: 700; font-size: 22px; cursor: pointer; }
+        .logo span { color: var(--primary-gold); }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 25px; font-size: 14px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary-gold); }
+        .btn-outline { border: 1px solid var(--primary-gold); padding: 8px 20px; border-radius: 50px; color: var(--primary-gold) !important; }
+
+        /* --- PAGE CONTENT --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+
+        .hero-section { text-align: center; margin-bottom: 50px; }
+        .hero-section h1 { font-size: 55px; font-weight: 700; text-transform: uppercase; margin: 0; }
+        .hero-section h1 span { color: var(--primary-gold); text-shadow: 0 0 15px rgba(209, 177, 98, 0.4); }
+        .hero-section p { color: #888; font-size: 15px; margin-top: 15px; max-width: 700px; margin-inline: auto; }
+
+        /* --- THE MAIN CARD (BROWN SPIDER STYLE) --- */
+        .main-contact-card {
+            display: flex;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+        }
+
+        .left-info-panel {
+            flex: 1;
+            padding: 50px;
+            background: linear-gradient(135deg, #0d0d0d 0%, #050505 100%);
+            border-right: 1px solid var(--border-color);
+        }
+
+        .left-info-panel h2 { font-size: 28px; margin-bottom: 10px; color: var(--primary-gold); }
+        .left-info-panel p { color: #aaa; font-size: 14px; margin-bottom: 30px; }
+
+        .features { list-style: none; padding: 0; }
+        .features li { margin-bottom: 18px; display: flex; align-items: center; gap: 12px; font-size: 14px; }
+        .features li b { color: var(--primary-gold); }
+
+        .stats-grid { display: flex; gap: 15px; margin-top: 40px; }
+        .stat-card {
+            flex: 1;
+            background: #151515;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .stat-card h3 { display: block; font-size: 24px; color: var(--primary-gold); margin: 0; }
+        .stat-card span { font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- FORM PANEL --- */
+        .right-form-panel { flex: 1.1; padding: 50px; background: #080808; }
+        .right-form-panel h3 { margin-bottom: 30px; font-size: 24px; }
+
+        .input-group { display: flex; gap: 15px; margin-bottom: 15px; }
+        input, textarea {
+            width: 100%; padding: 16px; background: var(--input-bg); border: 1px solid #222;
+            border-radius: 10px; color: #fff; font-family: inherit; transition: 0.3s;
+        }
+        input:focus, textarea:focus { border-color: var(--primary-gold); outline: none; background: #1a1a1a; }
+
+        .submit-btn {
+            width: 100%; padding: 18px; background: var(--primary-gold); color: #000;
+            border: none; border-radius: 10px; font-weight: 700; text-transform: uppercase;
+            cursor: pointer; transition: 0.4s; margin-top: 10px;
+        }
+        .submit-btn:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(209,177,98,0.3); }
+
+        /* --- STRATEGY CALL --- */
+        .call-section { text-align: center; margin: 80px 0; }
+        .call-section h3 { font-size: 30px; margin-bottom: 10px; }
+        .call-section p { color: #888; margin-bottom: 30px; }
+        .lime-btn {
+            display: inline-block; background: #c6e44e; color: #000; padding: 18px 45px;
+            border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s;
+        }
+        .lime-btn:hover { box-shadow: 0 0 25px rgba(198, 228, 78, 0.5); transform: scale(1.05); }
+
+        /* --- FOOTER GRID --- */
+        .contact-footer { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .info-box { background: #0c0c0c; padding: 40px; border-radius: 20px; text-align: center; border: 1px solid #1a1a1a; transition: 0.3s; }
+        .info-box:hover { border-color: var(--primary-gold); }
+        .info-box h4 { color: var(--primary-gold); margin-bottom: 10px; }
+
+        @media (max-width: 900px) {
+            .main-contact-card { flex-direction: column; }
+            .left-info-panel { border-right: none; border-bottom: 1px solid var(--border-color); }
+            .input-group { flex-direction: column; }
+            .contact-footer { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">Abdullah <span>Gull</span></div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About us</a>
+            <a href="#">Services</a>
+            <a href="#">Blog</a>
+            <a href="#" class="btn-outline">Get In Touch</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <div class="hero-section">
+        <h1>GET IN <span>TOUCH</span></h1>
+        <p><b>Abdullah Gull</b> is an Amazon-focused ecommerce growth partner specializing in marketplace strategy and execution.</p>
+    </div>
+
+    <div class="main-contact-card">
+        <div class="left-info-panel">
+            <h2>Get in touch with us</h2>
+            <p>Discover How Our Amazon Solutions Can Propel Your Business.</p>
+            <ul class="features">
+                <li><b>✔</b> Boost Sales, Visibility & ROI</li>
+                <li><b>✔</b> Tailored Solutions for Your Unique Needs</li>
+                <li><b>✔</b> Continuous Optimization, No Extra Fees</li>
+                <li><b>✔</b> Streamline Operations and Minimize Costs</li>
+            </ul>
+            <div class="stats-grid">
+                <div class="stat-card"><h3>200+</h3><span>Brands Managed</span></div>
+                <div class="stat-card"><h3>$500M+</h3><span>Revenue</span></div>
+                <div class="stat-card"><h3>200+</h3><span>Employees</span></div>
+            </div>
+        </div>
+
+        <div class="right-form-panel">
+            <h3>Contact Us</h3>
+            <form action="https://formspree.io/f/mojpjjqk" method="POST">
+                <div class="input-group">
+                    <input type="text" name="First Name" placeholder="First Name" required>
+                    <input type="text" name="Last Name" placeholder="Last Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="Email" placeholder="Email Address" required>
+                    <input type="text" name="Phone" placeholder="Phone Number">
+                </div>
+                <textarea name="Message" placeholder="How can we help you?" rows="5" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="call-section">
+        <div style="font-size: 50px; margin-bottom: 10px;">📖</div>
+        <h3>Schedule a Strategy Call</h3>
+        <p>Book a call with Abdullah Gull to discuss your ideas in detail and receive expert guidance.</p>
+        <a href="#" class="lime-btn">📞 Click Here to Schedule a Call</a>
+    </div>
+
+    <div class="contact-footer">
+        <div class="info-box"><h4>📍 Address</h4><p>Sheridan, WY, USA</p></div>
+        <div class="info-box"><h4>📧 Email</h4><p>info@brown-spider-662549.hostingersite.com</p></div>
+        <div class="info-box"><h4>📞 Phone</h4><p>+1 307-310-4045</p></div>
+    </div>
+</div>
+
+</body>
+</html>
+    </body>
