@@ -62,6 +62,20 @@
     z-index: 1000; /* Taake header baki content (contact section) ke upar rahe */
     background: #111; /* Header ka background color dark rakhen taake content peeche hide ho */
     box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Thora premium shadow */
+} 
+        header, .navbar { 
+    position: absolute; /* Ya 'relative' use karein taake ye page ke saath move ho */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent; /* Agar aap background image ke upar dikhana chahte hain */
+    /* position: fixed; <--- Is line ko delete kar dein agar pehle se hai */
+}
+
+/* Body ki padding khatam kar dein taake gap na aaye */
+body {
+    padding-top: 0 !important;
 }
 
 /* Kyunke header ab screen par fix hai, to content ko thora niche push karna hoga */
