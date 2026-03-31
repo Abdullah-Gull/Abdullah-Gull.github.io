@@ -59,17 +59,24 @@
     gap: 40px;
     background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
 }
-         /* --- SCROLLING HEADER (NOT FIXED) --- */
+       /* --- PERFECT SCROLLING HEADER --- */
 header {
     width: 100%;
-    background: #000; /* Aapka theme color */
-    border-bottom: 1px solid rgba(247, 214, 109, 0.3); /* Gold border */
-    padding: 20px 0;
+    background: #000;
+    border-bottom: 1px solid rgba(247, 214, 109, 0.3);
+    padding: 15px 0;
     
-    /* CRITICAL: In dono properties ko ensure karein ke ye 'static' ya 'relative' hon */
-    position: relative; 
+    /* Lock khatam, ab ye content ka hissa hai */
+    position: absolute; 
     top: 0;
+    left: 0;
     z-index: 1000;
+}
+
+/* Content ko header ke bilkul niche se start karne ke liye */
+.wrapper { 
+    margin-top: 80px; /* Header ki height ke mutabiq adjustment */
+    padding-top: 0;
 }
 
 /* Isse header ke niche jo faltu space (gap) aa rahi thi wo khatam ho jayegi */
