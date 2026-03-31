@@ -112,6 +112,32 @@ header {
     margin-top: 0 !important;
     padding-top: 40px; /* Header ke foran baad thori si saaf space */
 }
+         /* --- THE ULTIMATE LINE KILLER CODE --- */
+header {
+    width: 100%;
+    background: #000 !important;
+    padding: 20px 0;
+    
+    /* Line remove karne ke liye properties */
+    position: relative !important; 
+    display: block !important;
+    margin: 0 !important;
+    border: none !important; /* Kisi bhi kism ki border khatam */
+    outline: none !important; /* Outline bhi khatam */
+    box-shadow: none !important; /* Shadow jo line jaisi lagti hai, wo bhi khatam */
+}
+
+/* Isse niche wale content ko header ke andar halka sa push karenge taake gap ka chance hi na rahe */
+.wrapper, .hero-section, #hero {
+    margin-top: -1px !important; /* Negative margin line ko "overlap" kar ke chupa dega */
+    padding-top: 20px !important;
+    border-top: none !important;
+}
+
+/* Global reset taake koi aur element line na banaye */
+* {
+    box-sizing: border-box;
+}
 .hero-content { flex: 1; max-width: 650px; }
 
 .badge-gold {
