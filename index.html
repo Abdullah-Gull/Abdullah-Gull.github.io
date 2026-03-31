@@ -59,31 +59,25 @@
     gap: 40px;
     background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
 }
-       /* --- PERFECT SCROLLING HEADER --- */
+       /* --- ISSE HEADER NORMAL SCROLL HOGA AUR SPACE KHATAM HO JAYEGI --- */
 header {
     width: 100%;
     background: #000;
-    border-bottom: 1px solid rgba(247, 214, 109, 0.3);
-    padding: 15px 0;
+    padding: 20px 0;
     
-    /* Lock khatam, ab ye content ka hissa hai */
-    position: absolute; 
+    /* In properties ko dhiyan se check karein */
+    position: relative !important; /* Fixed ya absolute ko cancel karne ke liye */
     top: 0;
-    left: 0;
-    z-index: 1000;
+    margin: 0;
+    display: block;
+    border-bottom: 1px solid rgba(247, 214, 109, 0.2);
 }
 
-/* Content ko header ke bilkul niche se start karne ke liye */
-.wrapper { 
-    margin-top: 80px; /* Header ki height ke mutabiq adjustment */
-    padding-top: 0;
+/* Isse niche wala content header ke saath jur jayega */
+.wrapper, .hero-section {
+    margin-top: 0 !important;
+    padding-top: 20px;
 }
-
-/* Isse header ke niche jo faltu space (gap) aa rahi thi wo khatam ho jayegi */
-.wrapper { 
-    margin-top: 20px; 
-}
-
 .hero-content { flex: 1; max-width: 650px; }
 
 .badge-gold {
