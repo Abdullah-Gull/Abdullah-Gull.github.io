@@ -59,6 +59,23 @@
     gap: 40px;
     background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
 }
+         /* --- SCROLLING HEADER (NOT FIXED) --- */
+header {
+    width: 100%;
+    background: #000; /* Aapka theme color */
+    border-bottom: 1px solid rgba(247, 214, 109, 0.3); /* Gold border */
+    padding: 20px 0;
+    
+    /* CRITICAL: In dono properties ko ensure karein ke ye 'static' ya 'relative' hon */
+    position: relative; 
+    top: 0;
+    z-index: 1000;
+}
+
+/* Isse header ke niche jo faltu space (gap) aa rahi thi wo khatam ho jayegi */
+.wrapper { 
+    margin-top: 20px; 
+}
 
 .hero-content { flex: 1; max-width: 650px; }
 
