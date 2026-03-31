@@ -152,5 +152,128 @@ header {
 
 
     <body> 
+<section class="contact-section">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2 class="gold-text">Get in touch with us</h2>
+            <p class="sub-heading">Propel Your Business with Premium Amazon Solutions</p>
+            
+            <ul class="benefits-list">
+                <li><span>✔</span> Boost Sales, Visibility & ROI</li>
+                <li><span>✔</span> Tailored Solutions for Your Unique Needs</li>
+                <li><span>✔</span> Continuous Optimization, No Extra Fees</li>
+                <li><span>✔</span> Streamline Operations and Minimize Costs</li>
+                <li><span>✔</span> Comprehensive Amazon Services</li>
+            </ul>
 
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h3>200+</h3>
+                    <p>BRANDS MANAGED</p>
+                </div>
+                <div class="stat-box">
+                    <h3>$500M+</h3>
+                    <p>REVENUE GENERATED</p>
+                </div>
+                <div class="stat-box">
+                    <h3>200+</h3>
+                    <p>EMPLOYEES</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h3 class="form-title">Contact Us</h3>
+            <form action="#" method="POST">
+                <div class="form-row">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number">
+                </div>
+                <div class="form-row">
+                    <input type="url" placeholder="Website URL">
+                    <input type="text" placeholder="Company Name">
+                </div>
+                <textarea placeholder="How can we help you?" rows="5" required></textarea>
+                <button type="submit" class="submit-btn">SEND MESSAGE</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Styling */
+    .contact-section {
+        background-color: #000;
+        padding: 60px 20px;
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+    }
+    .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        gap: 40px;
+        background: #0a0a0a;
+        padding: 50px;
+        border-radius: 20px;
+        border: 1px solid rgba(247, 214, 109, 0.1);
+    }
+    .contact-info { flex: 1; }
+    .gold-text { color: #f7d66d; font-size: 32px; margin-bottom: 10px; }
+    .sub-heading { font-weight: 600; margin-bottom: 30px; font-size: 18px; }
+    
+    .benefits-list { list-style: none; padding: 0; margin-bottom: 40px; }
+    .benefits-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 15px; }
+    .benefits-list span { color: #f7d66d; font-weight: bold; }
+
+    .stats-grid { display: flex; gap: 20px; margin-top: 30px; }
+    .stat-box { 
+        background: #111; 
+        padding: 20px; 
+        border-radius: 12px; 
+        text-align: center; 
+        flex: 1;
+        border: 1px solid #1a1a1a;
+    }
+    .stat-box h3 { color: #f7d66d; margin: 0; font-size: 22px; }
+    .stat-box p { font-size: 10px; color: #888; margin-top: 5px; letter-spacing: 1px; }
+
+    /* Form Styling */
+    .contact-form { flex: 1; background: #080808; padding: 30px; border-radius: 15px; }
+    .form-title { margin-bottom: 25px; font-size: 24px; }
+    .form-row { display: flex; gap: 15px; margin-bottom: 15px; }
+    input, textarea {
+        width: 100%;
+        padding: 15px;
+        background: #111;
+        border: 1px solid #222;
+        border-radius: 8px;
+        color: #fff;
+        outline: none;
+    }
+    input:focus, textarea:focus { border-color: #f7d66d; }
+    .submit-btn {
+        width: 100%;
+        padding: 15px;
+        background: #f7d66d;
+        color: #000;
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .submit-btn:hover { background: #fff; transform: translateY(-2px); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .contact-container { flex-direction: column; padding: 20px; }
+        .form-row { flex-direction: column; }
+        .stats-grid { flex-wrap: wrap; }
+    }
+</style>
     </body>
