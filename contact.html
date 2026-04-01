@@ -240,135 +240,125 @@ header {
 </section>
 
 </body>
-</html>
-        
-<section class="contact-section">
+<style>
+    /* 1. Reset & Global Styles */
+    .form-strategy-wrapper {
+        background-color: #000;
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+        padding: 60px 0;
+    }
+
+    /* 2. Contact Section Styling */
+    .contact-container {
+        max-width: 1200px;
+        margin: 0 auto 80px;
+        display: flex;
+        gap: 40px;
+        background: #0a0a0a;
+        padding: 40px;
+        border-radius: 20px;
+        border: 1px solid #1a1a1a;
+        text-align: left;
+    }
+    .contact-info { flex: 1; }
+    .contact-form-box { flex: 1.2; background: #080808; padding: 30px; border-radius: 15px; border: 1px solid #222; }
+    
+    .gold-text { color: #f7d66d; font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+    .benefits-list { list-style: none; padding: 0; margin: 20px 0; }
+    .benefits-list li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: center; gap: 10px; color: #ccc; }
+    .benefits-list i { color: #f7d66d; }
+
+    .form-row { display: flex; gap: 15px; margin-bottom: 15px; }
+    .contact-form-box input, .contact-form-box textarea {
+        width: 100%; padding: 12px; background: #111; border: 1px solid #333; border-radius: 8px; color: #fff; outline: none;
+    }
+    .send-btn {
+        width: 100%; padding: 15px; background: #f7d66d; color: #000; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;
+    }
+
+    /* 3. Strategy Call Styling */
+    .strategy-section { text-align: center; margin-top: 50px; }
+    .strategy-icon { font-size: 45px; color: #f7d66d; margin-bottom: 20px; }
+    .strategy-btn {
+        display: inline-flex; align-items: center; gap: 10px;
+        background-color: #f7d66d; color: #000; padding: 14px 35px;
+        border-radius: 50px; text-decoration: none; font-weight: 700; margin-top: 25px;
+    }
+
+    /* 4. Info Cards Grid */
+    .info-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px; max-width: 1200px; margin: 50px auto 0;
+    }
+    .info-card {
+        background: #0d0d0d; padding: 25px; border-radius: 15px;
+        display: flex; align-items: center; gap: 15px; border: 1px solid #1a1a1a; text-align: left;
+    }
+    .info-card i { font-size: 24px; color: #f7d66d; }
+    .info-card h3 { font-size: 16px; margin-bottom: 5px; }
+    .info-card p { font-size: 13px; color: #888; margin: 0; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .contact-container { flex-direction: column; padding: 20px; }
+        .form-row { flex-direction: column; }
+    }
+</style>
+
+<div class="form-strategy-wrapper">
     <div class="contact-container">
         <div class="contact-info">
             <h2 class="gold-text">Get in touch with us</h2>
-            <p class="sub-heading">Propel Your Business with Premium Amazon Solutions</p>
-            
+            <p style="color: #aaa; font-size: 14px;">Propel Your Business with Premium Amazon Solutions</p>
             <ul class="benefits-list">
-                <li><span>✔</span> Boost Sales, Visibility & ROI</li>
-                <li><span>✔</span> Tailored Solutions for Your Unique Needs</li>
-                <li><span>✔</span> Continuous Optimization, No Extra Fees</li>
-                <li><span>✔</span> Streamline Operations and Minimize Costs</li>
-                <li><span>✔</span> Comprehensive Amazon Services</li>
+                <li><i class="fas fa-check"></i> Boost Sales, Visibility & ROI</li>
+                <li><i class="fas fa-check"></i> Tailored Solutions for Your Unique Needs</li>
+                <li><i class="fas fa-check"></i> Continuous Optimization, No Extra Fees</li>
+                <li><i class="fas fa-check"></i> Streamline Operations and Minimize Costs</li>
+                <li><i class="fas fa-check"></i> Comprehensive Amazon Services</li>
             </ul>
-
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <h3>200+</h3>
-                    <p>BRANDS MANAGED</p>
-                </div>
-                <div class="stat-box">
-                    <h3>$500M+</h3>
-                    <p>REVENUE GENERATED</p>
-                </div>
-                <div class="stat-box">
-                    <h3>200+</h3>
-                    <p>EMPLOYEES</p>
-                </div>
-            </div>
         </div>
-
-        <div class="contact-form">
-            <h3 class="form-title">Contact Us</h3>
-            <form action="#" method="POST">
+        
+        <div class="contact-form-box">
+            <h3 style="margin-bottom: 20px;">Contact Us</h3>
+            <form>
                 <div class="form-row">
-                    <input type="text" placeholder="First Name" required>
-                    <input type="text" placeholder="Last Name" required>
+                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="Last Name">
                 </div>
                 <div class="form-row">
-                    <input type="email" placeholder="Email Address" required>
-                    <input type="tel" placeholder="Phone Number">
+                    <input type="email" placeholder="Email Address">
+                    <input type="text" placeholder="Phone Number">
                 </div>
-                <div class="form-row">
-                    <input type="url" placeholder="Website URL">
-                    <input type="text" placeholder="Company Name">
-                </div>
-                <textarea placeholder="How can we help you?" rows="5" required></textarea>
-                <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                <textarea rows="4" placeholder="How can we help you?"></textarea>
+                <button type="submit" class="send-btn">SEND MESSAGE</button>
             </form>
         </div>
     </div>
-</section>
-<style>
-    /* Dono sections ki CSS yahan ek saath hai */
-    .contact-section, .strategy-section {
-        background-color: #000;
-        padding: 60px 20px;
-        font-family: 'Poppins', sans-serif;
-        color: #fff;
-    }
-    .strategy-container, .contact-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-    }
-    
-    /* Strategy Call Styling */
-    .call-card { margin-bottom: 60px; }
-    .icon-book { font-size: 40px; color: #f7d66d; margin-bottom: 20px; }
-    .schedule-btn {
-        display: inline-flex; align-items: center; gap: 10px;
-        background-color: #f7d66d; color: #000; padding: 15px 40px;
-        border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s;
-    }
-    .schedule-btn:hover { background-color: #fff; transform: translateY(-3px); }
 
-    /* Info Cards */
-    .info-cards-grid {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px; margin-top: 40px;
-    }
-    .info-card {
-        background: #0a0a0a; padding: 30px; border-radius: 15px;
-        display: flex; align-items: center; gap: 20px; text-align: left;
-        border: 1px solid #1a1a1a;
-    }
-    .card-icon { font-size: 30px; color: #f7d66d; }
-</style>
+    <div class="strategy-section">
+        <div class="strategy-icon"><i class="fa-solid fa-book-open"></i></div>
+        <h2 style="font-size: 28px;">Schedule a Strategy Call</h2>
+        <p style="color: #888; max-width: 600px; margin: 10px auto;">Book a call with Abdullah Gull to discuss your ideas in detail.</p>
+        <a href="#" class="strategy-btn"><i class="fa-solid fa-phone"></i> Click Here to Schedule a Call</a>
 
-<section class="strategy-section">
-    <div class="strategy-container">
-        <div class="call-card">
-            <div class="icon-book"><i class="fa-solid fa-book-open"></i></div>
-            <h2>Schedule a Strategy Call</h2>
-            <p>Book a call with Abdullah Gull to discuss your ideas in detail.</p>
-            <a href="#" class="schedule-btn">
-                <i class="fa-solid fa-phone"></i> Click Here to Schedule a Call
-            </a>
-        </div>
-
-        <div class="info-cards-grid">
+        <div class="info-grid">
             <div class="info-card">
-                <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
-                <div class="card-content">
-                    <h3>Address</h3>
-                    <p>30 N Gould St #49820 Sheridan, WY, 82801, USA</p>
-                </div>
+                <i class="fa-solid fa-location-dot"></i>
+                <div><h3>Address</h3><p>30 N Gould St #49820 Sheridan, WY, 82801, USA</p></div>
             </div>
-
             <div class="info-card">
-                <div class="card-icon"><i class="fa-solid fa-envelope"></i></div>
-                <div class="card-content">
-                    <h3>Email Address</h3>
-                    <p>info@abdullahgull.com</p>
-                </div>
+                <i class="fa-solid fa-envelope"></i>
+                <div><h3>Email Address</h3><p>info@abdullahgull.com</p></div>
             </div>
-
             <div class="info-card">
-                <div class="card-icon"><i class="fa-solid fa-phone-flip"></i></div>
-                <div class="card-content">
-                    <h3>Phone Number</h3>
-                    <p>+1 307-310-4045</p>
-                </div>
+                <i class="fa-solid fa-phone-flip"></i>
+                <div><h3>Phone Number</h3><p>+1 307-310-4045</p></div>
             </div>
         </div>
     </div>
-</section>
-
+</div>
         <style>
     .main-footer {
         background-color: #000;
