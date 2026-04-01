@@ -125,6 +125,7 @@ header {
             <div class="logo-area">
                 <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">
                 <span class="logo-text">Abdullah <span>Gull</span></span>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
             </div>
 
             <nav class="nav-capsule">
@@ -140,3 +141,263 @@ header {
             </div>
         </div>
     </header>
+
+    <body> 
+    <style>
+    .main-footer {
+        background-color: #000;
+        color: #fff;
+        padding: 60px 40px 20px;
+        font-family: 'Arial', sans-serif;
+        border-top: 1px solid #222;
+    }
+
+    /* Grid Layout */
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        max-width: 1300px;
+        margin: 0 auto 50px;
+    }
+
+    .footer-col h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-col ul li {
+        font-size: 13px;
+        color: #ccc;
+        margin-bottom: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .footer-col ul li:hover {
+        color: #f7d66d;
+    }
+
+    /* Middle Section */
+    .footer-middle {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 30px 0;
+        border-top: 1px solid #1a1a1a;
+    }
+
+    .footer-box-title {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #fff;
+    }
+
+    /* AI Icons */
+    .ai-icon-group {
+        display: flex;
+        gap: 12px;
+    }
+
+    .ai-tool-icon {
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .ai-tool-icon img {
+        width: 100%;
+        filter: grayscale(0);
+    }
+
+    /* Social Icons Box Style */
+    .social-icon-group {
+        display: flex;
+        gap: 10px;
+    }
+
+    .social-box {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .fb { background-color: #3b5998; }
+    .li { background-color: #0077b5; }
+    .pi { background-color: #bd081c; }
+    .in { background-color: #3f729b; }
+
+/* --- AI AUR SOCIAL ICONS KO LINE MEIN LANE KE LIYE --- */
+
+/* 1. AI Icons Alignment */
+.icon-group {
+    display: flex !important; /* Icons ko ek line mein layega */
+    gap: 15px; /* Icons ke darmiyan space */
+    margin-top: 15px;
+    flex-wrap: wrap; /* Mobile par automatic adjust hoga */
+}
+
+.ai-icon {
+    width: 40px;
+    height: 40px;
+    background: #fff; /* White box jaisa screenshot mein tha */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000; /* Icons ka color black */
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+/* 2. Social Icons Alignment */
+.social-icon-group {
+    display: flex !important;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.soc-btn {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Icons ka color white */
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Social Media Specific Colors */
+.fb-bg { background-color: #3b5998; }
+.li-bg { background-color: #0077b5; }
+.in-bg { background-color: #e4405f; }
+.tk-bg { background-color: #000; border: 1px solid #333; }
+.sc-bg { background-color: #fffc00; color: #000; }
+.li-bg { background-color: #0077b5; } /* LinkedIn */
+
+/* Hover Effect */
+.soc-btn:hover, .ai-icon:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.1);
+}
+    /* Bottom Bar */
+    .footer-bottom {
+        max-width: 1300px;
+        margin: 40px auto 0;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #222;
+        padding-top: 20px;
+        font-size: 12px;
+        color: #666;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+        .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        .footer-middle { flex-direction: column; gap: 30px; }
+    }
+</style>
+<footer class="main-footer">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>Amazon Seller Central</h4>
+            <ul>
+                <li>Full Service Management</li><li>SEO for better visibility</li><li>PPC Management</li><li>Listing Optimization</li><li>Image Design (CTR Main Image Hack)</li><li>A+ Content / EBC</li><li>Amazon Store Front Creation</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Amazon Vendor Central</h4>
+            <ul>
+                <li>Vendor Onboarding</li><li>Inventory Management</li><li>Retail Content & Advertising</li><li>A+ Content Creation</li><li>Sponsored Products & Brands Ads</li><li>Product Listings Optimization</li><li>Purchase Order Management</li><li>Invoice Management</li><li>Data-Driven Performance Analytics</li><li>Shipment & Delivery Optimization</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Marketplaces</h4>
+            <ul>
+                <li>Amazon</li><li>Shopify</li><li>Wayfair</li><li>Walmart</li><li>Home Depot</li><li>eBay</li><li>Etsy</li><li>Asenda</li><li>Newegg</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+                <li>Case Studies</li><li>Testimonials</li><li>Leadership</li><li>Jobs</li><li>History</li><li>Press</li><li>Articles</li><li>News</li><li>Events</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-middle">
+        <div>
+            <span class="footer-box-title">Ask AI for a summary of Abdullah Gull</span>
+            <div class="icon-group">
+                <div class="ai-icon"><i class="fa-solid fa-ghost"></i></div>
+                <div class="ai-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <div class="ai-icon"><i class="fa-solid fa-brain"></i></div>
+                <div class="ai-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div class="ai-icon"><i class="fa-solid fa-microchip"></i></div>
+            </div>
+        </div>
+        <div>
+            <span class="footer-box-title">Follow us on our social accounts</span>
+            <div class="icon-group">
+                <a href="https://facebook.com/share/1JTa6K2z5A/" class="soc-btn fb-bg"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://linkedin.com/in/abdullah-gull/" class="soc-btn li-bg"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://instagram.com/abdxxah_965/" class="soc-btn in-bg"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/@abdxxah_965" class="soc-btn tk-bg"><i class="fab fa-tiktok"></i></a>
+                <a href="https://snapchat.com/t/v1C05LBv" class="soc-btn sc-bg"><i class="fab fa-snapchat-ghost"></i></a>
+                <a href="https://x.com/abdullahamazon?s=21" class="soc-btn tk-bg" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div>Term & Conditions | Privacy Policies</div>
+        <div>© 2026 Abdullah Gull | All Rights Reserved.</div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".logoSwiper", {
+        slidesPerView: "auto",
+        loop: true,
+        speed: 5000,
+        autoplay: { delay: 0, disableOnInteraction: false },
+        allowTouchMove: false,
+    });
+
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+        document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+        document.getElementById('btn-' + pageId).classList.add('active');
+        window.scrollTo(0, 0);
+    }
+</script>
+    
+    </body>
