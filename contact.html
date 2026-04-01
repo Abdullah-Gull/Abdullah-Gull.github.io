@@ -293,84 +293,49 @@ header {
         </div>
     </div>
 </section>
-
 <style>
-    /* Styling */
-    .contact-section {
+    /* Dono sections ki CSS yahan ek saath hai */
+    .contact-section, .strategy-section {
         background-color: #000;
         padding: 60px 20px;
         font-family: 'Poppins', sans-serif;
         color: #fff;
     }
-    .contact-container {
+    .strategy-container, .contact-container {
         max-width: 1200px;
         margin: 0 auto;
-        display: flex;
-        gap: 40px;
-        background: #0a0a0a;
-        padding: 50px;
-        border-radius: 20px;
-        border: 1px solid rgba(247, 214, 109, 0.1);
+        text-align: center;
     }
-    .contact-info { flex: 1; }
-    .gold-text { color: #f7d66d; font-size: 32px; margin-bottom: 10px; }
-    .sub-heading { font-weight: 600; margin-bottom: 30px; font-size: 18px; }
     
-    .benefits-list { list-style: none; padding: 0; margin-bottom: 40px; }
-    .benefits-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 15px; }
-    .benefits-list span { color: #f7d66d; font-weight: bold; }
+    /* Strategy Call Styling */
+    .call-card { margin-bottom: 60px; }
+    .icon-book { font-size: 40px; color: #f7d66d; margin-bottom: 20px; }
+    .schedule-btn {
+        display: inline-flex; align-items: center; gap: 10px;
+        background-color: #f7d66d; color: #000; padding: 15px 40px;
+        border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s;
+    }
+    .schedule-btn:hover { background-color: #fff; transform: translateY(-3px); }
 
-    .stats-grid { display: flex; gap: 20px; margin-top: 30px; }
-    .stat-box { 
-        background: #111; 
-        padding: 20px; 
-        border-radius: 12px; 
-        text-align: center; 
-        flex: 1;
+    /* Info Cards */
+    .info-cards-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px; margin-top: 40px;
+    }
+    .info-card {
+        background: #0a0a0a; padding: 30px; border-radius: 15px;
+        display: flex; align-items: center; gap: 20px; text-align: left;
         border: 1px solid #1a1a1a;
     }
-    .stat-box h3 { color: #f7d66d; margin: 0; font-size: 22px; }
-    .stat-box p { font-size: 10px; color: #888; margin-top: 5px; letter-spacing: 1px; }
+    .card-icon { font-size: 30px; color: #f7d66d; }
+</style>
 
-    /* Form Styling */
-    .contact-form { flex: 1; background: #080808; padding: 30px; border-radius: 15px; }
-    .form-title { margin-bottom: 25px; font-size: 24px; }
-    .form-row { display: flex; gap: 15px; margin-bottom: 15px; }
-    input, textarea {
-        width: 100%;
-        padding: 15px;
-        background: #111;
-        border: 1px solid #222;
-        border-radius: 8px;
-        color: #fff;
-        outline: none;
-    }
-    input:focus, textarea:focus { border-color: #f7d66d; }
-    .submit-btn {
-        width: 100%;
-        padding: 15px;
-        background: #f7d66d;
-        color: #000;
-        border: none;
-        border-radius: 8px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-    .submit-btn:hover { background: #fff; transform: translateY(-2px); }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-        .contact-container { flex-direction: column; padding: 20px; }
-        .form-row { flex-direction: column; }
-        .stats-grid { flex-wrap: wrap; }
-    }
-    <section class="strategy-section">
+<section class="strategy-section">
     <div class="strategy-container">
         <div class="call-card">
             <div class="icon-book"><i class="fa-solid fa-book-open"></i></div>
             <h2>Schedule a Strategy Call</h2>
-            <p>Book a call with Abdullah Gull to discuss your ideas in detail and receive expert, tailored guidance. We'll help you refine your vision, identify the best solutions, and set a clear direction for your next steps.</p>
+            <p>Book a call with Abdullah Gull to discuss your ideas in detail.</p>
             <a href="#" class="schedule-btn">
                 <i class="fa-solid fa-phone"></i> Click Here to Schedule a Call
             </a>
@@ -397,104 +362,12 @@ header {
                 <div class="card-icon"><i class="fa-solid fa-phone-flip"></i></div>
                 <div class="card-content">
                     <h3>Phone Number</h3>
-                    <p>0000000000</p>
+                    <p>+1 307-310-4045</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<style>
-    .strategy-section {
-        background-color: #000;
-        padding: 80px 20px;
-        font-family: 'Poppins', sans-serif;
-        color: #fff;
-    }
-    .strategy-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-    }
-    .call-card {
-        margin-bottom: 60px;
-    }
-    .icon-book {
-        font-size: 40px;
-        color: #f7d66d;
-        margin-bottom: 20px;
-    }
-    .call-card h2 {
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 15px;
-    }
-    .call-card p {
-        color: #a2a2a2;
-        max-width: 800px;
-        margin: 0 auto 30px;
-        line-height: 1.6;
-    }
-    .schedule-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background-color: #f7d66d; /* Gold */
-        color: #000;
-        padding: 15px 40px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 700;
-        transition: 0.3s;
-    }
-    .schedule-btn:hover {
-        background-color: #fff;
-        transform: translateY(-3px);
-    }
-
-    /* Info Cards Styling */
-    .info-cards-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        margin-top: 40px;
-    }
-    .info-card {
-        background: #0a0a0a;
-        padding: 30px;
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        text-align: left;
-        border: 1px solid #1a1a1a;
-        transition: 0.3s;
-    }
-    .info-card:hover {
-        border-color: #f7d66d;
-        background: #111;
-    }
-    .card-icon {
-        font-size: 30px;
-        color: #f7d66d;
-    }
-    .card-content h3 {
-        font-size: 18px;
-        margin-bottom: 5px;
-        color: #fff;
-    }
-    .card-content p {
-        font-size: 14px;
-        color: #888;
-        margin: 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-        .info-card { flex-direction: column; text-align: center; }
-        .call-card h2 { font-size: 26px; }
-    }
-</style>
 
         <style>
     .main-footer {
