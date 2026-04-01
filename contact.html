@@ -365,6 +365,136 @@ header {
         .form-row { flex-direction: column; }
         .stats-grid { flex-wrap: wrap; }
     }
+    <section class="strategy-section">
+    <div class="strategy-container">
+        <div class="call-card">
+            <div class="icon-book"><i class="fa-solid fa-book-open"></i></div>
+            <h2>Schedule a Strategy Call</h2>
+            <p>Book a call with Abdullah Gull to discuss your ideas in detail and receive expert, tailored guidance. We'll help you refine your vision, identify the best solutions, and set a clear direction for your next steps.</p>
+            <a href="#" class="schedule-btn">
+                <i class="fa-solid fa-phone"></i> Click Here to Schedule a Call
+            </a>
+        </div>
+
+        <div class="info-cards-grid">
+            <div class="info-card">
+                <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="card-content">
+                    <h3>Address</h3>
+                    <p>30 N Gould St #49820 Sheridan, WY, 82801, USA</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="card-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="card-content">
+                    <h3>Email Address</h3>
+                    <p>info@abdullahgull.com</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="card-icon"><i class="fa-solid fa-phone-flip"></i></div>
+                <div class="card-content">
+                    <h3>Phone Number</h3>
+                    <p>0000000000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .strategy-section {
+        background-color: #000;
+        padding: 80px 20px;
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+    }
+    .strategy-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .call-card {
+        margin-bottom: 60px;
+    }
+    .icon-book {
+        font-size: 40px;
+        color: #f7d66d;
+        margin-bottom: 20px;
+    }
+    .call-card h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+    .call-card p {
+        color: #a2a2a2;
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+    }
+    .schedule-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #f7d66d; /* Gold */
+        color: #000;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.3s;
+    }
+    .schedule-btn:hover {
+        background-color: #fff;
+        transform: translateY(-3px);
+    }
+
+    /* Info Cards Styling */
+    .info-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+    }
+    .info-card {
+        background: #0a0a0a;
+        padding: 30px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        text-align: left;
+        border: 1px solid #1a1a1a;
+        transition: 0.3s;
+    }
+    .info-card:hover {
+        border-color: #f7d66d;
+        background: #111;
+    }
+    .card-icon {
+        font-size: 30px;
+        color: #f7d66d;
+    }
+    .card-content h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: #fff;
+    }
+    .card-content p {
+        font-size: 14px;
+        color: #888;
+        margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .info-card { flex-direction: column; text-align: center; }
+        .call-card h2 { font-size: 26px; }
+    }
+</style>
 </style>
 
         <style>
