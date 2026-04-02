@@ -464,6 +464,42 @@ header {
         .mission-container { flex-direction: column; }
         .text-content-side, .stats-side { padding: 30px; }
     }
+    <style>
+    /* Dark Theme Optimization for Stats Side */
+    .stats-side {
+        flex: 1;
+        /* Halka Grey (f4f4f4) ko hata kar Premium Dark (0d0d0d) kar diya hai */
+        background-color: #0d0d0d;
+        padding: 50px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 35px;
+        border-left: 2px solid #f7d66d; /* Left side par Gold border */
+    }
+
+    .vision-short {
+        color: #aaaaaa; /* Text ab black nahi, halka grey hai */
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .stat-item h3 {
+        color: #f7d66d; /* Main numbers ko Gold kar diya hai */
+        font-size: 38px;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    .stat-item p {
+        color: #ffffff; /* Label text ko white kar diya hai */
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 5px;
+    }
+</style>
 </style>
         
     <style>
