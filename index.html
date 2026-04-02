@@ -720,39 +720,81 @@ body {
 </style>
 </style>
 <body>
-    <div id="home" class="page active">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <<style>
+    /* Slider Main Container */
+    .marketplace-slider-section {
+        background-color: #000; /* Pure Black Background */
+        padding: 60px 0;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+    }
 
-<div class="logo-slider">
-    <div class="swiper logoSwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><span class="brand-text">Amazon</span></div>
-            <div class="swiper-slide"><span class="brand-text">Shopify</span></div>
-            <div class="swiper-slide"><span class="brand-text">Wayfair</span></div>
-            <div class="swiper-slide"><span class="brand-text">Walmart</span></div>
-            <div class="swiper-slide"><span class="brand-text">Home Depot</span></div>
-            <div class="swiper-slide"><span class="brand-text">EBay</span></div>
-            <div class="swiper-slide"><span class="brand-text">Etsy</span></div>
-            <div class="swiper-slide"><span class="brand-text">Asenda</span></div>
-            <div class="swiper-slide"><span class="brand-text">Newegg</span></div>
-        </div>
+    /* Moving Track */
+    .marketplace-track {
+        display: inline-flex;
+        gap: 20px;
+        animation: scroll-text 25s linear infinite;
+    }
+
+    /* Individual Box Styling */
+    .marketplace-box {
+        border: 2px solid #f7d66d; /* Gold Outline */
+        border-radius: 15px;
+        padding: 20px 45px;
+        min-width: 180px;
+        text-align: center;
+        background: transparent;
+        transition: 0.3s ease;
+    }
+
+    .marketplace-box span {
+        color: #f7d66d; /* Gold Text */
+        font-family: 'Poppins', sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    /* Hover Effect */
+    .marketplace-box:hover {
+        background-color: #f7d66d;
+    }
+    .marketplace-box:hover span {
+        color: #000;
+    }
+
+    /* Animation */
+    @keyframes scroll-text {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    /* Pause on Hover */
+    .marketplace-slider-section:hover .marketplace-track {
+        animation-play-state: paused;
+    }
+</style>
+
+<section class="marketplace-slider-section">
+    <div class="marketplace-track">
+        <div class="marketplace-box"><span>Amazon</span></div>
+        <div class="marketplace-box"><span>Shopify</span></div>
+        <div class="marketplace-box"><span>Wayfair</span></div>
+        <div class="marketplace-box"><span>Walmart</span></div>
+        <div class="marketplace-box"><span>Home Depot</span></div>
+        <div class="marketplace-box"><span>EBay</span></div>
+        <div class="marketplace-box"><span>Etsy</span></div>
+
+        <div class="marketplace-box"><span>Amazon</span></div>
+        <div class="marketplace-box"><span>Shopify</span></div>
+        <div class="marketplace-box"><span>Wayfair</span></div>
+        <div class="marketplace-box"><span>Walmart</span></div>
+        <div class="marketplace-box"><span>Home Depot</span></div>
+        <div class="marketplace-box"><span>EBay</span></div>
+        <div class="marketplace-box"><span>Etsy</span></div>
     </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script>
-  const swiper = new Swiper(".logoSwiper", {
-    slidesPerView: "auto", // Boxes ko width ke hisab se adjust karega
-    spaceBetween: 20,      // Boxes ke darmiyan gap
-    centeredSlides: false,
-    loop: true,            // Khatam hone par dobara shuru ho jayega
-    speed: 4000,           // Speed kitni fast ho
-    autoplay: {
-      delay: 0,            // 0 delay se slider "continuous" chalta rehta hai (smooth motion)
-      disableOnInteraction: false,
-    },
-    freeMode: true,        // Smooth scrolling ke liye
-  });
+</section>
 </script>
 
 
