@@ -147,13 +147,12 @@ header {
     </div>
 </section>
 
-<style>
-    /* Global Section Settings */
+    <style>
     .about-section {
-        background-color: #f7f7f7; /* Halka grey background jaisa image mein hai */
+        background-color: #000; /* Ab background black ho gaya */
         padding: 80px 20px;
         font-family: 'Poppins', sans-serif;
-        color: #333; /* Dark grey text */
+        color: #fff; /* Text white ho gaya */
     }
 
     .about-container {
@@ -164,16 +163,10 @@ header {
         gap: 50px;
     }
 
-    /* Left Side Content Styling */
-    .about-content {
-        flex: 1;
-        text-align: left;
-    }
-
     .sub-headline {
         font-size: 14px;
         font-weight: bold;
-        color: #666;
+        color: #f7d66d; /* Gold color for sub-headline */
         text-transform: uppercase;
         letter-spacing: 2px;
         margin-bottom: 20px;
@@ -185,94 +178,68 @@ header {
         font-weight: 700;
         line-height: 1.4;
         margin-bottom: 50px;
-        color: #222;
+        color: #fff;
     }
 
     .about-content h1 strong {
-        color: #f3a847; /* Amazon Orange */
-    }
-
-    .who-we-are {
-        margin-top: 30px;
+        color: #f7d66d; /* Gold accent for 'Amazon' */
     }
 
     .who-we-are h3 {
         font-size: 16px;
         font-weight: bold;
-        color: #222;
+        color: #f7d66d;
         margin-bottom: 10px;
     }
 
     .who-we-are h2 {
         font-size: 28px;
         font-weight: 700;
-        color: #222;
+        color: #fff;
         margin-bottom: 25px;
     }
 
     .who-we-are p {
         font-size: 15px;
         line-height: 1.7;
-        color: #666;
+        color: #ccc; /* Halka grey text reading ke liye */
         margin-bottom: 20px;
         max-width: 600px;
     }
 
-    .who-we-are p strong {
-        color: #222;
-        font-weight: 600;
-    }
-
-    /* Gradient Button Styling */
+    /* Button ko naya Gold look diya hai */
     .view-work-btn {
         display: inline-block;
         padding: 12px 35px;
-        background: linear-gradient(135deg, #444 0%, #222 100%); /* Dark gradient jaisa image mein hai */
-        color: #fff;
+        background-color: #f7d66d;
+        color: #000;
         border-radius: 50px;
         text-decoration: none;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 14px;
         transition: 0.3s ease;
         margin-top: 15px;
     }
 
     .view-work-btn:hover {
+        background-color: #fff;
         transform: translateY(-3px);
-        background: linear-gradient(135deg, #222 0%, #000 100%);
     }
 
-    /* Right Side Illustration Styling */
     .about-illustration {
         flex: 1;
         display: flex;
         justify-content: center;
-        align-items: center;
     }
 
     .about-illustration img {
         max-width: 100%;
         height: auto;
+        filter: drop-shadow(0px 0px 20px rgba(247, 214, 109, 0.2)); /* Illustration par halka gold glow */
     }
 
-    /* --- Responsive Fixes --- */
     @media (max-width: 900px) {
-        .about-container {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .about-content h1 {
-            font-size: 28px;
-        }
-
-        .about-content p {
-            max-width: 100%;
-        }
-
-        .view-work-btn {
-            margin-bottom: 40px;
-        }
+        .about-container { flex-direction: column; text-align: center; }
     }
 </style>
 
