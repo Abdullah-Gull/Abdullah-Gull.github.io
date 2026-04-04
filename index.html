@@ -797,7 +797,7 @@ body {
 </section>
 </script>
 
-        <section class="services-tabs">
+      <section class="services-tabs">
     <div class="tabs-container">
         <h2 class="tabs-main-title">What is an <span class="highlight">Amazon Agency?</span></h2>
         <p class="tabs-main-desc">
@@ -844,10 +844,15 @@ body {
 </section>
 
 <style>
-    .services-tabs { padding: 100px 8%; background: #000; color: #fff; }
+    /* CSS Section Updated for Full Dark Theme */
+    .services-tabs { 
+        padding: 100px 8%; 
+        background-color: var(--dark); /* Pure Black Website Theme */
+        color: #fff; 
+    }
     .tabs-container { max-width: 1200px; margin: 0 auto; }
     .tabs-main-title { font-size: 45px; text-align: center; margin-bottom: 20px; font-weight: 800; }
-    .tabs-main-title .highlight { color: var(--gold); }
+    .tabs-main-title .highlight { color: var(--gold); /* Gold Website Accent */ }
     .tabs-main-desc { text-align: center; max-width: 900px; margin: 0 auto 60px; color: #bbb; line-height: 1.6; font-size: 17px; }
     .tabs-main-desc strong { color: #fff; }
 
@@ -868,20 +873,24 @@ body {
     }
 
     .tab-btn:hover { border-color: var(--gold); background: rgba(247, 214, 109, 0.05); }
-    .tab-btn.active { background: #555; border-color: #555; color: #fff; }
+    /* Active Button Color (matches image_32.png button style) */
+    .tab-btn.active { background-color: var(--gold); border-color: var(--gold); color: #000; font-weight: 800; }
 
+    /* Right Side Content Box Fix (matches image_32.png description style) */
     .tab-content-box {
         flex: 2;
-        background: #fff;
-        color: #000;
+        background-color: #0d0d0d; /* Very Deep Black, slightly lighter than background */
+        color: #fff; 
         padding: 50px;
         border-radius: 12px;
         min-height: 350px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        border: 1px solid rgba(247, 214, 109, 0.1); /* Subtle Gold border */
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
 
-    .tab-panel h3 { font-size: 28px; margin-bottom: 20px; font-weight: 800; color: #000; }
-    .tab-panel p { font-size: 18px; line-height: 1.7; color: #444; }
+    .tab-panel h3 { font-size: 28px; margin-bottom: 20px; font-weight: 800; color: #fff; }
+    .tab-panel p { font-size: 18px; line-height: 1.7; color: #bbb; /* Description text color */ }
+    .tab-panel p strong { color: #fff; } /* Abdullah Gull name bold fix */
 
     @media (max-width: 992px) {
         .tabs-wrapper { flex-direction: column; }
@@ -891,6 +900,7 @@ body {
 </style>
 
 <script>
+    // JavaScript is required for the tabs to work dynamically
     function openTab(evt, tabName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tab-panel");
