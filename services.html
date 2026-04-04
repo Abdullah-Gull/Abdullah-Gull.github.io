@@ -142,7 +142,128 @@ header {
             </div>
         </div>
     </header>
-<body> 
+    
+<body>
+<section class="ag-services-section">
+    <div class="ag-container">
+        <div class="ag-header">
+            <h2 class="ag-main-title">Accelerating brand growth through <span class="ag-highlight">Amazon strategy & optimization</span></h2>
+            <p class="ag-description">
+                Unlock the full potential of your business. <strong>Abdullah Gull's</strong> data-driven, holistic approach ensures every dollar is invested to drive conversions and deliver measurable growth.
+            </p>
+        </div>
+
+        <div class="ag-grid">
+            <div class="ag-text-side">
+                <span class="ag-badge">ADVERTISING ON AMAZON</span>
+                <h3 class="ag-sub-title">High-Impact Amazon Ads That Deliver Results</h3>
+                <p class="ag-mini-text">We create data-driven campaigns that increase visibility and boost traffic for your brand.</p>
+                
+                <div class="ag-accordion">
+                    <div class="ag-acc-item">
+                        <div class="ag-acc-header" onclick="toggleAGAcc(this)">Campaign Strategy Development <i class="fas fa-plus"></i></div>
+                        <div class="ag-acc-body"><p>Custom roadmap designed by Abdullah Gull to hit your specific ROI targets.</p></div>
+                    </div>
+                    <div class="ag-acc-item">
+                        <div class="ag-acc-header" onclick="toggleAGAcc(this)">Sponsored Products & Brands <i class="fas fa-plus"></i></div>
+                        <div class="ag-acc-body"><p>Targeted ads that put your product right in front of active shoppers.</p></div>
+                    </div>
+                    <div class="ag-acc-item">
+                        <div class="ag-acc-header" onclick="toggleAGAcc(this)">A/B Testing & Optimization <i class="fas fa-plus"></i></div>
+                        <div class="ag-acc-body"><p>Constant refining of keywords and bids to keep ACOS at its lowest.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ag-image-side">
+                <img src="https://i.ibb.co/v6W7L6m0/Amazon-FBA-PPC-Services.png" alt="Amazon Dashboard" class="ag-main-img">
+            </div>
+        </div>
+
+        <div class="ag-grid ag-reverse">
+            <div class="ag-image-side">
+                <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Work Portfolio" class="ag-main-img ag-mosaic">
+            </div>
+            <div class="ag-text-side">
+                <span class="ag-badge">LISTING OPTIMIZATION</span>
+                <h3 class="ag-sub-title">Optimizing Every Detail to Maximize Sales</h3>
+                <p class="ag-mini-text">Abdullah Gull transforms your product pages into high-converting sales machines.</p>
+                
+                <div class="ag-accordion">
+                    <div class="ag-acc-item">
+                        <div class="ag-acc-header" onclick="toggleAGAcc(this)">Keyword & SEO Research <i class="fas fa-plus"></i></div>
+                        <div class="ag-acc-body"><p>Finding the exact terms customers use to find your products.</p></div>
+                    </div>
+                    <div class="ag-acc-item">
+                        <div class="ag-acc-header" onclick="toggleAGAcc(this)">A+ Content & Brand Store <i class="fas fa-plus"></i></div>
+                        <div class="ag-acc-body"><p>Premium visual storytelling that builds trust and increases basket size.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Gold & Black Theme */
+    .ag-services-section {
+        background-color: #000;
+        color: #fff;
+        padding: 80px 5%;
+        font-family: 'Inter', sans-serif;
+    }
+    .ag-container { max-width: 1200px; margin: 0 auto; }
+    
+    .ag-header { text-align: center; margin-bottom: 80px; }
+    .ag-main-title { font-size: 48px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+    .ag-highlight { color: #f7d66d; } /* Your specific gold color */
+    .ag-description { color: #888; max-width: 800px; margin: 0 auto; font-size: 18px; line-height: 1.6; }
+
+    .ag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 100px; }
+    .ag-reverse { direction: rtl; }
+    .ag-reverse .ag-text-side { direction: ltr; }
+
+    .ag-badge { color: #f7d66d; font-weight: 700; font-size: 14px; letter-spacing: 2px; display: block; margin-bottom: 15px; }
+    .ag-sub-title { font-size: 32px; font-weight: 700; margin-bottom: 20px; }
+    .ag-mini-text { color: #aaa; margin-bottom: 30px; font-size: 16px; }
+
+    /* Accordion Style */
+    .ag-acc-item { background: #0a0a0a; border: 1px solid #222; margin-bottom: 10px; border-radius: 5px; overflow: hidden; }
+    .ag-acc-header { padding: 15px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; transition: 0.3s; }
+    .ag-acc-header:hover { background: #111; color: #f7d66d; }
+    .ag-acc-body { max-height: 0; overflow: hidden; transition: 0.3s ease-out; background: #000; }
+    .ag-acc-body p { padding: 15px 20px; color: #777; font-size: 14px; border-top: 1px solid #111; }
+
+    /* Image Handling */
+    .ag-main-img { width: 100%; border-radius: 15px; border: 1px solid #333; transition: 0.5s; }
+    .ag-main-img:hover { transform: scale(1.02); border-color: #f7d66d; }
+    .ag-mosaic { filter: grayscale(20%); }
+
+    @media (max-width: 768px) {
+        .ag-grid { grid-template-columns: 1fr; gap: 40px; }
+        .ag-reverse { direction: ltr; }
+        .ag-main-title { font-size: 32px; }
+    }
+</style>
+
+<script>
+    function toggleAGAcc(element) {
+        const body = element.nextElementSibling;
+        const icon = element.querySelector('i');
+        
+        if (body.style.maxHeight) {
+            body.style.maxHeight = null;
+            icon.className = 'fas fa-plus';
+        } else {
+            // Close others
+            document.querySelectorAll('.ag-acc-body').forEach(b => b.style.maxHeight = null);
+            document.querySelectorAll('.ag-acc-header i').forEach(i => i.className = 'fas fa-plus');
+            
+            body.style.maxHeight = body.scrollHeight + "px";
+            icon.className = 'fas fa-minus';
+        }
+    }
+</script>
+    
 <style>
     .main-footer {
         background-color: #000;
