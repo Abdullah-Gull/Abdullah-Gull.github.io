@@ -4,188 +4,1057 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="y1q1dcrXaLMTTUpBn4ZAqFOn8_tzt710IFcoDVw_cq8" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZZJMV9V17"></script>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VZZJMV9V17');
+    </script>
     <title>Abdullah Gull | Amazon Expert Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    </head>
+     <style>
+    :root {
+        --gold: #D4AF37;
+        --dark: #000000;
+        --glass: rgba(255, 255, 255, 0.05);
+    }
 
-    <style>
-        :root {
-            --gold: #f7d66d;
-            --dark: #000000;
-            --glass: rgba(255, 255, 255, 0.05);
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--dark); color: #fff; overflow-x: hidden; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--dark); color: #fff; overflow-x: hidden; line-height: 1.4; }
+    /* Floating Capsule Header */
+    .main-header { position: fixed; top: 20px; width: 100%; z-index: 1000; }
+    .header-container {
+        max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+        align-items: center; background: rgba(0,0,0,0.8); backdrop-filter: blur(15px);
+        padding: 10px 25px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.1);
+    }
 
-        /* --- 1. Fixed Capsule Header (Fixed) --- */
-        .main-header { position: fixed; top: 20px; width: 100%; z-index: 1000; }
-        .header-container {
-            max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
-            align-items: center; background: rgba(0,0,0,0.85); backdrop-filter: blur(15px);
-            padding: 10px 25px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.1);
-        }
-        .logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
-        .logo-area img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--gold); }
-        .logo-text { font-weight: 700; font-size: 18px; }
-        .logo-text span { color: var(--gold); }
+    .logo-area { display: flex; align-items: center; gap: 10px; }
+    .logo-area img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--gold); }
+    .logo-text { font-weight: 700; font-size: 18px; }
+    .logo-text span { color: var(--gold); }
 
-        .nav-capsule { display: flex; background: var(--glass); padding: 5px; border-radius: 50px; gap: 5px; }
-        .nav-link { color: #ccc; text-decoration: none; padding: 8px 18px; font-size: 14px; border-radius: 50px; transition: 0.3s; }
-        .nav-link.active, .nav-link:hover { background: var(--gold); color: #000; font-weight: 600; }
-        .get-in-touch-btn { text-decoration: none; color: #fff; border: 1.5px solid var(--gold); padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; transition: 0.3s; }
-        .get-in-touch-btn:hover { background: var(--gold); color: #000; }
+    .nav-capsule { display: flex; background: var(--glass); padding: 5px; border-radius: 50px; gap: 5px; }
+    .nav-link { color: #ccc; text-decoration: none; padding: 8px 18px; font-size: 14px; border-radius: 50px; transition: 0.3s; }
+    .nav-link.active, .nav-link:hover { background: var(--gold); color: #000; font-weight: 600; }
 
-        /* --- 2. Tinuiti Style Hero Section (Fixed Padding) --- */
-        .tinuiti-hero {
-            padding: 150px 8% 80px; /* Header se niche space banai hai */
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: radial-gradient(circle at 10% 20%, rgba(247, 214, 109, 0.05) 0%, transparent 40%);
-        }
-        .tinuiti-container {
-            max-width: 1300px; margin: 0 auto; display: grid;
-            grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 60px; width: 100%;
-        }
-        .tinuiti-badge { color: var(--gold); font-weight: 700; letter-spacing: 3px; font-size: 14px; text-transform: uppercase; margin-bottom: 20px; display: block; border-left: 3px solid var(--gold); padding-left: 15px; }
-        .tinuiti-title { font-size: clamp(35px, 6vw, 75px); font-weight: 900; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px; }
-        .tinuiti-title .highlight { color: var(--gold); }
-        .tinuiti-subtext { color: #999; font-size: 19px; max-width: 600px; margin-bottom: 45px; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 20px; }
-        
-        .tinuiti-actions { display: flex; align-items: center; gap: 25px; }
-        .t-btn-dark { background-color: #fff; color: #000; padding: 18px 40px; border-radius: 4px; text-decoration: none; font-weight: 700; text-transform: uppercase; transition: 0.3s ease; }
-        .t-btn-link { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
-        .t-btn-dark:hover { background-color: var(--gold); transform: translateY(-3px); }
-        .t-btn-link:hover { color: var(--gold); }
+    .get-in-touch-btn { 
+        text-decoration: none; color: #fff; border: 1.5px solid var(--gold); 
+        padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; transition: 0.3s;
+    }
+    .get-in-touch-btn:hover { background: var(--gold); color: #000; }
 
-        .profile-wrapper { position: relative; width: 100%; }
-        .profile-main { width: 100%; max-width: 450px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .stat-card { position: absolute; bottom: -20px; right: 0; background: var(--gold); color: #000; padding: 20px 30px; border-radius: 4px; display: flex; align-items: center; gap: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-        .stat-num { font-size: 40px; font-weight: 900; }
-        .stat-label { font-size: 11px; font-weight: 800; text-transform: uppercase; line-height: 1.2; }
+    /* About Section Preview */
+    .about-preview { padding: 120px 10% 80px; display: flex; align-items: center; gap: 50px; }
+    .about-content h1 { font-size: 45px; margin-bottom: 20px; }
+    .about-content p { color: #aaa; line-height: 1.6; margin-bottom: 30px; }
+         /* --- Hero Split Layout --- */
+.hero-split {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    gap: 40px;
+    background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+}
+         /* --- ISSE VO BLACK PATTI BILKUL KHATAM HO JAYEGI --- */
+header {
+    width: 100%;
+    background: #000 !important;
+    padding: 20px 0;
+    
+    /* Position ko reset karna sab se zaroori hai */
+    position: relative !important; 
+    display: block !important;
+    margin: 0 !important;
+    border-bottom: 1px solid rgba(247, 214, 109, 0.1);
+}
 
-        /* --- 3. Marketplace Continuous Slider (Fixed Track Width) --- */
-        .slider-section { background-color: #000; padding: 60px 0; overflow: hidden; white-space: nowrap; border-top: 1px solid #111; }
-        .marketplace-track { display: inline-flex; gap: 20px; animation: scroll-text 30s linear infinite; }
-        .marketplace-box { border: 2px solid var(--gold); border-radius: 15px; padding: 20px 45px; min-width: 180px; text-align: center; background: transparent; transition: 0.3s ease; }
-        .marketplace-box span { color: var(--gold); font-size: 22px; font-weight: 700; letter-spacing: 1px; }
-        .marketplace-box:hover { background-color: var(--gold); }
-        .marketplace-box:hover span { color: #000; }
-        @keyframes scroll-text { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+/* Header ke foran baad wale section ko upar khinchne ke liye */
+#hero, .wrapper, section:first-of-type {
+    margin-top: 0 !important;
+    padding-top: 20px !important;
+}
 
-        /* --- 4. Footer (Fixed Layout) --- */
-        .main-footer { background-color: #000; color: #fff; padding: 80px 8% 30px; border-top: 1px solid #111; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 50px; }
-        .footer-col h4 { font-size: 16px; margin-bottom: 25px; color: var(--gold); }
-        .footer-col ul { list-style: none; }
-        .footer-col li { color: #888; font-size: 13px; margin-bottom: 10px; cursor: pointer; transition: 0.2s; }
-        .footer-col li:hover { color: var(--gold); }
-        .icon-group { display: flex; gap: 12px; margin-top: 15px; align-items: center; flex-wrap: wrap; }
-        .ai-icon, .soc-btn { width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 8px; transition: 0.3s; }
-        .ai-icon { background: #fff; color: #000; font-size: 20px; }
-        .soc-btn { color: #fff; text-decoration: none; font-size: 18px; }
-        .fb-bg { background: #3b5998; } .li-bg { background: #0077b5; } .in-bg { background: #e4405f; } .tk-bg { background: #000; border: 1px solid #333; }
+/* Body mein agar koi padding hai to usay zero karein */
+body {
+    padding-top: 0 !important;
+}
+         
+       /* --- ISSE HEADER NORMAL SCROLL HOGA AUR SPACE KHATAM HO JAYEGI --- */
+header {
+    width: 100%;
+    background: #000;
+    padding: 20px 0;
+    
+    /* In properties ko dhiyan se check karein */
+    position: relative !important; /* Fixed ya absolute ko cancel karne ke liye */
+    top: 0;
+    margin: 0;
+    display: block;
+    border-bottom: 1px solid rgba(247, 214, 109, 0.2);
+}
 
-        .footer-bottom { margin-top: 50px; padding-top: 20px; border-top: 1px solid #111; text-align: center; color: #444; font-size: 12px; }
+/* Isse niche wala content header ke saath jur jayega */
+.wrapper, .hero-section {
+    margin-top: 0 !important;
+    padding-top: 20px;
+}
+         /* --- EXTRA SPACE KHATAM KARNE KE LIYE --- */
+header {
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid rgba(247, 214, 109, 0.1); /* Bilkul halki gold line */
+}
 
-        @media (max-width: 992px) {
-            .tinuiti-container { grid-template-columns: 1fr; text-align: center; }
-            .tinuiti-actions { justify-content: center; flex-direction: column; }
-            .tinuiti-title { font-size: 45px; }
-            .profile-wrapper { display: flex; justify-content: center; margin-top: 50px; }
-            .stat-card { left: 50%; transform: translateX(-50%); }
-            .header-container { padding: 10px; }
-        }
-    </style>
-</head>
+.wrapper, .hero-section {
+    margin-top: 0 !important;
+    padding-top: 40px; /* Header ke foran baad thori si saaf space */
+}
+         /* --- THE ULTIMATE LINE KILLER CODE --- */
+header {
+    width: 100%;
+    background: #000 !important;
+    padding: 20px 0;
+    
+    /* Line remove karne ke liye properties */
+    position: relative !important; 
+    display: block !important;
+    margin: 0 !important;
+    border: none !important; /* Kisi bhi kism ki border khatam */
+    outline: none !important; /* Outline bhi khatam */
+    box-shadow: none !important; /* Shadow jo line jaisi lagti hai, wo bhi khatam */
+}
+
+/* Isse niche wale content ko header ke andar halka sa push karenge taake gap ka chance hi na rahe */
+.wrapper, .hero-section, #hero {
+    margin-top: -1px !important; /* Negative margin line ko "overlap" kar ke chupa dega */
+    padding-top: 20px !important;
+    border-top: none !important;
+}
+
+/* Global reset taake koi aur element line na banaye */
+* {
+    box-sizing: border-box;
+}
+.hero-content { flex: 1; max-width: 650px; }
+
+.badge-gold {
+    color: var(--gold);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--gold);
+    padding-left: 15px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.hero-content h1 span {
+    color: var(--gold);
+    display: block;
+}
+
+.hero-subtext {
+    font-size: 18px;
+    color: #bbb;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    padding-left: 20px;
+}
+
+.hero-btns { display: flex; gap: 20px; }
+
+.btn-primary {
+    background: var(--gold);
+    color: #000;
+    padding: 16px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 16px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4); }
+.btn-secondary:hover { background: rgba(255,255,255,0.05); border-color: #fff; }
+
+/* --- Image Area Styling --- */
+.hero-image-area { flex: 0.8; position: relative; display: flex; justify-content: flex-end; }
+
+.image-wrapper { position: relative; width: 400px; height: 500px; }
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: -20px;
+    left: -30px;
+    background: #111;
+    border: 1px solid var(--gold);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.years { font-size: 35px; font-weight: 900; color: var(--gold); }
+.exp-text { font-size: 12px; font-weight: 700; text-transform: uppercase; color: #fff; line-height: 1.2; }
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-split { flex-direction: column; text-align: center; padding-top: 150px; }
+    .hero-image-area { margin-top: 50px; justify-content: center; }
+    .hero-btns { justify-content: center; }
+    .badge-gold { border-left: none; padding-left: 0; }
+    .hero-subtext { border-left: none; padding-left: 0; }
+}
+         .hero-split {
+    padding-top: 150px; /* Ye line lazmi add karein */
+    /* Baaki puraana code waisa hi rahega 👇 */
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    /* ... rest of the code ... */
+}
+         /* Slider Container */
+.logo-slider {
+    background-color: #000; /* Black background */
+    padding: 50px 0;
+    width: 100%;
+}
+
+/* Swiper Container */
+.logoSwiper {
+    padding: 20px 0;
+}
+
+/* Swiper Slide - Individual Logo Box */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111; /* Dark grey box background */
+    border: 1px solid #f7d66d; /* Gold border exactly like image */
+    border-radius: 12px;
+    height: 120px; /* Fixed height for consistency */
+    width: 200px !important; /* Box width */
+    padding: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Effect: Box thora zoom hoga aur border chamkegi */
+.swiper-slide:hover {
+    transform: scale(1.05);
+    border-color: #fff;
+    box-shadow: 0 0 15px rgba(247, 214, 109, 0.3);
+}
+
+/* Logo Image Styling */
+.swiper-slide img {
+    max-width: 85%;
+    max-height: 70%;
+    object-fit: contain;
+    filter: brightness(1.2); /* Logos ko thora bright karne ke liye */
+}
+
+/* Optional: Agar aapne Swiper ki dots (pagination) ya arrows use karni hain */
+.swiper-button-next, .swiper-button-prev {
+    color: #f7d66d !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #f7d66d !important;
+}
+         <script>
+  var swiper = new Swiper(".logoSwiper", {
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: { slidesPerView: 2 },
+      768: { slidesPerView: 4 },
+      1024: { slidesPerView: 5 },
+    },
+  });
+</script>
+         /* Slider Container */
+.logo-slider {
+    background-color: #000;
+    padding: 40px 0;
+    width: 100%;
+    overflow: hidden; /* Extra logos ko hide karne ke liye */
+}
+
+/* Swiper wrapper ko horizontal karne ke liye */
+.swiper-wrapper {
+    display: flex !important;
+    flex-direction: row !important; /* Force horizontal alignment */
+}
+
+/* Individual Slide (Gold Box) */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0a0a0a; /* Dark background */
+    border: 1.5px solid #f7d66d; /* Premium Gold Border */
+    border-radius: 12px;
+    height: 140px; /* Sahi height */
+    width: 220px !important; /* Sahi width */
+    padding: 20px;
+    margin-right: 20px; /* Boxes ke darmiyan gap */
+    transition: 0.3s;
+}
+
+/* Logo Image ko box ke andar fit karne ke liye */
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 80px; /* Logo ko box se bahar jane se rokta hai */
+    object-fit: contain;
+}
+         /* Background and spacing */
+.logo-slider {
+    background-color: #000;
+    padding: 60px 0;
+}
+
+/* Gold Box Styling */
+.swiper-slide {
+    background: #0d0d0d; 
+    border: 1.5px solid #f7d66d; /* Gold Border */
+    border-radius: 12px;
+    height: 110px; /* Sahi size */
+    width: 200px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Brand Text Styling - Isse text 'Logo' jaisa lagega */
+.brand-text {
+    color: #f7d66d; /* Gold Text */
+    font-size: 24px;
+    font-weight: 800; /* Bold Look */
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', Roboto, sans-serif; /* Clean Font */
+}
+
+/* Hover effect */
+.swiper-slide:hover {
+    background: #f7d66d; /* Hover pe box gold ho jayega */
+    transform: translateY(-5px);
+}
+
+.swiper-slide:hover .brand-text {
+    color: #000; /* Hover pe text black ho jayega */
+}
+         <script>
+  var swiper = new Swiper(".logoSwiper", {
+    slidesPerView: "auto",
+    spaceBetween: 25,
+    loop: true,
+    autoplay: {
+      delay: 1500,
+      disableOnInteraction: false,
+    },
+  });
+</script>
+         .logo-slider {
+    width: 100%;
+    overflow: hidden; /* Ye line slide ko row mein rakhegi */
+    background-color: #000;
+    padding: 40px 0;
+}
+
+.swiper-wrapper {
+    transition-timing-function: linear !important; /* Smooth moving ke liye */
+}
+
+.swiper-slide {
+    width: 200px !important; /* Box ki fix width */
+    height: 100px;
+    background: #0d0d0d;
+    border: 1.5px solid #f7d66d;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-text {
+    color: #f7d66d;
+    font-weight: bold;
+    font-size: 20px;
+}
+</style>
+    
 <body>
-
     <header class="main-header">
         <div class="header-container">
-            <a href="index.html" class="logo-area">
-   <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/QvBvs5Kk/Abdullah-Gull.jpg">
+            <div class="logo-area">
+                <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">
                 <span class="logo-text">Abdullah <span>Gull</span></span>
-            </a>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+            </div>
+
             <nav class="nav-capsule">
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="about.html" class="nav-link">About us</a>
                 <a href="services.html" class="nav-link">Services</a>
+                <a href="blog.html" class="nav-link">Blog</a>
                 <a href="contact.html" class="nav-link">Contact us</a>
             </nav>
+
             <div class="header-right">
                 <a href="meeting.html" class="get-in-touch-btn">Get In Touch</a>
             </div>
         </div>
     </header>
+    <section class="hero-split">
+    <div class="hero-content">
+        <div class="badge-gold">AMAZON FBA SPECIALIST</div>
+        
+        <h1>Building Brands<br><span>Scaling Amazon Success</span></h1>
+        <p class="hero-subtext">
+            PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert
+        </p>
+        <div class="hero-btns">
+            <a href="/services/" class="btn-primary">Explore Services</a>
+            <a href="/contact/" class="btn-secondary">Get Free Audit</a>
+        </div>
+    </div>
 
-    <section class="tinuiti-hero">
-        <div class="tinuiti-container">
-            <div class="tinuiti-text">
-                <span class="tinuiti-badge">Amazon FBA Specialist</span>
-                <h1 class="tinuiti-title">Building Brands. <br><span class="highlight">Scaling Success.</span></h1>
-                <p class="tinuiti-subtext">PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert.</p>
-                <div class="tinuiti-actions">
-                    <a href="services.html" class="t-btn-dark">Explore Services</a>
-                    <a href="contact.html" class="t-btn-link">Get Free Audit <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="tinuiti-visual">
-                <div class="profile-wrapper">
-                    <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull" class="profile-main">
-                    <div class="stat-card">
-                        <span class="stat-num">4+</span>
-                        <span class="stat-label">Years of<br>Excellence</span>
-                    </div>
-                </div>
+    <div class="hero-image-area">
+        <div class="image-wrapper">
+            <img src="" alt="Abdullah Gull - Amazon Expert" class="no-blur">
+            <div class="experience-badge">
+                <span class="years">4+</span>
+                <span class="exp-text">Years of<br>Excellence</span>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="slider-section">
-        <div class="track">
-            <div class="box"><span>Amazon</span></div>
-            <div class="box"><span>Shopify</span></div>
-            <div class="box"><span>Wayfair</span></div>
-            <div class="box"><span>Walmart</span></div>
-            <div class="box"><span>eBay</span></div>
-            <div class="box"><span>Etsy</span></div>
-            <div class="box"><span>Home Depot</span></div>
-            <div class="box"><span>Amazon</span></div>
-            <div class="box"><span>Shopify</span></div>
-            <div class="box"><span>Wayfair</span></div>
-            <div class="box"><span>Walmart</span></div>
-            <div class="box"><span>eBay</span></div>
-            <div class="box"><span>Etsy</span></div>
-            <div class="box"><span>Home Depot</span></div>
-        </div>
-    </section>
+<style>
+    /* ... header code ... */
 
-    <footer class="main-footer">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Seller Central</h4>
-                <ul><li>Full Service</li><li>SEO Visibility</li><li>PPC Management</li></ul>
-            </div>
-            <div class="footer-col">
-                <h4>Vendor Central</h4>
-                <ul><li>Onboarding</li><li>Performance Analytics</li></ul>
-            </div>
-            <div class="footer-col">
-                <h4>Marketplaces</h4>
-                <ul><li>Amazon</li><li>Walmart</li><li>eBay</li></ul>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <ul><li>Leadership</li><li>Press</li></ul>
+    .hero-split {
+        /* MAINE YAHAN PADDING ADD KI HAI TA KE HERO HEADER SE NICHE RAHAY */
+        padding-top: 150px; 
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 8%;
+        padding-right: 8%;
+        gap: 40px;
+        background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+    }
+
+    /* MAINE ISKO BARA KIYA HAI */
+    .badge-gold {
+        color: var(--gold);
+        font-weight: 800;
+        font-size: 16px; /* 13px se bara kar ke 16px kiya */
+        letter-spacing: 4px;
+        margin-bottom: 20px;
+        border-left: 3px solid var(--gold);
+        padding-left: 15px;
+        text-transform: uppercase;
+    }
+
+    /* === IMAGE BLUR FIX STYLING === */
+    .hero-image-area .image-wrapper img.no-blur {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        /* Ye properties image ko crystal clear banayengi */
+        image-rendering: -webkit-optimize-contrast; /* Safari/Chrome optimization */
+        image-rendering: crisp-edges;
+        image-rendering: pixelated; /* Works best for low-res but sharp images */
+        display: block;
+    }
+/* Basic styling for the entire logo bar container */
+.logo-bar {
+    display: flex; /* Key part: puts items horizontally */
+    flex-wrap: nowrap; /* Prevents wrapping, key for a straight bar */
+    justify-content: center; /* Centers the logos or use space-around for even spacing */
+    align-items: center; /* Aligns vertically */
+    background-color: #333; /* Dark background from original image */
+    padding: 10px 0; /* Add top and bottom padding */
+    width: 100%; /* Full width */
+    overflow-x: auto; /* Adds a scrollbar if the logos are too wide for the screen, like the original */
+}
+
+/* Individual styling for each logo item */
+.logo-item {
+    padding: 0 15px; /* Space between logos, avoids broken look */
+    /* Ensure the container doesn't create unwanted borders or boxes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Specific styling to handle the unique shapes of each logo */
+.logo-item img {
+    height: 40px; /* Set a consistent height for a clean look, adjust as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
+    /* Special fix: prevent any native CSS from breaking the logo structure */
+    mix-blend-mode: normal; 
+}
+
+/* (Optional) Adjust unique logos that are too wide or tall at 40px */
+.logo-item.amazon img,
+.logo-item.bestway img {
+    height: 35px; /* Adjust height for these specifically to align visually */
+}
+
+/* Custom color styling for individual logos (example) */
+.logo-item.shopify img {
+    filter: brightness(0) invert(1) drop-shadow(0 0 1px lightgreen); /* Make it lighter on dark background */
+}
+    /* --- CSS Reset --- */
+body, h1, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* Deep black background */
+    color: #fff;
+    overflow-x: hidden; /* Hide page-level horizontal scroll */
+    line-height: 1.2;
+}
+
+/* --- Top Header Section --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+    border-bottom: 1px solid rgba(247, 214, 109, 0.1); /* Subtle gold separation line */
+}
+
+.header-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Key feature: Gold Primary Button */
+.btn-gold {
+    background-color: #f7d66d; /* The specific gold from image_11.png */
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-gold:hover {
+    background-color: #e5c461; /* Darker gold on hover */
+}
+
+.btn-black-outlined {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #f7d66d; /* Gold outlined button */
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.btn-black-outlined:hover {
+    border-color: #fff;
+}
+
+/* Gold portrait frame */
+.profile-container {
+    width: 150px;
+    height: 150px;
+    border: 3px solid #f7d66d; /* Specific gold frame thickness and color */
+    border-radius: 8px; /* Slight rounded corners */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Title Section --- */
+.title-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    position: relative;
+    padding: 0 60px;
+}
+
+.title-container h1 {
+    font-size: 48px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Sparkle icon accent (static position) */
+.sparkle-icons {
+    position: absolute;
+    right: 120px;
+    top: 20px;
+    display: flex;
+    gap: 5px;
+    opacity: 0.8;
+}
+
+/* --- Slider Section --- */
+.slider-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+//* Slider Container */
+.logo-slider {
+    background: #000;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Swiper Box Styling */
+.swiper-slide {
+    background: #0d0d0d; /* Deep Black */
+    border: 2px solid #f7d66d; /* Solid Gold Border */
+    border-radius: 15px;
+    height: 130px; 
+    width: 240px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 10px rgba(247, 214, 109, 0.1);
+}
+
+/* Hover effect for 'Tagra' feel */
+.swiper-slide:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(247, 214, 109, 0.3);
+    border-color: #fff;
+}
+
+/* Logo Image Styling - Fixing the 'Broken' look */
+.swiper-slide img {
+    max-width: 85%;
+    max-height: 60px;
+    object-fit: contain;
+    /* Yeh filter saare logos ko light gold/white shade de dega */
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(10deg);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .swiper-slide {
+        width: 180px !important;
+        height: 100px;
+    }
+}
+</style>
+</style>
+<body>
+    <<style>
+    /* Slider Main Container */
+    .marketplace-slider-section {
+        background-color: #000; /* Pure Black Background */
+        padding: 60px 0;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    /* Moving Track */
+    .marketplace-track {
+        display: inline-flex;
+        gap: 20px;
+        animation: scroll-text 25s linear infinite;
+    }
+
+    /* Individual Box Styling */
+    .marketplace-box {
+        border: 2px solid #f7d66d; /* Gold Outline */
+        border-radius: 15px;
+        padding: 20px 45px;
+        min-width: 180px;
+        text-align: center;
+        background: transparent;
+        transition: 0.3s ease;
+    }
+
+    .marketplace-box span {
+        color: #f7d66d; /* Gold Text */
+        font-family: 'Poppins', sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    /* Hover Effect */
+    .marketplace-box:hover {
+        background-color: #f7d66d;
+    }
+    .marketplace-box:hover span {
+        color: #000;
+    }
+
+    /* Animation */
+    @keyframes scroll-text {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    /* Pause on Hover */
+    .marketplace-slider-section:hover .marketplace-track {
+        animation-play-state: paused;
+    }
+</style>
+
+<section class="marketplace-slider-section">
+    <div class="marketplace-track">
+        <div class="marketplace-box"><span>Amazon</span></div>
+        <div class="marketplace-box"><span>Shopify</span></div>
+        <div class="marketplace-box"><span>Wayfair</span></div>
+        <div class="marketplace-box"><span>Walmart</span></div>
+        <div class="marketplace-box"><span>Home Depot</span></div>
+        <div class="marketplace-box"><span>EBay</span></div>
+        <div class="marketplace-box"><span>Etsy</span></div>
+
+        <div class="marketplace-box"><span>Amazon</span></div>
+        <div class="marketplace-box"><span>Shopify</span></div>
+        <div class="marketplace-box"><span>Wayfair</span></div>
+        <div class="marketplace-box"><span>Walmart</span></div>
+        <div class="marketplace-box"><span>Home Depot</span></div>
+        <div class="marketplace-box"><span>EBay</span></div>
+        <div class="marketplace-box"><span>Etsy</span></div>
+    </div>
+</section>
+</script>
+
+
+        <style>
+    .main-footer {
+        background-color: #000;
+        color: #fff;
+        padding: 60px 40px 20px;
+        font-family: 'Arial', sans-serif;
+        border-top: 1px solid #222;
+    }
+
+    /* Grid Layout */
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        max-width: 1300px;
+        margin: 0 auto 50px;
+    }
+
+    .footer-col h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-col ul li {
+        font-size: 13px;
+        color: #ccc;
+        margin-bottom: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .footer-col ul li:hover {
+        color: #f7d66d;
+    }
+
+    /* Middle Section */
+    .footer-middle {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 30px 0;
+        border-top: 1px solid #1a1a1a;
+    }
+
+    .footer-box-title {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #fff;
+    }
+
+    /* AI Icons */
+    .ai-icon-group {
+        display: flex;
+        gap: 12px;
+    }
+
+    .ai-tool-icon {
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .ai-tool-icon img {
+        width: 100%;
+        filter: grayscale(0);
+    }
+
+    /* Social Icons Box Style */
+    .social-icon-group {
+        display: flex;
+        gap: 10px;
+    }
+
+    .social-box {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .fb { background-color: #3b5998; }
+    .li { background-color: #0077b5; }
+    .pi { background-color: #bd081c; }
+    .in { background-color: #3f729b; }
+
+/* --- AI AUR SOCIAL ICONS KO LINE MEIN LANE KE LIYE --- */
+
+/* 1. AI Icons Alignment */
+.icon-group {
+    display: flex !important; /* Icons ko ek line mein layega */
+    gap: 15px; /* Icons ke darmiyan space */
+    margin-top: 15px;
+    flex-wrap: wrap; /* Mobile par automatic adjust hoga */
+}
+
+.ai-icon {
+    width: 40px;
+    height: 40px;
+    background: #fff; /* White box jaisa screenshot mein tha */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000; /* Icons ka color black */
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+/* 2. Social Icons Alignment */
+.social-icon-group {
+    display: flex !important;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.soc-btn {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Icons ka color white */
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Social Media Specific Colors */
+.fb-bg { background-color: #3b5998; }
+.li-bg { background-color: #0077b5; }
+.in-bg { background-color: #e4405f; }
+.tk-bg { background-color: #000; border: 1px solid #333; }
+.sc-bg { background-color: #fffc00; color: #000; }
+.li-bg { background-color: #0077b5; } /* LinkedIn */
+
+/* Hover Effect */
+.soc-btn:hover, .ai-icon:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.1);
+}
+    /* Bottom Bar */
+    .footer-bottom {
+        max-width: 1300px;
+        margin: 40px auto 0;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #222;
+        padding-top: 20px;
+        font-size: 12px;
+        color: #666;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+        .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        .footer-middle { flex-direction: column; gap: 30px; }
+    }
+</style>
+<footer class="main-footer">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>Amazon Seller Central</h4>
+            <ul>
+                <li>Full Service Management</li><li>SEO for better visibility</li><li>PPC Management</li><li>Listing Optimization</li><li>Image Design (CTR Main Image Hack)</li><li>A+ Content / EBC</li><li>Amazon Store Front Creation</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Amazon Vendor Central</h4>
+            <ul>
+                <li>Vendor Onboarding</li><li>Inventory Management</li><li>Retail Content & Advertising</li><li>A+ Content Creation</li><li>Sponsored Products & Brands Ads</li><li>Product Listings Optimization</li><li>Purchase Order Management</li><li>Invoice Management</li><li>Data-Driven Performance Analytics</li><li>Shipment & Delivery Optimization</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Marketplaces</h4>
+            <ul>
+                <li>Amazon</li><li>Shopify</li><li>Wayfair</li><li>Walmart</li><li>Home Depot</li><li>eBay</li><li>Etsy</li><li>Asenda</li><li>Newegg</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+                <li>Case Studies</li><li>Testimonials</li><li>Leadership</li><li>Jobs</li><li>History</li><li>Press</li><li>Articles</li><li>News</li><li>Events</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-middle">
+        <div>
+            <span class="footer-box-title">Ask AI for a summary of Abdullah Gull</span>
+            <div class="icon-group">
+                <div class="ai-icon"><i class="fa-solid fa-ghost"></i></div>
+                <div class="ai-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <div class="ai-icon"><i class="fa-solid fa-brain"></i></div>
+                <div class="ai-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div class="ai-icon"><i class="fa-solid fa-microchip"></i></div>
             </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 Abdullah Gull | Professional Virtual Assistant & Graphic Designer. All Rights Reserved.
+        <div>
+            <span class="footer-box-title">Follow us on our social accounts</span>
+            <div class="icon-group">
+                <a href="https://facebook.com/share/1JTa6K2z5A/" class="soc-btn fb-bg"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://linkedin.com/in/abdullah-gull/" class="soc-btn li-bg"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://instagram.com/abdxxah_965/" class="soc-btn in-bg"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/@abdxxah_965" class="soc-btn tk-bg"><i class="fab fa-tiktok"></i></a>
+                <a href="https://snapchat.com/t/v1C05LBv" class="soc-btn sc-bg"><i class="fab fa-snapchat-ghost"></i></a>
+                <a href="https://x.com/abdullahamazon?s=21" class="soc-btn tk-bg" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
         </div>
-    </footer>
+    </div>
+
+    <div class="footer-bottom">
+        <div>Term & Conditions | Privacy Policies</div>
+        <div>© 2026 Abdullah Gull | All Rights Reserved.</div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".logoSwiper", {
+        slidesPerView: "auto",
+        loop: true,
+        speed: 5000,
+        autoplay: { delay: 0, disableOnInteraction: false },
+        allowTouchMove: false,
+    });
+
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+        document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+        document.getElementById('btn-' + pageId).classList.add('active');
+        window.scrollTo(0, 0);
+    }
+</script>
 
 </body>
-</html>
+
+    
