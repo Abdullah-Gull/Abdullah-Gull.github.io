@@ -797,6 +797,115 @@ body {
 </section>
 </script>
 
+        <section class="services-tabs">
+    <div class="tabs-container">
+        <h2 class="tabs-main-title">What is an <span class="highlight">Amazon Agency?</span></h2>
+        <p class="tabs-main-desc">
+            An Amazon agency helps brands sell more on Amazon. <strong>Abdullah Gull</strong> serves as a part of your team, handling tasks, advertising, and search rankings. You need this help because Amazon is a complicated system that needs attention every day to stay competitive. Working with <strong>Abdullah Gull</strong> reclaims your time and allows you to sell more products using methods that are proven to work.
+        </p>
+
+        <div class="tabs-wrapper">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(event, 'ppc')">Amazon PPC Management</button>
+                <button class="tab-btn" onclick="openTab(event, 'seo')">Amazon SEO (A9 Algorithm)</button>
+                <button class="tab-btn" onclick="openTab(event, 'listing')">Product Listing Optimization</button>
+                <button class="tab-btn" onclick="openTab(event, 'storefront')">Amazon Storefront Design</button>
+                <button class="tab-btn" onclick="openTab(event, 'cro')">Conversion Rate Optimization (CRO)</button>
+            </div>
+
+            <div class="tab-content-box">
+                <div id="ppc" class="tab-panel" style="display: block;">
+                    <h3>Amazon PPC Management</h3>
+                    <p>We manage paid ads on Amazon for you. <strong>Abdullah Gull</strong> makes a wise expenditure of your money to target the buyers and compete with other sellers. This is the best way to prevent wastage of money on advertisements that are not clicked. Consequently, you save on advertisements and earn revenue by selling your products.</p>
+                </div>
+
+                <div id="seo" class="tab-panel" style="display: none;">
+                    <h3>Amazon SEO (A9 Algorithm)</h3>
+                    <p>Dominating search results requires deep knowledge of the A9 algorithm. <strong>Abdullah Gull</strong> optimizes your backend keywords and frontend copy to ensure your products appear where customers are looking. We focus on organic ranking to reduce your long-term dependency on paid ads.</p>
+                </div>
+
+                <div id="listing" class="tab-panel" style="display: none;">
+                    <h3>Product Listing Optimization</h3>
+                    <p>A great product needs a great presentation. From high-converting titles to benefit-driven bullet points, <strong>Abdullah Gull</strong> crafts listings that persuade shoppers to click "Add to Cart" instantly.</p>
+                </div>
+
+                <div id="storefront" class="tab-panel" style="display: none;">
+                    <h3>Amazon Storefront Design</h3>
+                    <p>Build brand loyalty with a custom-designed Storefront. <strong>Abdullah Gull</strong> creates a cinematic, premium shopping experience that showcases your entire catalog and tells your brand story effectively.</p>
+                </div>
+
+                <div id="cro" class="tab-panel" style="display: none;">
+                    <h3>Conversion Rate Optimization (CRO)</h3>
+                    <p>Traffic is useless if it doesn't convert. <strong>Abdullah Gull</strong> analyzes shopper behavior and optimizes every touchpoint of your listing to maximize your sales per visitor.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .services-tabs { padding: 100px 8%; background: #000; color: #fff; }
+    .tabs-container { max-width: 1200px; margin: 0 auto; }
+    .tabs-main-title { font-size: 45px; text-align: center; margin-bottom: 20px; font-weight: 800; }
+    .tabs-main-title .highlight { color: var(--gold); }
+    .tabs-main-desc { text-align: center; max-width: 900px; margin: 0 auto 60px; color: #bbb; line-height: 1.6; font-size: 17px; }
+    .tabs-main-desc strong { color: #fff; }
+
+    .tabs-wrapper { display: flex; gap: 40px; align-items: flex-start; }
+    .tab-buttons { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+    
+    .tab-btn {
+        background: transparent;
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.2);
+        padding: 20px 25px;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .tab-btn:hover { border-color: var(--gold); background: rgba(247, 214, 109, 0.05); }
+    .tab-btn.active { background: #555; border-color: #555; color: #fff; }
+
+    .tab-content-box {
+        flex: 2;
+        background: #fff;
+        color: #000;
+        padding: 50px;
+        border-radius: 12px;
+        min-height: 350px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .tab-panel h3 { font-size: 28px; margin-bottom: 20px; font-weight: 800; color: #000; }
+    .tab-panel p { font-size: 18px; line-height: 1.7; color: #444; }
+
+    @media (max-width: 992px) {
+        .tabs-wrapper { flex-direction: column; }
+        .tab-buttons { width: 100%; }
+        .tab-content-box { padding: 30px; }
+    }
+</style>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-panel");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
 
         <style>
     .main-footer {
