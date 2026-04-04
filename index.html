@@ -4,293 +4,119 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="y1q1dcrXaLMTTUpBn4ZAqFOn8_tzt710IFcoDVw_cq8" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZZJMV9V17"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-VZZJMV9V17');
-    </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah Gull | Amazon Expert Portfolio</title>
-    </head>
-     <style>
-    /* 1. Global Reset & Variables */
-    :root {
-        --gold: #D4AF37;
-        --dark: #000000;
-        --glass: rgba(255, 255, 255, 0.05);
-    }
-
-    * { 
-        margin: 0; 
-        padding: 0; 
-        box-sizing: border-box; 
-        font-family: 'Inter', sans-serif; 
-    }
-
-    body { 
-        background-color: var(--dark); 
-        color: #fff; 
-        overflow-x: hidden; 
-        padding-top: 0 !important;
-    }
-
-    /* 2. Fixed Capsule Header (Only One Version) */
-    .main-header { 
-        position: fixed; 
-        top: 20px; 
-        width: 100%; 
-        z-index: 1000; 
-    }
-
-    .header-container {
-        max-width: 1200px; 
-        margin: 0 auto; 
-        display: flex; 
-        justify-content: space-between;
-        align-items: center; 
-        background: rgba(0,0,0,0.8); 
-        backdrop-filter: blur(15px);
-        padding: 10px 25px; 
-        border-radius: 100px; 
-        border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .logo-area { display: flex; align-items: center; gap: 10px; }
-    .logo-area img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--gold); }
-    .logo-text { font-weight: 700; font-size: 18px; }
-    .logo-text span { color: var(--gold); }
-
-    .nav-capsule { display: flex; background: var(--glass); padding: 5px; border-radius: 50px; gap: 5px; }
-    .nav-link { color: #ccc; text-decoration: none; padding: 8px 18px; font-size: 14px; border-radius: 50px; transition: 0.3s; }
-    .nav-link.active, .nav-link:hover { background: var(--gold); color: #000; font-weight: 600; }
-
-    .get-in-touch-btn { 
-        text-decoration: none; color: #fff; border: 1.5px solid var(--gold); 
-        padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; transition: 0.3s;
-    }
-    .get-in-touch-btn:hover { background: var(--gold); color: #000; }
-
-    /* 3. Hero Split Layout */
-    .hero-split {
-        min-height: 90vh;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 150px 8% 50px; /* Padding for header space */
-        gap: 40px;
-        background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
-        margin-top: -1px !important;
-    }
-
-    .hero-content { flex: 1; max-width: 650px; }
-    .badge-gold {
-        color: var(--gold);
-        font-weight: 800;
-        font-size: 13px;
-        letter-spacing: 4px;
-        margin-bottom: 20px;
-        border-left: 3px solid var(--gold);
-        padding-left: 15px;
-    }
-
-    .hero-content h1 { font-size: 60px; line-height: 1.1; font-weight: 800; margin-bottom: 25px; }
-    .hero-content h1 span { color: var(--gold); display: block; }
-
-    .hero-subtext {
-        font-size: 18px;
-        color: #bbb;
-        line-height: 1.7;
-        margin-bottom: 40px;
-        border-left: 1px solid rgba(255,255,255,0.1);
-        padding-left: 20px;
-    }
-
-    .hero-btns { display: flex; gap: 20px; }
-    .btn-primary {
-        background: var(--gold); color: #000; padding: 16px 35px; border-radius: 50px;
-        text-decoration: none; font-weight: 700; transition: 0.3s;
-        box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-    }
-    .btn-secondary {
-        border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 16px 35px;
-        border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s;
-    }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4); }
-
-    /* Hero Image Area */
-    .hero-image-area { flex: 0.8; position: relative; display: flex; justify-content: flex-end; }
-    .image-wrapper { position: relative; width: 400px; height: 500px; }
-    .image-wrapper img {
-        width: 100%; height: 100%; object-fit: cover;
-        border-radius: 30px; border: 1px solid rgba(212, 175, 55, 0.3);
-    }
-
-    .experience-badge {
-        position: absolute; bottom: -20px; left: -30px; background: #111;
-        border: 1px solid var(--gold); padding: 20px; border-radius: 20px;
-        display: flex; align-items: center; gap: 15px; backdrop-filter: blur(10px);
-    }
-    .years { font-size: 35px; font-weight: 900; color: var(--gold); }
-    .exp-text { font-size: 12px; font-weight: 700; text-transform: uppercase; color: #fff; }
-
-    /* 4. Marketplace Slider (Logo Slider Cleaned) */
-    .logo-slider {
-        background-color: #000;
-        padding: 60px 0;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .swiper-wrapper {
-        display: flex !important;
-        transition-timing-function: linear !important;
-    }
-
-    .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #0d0d0d;
-        border: 1.5px solid #f7d66d;
-        border-radius: 12px;
-        height: 110px;
-        width: 200px !important;
-        transition: all 0.3s ease;
-        margin-right: 25px;
-    }
-
-    .brand-text {
-        color: #f7d66d;
-        font-size: 22px;
-        font-weight: 800;
-        text-transform: capitalize;
-    }
-
-    .swiper-slide:hover {
-        background: #f7d66d;
-        transform: translateY(-5px);
-    }
-
-    .swiper-slide:hover .brand-text {
-        color: #000;
-    }
-
-    /* 5. Responsive Design */
-    @media (max-width: 992px) {
-        .hero-split { flex-direction: column; text-align: center; padding-top: 120px; }
-        .hero-image-area { margin-top: 50px; justify-content: center; }
-        .hero-btns { justify-content: center; }
-        .badge-gold, .hero-subtext { border-left: none; padding-left: 0; }
-        .image-wrapper { width: 300px; height: 400px; }
-    }
-         <style>
-    /* 1. GLOBAL SETTINGS */
-    :root {
-        --gold: #f7d66d;
-        --dark: #000000;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
-    body { 
-        background-color: var(--dark); 
-        color: #fff; 
-        overflow-x: hidden;
-    }
+    <style>
+        /* --- 1. VARIABLES & RESET --- */
+        :root {
+            --gold: #f7d66d;
+            --dark: #000000;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
 
-    /* 2. HEADER (Capsule Style) */
-    .main-header { 
-        position: fixed; 
-        top: 20px; 
-        width: 100%; 
-        z-index: 1000; 
-    }
-    .header-container {
-        max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
-        align-items: center; background: rgba(0,0,0,0.85); backdrop-filter: blur(15px);
-        padding: 10px 25px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.1);
-    }
-    .nav-link { color: #ccc; text-decoration: none; padding: 8px 18px; font-size: 14px; border-radius: 50px; transition: 0.3s; }
-    .nav-link:hover { background: var(--gold); color: #000; }
-    .btn-get-touch { border: 1.5px solid var(--gold); color: #fff; padding: 8px 20px; border-radius: 50px; text-decoration: none; font-size: 13px; font-weight: 700; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--dark); color: #fff; overflow-x: hidden; line-height: 1.6; }
 
-    /* 3. HERO SECTION (Tinuiti Inspired) */
-    section.hero-section {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        padding: 150px 8% 80px; /* Header se niche rakhne ke liye padding */
-        position: relative;
-    }
-    .hero-container {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 50px;
-        align-items: center;
-        width: 100%;
-    }
-    .hero-content h1 { font-size: 70px; font-weight: 900; line-height: 1.1; margin-bottom: 25px; text-transform: uppercase; }
-    .hero-content h1 span { color: var(--gold); }
-    .hero-subtext { color: #999; font-size: 18px; margin-bottom: 40px; border-left: 2px solid var(--gold); padding-left: 20px; }
+        /* --- 2. FIXED HEADER --- */
+        .main-header { position: fixed; top: 20px; width: 100%; z-index: 1000; }
+        .header-container {
+            max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+            align-items: center; background: rgba(0,0,0,0.85); backdrop-filter: blur(15px);
+            padding: 10px 25px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo-area { display: flex; align-items: center; gap: 10px; }
+        .logo-area img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--gold); }
+        .logo-text { font-weight: 700; font-size: 18px; }
+        .logo-text span { color: var(--gold); }
 
-    .hero-btns { display: flex; gap: 20px; }
-    .btn-main { background: var(--gold); color: #000; padding: 18px 40px; border-radius: 5px; text-decoration: none; font-weight: 800; text-transform: uppercase; }
-    
-    /* Image Area */
-    .hero-image-wrapper { position: relative; }
-    .profile-img { width: 100%; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
-    .exp-badge {
-        position: absolute; bottom: -20px; left: -20px; background: var(--gold); color: #000;
-        padding: 15px 25px; border-radius: 5px; font-weight: 900; font-size: 24px;
-    }
+        .nav-capsule { display: flex; background: var(--glass); padding: 5px; border-radius: 50px; gap: 5px; }
+        .nav-link { color: #ccc; text-decoration: none; padding: 8px 18px; font-size: 14px; border-radius: 50px; transition: 0.3s; }
+        .nav-link.active, .nav-link:hover { background: var(--gold); color: #000; font-weight: 600; }
+        .get-in-touch-btn { text-decoration: none; color: #fff; border: 1.5px solid var(--gold); padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; transition: 0.3s; }
+        .get-in-touch-btn:hover { background: var(--gold); color: #000; }
 
-    /* 4. MARKETPLACE SLIDER (Moving Track) */
-    .slider-section {
-        padding: 80px 0;
-        background: #050505;
-        overflow: hidden;
-        border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    .track { display: flex; gap: 30px; animation: scroll 25s linear infinite; width: max-content; }
-    .box { 
-        border: 2px solid var(--gold); padding: 15px 40px; border-radius: 10px; 
-        color: var(--gold); font-size: 22px; font-weight: 700; min-width: 200px; text-align: center;
-    }
-    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        /* --- 3. HERO SECTION (Tinuiti Inspired) --- */
+        .hero-section {
+            min-height: 100vh; display: flex; align-items: center;
+            padding: 140px 8% 80px; position: relative; overflow: hidden;
+        }
+        .hero-container {
+            max-width: 1300px; margin: 0 auto; display: grid;
+            grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 60px; width: 100%;
+        }
+        .hero-badge {
+            color: var(--gold); font-weight: 800; letter-spacing: 4px; font-size: 14px;
+            text-transform: uppercase; display: block; margin-bottom: 20px;
+            border-left: 3px solid var(--gold); padding-left: 15px;
+        }
+        .hero-title { font-size: clamp(40px, 6vw, 75px); font-weight: 900; line-height: 1.1; margin-bottom: 30px; }
+        .hero-title span { color: var(--gold); }
+        .hero-subtext { color: #999; font-size: 18px; max-width: 600px; margin-bottom: 40px; }
 
-    /* 5. FOOTER FIX (Isse footer niche hi rahega) */
-    footer {
-        background: #000;
-        padding: 80px 8% 40px;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 40px;
-        position: relative; /* Absolute ko remove kiya taake ye upar na chadhe */
-    }
-    .footer-col h4 { color: var(--gold); margin-bottom: 20px; text-transform: uppercase; }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 10px; color: #777; font-size: 14px; }
+        .hero-actions { display: flex; align-items: center; gap: 20px; }
+        .btn-filled { background: #fff; color: #000; padding: 18px 35px; border-radius: 4px; text-decoration: none; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
+        .btn-filled:hover { background: var(--gold); transform: translateY(-3px); }
+        .btn-outline { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
 
-    /* RESPONSIVE */
-    @media (max-width: 992px) {
-        .hero-container { grid-template-columns: 1fr; text-align: center; }
-        .hero-content h1 { font-size: 45px; }
-        .hero-btns { justify-content: center; }
-        .hero-subtext { border: none; padding: 0; }
-    }
-</style>
-</style>
-    
+        /* Profile Image Wrapper */
+        .profile-visual { position: relative; width: 100%; display: flex; justify-content: center; }
+        .profile-main { width: 100%; max-width: 450px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
+        .stat-card {
+            position: absolute; bottom: -20px; right: 0; background: var(--gold); color: #000;
+            padding: 20px 30px; border-radius: 8px; display: flex; align-items: center; gap: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .stat-num { font-size: 38px; font-weight: 900; }
+        .stat-label { font-size: 11px; font-weight: 800; text-transform: uppercase; line-height: 1.2; }
+
+        /* --- 4. MARKETPLACE SLIDER --- */
+        .slider-section { background: #000; padding: 60px 0; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.05); }
+        .track { display: flex; gap: 30px; animation: scroll 40s linear infinite; width: max-content; }
+        .box { border: 2px solid var(--gold); padding: 15px 40px; border-radius: 10px; color: var(--gold); font-size: 20px; font-weight: 700; transition: 0.3s; cursor: default; }
+        .box:hover { background: var(--gold); color: #000; transform: translateY(-5px); }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* --- 5. FOOTER --- */
+        .main-footer { background: #000; padding: 80px 8% 30px; border-top: 1px solid #1a1a1a; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 50px; }
+        .footer-col h4 { font-size: 16px; color: var(--gold); margin-bottom: 25px; text-transform: uppercase; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { color: #888; font-size: 13px; margin-bottom: 10px; cursor: pointer; transition: 0.2s; }
+        .footer-col li:hover { color: var(--gold); }
+
+        .footer-middle { display: flex; justify-content: space-between; align-items: flex-start; padding-top: 40px; border-top: 1px solid #1a1a1a; flex-wrap: wrap; gap: 30px; }
+        .footer-box-title { display: block; font-size: 14px; font-weight: 600; margin-bottom: 15px; color: #fff; }
+        
+        .icon-group { display: flex; gap: 12px; flex-wrap: wrap; }
+        .ai-icon { width: 40px; height: 40px; background: #fff; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: #000; transition: 0.3s; }
+        .soc-btn { width: 38px; height: 38px; display: flex; justify-content: center; align-items: center; color: #fff; border-radius: 4px; text-decoration: none; transition: 0.3s; }
+        
+        .fb-bg { background: #3b5998; } .li-bg { background: #0077b5; } .in-bg { background: #e4405f; } .tk-bg { background: #000; border: 1px solid #333; } .sc-bg { background: #fffc00; color: #000; }
+
+        .footer-bottom { margin-top: 50px; display: flex; justify-content: space-between; font-size: 12px; color: #555; border-top: 1px solid #1a1a1a; padding-top: 20px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero-badge { border-left: none; padding-left: 0; }
+            .hero-actions { justify-content: center; flex-direction: column; }
+            .hero-subtext { margin: 0 auto 30px; }
+            .stat-card { right: 50%; transform: translateX(50%); bottom: -30px; }
+        }
+    </style>
+</head>
 <body>
+
     <header class="main-header">
         <div class="header-container">
             <div class="logo-area">
                 <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">
                 <span class="logo-text">Abdullah <span>Gull</span></span>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
             </div>
-
             <nav class="nav-capsule">
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="about.html" class="nav-link">About us</a>
@@ -298,32 +124,22 @@
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="contact.html" class="nav-link">Contact us</a>
             </nav>
-
-            <div class="header-right">
-                <a href="meeting.html" class="get-in-touch-btn">Get In Touch</a>
-            </div>
+            <a href="meeting.html" class="get-in-touch-btn">Get In Touch</a>
         </div>
     </header>
-    <section class="hero-split">
-   <section class="tinuiti-hero">
-    <div class="tinuiti-container">
-        <div class="tinuiti-text">
-            <span class="tinuiti-badge">AMAZON FBA SPECIALIST</span>
-            <h1 class="tinuiti-title">
-                Building Brands. <br>
-                <span class="highlight">Scaling Success.</span>
-            </h1>
-            <p class="tinuiti-subtext">
-                PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert.
-            </p>
-            <div class="tinuiti-actions">
-                <a href="services.html" class="t-btn-dark">Explore Services</a>
-                <a href="contact.html" class="t-btn-link">Get Free Audit <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
 
-        <div class="tinuiti-visual">
-            <div class="profile-wrapper">
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">Amazon FBA Specialist</span>
+                <h1 class="hero-title">Building Brands. <br><span>Scaling Success.</span></h1>
+                <p class="hero-subtext">PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert.</p>
+                <div class="hero-actions">
+                    <a href="services.html" class="btn-filled">Explore Services</a>
+                    <a href="contact.html" class="btn-outline">Get Free Audit <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="profile-visual">
                 <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull" class="profile-main">
                 <div class="stat-card">
                     <span class="stat-num">4+</span>
@@ -331,470 +147,63 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-   <style>
-    /* 1. Global Reset & Variables */
-    :root {
-        --gold: #f7d66d;
-        --dark: #000000;
-        --glass: rgba(255, 255, 255, 0.05);
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    
-    body { 
-        background-color: var(--dark); 
-        color: #fff; 
-        overflow-x: hidden; 
-        line-height: 1.4;
-    }
-
-    /* 2. Tinuiti Style Hero Section (Main Layout) */
-    .tinuiti-hero {
-        background-color: var(--dark);
-        min-height: 95vh;
-        display: flex;
-        align-items: center;
-        padding: 120px 8% 60px; /* Padding for Header Space */
-        position: relative;
-        overflow: hidden;
-    }
-
-    .tinuiti-container {
-        max-width: 1300px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        align-items: center;
-        gap: 60px;
-        width: 100%;
-    }
-
-    /* Typography */
-    .tinuiti-badge {
-        color: var(--gold);
-        font-weight: 800;
-        letter-spacing: 4px;
-        font-size: 14px;
-        text-transform: uppercase;
-        display: block;
-        margin-bottom: 20px;
-        border-left: 3px solid var(--gold);
-        padding-left: 15px;
-    }
-
-    .tinuiti-title {
-        color: #fff;
-        font-size: clamp(40px, 6vw, 80px); /* Responsive Font */
-        font-weight: 900;
-        line-height: 1.1;
-        letter-spacing: -2px;
-        margin-bottom: 30px;
-    }
-
-    .tinuiti-title .highlight { color: var(--gold); }
-
-    .tinuiti-subtext {
-        color: #999;
-        font-size: 18px;
-        line-height: 1.7;
-        max-width: 600px;
-        margin-bottom: 40px;
-    }
-
-    /* Buttons */
-    .tinuiti-actions { display: flex; align-items: center; gap: 20px; }
-
-    .t-btn-dark {
-        background-color: #fff;
-        color: #000;
-        padding: 18px 40px;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: 700;
-        text-transform: uppercase;
-        transition: 0.3s ease;
-    }
-
-    .t-btn-link {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 700;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transition: 0.3s;
-    }
-
-    .t-btn-dark:hover { background-color: var(--gold); transform: translateY(-3px); }
-    .t-btn-link:hover { color: var(--gold); }
-
-    /* Visual Part (Profile Image) */
-    .profile-wrapper { position: relative; width: 100%; display: flex; justify-content: center; }
-
-    .profile-main {
-        width: 100%;
-        max-width: 450px;
-        border-radius: 12px;
-        border: 1px solid rgba(255,255,255,0.1);
-        /* Crystal Clear Fix */
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-    }
-
-    .stat-card {
-        position: absolute;
-        bottom: -20px;
-        right: 0;
-        background: var(--gold);
-        color: #000;
-        padding: 20px 30px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    }
-
-    .stat-num { font-size: 38px; font-weight: 900; }
-    .stat-label { font-size: 11px; font-weight: 800; text-transform: uppercase; line-height: 1.2; }
-
-    /* 3. Marketplace Continuous Slider (Animation Style) */
-    .marketplace-slider-section {
-        background-color: #000;
-        padding: 50px 0;
-        overflow: hidden;
-        white-space: nowrap;
-        border-top: 1px solid rgba(247, 214, 109, 0.1);
-    }
-
-    .marketplace-track {
-        display: inline-flex;
-        gap: 30px;
-        animation: scroll-text 30s linear infinite;
-    }
-
-    .marketplace-box {
-        border: 2px solid var(--gold);
-        border-radius: 12px;
-        padding: 15px 40px;
-        min-width: 200px;
-        text-align: center;
-        background: transparent;
-        transition: 0.4s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .marketplace-box span {
-        color: var(--gold);
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: 1px;
-    }
-
-    .marketplace-box:hover { background-color: var(--gold); transform: translateY(-5px); }
-    .marketplace-box:hover span { color: #000; }
-
-    @keyframes scroll-text {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-    }
-
-    /* 4. Responsive Fixes */
-    @media (max-width: 992px) {
-        .tinuiti-container { grid-template-columns: 1fr; text-align: center; }
-        .tinuiti-title { font-size: 45px; }
-        .tinuiti-actions { justify-content: center; flex-direction: column; }
-        .tinuiti-subtext { margin: 0 auto 40px; }
-        .stat-card { right: 50%; transform: translateX(50%); bottom: -40px; }
-        .profile-main { max-width: 320px; }
-    }
-</style>
-
-<section class="marketplace-slider-section">
-    <div class="marketplace-track">
-        <div class="marketplace-box"><span>Amazon</span></div>
-        <div class="marketplace-box"><span>Shopify</span></div>
-        <div class="marketplace-box"><span>Wayfair</span></div>
-        <div class="marketplace-box"><span>Walmart</span></div>
-        <div class="marketplace-box"><span>Home Depot</span></div>
-        <div class="marketplace-box"><span>EBay</span></div>
-        <div class="marketplace-box"><span>Etsy</span></div>
-
-        <div class="marketplace-box"><span>Amazon</span></div>
-        <div class="marketplace-box"><span>Shopify</span></div>
-        <div class="marketplace-box"><span>Wayfair</span></div>
-        <div class="marketplace-box"><span>Walmart</span></div>
-        <div class="marketplace-box"><span>Home Depot</span></div>
-        <div class="marketplace-box"><span>EBay</span></div>
-        <div class="marketplace-box"><span>Etsy</span></div>
-    </div>
-</section>
-</script>
-
-
-        <style>
-    .main-footer {
-        background-color: #000;
-        color: #fff;
-        padding: 60px 40px 20px;
-        font-family: 'Arial', sans-serif;
-        border-top: 1px solid #222;
-    }
-
-    /* Grid Layout */
-    .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        max-width: 1300px;
-        margin: 0 auto 50px;
-    }
-
-    .footer-col h4 {
-        font-size: 16px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        color: #fff;
-    }
-
-    .footer-col ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-col ul li {
-        font-size: 13px;
-        color: #ccc;
-        margin-bottom: 8px;
-        cursor: pointer;
-        transition: 0.2s;
-    }
-
-    .footer-col ul li:hover {
-        color: #f7d66d;
-    }
-
-    /* Middle Section */
-    .footer-middle {
-        max-width: 1300px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 30px 0;
-        border-top: 1px solid #1a1a1a;
-    }
-
-    .footer-box-title {
-        display: block;
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 15px;
-        color: #fff;
-    }
-
-    /* AI Icons */
-    .ai-icon-group {
-        display: flex;
-        gap: 12px;
-    }
-
-    .ai-tool-icon {
-        width: 40px;
-        height: 40px;
-        background: #fff;
-        border-radius: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 8px;
-    }
-
-    .ai-tool-icon img {
-        width: 100%;
-        filter: grayscale(0);
-    }
-
-    /* Social Icons Box Style */
-    .social-icon-group {
-        display: flex;
-        gap: 10px;
-    }
-
-    .social-box {
-        width: 35px;
-        height: 35px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        border-radius: 4px;
-        text-decoration: none;
-        font-size: 16px;
-    }
-
-    .fb { background-color: #3b5998; }
-    .li { background-color: #0077b5; }
-    .pi { background-color: #bd081c; }
-    .in { background-color: #3f729b; }
-
-/* --- AI AUR SOCIAL ICONS KO LINE MEIN LANE KE LIYE --- */
-
-/* 1. AI Icons Alignment */
-.icon-group {
-    display: flex !important; /* Icons ko ek line mein layega */
-    gap: 15px; /* Icons ke darmiyan space */
-    margin-top: 15px;
-    flex-wrap: wrap; /* Mobile par automatic adjust hoga */
-}
-
-.ai-icon {
-    width: 40px;
-    height: 40px;
-    background: #fff; /* White box jaisa screenshot mein tha */
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000; /* Icons ka color black */
-    font-size: 18px;
-    transition: 0.3s ease;
-}
-
-/* 2. Social Icons Alignment */
-.social-icon-group {
-    display: flex !important;
-    gap: 12px;
-    margin-top: 15px;
-}
-
-.soc-btn {
-    width: 35px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff; /* Icons ka color white */
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-/* Social Media Specific Colors */
-.fb-bg { background-color: #3b5998; }
-.li-bg { background-color: #0077b5; }
-.in-bg { background-color: #e4405f; }
-.tk-bg { background-color: #000; border: 1px solid #333; }
-.sc-bg { background-color: #fffc00; color: #000; }
-.li-bg { background-color: #0077b5; } /* LinkedIn */
-
-/* Hover Effect */
-.soc-btn:hover, .ai-icon:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.1);
-}
-    /* Bottom Bar */
-    .footer-bottom {
-        max-width: 1300px;
-        margin: 40px auto 0;
-        display: flex;
-        justify-content: space-between;
-        border-top: 1px solid #222;
-        padding-top: 20px;
-        font-size: 12px;
-        color: #666;
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 900px) {
-        .footer-grid { grid-template-columns: repeat(2, 1fr); }
-        .footer-middle { flex-direction: column; gap: 30px; }
-    }
-</style>
-<footer class="main-footer">
-    <div class="footer-grid">
-        <div class="footer-col">
-            <h4>Amazon Seller Central</h4>
-            <ul>
-                <li>Full Service Management</li><li>SEO for better visibility</li><li>PPC Management</li><li>Listing Optimization</li><li>Image Design (CTR Main Image Hack)</li><li>A+ Content / EBC</li><li>Amazon Store Front Creation</li>
-            </ul>
+    <section class="slider-section">
+        <div class="track">
+            <div class="box">Amazon</div><div class="box">Shopify</div><div class="box">Wayfair</div>
+            <div class="box">Walmart</div><div class="box">Home Depot</div><div class="box">eBay</div><div class="box">Etsy</div>
+            <div class="box">Amazon</div><div class="box">Shopify</div><div class="box">Wayfair</div>
+            <div class="box">Walmart</div><div class="box">Home Depot</div><div class="box">eBay</div><div class="box">Etsy</div>
         </div>
-        <div class="footer-col">
-            <h4>Amazon Vendor Central</h4>
-            <ul>
-                <li>Vendor Onboarding</li><li>Inventory Management</li><li>Retail Content & Advertising</li><li>A+ Content Creation</li><li>Sponsored Products & Brands Ads</li><li>Product Listings Optimization</li><li>Purchase Order Management</li><li>Invoice Management</li><li>Data-Driven Performance Analytics</li><li>Shipment & Delivery Optimization</li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Marketplaces</h4>
-            <ul>
-                <li>Amazon</li><li>Shopify</li><li>Wayfair</li><li>Walmart</li><li>Home Depot</li><li>eBay</li><li>Etsy</li><li>Asenda</li><li>Newegg</li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Company</h4>
-            <ul>
-                <li>Case Studies</li><li>Testimonials</li><li>Leadership</li><li>Jobs</li><li>History</li><li>Press</li><li>Articles</li><li>News</li><li>Events</li>
-            </ul>
-        </div>
-    </div>
+    </section>
 
-    <div class="footer-middle">
-        <div>
-            <span class="footer-box-title">Ask AI for a summary of Abdullah Gull</span>
-            <div class="icon-group">
-                <div class="ai-icon"><i class="fa-solid fa-ghost"></i></div>
-                <div class="ai-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                <div class="ai-icon"><i class="fa-solid fa-brain"></i></div>
-                <div class="ai-icon"><i class="fa-solid fa-bolt"></i></div>
-                <div class="ai-icon"><i class="fa-solid fa-microchip"></i></div>
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Seller Central</h4>
+                <ul><li>Full Service</li><li>SEO Visibility</li><li>PPC Management</li><li>A+ Content</li><li>Store Creation</li></ul>
+            </div>
+            <div class="footer-col">
+                <h4>Vendor Central</h4>
+                <ul><li>Onboarding</li><li>Inventory</li><li>PO Management</li><li>Performance Analytics</li></ul>
+            </div>
+            <div class="footer-col">
+                <h4>Marketplaces</h4>
+                <ul><li>Amazon</li><li>Walmart</li><li>eBay</li><li>Shopify</li><li>Newegg</li></ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul><li>Case Studies</li><li>Testimonials</li><li>Leadership</li><li>Press</li></ul>
             </div>
         </div>
-        <div>
-            <span class="footer-box-title">Follow us on our social accounts</span>
-            <div class="icon-group">
-                <a href="https://facebook.com/share/1JTa6K2z5A/" class="soc-btn fb-bg"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://linkedin.com/in/abdullah-gull/" class="soc-btn li-bg"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://instagram.com/abdxxah_965/" class="soc-btn in-bg"><i class="fab fa-instagram"></i></a>
-                <a href="https://tiktok.com/@abdxxah_965" class="soc-btn tk-bg"><i class="fab fa-tiktok"></i></a>
-                <a href="https://snapchat.com/t/v1C05LBv" class="soc-btn sc-bg"><i class="fab fa-snapchat-ghost"></i></a>
-                <a href="https://x.com/abdullahamazon?s=21" class="soc-btn tk-bg" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+
+        <div class="footer-middle">
+            <div>
+                <span class="footer-box-title">Ask AI for a summary of Abdullah Gull</span>
+                <div class="icon-group">
+                    <div class="ai-icon"><i class="fa-solid fa-ghost"></i></div>
+                    <div class="ai-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <div class="ai-icon"><i class="fa-solid fa-brain"></i></div>
+                    <div class="ai-icon"><i class="fa-solid fa-bolt"></i></div>
+                </div>
+            </div>
+            <div>
+                <span class="footer-box-title">Follow us on our social accounts</span>
+                <div class="icon-group">
+                    <a href="https://facebook.com/share/1JTa6K2z5A/" class="soc-btn fb-bg"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://linkedin.com/in/abdullah-gull/" class="soc-btn li-bg"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://instagram.com/abdxxah_965/" class="soc-btn in-bg"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@abdxxah_965" class="soc-btn tk-bg"><i class="fab fa-tiktok"></i></a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        <div>Term & Conditions | Privacy Policies</div>
-        <div>© 2026 Abdullah Gull | All Rights Reserved.</div>
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-    var swiper = new Swiper(".logoSwiper", {
-        slidesPerView: "auto",
-        loop: true,
-        speed: 5000,
-        autoplay: { delay: 0, disableOnInteraction: false },
-        allowTouchMove: false,
-    });
-
-    function showPage(pageId) {
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
-        document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-        document.getElementById('btn-' + pageId).classList.add('active');
-        window.scrollTo(0, 0);
-    }
-</script>
+        <div class="footer-bottom">
+            <div>Term & Conditions | Privacy Policies</div>
+            <div>© 2026 Abdullah Gull | All Rights Reserved.</div>
+        </div>
+    </footer>
 
 </body>
-
-    
+</html>
