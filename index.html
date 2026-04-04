@@ -446,31 +446,161 @@ header {
         </div>
     </header>
     <section class="hero-split">
-    <div class="hero-content">
-        <div class="badge-gold">AMAZON FBA SPECIALIST</div>
-        
-        <h1>Building Brands<br><span>Scaling Amazon Success</span></h1>
-        <p class="hero-subtext">
-            PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert
-        </p>
-        <div class="hero-btns">
-            <a href="/services/" class="btn-primary">Explore Services</a>
-            <a href="/contact/" class="btn-secondary">Get Free Audit</a>
+   <section class="tinuiti-hero">
+    <div class="tinuiti-container">
+        <div class="tinuiti-text">
+            <span class="tinuiti-badge">AMAZON FBA SPECIALIST</span>
+            <h1 class="tinuiti-title">
+                Building Brands. <br>
+                <span class="highlight">Scaling Success.</span>
+            </h1>
+            <p class="tinuiti-subtext">
+                PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience | Amazon Expert.
+            </p>
+            <div class="tinuiti-actions">
+                <a href="services.html" class="t-btn-dark">Explore Services</a>
+                <a href="contact.html" class="t-btn-link">Get Free Audit <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
         </div>
-    </div>
 
-    <div class="hero-image-area">
-        <div class="image-wrapper">
-            <img src="" alt="Abdullah Gull - Amazon Expert" class="no-blur">
-            <div class="experience-badge">
-                <span class="years">4+</span>
-                <span class="exp-text">Years of<br>Excellence</span>
+        <div class="tinuiti-visual">
+            <div class="profile-wrapper">
+                <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull" class="profile-main">
+                <div class="stat-card">
+                    <span class="stat-num">4+</span>
+                    <span class="stat-label">Years of<br>Excellence</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <style>
+    /* Tinuiti Style CSS */
+    .tinuiti-hero {
+        background-color: #000; /* Pure Black like Tinuiti */
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        padding: 100px 5%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .tinuiti-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        gap: 60px;
+        width: 100%;
+    }
+
+    /* Typography */
+    .tinuiti-badge {
+        color: #f7d66d; /* Gold accent */
+        font-weight: 700;
+        letter-spacing: 3px;
+        font-size: 14px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    .tinuiti-title {
+        color: #fff;
+        font-size: 80px; /* Big & Bold */
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -2px;
+        margin-bottom: 30px;
+    }
+
+    .tinuiti-title .highlight {
+        color: #f7d66d;
+    }
+
+    .tinuiti-subtext {
+        color: #999;
+        font-size: 20px;
+        line-height: 1.6;
+        max-width: 600px;
+        margin-bottom: 45px;
+    }
+
+    /* Buttons */
+    .tinuiti-actions {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .t-btn-dark {
+        background-color: #fff;
+        color: #000;
+        padding: 18px 40px;
+        border-radius: 4px; /* Slightly sharp corners like Tinuiti */
+        text-decoration: none;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: 0.3s;
+    }
+
+    .t-btn-link {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: 0.3s;
+    }
+
+    .t-btn-link:hover { color: #f7d66d; }
+    .t-btn-dark:hover { background-color: #f7d66d; }
+
+    /* Visual Part */
+    .profile-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .profile-main {
+        width: 100%;
+        max-width: 450px;
+        border-radius: 8px;
+        filter: grayscale(20%); /* Artistic look */
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat-card {
+        position: absolute;
+        bottom: -30px;
+        right: 0;
+        background: #f7d66d;
+        color: #000;
+        padding: 25px 35px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .stat-num { font-size: 45px; font-weight: 900; }
+    .stat-label { font-size: 12px; font-weight: 800; text-transform: uppercase; line-height: 1.2; }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+        .tinuiti-container { grid-template-columns: 1fr; text-align: center; }
+        .tinuiti-title { font-size: 50px; }
+        .tinuiti-actions { justify-content: center; }
+        .tinuiti-subtext { margin: 0 auto 40px; }
+        .stat-card { right: 50%; transform: translateX(50%); }
+    }
+</style>
     /* ... header code ... */
 
     .hero-split {
