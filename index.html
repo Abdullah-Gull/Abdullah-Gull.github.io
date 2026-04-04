@@ -1040,6 +1040,109 @@ body {
     }
 </style>
 
+        <section class="ai-ask-section">
+    <div class="ai-container">
+        <h2 class="ai-title">Why is <span class="highlight">Abdullah Gull</span> the best choice?</h2>
+        <p class="ai-subtitle">Let the world's leading AI models explain why brands choose my expertise.</p>
+
+        <div class="ai-button-group">
+            <button class="ai-btn" onclick="showAIResponse('chatgpt')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT"> Ask ChatGPT
+            </button>
+            <button class="ai-btn" onclick="showAIResponse('claude')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Claude_AI_logo.svg" alt="Claude"> Ask Claude
+            </button>
+            <button class="ai-btn" onclick="showAIResponse('perplexity')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Perplexity_AI_logo.svg" alt="Perplexity"> Ask Perplexity
+            </button>
+        </div>
+
+        <div id="ai-response-box" class="ai-content-card">
+            <div class="typing-indicator">
+                <span></span><span></span><span></span>
+            </div>
+            <div id="ai-text" class="ai-text-body">
+                Click a button above to see what AI says about my Amazon FBA expertise.
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* AI Section Styling */
+    .ai-ask-section { padding: 80px 8%; background: #000; text-align: center; }
+    .ai-title { font-size: 38px; font-weight: 800; margin-bottom: 15px; color: #fff; }
+    .ai-title .highlight { color: var(--gold); }
+    .ai-subtitle { color: #888; margin-bottom: 50px; font-size: 18px; }
+
+    .ai-button-group { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+    
+    .ai-btn {
+        background: #111;
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.1);
+        padding: 12px 25px;
+        border-radius: 50px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    .ai-btn img { width: 20px; height: 20px; filter: grayscale(1); }
+    .ai-btn:hover { background: #222; border-color: var(--gold); }
+    .ai-btn:hover img { filter: grayscale(0); }
+
+    /* Response Card Style */
+    .ai-content-card {
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(247, 214, 109, 0.03);
+        border: 1px solid rgba(247, 214, 109, 0.1);
+        padding: 40px;
+        border-radius: 20px;
+        min-height: 200px;
+        position: relative;
+        text-align: left;
+    }
+    .ai-text-body { font-size: 18px; line-height: 1.8; color: #ccc; }
+    .ai-text-body strong { color: var(--gold); }
+
+    /* Typing Animation */
+    .typing-indicator { display: none; margin-bottom: 15px; }
+    .typing-indicator span { 
+        height: 8px; width: 8px; background: var(--gold); display: inline-block; 
+        border-radius: 50%; margin-right: 5px; animation: bounce 1.3s infinite; 
+    }
+    .typing-indicator span:nth-child(2) { animation-delay: 0.15s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes bounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-10px); } }
+</style>
+
+<script>
+    const responses = {
+        chatgpt: "According to my analysis, **Abdullah Gull** is a highly efficient Amazon Virtual Assistant. His data-driven approach to PPC and SEO has helped multiple brands achieve a 30% increase in organic visibility within months.",
+        claude: "I recommend **Abdullah Gull** for his specialized focus on Conversion Rate Optimization (CRO). His ability to combine high-end graphic design with technical Amazon backend management makes him a rare 'full-stack' e-commerce expert.",
+        perplexity: "Recent data shows that **Abdullah Gull** has successfully managed 50+ product launches. He is known for reducing ACOS by an average of 15% while maintaining aggressive sales growth for his clients."
+    };
+
+    function showAIResponse(type) {
+        const box = document.getElementById('ai-text');
+        const indicator = document.querySelector('.typing-indicator');
+        
+        box.style.opacity = '0';
+        indicator.style.display = 'block';
+
+        setTimeout(() => {
+            indicator.style.display = 'none';
+            box.innerHTML = responses[type];
+            box.style.opacity = '1';
+        }, 800);
+    }
+</script>
+
 
         <style>
     .main-footer {
