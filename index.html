@@ -716,46 +716,73 @@
     </style>
 </section>
     
-    <section class="process-section">
+    <section class="process-section-v2">
     <div class="container">
-        <div class="process-flex">
+        <div class="process-wrapper">
             
-            <div class="process-content">
-                <h2 class="process-main-title">Our <span class="gold-text">3-Step</span> Process</h2>
-                <p class="process-intro">
-                    At <strong>Abdullah Gull</strong>, we take time to fully understand your brand. Once we identify your goals, our Amazon full-service experts create and execute a strategy tailored for sustainable growth.
+            <div class="steps-column">
+                <h2 class="main-title">Our <span class="gold">3-part</span> process</h2>
+                <p class="intro-text">
+                    I work hard to get a full understanding of your business. After identifying your needs and goals, we begin our strategic work on Amazon.
                 </p>
 
-                <div class="tabs-container">
-                    <div class="tab-buttons">
-                        <div class="tab-btn"><i class="icon-onboarding"></i> Onboarding</div>
-                        <div class="tab-btn active"><i class="icon-optimisation"></i> Optimisation</div>
-                        <div class="tab-btn"><i class="icon-results"></i> Results</div>
+                <div class="steps-container">
+                    <div class="step-box">
+                        <div class="step-header">
+                            <span class="step-number">1: Onboarding</span>
+                            <span class="step-tagline">Setting expectations and goals</span>
+                        </div>
+                        <div class="step-body">
+                            <div class="step-icon plane-icon">✈</div>
+                            <ul class="check-list red-checks">
+                                <li>Onboarding Survey</li>
+                                <li>Kick Off</li>
+                                <li>Competitor Analysis</li>
+                                <li>Account Audit</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="tab-details">
-                        <h3>Executing the growth strategy</h3>
-                        <ul class="process-list">
-                            <li>
-                                <strong>Listing Improvements:</strong>
-                                We rewrite and optimize your product listings for both the A9 algorithm and buyer conversion.
-                            </li>
-                            <li>
-                                <strong>PPC Campaign Launch:</strong>
-                                Our team restructures your advertising to lower acquisition costs and increase visibility.
-                            </li>
-                            <li>
-                                <strong>Inventory Alignment:</strong>
-                                We establish stock monitoring protocols to ensure you never lose rank due to stockouts.
-                            </li>
-                        </ul>
+                    <div class="step-box">
+                        <div class="step-header">
+                            <span class="step-number">2: Optimization</span>
+                            <span class="step-tagline">Never-ending cycle of work</span>
+                        </div>
+                        <div class="step-body">
+                            <div class="step-icon cycle-icon">↻</div>
+                            <ul class="check-list gold-checks">
+                                <li>Catalog</li>
+                                <li>PPC</li>
+                                <li>SEO</li>
+                                <li>Design</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-box no-border">
+                        <div class="step-header">
+                            <span class="step-number">3: Results</span>
+                            <span class="step-tagline">Watch growth</span>
+                        </div>
+                        <div class="step-body">
+                            <div class="step-icon chart-icon">📊</div>
+                            <ul class="check-list green-checks">
+                                <li>Traffic</li>
+                                <li>Conversion</li>
+                                <li>Sales</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="process-visual">
-                <div class="monitor-frame">
-                    <img src="https://m.media-amazon.com/images/G/01/AdProductsWebsite/images/PPC_Dashboard_Mockup.png" alt="Amazon Ads Dashboard" class="dashboard-img">
+            <div class="visual-column">
+                <div class="monitor-container">
+                    <div class="screen">
+                        <img src="https://m.media-amazon.com/images/G/01/AdProductsWebsite/images/PPC_Dashboard_Mockup.png" alt="Amazon Seller Central Dashboard">
+                    </div>
+                    <div class="monitor-stand"></div>
+                    <div class="monitor-base"></div>
                 </div>
             </div>
 
@@ -763,68 +790,71 @@
     </div>
 
     <style>
-        .process-section {
-            background-color: #000;
-            color: #fff;
-            padding: 100px 20px;
-            font-family: 'Segoe UI', sans-serif;
+        .process-section-v2 {
+            background-color: #1a1a1a; /* Dark gray like the image */
+            color: #ffffff;
+            padding: 80px 20px;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
-        .process-section .container { max-width: 1200px; margin: 0 auto; }
-        .process-flex { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
+        .process-section-v2 .container { max-width: 1300px; margin: 0 auto; }
+        .process-wrapper { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; }
         
-        .process-content { flex: 1; min-width: 350px; }
-        .process-main-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; }
-        .gold-text { color: #D4AF37; }
-        .process-intro { color: #ccc; line-height: 1.6; margin-bottom: 40px; }
+        .steps-column { flex: 1.2; min-width: 350px; }
+        .main-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; }
+        .gold { color: #D4AF37; }
+        .intro-text { color: #bbb; margin-bottom: 40px; line-height: 1.6; max-width: 500px; }
 
-        /* Tabs Styling */
-        .tab-buttons { display: flex; flex-direction: column; gap: 10px; width: 180px; float: left; margin-right: 30px; }
-        .tab-btn {
-            padding: 15px;
-            border: 1px solid #333;
-            text-align: center;
-            cursor: pointer;
-            transition: 0.3s;
-            font-weight: 600;
-            color: #888;
+        /* Step Boxes */
+        .step-box { 
+            border-bottom: 1px solid #333; 
+            padding: 30px 0; 
+            display: flex; 
+            flex-direction: column;
+            gap: 15px;
         }
-        .tab-btn.active {
-            border-color: #D4AF37;
-            color: #fff;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
-        }
+        .no-border { border-bottom: none; }
+        
+        .step-header { display: flex; align-items: baseline; gap: 20px; }
+        .step-number { font-size: 1.4rem; font-weight: 700; color: #fff; }
+        .step-tagline { font-size: 1rem; color: #888; font-style: italic; }
 
-        .tab-details { overflow: hidden; }
-        .tab-details h3 { font-size: 1.3rem; margin-bottom: 20px; color: #fff; }
-        .process-list { list-style: none; padding: 0; }
-        .process-list li { margin-bottom: 20px; position: relative; padding-left: 20px; color: #aaa; line-height: 1.5; }
-        .process-list li::before { content: "•"; color: #D4AF37; position: absolute; left: 0; font-size: 1.5rem; }
-        .process-list li strong { color: #fff; display: block; margin-bottom: 5px; }
+        .step-body { display: flex; align-items: flex-start; gap: 40px; padding-top: 10px; }
+        .step-icon { font-size: 2.5rem; width: 50px; }
+        .plane-icon { color: #ff6b6b; }
+        .cycle-icon { color: #D4AF37; }
+        .chart-icon { color: #51cf66; }
 
-        /* Monitor Styling */
-        .process-visual { flex: 1; min-width: 350px; text-align: center; }
-        .monitor-frame {
-            background: #111;
-            padding: 10px;
-            border: 2px solid #333;
-            border-radius: 10px;
-            position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        /* Checklists */
+        .check-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 30px; }
+        .check-list li { position: relative; padding-left: 25px; color: #ddd; font-weight: 500; }
+        .check-list li::before { 
+            content: "✓"; 
+            position: absolute; 
+            left: 0; 
+            font-weight: 900;
         }
-        .monitor-frame::after {
-            content: "";
-            display: block;
-            width: 100px;
-            height: 60px;
-            background: #222;
-            margin: 0 auto;
-            border-radius: 0 0 10px 10px;
-        }
-        .dashboard-img { width: 100%; border-radius: 5px; filter: grayscale(20%); }
+        .red-checks li::before { color: #ff6b6b; }
+        .gold-checks li::before { color: #D4AF37; }
+        .green-checks li::before { color: #51cf66; }
 
-        @media (max-width: 768px) {
-            .tab-buttons { width: 100%; flex-direction: row; margin-bottom: 30px; }
-            .process-main-title { font-size: 2rem; }
+        /* Monitor Visual */
+        .visual-column { flex: 1; min-width: 400px; background: #FFD700; border-radius: 20px; padding: 60px 20px; display: flex; justify-content: center; align-items: center; }
+        .monitor-container { width: 100%; max-width: 600px; position: relative; }
+        .screen { 
+            background: #000; 
+            border: 12px solid #333; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+        .screen img { width: 100%; display: block; filter: brightness(0.9); }
+        
+        .monitor-stand { width: 60px; height: 80px; background: #444; margin: 0 auto; }
+        .monitor-base { width: 200px; height: 10px; background: #222; margin: 0 auto; border-radius: 20px 20px 0 0; }
+
+        @media (max-width: 992px) {
+            .process-wrapper { flex-direction: column; }
+            .visual-column { width: 100%; }
         }
     </style>
 </section>
