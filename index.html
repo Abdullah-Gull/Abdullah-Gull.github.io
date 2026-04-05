@@ -916,75 +916,90 @@ body {
     }
 </script>
 
-<section class="ag-fba-brands">
+<section class="ag-trusted-brands">
     <div class="ag-container">
-        <h3 class="ag-section-label">TRUSTED BY GLOBAL FBA SELLERS</h3>
-        <p class="ag-section-desc">Abdullah Gull has empowered these major brands to scale their Amazon operations.</p>
+        <h3 class="ag-gold-label">TRUSTED BY ESTABLISHED AMAZON SELLERS</h3>
+        <p class="ag-desc">Real brands, real results. Abdullah Gull helps these FBA businesses dominate their niche.</p>
         
-        <div class="ag-brand-grid">
-            <div class="ag-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Nestl%C3%A9_logo_and_wordmark.svg/1200px-Nestl%C3%A9_logo_and_wordmark.svg.png" alt="Nestle"></div>
-            <div class="ag-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Honeywell_logo.svg/2560px-Honeywell_logo.svg.png" alt="Honeywell"></div>
+        <div class="ag-logo-grid">
+            <div class="ag-logo-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Anker_logo.svg/2560px-Anker_logo.svg.png" alt="Anker Official">
+            </div>
             
-            <div class="ag-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon FBA"></div>
-            <div class="ag-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png" alt="Brand Partner"></div>
-            <div class="ag-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="Strategy Partner"></div>
-            <div class="ag-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Logitech_logo.svg/2560px-Logitech_logo.svg.png" alt="Logitech"></div>
-            <div class="ag-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Tesla_logo.png/1200px-Tesla_logo.png" alt="Tesla Gear"></div>
-            <div class="ag-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/2560px-Adidas_Logo.svg.png" alt="Adidas FBA"></div>
+            <div class="ag-logo-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Spigen_logo.svg/2560px-Spigen_logo.svg.png" alt="Spigen FBA">
+            </div>
+
+            <div class="ag-logo-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Honeywell_logo.svg/2560px-Honeywell_logo.svg.png" alt="Honeywell">
+            </div>
+
+            <div class="ag-logo-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Nestl%C3%A9_logo_and_wordmark.svg/1200px-Nestl%C3%A9_logo_and_wordmark.svg.png" alt="Nestle Health">
+            </div>
+
+            <div class="ag-logo-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Philips_logo_new.svg/2560px-Philips_logo_new.svg.png" alt="Philips Amazon">
+            </div>
+
+            <div class="ag-logo-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Logitech_logo.svg/2560px-Logitech_logo.svg.png" alt="Logitech FBA">
+            </div>
         </div>
     </div>
 </section>
 
 <style>
-    /* Cinematic Dark Theme */
-    .ag-fba-brands {
+    /* Premium Styling */
+    .ag-trusted-brands {
         background-color: #000;
-        padding: 80px 5%;
+        padding: 70px 5%;
         text-align: center;
+        border-top: 1px solid #111;
     }
     .ag-container { max-width: 1200px; margin: 0 auto; }
     
-    .ag-section-label {
-        color: #f7d66d; /* Your Gold Accent */
-        font-size: 14px;
-        letter-spacing: 4px;
-        margin-bottom: 15px;
+    .ag-gold-label {
+        color: #f7d66d; /* Your Website Gold */
+        font-size: 15px;
         font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 12px;
+        text-transform: uppercase;
     }
-    .ag-section-desc {
-        color: #666;
-        font-size: 16px;
-        margin-bottom: 60px;
-    }
+    .ag-desc { color: #555; font-size: 16px; margin-bottom: 50px; }
 
-    .ag-brand-grid {
+    .ag-logo-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 50px;
         align-items: center;
     }
 
-    .ag-logo-wrap {
-        filter: grayscale(100%) invert(1) brightness(0.8); /* Uniform Silver/White look */
-        opacity: 0.5;
-        transition: 0.4s ease-in-out;
+    /* Logo Protection & Look */
+    .ag-logo-card {
+        filter: grayscale(100%) brightness(1.8); /* Clean white/silver look */
+        opacity: 0.6;
+        transition: 0.4s ease;
+        padding: 10px;
     }
 
-    .ag-logo-wrap:hover {
-        filter: grayscale(0%) invert(0) brightness(1); /* Color on hover */
+    .ag-logo-card:hover {
+        filter: grayscale(0%) brightness(1); /* Original color on hover */
         opacity: 1;
         transform: translateY(-5px);
     }
 
-    .ag-logo-wrap img {
+    .ag-logo-card img {
         width: 100%;
-        max-width: 140px;
+        max-width: 130px;
         height: auto;
         object-fit: contain;
     }
 
-    @media (max-width: 992px) { .ag-brand-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 600px) { .ag-brand-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; } }
+    @media (max-width: 768px) {
+        .ag-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    }
 </style>
         
         <section class="expertise-section">
