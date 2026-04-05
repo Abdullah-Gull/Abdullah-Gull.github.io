@@ -916,89 +916,81 @@ body {
     }
 </script>
 
-<section class="ag-trusted-brands">
+<section class="ag-text-brands">
     <div class="ag-container">
         <h3 class="ag-gold-label">TRUSTED BY ESTABLISHED AMAZON SELLERS</h3>
-        <p class="ag-desc">Real brands, real results. Abdullah Gull helps these FBA businesses dominate their niche.</p>
+        <p class="ag-desc">Abdullah Gull has managed and scaled operations for these leading FBA brands.</p>
         
-        <div class="ag-logo-grid">
-            <div class="ag-logo-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Anker_logo.svg/2560px-Anker_logo.svg.png" alt="Anker Official">
-            </div>
+        <div class="ag-text-grid">
+            <div class="ag-brand-name">NESTLÉ</div>
+            <div class="ag-brand-name">HONEYWELL</div>
+            <div class="ag-brand-name">CHIRP.</div>
+            <div class="ag-brand-name">ALEN</div>
             
-            <div class="ag-logo-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Spigen_logo.svg/2560px-Spigen_logo.svg.png" alt="Spigen FBA">
-            </div>
-
-            <div class="ag-logo-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Honeywell_logo.svg/2560px-Honeywell_logo.svg.png" alt="Honeywell">
-            </div>
-
-            <div class="ag-logo-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Nestl%C3%A9_logo_and_wordmark.svg/1200px-Nestl%C3%A9_logo_and_wordmark.svg.png" alt="Nestle Health">
-            </div>
-
-            <div class="ag-logo-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Philips_logo_new.svg/2560px-Philips_logo_new.svg.png" alt="Philips Amazon">
-            </div>
-
-            <div class="ag-logo-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Logitech_logo.svg/2560px-Logitech_logo.svg.png" alt="Logitech FBA">
-            </div>
+            <div class="ag-brand-name">ANKER</div>
+            <div class="ag-brand-name">SPIGEN</div>
+            <div class="ag-brand-name">PHILIPS</div>
+            <div class="ag-brand-name">LOGITECH</div>
         </div>
     </div>
 </section>
 
 <style>
-    /* Premium Styling */
-    .ag-trusted-brands {
+    /* Cinematic Dark Theme */
+    .ag-text-brands {
         background-color: #000;
-        padding: 70px 5%;
+        padding: 80px 5%;
         text-align: center;
-        border-top: 1px solid #111;
+        font-family: 'Inter', sans-serif;
     }
-    .ag-container { max-width: 1200px; margin: 0 auto; }
+    .ag-container { max-width: 1100px; margin: 0 auto; }
     
     .ag-gold-label {
         color: #f7d66d; /* Your Website Gold */
-        font-size: 15px;
+        font-size: 14px;
+        letter-spacing: 4px;
         font-weight: 700;
-        letter-spacing: 3px;
-        margin-bottom: 12px;
+        margin-bottom: 15px;
         text-transform: uppercase;
     }
-    .ag-desc { color: #555; font-size: 16px; margin-bottom: 50px; }
+    .ag-desc { color: #666; font-size: 16px; margin-bottom: 60px; }
 
-    .ag-logo-grid {
+    /* Text Logo Grid Style */
+    .ag-text-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 50px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
         align-items: center;
     }
 
-    /* Logo Protection & Look */
-    .ag-logo-card {
-        filter: grayscale(100%) brightness(1.8); /* Clean white/silver look */
-        opacity: 0.6;
-        transition: 0.4s ease;
-        padding: 10px;
+    .ag-brand-name {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        opacity: 0.4;
+        transition: all 0.4s ease;
+        cursor: default;
+        padding: 20px;
+        border: 1px solid transparent;
     }
 
-    .ag-logo-card:hover {
-        filter: grayscale(0%) brightness(1); /* Original color on hover */
+    /* Hover Effect: Gold Glow */
+    .ag-brand-name:hover {
         opacity: 1;
-        transform: translateY(-5px);
+        color: #f7d66d;
+        transform: scale(1.1);
+        text-shadow: 0 0 20px rgba(247, 214, 109, 0.3);
     }
 
-    .ag-logo-card img {
-        width: 100%;
-        max-width: 130px;
-        height: auto;
-        object-fit: contain;
+    /* Mobile View */
+    @media (max-width: 992px) {
+        .ag-text-grid { grid-template-columns: repeat(2, 1fr); }
+        .ag-brand-name { font-size: 20px; }
     }
-
-    @media (max-width: 768px) {
-        .ag-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    @media (max-width: 480px) {
+        .ag-text-grid { gap: 20px; }
+        .ag-brand-name { font-size: 16px; padding: 10px; }
     }
 </style>
         
