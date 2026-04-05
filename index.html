@@ -588,38 +588,133 @@
         .ai-btn { width: 100%; justify-content: center; }
     }
 </style>
-
-    <section class="comparison-section">
+    
+<section class="ppc-seo-comparison">
     <div class="container">
-        <h2 class="section-title">Difference Between <span class="highlight-orange">Amazon</span> PPC VS SEO</h2>
-        <p class="section-subtitle">
+        <h2 class="main-title">Difference Between <span class="gold-text">Amazon</span> PPC VS SEO</h2>
+        
+        <p class="intro-text">
             Scalable marketplace growth requires both paid advertising and organic optimization. 
             The following is a breakdown of how <strong>Abdullah Gull</strong> leverages every strategy to maximize your revenue.
         </p>
 
-        <div class="comparison-grid">
-            <div class="comparison-card">
-                <h3>Amazon PPC</h3>
-                <p>
-                    Amazon PPC is a strategic paid model where you only pay when a potential buyer clicks your ad. 
-                    Through precision-targeted bidding, I position your products on the first page instantly. 
-                    This approach generates predictable sales velocity and allows us to scale your revenue with total financial control.
-                </p>
+        <div class="comparison-flex">
+            <div class="service-box">
+                <div class="box-header">
+                    <h3>Amazon PPC</h3>
+                </div>
+                <div class="box-body">
+                    <p>
+                        Amazon PPC is a strategic paid model where you only pay when a potential buyer clicks your ad. 
+                        Through precision-targeted bidding, I position your products on the first page instantly. 
+                        This approach generates predictable sales velocity and allows us to scale your revenue with total financial control.
+                    </p>
+                </div>
             </div>
 
-            <div class="comparison-card">
-                <h3>Amazon SEO</h3>
-                <p>
-                    Amazon SEO is the art of ranking your listings organically. I integrate high-intent keywords 
-                    optimized for the A9 algorithm to ensure your catalog is indexed perfectly. 
-                    This builds long-term brand authority and delivers consistent, free traffic, 
-                    significantly boosting your overall profit margins.
-                </p>
+            <div class="service-box">
+                <div class="box-header">
+                    <h3>Amazon SEO</h3>
+                </div>
+                <div class="box-body">
+                    <p>
+                        Amazon SEO is the art of ranking your listings organically. I integrate high-intent keywords 
+                        optimized for the A9 algorithm to ensure your catalog is indexed perfectly. 
+                        This builds long-term brand authority and delivers consistent, free traffic, 
+                        significantly boosting your overall profit margins.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-</section>
 
+    <style>
+        .ppc-seo-comparison {
+            background-color: #000000; /* Pure Black Background as per your preference */
+            color: #ffffff;
+            padding: 80px 20px;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            text-align: center;
+        }
+
+        .ppc-seo-comparison .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .ppc-seo-comparison .main-title {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ppc-seo-comparison .gold-text {
+            color: #D4AF37; /* Premium Gold Accent */
+        }
+
+        .ppc-seo-comparison .intro-text {
+            font-size: 1.15rem;
+            color: #aaaaaa;
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+            line-height: 1.6;
+        }
+
+        .ppc-seo-comparison .comparison-flex {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .ppc-seo-comparison .service-box {
+            background: #0a0a0a; /* Deep black card */
+            border: 1px solid #1a1a1a;
+            border-radius: 15px;
+            flex: 1;
+            min-width: 320px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .ppc-seo-comparison .service-box:hover {
+            transform: translateY(-12px);
+            border-color: #D4AF37; /* Gold border on hover */
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.1);
+        }
+
+        .ppc-seo-comparison .box-header {
+            background-color: #111111;
+            padding: 25px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .ppc-seo-comparison .box-header h3 {
+            color: #D4AF37; /* Gold Title for cards */
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .ppc-seo-comparison .box-body {
+            padding: 35px;
+            text-align: left;
+            line-height: 1.8;
+            color: #cccccc;
+            font-size: 1.05rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .ppc-seo-comparison .main-title { font-size: 2.1rem; }
+            .ppc-seo-comparison .comparison-flex { flex-direction: column; }
+            .ppc-seo-comparison .service-box { min-width: 100%; }
+        }
+    </style>
+</section>
 
         <style>
     .main-footer {
