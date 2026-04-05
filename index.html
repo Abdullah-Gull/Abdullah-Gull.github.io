@@ -716,6 +716,101 @@
     </style>
 </section>
 
+    <section class="faq-cert-section">
+    <div class="container">
+        <div class="faq-cert-flex">
+            
+            <div class="faq-column">
+                <h2 class="faq-title">Frequently Asked <span class="gold-text">Questions</span></h2>
+                <p class="faq-subtitle">
+                    Expert answers by <strong>Abdullah Gull</strong> to help you understand how we scale your Amazon business.
+                </p>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">What exactly does an Amazon Virtual Assistant do? <span class="icon">+</span></button>
+                        <div class="faq-content"><p>As your VA, I manage everything from product sourcing to customer service, handling the daily operations of your Seller Central.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do you improve my product's organic ranking? <span class="icon">+</span></button>
+                        <div class="faq-content"><p>I use advanced SEO to optimize your titles and bullet points for the A9 algorithm, ensuring long-term organic visibility.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do you manage Amazon PPC campaigns? <span class="icon">+</span></button>
+                        <div class="faq-content"><p>I focus on data-driven bidding for Sponsored Products and Brands to lower your ACOS and increase sales velocity.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Can you help with Storefront design and Branding? <span class="icon">+</span></button>
+                        <div class="faq-content"><p>Yes, I provide cinematic A+ content and premium Storefront designs to build a strong brand identity.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Do you provide Product Research services? <span class="icon">+</span></button>
+                        <div class="faq-content"><p>I conduct deep market analysis to find high-demand, low-competition products with healthy profit margins.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do you handle Negative Feedback or Reviews? <span class="icon">+</span></button>
+                        <div class="faq-content"><p>I follow Amazon’s white-hat policies to reach out to customers and resolve issues, protecting your brand's reputation.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Can you manage FBA Inventory and Shipments? <span class="icon">+</span></button>
+                        <div class="faq-content"><p>Yes, I monitor stock levels, create shipping plans, and ensure your inventory is replenished on time to avoid stock-outs.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Do you work with new sellers or established brands? <span class="icon">+</span></button>
+                        <div class="faq-content"><p>I work with both. I help new sellers launch from scratch and established brands scale their existing revenue.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What tools do you use for Amazon Management? <span class="icon">+</span></button>
+                        <div class="faq-content"><p>I am proficient in industry-leading tools like Helium 10, Jungle Scout, and Amazon Brand Analytics for precise data.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How can I get a free listing audit? <span class="icon">+</span></button>
+                        <div class="faq-content"><p>Simply click the "Get Free Audit" button to receive a detailed report on your current Amazon performance.</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-column">
+                <div class="cert-card">
+                    <img src="https://m.media-amazon.com/images/G/01/AdProductsWebsite/logos/learning_console_logo_2x._CB485934105_.png" alt="Amazon Ads Logo" class="cert-logo">
+                    <p class="cert-name">Amazon Ads<br>Certified Expert</p>
+                    <div class="gold-badge-icon">★</div>
+                    <p class="cert-desc">Verified expertise in Retail & Sponsored Ads Strategy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .faq-cert-section { background-color: #000; color: #fff; padding: 100px 20px; font-family: 'Segoe UI', sans-serif; }
+        .faq-cert-section .container { max-width: 1200px; margin: 0 auto; }
+        .faq-cert-flex { display: flex; gap: 50px; flex-wrap: wrap; }
+        .faq-column { flex: 2; min-width: 350px; }
+        .faq-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; }
+        .gold-text { color: #D4AF37; }
+        .faq-subtitle { color: #888; margin-bottom: 40px; }
+        .faq-item { border-bottom: 1px solid #222; }
+        .faq-question { width: 100%; padding: 20px 0; background: none; border: none; color: #fff; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; }
+        .faq-content { max-height: 0; overflow: hidden; transition: 0.4s ease; color: #aaa; }
+        .faq-content p { padding-bottom: 20px; line-height: 1.7; }
+        .faq-item.active .faq-content { max-height: 300px; }
+        .cert-column { flex: 1; min-width: 280px; }
+        .cert-card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 40px; text-align: center; border-radius: 20px; }
+        .cert-logo { width: 120px; filter: brightness(0) invert(1); margin-bottom: 20px; }
+        .gold-badge-icon { font-size: 3rem; color: #D4AF37; margin-bottom: 15px; }
+        @media (max-width: 992px) { .faq-cert-flex { flex-direction: column; } }
+    </style>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</section>
+
         <style>
     .main-footer {
         background-color: #000;
