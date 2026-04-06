@@ -10,7 +10,8 @@
       gtag('js', new Date());
       gtag('config', 'G-VZZJMV9V17');
     </script>
-    <title>Abdullah Gull | Amazon Expert Portfolio</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/GvjXV0mL/favicon.png">
+    <title>Abdullah Gull | Amazon Expert</title>
     </head>
     <style>
     :root {
@@ -118,15 +119,21 @@ header {
     .about-preview { padding: 120px 10% 80px; display: flex; align-items: center; gap: 50px; }
     .about-content h1 { font-size: 45px; margin-bottom: 20px; }
     .about-content p { color: #aaa; line-height: 1.6; margin-bottom: 30px; }
-        /* Links ka default color khatam karne ke liye */
-a {
-    text-decoration: none !important;
-    color: inherit !important;
+      /* Purple color hatane ke liye */
+.logo-link {
+    color: #D4AF37 !important; /* Gold color */
+    text-decoration: none !important; /* Underline khatam karne ke liye */
+    font-weight: bold;
 }
 
-/* Hover karne par agar color change karna ho */
-a:hover {
-    opacity: 0.8;
+/* Jab mouse naam par jaye (Hover) */
+.logo-link:hover {
+    color: #ffffff !important; /* White color */
+}
+
+/* Span (Gull) ka color white rakhne ke liye */
+.logo-link span {
+    color: #ffffff !important;
 }
 </style>
 
@@ -134,13 +141,8 @@ a:hover {
     <header class="main-header">
         <div class="header-container">
             <div class="logo-area">
-                <a href="index.html" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 10px;">
-    <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull" style="border: 2px solid #D4AF37; border-radius: 50%; width: 40px;">
-    <span style="font-weight: bold; font-size: 1.2rem;">
-        <span style="color: white;">Abdullah</span> 
-        <span style="color: #D4AF37;">Gull</span>
-    </span>
-</a>
+                  <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">
+               <a href="index.html" class="logo-link">Abdullah <span>Gull</span></a>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
             </div>
 
