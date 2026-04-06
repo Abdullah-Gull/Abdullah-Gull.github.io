@@ -118,15 +118,21 @@ header {
     .about-preview { padding: 120px 10% 80px; display: flex; align-items: center; gap: 50px; }
     .about-content h1 { font-size: 45px; margin-bottom: 20px; }
     .about-content p { color: #aaa; line-height: 1.6; margin-bottom: 30px; }
-       /* Links ka default color khatam karne ke liye */
-a.name-link {
-    color: #D4AF37 !important; /* Wahi gold color */
+      /* Purple color hatane ke liye */
+.logo-link {
+    color: #D4AF37 !important; /* Gold color */
     text-decoration: none !important; /* Underline khatam karne ke liye */
+    font-weight: bold;
 }
 
-/* Hover par agar color change karna ho */
-a.name-link:hover {
-    color: white !important;
+/* Jab mouse naam par jaye (Hover) */
+.logo-link:hover {
+    color: #ffffff !important; /* White color */
+}
+
+/* Span (Gull) ka color white rakhne ke liye */
+.logo-link span {
+    color: #ffffff !important;
 }
      
 </style>
@@ -136,7 +142,7 @@ a.name-link:hover {
         <div class="header-container">
             <div class="logo-area">
                   <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">
-                <a href="index.html" class="logo-text">Abdullah <span>Gull</span></a>
+<a href="index.html" class="logo-link">Abdullah <span>Gull</span></a>
             </div>
 
             <nav class="nav-capsule">
