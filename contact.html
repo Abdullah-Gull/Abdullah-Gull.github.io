@@ -143,6 +143,35 @@ header {
 .logo-link span {
     color: #ffffff !important;
 }
+        /* --- GLOBAL RESET & ALIGNMENT --- */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally Center */
+    justify-content: center;
+    text-align: center;
+    padding: 60px 5% !important; /* Spacing fixed, no extra dead space */
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.container, .contact-container, .elite-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto !important; /* Force Center */
+}
+
+/* Fix for that giant headline */
+.hero-headline, .main-title {
+    margin: 0 auto 20px auto !important;
+    max-width: 900px;
+}
+
+/* Remove extra space between sections */
+section + section {
+    margin-top: -20px; /* Sections ko ek dusre ke qareeb lane ke liye */
+}
 </style>
 
 <body>
