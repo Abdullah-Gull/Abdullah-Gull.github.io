@@ -1048,75 +1048,129 @@
     </div>
 
     <style>
-        .results-section {
-            background-color: #000;
-            padding: 60px 20px;
-            display: flex;
-            justify-content: center;
-            font-family: 'Arial', sans-serif;
-        }
+        /* RESULTS SECTION - THEME: PREMIUM BLACK & GOLD */
 
-        .results-card {
-            background: #fff;
-            width: 100%;
-            max-width: 1000px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            text-align: center;
-        }
+.results-section {
+    background: #000; /* Pure Black Background */
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
 
-        .results-header { padding: 40px 20px 20px; }
-        .results-header h2 { font-size: 32px; color: #222; margin-bottom: 10px; }
-        .results-header p { color: #666; font-size: 14px; }
+.results-card {
+    background: linear-gradient(145deg, #111, #050505); /* Subtle Depth */
+    width: 100%;
+    max-width: 1100px;
+    border-radius: 40px;
+    border: 1px solid rgba(212, 175, 55, 0.2); /* Faint Gold Border */
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8), 
+                0 0 20px rgba(212, 175, 55, 0.05);
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
 
-        .results-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            padding: 20px 40px 40px;
-            border-bottom: 1px solid #eee;
-        }
+.results-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(212, 175, 55, 0.5); /* Border Glow on Hover */
+}
 
-        .stat-box .number {
-            display: block;
-            font-size: 45px;
-            font-weight: 900;
-            color: #000;
-        }
+/* Header Text */
+.results-header {
+    padding: 60px 40px 20px;
+    text-align: center;
+}
 
-        .stat-box .label { font-size: 12px; color: #555; font-weight: 600; }
+.results-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
 
-        /* Bottom Logo Bar */
-        .logo-bar {
-            background: linear-gradient(to bottom, #444, #000);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 30px 20px;
-            color: #ccc;
-        }
+.results-header p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-        .logo-item {
-            font-size: 18px;
-            font-weight: bold;
-            opacity: 0.8;
-            transition: 0.3s;
-        }
+/* Stats Styling */
+.results-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
 
-        .logo-item span { font-size: 10px; font-weight: normal; text-transform: uppercase; }
+.stat-box {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
 
-        /* Styling individual text-logos to look real */
-        .google { font-family: 'serif'; font-size: 22px; color: #fff; }
-        .helium { letter-spacing: -1px; color: #fff; }
-        .meta { font-size: 22px; color: #fff; }
-        .walmart { color: #fff; }
+.stat-box .number {
+    display: block;
+    font-size: 65px;
+    font-weight: 900;
+    color: #D4AF37; /* Cinematic Gold */
+    background: linear-gradient(to bottom, #D4AF37, #8A6D3B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+    margin-bottom: 5px;
+}
 
-        .logo-item:hover { opacity: 1; transform: scale(1.1); color: #D4AF37; }
+.stat-box .label {
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    opacity: 0.8;
+}
 
-        @media (max-width: 768px) {
-            .results-stats { grid-template-columns: 1fr; gap: 30px; }
-            .logo-bar { flex-wrap: wrap; gap: 20px; }
-        }
+/* Bottom Logo Bar - Glassmorphism */
+.logo-bar {
+    background: rgba(212, 175, 55, 0.05); /* Very light gold tint */
+    backdrop-filter: blur(10px); /* Blur effect */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo-item {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    opacity: 0.4;
+    filter: grayscale(100%);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.logo-item:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+/* Specialized styles for text-logos to match */
+.logo-item span { font-size: 10px; opacity: 0.6; display: block; line-height: 1; }
+.meta { font-family: 'Inter', sans-serif; font-size: 24px; }
+.google { font-family: 'Product Sans', sans-serif; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .results-header h2 { font-size: 32px; }
+    .stat-box .number { font-size: 45px; }
+    .logo-bar { flex-direction: column; gap: 30px; }
+}
     </style>
 </section>
 
