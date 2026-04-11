@@ -1016,7 +1016,109 @@
     </style>
 </section>
 
-    
+    <section class="results-section">
+    <div class="results-card">
+        <div class="results-header">
+            <h2>It is all about results</h2>
+            <p>Our success is directly tied to the growth and expansion of our amazing clients.</p>
+        </div>
+
+        <div class="results-stats">
+            <div class="stat-box">
+                <span class="number">15+</span>
+                <span class="label">Brand currently managed</span>
+            </div>
+            <div class="stat-box main-stat">
+                <span class="number">$1M+</span>
+                <span class="label">Revenue Generated on Amazon Annually</span>
+            </div>
+            <div class="stat-box">
+                <span class="number">5+</span>
+                <span class="label">Employees</span>
+            </div>
+        </div>
+
+        <div class="logo-bar">
+            <div class="logo-item">aws <span>partner<br>network</span></div>
+            <div class="logo-item google">Google</div>
+            <div class="logo-item helium">Helium 10</div>
+            <div class="logo-item meta">∞ Meta</div>
+            <div class="logo-item walmart">Walmart <span>eCommerce</span></div>
+        </div>
+    </div>
+
+    <style>
+        .results-section {
+            background-color: #000;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .results-card {
+            background: #fff;
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .results-header { padding: 40px 20px 20px; }
+        .results-header h2 { font-size: 32px; color: #222; margin-bottom: 10px; }
+        .results-header p { color: #666; font-size: 14px; }
+
+        .results-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 20px 40px 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat-box .number {
+            display: block;
+            font-size: 45px;
+            font-weight: 900;
+            color: #000;
+        }
+
+        .stat-box .label { font-size: 12px; color: #555; font-weight: 600; }
+
+        /* Bottom Logo Bar */
+        .logo-bar {
+            background: linear-gradient(to bottom, #444, #000);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 30px 20px;
+            color: #ccc;
+        }
+
+        .logo-item {
+            font-size: 18px;
+            font-weight: bold;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .logo-item span { font-size: 10px; font-weight: normal; text-transform: uppercase; }
+
+        /* Styling individual text-logos to look real */
+        .google { font-family: 'serif'; font-size: 22px; color: #fff; }
+        .helium { letter-spacing: -1px; color: #fff; }
+        .meta { font-size: 22px; color: #fff; }
+        .walmart { color: #fff; }
+
+        .logo-item:hover { opacity: 1; transform: scale(1.1); color: #D4AF37; }
+
+        @media (max-width: 768px) {
+            .results-stats { grid-template-columns: 1fr; gap: 30px; }
+            .logo-bar { flex-wrap: wrap; gap: 20px; }
+        }
+    </style>
+</section>
 
    <section class="premium-faq-cert-section">
     <div class="container">
