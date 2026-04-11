@@ -172,47 +172,6 @@ section {
 section + section {
     margin-top: -20px; /* Sections ko ek dusre ke qareeb lane ke liye */
 }
-        /* 1. Universal Reset: Sab ko ek barabar margin/padding pe lao */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Is se element width se bahar nahi nikalta */
-}
-
-/* 2. Global Section Tracker: Har section ko center aur balanced rakho */
-section, header, footer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;      /* Horizontally Center */
-    justify-content: center;
-    padding: 80px 5% !important; /* Uniform spacing for all sections */
-    text-align: center;
-    overflow: hidden;
-}
-
-/* 3. The "Anchor" Container: Ye wo line hai jis se koi cheez bahar nahi jayegi */
-.container, 
-.contact-container, 
-.elite-container, 
-.services-grid-wrapper {
-    max-width: 1200px !important; /* Standard Width for whole site */
-    width: 100%;
-    margin: 0 auto !important;    /* Absolute Centering */
-}
-
-/* 4. Text Alignment Fix: Headline aur Para ko line mein lao */
-h1, h2, h3, p {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    max-width: 900px; /* Text ko bohot phailne se rokta hai */
-}
-
-/* 5. Space Killer: Jo faltu khali jagah sections ke beech hai */
-section + section {
-    margin-top: 0 !important;
-    padding-top: 40px !important; /* Spacing kam kar di taake dead space khatam ho */
-}
 </style>
 
 <body>
