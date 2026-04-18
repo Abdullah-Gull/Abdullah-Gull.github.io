@@ -1642,7 +1642,25 @@
 </script>
 
 </body>
+<script>
+    // Smooth scroll aur heavy elements ko lazy render karne ke liye
+    document.addEventListener("DOMContentLoaded", function() {
+        const boxes = document.querySelectorAll('.service-box, .timeline-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                }
+            });
+        }, { threshold: 0.1 });
 
+        boxes.forEach(box => {
+            box.style.opacity = "0";
+            box.style.transition = "opacity 0.5s ease-in-out";
+            observer.observe(box);
+        });
+    });
+</script>
 
 </body>
 </html>
