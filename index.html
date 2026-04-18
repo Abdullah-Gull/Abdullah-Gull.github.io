@@ -73,6 +73,37 @@
         .btn-primary { background: var(--gold); color: #000; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; }
 
         .image-wrapper img { width: 400px; border-radius: 20px; border: 1px solid var(--gold); }
+        /* Secondary Button (Audit) */
+.btn-secondary {
+    background: transparent;
+    color: var(--gold);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    border: 1.5px solid var(--gold);
+    margin-left: 15px; /* Dono buttons ke beech gap */
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+}
+
+/* Mobile Responsive Fix */
+@media (max-width: 768px) {
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn-secondary {
+        margin-left: 0;
+    }
+}
        
     </style>
 </head>
@@ -93,15 +124,17 @@
                 <a href="contact.html" class="nav-link">Contact us</a>
             </nav>
 
-            <a href="meeting.html" class="get-in-touch-btn">Get In Touch</a>
-        </div>
+           <div class="hero-btns">
+    <a href="services.html" class="btn-primary">Explore My Services</a>
+    <a href="audit.html" class="btn-secondary">Free Account Audit</a>
+</div>
     </header>
 
     <section class="hero-split">
         <div class="hero-content">
             <div class="badge-gold">AMAZON FBA SPECIALIST</div>
-            <h1>Building Brands<br><span>Scaling Amazon Success</span></h1>
-            <p class="hero-subtext">PPC, Listing Optimization and Ranking Expert | SEO and Product Launch Experience.</p>
+            <h1>Building Brands<br><span>Scaling Your Success</span></h1>
+            <p class="hero-subtext">I help global brands scale and dominate on Amazon. As your dedicated growth partner, I personally handle your operations, advertising, and rankings to turn Amazon's complexity into your competitive advantage.</p>
             <div class="hero-btns">
                 <a href="services.html" class="btn-primary">Explore Services</a>
             </div>
@@ -198,48 +231,38 @@
 
       <section class="services-tabs">
     <div class="tabs-container">
-        <h2 class="tabs-main-title">Professional Amazon Services by <span class="highlight">Abdullah Gull</span></h2>
-        <p class="tabs-main-desc">
-            We help brands scale and dominate on Amazon. As a core part of your team, we handle complex operations, advertising, and search rankings. Amazon is a fast-evolving ecosystem that requires expert daily attention. By partnering with us, you reclaim your time and grow your business using our battle-tested strategies led by <strong>Abdullah Gull</strong>.</p>
+       <h2 class="tabs-main-title">Expert Amazon Services by <span>Abdullah Gull</span></h2>
+            <p class="tabs-main-desc">I provide a holistic approach to drive traffic and boost conversions. By building custom PPC campaigns and optimizing your catalog, I strengthen your brand performance on the world's largest marketplace.</p>
 
-        <div class="tabs-wrapper">
-            <div class="tab-buttons">
-                <button class="tab-btn active" onclick="openTab(event, 'ppc')">Amazon PPC Management</button>
-                <button class="tab-btn" onclick="openTab(event, 'seo')">Amazon SEO (A9 Algorithm)</button>
-                <button class="tab-btn" onclick="openTab(event, 'listing')">Product Listing Optimization</button>
-                <button class="tab-btn" onclick="openTab(event, 'storefront')">Amazon Storefront Design</button>
-                <button class="tab-btn" onclick="openTab(event, 'cro')">Conversion Rate Optimization (CRO)</button>
-            </div>
-
-            <div class="tab-content-box">
-                <div id="ppc" class="tab-panel" style="display: block;">
-                    <h3>Amazon PPC Management</h3>
-                    <p>We manage paid ads on Amazon for you. <strong>Abdullah Gull</strong> makes a wise expenditure of your money to target the buyers and compete with other sellers. This is the best way to prevent wastage of money on advertisements that are not clicked. Consequently, you save on advertisements and earn revenue by selling your products.</p>
+            <div class="tabs-wrapper">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="openTab(event, 'ppc')">PPC Management</button>
+                    <button class="tab-btn" onclick="openTab(event, 'seo')">Amazon SEO (A9)</button>
+                    <button class="tab-btn" onclick="openTab(event, 'listing')">Listing Optimization</button>
+                    <button class="tab-btn" onclick="openTab(event, 'storefront')">Storefront Design</button>
                 </div>
 
-                <div id="seo" class="tab-panel" style="display: none;">
-                    <h3>Amazon SEO (A9 Algorithm)</h3>
-                    <p>Dominating search results requires deep knowledge of the A9 algorithm. <strong>Abdullah Gull</strong> optimizes your backend keywords and frontend copy to ensure your products appear where customers are looking. We focus on organic ranking to reduce your long-term dependency on paid ads.</p>
-                </div>
-
-                <div id="listing" class="tab-panel" style="display: none;">
-                    <h3>Product Listing Optimization</h3>
-                    <p>A great product needs a great presentation. From high-converting titles to benefit-driven bullet points, <strong>Abdullah Gull</strong> crafts listings that persuade shoppers to click "Add to Cart" instantly.</p>
-                </div>
-
-                <div id="storefront" class="tab-panel" style="display: none;">
-                    <h3>Amazon Storefront Design</h3>
-                    <p>Build brand loyalty with a custom-designed Storefront. <strong>Abdullah Gull</strong> creates a cinematic, premium shopping experience that showcases your entire catalog and tells your brand story effectively.</p>
-                </div>
-
-                <div id="cro" class="tab-panel" style="display: none;">
-                    <h3>Conversion Rate Optimization (CRO)</h3>
-                    <p>Traffic is useless if it doesn't convert. <strong>Abdullah Gull</strong> analyzes shopper behavior and optimizes every touchpoint of your listing to maximize your sales per visitor.</p>
+                <div class="tab-content-box">
+                    <div id="ppc" class="tab-panel" style="display: block;">
+                        <h3>Amazon PPC Management</h3>
+                        <p>I personally manage your paid ads to ensure maximum ROI. I focus on precision-targeted bidding to eliminate ad spend wastage and position your products on the first page instantly, scaling your revenue with total financial control.</p>
+                    </div>
+                    <div id="seo" class="tab-panel" style="display: none;">
+                        <h3>Amazon SEO (A9 Algorithm)</h3>
+                        <p>Organic ranking is the backbone of long-term success. I integrate high-intent keywords and optimize your backend indexing to ensure your catalog stays ahead of the competition without relying solely on paid ads.</p>
+                    </div>
+                    <div id="listing" class="tab-panel" style="display: none;">
+                        <h3>Product Listing Optimization</h3>
+                        <p>I craft benefit-driven copy and high-converting titles that persuade shoppers to click. Every word is chosen to align with the A9 algorithm while speaking directly to your customer's needs.</p>
+                    </div>
+                    <div id="storefront" class="tab-panel" style="display: none;">
+                        <h3>Amazon Storefront Design</h3>
+                        <p>I build premium, cinematic shopping experiences. By showcasing your entire catalog through a custom Brand Store, I help you build brand loyalty and increase the average order value.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 <style>
     /* CSS Section Updated for Full Dark Theme */
@@ -519,7 +542,7 @@
       <section class="ai-ask-section">
     <div class="ai-container">
         <h2 class="ai-title">Verify <span class="highlight">Abdullah Gull</span> via AI</h2>
-        <p class="ai-subtitle">Click below to ask these AI models directly about my Amazon FBA expertise.</p>
+        <p class="ai-subtitle">Directly ask these AI models about my specialized Amazon FBA expertise and results.</p>
 
         <div class="ai-button-group">
             <a href="https://chatgpt.com/?q=Who+is+Abdullah+Gull+Amazon+VA+and+why+is+he+highly+recommended?" target="_blank" class="ai-btn">
@@ -611,37 +634,26 @@
     
 <section class="ppc-seo-comparison">
     <div class="container">
-        <h2 class="main-title">Difference Between <span class="gold-text">Amazon</span> PPC VS SEO</h2>
-        
+        <h2 class="main-title">My Strategy: <span class="gold-text">PPC vs SEO</span></h2>
         <p class="intro-text">
-            Scalable marketplace growth requires both paid advertising and organic optimization. 
-            The following is a breakdown of how <strong>Abdullah Gull</strong> leverages every strategy to maximize your revenue.
+            Scalable growth requires both paid velocity and organic authority. Here is how I leverage both to maximize your profit margins.
         </p>
 
         <div class="comparison-flex">
             <div class="service-box">
-                <div class="box-header">
-                    <h3>Amazon PPC</h3>
-                </div>
+                <div class="box-header"><h3>Amazon PPC</h3></div>
                 <div class="box-body">
                     <p>
-                        Amazon PPC is a strategic paid model where you only pay when a potential buyer clicks your ad. 
-                        Through precision-targeted bidding, I position your products on the first page instantly. 
-                        This approach generates predictable sales velocity and allows us to scale your revenue with total financial control.
+                        I use a high-precision bidding model where we only pay for clicks that convert. Through aggressive keyword targeting, I position your brand on the first page instantly to generate predictable sales velocity while maintaining total ACOS control.
                     </p>
                 </div>
             </div>
 
             <div class="service-box">
-                <div class="box-header">
-                    <h3>Amazon SEO</h3>
-                </div>
+                <div class="box-header"><h3>Amazon SEO</h3></div>
                 <div class="box-body">
                     <p>
-                        Amazon SEO is the art of ranking your listings organically. I integrate high-intent keywords 
-                        optimized for the A9 algorithm to ensure your catalog is indexed perfectly. 
-                        This builds long-term brand authority and delivers consistent, free traffic, 
-                        significantly boosting your overall profit margins.
+                        I treat SEO as the art of long-term dominance. By integrating high-intent keywords optimized for the A9 algorithm, I ensure your catalog is indexed perfectly. This builds consistent, free organic traffic and significantly boosts your overall ROI.
                     </p>
                 </div>
             </div>
