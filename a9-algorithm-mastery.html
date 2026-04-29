@@ -356,58 +356,6 @@
         .footer-grid { grid-template-columns: repeat(2, 1fr); }
         .footer-middle { flex-direction: column; gap: 30px; }
     }
-       /* --- FOOTER ELEMENTS ALIGNMENT FIX --- */
-.footer-middle {
-    max-width: 1300px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between; /* Isse AI aur Social alag corners mein jayenge */
-    align-items: flex-start;
-    padding: 40px 0;
-    border-top: 1px solid #1a1a1a;
-    flex-wrap: wrap; /* Mobile fix */
-}
-
-/* Icons ko ek line mein lane ke liye */
-.icon-group {
-    display: flex !important;
-    flex-direction: row !important; /* Force row alignment */
-    gap: 12px;
-    margin-top: 15px;
-    align-items: center;
-}
-
-.footer-box-title {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 5px;
-}
-
-/* Social buttons fix */
-.soc-btn {
-    width: 38px;
-    height: 38px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
-    font-size: 18px;
-    transition: 0.3s ease;
-}
-
-/* Mobile Responsive Fix */
-@media (max-width: 768px) {
-    .footer-middle {
-        flex-direction: column;
-        gap: 40px;
-        text-align: center;
-    }
-    .icon-group {
-        justify-content: center;
-    }
-}
 </style>
 <footer class="main-footer">
     <div class="footer-grid">
@@ -426,7 +374,7 @@
         <div class="footer-col">
             <h4>Marketplaces</h4>
             <ul>
-                <li>Amazon</li><li>Shopify</li><li>Wayfair</li><li>Walmart</li><li>Home Depot</li><li>eBay</li><li>Etsy</li><li>Asenda</li><li>Newegg</li>
+                <li>Amazon</li><li>Shopify</li><li>Wayfair</li><li>Walmart</li><li>Home Depot</li><li>eBay</li><li>Etsy</li><li>Acenda</li><li>Newegg</li>
             </ul>
         </div>
         <div class="footer-col">
@@ -485,7 +433,5 @@
         window.scrollTo(0, 0);
     }
 </script>
-
     
-   </body>
-</html>
+    </body>
