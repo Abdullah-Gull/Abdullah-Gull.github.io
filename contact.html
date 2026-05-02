@@ -376,7 +376,7 @@ section + section {
 
 
     <body> 
-          <!DOCTYPE html>
+         <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -385,290 +385,136 @@ section + section {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* CSS Reset for consistent cross-browser look */
-        body, h1, h2, h3, p, strong { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000; color: #fff; font-family: 'Poppins', sans-serif; line-height: 1.6; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* Overall Section Styling with your Black & Gold theme */
-        .get-in-touch-section {
-            background-color: #000; /* Black background */
-            color: #eae7db; /* Elegant cream-white font */
-            font-family: 'Poppins', sans-serif;
-            padding: 80px 20px; /* Healthy padding top/bottom */
-            text-align: center;
-        }
+        /* Header Section */
+        .get-in-touch-header { text-align: center; padding: 80px 0 40px; }
+        .get-in-touch-header h1 { font-size: 56px; font-weight: 700; margin-bottom: 20px; }
+        .gold { color: #d1b162; text-shadow: 0 0 10px rgba(209, 177, 98, 0.4); }
+        .header-desc { color: #a2a2a2; max-width: 800px; margin: 0 auto; font-size: 15px; }
 
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative; /* Subtle shadow and glow */
-            padding-bottom: 20px;
-        }
-
-        /* --- Main Heading --- */
-        .page-header h1 {
-            font-size: 56px; /* Larger, bolder heading */
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-            line-height: 1.1;
-        }
-        /* Glow effect on the word 'touch' */
-        .page-header span.gold {
-            color: #d1b162; /* Polished gold */
-            text-shadow: 0 0 10px rgba(209, 177, 98, 0.6);
+        /* Contact Section Grid */
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px; 
+            background: #0a0a0a; 
+            padding: 50px; 
+            border-radius: 20px; 
+            border: 1px solid #1a1a1a;
+            margin-bottom: 80px;
         }
 
-        /* --- Description Paragraph --- */
-        .page-header-text {
-            color: #a2a2a2; /* Muted grey for description */
-            max-width: 800px; /* Keeps text at readable width */
-            margin: 0 auto; /* Center aligns the paragraph */
-            font-size: 15px; /* Slightly reduced font for a clean description */
-            font-weight: 400;
-            line-height: 1.6;
-        }
-        /* Bolded elements in gold/cream white */
-        .page-header-text strong.white {
-            color: #eae7db;
-            font-weight: 600;
-        }
-        .page-header-text strong.gold {
-            color: #d1b162;
-            font-weight: 600;
+        .benefit-list { list-style: none; margin: 30px 0; }
+        .benefit-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #ccc; }
+        .benefit-list i { color: #D4AF37; }
+
+        /* Stats Card */
+        .stats-card { background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid #222; margin-top: 30px; }
+        .stats-row { display: flex; justify-content: space-between; text-align: center; margin-top: 15px; }
+        .stat-item h4 { font-size: 24px; color: #fff; }
+        .stat-item span { font-size: 10px; color: #666; text-transform: uppercase; }
+
+        /* Form Styling */
+        .form-box { background: #000; padding: 40px; border-radius: 15px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+        input, textarea { width: 100%; background: #0a0a0a; border: 1px solid #333; padding: 15px; color: #fff; border-radius: 8px; outline: none; }
+        input:focus, textarea:focus { border-color: #D4AF37; }
+        .submit-btn { width: 100%; background: #D4AF37; color: #000; padding: 18px; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background: #fff; }
+
+        /* Strategy Section */
+        .strategy-section { text-align: center; padding: 60px 0; }
+        .strategy-icon { font-size: 50px; color: #D4AF37; margin-bottom: 20px; }
+        .strategy-btn { 
+            display: inline-block; background: #D4AF37; color: #000; padding: 15px 30px; 
+            border-radius: 50px; text-decoration: none; font-weight: 700; margin: 30px 0;
         }
 
-        /* Responsive styling for smaller screens */
-        @media (max-width: 768px) {
-            .page-header h1 { font-size: 42px; }
-            .get-in-touch-section { padding: 60px 15px; }
-            .page-header-text { font-size: 14px; }
+        /* Info Cards */
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .info-card { background: #0a0a0a; padding: 25px; border-radius: 15px; border: 1px solid #1a1a1a; display: flex; align-items: center; gap: 15px; }
+        .info-card i { color: #D4AF37; font-size: 24px; }
+
+        @media (max-width: 900px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+<div class="container">
+    <!-- Header -->
+    <header class="get-in-touch-header">
+        <h1>Get in <span class="gold">touch</span></h1>
+        <p class="header-desc">
+            <strong>Abdullah Gull</strong> is an <span class="gold">Amazon-focused ecommerce growth partner</span> specializing in marketplace strategy and execution to scale brand performance.
+        </p>
+    </header>
 
-    <section class="get-in-touch-section">
-    <div class="section-container">
-        <div class="page-header">
-            <h1>Get in <span class="gold">touch</span></h1>
-            
-            <p class="page-header-text">
-                <strong class="white">Abdullah Gull</strong> is an 
-                <strong class="gold">Amazon-focused ecommerce growth partner</strong> 
-                specializing in marketplace strategy and execution to scale brand 
-                performance on Amazon Seller Central and Vendor Central.
-            </p>
-        </div>
-    </div>
-</section>
-</body>
-<style>
-    /* 1. Reset & Global Styles */
-    .form-strategy-wrapper {
-        background-color: #000;
-        font-family: 'Poppins', sans-serif;
-        color: #fff;
-        padding: 60px 0;
-    }
-
-    /* 2. Contact Section Styling */
-    .contact-container {
-        max-width: 1200px;
-        margin: 0 auto 80px;
-        display: flex;
-        gap: 40px;
-        background: #0a0a0a;
-        padding: 40px;
-        border-radius: 20px;
-        border: 1px solid #1a1a1a;
-        text-align: left;
-    }
-    .contact-info { flex: 1; }
-    .contact-form-box { flex: 1.2; background: #080808; padding: 30px; border-radius: 15px; border: 1px solid #222; }
-    
-    .gold-text { color: #f7d66d; font-size: 28px; font-weight: 700; margin-bottom: 10px; }
-    .benefits-list { list-style: none; padding: 0; margin: 20px 0; }
-    .benefits-list li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: center; gap: 10px; color: #ccc; }
-    .benefits-list i { color: #f7d66d; }
-
-    .form-row { display: flex; gap: 15px; margin-bottom: 15px; }
-    .contact-form-box input, .contact-form-box textarea {
-        width: 100%; padding: 12px; background: #111; border: 1px solid #333; border-radius: 8px; color: #fff; outline: none;
-    }
-    .send-btn {
-        width: 100%; padding: 15px; background: #f7d66d; color: #000; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;
-    }
-
-    /* 3. Strategy Call Styling */
-    .strategy-section { text-align: center; margin-top: 50px; }
-    .strategy-icon { font-size: 45px; color: #f7d66d; margin-bottom: 20px; }
-    .strategy-btn {
-        display: inline-flex; align-items: center; gap: 10px;
-        background-color: #f7d66d; color: #000; padding: 14px 35px;
-        border-radius: 50px; text-decoration: none; font-weight: 700; margin-top: 25px;
-    }
-
-    /* 4. Info Cards Grid */
-    .info-grid {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px; max-width: 1200px; margin: 50px auto 0;
-    }
-    .info-card {
-        background: #0d0d0d; padding: 25px; border-radius: 15px;
-        display: flex; align-items: center; gap: 15px; border: 1px solid #1a1a1a; text-align: left;
-    }
-    .info-card i { font-size: 24px; color: #f7d66d; }
-    .info-card h3 { font-size: 16px; margin-bottom: 5px; }
-    .info-card p { font-size: 13px; color: #888; margin: 0; }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-        .contact-container { flex-direction: column; padding: 20px; }
-        .form-row { flex-direction: column; }
-    }
-</style>
-
-<section class="trust-contact-section">
-    <div class="contact-container">
-        
-        <div class="trust-content">
-            <h2 class="contact-main-title">Get in touch with us</h2>
-            <p class="contact-subtitle">Discover How Our Amazon Solutions Can Propel Your Business</p>
-            
-            <p class="brand-promise">Your brand deserves to thrive on Amazon.</p>
+    <!-- Main Contact Section -->
+    <section class="contact-grid">
+        <div class="contact-text">
+            <h2 style="font-size: 32px;">Get in touch with us</h2>
+            <p style="color: #D4AF37; font-weight: 600;">Discover How Our Amazon Solutions Can Propel Your Business</p>
             
             <ul class="benefit-list">
                 <li><i class="fas fa-check-circle"></i> Boost Sales, Visibility & ROI</li>
                 <li><i class="fas fa-check-circle"></i> Tailored Solutions for Your Unique Needs</li>
                 <li><i class="fas fa-check-circle"></i> Continuous Optimization, No Extra Fees</li>
-                <li><i class="fas fa-check-circle"></i> Streamline Operations and Minimize Costs</li>
-                <li><i class="fas fa-check-circle"></i> Comprehensive Amazon Services to Maximize Your Potential</li>
             </ul>
 
             <div class="stats-card">
-                <p class="connect-text">Let's connect and unlock your Amazon store's true potential!</p>
+                <p style="text-align: center; color: #D4AF37; font-size: 13px; font-weight: 600;">Let's connect and unlock your potential!</p>
                 <div class="stats-row">
-                    <div class="stat-item">
-                        <h4>15+</h4>
-                        <span>Brand Currently Managed</span>
-                    </div>
-                    <div class="stat-item border-line">
-                        <h4>$1M+</h4>
-                        <span>Revenue Generated Annually</span>
-                    </div>
-                    <div class="stat-item">
-                        <h4>5+</h4>
-                        <span>Employees</span>
-                    </div>
+                    <div class="stat-item"><h4>15+</h4><span>Brands</span></div>
+                    <div class="stat-item"><h4>$1M+</h4><span>Revenue</span></div>
+                    <div class="stat-item"><h4>5+</h4><span>Staff</span></div>
                 </div>
             </div>
         </div>
 
-        <div class="contact-form-wrapper">
-            <div class="form-header">
-                <h3>Contact Us</h3>
-                <p>We'd love to hear from you! Please fill out the form and we'll get back to you as soon as possible.</p>
-            </div>
-            
-            <form action="#" class="main-form">
+        <div class="form-box">
+            <!-- Form Action aur Method Set kar diya gaya hai -->
+            <form action="send_to_slack.php" method="POST">
                 <div class="form-row">
-                    <input type="text" placeholder="First Name" required>
-                    <input type="text" placeholder="Last Name" required>
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                    <input type="text" name="last_name" placeholder="Last Name" required>
                 </div>
                 <div class="form-row">
-                    <input type="email" placeholder="Email Address" required>
-                    <input type="tel" placeholder="Phone no.">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone No.">
                 </div>
                 <div class="form-row">
-                    <input type="text" placeholder="Website URL">
-                    <input type="text" placeholder="Company Name">
+                    <input type="text" name="website_url" placeholder="Website URL">
+                    <input type="text" name="company_name" placeholder="Company Name">
                 </div>
-                <textarea placeholder="Your Message" rows="5"></textarea>
+                <textarea name="message" rows="4" placeholder="Your Message" style="margin-bottom: 15px;" required></textarea>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
+    </section>
 
-    </div>
-
-    <style>
-        /* TRUST CONTACT STYLING */
-        .trust-contact-section {
-            background-color: #000;
-            padding: 100px 5%;
-            font-family: 'Poppins', sans-serif;
-            color: #fff;
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            background: #111; /* Dark Grey Background */
-            padding: 50px;
-            border-radius: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-        }
-
-        /* Left Side */
-        .contact-main-title { font-size: 36px; font-weight: 800; margin-bottom: 10px; }
-        .contact-subtitle { color: #D4AF37; font-size: 18px; font-weight: 600; margin-bottom: 20px; }
-        .brand-promise { color: rgba(255,255,255,0.7); margin-bottom: 30px; }
-        
-        .benefit-list { list-style: none; padding: 0; margin-bottom: 40px; }
-        .benefit-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 14px; }
-        .benefit-list li i { color: #D4AF37; }
-
-        /* Stats Box */
-        .stats-card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
-        .connect-text { font-size: 13px; margin-bottom: 20px; text-align: center; color: #D4AF37; font-weight: 600; }
-        .stats-row { display: flex; justify-content: space-between; text-align: center; }
-        .stat-item h4 { font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 5px; }
-        .stat-item span { font-size: 10px; color: rgba(255,255,255,0.5); text-transform: uppercase; }
-        .border-line { border-left: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1); padding: 0 20px; }
-
-        /* Form Side */
-        .contact-form-wrapper { background: #000; padding: 40px; border-radius: 15px; }
-        .form-header h3 { font-size: 28px; margin-bottom: 10px; color: #fff; }
-        .form-header p { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 30px; border-left: 3px solid #D4AF37; padding-left: 15px; }
-        
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
-        input, textarea { width: 100%; background: #111; border: 1px solid #333; padding: 15px; color: #fff; border-radius: 8px; outline: none; }
-        input:focus, textarea:focus { border-color: #D4AF37; }
-        
-        .submit-btn { width: 100%; background: #D4AF37; color: #000; padding: 18px; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.3s; margin-top: 10px; }
-        .submit-btn:hover { background: #fff; transform: translateY(-3px); }
-
-        /* Mobile Fix */
-        @media (max-width: 992px) {
-            .contact-container { grid-template-columns: 1fr; padding: 30px; }
-            .form-row { grid-template-columns: 1fr; }
-        }
-    </style>
-</section>
-
-    <div class="strategy-section">
+    <!-- Strategy Section -->
+    <section class="strategy-section">
         <div class="strategy-icon"><i class="fa-solid fa-book-open"></i></div>
-        <h2 style="font-size: 28px;">Schedule a Strategy Call</h2>
-        <p style="color: #888; max-width: 600px; margin: 10px auto;">Book a call with Abdullah Gull to discuss your ideas in detail.</p>
-        <a href="#" class="strategy-btn"><i class="fa-solid fa-phone"></i> Click Here to Schedule a Call</a>
-
+        <h2>Schedule a Strategy Call</h2>
+        <a href="#" class="strategy-btn"><i class="fa-solid fa-phone"></i> Click Here to Schedule</a>
+        
         <div class="info-grid">
             <div class="info-card">
                 <i class="fa-solid fa-location-dot"></i>
-                <div><h3>Address</h3><p>30 N Gould St #49820 , WY, 82801, USA</p></div>
+                <div><h3>Address</h3><p style="color: #888; font-size: 13px;">33 N Gould St, WY, USA</p></div>
             </div>
             <div class="info-card">
                 <i class="fa-solid fa-envelope"></i>
-                <div><h3>Email Address</h3><p>info@abdullahgull.com</p></div>
-            </div>
-            <div class="info-card">
-                <i class="fa-solid fa-phone-flip"></i>
-                <div><h3>Phone Number</h3><p>+1 000-00-0000</p></div>
+                <div><h3>Email</h3><p style="color: #888; font-size: 13px;">info@abdullahgull.com</p></div>
             </div>
         </div>
-    </div>
+    </section>
 </div>
 
     
