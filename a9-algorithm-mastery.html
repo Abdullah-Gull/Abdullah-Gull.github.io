@@ -88,29 +88,77 @@
         .fb-bg { background: #3b5998; } .li-bg { background: #0077b5; } .in-bg { background: #e4405f; } .tk-bg { background: #000; border: 1px solid #333; } .sc-bg { background: #fffc00; color: #000; }
 
         @media (max-width: 1024px) { .container-grid { grid-template-columns: 1fr; } }
-        /* ElementsKit ko Capsule ke mutabiq set karne ke liye */
+        /* Capsule Navigation Base */
 .nav-capsule {
     display: flex;
     align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    padding: 5px 15px;
 }
 
-#ekit-megamenu-main-head {
-    display: inline-block;
-}
-
-/* Services link ko baki links jaisa dikhane ke liye */
-.ekit-menu-dropdown-toggle {
+.nav-link {
     text-decoration: none;
-    font-size: 16px;
+    color: #333;
     padding: 10px 15px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Dropdown Container */
+.dropdown-item-wrapper {
+    position: relative;
+}
+
+/* Dropdown Menu Box (Initially Hidden) */
+.dropdown-menu-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 240px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    padding: 10px 0;
+    z-index: 1000;
+    margin-top: 10px;
+    border: 1px solid #eee;
+}
+
+/* Links inside dropdown */
+.dropdown-menu-box a {
+    color: #444;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    transition: 0.2s;
+    line-height: 1.4;
+}
+
+.dropdown-menu-box a:hover {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+/* Show Dropdown on Hover */
+.dropdown-item-wrapper:hover .dropdown-menu-box {
     display: block;
 }
 
-/* Dropdown position fix */
-.elementskit-submenu-panel {
-    top: 100% !important;
-    background: #111 !important; /* Dark background */
-    border: 1px solid #D4AF37 !important; /* Gold border */
+/* Active/Black Button style for the main item when hovered */
+.dropdown-item-wrapper:hover .dropdown-toggle {
+    background: #000;
+    color: #fff !important;
+    border-radius: 50px;
+}
+
+/* Small Arrow styling */
+.fa-chevron-down {
+    font-size: 10px;
+    margin-left: 5px;
 }
     </style>
 </head>
@@ -123,42 +171,43 @@
             <a href="index.html" class="logo-link">Abdullah <span>Gull</span></a>
         </div>
 
-        <nav class="nav-capsule">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">About us</a>
+       <nav class="nav-capsule">
+    <a href="index.html" class="nav-link">Home</a>
 
-            <!-- Services Dropdown Wrapper -->
-            <div class="dropdown-wrapper">
-                <a href="services.html" class="nav-link">Services <i class="fa fa-caret-down"></i></a>
-                
-                <!-- The Actual Dropdown Menu -->
-                <div class="mega-dropdown">
-                    <div class="dropdown-column">
-                        <h4>Seller Central</h4>
-                        <a href="#">Full Service Account Management</a>
-                        <a href="#">Amazon SEO</a>
-                        <a href="#">Amazon PPC</a>
-                        <a href="#">Listing Optimization</a>
-                        <a href="#">Image Design</a>
-                        <a href="#">A+ Content / EBC</a>
-                        <a href="#">Brand Store Creation</a>
-                    </div>
-                    <div class="dropdown-column">
-                        <h4>Vendor Central</h4>
-                        <a href="#">Vendor Onboarding</a>
-                        <a href="#">Inventory Management</a>
-                        <a href="#">Retail Advertising</a>
-                        <a href="#">A+ Content Creation</a>
-                        <a href="#">Sponsored Ads</a>
-                        <a href="#">Purchase Order Management</a>
-                        <a href="#">Analytics Reporting</a>
-                    </div>
-                </div>
-            </div>
+    <!-- Seller Central Dropdown -->
+    <div class="dropdown-item-wrapper">
+        <a href="#" class="nav-link dropdown-toggle">Seller Central <i class="fa fa-chevron-down"></i></a>
+        <div class="dropdown-menu-box">
+            <a href="#">Full Service Account Management</a>
+            <a href="#">Amazon SEO</a>
+            <a href="#">Amazon PPC</a>
+            <a href="#">Listing Optimization</a>
+            <a href="#">Image Design</a>
+            <a href="#">A+ Content / EBC</a>
+            <a href="#">Brand Store Creation</a>
+            <a href="#">Account Suspension Assistance</a>
+            <a href="#">Listing Reinstatement</a>
+        </div>
+    </div>
 
-            <a href="blog.html" class="nav-link active">Blog</a>
-            <a href="contact.html" class="nav-link">Contact us</a>
-        </nav>
+    <!-- Vendor Central Dropdown -->
+    <div class="dropdown-item-wrapper">
+        <a href="#" class="nav-link dropdown-toggle">Vendor Central <i class="fa fa-chevron-down"></i></a>
+        <div class="dropdown-menu-box">
+            <a href="#">Vendor Onboarding</a>
+            <a href="#">Inventory Management</a>
+            <a href="#">Retail Advertising Management</a>
+            <a href="#">A+ Content Creation</a>
+            <a href="#">Sponsored Ads Management</a>
+            <a href="#">Product Listing Optimization</a>
+            <a href="#">Purchase Order Management</a>
+        </div>
+    </div>
+
+    <a href="projects.html" class="nav-link">Projects</a>
+    <a href="contact.html" class="nav-link">Contact Us</a>
+    <a href="about.html" class="nav-link">About Us</a>
+</nav>
 
         <div class="header-right">
             <a href="meeting.html" class="get-in-touch-btn">Get In Touch</a>
