@@ -88,28 +88,106 @@
         .fb-bg { background: #3b5998; } .li-bg { background: #0077b5; } .in-bg { background: #e4405f; } .tk-bg { background: #000; border: 1px solid #333; } .sc-bg { background: #fffc00; color: #000; }
 
         @media (max-width: 1024px) { .container-grid { grid-template-columns: 1fr; } }
+        /* ElementsKit ko Capsule ke mutabiq set karne ke liye */
+.nav-capsule {
+    display: flex;
+    align-items: center;
+}
+
+#ekit-megamenu-main-head {
+    display: inline-block;
+}
+
+/* Services link ko baki links jaisa dikhane ke liye */
+.ekit-menu-dropdown-toggle {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Dropdown position fix */
+.elementskit-submenu-panel {
+    top: 100% !important;
+    background: #111 !important; /* Dark background */
+    border: 1px solid #D4AF37 !important; /* Gold border */
+}
     </style>
 </head>
 <body>
 
     <header class="main-header">
-        <div class="header-container">
-            <div class="logo-area">
-                <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">
-                <a href="index.html" class="logo-link">Abdullah <span>Gull</span></a>
-            </div>
-            <nav class="nav-capsule">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About us</a>
-                <a href="services.html" class="nav-link">Services</a>
-                <a href="blog.html" class="nav-link active">Blog</a>
-                <a href="contact.html" class="nav-link">Contact us</a>
-            </nav>
-            <div class="header-right">
-                <a href="meeting.html" class="get-in-touch-btn">Get In Touch</a>
-            </div>
+    <div class="header-container">
+        <!-- Logo Area -->
+        <div class="logo-area">
+            <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">
+            <a href="index.html" class="logo-link">Abdullah <span>Gull</span></a>
         </div>
-    </header>
+
+        <!-- Navigation Capsule (Merged with ElementsKit) -->
+        <nav class="nav-capsule">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About us</a>
+
+            <!-- ElementsKit Dropdown Starts Here (As Services) -->
+            <div id="ekit-megamenu-main-head" class="elementskit-menu-container">
+                <ul id="menu-main-head" class="elementskit-navbar-nav">
+                    <li class="menu-item menu-item-has-children nav-item elementskit-dropdown-has">
+                        <a href="#" class="nav-link ekit-menu-dropdown-toggle">Services <i aria-hidden="true" class="icon icon-down-arrow1 elementskit-submenu-indicator"></i></a>
+                        
+                        <ul class="elementskit-dropdown elementskit-submenu-panel">
+                            <!-- Seller Central Sub-Dropdown -->
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#" class="dropdown-item">Seller Central</a>
+                                <ul class="elementskit-dropdown elementskit-submenu-panel">
+                                    <li><a href="index.html" class="dropdown-item">Full Service Account Management</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Amazon SEO</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Amazon PPC</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Listing Optimization</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Image Design</a></li>
+                                    <li><a href="index.html" class="dropdown-item">A+ Content / EBC</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Brand Store Creation</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Account Suspension Assistance</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Listing Reinstatement</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Amazon Trademark Registration</a></li>
+                                    <li><a href="index.html" class="dropdown-item">GS1 Barcode Change</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Lost Shipment Clawback</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Amazon Coaching Call</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Vendor Central Sub-Dropdown -->
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#" class="dropdown-item">Vendor Central</a>
+                                <ul class="elementskit-dropdown elementskit-submenu-panel">
+                                    <li><a href="index.html" class="dropdown-item">Vendor Onboarding</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Inventory Management</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Retail Advertising Management</a></li>
+                                    <li><a href="index.html" class="dropdown-item">A+ Content Creation</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Sponsored Ads Management</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Product Listing Optimization</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Purchase Order Management</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Invoice Management</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Analytics Reporting</a></li>
+                                    <li><a href="index.html" class="dropdown-item">Shipment & Delivery Optimization</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- ElementsKit Dropdown Ends -->
+
+            <a href="blog.html" class="nav-link active">Blog</a>
+            <a href="contact.html" class="nav-link">Contact us</a>
+        </nav>
+
+        <!-- Right Side Button -->
+        <div class="header-right">
+            <a href="meeting.html" class="get-in-touch-btn">Get In Touch</a>
+        </div>
+    </div>
+</header>
 
     <section class="hero-section">
         <h1>The Amazon A9 Algorithm Bible (2026)</h1>
