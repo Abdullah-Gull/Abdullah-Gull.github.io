@@ -135,30 +135,164 @@ header {
 .logo-link span {
     color: #ffffff !important;
 }
+       /* 1. Main Capsule Base (Isay purane se replace karein) */
+.nav-capsule {
+    display: flex;
+    align-items: center;
+    background: #111111; /* Black Background */
+    border: 1px solid #333;
+    border-radius: 50px;
+    padding: 5px 15px;
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 18px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* 2. Mega Menu Panel (Black & Gold) */
+.mega-menu-panel {
+    display: none; /* Default Hide */
+    position: absolute;
+    top: 60px; /* Capsule ke niche alignment */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000000; 
+    width: 950px; /* Bada width jaisa aapne image mein dikhaya */
+    box-shadow: 0px 15px 40px rgba(0,0,0,0.9);
+    border: 1px solid #D4AF37; /* Gold Border */
+    border-radius: 15px;
+    padding: 30px;
+    z-index: 9999;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Jab click ho to ye class JS ke zariye add hogi */
+.mega-menu-panel.show-menu {
+    display: grid !important;
+}
+
+/* 3. Column & Links Styling */
+.mega-col h4 {
+    color: #D4AF37;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.mega-col a {
+    color: #cccccc;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    font-size: 13.5px;
+    transition: 0.2s;
+}
+
+.mega-col a:hover {
+    color: #D4AF37;
+    padding-left: 5px;
+}
+
+.mega-col.border-left {
+    border-left: 1px solid #222;
+    padding-left: 20px;
+}
+
+/* 4. Active Button Styling (Click hone par) */
+.active-btn .dropdown-toggle {
+    background: #D4AF37 !important;
+    color: #000000 !important;
+    border-radius: 50px;
+}
+
 </style>
 
 <body>
-    <header class="main-header">
-        <div class="header-container">
-           <div class="logo-area">
-                  <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">
-               <a href="index.html" class="logo-link">Abdullah <span>Gull</span></a>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <header class="main-header">
+    <div class="header-container">
+        <div class="logo-area">
+            <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">
+            <a href="index.html" class="logo-link">Abdullah <span>Gull</span></a>
+        </div>
+
+     <nav class="nav-capsule">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About us</a>
+
+    <!-- Services Clickable Wrapper -->
+    <div class="dropdown-item-wrapper" id="servicesToggle" onclick="toggleMegaMenu(event)">
+        <a href="javascript:void(0)" class="nav-link dropdown-toggle">
+            Services <i class="fa fa-chevron-down" style="margin-left:5px;"></i>
+        </a>
+        
+        <div class="mega-menu-panel" id="megaPanel">
+            <!-- Column 1 -->
+            <div class="mega-col">
+               <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> Full service management</a>
+                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> Advertising (PPC) management</a>
+                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> Amazon SEO</a>
+                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> Amazon account audit</a>
+                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> SOPs</a>
+                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> All services</a>
+                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> Consulting</a>
+                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> Book a coaching call</a>
             </div>
 
-            <nav class="nav-capsule">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About us</a>
-                <a href="services.html" class="nav-link">Services</a>
-                <a href="blog.html" class="nav-link active">Blog</a>
-                <a href="contact.html" class="nav-link">Contact us</a>
-            </nav>
+            <!-- Column 2 -->
+            <div class="mega-col border-left">
+                <h4><i class="fa fa-arrow-circle-right"></i> Design</h4>
+                <a href="https://abdullah-gull.github.io/services.html">Brand guidelines</a>
+                <a href="https://abdullah-gull.github.io/services.html">Brand story</a>
+                <a href="https://abdullah-gull.github.io/services.html">Brand store</a>
+                <a href="https://abdullah-gull.github.io/services.html">Listing images</a>
+                <a href="https://abdullah-gull.github.io/services.html">Enhanced brand content A+</a>
+                <a href="https://abdullah-gull.github.io/services.html">Main image CTR hack</a>
+                <a href="https://abdullah-gull.github.io/services.html">Listing optimization</a>
+                <a href="https://abdullah-gull.github.io/services.html">Full listing optimization</a>
+            </div>
 
-            <div class="header-right">
-                <a href="contact.html" class="get-in-touch-btn">Get In Touch</a>
+            <!-- Column 3 -->
+            <div class="mega-col border-left">
+               <h4><i class="fa fa-arrow-circle-right"></i> Troubleshooting</h4>
+                <a href="https://abdullah-gull.github.io/services.html">Listing reinstatement</a>
+                <a href="https://abdullah-gull.github.io/services.html">Account suspension</a>
+                <a href="https://abdullah-gull.github.io/services.html">PPC Advertising audit</a>
+                <a href="https://abdullah-gull.github.io/services.html">Brand name change</a>
+                <a href="https://abdullah-gull.github.io/services.html">Troubleshooting hours</a>
+                <a href="https://abdullah-gull.github.io/services.html">UPC to GS1 change</a>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="mega-col border-left">
+                <h4><i class="fa fa-arrow-circle-right"></i> Other services</h4>
+                <a href="https://abdullah-gull.github.io/services.html">Amazon DSP</a>
+                <a href="https://abdullah-gull.github.io/services.html">Trademark registration</a>
+                <a href="https://abdullah-gull.github.io/services.html">Vendor Central full service</a>
+                <a href="https://abdullah-gull.github.io/services.html">Walmart Account Audit <span class="badge-new">NEW</span></a>
+                <a href="https://abdullah-gull.github.io/services.html">Walmart Advertising Audit <span class="badge-new">NEW</span></a>
+                <div class="divider"></div>
+                <a href="https://abdullah-gull.github.io/services.html" class="free-tools"><i class="fa fa-arrow-circle-right"></i> Free Amazon tools</a>
             </div>
         </div>
-    </header>
+    </div>
+
+    <a href="blog.html" class="nav-link">Blog</a>
+    <a href="contact.html" class="nav-link">Contact us</a>
+</nav>
+        
+        <div class="header-right">
+            <a href="meeting.html" class="get-in-touch-btn">Get In Touch</a>
+        </div>
+    </div>
+</header>
+
 
     <body> 
        <style>
@@ -504,5 +638,28 @@ header {
         window.scrollTo(0, 0);
     }
 </script>
-    
-    </body>
+        <!-- Aapka baaki coding data -->
+
+    <script>
+        function toggleMegaMenu(event) {
+            event.stopPropagation(); 
+            var panel = document.getElementById("megaPanel");
+            var wrapper = document.getElementById("servicesToggle");
+            
+            panel.classList.toggle("show-menu");
+            wrapper.classList.toggle("active-btn");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.closest('#servicesToggle')) {
+                var panel = document.getElementById("megaPanel");
+                var wrapper = document.getElementById("servicesToggle");
+                if (panel && panel.classList.contains('show-menu')) {
+                    panel.classList.remove("show-menu");
+                    wrapper.classList.remove("active-btn");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
