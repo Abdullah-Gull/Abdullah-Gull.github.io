@@ -88,22 +88,28 @@
         .fb-bg { background: #3b5998; } .li-bg { background: #0077b5; } .in-bg { background: #e4405f; } .tk-bg { background: #000; border: 1px solid #333; } .sc-bg { background: #fffc00; color: #000; }
 
         @media (max-width: 1024px) { .container-grid { grid-template-columns: 1fr; } }
-        /* Capsule Navigation Base */
+/* Capsule Navigation - Black Theme */
 .nav-capsule {
     display: flex;
     align-items: center;
-    background: #fff;
-    border: 1px solid #ddd;
+    background: #111111; /* Black Background */
+    border: 1px solid #333; /* Dark Grey Border */
     border-radius: 50px;
     padding: 5px 15px;
 }
 
 .nav-link {
     text-decoration: none;
-    color: #333;
-    padding: 10px 15px;
+    color: #ffffff; /* White Text */
+    padding: 10px 18px;
     font-weight: 500;
     font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Hover Effect on Links */
+.nav-link:hover {
+    color: #D4AF37; /* Gold color on hover */
 }
 
 /* Dropdown Container */
@@ -111,36 +117,49 @@
     position: relative;
 }
 
-/* Dropdown Menu Box (Initially Hidden) */
+/* Dropdown Menu Box - Dark Version */
 .dropdown-menu-box {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #ffffff;
-    min-width: 240px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    background-color: #1a1a1a; /* Dark Menu Background */
+    min-width: 260px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
     border-radius: 12px;
     padding: 10px 0;
     z-index: 1000;
-    margin-top: 10px;
-    border: 1px solid #eee;
+    margin-top: 12px;
+    border: 1px solid #333; /* Dark Border */
 }
 
-/* Links inside dropdown */
+/* Links inside Dark Dropdown */
 .dropdown-menu-box a {
-    color: #444;
-    padding: 10px 20px;
+    color: #cccccc; /* Light Grey Text */
+    padding: 12px 20px;
     text-decoration: none;
     display: block;
     font-size: 13px;
     transition: 0.2s;
     line-height: 1.4;
+    border-bottom: 1px solid #222; /* Subtle divider */
+}
+
+.dropdown-menu-box a:last-child {
+    border-bottom: none;
 }
 
 .dropdown-menu-box a:hover {
-    background-color: #f8f9fa;
-    color: #000;
+    background-color: #333; /* Darker grey on hover */
+    color: #D4AF37; /* Gold text on hover */
+    padding-left: 25px; /* Slight slide effect */
+}
+
+/* Main Item Hover (Gold Fill jaisa pehle tha) */
+.dropdown-item-wrapper:hover .dropdown-toggle {
+    background: #D4AF37; /* Gold background on hover */
+    color: #000000 !important; /* Black text on gold background */
+    border-radius: 50px;
 }
 
 /* Show Dropdown on Hover */
@@ -148,19 +167,12 @@
     display: block;
 }
 
-/* Active/Black Button style for the main item when hovered */
-.dropdown-item-wrapper:hover .dropdown-toggle {
-    background: #000;
-    color: #fff !important;
-    border-radius: 50px;
-}
-
 /* Small Arrow styling */
 .fa-chevron-down {
     font-size: 10px;
     margin-left: 5px;
+    opacity: 0.7;
 }
-    </style>
 </head>
 <body>
 
