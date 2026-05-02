@@ -248,6 +248,49 @@ section + section {
     color: #000000 !important;
     border-radius: 50px;
 }
+        .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    padding: 60px;
+    background: #0a0a0a;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.contact-left h2 {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.contact-left p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.form-group input, .form-group textarea {
+    background: #151515 !important;
+    border: 1.2px solid #333;
+    padding: 12px;
+    color: white;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+/* Schedule Call Button */
+.btn-schedule {
+    background: var(--gold);
+    color: black;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+}
 
 
 </style>
