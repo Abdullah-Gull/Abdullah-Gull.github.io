@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "portfolio"
+    label: "My Projects"
+    folder: "content/portfolio"
+    create: true
+    fields:
+      - {label: "Project Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "select", options: ["Amazon VA", "Graphic Design", "E-commerce"]}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Description", name: "body", widget: "markdown"}
