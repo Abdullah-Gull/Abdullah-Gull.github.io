@@ -88,96 +88,80 @@
         .fb-bg { background: #3b5998; } .li-bg { background: #0077b5; } .in-bg { background: #e4405f; } .tk-bg { background: #000; border: 1px solid #333; } .sc-bg { background: #fffc00; color: #000; }
 
         @media (max-width: 1024px) { .container-grid { grid-template-columns: 1fr; } }
-/* Mega Menu Panel Styling */
-.mega-menu-panel {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%); /* Center aligning the large menu */
-    background: #ffffff; /* Image jaisa white background */
-    width: 1000px; /* Badi width takay 4 columns aa sakein */
-    box-shadow: 0px 15px 30px rgba(0,0,0,0.2);
-    border-radius: 10px;
-    padding: 30px;
-    z-index: 1000;
-    margin-top: 15px;
-    display: none; /* Default hide */
-    grid-template-columns: repeat(4, 1fr);
-}
-
-/* Show as Grid on Hover */
-.dropdown-item-wrapper:hover .mega-menu-panel {
-    display: grid;
-}
-
-/* Column Styling */
-.mega-col {
-    padding: 0 20px;
-}
-
-.mega-col.border-left {
-    border-left: 1px dotted #ccc; /* Image wali dotted line */
-}
-
-/* Header inside Columns */
-.mega-col h4 {
-    color: #000;
-    font-size: 16px;
-    margin-bottom: 15px;
-    font-weight: 700;
+/* 1. Main Capsule Base (Isay purane se replace karein) */
+.nav-capsule {
     display: flex;
     align-items: center;
+    background: #111111; /* Black Background */
+    border: 1px solid #333;
+    border-radius: 50px;
+    padding: 5px 15px;
+    position: relative;
 }
 
-/* Links Styling */
-.mega-col a {
-    display: block;
-    color: #333;
+.nav-link {
     text-decoration: none;
-    font-size: 14px;
-    padding: 8px 0;
-    transition: 0.2s;
+    color: #ffffff;
+    padding: 10px 18px;
     font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* 2. Mega Menu Panel (Black & Gold) */
+.mega-menu-panel {
+    display: none; /* Default Hide */
+    position: absolute;
+    top: 60px; /* Capsule ke niche alignment */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000000; 
+    width: 950px; /* Bada width jaisa aapne image mein dikhaya */
+    box-shadow: 0px 15px 40px rgba(0,0,0,0.9);
+    border: 1px solid #D4AF37; /* Gold Border */
+    border-radius: 15px;
+    padding: 30px;
+    z-index: 9999;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Jab click ho to ye class JS ke zariye add hogi */
+.mega-menu-panel.show-menu {
+    display: grid !important;
+}
+
+/* 3. Column & Links Styling */
+.mega-col h4 {
+    color: #D4AF37;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.mega-col a {
+    color: #cccccc;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    font-size: 13.5px;
+    transition: 0.2s;
 }
 
 .mega-col a:hover {
-    color: #ff6600; /* Orange/Gold hover jaisa image mein hai */
+    color: #D4AF37;
+    padding-left: 5px;
 }
 
-/* Icons (Orange Circles) */
-.mega-col i {
-    color: #ff6600; 
-    margin-right: 10px;
-    font-size: 14px;
+.mega-col.border-left {
+    border-left: 1px solid #222;
+    padding-left: 20px;
 }
 
-/* New Badge */
-.badge-new {
-    background: #ff0000;
-    color: #fff;
-    font-size: 10px;
-    padding: 2px 5px;
-    border-radius: 3px;
-    margin-left: 5px;
-    vertical-align: middle;
-}
-
-/* Divider for last column */
-.divider {
-    border-bottom: 1px dotted #ccc;
-    margin: 15px 0;
-}
-
-.free-tools {
-    font-weight: 700 !important;
-    color: #000 !important;
-}
-
-/* Active Capsule Black background for Services button */
-.dropdown-item-wrapper:hover .dropdown-toggle {
-    background: #000 !important;
-    color: #fff !important;
+/* 4. Active Button Styling (Click hone par) */
+.active-btn .dropdown-toggle {
+    background: #D4AF37 !important;
+    color: #000000 !important;
     border-radius: 50px;
 } </style>
 </head>
@@ -194,12 +178,13 @@
     <a href="index.html" class="nav-link">Home</a>
     <a href="about.html" class="nav-link">About us</a>
 
-    <!-- Mega Menu Wrapper -->
-    <div class="dropdown-item-wrapper">
-        <a href="#" class="nav-link dropdown-toggle">Services <i class="fa fa-chevron-down"></i></a>
+    <!-- Services Clickable Wrapper -->
+    <div class="dropdown-item-wrapper" id="servicesToggle" onclick="toggleMegaMenu(event)">
+        <a href="javascript:void(0)" class="nav-link dropdown-toggle">
+            Services <i class="fa fa-chevron-down" style="margin-left:5px;"></i>
+        </a>
         
-        <!-- Full Width Mega Dropdown -->
-        <div class="mega-menu-panel">
+        <div class="mega-menu-panel" id="megaPanel">
             <!-- Column 1 -->
             <div class="mega-col">
                 <a href="#"><i class="fa fa-arrow-circle-right"></i> Full service management</a>
@@ -207,49 +192,42 @@
                 <a href="#"><i class="fa fa-arrow-circle-right"></i> Amazon SEO</a>
                 <a href="#"><i class="fa fa-arrow-circle-right"></i> Amazon account audit</a>
                 <a href="#"><i class="fa fa-arrow-circle-right"></i> SOPs</a>
-                <a href="#"><i class="fa fa-arrow-circle-right"></i> All services</a>
-                <a href="#"><i class="fa fa-arrow-circle-right"></i> Consulting</a>
-                <a href="#"><i class="fa fa-arrow-circle-right"></i> Book a coaching call</a>
             </div>
 
             <!-- Column 2 -->
             <div class="mega-col border-left">
-                <h4><i class="fa fa-arrow-circle-right"></i> Design</h4>
+                <h4>Design</h4>
                 <a href="#">Brand guidelines</a>
                 <a href="#">Brand story</a>
                 <a href="#">Brand store</a>
                 <a href="#">Listing images</a>
-                <a href="#">Enhanced brand content A+</a>
-                <a href="#">Main image CTR hack</a>
-                <a href="#">Listing optimization</a>
-                <a href="#">Full listing optimization</a>
             </div>
 
             <!-- Column 3 -->
             <div class="mega-col border-left">
-                <h4><i class="fa fa-arrow-circle-right"></i> Troubleshooting</h4>
+                <h4>Troubleshooting</h4>
                 <a href="#">Listing reinstatement</a>
                 <a href="#">Account suspension</a>
                 <a href="#">PPC Advertising audit</a>
-                <a href="#">Brand name change</a>
-                <a href="#">Troubleshooting hours</a>
                 <a href="#">UPC to GS1 change</a>
             </div>
 
             <!-- Column 4 -->
             <div class="mega-col border-left">
-                <h4><i class="fa fa-arrow-circle-right"></i> Other services</h4>
+                <h4>Other services</h4>
                 <a href="#">Amazon DSP</a>
                 <a href="#">Trademark registration</a>
                 <a href="#">Vendor Central full service</a>
-                <a href="#">Walmart Account Audit <span class="badge-new">NEW</span></a>
-                <a href="#">Walmart Advertising Audit <span class="badge-new">NEW</span></a>
                 <div class="divider"></div>
-                <a href="#" class="free-tools"><i class="fa fa-arrow-circle-right"></i> Free Amazon tools</a>
+                <a href="#" class="free-tools">Free Amazon tools</a>
             </div>
         </div>
     </div>
 
+    <a href="blog.html" class="nav-link">Blog</a>
+    <a href="contact.html" class="nav-link">Contact us</a>
+</nav>
+        
     <a href="blog.html" class="nav-link">Blog</a>
     <a href="contact.html" class="nav-link">Contact us</a>
 </nav>
@@ -584,5 +562,29 @@
         window.scrollTo(0, 0);
     }
 </script>
-    
-    </body>
+
+        <!-- Aapka baaki coding data -->
+
+    <script>
+        function toggleMegaMenu(event) {
+            event.stopPropagation(); 
+            var panel = document.getElementById("megaPanel");
+            var wrapper = document.getElementById("servicesToggle");
+            
+            panel.classList.toggle("show-menu");
+            wrapper.classList.toggle("active-btn");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.closest('#servicesToggle')) {
+                var panel = document.getElementById("megaPanel");
+                var wrapper = document.getElementById("servicesToggle");
+                if (panel && panel.classList.contains('show-menu')) {
+                    panel.classList.remove("show-menu");
+                    wrapper.classList.remove("active-btn");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
