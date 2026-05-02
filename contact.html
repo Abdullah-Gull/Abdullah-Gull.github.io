@@ -797,6 +797,41 @@ section + section {
             }
         }
     </script>
-</body>
-</html>
+    <!-- Aapka form aur baki coding yahan khatam ho rahi hai -->
     
+    <script>
+    document.querySelector('.form-box form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Page refresh hone se rokne ke liye
+        
+        const btn = document.querySelector('.submit-btn');
+        btn.innerText = "Sending..."; // Loading dikhane ke liye
+        
+        // Form se data lena
+        const firstName = document.querySelector('input[name="first_name"]').value;
+        const lastName = document.querySelector('input[name="last_name"]').value;
+        const email = document.querySelector('input[name="email"]').value;
+        const message = document.querySelector('textarea[name="message"]').value;
+
+        // Slack Message Format
+        const slackData = {
+            text: `🚀 *New Inquiry from Portfolio*\n*Name:* ${firstName} ${lastName}\n*Email:* ${email}\n*Message:* ${message}`
+        };
+
+        // Slack ko bhejney ka process
+        fetch('https://hooks.slack.com/services/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', {
+            method: 'POST',
+            body: JSON.stringify(slackData),
+            mode: 'no-cors' // GitHub pages ke liye zaroori hai
+        }).then(() => {
+            alert('Thank you! Message sent to Abdullah\'s Slack.');
+            btn.innerText = "Send Message";
+            this.reset(); // Form khali karne ke liye
+        }).catch(err => {
+            alert('Error: Message nahi bhej sakay.');
+            btn.innerText = "Send Message";
+        });
+    });
+    </script>
+
+</body> <!-- Yeh body ka aakhri tag hai -->
+</html>
