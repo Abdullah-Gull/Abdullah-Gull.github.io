@@ -1273,22 +1273,29 @@ header {
         window.scrollTo(0, 0);
     }
 </script>
-        <script>
-        function toggleMegaMenu(event) {
-    event.stopPropagation(); // Isse click capsule ke andar hi rehta hai
-    var panel = document.getElementById("megaPanel");
-    var wrapper = document.getElementById("servicesToggle");
-    
-    panel.classList.toggle("show-menu");
-    wrapper.classList.toggle("active-btn");
-}
+       
+        <!-- Aapka baaki coding data -->
 
-// Agar screen par kahin aur click ho to band ho jaye (Optional but Recommended)
-window.onclick = function(event) {
-    if (!event.target.closest('#servicesToggle')) {
-        document.getElementById("megaPanel").classList.remove("show-menu");
-        document.getElementById("servicesToggle").classList.remove("active-btn");
-    }
-}
+    <script>
+        function toggleMegaMenu(event) {
+            event.stopPropagation(); 
+            var panel = document.getElementById("megaPanel");
+            var wrapper = document.getElementById("servicesToggle");
+            
+            panel.classList.toggle("show-menu");
+            wrapper.classList.toggle("active-btn");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.closest('#servicesToggle')) {
+                var panel = document.getElementById("megaPanel");
+                var wrapper = document.getElementById("servicesToggle");
+                if (panel && panel.classList.contains('show-menu')) {
+                    panel.classList.remove("show-menu");
+                    wrapper.classList.remove("active-btn");
+                }
+            }
+        }
     </script>
-    </body>
+</body>
+</html>
