@@ -151,6 +151,36 @@
     color: #000000 !important;
     border-radius: 50px;
 }
+        /* 1. Home Button aur baki links se background hatane ke liye */
+.nav-link {
+    background: transparent !important; /* Box hatane ke liye */
+    border-radius: 0px !important;
+    display: inline-block;
+    color: #ffffff !important;
+    text-decoration: none !important; /* Underline hatane ke liye */
+}
+
+/* 2. Logo Link (Abdullah Gull) ki underline aur color fix */
+.logo-link {
+    text-decoration: none !important;
+    color: #ffffff !important;
+}
+
+/* 3. Capsule Alignment Fix */
+.nav-capsule {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Links ko barabar gap dene ke liye */
+    gap: 10px; 
+}
+
+/* 4. Active state sirf tab aye jab hum click karein (Home par default na aye) */
+.nav-link.active, .active-btn .dropdown-toggle {
+    background: #D4AF37 !important;
+    color: #000 !important;
+    border-radius: 50px !important;
+    padding: 8px 15px !important;
+}
     </style>
    <script type="application/ld+json">
 {
