@@ -363,9 +363,7 @@ header {
         </div>
 
 <div class="about-illustration">
-<img src="https://abdullah-gull.github.io/strategy.png?v=101" alt="Abdullah Gull - E-commerce and Amazon Strategy Illustration">
-</div>
-        
+<img src="https://abdullah-gull.github.io/strategy.png?v=101" alt="Abdullah Gull - E-commerce and Amazon Strategy Illustration">        
     </div>
 </section>
 
@@ -473,6 +471,32 @@ header {
     border-radius: 20px;
     border: 1px solid rgba(212, 175, 55, 0.3); /* Aapka gold border */
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+        /* Container ko center karne ke liye */
+.about-illustration {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: transparent; /* Ya aapka dark theme background */
+}
+
+/* Image ki styling */
+.about-illustration img {
+    max-width: 100%;       /* Mobile par image bahar nahi jayegi */
+    height: auto;          /* Image stretch nahi hogi */
+    border-radius: 10px;   /* Corners thode round karne ke liye */
+    
+    /* Luxury look ke liye shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    
+    /* Smooth effect jab mouse upar aaye */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.about-illustration img:hover {
+    transform: scale(1.02); /* Halka sa zoom effect */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 </style>
 
