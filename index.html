@@ -215,6 +215,63 @@
     justify-content: center; /* Links ko barabar gap dene ke liye */
     gap: 10px; 
 }
+        /* ===================================================
+   FINAL REFINEMENT & MOBILE FIX (Add this at the end)
+   =================================================== */
+
+/* 1. Mobile Responsiveness Fix */
+@media (max-width: 950px) {
+    /* Mega Menu ko screen ke andar rakhne ke liye */
+    .mega-menu-panel {
+        width: 90vw !important; 
+        left: 5vw !important;
+        transform: none !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Mobile par 2 columns */
+        position: absolute !important;
+    }
+
+    /* Navigation links ko adjust karne ke liye */
+    .nav-capsule {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        height: auto !important;
+        padding: 10px !important;
+    }
+
+    .nav-link {
+        font-size: 13px !important;
+        margin: 5px !important;
+    }
+}
+
+/* 2. Footer Social Icons Alignment */
+.social-icon-box {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+.social-icon-box i {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+}
+
+/* 3. Global Text Readability Improvement */
+p {
+    color: #cccccc !important; /* Thora light grey taake black par parha jaye */
+    font-size: 15px !important;
+}
+
+/* 4. Smooth Hover for Buttons */
+.nav-link:hover, .btn-gold:hover {
+    background-color: #D4AF37 !important;
+    color: #000 !important;
+    transition: all 0.3s ease-in-out !important;
+}
 
     </style>
     
