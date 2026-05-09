@@ -528,51 +528,60 @@ p {
 
 </style>
 <body>
-    <style>
-    /* Slider Main Container */
+   <style>
+    /* 1. Slider Main Container - Super Clean White */
     .marketplace-slider-section {
-        background-color: #000; /* Pure Black Background */
-        padding: 60px 0;
+        background-color: #F8FAFB; /* Image 2 wala light background */
+        padding: 80px 0;
         overflow: hidden;
         white-space: nowrap;
         position: relative;
     }
 
-    /* Moving Track */
+    /* 2. Moving Track */
     .marketplace-track {
         display: inline-flex;
-        gap: 20px;
-        animation: scroll-text 25s linear infinite;
+        gap: 30px; /* Thora zyada gap professional lagta hai */
+        animation: scroll-text 30s linear infinite;
     }
 
-    /* Individual Box Styling */
+    /* 3. Advance Individual Box Styling (Image 2 Look) */
     .marketplace-box {
-        border: 2px solid #f7d66d; /* Gold Outline */
-        border-radius: 15px;
-        padding: 20px 45px;
-        min-width: 180px;
+        background: #ffffff; /* Pure White Box */
+        border: 1px solid rgba(255, 140, 0, 0.1); /* Halka sa orange border */
+        border-radius: 50px; /* Rounded pill shape jaisa image mein hai */
+        padding: 15px 50px;
+        min-width: 200px;
         text-align: center;
-        background: transparent;
-        transition: 0.3s ease;
+        /* Luxury Shadow Effect */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); 
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
     }
 
+    /* 4. Text Styling - Orange & Professional */
     .marketplace-box span {
-        color: #f7d66d; /* Gold Text */
-        font-family: 'Poppins', sans-serif;
-        font-size: 22px;
-        font-weight: 700;
-        letter-spacing: 1px;
+        color: #FF8C00; /* Dark Orange Text */
+        font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: 0.3s;
     }
 
-    /* Hover Effect */
+    /* 5. Advance Hover Effect */
     .marketplace-box:hover {
-        background-color: #f7d66d;
-    }
-    .marketplace-box:hover span {
-        color: #000;
+        background: linear-gradient(135deg, #FF8C00, #ff6a00); /* Orange Gradient */
+        transform: translateY(-8px) scale(1.05); /* Upar uthna */
+        box-shadow: 0 15px 35px rgba(255, 140, 0, 0.3); /* Orange Glow */
+        border-color: transparent;
     }
 
-    /* Animation */
+    .marketplace-box:hover span {
+        color: #ffffff; /* Hover par text white ho jaye ga */
+    }
+
+    /* 6. Smooth Animation */
     @keyframes scroll-text {
         0% { transform: translateX(0); }
         100% { transform: translateX(-50%); }
@@ -581,6 +590,27 @@ p {
     /* Pause on Hover */
     .marketplace-slider-section:hover .marketplace-track {
         animation-play-state: paused;
+    }
+
+    /* Optional: Side Gradients for Fade Effect */
+    .marketplace-slider-section::before,
+    .marketplace-slider-section::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 150px;
+        height: 100%;
+        z-index: 2;
+    }
+
+    .marketplace-slider-section::before {
+        left: 0;
+        background: linear-gradient(to right, #F8FAFB, transparent);
+    }
+
+    .marketplace-slider-section::after {
+        right: 0;
+        background: linear-gradient(to left, #F8FAFB, transparent);
     }
 </style>
 
@@ -641,61 +671,102 @@ p {
     </section>
 
 <style>
-    /* CSS Section Updated for Full Dark Theme */
+    /* 1. Main Section - Clean White Background */
     .services-tabs { 
         padding: 100px 8%; 
-        background-color: var(--dark); /* Pure Black Website Theme */
-        color: #fff; 
+        background-color: #F8FAFB; /* Light premium background */
+        color: #333; 
     }
     .tabs-container { max-width: 1200px; margin: 0 auto; }
-    .tabs-main-title { font-size: 45px; text-align: center; margin-bottom: 20px; font-weight: 800; }
-    .tabs-main-title .highlight { color: var(--gold); /* Gold Website Accent */ }
-    .tabs-main-desc { text-align: center; max-width: 900px; margin: 0 auto 60px; color: #bbb; line-height: 1.6; font-size: 17px; }
-    .tabs-main-desc strong { color: #fff; }
-
-    .tabs-wrapper { display: flex; gap: 40px; align-items: flex-start; }
-    .tab-buttons { flex: 1; display: flex; flex-direction: column; gap: 15px; }
     
-    .tab-btn {
-        background: transparent;
+    .tabs-main-title { font-size: 42px; text-align: center; margin-bottom: 20px; font-weight: 800; color: #1A1D1F; }
+    .tabs-main-title .highlight { color: #D4A017; /* Gold accent for "Amazon" */ }
+    
+    .tabs-main-desc { text-align: center; max-width: 800px; margin: 0 auto 60px; color: #6F767E; line-height: 1.6; font-size: 16px; }
+
+    .tabs-wrapper { display: flex; gap: 50px; align-items: flex-start; }
+
+    /* 2. Left Side Buttons (Image Style) */
+    .tab-buttons { flex: 1; display: flex; flex-direction: column; gap: 0; } /* No gap because they look like a list */
+    
+    /* "Service Topics" Header Style */
+    .tab-header-label {
+        background: #E67E22; /* Primary Orange */
         color: #fff;
-        border: 1px solid rgba(255,255,255,0.2);
-        padding: 20px 25px;
+        padding: 15px 25px;
+        font-weight: 700;
+        border-radius: 8px 8px 0 0;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    .tab-btn {
+        background: #fff;
+        color: #444;
+        border: 1px solid #eee;
+        border-top: none; /* Stacked look */
+        padding: 18px 25px;
         text-align: left;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 600;
         cursor: pointer;
-        border-radius: 8px;
         transition: 0.3s;
+        display: flex;
+        align-items: center;
     }
 
-    .tab-btn:hover { border-color: var(--gold); background: rgba(247, 214, 109, 0.05); }
-    /* Active Button Color (matches image_32.png button style) */
-    .tab-btn.active { background-color: var(--gold); border-color: var(--gold); color: #000; font-weight: 800; }
+    /* Bullet Point effect before text like in image */
+    .tab-btn::before {
+        content: "•";
+        color: #E67E22;
+        margin-right: 10px;
+        font-size: 20px;
+    }
 
-    /* Right Side Content Box Fix (matches image_32.png description style) */
+    .tab-btn:hover { background: #FFF9F4; color: #E67E22; }
+
+    /* Active State - Soft highlight */
+    .tab-btn.active { 
+        background-color: #fff; 
+        border-left: 4px solid #E67E22; /* Orange indicator */
+        color: #E67E22;
+        font-weight: 700;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.02);
+    }
+
+    /* 3. Right Side Content Box (Soft Luxury Look) */
     .tab-content-box {
         flex: 2;
-        background-color: #0d0d0d; /* Very Deep Black, slightly lighter than background */
-        color: #fff; 
-        padding: 50px;
-        border-radius: 12px;
-        min-height: 350px;
-        border: 1px solid rgba(247, 214, 109, 0.1); /* Subtle Gold border */
-        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        background-color: #ffffff;
+        color: #333; 
+        padding: 60px;
+        border-radius: 24px; /* More rounded like Image 2 */
+        min-height: 400px;
+        border: 1px solid rgba(0,0,0,0.03);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.05); /* Very soft shadow */
     }
 
-    .tab-panel h3 { font-size: 28px; margin-bottom: 20px; font-weight: 800; color: #fff; }
-    .tab-panel p { font-size: 18px; line-height: 1.7; color: #bbb; /* Description text color */ }
-    .tab-panel p strong { color: #fff; } /* Abdullah Gull name bold fix */
+    .tab-panel h3 { 
+        font-size: 32px; 
+        margin-bottom: 25px; 
+        font-weight: 800; 
+        color: #1A1D1F;
+        letter-spacing: -0.5px;
+    }
+    
+    .tab-panel p { 
+        font-size: 17px; 
+        line-height: 1.8; 
+        color: #6F767E; 
+    }
 
+    /* Responsive */
     @media (max-width: 992px) {
         .tabs-wrapper { flex-direction: column; }
         .tab-buttons { width: 100%; }
-        .tab-content-box { padding: 30px; }
+        .tab-content-box { padding: 40px; border-radius: 16px; }
     }
 </style>
-
 <script>
     // JavaScript is required for the tabs to work dynamically
     function openTab(evt, tabName) {
@@ -733,61 +804,89 @@ p {
 </section>
 
 <style>
-    /* Cinematic Dark Theme */
+    /* 1. Main Section - Pure & Professional */
     .ag-text-brands {
-        background-color: #000;
-        padding: 80px 5%;
+        background-color: #ffffff; /* Dark se White ho gaya */
+        padding: 100px 5%;
         text-align: center;
-        font-family: 'Inter', sans-serif;
+        font-family: 'Plus Jakarta Sans', sans-serif;
     }
     .ag-container { max-width: 1100px; margin: 0 auto; }
     
+    /* 2. Gold Label (Small Headline) */
     .ag-gold-label {
-        color: #f7d66d; /* Your Website Gold */
+        color: #D4A017; /* High-end Gold */
         font-size: 14px;
-        letter-spacing: 4px;
+        letter-spacing: 3px;
         font-weight: 700;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         text-transform: uppercase;
     }
-    .ag-desc { color: #666; font-size: 16px; margin-bottom: 60px; }
 
-    /* Text Logo Grid Style */
+    /* 3. Description */
+    .ag-desc { 
+        color: #6F767E; 
+        font-size: 15px; 
+        margin-bottom: 50px; 
+        max-width: 600px; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+
+    /* 4. Logo Grid - Matches Image Layout */
     .ag-text-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 40px;
+        gap: 20px; /* Thora tight aur clean gap */
         align-items: center;
     }
 
+    /* 5. Brand Box Styling (Pill/Rounded) */
     .ag-brand-name {
-        color: #fff;
-        font-size: 24px;
-        font-weight: 900;
-        letter-spacing: 2px;
-        opacity: 0.4;
-        transition: all 0.4s ease;
-        cursor: default;
-        padding: 20px;
-        border: 1px solid transparent;
+        background: #ffffff;
+        color: #1A1D1F;
+        padding: 25px 15px;
+        border-radius: 16px; /* Soft rounded corners jaisa image mein hai */
+        border: 1px solid #F1F1F1; /* Halka sa border */
+        font-size: 18px;
+        font-weight: 700;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
-    /* Hover Effect: Gold Glow */
+    /* 6. Hover Effect - Image Style "Fiverr" Box Look */
     .ag-brand-name:hover {
-        opacity: 1;
-        color: #f7d66d;
-        transform: scale(1.1);
-        text-shadow: 0 0 20px rgba(247, 214, 109, 0.3);
+        background-color: #FFF4E6; /* Soft Cream/Orange glow jaisa image mein Fiverr par hai */
+        border-color: #FF8C00;    /* Orange accent border */
+        color: #1A1D1F;
+        transform: translateY(-5px); /* Halka sa upar uthna */
+        box-shadow: 0 12px 30px rgba(255, 140, 0, 0.1);
     }
 
-    /* Mobile View */
+    /* Logo Image handling (agar aap text ki jagah image use karein) */
+    .ag-brand-name img {
+        max-width: 120px;
+        height: auto;
+        filter: grayscale(100%); /* Shuru mein professional gray */
+        opacity: 0.6;
+        transition: 0.3s;
+    }
+
+    .ag-brand-name:hover img {
+        filter: grayscale(0%); /* Hover par asli rang */
+        opacity: 1;
+    }
+
+    /* Mobile Adaptability */
     @media (max-width: 992px) {
         .ag-text-grid { grid-template-columns: repeat(2, 1fr); }
-        .ag-brand-name { font-size: 20px; }
     }
     @media (max-width: 480px) {
-        .ag-text-grid { gap: 20px; }
-        .ag-brand-name { font-size: 16px; padding: 10px; }
+        .ag-brand-name { font-size: 15px; padding: 15px; }
     }
 </style>
         
@@ -837,84 +936,135 @@ p {
 </section>
 
 <style>
-    /* Section Main Styling */
+    /* 1. Section Main Styling - Clean & Bright */
     .expertise-section { 
         padding: 100px 8%; 
-        background-color: #000; 
-        color: #fff;
+        background-color: #ffffff; /* Image layout ke mutabiq white */
+        color: #1A1D1F;
+        font-family: 'Plus Jakarta Sans', sans-serif;
     }
     .expertise-container { 
         max-width: 1300px; 
         margin: 0 auto; 
         display: grid; 
         grid-template-columns: 1fr 1.5fr; 
-        gap: 80px; 
+        gap: 60px; 
         align-items: center;
     }
 
-    /* Left Side Styling */
-    .expertise-main { border-right: 1px solid rgba(255,255,255,0.1); padding-right: 40px; }
-    .exp-title { font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 25px; }
-    .exp-title .highlight { color: var(--gold); }
-    .exp-subtitle { font-size: 18px; color: #bbb; line-height: 1.6; margin-bottom: 40px; }
+    /* 2. Left Side Styling */
+    .expertise-main { padding-right: 40px; }
+    .exp-title { 
+        font-size: 48px; 
+        font-weight: 800; 
+        line-height: 1.1; 
+        margin-bottom: 25px; 
+        color: #1A1D1F;
+    }
+    .exp-title .highlight { color: #D4A017; /* High-end Gold */ }
+    .exp-subtitle { 
+        font-size: 16px; 
+        color: #6F767E; 
+        line-height: 1.7; 
+        margin-bottom: 40px; 
+    }
     
+    /* Premium Orange Button like Image 2 */
     .exp-main-btn { 
         display: inline-block; 
-        background-color: var(--gold); 
-        color: #000; 
-        padding: 18px 40px; 
+        background: linear-gradient(135deg, #FF8C00, #E67E22); 
+        color: #fff; 
+        padding: 18px 45px; 
         border-radius: 50px; 
         text-decoration: none; 
         font-weight: 700; 
-        text-transform: uppercase; 
-        margin-bottom: 30px;
-        transition: 0.3s;
+        font-size: 15px;
+        box-shadow: 0 10px 25px rgba(230, 126, 34, 0.25);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .exp-main-btn:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(247, 214, 109, 0.2); }
-    .exp-footer-text { font-size: 14px; color: #666; font-style: italic; }
+    .exp-main-btn:hover { 
+        transform: translateY(-5px); 
+        box-shadow: 0 15px 35px rgba(230, 126, 34, 0.4); 
+    }
 
-    /* Right Side Features Grid Styling */
+    /* 3. Right Side Features Grid (The "Floating" Cards) */
     .features-grid { 
         display: grid; 
         grid-template-columns: 1fr 1fr; 
-        gap: 30px; 
+        gap: 25px; 
     }
     .feature-card { 
-        background: #0d0d0d; 
-        padding: 40px; 
-        border-radius: 15px; 
-        border: 1px solid rgba(255,255,255,0.05);
-        transition: 0.3s ease;
+        background: #ffffff; 
+        padding: 45px 35px; 
+        border-radius: 24px; 
+        border: 1px solid #F1F1F1;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03); /* Soft image style shadow */
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
     }
+
+    /* Left Gold Border indicator like in Image 2 cards */
+    .feature-card::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 20%;
+        height: 60%;
+        width: 4px;
+        background-color: #D4A017;
+        border-radius: 0 4px 4px 0;
+        opacity: 0;
+        transition: 0.3s;
+    }
+
     .feature-card:hover { 
-        border-color: var(--gold); 
-        transform: translateY(-10px); 
-        box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        transform: translateY(-12px); 
+        border-color: rgba(212, 160, 23, 0.2);
+        box-shadow: 0 25px 50px rgba(0,0,0,0.06);
     }
-    .feature-icon { font-size: 35px; color: var(--gold); margin-bottom: 20px; }
-    .feature-card h3 { font-size: 22px; margin-bottom: 15px; font-weight: 700; color: #fff; }
-    .feature-card p { font-size: 15px; color: #999; line-height: 1.6; margin-bottom: 20px; }
+
+    .feature-card:hover::after {
+        opacity: 1; /* Hover par side line nazar ayegi */
+    }
+
+    /* Icon & Text Styling */
+    .feature-icon { 
+        font-size: 32px; 
+        color: #D4A017; 
+        margin-bottom: 20px; 
+        background: #FFF9F4; /* Light glow behind icon */
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+    }
+    .feature-card h3 { font-size: 20px; margin-bottom: 12px; font-weight: 700; color: #1A1D1F; }
+    .feature-card p { font-size: 14px; color: #6F767E; line-height: 1.6; margin-bottom: 20px; }
+    
     .feature-link { 
-        color: var(--gold); 
+        color: #D4A017; 
         text-decoration: none; 
-        font-size: 14px; 
+        font-size: 13px; 
         font-weight: 700; 
         text-transform: uppercase; 
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
         transition: 0.2s;
     }
-    .feature-link:hover { text-decoration: underline; }
+    .feature-link:hover { color: #FF8C00; }
 
     /* Responsive */
     @media (max-width: 1100px) {
         .expertise-container { grid-template-columns: 1fr; gap: 50px; }
-        .expertise-main { border-right: none; padding-right: 0; text-align: center; }
+        .expertise-main { padding-right: 0; text-align: center; }
     }
     @media (max-width: 600px) {
         .features-grid { grid-template-columns: 1fr; }
     }
 </style>
-
+    
       <section class="ai-ask-section">
     <div class="ai-container">
         <h2 class="ai-title">Verify <span class="highlight">Abdullah Gull</span> via AI</h2>
