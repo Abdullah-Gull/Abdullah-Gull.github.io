@@ -1590,135 +1590,63 @@
         </div>
     </div>
 
-   <style>
-    /* --- RESULTS SECTION - PREMIUM WHITE & ORANGE (Image Inspired) --- */
-    .results-section {
-        background: #ffffff; /* Clean white background as per image */
-        padding: 80px 20px;
-        display: flex;
-        justify-content: center;
-        font-family: 'Inter', sans-serif;
-    }
-
-    .results-card {
-        background: #ffffff;
-        width: 100%;
-        max-width: 1000px;
-        border-radius: 30px;
-        border: 1px solid #EDEDED;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
-        overflow: hidden;
-        position: relative;
-        transition: transform 0.4s ease;
-    }
-
-    /* Background Graph Decor (Inspired by Image) */
-    .results-card::before {
-        content: '';
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 150px;
-        height: 100px;
-        background: url('https://i.imgur.com/your-graph-icon.png') no-repeat; /* Aap yahan graph icon link daal sakte hain */
-        background-size: contain;
-        opacity: 0.1;
-        z-index: 0;
-    }
-
-    /* Header Text */
-    .results-header {
-        padding: 50px 40px 10px;
+ <style>
+    /* --- RESULTS SECTION: ORANGE THEME --- */
+    .results-container {
+        background-color: #FF8C00; /* Bright Orange background */
+        border-radius: 20px 20px 0 0; /* Sirf upar ke corners round hain jaisa image mein hai */
+        padding: 60px 40px;
         text-align: center;
-        position: relative;
-        z-index: 1;
+        color: #ffffff; /* Poore section ka text white */
     }
 
-    .results-header h2 {
+    .results-container h2 {
+        color: #ffffff !important;
         font-size: 32px;
         font-weight: 800;
-        color: #1A1D1F;
         margin-bottom: 10px;
     }
 
-    .results-header p {
-        color: #6F767E;
-        font-size: 14px;
-        font-weight: 500;
+    .results-container p {
+        color: rgba(255, 255, 255, 0.9); /* Halka sa transparent white description ke liye */
+        font-size: 16px;
+        margin-bottom: 40px;
     }
 
-    /* Stats Styling */
-    .results-stats {
+    /* Stats Grid */
+    .stats-row {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        padding: 40px 20px;
-        flex-wrap: wrap;
-        position: relative;
-        z-index: 1;
+        border-top: 1px solid rgba(255, 255, 255, 0.2); /* White line for separation */
+        padding-top: 40px;
     }
 
     .stat-box {
-        text-align: center;
         flex: 1;
-        min-width: 200px;
-        border-right: 1px solid #EDEDED; /* Vertical dividers like image */
     }
 
-    .stat-box:last-child {
-        border-right: none;
-    }
-
-    .stat-box .number {
-        display: block;
+    /* Numbers (15+, $1M+, 5+) */
+    .stat-number {
+        color: #ffffff !important; /* Numbers ko orange se white kr diya */
         font-size: 48px;
-        font-weight: 800;
-        color: #FF8C00; /* Signature Orange */
+        font-weight: 900;
+        display: block;
         margin-bottom: 5px;
     }
 
-    .stat-box .label {
+    /* Labels (Brand managed, Revenue, etc.) */
+    .stat-label {
+        color: #ffffff;
         font-size: 14px;
-        color: #1A1D1F;
-        font-weight: 700;
+        font-weight: 600;
+        text-transform: uppercase;
         letter-spacing: 0.5px;
     }
 
-    .stat-box .sub-label {
-        display: block;
-        font-size: 12px;
-        color: #6F767E;
-        margin-top: 2px;
-    }
-
-    /* Bottom Logo Bar (Glass Style) */
-    .logo-bar {
-        background: #F8F9FA; /* Subtle gray bar at bottom */
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 25px 30px;
-        border-top: 1px solid #EDEDED;
-    }
-
-    .logo-item {
-        color: #1A1D1F;
-        font-size: 18px;
-        font-weight: 700;
-        opacity: 0.5;
-        transition: 0.3s;
-    }
-
-    .logo-item:hover {
-        opacity: 1;
-        color: #FF8C00;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-        .stat-box { border-right: none; border-bottom: 1px solid #EDEDED; padding: 20px 0; }
-        .stat-box:last-child { border-bottom: none; }
-        .logo-bar { flex-wrap: wrap; gap: 20px; }
+    /* Vertical Dividers (Optional - jaisa image mein halki lines hain) */
+    .stat-box:not(:last-child) {
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
     }
 </style>
 </section>
