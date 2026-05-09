@@ -1591,114 +1591,109 @@
     </div>
 
  <style>
-    /* --- PREMIUM RESULTS CARD (SAME AS IMAGE) --- */
-.results-card {
-    background: #ffffff;
-    border-radius: 24px;
-    padding: 40px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-    max-width: 900px;
-    margin: 40px auto;
-    font-family: 'Inter', sans-serif;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #f0f0f0;
+   /* Container background setup */
+body {
+  background-color: #fcf6ee; /* Halka cream background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-/* Header Section with Graph line */
+/* Main Card Styling */
+.result-card {
+  background: #ffffff;
+  width: 700px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* Header Styling */
 .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 40px;
+  text-align: center;
+  padding: 40px 20px 20px;
 }
 
-.card-title-area { text-align: left; }
-
-.card-title-area h2 {
-    font-size: 28px;
-    font-weight: 800;
-    color: #1a1a1a;
-    margin: 0 0 8px 0;
+.card-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #1a1a1a;
+  font-weight: 800;
 }
 
-.card-title-area p {
-    font-size: 14px;
-    color: #888;
-    margin: 0;
+.card-header p {
+  margin-top: 8px;
+  color: #888;
+  font-size: 14px;
 }
 
-/* Stats Row */
+/* Stats Section */
 .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    border-top: 1px solid #eee;
-    padding-top: 30px;
-    position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px 40px 50px;
+  text-align: center;
+  gap: 20px;
 }
 
-.stat-item {
-    text-align: center;
-    position: relative;
+.stat-item h2 {
+  color: #d4a017; /* Golden/Yellow color */
+  font-size: 42px;
+  margin: 0;
+  font-weight: 900;
 }
 
-/* Vertical Divider */
-.stat-item:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 20%;
-    height: 60%;
-    width: 1px;
-    background: #eee;
+.stat-item p {
+  color: #b0b0b0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  line-height: 1.4;
 }
 
-.stat-val {
-    display: block;
-    font-size: 36px;
-    font-weight: 900;
-    color: #FF8C00; /* Signature Orange */
-    margin-bottom: 5px;
-}
-
-.stat-desc {
-    font-size: 13px;
-    font-weight: 600;
-    color: #1a1a1a;
-    text-transform: capitalize;
-}
-
-/* Bottom Partner Bar (Light Gray) */
+/* Footer Section */
 .card-footer {
-    background: #f9f9f9;
-    margin: 30px -40px -40px -40px;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #eee;
+  background-color: #f9f9f9;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
 }
 
-.partner-logos {
-    display: flex;
-    gap: 30px;
-    opacity: 0.6;
-    filter: grayscale(100%);
+.footer-icon span {
+  display: block;
+  width: 25px;
+  height: 15px;
+  background: repeating-linear-gradient(to bottom, #d4a017, #d4a017 3px, transparent 3px, transparent 6px);
 }
 
-/* Small Graph Accent (Top Right) */
-.graph-accent {
-    width: 120px;
-    height: auto;
-    opacity: 0.8;
+.footer-numbers {
+  display: flex;
+  gap: 40px;
 }
 
-@media (max-width: 600px) {
-    .stats-grid { grid-template-columns: 1fr; }
-    .stat-item:after { display: none; }
-    .card-footer { flex-direction: column; gap: 15px; }
-}</style>
+.footer-numbers span {
+  font-weight: 700;
+  font-size: 18px;
+  color: #333;
+}
+
+.footer-link {
+  font-weight: 900;
+  font-size: 18px;
+  color: #1a1a1a;
+  border-bottom: 2px solid #1a1a1a;
+  cursor: pointer;
+  padding-bottom: 2px;
+}
+ </style>
 </section>
 
    <section class="premium-faq-cert-section">
