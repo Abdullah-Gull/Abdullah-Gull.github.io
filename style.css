@@ -1,174 +1,217 @@
-/* --- Google Fonts (Modern Look) --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-:root {
-    --primary-gold: #D4A017; /* Gold color for accents */
-    --secondary-orange: #E67E22; /* Buttons & Highlights */
-    --dark-text: #2C3E50;
-    --light-bg: #F9F9F9;
-    --white: #FFFFFF;
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
+/* 1. GOOGLE FONTS & RESET */
+/* Poppins font professional aur modern look deta hai jaisa image mein hai */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Is se padding layout ko kharab nahi karti */
+}
+
+:root {
+    --gold: #D4A017;       /* Heading aur accent colors ke liye */
+    --orange: #E67E22;     /* Buttons aur highlights ke liye */
+    --light-gray: #F4F7F6; /* Background ka halka rang */
+    --white: #FFFFFF;
+    --text-dark: #333333;
+    /* Soft shadow jo cards ko "upha hua" (elevated) look deti hai */
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.04); 
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--light-bg);
-    color: var(--dark-text);
+    background-color: var(--light-gray);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
-/* --- Container --- */
+/* 2. LAYOUT UTILITIES */
 .container {
-    width: 90%;
+    width: 85%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* --- Header & Navigation --- */
+section {
+    padding: 80px 0; /* Har section ke darmiyan barabar gap */
+}
+
+/* 3. HEADER & NAVIGATION (Top Bar) */
 header {
     background: var(--white);
-    padding: 20px 0;
-    box-shadow: var(--card-shadow);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-nav ul {
+.nav-links {
     display: flex;
     justify-content: center;
+    gap: 40px;
     list-style: none;
-    gap: 30px;
 }
 
-nav a {
+.nav-links a {
     text-decoration: none;
-    color: var(--dark-text);
-    font-weight: 600;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 15px;
     transition: 0.3s;
 }
 
-nav a:hover {
-    color: var(--primary-gold);
+.nav-links a:hover {
+    color: var(--gold);
 }
 
-/* --- Hero Section --- */
+/* 4. HERO SECTION (Main Banner) */
 .hero {
-    padding: 80px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 100px 0;
 }
 
-.hero-text h1 {
-    font-size: 3rem;
-    line-height: 1.2;
+.hero-content h1 {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
-.hero-text span {
-    color: var(--primary-gold);
+.hero-content h1 span {
+    color: var(--gold); /* "Amazon Brands" wala gold color */
 }
 
-.btn-primary {
-    background: var(--secondary-orange);
+/* Button Design jaisa image mein hai */
+.btn-main {
+    background: var(--orange);
     color: white;
-    padding: 12px 25px;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
+    padding: 14px 30px;
+    border-radius: 50px; /* Bilkul rounded corners */
+    text-decoration: none;
     font-weight: 600;
-    margin-top: 20px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
     transition: 0.3s;
 }
 
-.btn-primary:hover {
+.btn-main:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
+    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.5);
 }
 
-/* --- Cards Layout (Services & Grid) --- */
-.grid-container {
+/* Hero Image Shadow Effect */
+.hero-img img {
+    border-radius: 30px;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+}
+
+/* 5. CARDS & GRID (Services/Strategy Sections) */
+/* Image mein cards 2 ya 4 ke grid mein hain */
+.card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    padding: 50px 0;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
-.card {
+.custom-card {
     background: var(--white);
-    padding: 30px;
+    padding: 40px;
+    border-radius: 25px; /* Image wale rounded corners */
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: 0.4s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid var(--gold); /* Hover par gold border */
+}
+
+/* 6. LOGO BAR (Verification/Partners) */
+.logo-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    background: var(--white);
     border-radius: 20px;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--shadow);
+}
+
+.logo-item {
+    padding: 15px 25px;
     border: 1px solid #eee;
-    transition: 0.3s;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
 }
 
-.card:hover {
-    border-color: var(--primary-gold);
-}
-
-.card h3 {
-    color: var(--primary-gold);
-    margin-bottom: 15px;
-}
-
-/* --- FAQ Section --- */
-.faq-section {
-    background: var(--white);
-    padding: 50px;
-    border-radius: 20px;
-    margin: 50px 0;
+/* 7. FAQ SECTION (Accordion Style) */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .faq-item {
-    border-bottom: 1px solid #eee;
-    padding: 15px 0;
-    cursor: pointer;
-}
-
-.faq-item h4 {
-    display: flex;
-    justify-content: space-between;
-}
-
-/* --- Stats/Results Bar --- */
-.stats-bar {
     background: var(--white);
-    padding: 40px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-around;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    border-left: 5px solid transparent;
+}
+
+.faq-item:hover {
+    border-left: 5px solid var(--gold);
+}
+
+/* 8. STATS BAR (Results Section) */
+.stats-section {
+    background: var(--white);
+    padding: 60px;
+    border-radius: 30px;
     text-align: center;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--shadow);
 }
 
-.stat-item h2 {
-    color: var(--primary-gold);
-    font-size: 2.5rem;
+.stat-number {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--gold);
 }
 
-/* --- Footer --- */
+/* 9. FOOTER */
 footer {
-    background: #111;
-    color: white;
-    padding: 50px 0;
-    margin-top: 100px;
+    background: #1A1A1A; /* Dark theme footer */
+    color: #999;
+    padding: 80px 0 20px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
 }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+footer h3 {
+    color: var(--white);
+    margin-bottom: 20px;
 }
 
-/* --- Responsive --- */
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+/* 10. RESPONSIVE DESIGN (Mobile Friendly) */
 @media (max-width: 768px) {
     .hero { flex-direction: column; text-align: center; }
-    .footer-content { grid-template-columns: 1fr 1fr; }
+    .hero-content h1 { font-size: 32px; }
+    .container { width: 92%; }
 }
