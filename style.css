@@ -1,140 +1,174 @@
-/* 1. LUXURY FONTS & BASE */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+/* --- Google Fonts (Modern Look) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
-    --brand-gold: #D4A017;       /* Royal Gold */
-    --brand-orange: #FF8C00;     /* Action Orange */
-    --bg-light: #F8FAFB;        /* Super Clean Light Gray */
+    --primary-gold: #D4A017; /* Gold color for accents */
+    --secondary-orange: #E67E22; /* Buttons & Highlights */
+    --dark-text: #2C3E50;
+    --light-bg: #F9F9F9;
     --white: #FFFFFF;
-    --text-main: #1A1D1F;       /* Soft Black */
-    --text-muted: #6F767E;      /* Gray for descriptions */
-    /* Luxury Soft Shadow */
-    --luxury-shadow: 0 20px 50px rgba(0, 0, 0, 0.03); 
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--bg-light);
-    color: var(--text-main);
-    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
 }
 
-/* 2. PREMIUM NAVIGATION */
+/* --- Container --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Header & Navigation --- */
 header {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px); /* Glass effect */
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    background: var(--white);
     padding: 20px 0;
+    box-shadow: var(--card-shadow);
     position: sticky;
     top: 0;
-    z-index: 2000;
+    z-index: 1000;
 }
 
-.nav-container {
+nav ul {
     display: flex;
     justify-content: center;
-    gap: 35px;
+    list-style: none;
+    gap: 30px;
 }
 
-.nav-link {
+nav a {
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--dark-text);
     font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 0.5px;
     transition: 0.3s;
 }
 
-.nav-link:hover {
-    color: var(--brand-gold);
+nav a:hover {
+    color: var(--primary-gold);
 }
 
-/* 3. HERO SECTION (Image 2 Style) */
-.hero-section {
-    padding: 100px 0;
+/* --- Hero Section --- */
+.hero {
+    padding: 80px 0;
     display: flex;
     align-items: center;
-    background: radial-gradient(circle at top right, #fff4e6 0%, transparent 40%);
+    justify-content: space-between;
 }
 
-.hero-title {
-    font-size: 56px;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 25px;
+.hero-text h1 {
+    font-size: 3rem;
+    line-height: 1.2;
 }
 
-.hero-title span {
-    background: linear-gradient(90deg, var(--brand-gold), var(--brand-orange));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.hero-text span {
+    color: var(--primary-gold);
 }
 
-/* 4. THE "LUXURY CARD" - Sabse important cheez */
-.premium-card {
-    background: var(--white);
-    border-radius: 32px; /* Extra rounded for modern look */
-    padding: 40px;
-    border: 1px solid rgba(0, 0, 0, 0.02);
-    box-shadow: var(--luxury-shadow);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.premium-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 30px 60px rgba(212, 160, 23, 0.1); /* Gold glow on hover */
-}
-
-/* 5. BUTTONS (Image 2 Style) */
-.cta-button {
-    background: linear-gradient(135deg, var(--brand-orange), #ff6a00);
+.btn-primary {
+    background: var(--secondary-orange);
     color: white;
-    padding: 18px 40px;
-    border-radius: 100px;
-    font-weight: 700;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 10px 25px rgba(255, 140, 0, 0.2);
+    padding: 12px 25px;
+    border-radius: 50px;
     border: none;
-    transition: 0.4s;
-}
-
-.cta-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 35px rgba(255, 140, 0, 0.4);
-}
-
-/* 6. LOGO / VERIFICATION GRID */
-.verify-box {
-    background: var(--white);
-    padding: 20px;
-    border-radius: 20px;
-    border: 1px solid #F1F1F1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    filter: grayscale(100%); /* Logos looks professional in gray */
-    opacity: 0.6;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
     transition: 0.3s;
 }
 
-.verify-box:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-    border-color: var(--brand-gold);
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
 }
 
-/* 7. STATS BAR (The Results Section) */
-.results-bar {
-    background: #1A1D1F; /* Contrast dark bar like in some parts of Image 2 */
-    color: white;
-    padding: 60px;
-    border-radius: 40px;
+/* --- Cards Layout (Services & Grid) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 50px 0;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--primary-gold);
+}
+
+.card h3 {
+    color: var(--primary-gold);
+    margin-bottom: 15px;
+}
+
+/* --- FAQ Section --- */
+.faq-section {
+    background: var(--white);
+    padding: 50px;
+    border-radius: 20px;
+    margin: 50px 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+.faq-item h4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* --- Stats/Results Bar --- */
+.stats-bar {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
     display: flex;
     justify-content: space-around;
+    text-align: center;
+    box-shadow: var(--card-shadow);
 }
 
 .stat-item h2 {
-    font-size: 48px;
-    color: var(--brand-gold);
+    color: var(--primary-gold);
+    font-size: 2.5rem;
+}
+
+/* --- Footer --- */
+footer {
+    background: #111;
+    color: white;
+    padding: 50px 0;
+    margin-top: 100px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .hero { flex-direction: column; text-align: center; }
+    .footer-content { grid-template-columns: 1fr 1fr; }
 }
