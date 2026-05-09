@@ -2298,6 +2298,124 @@
     color: #ffffff;
     margin: 0;
 }
+           /* AI Icons */
+    .ai-icon-group {
+        display: flex;
+        gap: 12px;
+    }
+
+    .ai-tool-icon {
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .ai-tool-icon img {
+        width: 100%;
+        filter: grayscale(0);
+    }
+
+    /* Social Icons Box Style */
+    .social-icon-group {
+        display: flex;
+        gap: 10px;
+    }
+
+    .social-box {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .fb { background-color: #3b5998; }
+    .li { background-color: #0077b5; }
+    .pi { background-color: #bd081c; }
+    .in { background-color: #3f729b; }
+
+/* --- AI AUR SOCIAL ICONS KO LINE MEIN LANE KE LIYE --- */
+
+/* 1. AI Icons Alignment */
+.icon-group {
+    display: flex !important; /* Icons ko ek line mein layega */
+    gap: 15px; /* Icons ke darmiyan space */
+    margin-top: 15px;
+    flex-wrap: wrap; /* Mobile par automatic adjust hoga */
+}
+
+.ai-icon {
+    width: 40px;
+    height: 40px;
+    background: #fff; /* White box jaisa screenshot mein tha */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000; /* Icons ka color black */
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+/* 2. Social Icons Alignment */
+.social-icon-group {
+    display: flex !important;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.soc-btn {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Icons ka color white */
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Social Media Specific Colors */
+.fb-bg { background-color: #3b5998; }
+.li-bg { background-color: #0077b5; }
+.in-bg { background-color: #e4405f; }
+.tk-bg { background-color: #000; border: 1px solid #333; }
+.sc-bg { background-color: #fffc00; color: #000; }
+.li-bg { background-color: #0077b5; } /* LinkedIn */
+
+/* Hover Effect */
+.soc-btn:hover, .ai-icon:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.1);
+}
+    /* Bottom Bar */
+    .footer-bottom {
+        max-width: 1300px;
+        margin: 40px auto 0;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #222;
+        padding-top: 20px;
+        font-size: 12px;
+        color: #666;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+        .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        .footer-middle { flex-direction: column; gap: 30px; }
+    }
 </style>
 <footer class="main-footer">
     <div class="footer-grid">
