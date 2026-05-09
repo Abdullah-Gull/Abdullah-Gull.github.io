@@ -1100,76 +1100,130 @@
 </section>
 
 <style>
-    /* Section Styling */
-    .ai-ask-section { 
-        padding: 100px 8%; 
-        background-color: #000; 
-        text-align: center; 
+    /* --- AI ASK SECTION (Advance Theme) --- */
+    .ai-verify-section { 
+        padding: 80px 8%; 
+        background-color: #ffffff; /* Clean White like the image */
+        text-align: center;
+        position: relative;
+        overflow: hidden;
     }
-    
-    .ai-title { font-size: 42px; font-weight: 800; color: #fff; margin-bottom: 10px; }
-    .ai-title .highlight { color: #f7d66d; } /* Website Gold */
-    
-    .ai-subtitle { color: #888; font-size: 18px; margin-bottom: 50px; }
 
-    /* Button Group */
-    .ai-button-group { 
+    .ai-container { max-width: 1000px; margin: 0 auto; }
+
+    /* Title Styling */
+    .ai-title { 
+        font-size: 40px; 
+        font-weight: 800; 
+        color: #1A1D1F; 
+        margin-bottom: 12px; 
+        letter-spacing: -1px;
+    }
+    .ai-title span { 
+        color: #FF8C00; /* Signature Orange */
+        position: relative;
+    }
+
+    .ai-subtitle { 
+        color: #6F767E; 
+        font-size: 16px; 
+        max-width: 600px; 
+        margin: 0 auto 50px; 
+        line-height: 1.6; 
+    }
+
+    /* Buttons Group - Image 2 Layout */
+    .ai-btn-wrapper { 
         display: flex; 
         justify-content: center; 
         gap: 20px; 
         flex-wrap: wrap; 
     }
-    
-    /* Pill Styled Buttons */
-    .ai-btn {
-        background: #fff; /* White background as per image 2 */
-        color: #000; 
-        padding: 15px 35px;
+
+    /* Primary Orange Pill (The Active one) */
+    .ai-btn-primary {
+        background: linear-gradient(135deg, #FF8C00, #E67E22);
+        color: #fff !important;
+        padding: 14px 35px;
         border-radius: 100px;
         text-decoration: none;
-        font-size: 18px;
         font-weight: 700;
+        font-size: 16px;
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
+        box-shadow: 0 10px 25px rgba(230, 126, 34, 0.25);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: none;
+    }
+
+    /* Secondary White Pills (Glass Effect) */
+    .ai-btn-outline {
+        background: #fff;
+        color: #1A1D1F !important;
+        padding: 14px 35px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid #EDEDED;
         transition: 0.3s ease;
-        border: 1px solid transparent;
     }
 
-    /* Real Logo Resizing */
-    .ai-btn img { 
-        width: 24px; 
-        height: 24px; 
-        object-fit: contain; 
-    }
-    
-    .ai-btn:hover { 
-        background: #f0f0f0; 
+    /* Advance Hover Effects */
+    .ai-btn-primary:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 15px 35px rgba(230, 126, 34, 0.4);
     }
 
+    .ai-btn-outline:hover {
+        border-color: #FF8C00;
+        color: #FF8C00 !important;
+        background: #FFF9F4;
+        transform: translateY(-3px);
+    }
+
+    /* Icon Sizing inside pills */
+    .ai-btn img, .ai-btn i {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+
+    /* Mobile adjustments */
     @media (max-width: 768px) {
-        .ai-title { font-size: 32px; }
-        .ai-btn { width: 100%; justify-content: center; }
+        .ai-title { font-size: 30px; }
+        .ai-btn-wrapper { flex-direction: column; align-items: center; }
+        .ai-btn-primary, .ai-btn-outline { width: 100%; max-width: 300px; justify-content: center; }
     }
-    /* AI Buttons aur Service Buttons ko dobara black/dark karne ke liye */
-.cta-main-btn, 
-.audit-btn-gold,
-.audit-form-box button,
-.why-box {
-    background-color: #000 !important; /* Ya aapka dark theme color */
-    color: #fff !important;
-    text-decoration: none !important;
-}
-
-/* Agar aap chahte hain ke buttons image_634a1d.png ki tarah pure white na dikhein */
-.ai-model-links a {
-    background-color: transparent !important;
-    border: 1px solid #333;
-    color: #fff !important;
-}
 </style>
+
+<!-- HTML Structure -->
+<section class="ai-verify-section">
+    <div class="ai-container">
+        <h2 class="ai-title">Verify <span>Abdullah Gull</span> on AI</h2>
+        <p class="ai-subtitle">We invite you ask AI for your AI on the AI & personal care for.</p>
+        
+        <div class="ai-btn-wrapper">
+            <!-- Orange Pill like Image 2 -->
+            <a href="#" class="ai-btn-primary">
+                <i class="fas fa-robot"></i> AI Model 1
+            </a>
+            
+            <!-- White Outline Pills -->
+            <a href="#" class="ai-btn-outline">
+                <i class="fab fa-google"></i> AI Power
+            </a>
+            
+            <a href="#" class="ai-btn-outline">
+                <i class="fas fa-bolt"></i> AI Research
+            </a>
+        </div>
+    </div>
+</section>
     
 <section class="ppc-seo-comparison">
     <div class="container">
@@ -1200,91 +1254,99 @@
     </div>
 
     <style>
-        .ppc-seo-comparison {
-            background-color: #000000; /* Pure Black Background as per your preference */
-            color: #ffffff;
-            padding: 80px 20px;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            text-align: center;
-        }
+    /* --- PPC VS SEO SECTION (White & Orange Theme) --- */
+    .ppc-seo-comparison {
+        background-color: #ffffff; /* Clean White Background */
+        color: #1A1D1F;
+        padding: 80px 20px;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+    }
 
-        .ppc-seo-comparison .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .ppc-seo-comparison .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
-        .ppc-seo-comparison .main-title {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .ppc-seo-comparison .main-title {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #1A1D1F;
+    }
 
-        .ppc-seo-comparison .gold-text {
-            color: #D4AF37; /* Premium Gold Accent */
-        }
+    /* Orange Highlight for PPC vs SEO */
+    .ppc-seo-comparison .orange-text {
+        color: #FF8C00; 
+    }
 
-        .ppc-seo-comparison .intro-text {
-            font-size: 1.15rem;
-            color: #aaaaaa;
-            max-width: 800px;
-            margin: 0 auto 60px auto;
-            line-height: 1.6;
-        }
+    .ppc-seo-comparison .intro-text {
+        font-size: 1.1rem;
+        color: #6F767E;
+        max-width: 700px;
+        margin: 0 auto 60px auto;
+        line-height: 1.6;
+    }
 
-        .ppc-seo-comparison .comparison-flex {
-            display: flex;
-            gap: 40px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+    .ppc-seo-comparison .comparison-flex {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
-        .ppc-seo-comparison .service-box {
-            background: #0a0a0a; /* Deep black card */
-            border: 1px solid #1a1a1a;
-            border-radius: 15px;
-            flex: 1;
-            min-width: 320px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+    /* Service Card Styling (Image 3 Style) */
+    .ppc-seo-comparison .service-box {
+        background: #ffffff; 
+        border: 1px solid #EDEDED;
+        border-radius: 20px;
+        flex: 1;
+        min-width: 320px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* Very light shadow */
+    }
 
-        .ppc-seo-comparison .service-box:hover {
-            transform: translateY(-12px);
-            border-color: #D4AF37; /* Gold border on hover */
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.1);
-        }
+    /* Hover effect to match your premium look */
+    .ppc-seo-comparison .service-box:hover {
+        transform: translateY(-10px);
+        border-color: #FF8C00; 
+        box-shadow: 0 20px 40px rgba(255, 140, 0, 0.1);
+    }
 
-        .ppc-seo-comparison .box-header {
-            background-color: #111111;
-            padding: 25px;
-            border-bottom: 1px solid #1a1a1a;
-        }
+    /* Header inside the card */
+    .ppc-seo-comparison .box-header {
+        background-color: #FFF9F4; /* Very light orange tint */
+        padding: 25px;
+        border-bottom: 1px solid #EDEDED;
+    }
 
-        .ppc-seo-comparison .box-header h3 {
-            color: #D4AF37; /* Gold Title for cards */
-            margin: 0;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
+    .ppc-seo-comparison .box-header h3 {
+        color: #FF8C00; 
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
 
-        .ppc-seo-comparison .box-body {
-            padding: 35px;
-            text-align: left;
-            line-height: 1.8;
-            color: #cccccc;
-            font-size: 1.05rem;
-        }
+    .ppc-seo-comparison .box-body {
+        padding: 35px;
+        text-align: left;
+        line-height: 1.8;
+        color: #444444;
+        font-size: 1.05rem;
+    }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .ppc-seo-comparison .main-title { font-size: 2.1rem; }
-            .ppc-seo-comparison .comparison-flex { flex-direction: column; }
-            .ppc-seo-comparison .service-box { min-width: 100%; }
-        }
-    </style>
+    /* Mobile Responsive Fix */
+    @media (max-width: 768px) {
+        .ppc-seo-comparison .main-title { font-size: 2rem; }
+        .ppc-seo-comparison .comparison-flex { flex-direction: column; }
+        .ppc-seo-comparison .service-box { min-width: 100%; }
+    }
+</style>
+    
 </section>
     
   <section class="modern-process-section">
@@ -1362,93 +1424,71 @@
     </div>
 
     <style>
-        :root {
-            --gold: #D4AF37;
-            --dark-bg: #0a0a0a;
-            --card-bg: #141414;
-        }
+    /* --- STRATEGIC ROADMAP (White & Orange) --- */
+    .modern-process-section {
+        background-color: #ffffff;
+        color: #1A1D1F;
+        padding: 100px 20px;
+        font-family: 'Inter', sans-serif;
+    }
 
-        .modern-process-section {
-            background-color: var(--dark-bg);
-            color: #fff;
-            padding: 100px 20px;
-            overflow: hidden;
-            font-family: 'Inter', sans-serif;
-        }
+    .layout-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 60px;
+        max-width: 1300px;
+        margin: 0 auto;
+        align-items: center;
+    }
 
-        .layout-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 80px;
-            max-width: 1400px;
-            margin: 0 auto;
-            align-items: center;
-        }
+    .section-title { font-size: 3.2rem; font-weight: 800; margin-bottom: 15px; color: #1A1D1F; }
+    .orange-highlight { color: #FF8C00; }
+    .section-desc { color: #6F767E; font-size: 1.1rem; margin-bottom: 50px; max-width: 500px; }
 
-        .section-title { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; line-height: 1; }
-        .gold-gradient { background: linear-gradient(to right, #D4AF37, #f3cf6d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .section-desc { color: #888; font-size: 1.1rem; margin-bottom: 50px; }
+    /* Timeline Styling */
+    .timeline { display: flex; flex-direction: column; gap: 25px; position: relative; }
+    .timeline::before { 
+        content: ''; position: absolute; left: 10px; top: 10px; bottom: 10px; 
+        width: 1px; background: #FF8C00; opacity: 0.3; 
+    }
 
-        /* Timeline Card Styling */
-        .timeline { display: flex; flex-direction: column; gap: 30px; position: relative; }
-        .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 1px; background: #222; }
+    .timeline-card {
+        background: #ffffff;
+        border: 1px solid #EDEDED;
+        padding: 25px 30px;
+        border-radius: 15px;
+        margin-left: 40px;
+        position: relative;
+        transition: 0.3s ease;
+    }
 
-        .timeline-card {
-            background: var(--card-bg);
-            border: 1px solid #1f1f1f;
-            padding: 30px;
-            border-radius: 20px;
-            margin-left: 50px;
-            position: relative;
-            transition: 0.4s ease;
-        }
+    .timeline-card::before {
+        content: ''; position: absolute; left: -35px; top: 30px;
+        width: 10px; height: 10px; border-radius: 50%; background: #FF8C00;
+        box-shadow: 0 0 10px rgba(255, 140, 0, 0.4);
+    }
 
-        .timeline-card::before {
-            content: ''; position: absolute; left: -40px; top: 35px;
-            width: 15px; height: 15px; border-radius: 50%; background: #222; border: 4px solid var(--dark-bg);
-        }
+    .timeline-card:hover { border-color: #FF8C00; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
-        .timeline-card:hover { transform: translateX(10px); border-color: var(--gold); }
-        .timeline-card:hover::before { background: var(--gold); box-shadow: 0 0 15px var(--gold); }
+    .step-tag { font-size: 0.75rem; color: #FF8C00; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; }
+    .timeline-card h3 { font-size: 1.4rem; margin: 5px 0 10px; font-weight: 700; color: #1A1D1F; }
+    .timeline-card p { color: #6F767E; font-size: 0.95rem; margin-bottom: 15px; }
 
-        .step-tag { font-size: 0.8rem; text-transform: uppercase; color: var(--gold); font-weight: 700; letter-spacing: 2px; }
-        .timeline-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
-        .timeline-card p { color: #666; font-size: 0.95rem; margin-bottom: 15px; }
+    .mini-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .mini-grid span { 
+        font-size: 0.8rem; font-weight: 600; padding: 4px 12px; 
+        border-radius: 50px; background: #FFF9F4; border: 1px solid #FFE0C2; color: #FF8C00;
+    }
 
-        .mini-grid { display: flex; flex-wrap: wrap; gap: 15px; }
-        .mini-grid span { font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 8px; background: #000; padding: 5px 12px; border-radius: 50px; border: 1px solid #1a1a1a; }
-        
-        .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
-        .dot.red { background: #ff4b4b; }
-        .dot.gold { background: var(--gold); }
-        .dot.green { background: #00ff88; }
-
-        /* Visual Display Mockup */
-        .visual-display { position: relative; }
-        .glass-bg {
-            position: absolute; width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
-            top: 50%; left: 50%; transform: translate(-50%, -50%);
-        }
-
-        .macbook-mockup {
-            background: #222; border: 10px solid #111; border-radius: 20px 20px 5px 5px;
-            overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.8);
-        }
-        .screen-top { height: 15px; background: #111; display: flex; align-items: center; justify-content: center; }
-        .screen-top::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #333; }
-        .screen-content img { width: 100%; display: block; opacity: 0.9; transition: 0.5s; }
-        .macbook-mockup:hover img { opacity: 1; transform: scale(1.02); }
-
-        .base-stand { width: 100%; height: 10px; background: #333; border-radius: 0 0 20px 20px; }
-
-        @media (max-width: 1024px) {
-            .layout-grid { grid-template-columns: 1fr; }
-            .section-title { font-size: 2.5rem; }
-            .visual-display { margin-top: 50px; }
-        }
-    </style>
-</section>
+    /* Visual Laptop Mockup */
+    .macbook-mockup {
+        background: #1A1D1F; border: 8px solid #111; border-radius: 15px;
+        overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+    }
+    .screen-content img { width: 100%; display: block; border-radius: 5px; }
+</style>
+  
+  </section>
 
     <section class="testimonial-section-gold">
     <div class="testi-container">
@@ -1474,97 +1514,85 @@
 
     </div>
 
-    <style>
-        .testimonial-section-gold {
-            background-color: #000; /* Page Background Black */
-            padding: 80px 0;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-        }
+   <style>
+    /* --- TESTIMONIAL (Modern Orange Style) --- */
+    .testimonial-section-gold {
+        background-color: #F8F8F8; /* Light gray background */
+        padding: 100px 0;
+        color: #1A1D1F;
+    }
 
-        .testi-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            padding: 0 20px;
-        }
+    .testi-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        padding: 0 20px;
+    }
 
-        .testi-left {
-            flex: 1;
-        }
+    .testi-left { flex: 1; }
+    .testi-left .sub-title {
+        color: #FF8C00;
+        font-size: 13px;
+        letter-spacing: 3px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        display: block;
+    }
+    .testi-left .main-title { font-size: 42px; font-weight: 800; line-height: 1.2; }
 
-        .testi-left .sub-title {
-            color: #D4AF37; /* Gold Subtitle */
-            font-size: 14px;
-            letter-spacing: 2px;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 10px;
-        }
+    /* The Orange Box */
+    .testi-right.gold-box-theme {
+        flex: 1.4;
+        background: linear-gradient(135deg, #FF8C00, #F39C12);
+        padding: 50px;
+        border-radius: 25px;
+        position: relative;
+        color: #ffffff;
+        box-shadow: 0 20px 40px rgba(255, 140, 0, 0.25);
+    }
 
-        .testi-left .main-title {
-            font-size: 45px;
-            font-weight: 700;
-            line-height: 1.1;
-        }
+    .testi-right.gold-box-theme .client-name {
+        font-size: 24px;
+        font-weight: 800;
+        margin-bottom: 15px;
+    }
 
-        /* The Gold "Pati" (Box) */
-        .testi-right.gold-box-theme {
-            flex: 1.5;
-            background-color: #D4AF37; /* Pure Gold Background */
-            padding: 60px;
-            border-radius: 10px;
-            position: relative;
-            color: #000; /* Black Text */
-        }
+    .testi-right.gold-box-theme .client-review {
+        font-size: 18px;
+        line-height: 1.7;
+        font-weight: 500;
+        margin-bottom: 30px;
+        font-style: italic;
+    }
 
-        .testi-right.gold-box-theme .client-name {
-            font-size: 26px;
-            font-weight: 800;
-            margin-bottom: 15px;
-            color: #000;
-        }
+    .testi-right.gold-box-theme .client-footer {
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding-top: 20px;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 
-        .testi-right.gold-box-theme .client-review {
-            font-size: 19px;
-            line-height: 1.6;
-            font-weight: 600;
-            margin-bottom: 25px;
-            color: #000;
-        }
+    .testi-arrow {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        font-size: 30px;
+        opacity: 0.3;
+    }
 
-        .testi-right.gold-box-theme .client-title {
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            opacity: 0.9;
-        }
-
-        .testi-arrow {
-            position: absolute;
-            top: 40px;
-            right: 40px;
-            font-size: 24px;
-        }
-
-        /* Mobile View */
-        @media (max-width: 768px) {
-            .testi-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .testi-right.gold-box-theme {
-                padding: 40px 20px;
-                text-align: left;
-            }
-            .testi-left .main-title {
-                font-size: 32px;
-            }
-        }
-    </style>
-</section>
+    /* Mobile responsiveness */
+    @media (max-width: 900px) {
+        .layout-grid, .testi-container { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
+        .timeline-card { margin-left: 20px; text-align: left; }
+        .testi-right.gold-box-theme { text-align: left; padding: 30px; }
+    }
+</style>
+    </section>
 
     <section class="results-section">
     <div class="results-card">
@@ -1597,131 +1625,137 @@
         </div>
     </div>
 
-    <style>
-        /* RESULTS SECTION - THEME: PREMIUM BLACK & GOLD */
+   <style>
+    /* --- RESULTS SECTION - PREMIUM WHITE & ORANGE (Image Inspired) --- */
+    .results-section {
+        background: #ffffff; /* Clean white background as per image */
+        padding: 80px 20px;
+        display: flex;
+        justify-content: center;
+        font-family: 'Inter', sans-serif;
+    }
 
-.results-section {
-    background: #000; /* Pure Black Background */
-    padding: 100px 20px;
-    display: flex;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
-}
+    .results-card {
+        background: #ffffff;
+        width: 100%;
+        max-width: 1000px;
+        border-radius: 30px;
+        border: 1px solid #EDEDED;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.4s ease;
+    }
 
-.results-card {
-    background: linear-gradient(145deg, #111, #050505); /* Subtle Depth */
-    width: 100%;
-    max-width: 1100px;
-    border-radius: 40px;
-    border: 1px solid rgba(212, 175, 55, 0.2); /* Faint Gold Border */
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8), 
-                0 0 20px rgba(212, 175, 55, 0.05);
-    overflow: hidden;
-    transition: transform 0.4s ease;
-}
+    /* Background Graph Decor (Inspired by Image) */
+    .results-card::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 150px;
+        height: 100px;
+        background: url('https://i.imgur.com/your-graph-icon.png') no-repeat; /* Aap yahan graph icon link daal sakte hain */
+        background-size: contain;
+        opacity: 0.1;
+        z-index: 0;
+    }
 
-.results-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(212, 175, 55, 0.5); /* Border Glow on Hover */
-}
+    /* Header Text */
+    .results-header {
+        padding: 50px 40px 10px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
 
-/* Header Text */
-.results-header {
-    padding: 60px 40px 20px;
-    text-align: center;
-}
+    .results-header h2 {
+        font-size: 32px;
+        font-weight: 800;
+        color: #1A1D1F;
+        margin-bottom: 10px;
+    }
 
-.results-header h2 {
-    font-size: 42px;
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 15px;
-    letter-spacing: -1px;
-}
+    .results-header p {
+        color: #6F767E;
+        font-size: 14px;
+        font-weight: 500;
+    }
 
-.results-header p {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 16px;
-    max-width: 600px;
-    margin: 0 auto;
-}
+    /* Stats Styling */
+    .results-stats {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 40px 20px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+    }
 
-/* Stats Styling */
-.results-stats {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px 20px;
-    flex-wrap: wrap;
-    gap: 30px;
-}
+    .stat-box {
+        text-align: center;
+        flex: 1;
+        min-width: 200px;
+        border-right: 1px solid #EDEDED; /* Vertical dividers like image */
+    }
 
-.stat-box {
-    text-align: center;
-    flex: 1;
-    min-width: 200px;
-}
+    .stat-box:last-child {
+        border-right: none;
+    }
 
-.stat-box .number {
-    display: block;
-    font-size: 65px;
-    font-weight: 900;
-    color: #D4AF37; /* Cinematic Gold */
-    background: linear-gradient(to bottom, #D4AF37, #8A6D3B);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
-    margin-bottom: 5px;
-}
+    .stat-box .number {
+        display: block;
+        font-size: 48px;
+        font-weight: 800;
+        color: #FF8C00; /* Signature Orange */
+        margin-bottom: 5px;
+    }
 
-.stat-box .label {
-    font-size: 14px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-    opacity: 0.8;
-}
+    .stat-box .label {
+        font-size: 14px;
+        color: #1A1D1F;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
 
-/* Bottom Logo Bar - Glassmorphism */
-.logo-bar {
-    background: rgba(212, 175, 55, 0.05); /* Very light gold tint */
-    backdrop-filter: blur(10px); /* Blur effect */
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 40px 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
+    .stat-box .sub-label {
+        display: block;
+        font-size: 12px;
+        color: #6F767E;
+        margin-top: 2px;
+    }
 
-.logo-item {
-    color: #fff;
-    font-size: 20px;
-    font-weight: 700;
-    opacity: 0.4;
-    filter: grayscale(100%);
-    transition: all 0.4s ease;
-    cursor: pointer;
-}
+    /* Bottom Logo Bar (Glass Style) */
+    .logo-bar {
+        background: #F8F9FA; /* Subtle gray bar at bottom */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 25px 30px;
+        border-top: 1px solid #EDEDED;
+    }
 
-.logo-item:hover {
-    opacity: 1;
-    filter: grayscale(0%);
-    transform: scale(1.1);
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
-}
+    .logo-item {
+        color: #1A1D1F;
+        font-size: 18px;
+        font-weight: 700;
+        opacity: 0.5;
+        transition: 0.3s;
+    }
 
-/* Specialized styles for text-logos to match */
-.logo-item span { font-size: 10px; opacity: 0.6; display: block; line-height: 1; }
-.meta { font-family: 'Inter', sans-serif; font-size: 24px; }
-.google { font-family: 'Product Sans', sans-serif; }
+    .logo-item:hover {
+        opacity: 1;
+        color: #FF8C00;
+    }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .results-header h2 { font-size: 32px; }
-    .stat-box .number { font-size: 45px; }
-    .logo-bar { flex-direction: column; gap: 30px; }
-}
-    </style>
+    /* Responsive */
+    @media (max-width: 768px) {
+        .stat-box { border-right: none; border-bottom: 1px solid #EDEDED; padding: 20px 0; }
+        .stat-box:last-child { border-bottom: none; }
+        .logo-bar { flex-wrap: wrap; gap: 20px; }
+    }
+</style>
 </section>
 
    <section class="premium-faq-cert-section">
