@@ -1200,29 +1200,6 @@
         .ai-btn-primary, .ai-btn-outline { width: 100%; max-width: 300px; justify-content: center; }
     }
 </style>
-
-<!-- HTML Structure -->
-<section class="ai-verify-section">
-    <div class="ai-container">
-        <h2 class="ai-title">Verify <span>Abdullah Gull</span> on AI</h2>
-        <p class="ai-subtitle">We invite you ask AI for your AI on the AI & personal care for.</p>
-        
-        <div class="ai-btn-wrapper">
-            <!-- Orange Pill like Image 2 -->
-            <a href="#" class="ai-btn-primary">
-                <i class="fas fa-robot"></i> AI Model 1
-            </a>
-            
-            <!-- White Outline Pills -->
-            <a href="#" class="ai-btn-outline">
-                <i class="fab fa-google"></i> AI Power
-            </a>
-            
-            <a href="#" class="ai-btn-outline">
-                <i class="fas fa-bolt"></i> AI Research
-            </a>
-        </div>
-    </div>
 </section>
     
 <section class="ppc-seo-comparison">
@@ -1840,42 +1817,189 @@
         </div>
     </div>
 
-    <style>
-        .premium-faq-cert-section { background-color: #000; color: #fff; padding: 120px 20px; font-family: 'Segoe UI', sans-serif; }
-        .premium-faq-cert-section .container { max-width: 1300px; margin: 0 auto; }
-        .main-layout-flex { display: flex; gap: 60px; flex-wrap: wrap; }
-        
-        .faq-column { flex: 2; min-width: 380px; }
-        .premium-faq-title { font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; }
-        .premium-gold-highlight { color: #D4AF37; }
-        .premium-faq-subtitle { font-size: 1.1rem; color: #888; margin-bottom: 50px; }
-        
-        .premium-faq-item { border-bottom: 1px solid #1a1a1a; transition: 0.3s; }
-        .premium-faq-question { width: 100%; padding: 22px 0; background: none; border: none; color: #fff; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .premium-faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; background-color: #050505; color: #aaa; }
-        .premium-faq-content p { padding: 0 0 20px 0; line-height: 1.8; }
-        .premium-faq-item.active .premium-faq-content { max-height: 300px; padding-top: 10px; }
-        .premium-faq-item.active .icon { transform: rotate(45deg); color: #D4AF37; }
-        .icon { font-size: 1.6rem; color: #444; transition: 0.3s; }
+   <style>
+    /* --- ADVANCED FAQ & CERT SECTION (White & Orange) --- */
+    .premium-faq-cert-section { 
+        background-color: #ffffff; 
+        color: #1A1D1F; 
+        padding: 100px 20px; 
+        font-family: 'Inter', sans-serif; 
+    }
 
-        /* Certification Card Styling */
-        .cert-column { flex: 1; min-width: 320px; }
-        .premium-cert-card { background: #0d0d0d; border: 1.5px solid #1a1a1a; padding: 45px 30px; text-align: center; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
-        .amazon-logo-fixed { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 30px; }
-        .ads-gold { color: #D4AF37; }
-        
-        .cert-list { text-align: left; margin-bottom: 25px; display: inline-block; }
-        .cert-badge-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-        .badge-check { color: #000; background: #D4AF37; width: 20px; height: 20px; border-radius: 50%; font-size: 12px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
-        .cert-name-text { font-weight: 700; color: #fff; margin: 0; font-size: 1.1rem; }
-        
-        .five-star-rating { font-size: 28px; color: #D4AF37; margin: 20px 0; }
-        .premium-cert-desc { font-size: 0.95rem; color: #666; line-height: 1.5; }
+    .premium-faq-cert-section .container { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+    }
 
-        @media (max-width: 992px) { .main-layout-flex { flex-direction: column; } }
-    </style>
+    .main-layout-flex { 
+        display: flex; 
+        gap: 50px; 
+        align-items: flex-start;
+    }
 
-    <script>
+    /* --- FAQ SIDE --- */
+    .faq-column { flex: 1.5; }
+
+    .premium-faq-title { 
+        font-size: 2.8rem; 
+        font-weight: 900; 
+        margin-bottom: 10px; 
+        letter-spacing: -1px;
+    }
+
+    .orange-highlight { color: #FF8C00; }
+
+    .premium-faq-subtitle { 
+        font-size: 1.1rem; 
+        color: #6F767E; 
+        margin-bottom: 40px; 
+        max-width: 500px;
+    }
+
+    .faq-wrapper {
+        border-top: 2px solid #f0f0f0;
+    }
+
+    .premium-faq-item { 
+        border-bottom: 1px solid #f0f0f0; 
+        transition: 0.3s ease; 
+    }
+
+    .premium-faq-question { 
+        width: 100%; 
+        padding: 25px 0; 
+        background: none; 
+        border: none; 
+        color: #1A1D1F; 
+        text-align: left; 
+        font-size: 1.15rem; 
+        font-weight: 700; 
+        cursor: pointer; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+    }
+
+    .premium-faq-question:hover { color: #FF8C00; }
+
+    .faq-icon {
+        width: 30px;
+        height: 30px;
+        background: #FFF9F4;
+        color: #FF8C00;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: 0.3s;
+    }
+
+    .premium-faq-item.active .faq-icon {
+        background: #FF8C00;
+        color: #fff;
+        transform: rotate(45deg);
+    }
+
+    .premium-faq-content { 
+        max-height: 0; 
+        overflow: hidden; 
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+        color: #6F767E; 
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .premium-faq-item.active .premium-faq-content { 
+        max-height: 200px; 
+        padding-bottom: 25px; 
+    }
+
+    /* --- CERTIFICATION CARD (The "Tagra" Look) --- */
+    .cert-column { flex: 1; position: sticky; top: 50px; }
+
+    .premium-cert-card { 
+        background: #ffffff; 
+        border: 1px solid #EDEDED; 
+        padding: 50px 40px; 
+        text-align: center; 
+        border-radius: 35px; 
+        box-shadow: 0 30px 70px rgba(0,0,0,0.06); 
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Top Accent Line */
+    .premium-cert-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 8px;
+        background: linear-gradient(90deg, #FF8C00, #FFA500);
+    }
+
+    .cert-badge-wrapper {
+        background: #FFF9F4;
+        color: #FF8C00;
+        display: inline-block;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+
+    .cert-list { 
+        text-align: left; 
+        margin: 30px 0; 
+    }
+
+    .cert-badge-item { 
+        display: flex; 
+        align-items: center; 
+        gap: 15px; 
+        margin-bottom: 20px; 
+    }
+
+    .check-circle { 
+        color: #fff; 
+        background: #FF8C00; 
+        min-width: 24px; 
+        height: 24px; 
+        border-radius: 50%; 
+        font-size: 12px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+    }
+
+    .cert-name-text { 
+        font-weight: 700; 
+        color: #1A1D1F; 
+        font-size: 1.05rem; 
+    }
+    
+    .rating-stars { 
+        font-size: 24px; 
+        color: #FF8C00; 
+        margin-bottom: 10px; 
+    }
+
+    .rating-text {
+        font-size: 0.9rem;
+        color: #6F767E;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 992px) { 
+        .main-layout-flex { flex-direction: column; } 
+        .cert-column { width: 100%; position: static; }
+    }
+</style>
+<script>
         document.querySelectorAll('.premium-faq-question').forEach(btn => {
             btn.addEventListener('click', () => {
                 const item = btn.parentElement;
@@ -1899,275 +2023,293 @@
             </div>
         </div>
     </div>
-
-    <style>
-        .cta-scale-section {
-            background-color: #000; /* Pure black to match your theme */
-            padding: 100px 20px;
-            text-align: center;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-        }
-
-        .cta-scale-section .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .cta-title {
-            color: #fff;
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 25px;
-            letter-spacing: -1px;
-        }
-
-        /* Amazon style highlight */
-        .cta-highlight {
-            position: relative;
-            display: inline-block;
-        }
-
-        .cta-highlight::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: #D4AF37; /* Gold accent */
-            border-radius: 2px;
-            /* Curved effect like the Amazon orange smile */
-            border-bottom-right-radius: 50%;
-            border-bottom-left-radius: 50%;
-        }
-
-        .cta-description {
-            color: #888;
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 45px;
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Premium Button Styling */
-        .cta-main-btn {
-            display: inline-flex;
-            align-items: center;
-            background-color: #000;
-            color: #fff;
-            padding: 18px 45px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            border: 2px solid #333;
-            transition: all 0.3s ease;
-        }
-
-        .cta-main-btn:hover {
-            border-color: #D4AF37;
-            background-color: #0d0d0d;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-            transform: translateY(-3px);
-        }
-
-        .arrow {
-            margin-left: 15px;
-            font-size: 1.4rem;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-main-btn:hover .arrow {
-            transform: translateX(5px);
-        }
-
-        @media (max-width: 768px) {
-            .cta-title { font-size: 2.2rem; }
-            .cta-description { font-size: 1rem; }
-        }
-    </style>
-</section>
-    
-        <style>
-    .main-footer {
-        background-color: #000;
-        color: #fff;
-        padding: 60px 40px 20px;
-        font-family: 'Arial', sans-serif;
-        border-top: 1px solid #222;
+<style>
+    /* --- ADVANCED CTA SECTION: PREMIUM WHITE & ORANGE --- */
+    .cta-scale-section {
+        background-color: #ffffff; /* Clean White Background */
+        padding: 120px 20px;
+        text-align: center;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        overflow: hidden;
     }
 
-    /* Grid Layout */
+    /* Background Blur Decoration for Depth */
+    .cta-scale-section::before {
+        content: "";
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        width: 300px;
+        height: 300px;
+        background: rgba(255, 140, 0, 0.05);
+        filter: blur(100px);
+        border-radius: 50%;
+    }
+
+    .cta-scale-section .container {
+        max-width: 850px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .cta-title {
+        color: #1A1D1F;
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 25px;
+        letter-spacing: -2px;
+        line-height: 1.1;
+    }
+
+    /* Modern Gradient Highlight */
+    .cta-highlight {
+        background: linear-gradient(to right, #FF8C00, #FFA500);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+    }
+
+    .cta-description {
+        color: #6F767E;
+        font-size: 1.25rem;
+        line-height: 1.7;
+        margin-bottom: 50px;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Premium Magnetic Button Effect */
+    .cta-btn-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .cta-main-btn {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        background-color: #1A1D1F; /* Dark Carbon */
+        color: #fff;
+        padding: 20px 50px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 100px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-main-btn:hover {
+        transform: translateY(-5px) scale(1.02);
+        background-color: #FF8C00; /* Switches to Orange on Hover */
+        box-shadow: 0 25px 50px rgba(255, 140, 0, 0.3);
+        color: #fff;
+    }
+
+    .cta-secondary-btn {
+        display: inline-flex;
+        align-items: center;
+        background-color: transparent;
+        color: #1A1D1F;
+        padding: 20px 40px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 100px;
+        border: 2px solid #EDEDED;
+        transition: 0.3s ease;
+    }
+
+    .cta-secondary-btn:hover {
+        border-color: #1A1D1F;
+        background: #F8F9FA;
+    }
+
+    .arrow-icon {
+        margin-left: 12px;
+        width: 20px;
+        height: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .cta-main-btn:hover .arrow-icon {
+        transform: translateX(8px);
+    }
+
+    /* Trust Badge below Button */
+    .cta-trust-badge {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: #9A9FA5;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        background: #FF8C00;
+        border-radius: 50%;
+    }
+
+    @media (max-width: 768px) {
+        .cta-title { font-size: 2.5rem; }
+        .cta-description { font-size: 1.1rem; }
+        .cta-btn-group { flex-direction: column; }
+    }
+</style>
+</section>
+   <style>
+    /* --- ADVANCED FOOTER: CARBON & ORANGE GLOW --- */
+    .main-footer {
+        background-color: #0d0d0d; /* Deep Carbon Black */
+        color: #ffffff;
+        padding: 100px 40px 30px;
+        font-family: 'Inter', sans-serif;
+        border-top: 1px solid rgba(255, 140, 0, 0.1);
+        position: relative;
+    }
+
+    /* Subtle Top Glow */
+    .main-footer::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #FF8C00, transparent);
+    }
+
     .footer-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        max-width: 1300px;
-        margin: 0 auto 50px;
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr; /* Asymmetric grid for modern look */
+        gap: 60px;
+        max-width: 1250px;
+        margin: 0 auto 80px;
     }
 
     .footer-col h4 {
-        font-size: 16px;
-        font-weight: bold;
+        font-size: 14px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        color: #FF8C00; /* Signature Orange */
+    }
+
+    .footer-col p {
+        font-size: 14px;
+        color: #9A9FA5;
+        line-height: 1.8;
         margin-bottom: 20px;
-        color: #fff;
     }
 
-    .footer-col ul {
-        list-style: none;
-        padding: 0;
-    }
-
+    .footer-col ul { list-style: none; padding: 0; }
     .footer-col ul li {
-        font-size: 13px;
-        color: #ccc;
-        margin-bottom: 8px;
-        cursor: pointer;
-        transition: 0.2s;
+        font-size: 15px;
+        color: #9A9FA5;
+        margin-bottom: 12px;
+        transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        align-items: center;
     }
 
     .footer-col ul li:hover {
-        color: #f7d66d;
+        color: #ffffff;
+        transform: translateX(8px);
     }
 
-    /* Middle Section */
-    .footer-middle {
-        max-width: 1300px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 30px 0;
-        border-top: 1px solid #1a1a1a;
-    }
-
-    .footer-box-title {
-        display: block;
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 15px;
-        color: #fff;
-    }
-
-    /* AI Icons */
+    /* AI Tool Box Styling */
     .ai-icon-group {
         display: flex;
         gap: 12px;
+        margin-top: 20px;
     }
 
-    .ai-tool-icon {
+    .ai-tool-box {
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .ai-tool-box:hover {
+        background: rgba(255, 140, 0, 0.1);
+        border-color: #FF8C00;
+        transform: translateY(-5px);
+    }
+
+    /* Social Icons - Sleek Minimalist */
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-item {
         width: 40px;
         height: 40px;
-        background: #fff;
-        border-radius: 8px;
+        border-radius: 50%;
+        background: #1A1D1F;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 8px;
-    }
-
-    .ai-tool-icon img {
-        width: 100%;
-        filter: grayscale(0);
-    }
-
-    /* Social Icons Box Style */
-    .social-icon-group {
-        display: flex;
-        gap: 10px;
-    }
-
-    .social-box {
-        width: 35px;
-        height: 35px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        border-radius: 4px;
+        color: #ffffff;
         text-decoration: none;
         font-size: 16px;
+        transition: 0.4s;
+        border: 1px solid #222;
     }
 
-    .fb { background-color: #3b5998; }
-    .li { background-color: #0077b5; }
-    .pi { background-color: #bd081c; }
-    .in { background-color: #3f729b; }
+    .social-item:hover {
+        background: #FF8C00;
+        color: #000;
+        border-color: #FF8C00;
+        box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+    }
 
-/* --- AI AUR SOCIAL ICONS KO LINE MEIN LANE KE LIYE --- */
+    /* Newsletter / Contact Box */
+    .contact-cta {
+        background: #1A1D1F;
+        padding: 25px;
+        border-radius: 20px;
+        border: 1px solid #222;
+    }
 
-/* 1. AI Icons Alignment */
-.icon-group {
-    display: flex !important; /* Icons ko ek line mein layega */
-    gap: 15px; /* Icons ke darmiyan space */
-    margin-top: 15px;
-    flex-wrap: wrap; /* Mobile par automatic adjust hoga */
-}
-
-.ai-icon {
-    width: 40px;
-    height: 40px;
-    background: #fff; /* White box jaisa screenshot mein tha */
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000; /* Icons ka color black */
-    font-size: 18px;
-    transition: 0.3s ease;
-}
-
-/* 2. Social Icons Alignment */
-.social-icon-group {
-    display: flex !important;
-    gap: 12px;
-    margin-top: 15px;
-}
-
-.soc-btn {
-    width: 35px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff; /* Icons ka color white */
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-/* Social Media Specific Colors */
-.fb-bg { background-color: #3b5998; }
-.li-bg { background-color: #0077b5; }
-.in-bg { background-color: #e4405f; }
-.tk-bg { background-color: #000; border: 1px solid #333; }
-.sc-bg { background-color: #fffc00; color: #000; }
-.li-bg { background-color: #0077b5; } /* LinkedIn */
-
-/* Hover Effect */
-.soc-btn:hover, .ai-icon:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.1);
-}
     /* Bottom Bar */
     .footer-bottom {
-        max-width: 1300px;
-        margin: 40px auto 0;
+        max-width: 1250px;
+        margin: 0 auto;
+        padding-top: 30px;
+        border-top: 1px solid #1A1D1F;
         display: flex;
         justify-content: space-between;
-        border-top: 1px solid #222;
-        padding-top: 20px;
-        font-size: 12px;
-        color: #666;
+        align-items: center;
+        font-size: 13px;
+        color: #6F767E;
     }
 
-    /* Mobile Responsive */
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
         .footer-grid { grid-template-columns: repeat(2, 1fr); }
-        .footer-middle { flex-direction: column; gap: 30px; }
+    }
+
+    @media (max-width: 600px) {
+        .footer-grid { grid-template-columns: 1fr; }
+        .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
     }
 </style>
 <footer class="main-footer">
