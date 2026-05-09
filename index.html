@@ -1591,64 +1591,114 @@
     </div>
 
  <style>
-    /* --- RESULTS SECTION: ORANGE THEME --- */
-    .results-container {
-        background-color: #FF8C00; /* Bright Orange background */
-        border-radius: 20px 20px 0 0; /* Sirf upar ke corners round hain jaisa image mein hai */
-        padding: 60px 40px;
-        text-align: center;
-        color: #ffffff; /* Poore section ka text white */
-    }
+    /* --- PREMIUM RESULTS CARD (SAME AS IMAGE) --- */
+.results-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    max-width: 900px;
+    margin: 40px auto;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+}
 
-    .results-container h2 {
-        color: #ffffff !important;
-        font-size: 32px;
-        font-weight: 800;
-        margin-bottom: 10px;
-    }
+/* Header Section with Graph line */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
 
-    .results-container p {
-        color: rgba(255, 255, 255, 0.9); /* Halka sa transparent white description ke liye */
-        font-size: 16px;
-        margin-bottom: 40px;
-    }
+.card-title-area { text-align: left; }
 
-    /* Stats Grid */
-    .stats-row {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.2); /* White line for separation */
-        padding-top: 40px;
-    }
+.card-title-area h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 8px 0;
+}
 
-    .stat-box {
-        flex: 1;
-    }
+.card-title-area p {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
 
-    /* Numbers (15+, $1M+, 5+) */
-    .stat-number {
-        color: #ffffff !important; /* Numbers ko orange se white kr diya */
-        font-size: 48px;
-        font-weight: 900;
-        display: block;
-        margin-bottom: 5px;
-    }
+/* Stats Row */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+    position: relative;
+}
 
-    /* Labels (Brand managed, Revenue, etc.) */
-    .stat-label {
-        color: #ffffff;
-        font-size: 14px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
+.stat-item {
+    text-align: center;
+    position: relative;
+}
 
-    /* Vertical Dividers (Optional - jaisa image mein halki lines hain) */
-    .stat-box:not(:last-child) {
-        border-right: 1px solid rgba(255, 255, 255, 0.2);
-    }
-</style>
+/* Vertical Divider */
+.stat-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: #eee;
+}
+
+.stat-val {
+    display: block;
+    font-size: 36px;
+    font-weight: 900;
+    color: #FF8C00; /* Signature Orange */
+    margin-bottom: 5px;
+}
+
+.stat-desc {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-transform: capitalize;
+}
+
+/* Bottom Partner Bar (Light Gray) */
+.card-footer {
+    background: #f9f9f9;
+    margin: 30px -40px -40px -40px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+}
+
+.partner-logos {
+    display: flex;
+    gap: 30px;
+    opacity: 0.6;
+    filter: grayscale(100%);
+}
+
+/* Small Graph Accent (Top Right) */
+.graph-accent {
+    width: 120px;
+    height: auto;
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .stat-item:after { display: none; }
+    .card-footer { flex-direction: column; gap: 15px; }
+}</style>
 </section>
 
    <section class="premium-faq-cert-section">
@@ -2227,6 +2277,67 @@
         .footer-grid { grid-template-columns: 1fr; }
         .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
     }
+       /* --- FOOTER AI & SOCIAL ICONS STYLING --- */
+
+/* Icons Container */
+.footer-icon-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+/* AI Icons (ChatGPT, Claude, etc.) */
+.footer-icon-group i, 
+.footer-icon-group svg,
+.footer-icon-group img {
+    font-size: 20px;
+    color: #ffffff; /* Default color white */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Effect: Icons orange ho jayenge */
+.footer-icon-group i:hover, 
+.footer-icon-group svg:hover {
+    color: #FF8C00 !important; /* Signature Orange */
+    transform: translateY(-3px);
+}
+
+/* Social Media Icons Specific Colors (Optional) */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+/* Website jisa Orange touch */
+.social-links a:hover {
+    color: #FF8C00;
+}
+
+/* Alignment Fix for "Ask AI" Section */
+.footer-ai-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.footer-ai-section p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
 </style>
 <footer class="main-footer">
     <div class="footer-grid">
