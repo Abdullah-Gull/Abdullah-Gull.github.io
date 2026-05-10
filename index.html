@@ -796,7 +796,91 @@
         evt.currentTarget.className += " active";
     }
 </script>
+	
+<div class="elementor-element elementor-element-2af3cf8 e-flex e-con-boxed e-con e-parent" data-id="2af3cf8" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-8758898 exad-sticky-section-no exad-glass-effect-no elementor-widget elementor-widget-template" data-id="8758898" data-element_type="widget" data-e-type="widget" data-widget_type="template.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-template">
+					<div data-elementor-type="section" data-elementor-id="145062" class="elementor elementor-145062 elementor-location-single" data-elementor-post-type="elementor_library">
+			<div class="elementor-element elementor-element-90d0cc0 e-flex e-con-boxed e-con e-parent" data-id="90d0cc0" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-c32482c e-con-full e-flex e-con e-child" data-id="c32482c" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-1de3845 e-con-full e-flex e-con e-child" data-id="1de3845" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-117b6b9 trusted-by exad-sticky-section-no exad-glass-effect-no elementor-widget elementor-widget-text-editor" data-id="117b6b9" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>Trusted by major brands and Amazon FBA sellers:</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-122b385 exad-sticky-section-no exad-glass-effect-no elementor-widget elementor-widget-html" data-id="122b385" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+					<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById("logoGrid");
 
+  const logos = Array.from(container.querySelectorAll(".logo"));
+
+  const VISIBLE_COUNT = 12;
+  const SWAP_DELAY = 600;
+  const PAUSE_BETWEEN = 4000;
+  const FADE_DURATION = 600;
+
+  function updateVisibility() {
+    logos.forEach((logo, i) => {
+      if (i < VISIBLE_COUNT) {
+        logo.classList.remove("hidden");
+      } else {
+        logo.classList.add("hidden");
+      }
+    });
+  }
+
+  function swapLogo(visibleLogo, hiddenLogo) {
+    visibleLogo.classList.add("fade-out");
+
+    setTimeout(() => {
+
+      container.replaceChild(hiddenLogo, visibleLogo);
+      container.appendChild(visibleLogo);
+
+      visibleLogo.classList.remove("fade-out");
+
+      // refresh order reference
+      logos.length = 0;
+      logos.push(...container.querySelectorAll(".logo"));
+
+      updateVisibility();
+
+    }, FADE_DURATION);
+  }
+
+  function runWave() {
+    updateVisibility();
+
+    const visible = logos.filter((_, i) => i < VISIBLE_COUNT);
+    const hidden = logos.filter((_, i) => i >= VISIBLE_COUNT);
+
+    visible.forEach((logo, index) => {
+      setTimeout(() => {
+        const incoming = hidden[index % hidden.length];
+        if (!incoming) return;
+
+        swapLogo(logo, incoming);
+      }, index * SWAP_DELAY);
+    });
+
+    const totalTime =
+      VISIBLE_COUNT * SWAP_DELAY +
+      FADE_DURATION +
+      PAUSE_BETWEEN;
+
+    setTimeout(runWave, totalTime);
+  }
+
+  updateVisibility();
+  setTimeout(runWave, 1000);
+});
+</script>				</div>
+		
 <div class="elementor-element elementor-element-363dcea e-con-full logo-grid e-flex e-con e-child" data-id="363dcea" data-element_type="container" data-e-type="container" id="logoGrid">
 				<div class="elementor-element elementor-element-aceb191 elementor-widget__width-initial logo exad-sticky-section-no exad-glass-effect-no elementor-widget elementor-widget-image" data-id="aceb191" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
@@ -808,83 +892,18 @@
 </section>
 
 <style>
-    /* 1. Main Section - Pure & Professional */
-    .ag-text-brands {
-        background-color: #ffffff; /* Dark se White ho gaya */
-        padding: 100px 5%;
-        text-align: center;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .ag-container { max-width: 1100px; margin: 0 auto; }
-    
-    /* 2. Gold Label (Small Headline) */
-    .ag-gold-label {
-        color: #D4A017; /* High-end Gold */
-        font-size: 14px;
-        letter-spacing: 3px;
-        font-weight: 700;
-        margin-bottom: 12px;
-        text-transform: uppercase;
-    }
+    #logoGrid .logo.hidden {
+    display: none;
+}
 
-    /* 3. Description */
-    .ag-desc { 
-        color: #6F767E; 
-        font-size: 15px; 
-        margin-bottom: 50px; 
-        max-width: 600px; 
-        margin-left: auto; 
-        margin-right: auto; 
-    }
+#logoGrid .logo {
+    transition: opacity 0.6s ease;
+    opacity: 1;
+}
 
-    /* 4. Logo Grid - Matches Image Layout */
-    .ag-text-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px; /* Thora tight aur clean gap */
-        align-items: center;
-    }
-
-    /* 5. Brand Box Styling (Pill/Rounded) */
-    .ag-brand-name {
-        background: #ffffff;
-        color: #1A1D1F;
-        padding: 25px 15px;
-        border-radius: 16px; /* Soft rounded corners jaisa image mein hai */
-        border: 1px solid #F1F1F1; /* Halka sa border */
-        font-size: 18px;
-        font-weight: 700;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-
-    /* 6. Hover Effect - Image Style "Fiverr" Box Look */
-    .ag-brand-name:hover {
-        background-color: #FFF4E6; /* Soft Cream/Orange glow jaisa image mein Fiverr par hai */
-        border-color: #FF8C00;    /* Orange accent border */
-        color: #1A1D1F;
-        transform: translateY(-5px); /* Halka sa upar uthna */
-        box-shadow: 0 12px 30px rgba(255, 140, 0, 0.1);
-    }
-
-    /* Logo Image handling (agar aap text ki jagah image use karein) */
-    .ag-brand-name img {
-        max-width: 120px;
-        height: auto;
-        filter: grayscale(100%); /* Shuru mein professional gray */
-        opacity: 0.6;
-        transition: 0.3s;
-    }
-
-    .ag-brand-name:hover img {
-        filter: grayscale(0%); /* Hover par asli rang */
-        opacity: 1;
-    }
-
+#logoGrid .logo.fade-out {
+    opacity: 0;
+}
     /* Mobile Adaptability */
     @media (max-width: 992px) {
         .ag-text-grid { grid-template-columns: repeat(2, 1fr); }
