@@ -950,6 +950,55 @@
     @media (max-width: 480px) {
         .ag-brand-name { font-size: 15px; padding: 15px; }
     }
+	/* --- BRAND LOGO SECTION (Advance) --- */
+.brand-section {
+    padding: 60px 5%;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.brand-section p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 30px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Logos Container */
+.brand-grid {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px; /* Logos ke darmiyan fasla */
+    flex-wrap: wrap;
+}
+
+/* Individual Logo Styling */
+.brand-item img {
+    max-width: 150px; /* Logo ki width */
+    height: auto;
+    filter: grayscale(100%); /* Premium Gray Look */
+    opacity: 0.6;
+    transition: all 0.4s ease;
+}
+
+/* Hover Effect: Logo color mein aa jayega */
+.brand-item img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .brand-grid {
+        justify-content: center;
+        gap: 30px;
+    }
+    .brand-item img {
+        max-width: 120px;
+    }
+}
 </style>
         
         <section class="expertise-section">
