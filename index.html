@@ -1031,90 +1031,285 @@ a:focus {
 	
 	<body>
    <style>
-    /* 1. Slider Main Container - Super Clean White */
+   <!-- PREMIUM DARK MODE CSS -->
+<style>
+    /* --- MARKETPLACE SLIDER SECTION --- */
     .marketplace-slider-section {
-        background-color: #F8FAFB; /* Image 2 wala light background */
-        padding: 80px 0;
+        background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
+        padding: 100px 0;
         overflow: hidden;
-        white-space: nowrap;
         position: relative;
     }
 
-    /* 2. Moving Track */
-    .marketplace-track {
-        display: inline-flex;
-        gap: 30px; /* Thora zyada gap professional lagta hai */
-        animation: scroll-text 30s linear infinite;
+    .marketplace-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 5%;
     }
 
-    /* 3. Advance Individual Box Styling (Image 2 Look) */
-    .marketplace-box {
-        background: #ffffff; /* Pure White Box */
-        border: 1px solid rgba(255, 140, 0, 0.1); /* Halka sa orange border */
-        border-radius: 50px; /* Rounded pill shape jaisa image mein hai */
-        padding: 15px 50px;
-        min-width: 200px;
+    /* --- SECTION HEADER --- */
+    .marketplace-header {
         text-align: center;
-        /* Luxury Shadow Effect */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); 
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        cursor: pointer;
+        margin-bottom: 60px;
+        animation: fadeInDown 0.8s ease-out;
     }
 
-    /* 4. Text Styling - Orange & Professional */
-    .marketplace-box span {
-        color: #FF8C00; /* Dark Orange Text */
-        font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
-        font-size: 20px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        transition: 0.3s;
+    .marketplace-title {
+        font-size: 42px;
+        font-weight: 800;
+        color: var(--light-text);
+        margin-bottom: 16px;
+        letter-spacing: -0.5px;
     }
 
-    /* 5. Advance Hover Effect */
-    .marketplace-box:hover {
-        background: linear-gradient(135deg, #FF8C00, #ff6a00); /* Orange Gradient */
-        transform: translateY(-8px) scale(1.05); /* Upar uthna */
-        box-shadow: 0 15px 35px rgba(255, 140, 0, 0.3); /* Orange Glow */
-        border-color: transparent;
+    .marketplace-title span {
+        background: linear-gradient(135deg, #FF8C00, #FFB84D);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
-    .marketplace-box:hover span {
-        color: #ffffff; /* Hover par text white ho jaye ga */
+    .marketplace-subtitle {
+        font-size: 18px;
+        color: var(--subtle-gray);
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto;
     }
 
-    /* 6. Smooth Animation */
-    @keyframes scroll-text {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+    /* --- MARKETPLACE TRACK WRAPPER --- */
+    .marketplace-track-wrapper {
+        position: relative;
+        overflow: hidden;
+        padding: 40px 0;
     }
 
-    /* Pause on Hover */
-    .marketplace-slider-section:hover .marketplace-track {
+    .marketplace-track-wrapper::before,
+    .marketplace-track-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 200px;
+        height: 100%;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    .marketplace-track-wrapper::before {
+        left: 0;
+        background: linear-gradient(to right, var(--dark-bg), transparent);
+    }
+
+    .marketplace-track-wrapper::after {
+        right: 0;
+        background: linear-gradient(to left, var(--dark-bg), transparent);
+    }
+
+    /* --- MOVING TRACK --- */
+    .marketplace-track {
+        display: flex;
+        gap: 24px;
+        animation: scroll-marketplace 40s linear infinite;
+        will-change: transform;
+    }
+
+    .marketplace-track:hover {
         animation-play-state: paused;
     }
 
-    /* Optional: Side Gradients for Fade Effect */
-    .marketplace-slider-section::before,
-    .marketplace-slider-section::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        width: 150px;
-        height: 100%;
-        z-index: 2;
+    /* --- MARKETPLACE BOX STYLING --- */
+    .marketplace-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6));
+        border: 1px solid var(--border-color);
+        border-radius: 50px;
+        padding: 20px 50px;
+        min-width: 220px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        white-space: nowrap;
     }
 
-    .marketplace-slider-section::before {
-        left: 0;
-        background: linear-gradient(to right, #F8FAFB, transparent);
+    .marketplace-box i {
+        font-size: 24px;
+        color: var(--primary-orange);
+        transition: all 0.3s var(--transition-smooth);
     }
 
-    .marketplace-slider-section::after {
-        right: 0;
-        background: linear-gradient(to left, #F8FAFB, transparent);
+    .marketplace-box span {
+        color: var(--light-text);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        transition: all 0.3s var(--transition-smooth);
+    }
+
+    /* --- HOVER EFFECT --- */
+    .marketplace-box:hover {
+        background: linear-gradient(135deg, #FF8C00, #FFB84D);
+        transform: translateY(-8px) scale(1.08);
+        box-shadow: 0 16px 48px rgba(255, 140, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 140, 0, 0.5);
+    }
+
+    .marketplace-box:hover i {
+        color: #fff;
+        transform: scale(1.2) rotate(5deg);
+    }
+
+    .marketplace-box:hover span {
+        color: #fff;
+        font-weight: 800;
+    }
+
+    /* --- ANIMATION --- */
+    @keyframes scroll-marketplace {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-220px * 6 - 24px * 6));
+        }
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* --- RESPONSIVE DESIGN --- */
+    @media (max-width: 1024px) {
+        .marketplace-title {
+            font-size: 36px;
+        }
+
+        .marketplace-subtitle {
+            font-size: 16px;
+        }
+
+        .marketplace-slider-section {
+            padding: 80px 0;
+        }
+
+        .marketplace-box {
+            padding: 16px 40px;
+            min-width: 180px;
+        }
+
+        .marketplace-box span {
+            font-size: 14px;
+        }
+
+        .marketplace-box i {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .marketplace-header {
+            margin-bottom: 40px;
+        }
+
+        .marketplace-title {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .marketplace-subtitle {
+            font-size: 14px;
+        }
+
+        .marketplace-slider-section {
+            padding: 60px 0;
+        }
+
+        .marketplace-track-wrapper {
+            padding: 30px 0;
+        }
+
+        .marketplace-track-wrapper::before,
+        .marketplace-track-wrapper::after {
+            width: 100px;
+        }
+
+        .marketplace-box {
+            padding: 14px 32px;
+            min-width: 160px;
+            gap: 8px;
+        }
+
+        .marketplace-box span {
+            font-size: 13px;
+        }
+
+        .marketplace-box i {
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .marketplace-header {
+            margin-bottom: 30px;
+        }
+
+        .marketplace-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .marketplace-subtitle {
+            font-size: 12px;
+        }
+
+        .marketplace-slider-section {
+            padding: 40px 0;
+        }
+
+        .marketplace-track-wrapper {
+            padding: 20px 0;
+        }
+
+        .marketplace-track-wrapper::before,
+        .marketplace-track-wrapper::after {
+            width: 80px;
+        }
+
+        .marketplace-track {
+            gap: 16px;
+        }
+
+        .marketplace-box {
+            padding: 12px 24px;
+            min-width: 140px;
+            gap: 6px;
+        }
+
+        .marketplace-box span {
+            font-size: 12px;
+        }
+
+        .marketplace-box i {
+            font-size: 16px;
+        }
     }
 </style>
+
+<!-- ENSURE FONT AWESOME IS LINKED -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
 <section class="marketplace-slider-section">
     <div class="marketplace-track">
