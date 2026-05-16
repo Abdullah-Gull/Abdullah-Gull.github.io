@@ -797,208 +797,246 @@
     }
 </script>
 	
-<div class="elementor-element elementor-element-2af3cf8 e-flex e-con-boxed e-con e-parent" data-id="2af3cf8" data-element_type="container" data-e-type="container">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-8758898 exad-sticky-section-no exad-glass-effect-no elementor-widget elementor-widget-template" data-id="8758898" data-element_type="widget" data-e-type="widget" data-widget_type="template.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-template">
-					<div data-elementor-type="section" data-elementor-id="145062" class="elementor elementor-145062 elementor-location-single" data-elementor-post-type="elementor_library">
-			<div class="elementor-element elementor-element-90d0cc0 e-flex e-con-boxed e-con e-parent" data-id="90d0cc0" data-element_type="container" data-e-type="container">
-					<div class="e-con-inner">
-		<div class="elementor-element elementor-element-c32482c e-con-full e-flex e-con e-child" data-id="c32482c" data-element_type="container" data-e-type="container">
-		<div class="elementor-element elementor-element-1de3845 e-con-full e-flex e-con e-child" data-id="1de3845" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-117b6b9 trusted-by exad-sticky-section-no exad-glass-effect-no elementor-widget elementor-widget-text-editor" data-id="117b6b9" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>Trusted by major brands and Amazon FBA sellers:</p>								</div>
-				</div>
-				<div class="elementor-element elementor-element-122b385 exad-sticky-section-no exad-glass-effect-no elementor-widget elementor-widget-html" data-id="122b385" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
-				<div class="elementor-widget-container">
-					<script>
-    document.addEventListener("DOMContentLoaded", function () {
-  const container = document.getElementById("logoGrid");
+<div class="ag-brand-showcase">
+    <header class="ag-brand-showcase__header">
+        <p class="ag-brand-showcase__title">Trusted by major brands and Amazon FBA sellers:</p>
+    </header>
 
-  const logos = Array.from(container.querySelectorAll(".logo"));
+    <div class="ag-brand-grid" id="agLogoGrid">
+        
+        <div class="ag-brand-grid__item js-logo-node">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-gray-contecoffee-1.webp" alt="Conte Coffee" loading="lazy">
+        </div>
+        <div class="ag-brand-grid__item js-logo-node">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-gray-portland-syrups-1.webp" alt="Portland Syrups" loading="lazy">
+        </div>
+        <div class="ag-brand-grid__item js-logo-node">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-gray-puro-1-300x123.webp" alt="Puro Sound Labs" loading="lazy">
+        </div>
+        <div class="ag-brand-grid__item js-logo-node">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-home-chirp.gif" alt="Chirp" loading="lazy">
+        </div>
+        <div class="ag-brand-grid__item js-logo-node">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-home-macuhealth.gif" alt="MacuHealth" loading="lazy">
+        </div>
+        <div class="ag-brand-grid__item js-logo-node">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-nestle.webp" alt="Nestle" loading="lazy">
+        </div>
 
-  const VISIBLE_COUNT = 12;
-  const SWAP_DELAY = 600;
-  const PAUSE_BETWEEN = 4000;
-  const FADE_DURATION = 600;
+        <div class="ag-brand-grid__item js-logo-node">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-gray-contecoffee-1.webp" alt="Conte Coffee Core" loading="lazy">
+        </div>
+        <div class="ag-brand-grid__item js-logo-node">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-gray-puro-1-300x123.webp" alt="Puro Sound Labs Core" loading="lazy">
+        </div>
+        <div class="ag-brand-grid__item js-logo-node">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-home-macuhealth.gif" alt="MacuHealth Core" loading="lazy">
+        </div>
+        <div class="ag-brand-grid__item js-logo-node">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-gray-portland-syrups-1.webp" alt="Portland Syrups Core" loading="lazy">
+        </div>
+        <div class="ag-brand-grid__item js-logo-node">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-home-chirp.gif" alt="Chirp Core" loading="lazy">
+        </div>
+        <div class="ag-brand-grid__item js-logo-node">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-nestle.webp" alt="Nestle Core" loading="lazy">
+        </div>
 
-  function updateVisibility() {
-    logos.forEach((logo, i) => {
-      if (i < VISIBLE_COUNT) {
-        logo.classList.remove("hidden");
-      } else {
-        logo.classList.add("hidden");
-      }
-    });
-  }
-
-  function swapLogo(visibleLogo, hiddenLogo) {
-    visibleLogo.classList.add("fade-out");
-
-    setTimeout(() => {
-
-      container.replaceChild(hiddenLogo, visibleLogo);
-      container.appendChild(visibleLogo);
-
-      visibleLogo.classList.remove("fade-out");
-
-      // refresh order reference
-      logos.length = 0;
-      logos.push(...container.querySelectorAll(".logo"));
-
-      updateVisibility();
-
-    }, FADE_DURATION);
-  }
-
-  function runWave() {
-    updateVisibility();
-
-    const visible = logos.filter((_, i) => i < VISIBLE_COUNT);
-    const hidden = logos.filter((_, i) => i >= VISIBLE_COUNT);
-
-    visible.forEach((logo, index) => {
-      setTimeout(() => {
-        const incoming = hidden[index % hidden.length];
-        if (!incoming) return;
-
-        swapLogo(logo, incoming);
-      }, index * SWAP_DELAY);
-    });
-
-    const totalTime =
-      VISIBLE_COUNT * SWAP_DELAY +
-      FADE_DURATION +
-      PAUSE_BETWEEN;
-
-    setTimeout(runWave, totalTime);
-  }
-
-  updateVisibility();
-  setTimeout(runWave, 1000);
-});
-</script>				</div>
-		
-<div class="elementor-element elementor-element-363dcea e-con-full logo-grid e-flex e-con e-child" data-id="363dcea" data-element_type="container" data-e-type="container" id="logoGrid">
-				<div class="elementor-element elementor-element-aceb191 elementor-widget__width-initial logo exad-sticky-section-no exad-glass-effect-no elementor-widget elementor-widget-image" data-id="aceb191" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-
-					<div class="elementor-widget-container">
-    <img decoding="async" 
-         width="411" 
-         height="168" 
-         src="https://abdullah-gull.github.io/images/logo-gray-portland-syrups-1.webp" 
-         class="attachment-large size-large wp-image-158143" 
-         alt="Portland Syrups Logo" 
-         loading="lazy" 
-         srcset="https://abdullah-gull.github.io/images/logo-gray-portland-syrups-1.webp 411w" 
-         sizes="(max-width: 411px) 100vw, 411px" 
-         title="Amazon Agency | Amazon Experts | Amazon FBA Agency | Abdullah Gull Amazon 7">
-</div>
-   <div class="logo">
-    <div class="elementor-widget-container">
-        <img decoding="async" width="411" height="168" 
-             src="https://abdullah-gull.github.io/images/logo-home-macuhealth.gif" 
-             alt="MacuHealth Logo" loading="lazy" 
-             srcset="https://abdullah-gull.github.io/images/logo-home-macuhealth.gif 411w" 
-             sizes="(max-width: 411px) 100vw, 411px" 
-             title="Amazon Agency | Abdullah Gull">
     </div>
 </div>
 
-<div class="logo">
-    <div class="elementor-widget-container">
-        <img decoding="async" width="411" height="168" 
-             src="https://abdullah-gull.github.io/images/logo-nestle.webp" 
-             alt="Nestle Logo" loading="lazy" 
-             srcset="https://abdullah-gull.github.io/images/logo-nestle.webp 411w" 
-             sizes="(max-width: 411px) 100vw, 411px" 
-             title="Amazon Agency | Abdullah Gull">
-    </div>
-</div>
+<script>
+/**
+ * Dynamic Logo Fluid Matrix Controller
+ * Standard ES6+ Clean Architecture
+ */
+(function () {
+    'use strict';
 
-<div class="logo">
-    <div class="elementor-widget-container">
-        <img decoding="async" width="411" height="168" 
-             src="https://abdullah-gull.github.io/images/logo-home-chirp.gif" 
-             alt="Chirp Logo" loading="lazy" 
-             srcset="https://abdullah-gull.github.io/images/logo-home-chirp.gif 411w" 
-             sizes="(max-width: 411px) 100vw, 411px" 
-             title="Amazon Agency | Abdullah Gull">
-    </div>
-</div>
+    const CONFIG = {
+        visibleCount: 12,
+        swapDelay: 600,
+        pauseDuration: 4000,
+        fadeDuration: 600
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const matrixContainer = document.getElementById("agLogoGrid");
+        if (!matrixContainer) return;
+
+        // Fetching initial DOM nodes using isolated JS class handles
+        let logoPool = Array.from(matrixContainer.querySelectorAll(".js-logo-node"));
+
+        const syncMatrixVisibility = () => {
+            logoPool.forEach((node, index) => {
+                if (index < CONFIG.visibleCount) {
+                    node.classList.remove("ag-brand-grid__item--state-hidden");
+                } else {
+                    node.classList.add("ag-brand-grid__item--state-hidden");
+                }
+            });
+        };
+
+        const executeNodeSwap = (activeNode, queuedNode) => {
+            if (!activeNode || !queuedNode) return;
+
+            activeNode.classList.add("ag-brand-grid__item--state-fadeout");
+
+            setTimeout(() => {
+                if (matrixContainer.contains(activeNode)) {
+                    matrixContainer.replaceChild(queuedNode, activeNode);
+                    matrixContainer.appendChild(activeNode);
+                }
+
+                activeNode.classList.remove("ag-brand-grid__item--state-fadeout");
+
+                // Refreshing pipeline reference stack
+                logoPool = Array.from(matrixContainer.querySelectorAll(".js-logo-node"));
+                syncMatrixVisibility();
+
+            }, CONFIG.fadeDuration);
+        };
+
+        const triggerWaveCycle = () => {
+            syncMatrixVisibility();
+
+            const activeSet = logoPool.filter((_, i) => i < CONFIG.visibleCount);
+            const queuedSet = logoPool.filter((_, i) => i >= CONFIG.visibleCount);
+
+            if (queuedSet.length > 0) {
+                activeSet.forEach((node, idx) => {
+                    setTimeout(() => {
+                        const nextInboundNode = queuedSet[idx % queuedSet.length];
+                        if (nextInboundNode) executeNodeSwap(node, nextInboundNode);
+                    }, idx * CONFIG.swapDelay);
+                });
+            }
+
+            const operationCycleTime = (CONFIG.visibleCount * CONFIG.swapDelay) + CONFIG.fadeDuration + CONFIG.pauseDuration;
+            setTimeout(triggerWaveCycle, operationCycleTime);
+        };
+
+        // Initialization
+        syncMatrixVisibility();
+        if (logoPool.length > CONFIG.visibleCount) {
+            setTimeout(triggerWaveCycle, 1000);
+        }
+    });
+})();
+</script>
+
 <style>
-    #logoGrid .logo.hidden {
-    display: none;
+/* =========================================================================
+   Scoped Architecture Stylesheet (Luxury Brand Standards)
+   ========================================================================= */
+
+:root {
+    --ag-fallback-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --ag-color-text-dark: #2C2C2C;
+    --ag-transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-#logoGrid .logo {
-    transition: opacity 0.6s ease;
-    opacity: 1;
-}
-
-#logoGrid .logo.fade-out {
-    opacity: 0;
-}
-    /* Mobile Adaptability */
-    @media (max-width: 992px) {
-        .ag-text-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 480px) {
-        .ag-brand-name { font-size: 15px; padding: 15px; }
-    }
-	/* --- BRAND LOGO SECTION (Advance) --- */
-.brand-section {
-    padding: 60px 5%;
+/* Base Wrapper Optimization */
+.ag-brand-showcase {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 60px 24px;
     background-color: #ffffff;
-    text-align: left;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
 }
 
-.brand-section p {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 30px;
-    font-family: 'Inter', sans-serif;
+/* Typographic Layout */
+.ag-brand-showcase__title {
+    font-family: var(--ag-fallback-font);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--ag-color-text-dark);
+    text-align: center;
+    margin: 0 0 48px 0;
+    letter-spacing: -0.01em;
 }
 
-/* Logos Container */
-.brand-grid {
-    display: flex;
+/* CSS Grid Engine Setup - Perfect 6x2 Symmetry */
+.ag-brand-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 48px 36px;
     align-items: center;
-    justify-content: flex-start;
-    gap: 50px; /* Logos ke darmiyan fasla */
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* Individual Logo Styling */
-.brand-item img {
-    max-width: 150px; /* Logo ki width */
-    height: auto;
-    filter: grayscale(100%); /* Premium Gray Look */
-    opacity: 0.6;
-    transition: all 0.4s ease;
-}
-
-/* Hover Effect: Logo color mein aa jayega */
-.brand-item img:hover {
-    filter: grayscale(0%);
+/* Component Level Item Logic */
+.ag-brand-grid__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px; 
     opacity: 1;
+    will-change: opacity, transform;
+    transition: var(--ag-transition-smooth);
+}
+
+/* High-End Matrix Brand Vector Filters */
+.ag-brand-grid__img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    
+    /* Apple / Luxury Minimalist Color Grade Mask */
+    filter: brightness(0) saturate(100%) invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) opacity(0.7);
+    transition: var(--ag-transition-smooth);
+}
+
+/* Micro-Interaction States */
+.ag-brand-grid__item:hover .ag-brand-grid__img {
+    filter: brightness(0) saturate(100%) invert(10%) sepia(0%) saturate(0%) hue-rotate(0deg) opacity(1);
     transform: scale(1.05);
 }
 
-/* Mobile Responsive */
+/* Dynamic State Engine Rules */
+.ag-brand-grid__item--state-hidden {
+    display: none !important;
+}
+
+.ag-brand-grid__item--state-fadeout {
+    opacity: 0 !important;
+    transform: scale(0.97);
+}
+
+/* =========================================================================
+   Fluid Responsive Framework Breakpoints
+   ========================================================================= */
+
+@media (max-width: 1100px) {
+    .ag-brand-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px 28px;
+    }
+    .ag-brand-showcase { padding: 48px 20px; }
+}
+
 @media (max-width: 768px) {
-    .brand-grid {
-        justify-content: center;
-        gap: 30px;
+    .ag-brand-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 36px 24px;
     }
-    .brand-item img {
-        max-width: 120px;
+    .ag-brand-showcase__title { font-size: 14px; margin-bottom: 36px; }
+}
+
+@media (max-width: 480px) {
+    .ag-brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px 20px;
     }
+    .ag-brand-grid__item { height: 55px; }
+    .ag-brand-showcase { padding: 36px 16px; }
 }
 </style>
-				</section>
+</section>
         
         <section class="expertise-section">
     <div class="expertise-container">
