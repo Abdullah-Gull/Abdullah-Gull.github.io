@@ -975,6 +975,59 @@ a:focus {
     });
 </script>
 
+<!-- Additional CSS for Badge Styling -->
+<style>
+    .badge-new {
+        display: inline-block;
+        background: linear-gradient(135deg, #FF8C00, #FFB84D);
+        color: #fff;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-left: 8px;
+        text-transform: uppercase;
+    }
+
+    .free-tools {
+        transition: all 0.3s var(--transition-smooth) !important;
+    }
+
+    .free-tools:hover {
+        transform: translateX(4px);
+    }
+
+    /* Dropdown Wrapper Styling */
+    .dropdown-item-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .badge-new {
+            font-size: 10px;
+            padding: 2px 6px;
+            margin-left: 4px;
+        }
+
+        .mega-menu-panel {
+            padding: 20px !important;
+        }
+
+        .mega-col a {
+            font-size: 13px;
+        }
+    }
+</style>
 
 	
 	<body>
