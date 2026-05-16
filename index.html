@@ -824,32 +824,28 @@
         </div>
 
         <div class="ag-brand-grid__item js-logo-node">
-            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-gray-contecoffee-1.webp" alt="Conte Coffee Core" loading="lazy">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-gray-contecoffee-1.webp" alt="Conte Coffee Static" loading="lazy">
         </div>
         <div class="ag-brand-grid__item js-logo-node">
-            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-gray-puro-1-300x123.webp" alt="Puro Sound Labs Core" loading="lazy">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-gray-puro-1-300x123.webp" alt="Puro Sound Labs Static" loading="lazy">
         </div>
         <div class="ag-brand-grid__item js-logo-node">
-            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-home-macuhealth.gif" alt="MacuHealth Core" loading="lazy">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-home-macuhealth.gif" alt="MacuHealth Static" loading="lazy">
         </div>
         <div class="ag-brand-grid__item js-logo-node">
-            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-gray-portland-syrups-1.webp" alt="Portland Syrups Core" loading="lazy">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-gray-portland-syrups-1.webp" alt="Portland Syrups Static" loading="lazy">
         </div>
         <div class="ag-brand-grid__item js-logo-node">
-            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-home-chirp.gif" alt="Chirp Core" loading="lazy">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-home-chirp.gif" alt="Chirp Static" loading="lazy">
         </div>
         <div class="ag-brand-grid__item js-logo-node">
-            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-nestle.webp" alt="Nestle Core" loading="lazy">
+            <img class="ag-brand-grid__img" decoding="async" src="https://abdullah-gull.github.io/images/logo-nestle.webp" alt="Nestle Static" loading="lazy">
         </div>
 
     </div>
 </div>
 
 <script>
-/**
- * Dynamic Logo Fluid Matrix Controller
- * Standard ES6+ Clean Architecture
- */
 (function () {
     'use strict';
 
@@ -864,7 +860,6 @@
         const matrixContainer = document.getElementById("agLogoGrid");
         if (!matrixContainer) return;
 
-        // Fetching initial DOM nodes using isolated JS class handles
         let logoPool = Array.from(matrixContainer.querySelectorAll(".js-logo-node"));
 
         const syncMatrixVisibility = () => {
@@ -889,11 +884,8 @@
                 }
 
                 activeNode.classList.remove("ag-brand-grid__item--state-fadeout");
-
-                // Refreshing pipeline reference stack
                 logoPool = Array.from(matrixContainer.querySelectorAll(".js-logo-node"));
                 syncMatrixVisibility();
-
             }, CONFIG.fadeDuration);
         };
 
@@ -916,7 +908,6 @@
             setTimeout(triggerWaveCycle, operationCycleTime);
         };
 
-        // Initialization
         syncMatrixVisibility();
         if (logoPool.length > CONFIG.visibleCount) {
             setTimeout(triggerWaveCycle, 1000);
@@ -926,117 +917,86 @@
 </script>
 
 <style>
-/* =========================================================================
-   Scoped Architecture Stylesheet (Luxury Brand Standards)
-   ========================================================================= */
-
 :root {
-    --ag-fallback-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --ag-color-text-dark: #2C2C2C;
-    --ag-transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    --ag-fallback-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --ag-transition-smooth: all 0.3s ease-in-out;
 }
 
-/* Base Wrapper Optimization */
 .ag-brand-showcase {
     width: 100%;
-    max-width: 1240px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 24px;
+    padding: 60px 20px;
     background-color: #ffffff;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
 }
 
-/* Typographic Layout */
 .ag-brand-showcase__title {
     font-family: var(--ag-fallback-font);
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.5;
-    color: var(--ag-color-text-dark);
+    color: #333333;
     text-align: center;
-    margin: 0 0 48px 0;
-    letter-spacing: -0.01em;
+    margin: 0 0 40px 0;
 }
 
-/* CSS Grid Engine Setup - Perfect 6x2 Symmetry */
+/* Stable CSS Grid without complex filter mask crashes */
 .ag-brand-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 48px 36px;
+    gap: 40px 30px;
     align-items: center;
     justify-content: center;
 }
 
-/* Component Level Item Logic */
 .ag-brand-grid__item {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75px; 
+    height: 80px; 
     opacity: 1;
-    will-change: opacity, transform;
     transition: var(--ag-transition-smooth);
 }
 
-/* High-End Matrix Brand Vector Filters */
 .ag-brand-grid__img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    pointer-events: none;
-    
-    /* Apple / Luxury Minimalist Color Grade Mask */
-    filter: brightness(0) saturate(100%) invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) opacity(0.7);
+    /* Clean fallback grayscale standard */
+    filter: grayscale(100%);
+    opacity: 0.8;
     transition: var(--ag-transition-smooth);
 }
 
-/* Micro-Interaction States */
+/* Hover dynamic state */
 .ag-brand-grid__item:hover .ag-brand-grid__img {
-    filter: brightness(0) saturate(100%) invert(10%) sepia(0%) saturate(0%) hue-rotate(0deg) opacity(1);
-    transform: scale(1.05);
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.03);
 }
 
-/* Dynamic State Engine Rules */
+/* State Controls */
 .ag-brand-grid__item--state-hidden {
     display: none !important;
 }
 
 .ag-brand-grid__item--state-fadeout {
     opacity: 0 !important;
-    transform: scale(0.97);
 }
 
-/* =========================================================================
-   Fluid Responsive Framework Breakpoints
-   ========================================================================= */
-
-@media (max-width: 1100px) {
-    .ag-brand-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 40px 28px;
-    }
-    .ag-brand-showcase { padding: 48px 20px; }
+/* Responsive Scaling */
+@media (max-width: 1024px) {
+    .ag-brand-grid { grid-template-columns: repeat(4, 1fr); gap: 30px 20px; }
 }
-
 @media (max-width: 768px) {
-    .ag-brand-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 36px 24px;
-    }
-    .ag-brand-showcase__title { font-size: 14px; margin-bottom: 36px; }
+    .ag-brand-grid { grid-template-columns: repeat(3, 1fr); }
+    .ag-brand-showcase__title { font-size: 14px; }
 }
-
 @media (max-width: 480px) {
-    .ag-brand-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px 20px;
-    }
-    .ag-brand-grid__item { height: 55px; }
-    .ag-brand-showcase { padding: 36px 16px; }
+    .ag-brand-grid { grid-template-columns: repeat(2, 1fr); gap: 25px 15px; }
+    .ag-brand-grid__item { height: 60px; }
 }
 </style>
-</section>
         
         <section class="expertise-section">
     <div class="expertise-container">
