@@ -650,7 +650,7 @@ a:focus {
     <link rel="stylesheet" href="style.css">
 
 <body>
-    <header class="main-header">
+  <header class="main-header">
     <div class="header-container">
         <div class="logo-area">
             <img src="https://i.ibb.co/5h5KK51m/Abdullah-Gull.jpg" alt="Abdullah Gull">
@@ -727,6 +727,110 @@ a:focus {
         </div>
     </div>
 </header>
+<script>
+    // Mega Menu Toggle
+    function toggleMegaMenu(event) {
+        event.preventDefault();
+        const megaPanel = document.getElementById('megaPanel');
+        const isVisible = megaPanel.classList.contains('show-menu');
+        
+        // Close all other menus
+        document.querySelectorAll('.mega-menu-panel').forEach(panel => {
+            panel.classList.remove('show-menu');
+        });
+        
+        // Toggle current menu
+        if (!isVisible) {
+            megaPanel.classList.add('show-menu');
+        }
+    }
+
+    // Close mega menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const servicesToggle = document.getElementById('servicesToggle');
+        const megaPanel = document.getElementById('megaPanel');
+        
+        if (!servicesToggle.contains(event.target) && !megaPanel.contains(event.target)) {
+            megaPanel.classList.remove('show-menu');
+        }
+    });
+
+    // Set Active Nav Link Based on Current Page
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPage = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            
+            // Match current page
+            if (href === 'index.html' && (currentPage === '/' || currentPage.endsWith('index.html'))) {
+                link.classList.add('active');
+            } else if (href === 'about.html' && currentPage.includes('about')) {
+                link.classList.add('active');
+            } else if (href === 'blog.html' && currentPage.includes('blog')) {
+                link.classList.add('active');
+            } else if (href === 'contact.html' && currentPage.includes('contact')) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+
+<!-- Additional CSS for Badge Styling -->
+<style>
+    .badge-new {
+        display: inline-block;
+        background: linear-gradient(135deg, #FF8C00, #FFB84D);
+        color: #fff;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-left: 8px;
+        text-transform: uppercase;
+    }
+
+    .free-tools {
+        transition: all 0.3s var(--transition-smooth) !important;
+    }
+
+    .free-tools:hover {
+        transform: translateX(4px);
+    }
+
+    /* Dropdown Wrapper Styling */
+    .dropdown-item-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .badge-new {
+            font-size: 10px;
+            padding: 2px 6px;
+            margin-left: 4px;
+        }
+
+        .mega-menu-panel {
+            padding: 20px !important;
+        }
+
+        .mega-col a {
+            font-size: 13px;
+        }
+    }
+</style>    
     
 <body>
 </section>
