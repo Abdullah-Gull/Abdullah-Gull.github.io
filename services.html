@@ -14,205 +14,638 @@
     <link rel="icon" type="image/png" href="https://i.ibb.co/GvjXV0mL/favicon.png">
     <title>Abdullah Gull | Amazon Expert</title>
     </head>
-    <style>
-    :root {
-        --gold: #D4AF37;
-        --dark: #000000;
-        --glass: rgba(255, 255, 255, 0.05);
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { background-color: var(--dark); color: #fff; overflow-x: hidden; }
-
-    /* Floating Capsule Header */
-    .main-header { position: fixed; top: 20px; width: 100%; z-index: 1000; }
-    .header-container {
-        max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
-        align-items: center; background: rgba(0,0,0,0.8); backdrop-filter: blur(15px);
-        padding: 10px 25px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.1);
-    }
-                /* --- ISSE HEADER NORMAL SCROLL HOGA AUR SPACE KHATAM HO JAYEGI --- */
-
-header {
-
-    width: 100%;
-    background: #000;
-padding: 20px 0;
-
-    
-
-    /* In properties ko dhiyan se check karein */
-
-    position: relative !important; /* Fixed ya absolute ko cancel karne ke liye */
-    top: 0;
-    margin: 0;
-    display: block;
-    border-bottom: 1px solid rgba(247, 214, 109, 0.2);
-
+   <!-- Your Design Styles (Keep all your CSS here) -->
+ <style>
+    /* --- GLOBAL THEME VARIABLES --- */
+:root {
+    --primary-orange: #FF8C00;
+    --dark-bg: #0B0C0E;
+    --dark-secondary: #1A1B1F;
+    --light-text: #F5F5F7;
+    --subtle-gray: #8E8E93;
+    --border-color: #2A2B2F;
+    --glass-dark: rgba(255, 255, 255, 0.05);
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
-
-/* Isse niche wala content header ke saath jur jayega */
-
-.wrapper, .hero-section {
-    margin-top: 0 !important;
-    padding-top: 20px;
-}
-
-
-
-/* --- THE ULTIMATE LINE KILLER CODE --- */
-
-header {
-    width: 100%;
-    background: #000 !important;
-    padding: 20px 0;
-
-    
-
-    /* Line remove karne ke liye properties */
-    position: relative !important; 
-    display: block !important;
-    margin: 0 !important;
-    border: none !important; /* Kisi bhi kism ki border khatam */
-    outline: none !important; /* Outline bhi khatam */
-    box-shadow: none !important; /* Shadow jo line jaisi lagti hai, wo bhi khatam */
-
-}
-
-
-
-/* Isse niche wale content ko header ke andar halka sa push karenge taake gap ka chance hi na rahe */
-
-.wrapper, .hero-section, #hero {
-    margin-top: -1px !important; /* Negative margin line ko "overlap" kar ke chupa dega */
-    padding-top: 20px !important;
-    border-top: none !important;
-
-}
-
-
-
-/* Global reset taake koi aur element line na banaye */
 
 * {
- box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
 
-    .logo-area { display: flex; align-items: center; gap: 10px; }
-    .logo-area img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--gold); }
-    .logo-text { font-weight: 700; font-size: 18px; }
-    .logo-text span { color: var(--gold); }
+/* --- HEADER SECTION --- */
+.main-header {
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+    z-index: 1000;
+    background: var(--dark-bg);
+}
 
-    .nav-capsule { display: flex; background: var(--glass); padding: 5px; border-radius: 50px; gap: 5px; }
-    .nav-link { color: #ccc; text-decoration: none; padding: 8px 18px; font-size: 14px; border-radius: 50px; transition: 0.3s; }
-    .nav-link.active, .nav-link:hover { background: var(--gold); color: #000; font-weight: 600; }
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(26, 27, 31, 0.5), rgba(42, 43, 47, 0.3));
+    backdrop-filter: blur(20px);
+    padding: 12px 30px;
+    border-radius: 100px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.3s var(--transition-smooth);
+}
 
-    .get-in-touch-btn { 
-        text-decoration: none; color: #fff; border: 1.5px solid var(--gold); 
-        padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; transition: 0.3s;
-    }
-    .get-in-touch-btn:hover { background: var(--gold); color: #000; }
+.header-container:hover {
+    border-color: rgba(255, 140, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(255, 140, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
 
-    /* About Section Preview */
-    .about-preview { padding: 120px 10% 80px; display: flex; align-items: center; gap: 50px; }
-    .about-content h1 { font-size: 45px; margin-bottom: 20px; }
-    .about-content p { color: #aaa; line-height: 1.6; margin-bottom: 30px; }
-      /* Purple color hatane ke liye */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .logo-link {
-    color: #D4AF37 !important; /* Gold color */
-    text-decoration: none !important; /* Underline khatam karne ke liye */
-    font-weight: bold;
+    text-decoration: none !important;
+    color: var(--light-text) !important;
+    transition: all 0.3s var(--transition-smooth);
 }
 
-/* Jab mouse naam par jaye (Hover) */
-.logo-link:hover {
-    color: #ffffff !important; /* White color */
+.logo-area img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-orange);
+    object-fit: cover;
+    transition: all 0.3s var(--transition-smooth);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.1);
 }
 
-/* Span (Gull) ka color white rakhne ke liye */
-.logo-link span {
-    color: #ffffff !important;
+.logo-area img:hover {
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.3);
+    transform: scale(1.05);
 }
-        /* 1. Main Capsule Base (Isay purane se replace karein) */
+
+.logo-text {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+}
+
+.logo-text span {
+    color: var(--primary-orange);
+}
+
+/* --- NAVIGATION CAPSULE --- */
 .nav-capsule {
     display: flex;
     align-items: center;
-    background: #111111; /* Black Background */
-    border: 1px solid #333;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6));
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
     border-radius: 50px;
-    padding: 5px 15px;
+    gap: 4px;
     position: relative;
+    transition: all 0.3s var(--transition-smooth);
 }
 
 .nav-link {
-    text-decoration: none;
-    color: #ffffff;
+    color: var(--subtle-gray) !important;
+    text-decoration: none !important;
     padding: 10px 18px;
-    font-weight: 500;
     font-size: 14px;
-    transition: 0.3s;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s var(--transition-smooth);
+    background: transparent !important;
+    position: relative;
+    overflow: hidden;
 }
 
-/* 2. Mega Menu Panel (Black & Gold) */
-.mega-menu-panel {
-    display: none; /* Default Hide */
+.nav-link::before {
+    content: '';
     position: absolute;
-    top: 60px; /* Capsule ke niche alignment */
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-orange);
+    border-radius: 50px;
+    z-index: -1;
+    transition: left 0.3s var(--transition-smooth);
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.nav-link.active::before,
+.nav-link:hover::before {
+    left: 0;
+}
+
+/* --- GET IN TOUCH BUTTON --- */
+.get-in-touch-btn {
+    text-decoration: none;
+    color: var(--primary-orange) !important;
+    border: 1.5px solid var(--primary-orange);
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+
+.get-in-touch-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    background: #000000; 
-    width: 950px; /* Bada width jaisa aapne image mein dikhaya */
-    box-shadow: 0px 15px 40px rgba(0,0,0,0.9);
-    border: 1px solid #D4AF37; /* Gold Border */
-    border-radius: 15px;
-    padding: 30px;
+    width: 0;
+    height: 0;
+    background: var(--primary-orange);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: width 0.4s, height 0.4s;
+}
+
+.get-in-touch-btn:hover {
+    color: #fff !important;
+    box-shadow: 0 8px 24px rgba(255, 140, 0, 0.3);
+}
+
+.get-in-touch-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* --- MEGA MENU PANEL --- */
+.mega-menu-panel {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    background: linear-gradient(135deg, rgba(26, 27, 31, 0.95), rgba(42, 43, 47, 0.9));
+    backdrop-filter: blur(20px);
+    width: 950px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-top: 2px solid var(--primary-orange);
+    border-radius: 16px;
+    padding: 35px;
     z-index: 9999;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 25px;
+    pointer-events: none;
+    transition: all 0.4s var(--transition-smooth);
 }
 
-/* Jab click ho to ye class JS ke zariye add hogi */
 .mega-menu-panel.show-menu {
     display: grid !important;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
 }
 
-/* 3. Column & Links Styling */
 .mega-col h4 {
-    color: #D4AF37;
-    font-size: 16px;
-    margin-bottom: 15px;
-    font-weight: bold;
+    color: var(--primary-orange);
+    font-size: 15px;
+    margin-bottom: 18px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
 }
 
 .mega-col a {
-    color: #cccccc;
+    color: var(--subtle-gray);
     text-decoration: none;
     display: block;
-    padding: 8px 0;
-    font-size: 13.5px;
-    transition: 0.2s;
+    padding: 10px 0;
+    font-size: 14px;
+    transition: all 0.2s var(--transition-smooth);
+    position: relative;
+}
+
+.mega-col a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-orange);
+    transition: width 0.3s var(--transition-smooth);
 }
 
 .mega-col a:hover {
-    color: #D4AF37;
-    padding-left: 5px;
+    color: var(--primary-orange);
+}
+
+.mega-col a:hover::before {
+    width: 30px;
 }
 
 .mega-col.border-left {
-    border-left: 1px solid #222;
-    padding-left: 20px;
+    border-left: 1px solid var(--border-color);
+    padding-left: 25px;
 }
 
-/* 4. Active Button Styling (Click hone par) */
-.active-btn .dropdown-toggle {
-    background: #D4AF37 !important;
-    color: #000000 !important;
+/* --- HERO SECTION --- */
+.hero-split {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 8%;
+    gap: 50px;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-split::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: var(--light-text);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.hero-content h1 span {
+    color: var(--primary-orange);
+    background: linear-gradient(135deg, #FF8C00, #FFB84D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.badge-gold {
+    color: var(--primary-orange);
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    border-left: 3px solid var(--primary-orange);
+    padding-left: 12px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.hero-subtext {
+    color: var(--subtle-gray);
+    margin-bottom: 36px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #FF8C00, #FFB84D);
+    color: #fff;
+    padding: 16px 36px;
     border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    transition: all 0.3s var(--transition-smooth);
+    border: 1px solid transparent;
+    box-shadow: 0 12px 28px rgba(255, 140, 0, 0.25);
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
 }
 
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s var(--transition-smooth);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(255, 140, 0, 0.35);
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.image-wrapper {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.image-wrapper img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 60px rgba(255, 140, 0, 0.1);
+    transition: all 0.4s var(--transition-smooth);
+    object-fit: cover;
+}
+
+.image-wrapper img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5), 0 0 80px rgba(255, 140, 0, 0.2);
+    border-color: rgba(255, 140, 0, 0.2);
+}
+
+/* --- FOOTER SOCIAL ICONS --- */
+.social-icon-box {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, rgba(42, 43, 47, 0.8), rgba(26, 27, 31, 0.8)) !important;
+    color: var(--primary-orange) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 50% !important;
+    width: 44px;
+    height: 44px;
+    transition: all 0.3s var(--transition-smooth);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.social-icon-box:hover {
+    background: linear-gradient(135deg, #FF8C00, #FFB84D) !important;
+    color: #fff !important;
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+    transform: translateY(-4px);
+    border-color: rgba(255, 140, 0, 0.5) !important;
+}
+
+/* --- GENERAL TEXT & PARAGRAPHS --- */
+p {
+    color: var(--subtle-gray) !important;
+    font-size: 15px !important;
+    line-height: 1.7;
+}
+
+/* --- BUTTON/LINK HOVERS --- */
+.btn-gold {
+    background-color: var(--primary-orange) !important;
+    color: #fff !important;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s var(--transition-smooth) !important;
+    border: 1px solid var(--primary-orange);
+}
+
+.btn-gold:hover {
+    background-color: #FFB84D !important;
+    border-color: #FFB84D;
+    box-shadow: 0 12px 28px rgba(255, 140, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1024px) {
+    .mega-menu-panel {
+        width: 85vw !important;
+        left: 50% !important;
+        transform: translateX(-50%) translateY(10px);
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 28px;
+        gap: 20px;
+    }
+
+    .hero-split {
+        padding: 60px 6%;
+        gap: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 50px;
+    }
+
+    .image-wrapper img {
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 10px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-capsule {
+        width: 100%;
+        order: 3;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        padding: 6px 8px;
+    }
+
+    .nav-link {
+        padding: 8px 14px;
+        font-size: 13px;
+        margin: 3px;
+    }
+
+    .get-in-touch-btn {
+        padding: 8px 18px;
+        font-size: 12px;
+    }
+
+    .mega-menu-panel {
+        width: 90vw !important;
+        left: 50% !important;
+        transform: translateX(-50%) translateY(10px);
+        grid-template-columns: 1fr !important;
+        padding: 24px;
+        top: 65px;
+    }
+
+    .mega-col.border-left {
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        padding-left: 0;
+        padding-top: 16px;
+        margin-top: 16px;
+    }
+
+    .hero-split {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 5%;
+        min-height: auto;
+    }
+
+    .hero-split::before {
+        opacity: 0.5;
+        right: -30%;
+        width: 400px;
+        height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+
+    .hero-subtext {
+        margin-bottom: 28px;
+        font-size: 16px;
+    }
+
+    .image-wrapper img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 8px 15px;
+        border-radius: 20px;
+    }
+
+    .logo-area img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo-text {
+        font-size: 14px;
+    }
+
+    .nav-capsule {
+        width: 100%;
+        gap: 2px;
+    }
+
+    .nav-link {
+        padding: 7px 10px;
+        font-size: 12px;
+        margin: 2px;
+    }
+
+    .get-in-touch-btn {
+        padding: 7px 15px;
+        font-size: 11px;
+    }
+
+    .mega-menu-panel {
+        width: 95vw !important;
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .mega-col h4 {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .mega-col a {
+        font-size: 12px;
+        padding: 8px 0;
+    }
+
+    .hero-split {
+        padding: 30px 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .badge-gold {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+
+    .hero-subtext {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .btn-primary {
+        padding: 12px 24px;
+        font-size: 13px;
+    }
+
+    .social-icon-box {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 16px;
+    }
+}
+
+/* --- SMOOTH SCROLLING --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- LINKS DEFAULT --- */
+a {
+    transition: all 0.3s var(--transition-smooth);
+}
+
+/* --- FOCUS STATES FOR ACCESSIBILITY --- */
+button:focus,
+a:focus {
+    outline: 2px solid var(--primary-orange);
+    outline-offset: 2px;
+}
 </style>
     <link rel="stylesheet" href="style.css">
 
