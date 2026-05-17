@@ -2618,20 +2618,16 @@ I provide a holistic approach to drive traffic and boost conversions. By buildin
     }
 </style>
     
-     <!-- AI VERIFICATION SECTION -->
-<section class="ai-verify-section">
+     <section class="ai-verify-section">
     <div class="ai-container">
-        <!-- Main Title -->
         <h2 class="ai-title">
             Verify Abdullah Gull via <span>AI</span>
         </h2>
 
-        <!-- Subtitle -->
         <p class="ai-subtitle">
             Directly ask these leading AI models about my specialized Amazon FBA expertise, proven results, and strategic approach. Get instant insights into my capabilities and track record.
         </p>
 
-        <!-- AI Model Buttons -->
         <div class="ai-btn-wrapper">
             <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" class="ai-btn ai-btn-primary" title="Ask ChatGPT about Abdullah Gull">
                 <svg class="ai-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -2657,46 +2653,55 @@ I provide a holistic approach to drive traffic and boost conversions. By buildin
     </div>
 </section>
 
-<!-- PREMIUM DARK MODE CSS -->
 <style>
     /* --- AI VERIFICATION SECTION --- */
     .ai-verify-section {
-        padding: 120px 8%;
-        background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
+        width: 100%; /* Explicit box limits */
+        max-width: 100%;
+        margin: 0;
+        padding: 120px 24px; /* Pixels bounds padding, avoids dynamic layout leaks */
+        background: linear-gradient(135deg, var(--dark-bg, #121212) 0%, var(--dark-secondary, #1a1b1f) 100%);
         text-align: center;
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         position: relative;
-        overflow: hidden;
+        overflow: hidden; /* Standardizes layout boundaries */
+        box-sizing: border-box;
     }
 
+    /* Fixed ambient circle to keep it strictly inside bounds */
     .ai-verify-section::before {
         content: '';
         position: absolute;
         top: -50%;
         left: 50%;
         transform: translateX(-50%);
-        width: 800px;
+        width: 100%;
+        max-width: 800px;
         height: 800px;
         background: radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%);
         border-radius: 50%;
         pointer-events: none;
+        z-index: 1;
     }
 
     .ai-container {
+        width: 100%;
         max-width: 1100px;
         margin: 0 auto;
         position: relative;
         z-index: 2;
+        box-sizing: border-box;
     }
 
     /* --- MAIN TITLE --- */
     .ai-title {
         font-size: 56px;
         font-weight: 900;
-        color: var(--light-text);
-        margin-bottom: 24px;
+        color: var(--light-text, #ffffff);
+        margin: 0 0 24px 0;
+        padding: 0;
         letter-spacing: -1.5px;
-        animation: fadeInDown 0.8s ease-out;
+        line-height: 1.2;
     }
 
     .ai-title span {
@@ -2704,25 +2709,29 @@ I provide a holistic approach to drive traffic and boost conversions. By buildin
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        display: inline-block;
     }
 
     /* --- SUBTITLE --- */
     .ai-subtitle {
-        color: var(--subtle-gray);
+        color: var(--subtle-gray, #b3b3b3);
         font-size: 18px;
         max-width: 700px;
-        margin: 0 auto 60px;
+        margin: 0 auto 60px auto;
         line-height: 1.8;
-        animation: fadeInUp 0.8s ease-out 0.1s both;
+        padding: 0;
     }
 
     /* --- BUTTON WRAPPER --- */
     .ai-btn-wrapper {
         display: flex;
         justify-content: center;
+        align-items: center;
         gap: 20px;
         flex-wrap: wrap;
-        animation: fadeInUp 0.8s ease-out 0.2s both;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     /* --- BUTTON BASE STYLING --- */
@@ -2737,202 +2746,86 @@ I provide a holistic approach to drive traffic and boost conversions. By buildin
         font-weight: 700;
         font-size: 15px;
         letter-spacing: 0.5px;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         position: relative;
+        z-index: 1;
         overflow: hidden;
         white-space: nowrap;
-    }
-
-    .ai-btn::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        transition: width 0.6s, height 0.6s;
-        z-index: -1;
-    }
-
-    .ai-btn:hover::before {
-        width: 300px;
-        height: 300px;
+        box-sizing: border-box;
     }
 
     /* --- PRIMARY BUTTON (ChatGPT) --- */
     .ai-btn-primary {
         background: linear-gradient(135deg, #FF8C00, #FFB84D);
-        color: #fff !important;
+        color: #ffffff !important;
         border: 1px solid transparent;
         box-shadow: 0 12px 32px rgba(255, 140, 0, 0.25);
     }
 
     .ai-btn-primary:hover {
-        transform: translateY(-6px);
+        transform: translateY(-4px);
         box-shadow: 0 20px 48px rgba(255, 140, 0, 0.35);
     }
 
     /* --- OUTLINE BUTTONS (Claude & Perplexity) --- */
     .ai-btn-outline {
         background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6));
-        color: var(--light-text) !important;
-        border: 1.5px solid var(--border-color);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        color: var(--light-text, #ffffff) !important;
+        border: 1.5px solid var(--border-color, #333333);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     }
 
     .ai-btn-outline:hover {
         border-color: rgba(255, 140, 0, 0.5);
         background: linear-gradient(135deg, rgba(255, 140, 0, 0.15), rgba(255, 140, 0, 0.05));
-        color: var(--light-text) !important;
-        transform: translateY(-6px);
-        box-shadow: 0 16px 40px rgba(255, 140, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        color: var(--light-text, #ffffff) !important;
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(255, 140, 0, 0.2);
     }
 
     /* --- ICON STYLING --- */
     .ai-icon {
         width: 24px;
         height: 24px;
-        object-fit: contain;
         display: inline-block;
-        transition: all 0.3s var(--transition-smooth);
+        flex-shrink: 0;
+        transition: all 0.3s ease;
     }
 
     .ai-btn-primary:hover .ai-icon {
-        transform: scale(1.15) rotate(5deg);
+        transform: scale(1.1) rotate(5deg);
     }
 
     .ai-btn-outline:hover .ai-icon {
-        color: var(--primary-orange);
-        transform: scale(1.15);
+        color: #FF8C00;
+        transform: scale(1.1);
     }
 
-    /* --- ANIMATIONS --- */
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* --- RESPONSIVE DESIGN --- */
+    /* --- RESPONSIVE FRAMEWORK --- */
     @media (max-width: 1024px) {
-        .ai-verify-section {
-            padding: 100px 5%;
-        }
-
-        .ai-title {
-            font-size: 48px;
-        }
-
-        .ai-subtitle {
-            font-size: 17px;
-            margin-bottom: 50px;
-        }
-
-        .ai-btn-wrapper {
-            gap: 16px;
-        }
+        .ai-verify-section { padding: 100px 24px; }
+        .ai-title { font-size: 48px; }
+        .ai-subtitle { font-size: 17px; margin-bottom: 50px; }
     }
 
     @media (max-width: 768px) {
-        .ai-verify-section {
-            padding: 80px 5%;
-        }
-
-        .ai-title {
-            font-size: 36px;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        .ai-subtitle {
-            font-size: 16px;
-            margin-bottom: 40px;
-            line-height: 1.7;
-        }
-
-        .ai-btn-wrapper {
-            gap: 12px;
-        }
-
-        .ai-btn {
-            padding: 14px 28px;
-            font-size: 14px;
-            flex: 1;
-            min-width: 160px;
-        }
-
-        .ai-verify-section::before {
-            width: 500px;
-            height: 500px;
-        }
+        .ai-verify-section { padding: 80px 20px; }
+        .ai-title { font-size: 36px; margin-bottom: 20px; letter-spacing: -1px; }
+        .ai-subtitle { font-size: 16px; margin-bottom: 40px; }
+        .ai-btn-wrapper { gap: 14px; }
+        .ai-btn { padding: 14px 24px; font-size: 14px; flex: 1 1 calc(50% - 14px); min-width: 150px; }
     }
 
     @media (max-width: 480px) {
-        .ai-verify-section {
-            padding: 60px 5%;
-        }
-
-        .ai-title {
-            font-size: 28px;
-            margin-bottom: 16px;
-        }
-
-        .ai-subtitle {
-            font-size: 14px;
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
-
-        .ai-btn-wrapper {
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .ai-btn {
-            width: 100%;
-            padding: 14px 24px;
-            font-size: 13px;
-            justify-content: center;
-        }
-
-        .ai-icon {
-            width: 20px;
-            height: 20px;
-        }
-
-        .ai-verify-section::before {
-            width: 300px;
-            height: 300px;
-        }
-    }
-
-    /* --- ACCESSIBILITY --- */
-    .ai-btn:focus-visible {
-        outline: 2px solid var(--primary-orange);
-        outline-offset: 2px;
+        .ai-verify-section { padding: 60px 16px; }
+        .ai-title { font-size: 26px; margin-bottom: 16px; }
+        .ai-subtitle { font-size: 14px; margin-bottom: 32px; }
+        .ai-btn-wrapper { display: grid; grid-template-columns: 1fr; gap: 12px; }
+        .ai-btn { width: 100%; padding: 14px 20px; font-size: 14px; justify-content: center; }
     }
 
     .ai-btn:active {
-        transform: translateY(-3px);
+        transform: translateY(-1px);
     }
 </style>
 		
