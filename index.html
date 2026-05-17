@@ -6139,328 +6139,499 @@ I provide a holistic approach to drive traffic and boost conversions. By buildin
     }
 </style>
 </section>
-   <style>
-    /* --- ADVANCED FOOTER: CARBON & ORANGE GLOW --- */
+ <!-- PREMIUM DARK MODE CSS -->
+<style>
+    /* --- MAIN FOOTER --- */
     .main-footer {
-        background-color: #0d0d0d; /* Deep Carbon Black */
-        color: #ffffff;
-        padding: 100px 40px 30px;
-        font-family: 'Inter', sans-serif;
-        border-top: 1px solid rgba(255, 140, 0, 0.1);
+        background: linear-gradient(135deg, #0B0C0E 0%, #1A1B1F 100%);
+        color: var(--light-text);
+        padding: 120px 5% 40px;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        border-top: 1px solid var(--border-color);
         position: relative;
+        overflow: hidden;
     }
 
-    /* Subtle Top Glow */
+    /* Top Gradient Glow */
     .main-footer::before {
-        content: "";
+        content: '';
         position: absolute;
-        top: 0; left: 50%;
+        top: 0;
+        left: 50%;
         transform: translateX(-50%);
         width: 80%;
         height: 1px;
-        background: linear-gradient(90deg, transparent, #FF8C00, transparent);
+        background: linear-gradient(90deg, transparent, var(--primary-orange), transparent);
+        opacity: 0.5;
     }
 
+    /* Ambient Glow Effect */
+    .main-footer::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 200px;
+        background: radial-gradient(ellipse at center, rgba(255, 140, 0, 0.05), transparent);
+        pointer-events: none;
+    }
+
+    /* --- FOOTER GRID --- */
     .footer-grid {
         display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1.2fr; /* Asymmetric grid for modern look */
-        gap: 60px;
-        max-width: 1250px;
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        gap: 80px;
+        max-width: 1400px;
         margin: 0 auto 80px;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* --- FOOTER COLUMN --- */
+    .footer-col {
+        display: flex;
+        flex-direction: column;
     }
 
     .footer-col h4 {
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 2px;
-        margin-bottom: 30px;
-        color: #FF8C00; /* Signature Orange */
+        margin-bottom: 32px;
+        color: var(--primary-orange);
+        position: relative;
+    }
+
+    .footer-col h4::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary-orange), transparent);
     }
 
     .footer-col p {
-        font-size: 14px;
-        color: #9A9FA5;
+        font-size: 15px;
+        color: var(--subtle-gray);
         line-height: 1.8;
         margin-bottom: 20px;
     }
 
-    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
     .footer-col ul li {
-        font-size: 15px;
-        color: #9A9FA5;
-        margin-bottom: 12px;
-        transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 14px;
+        color: var(--subtle-gray);
+        margin-bottom: 14px;
+        transition: all 0.3s var(--transition-smooth);
         display: flex;
         align-items: center;
     }
 
-    .footer-col ul li:hover {
-        color: #ffffff;
-        transform: translateX(8px);
+    .footer-col ul li a {
+        color: var(--subtle-gray);
+        text-decoration: none;
+        transition: all 0.3s var(--transition-smooth);
     }
 
-    /* AI Tool Box Styling */
+    .footer-col ul li:hover,
+    .footer-col ul li a:hover {
+        color: var(--primary-orange);
+        transform: translateX(6px);
+    }
+
+    /* --- FOOTER BRAND SECTION --- */
+    .footer-brand p {
+        max-width: 300px;
+        margin-bottom: 28px;
+    }
+
+    /* --- AI SECTION --- */
+    .footer-ai-section {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 32px;
+    }
+
+    .footer-ai-section p {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--primary-orange);
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    /* --- AI ICON GROUP --- */
     .ai-icon-group {
         display: flex;
-        gap: 12px;
-        margin-top: 20px;
+        gap: 14px;
+        flex-wrap: wrap;
     }
 
     .ai-tool-box {
-        width: 45px;
-        height: 45px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        width: 44px;
+        height: 44px;
+        background: linear-gradient(135deg, rgba(255, 140, 0, 0.1), rgba(255, 140, 0, 0.05));
+        border: 1.5px solid rgba(255, 140, 0, 0.2);
         border-radius: 12px;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: 0.3s;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
+        color: var(--primary-orange);
+        text-decoration: none;
+        font-size: 18px;
     }
 
     .ai-tool-box:hover {
-        background: rgba(255, 140, 0, 0.1);
-        border-color: #FF8C00;
-        transform: translateY(-5px);
+        background: linear-gradient(135deg, #FF8C00, #FFB84D);
+        border-color: var(--primary-orange);
+        color: #fff;
+        transform: translateY(-6px);
+        box-shadow: 0 12px 28px rgba(255, 140, 0, 0.3);
     }
 
-    /* Social Icons - Sleek Minimalist */
+    .ai-tool-box svg {
+        width: 20px;
+        height: 20px;
+        stroke: currentColor;
+        fill: none;
+    }
+
+    /* --- SOCIAL LINKS --- */
     .social-links {
         display: flex;
-        gap: 15px;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 28px;
     }
 
     .social-item {
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
         border-radius: 50%;
-        background: #1A1D1F;
+        background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6));
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #ffffff;
+        color: var(--light-text);
         text-decoration: none;
         font-size: 16px;
-        transition: 0.4s;
-        border: 1px solid #222;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid var(--border-color);
     }
 
     .social-item:hover {
-        background: #FF8C00;
+        background: linear-gradient(135deg, #FF8C00, #FFB84D);
         color: #000;
-        border-color: #FF8C00;
-        box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+        border-color: var(--primary-orange);
+        transform: translateY(-6px) scale(1.1);
+        box-shadow: 0 12px 28px rgba(255, 140, 0, 0.3);
     }
 
-    /* Newsletter / Contact Box */
+    /* --- CONTACT CTA BOX --- */
     .contact-cta {
-        background: #1A1D1F;
-        padding: 25px;
-        border-radius: 20px;
-        border: 1px solid #222;
+        background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6));
+        padding: 28px;
+        border-radius: 16px;
+        border: 1px solid var(--border-color);
+        margin-top: 32px;
+        transition: all 0.3s var(--transition-smooth);
     }
 
-    /* Bottom Bar */
+    .contact-cta:hover {
+        background: linear-gradient(135deg, rgba(255, 140, 0, 0.1), rgba(255, 140, 0, 0.05));
+        border-color: rgba(255, 140, 0, 0.3);
+    }
+
+    .contact-cta p {
+        font-size: 13px;
+        margin-bottom: 14px;
+        color: var(--light-text);
+        font-weight: 600;
+    }
+
+    .contact-cta a {
+        display: inline-block;
+        background: linear-gradient(135deg, #FF8C00, #FFB84D);
+        color: #fff;
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 700;
+        transition: all 0.3s var(--transition-smooth);
+        letter-spacing: 0.5px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .contact-cta a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+    }
+
+    .contact-cta a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+    }
+
+    .contact-cta a:hover::before {
+        left: 100%;
+    }
+
+    /* --- FOOTER BOTTOM --- */
     .footer-bottom {
-        max-width: 1250px;
+        max-width: 1400px;
         margin: 0 auto;
-        padding-top: 30px;
-        border-top: 1px solid #1A1D1F;
+        padding-top: 40px;
+        border-top: 1px solid var(--border-color);
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-size: 13px;
-        color: #6F767E;
+        color: var(--subtle-gray);
+        position: relative;
+        z-index: 2;
+    }
+
+    .footer-left,
+    .footer-right {
+        flex: 1;
+    }
+
+    .footer-right {
+        text-align: right;
+    }
+
+    .footer-right a {
+        color: var(--subtle-gray);
+        text-decoration: none;
+        margin: 0 20px;
+        transition: all 0.3s var(--transition-smooth);
+    }
+
+    .footer-right a:hover {
+        color: var(--primary-orange);
+    }
+
+    .footer-right a:first-child {
+        margin-left: 0;
+    }
+
+    .footer-right a:last-child {
+        margin-right: 0;
+    }
+
+    /* --- RESPONSIVE DESIGN --- */
+    @media (max-width: 1200px) {
+        .footer-grid {
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h4::after {
+            width: 30px;
+        }
+
+        .main-footer {
+            padding: 100px 5% 40px;
+        }
     }
 
     @media (max-width: 1024px) {
-        .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 24px;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .footer-right {
+            text-align: center;
+        }
+
+        .footer-right a {
+            margin: 0 12px;
+        }
     }
 
-    @media (max-width: 600px) {
-        .footer-grid { grid-template-columns: 1fr; }
-        .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
-    }
-       /* --- FOOTER AI & SOCIAL ICONS STYLING --- */
+    @media (max-width: 768px) {
+        .main-footer {
+            padding: 80px 5% 30px;
+        }
 
-/* Icons Container */
-.footer-icon-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 15px;
-    align-items: center;
-}
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
 
-/* AI Icons (ChatGPT, Claude, etc.) */
-.footer-icon-group i, 
-.footer-icon-group svg,
-.footer-icon-group img {
-    font-size: 20px;
-    color: #ffffff; /* Default color white */
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
 
-/* Hover Effect: Icons orange ho jayenge */
-.footer-icon-group i:hover, 
-.footer-icon-group svg:hover {
-    color: #FF8C00 !important; /* Signature Orange */
-    transform: translateY(-3px);
-}
+        .footer-col p {
+            font-size: 14px;
+        }
 
-/* Social Media Icons Specific Colors (Optional) */
-.social-links {
-    display: flex;
-    gap: 12px;
-    margin-top: 10px;
-}
+        .footer-col ul li {
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
 
-.social-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.3s;
-}
+        .contact-cta {
+            margin-top: 28px;
+            padding: 24px;
+        }
 
-/* Website jisa Orange touch */
-.social-links a:hover {
-    color: #FF8C00;
-}
+        .ai-icon-group {
+            gap: 12px;
+        }
 
-/* Alignment Fix for "Ask AI" Section */
-.footer-ai-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: left;
-}
+        .ai-tool-box {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
 
-.footer-ai-section p {
-    font-size: 14px;
-    font-weight: 600;
-    color: #ffffff;
-    margin: 0;
-}
-           /* AI Icons */
-    .ai-icon-group {
-        display: flex;
-        gap: 12px;
+        .social-links {
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .social-item {
+            width: 40px;
+            height: 40px;
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            font-size: 12px;
+            padding-top: 30px;
+        }
     }
 
-    .ai-tool-icon {
-        width: 40px;
-        height: 40px;
-        background: #fff;
-        border-radius: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 8px;
-    }
+    @media (max-width: 480px) {
+        .main-footer {
+            padding: 60px 5% 20px;
+        }
 
-    .ai-tool-icon img {
-        width: 100%;
-        filter: grayscale(0);
-    }
+        .footer-grid {
+            gap: 30px;
+            margin-bottom: 30px;
+        }
 
-    /* Social Icons Box Style */
-    .social-icon-group {
-        display: flex;
-        gap: 10px;
-    }
+        .footer-col h4 {
+            font-size: 11px;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
 
-    .social-box {
-        width: 35px;
-        height: 35px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        border-radius: 4px;
-        text-decoration: none;
-        font-size: 16px;
-    }
+        .footer-col h4::after {
+            width: 20px;
+            bottom: -8px;
+        }
 
-    .fb { background-color: #3b5998; }
-    .li { background-color: #0077b5; }
-    .pi { background-color: #bd081c; }
-    .in { background-color: #3f729b; }
+        .footer-col p {
+            font-size: 13px;
+            line-height: 1.6;
+        }
 
-/* --- AI AUR SOCIAL ICONS KO LINE MEIN LANE KE LIYE --- */
+        .footer-col ul li {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
 
-/* 1. AI Icons Alignment */
-.icon-group {
-    display: flex !important; /* Icons ko ek line mein layega */
-    gap: 15px; /* Icons ke darmiyan space */
-    margin-top: 15px;
-    flex-wrap: wrap; /* Mobile par automatic adjust hoga */
-}
+        .footer-ai-section {
+            gap: 10px;
+            margin-top: 24px;
+        }
 
-.ai-icon {
-    width: 40px;
-    height: 40px;
-    background: #fff; /* White box jaisa screenshot mein tha */
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000; /* Icons ka color black */
-    font-size: 18px;
-    transition: 0.3s ease;
-}
+        .footer-ai-section p {
+            font-size: 10px;
+            margin-bottom: 6px;
+        }
 
-/* 2. Social Icons Alignment */
-.social-icon-group {
-    display: flex !important;
-    gap: 12px;
-    margin-top: 15px;
-}
+        .ai-icon-group {
+            gap: 10px;
+        }
 
-.soc-btn {
-    width: 35px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff; /* Icons ka color white */
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s;
-}
+        .ai-tool-box {
+            width: 36px;
+            height: 36px;
+            font-size: 14px;
+            border-radius: 10px;
+        }
 
-/* Social Media Specific Colors */
-.fb-bg { background-color: #3b5998; }
-.li-bg { background-color: #0077b5; }
-.in-bg { background-color: #e4405f; }
-.tk-bg { background-color: #000; border: 1px solid #333; }
-.sc-bg { background-color: #fffc00; color: #000; }
-.li-bg { background-color: #0077b5; } /* LinkedIn */
+        .social-links {
+            gap: 10px;
+            margin-top: 20px;
+        }
 
-/* Hover Effect */
-.soc-btn:hover, .ai-icon:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.1);
-}
-    /* Bottom Bar */
-    .footer-bottom {
-        max-width: 1300px;
-        margin: 40px auto 0;
-        display: flex;
-        justify-content: space-between;
-        border-top: 1px solid #222;
-        padding-top: 20px;
-        font-size: 12px;
-        color: #666;
-    }
+        .social-item {
+            width: 36px;
+            height: 36px;
+            font-size: 12px;
+        }
 
-    /* Mobile Responsive */
-    @media (max-width: 900px) {
-        .footer-grid { grid-template-columns: repeat(2, 1fr); }
-        .footer-middle { flex-direction: column; gap: 30px; }
+        .contact-cta {
+            margin-top: 24px;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .contact-cta p {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .contact-cta a {
+            padding: 10px 20px;
+            font-size: 11px;
+        }
+
+        .footer-bottom {
+            font-size: 11px;
+            padding-top: 20px;
+            gap: 12px;
+        }
+
+        .footer-right a {
+            display: block;
+            margin: 6px 0;
+        }
     }
 </style>
 <footer class="main-footer">
