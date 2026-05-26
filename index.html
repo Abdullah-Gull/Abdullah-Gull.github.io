@@ -2826,7 +2826,53 @@ I provide a holistic approach to drive traffic and boost conversions. By buildin
 
     .ai-btn:active {
         transform: translateY(-1px);
-    }
+    }/* Paste this at the end of your CSS file */
+
+.ai-icon {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 4px;
+  background: transparent;
+}
+.ai-icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 2px;
+  top: 2px;
+  background: linear-gradient(135deg, #FFB84D 60%, #FF8C00 100%);
+  clip-path: polygon(
+    50% 0%, 
+    100% 25%, 
+    100% 75%, 
+    50% 100%, 
+    0% 75%, 
+    0% 25%
+  );
+  opacity: 0.14;
+}
+.ai-icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FF8C00;
+  box-shadow: 
+    0 0 0 2px #fff,
+    0 4px  #FFB84D,
+    4px 0  #FFB84D,
+    -4px 0 #FFB84D,
+    0 -4px #FFB84D;
+}
 </style>
 		
 <!-- PPC VS SEO COMPARISON SECTION -->
