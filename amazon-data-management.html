@@ -62,31 +62,64 @@
     box-sizing: border-box;
 }
 
-.ai-title {
-    font-size: 56px;
-    font-weight: 900;
-    color: var(--light-text, #ffffff);
-    margin: 0 0 24px 0;
-    padding: 0;
-    letter-spacing: -1.5px;
-    line-height: 1.2;
+/* -- PREMIUM MINIMAL ICON BUTTONS WRAPPER -- */
+.ai-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Icons ke darmiyan spacing barha di hai */
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
 }
 
-.ai-title span {
-    background: linear-gradient(135deg, #FF8C00, #FFB84D);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+/* -- ULTRA CLEAN ICON ONLY CONTAINER -- */
+.ai-icon-link {
     display: inline-block;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
-.ai-subtitle {
-    color: var(--subtle-gray, #b3b3b3);
-    font-size: 18px;
-    max-width: 700px;
-    margin: 0 auto 60px auto;
-    line-height: 1.8;
-    padding: 0;
+/* -- ICON BADA AUR PREMIUM LOOK -- */
+.ai-icon-link .ai-icon {
+    width: 90px;        /* Icon ka size bada kar diya jaisa image mein hai */
+    height: 90px;
+    object-fit: contain;
+    border-radius: 22px; /* Smooth rounded corners jaisa Apple ya ChatGPT ka icon hota hai */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Halka sa deep shadow premium look ke liye */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    margin: 0 !important; /* Kisi bhi purani margin ko khatam karne ke liye */
+}
+
+/* -- HOVER EFFECTS (PREMIUM GLOW & RISE) -- */
+.ai-icon-link:hover {
+    transform: translateY(-8px); /* Hover karne par icon smoothly upar uthega */
+}
+
+.ai-icon-link:hover .ai-icon {
+    box-shadow: 0 20px 40px rgba(255, 140, 0, 0.25); /* Aapke theme ka orange glowing shadow */
+    filter: brightness(1.1); /* Halka sa glow effect */
+}
+
+.ai-icon-link:active {
+    transform: translateY(-2px);
+}
+
+/* -- MOBILE RESPONSIVE (Choti screens par auto adjust hoga) -- */
+@media (max-width: 768px) {
+    .ai-btn-wrapper { gap: 30px; }
+    .ai-icon-link .ai-icon { width: 75px; height: 75px; border-radius: 18px; }
+}
+
+@media (max-width: 480px) {
+    .ai-btn-wrapper { gap: 24px; }
+    .ai-icon-link .ai-icon { width: 65px; height: 65px; border-radius: 16px; }
 }
 
 /* -- PREMIUM MINIMAL ICON BUTTONS WRAPPER -- */
