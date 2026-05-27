@@ -2714,32 +2714,16 @@ I provide a holistic approach to drive traffic and boost conversions. By buildin
     margin: 0;
 }
 
-/* --- EXACT IMAGE STYLE MATCH --- */
+/* --- BRAND ICON STYLING (EXACT COMPACT SIZE & NO WHITE BORDER) --- */
 .ai-icon-link .ai-icon {
-    width: 110px;        /* Perfect balanced size jaisa aapki image mein hai */
-    height: 110px;
-    object-fit: cover;   /* Taake teeno icons ka aspect ratio bilkul barabar square ho */
-    border-radius: 24px; /* Premium smooth corners jaisay image mein hain */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Deep dark shadow */
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    margin: 0 !important;
-    display: block;
-}
-
-/* --- HOVER ANIMATION (PREMIUM ORANGE GLOW) --- */
-.ai-icon-link:hover {
-    transform: translateY(-8px); /* Smooth lift up effect */
-}
-
-/* --- BRAND ICON STYLING (EXACT CHATGPT COMPACT SIZE) --- */
-.ai-icon-link .ai-icon {
-    width: 55px;         /* Size ko mazeed chota aur compact kar diya hai */
-    height: 55px;        /* Perfect square ratio */
-    object-fit: cover;   /* Icons ke background ya edges ko auto-align karne ke liye */
-    border-radius: 14px; /* Chote size ke mutabiq smooth Apple-style corners */
-    background: #16171a; /* Matt Black background behind icons */
-    border: 1px solid rgba(255, 255, 255, 0.03); 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Subtle deep shadow */
+    width: 48px !important;   /* Size ko mazeed chota aur premium kar diya */
+    height: 48px !important;  /* Perfect sharp square */
+    object-fit: cover;        /* White borders ko kaat kar icon ko andar fit karega */
+    border-radius: 12px;      /* Chote size ke mutabiq perfect curve */
+    overflow: hidden;         /* Kisi bhi kism ka bahar nikalta white border chupa dega */
+    background: #16171a;      /* Matt Black back-fill */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Behad haseen subtle border */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);   /* Clean compact shadow */
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     margin: 0 !important;
     display: block;
@@ -2747,14 +2731,25 @@ I provide a holistic approach to drive traffic and boost conversions. By buildin
 
 /* --- HOVER ANIMATION (CLEAN ORANGE GLOW) --- */
 .ai-icon-link:hover {
-    transform: translateY(-5px); /* Halka aur smooth lift up */
+    transform: translateY(-4px); /* Soft premium lift */
 }
 
 .ai-icon-link:hover .ai-icon {
     background: #1c1d22; 
-    border-color: rgba(255, 140, 0, 0.4); /* Clean Amazon Orange Border */
-    box-shadow: 0 15px 30px rgba(255, 140, 0, 0.25); /* Premium Orange Glow Effect */
-    filter: brightness(1.05); 
+    border-color: rgba(255, 140, 0, 0.5);       /* Pure Amazon Orange Border */
+    box-shadow: 0 12px 25px rgba(255, 140, 0, 0.3); /* Soft Orange Glow */
+    filter: brightness(1.08); 
+}
+
+/* --- WRAPPER SPACING --- */
+.ai-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Chote icons ke mutabiq gap bilkul perfect set kar diya */
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Wrapper ka gap bhi chote size ke mutabiq fit kiya */
