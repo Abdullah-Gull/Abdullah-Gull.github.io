@@ -24,7 +24,7 @@
 </section>
 
 <style>
-   /* --- AI VERIFICATION SECTION --- */
+  /* --- AI VERIFICATION SECTION --- */
 .ai-verify-section {
     width: 100%;
     max-width: 100%;
@@ -89,82 +89,59 @@
     padding: 0;
 }
 
+/* -- PREMIUM MINIMAL ICON BUTTONS WRAPPER -- */
 .ai-btn-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 32px; /* Icons ke darmiyan gap badha diya */
     flex-wrap: wrap;
     width: 100%;
-    max-width: 100%;
     box-sizing: border-box;
 }
 
-.ai-btn {
-    display: inline-flex;
+/* -- ULTRA CLEAN ICON BUTTON DESIGN -- */
+.ai-icon-btn {
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 16px 32px;
-    border-radius: 16px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.5px;
+    width: 80px;  /* Button ka size square rakha hai */
+    height: 80px; 
+    border-radius: 20px; /* Modern Apple-style rounded corners */
+    background: rgba(255, 255, 255, 0.03); /* Bohat hi light minimalist background */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border */
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: none;
     box-sizing: border-box;
 }
 
-.ai-btn-primary {
-    background: linear-gradient(135deg, #FF8C00, #FFB84D);
-    color: #ffffff !important;
-    border: 1px solid transparent;
-    box-shadow: 0 12px 32px rgba(255, 140, 0, 0.25);
+/* -- HOVER EFFECT: PREMIUM LUXURY GLOW -- */
+.ai-icon-btn:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 140, 0, 0.1); /* Subtle premium orange hint */
+    border-color: rgba(255, 140, 0, 0.4); /* Highlight border on hover */
+    box-shadow: 0 20px 40px rgba(255, 140, 0, 0.15); /* Orange glowing shadow */
 }
 
-.ai-btn-primary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 48px rgba(255, 140, 0, 0.35);
-}
-
-.ai-btn-outline {
-    background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6));
-    color: var(--light-text, #ffffff) !important;
-    border: 1.5px solid var(--border-color, #333333);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-.ai-btn-outline:hover {
-    border-color: rgba(255, 140, 0, 0.5);
-    background: linear-gradient(135deg, rgba(255, 140, 0, 0.15), rgba(255, 140, 0, 0.05));
-    color: var(--light-text, #ffffff) !important;
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(255, 140, 0, 0.2);
-}
-
-/* -- IMAGE ICONS FOR BUTTONS -- */
+/* -- ICON SIZE (THORA BADA KAREIN) -- */
 .ai-icon {
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 8px;
+    width: 42px;  /* Icon ka size bada kar diya taake saaf dikhe */
+    height: 42px;
     object-fit: contain;
+    transition: transform 0.4s ease;
+    margin: 0; /* Purani margin khatam kar di taake center ho sake */
 }
 
-.ai-btn-primary:hover .ai-icon {
-    transform: scale(1.1) rotate(5deg);
+.ai-icon-btn:hover .ai-icon {
+    transform: scale(1.1); /* Hover par halka sa zoom */
 }
 
-.ai-btn-outline:hover .ai-icon {
-    filter: brightness(1.3) saturate(1.6);
-    transform: scale(1.1);
+.ai-icon-btn:active {
+    transform: translateY(-2px);
 }
 
+/* -- RESPONSIVE DESIGN FOR MOBILE -- */
 @media (max-width: 1024px) {
     .ai-verify-section { padding: 100px 24px; }
     .ai-title { font-size: 48px; }
@@ -173,22 +150,19 @@
 
 @media (max-width: 768px) {
     .ai-verify-section { padding: 80px 20px; }
-    .ai-title { font-size: 36px; margin-bottom: 20px; letter-spacing: -1px; }
+    .ai-title { font-size: 36px; margin-bottom: 20px; }
     .ai-subtitle { font-size: 16px; margin-bottom: 40px; }
-    .ai-btn-wrapper { gap: 14px; }
-    .ai-btn { padding: 14px 24px; font-size: 14px; flex: 1 1 calc(50% - 14px); min-width: 150px; }
+    .ai-btn-wrapper { gap: 24px; }
+    .ai-icon-btn { width: 70px; height: 70px; border-radius: 16px; }
+    .ai-icon { width: 36px; height: 36px; }
 }
 
 @media (max-width: 480px) {
     .ai-verify-section { padding: 60px 16px; }
-    .ai-title { font-size: 26px; margin-bottom: 16px; }
+    .ai-title { font-size: 26px; }
     .ai-subtitle { font-size: 14px; margin-bottom: 32px; }
-    .ai-btn-wrapper { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    .ai-btn { width: 100%; padding: 14px 20px; font-size: 14px; justify-content: center; }
+    .ai-btn-wrapper { gap: 20px; }
+    .ai-icon-btn { width: 64px; height: 64px; }
+    .ai-icon { width: 32px; height: 32px; }
 }
-
-.ai-btn:active {
-    transform: translateY(-1px);
-}
-
 </style>
