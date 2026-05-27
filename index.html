@@ -2731,16 +2731,42 @@ I provide a holistic approach to drive traffic and boost conversions. By buildin
     transform: translateY(-8px); /* Smooth lift up effect */
 }
 
+/* --- BRAND ICON STYLING (EXACT CHATGPT COMPACT SIZE) --- */
+.ai-icon-link .ai-icon {
+    width: 55px;         /* Size ko mazeed chota aur compact kar diya hai */
+    height: 55px;        /* Perfect square ratio */
+    object-fit: cover;   /* Icons ke background ya edges ko auto-align karne ke liye */
+    border-radius: 14px; /* Chote size ke mutabiq smooth Apple-style corners */
+    background: #16171a; /* Matt Black background behind icons */
+    border: 1px solid rgba(255, 255, 255, 0.03); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Subtle deep shadow */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    margin: 0 !important;
+    display: block;
+}
+
+/* --- HOVER ANIMATION (CLEAN ORANGE GLOW) --- */
+.ai-icon-link:hover {
+    transform: translateY(-5px); /* Halka aur smooth lift up */
+}
+
 .ai-icon-link:hover .ai-icon {
-    /* Amazon Orange Glow Shadow Jo Hover Par Pop Karegi */
-    box-shadow: 0 20px 45px rgba(255, 140, 0, 0.35); 
-    filter: brightness(1.05); /* Slightly vibrant on hover */
+    background: #1c1d22; 
+    border-color: rgba(255, 140, 0, 0.4); /* Clean Amazon Orange Border */
+    box-shadow: 0 15px 30px rgba(255, 140, 0, 0.25); /* Premium Orange Glow Effect */
+    filter: brightness(1.05); 
 }
 
-.ai-icon-link:active {
-    transform: translateY(-2px);
+/* Wrapper ka gap bhi chote size ke mutabiq fit kiya */
+.ai-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px; /* Spacing ko icons ke mutabiq balance kar diya */
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
 }
-
 /* --- RESPONSIVE FOR MOBILE --- */
 @media (max-width: 768px) {
     .ai-verify-section { padding: 80px 20px; }
