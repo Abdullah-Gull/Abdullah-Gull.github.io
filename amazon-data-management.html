@@ -21,13 +21,14 @@
 </section>
 
 <style>
-  /* --- AI VERIFICATION SECTION --- */
+  /* --- AI VERIFICATION SECTION (BLACK & ORANGE THEME) --- */
 .ai-verify-section {
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding: 120px 24px;
-    background: linear-gradient(135deg, var(--dark-bg, #121212) 0%, var(--dark-secondary, #1a1b1f) 100%);
+    /* Ultra Premium Pitch Black & Dark Gray Background */
+    background: linear-gradient(135deg, #0b0b0c 0%, #111215 100%);
     text-align: center;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     position: relative;
@@ -35,16 +36,17 @@
     box-sizing: border-box;
 }
 
+/* Background Glowing Effect (Subtle Orange Light from Top) */
 .ai-verify-section::before {
     content: '';
     position: absolute;
-    top: -50%;
+    top: -40%;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    max-width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%);
+    max-width: 900px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 140, 0, 0.07) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 1;
@@ -59,19 +61,47 @@
     box-sizing: border-box;
 }
 
-/* -- PREMIUM MINIMAL ICON BUTTONS WRAPPER -- */
+/* --- HEADINGS (SHARP WHITE & AMAZON ORANGE) --- */
+.ai-title {
+    font-size: 56px;
+    font-weight: 900;
+    color: #ffffff; /* Premium Pure White */
+    margin: 0 0 24px 0;
+    padding: 0;
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+}
+
+.ai-title span {
+    /* Pure Amazon Orange Gradient */
+    background: linear-gradient(135deg, #FF8C00 0%, #FF6A00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.ai-subtitle {
+    color: #9aa0a6; /* Clean Muted Gray */
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+    line-height: 1.8;
+    padding: 0;
+}
+
+/* --- BUTTONS WRAPPER (ICONS CENTER) --- */
 .ai-btn-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* Icons ke darmiyan spacing barha di hai */
+    gap: 45px; /* Clean gap between icons */
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 20px;
     box-sizing: border-box;
 }
 
-/* -- ULTRA CLEAN ICON ONLY CONTAINER -- */
+/* --- PURE ICON LINK (NO TEXT, NO BULK) --- */
 .ai-icon-link {
     display: inline-block;
     text-decoration: none;
@@ -83,116 +113,56 @@
     margin: 0;
 }
 
-/* -- ICON BADA AUR PREMIUM LOOK -- */
+/* --- BRAND ICON STYLING (BADA SIZE) --- */
 .ai-icon-link .ai-icon {
-    width: 90px;        /* Icon ka size bada kar diya jaisa image mein hai */
-    height: 90px;
+    width: 95px;         /* Shandaar bada size jaisa image mein tha */
+    height: 95px;
     object-fit: contain;
-    border-radius: 22px; /* Smooth rounded corners jaisa Apple ya ChatGPT ka icon hota hai */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Halka sa deep shadow premium look ke liye */
+    border-radius: 24px; /* Premium Apple-style smooth corners */
+    background: #16171a; /* Matt Black background behind transparent icons */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Hidden subtle border */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); /* Jet Black Deep Shadow */
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    margin: 0 !important; /* Kisi bhi purani margin ko khatam karne ke liye */
+    margin: 0 !important;
 }
 
-/* -- HOVER EFFECTS (PREMIUM GLOW & RISE) -- */
+/* --- HOVER ANIMATION (PREMIUM ORANGE GLOW) --- */
 .ai-icon-link:hover {
-    transform: translateY(-8px); /* Hover karne par icon smoothly upar uthega */
+    transform: translateY(-10px); /* Smooth lift up */
 }
 
 .ai-icon-link:hover .ai-icon {
-    box-shadow: 0 20px 40px rgba(255, 140, 0, 0.25); /* Aapke theme ka orange glowing shadow */
-    filter: brightness(1.1); /* Halka sa glow effect */
+    background: #1c1d22; /* Halka sa lighter black on hover */
+    border-color: rgba(255, 140, 0, 0.5); /* Solid Amazon Orange Border */
+    /* Intense Luxury Orange Glow Shadow */
+    box-shadow: 0 25px 50px rgba(255, 140, 0, 0.25); 
+    filter: brightness(1.15) saturate(1.1); /* Icons popping color */
 }
 
+/* Click Effect */
 .ai-icon-link:active {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
-/* -- MOBILE RESPONSIVE (Choti screens par auto adjust hoga) -- */
-@media (max-width: 768px) {
-    .ai-btn-wrapper { gap: 30px; }
-    .ai-icon-link .ai-icon { width: 75px; height: 75px; border-radius: 18px; }
-}
-
-@media (max-width: 480px) {
-    .ai-btn-wrapper { gap: 24px; }
-    .ai-icon-link .ai-icon { width: 65px; height: 65px; border-radius: 16px; }
-}
-
-/* -- PREMIUM MINIMAL ICON BUTTONS WRAPPER -- */
-.ai-btn-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 32px; /* Icons ke darmiyan gap badha diya */
-    flex-wrap: wrap;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* -- ULTRA CLEAN ICON BUTTON DESIGN -- */
-.ai-icon-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;  /* Button ka size square rakha hai */
-    height: 80px; 
-    border-radius: 20px; /* Modern Apple-style rounded corners */
-    background: rgba(255, 255, 255, 0.03); /* Bohat hi light minimalist background */
-    border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border */
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: pointer;
-    text-decoration: none;
-    box-sizing: border-box;
-}
-
-/* -- HOVER EFFECT: PREMIUM LUXURY GLOW -- */
-.ai-icon-btn:hover {
-    transform: translateY(-6px);
-    background: rgba(255, 140, 0, 0.1); /* Subtle premium orange hint */
-    border-color: rgba(255, 140, 0, 0.4); /* Highlight border on hover */
-    box-shadow: 0 20px 40px rgba(255, 140, 0, 0.15); /* Orange glowing shadow */
-}
-
-/* -- ICON SIZE (THORA BADA KAREIN) -- */
-.ai-icon {
-    width: 42px;  /* Icon ka size bada kar diya taake saaf dikhe */
-    height: 42px;
-    object-fit: contain;
-    transition: transform 0.4s ease;
-    margin: 0; /* Purani margin khatam kar di taake center ho sake */
-}
-
-.ai-icon-btn:hover .ai-icon {
-    transform: scale(1.1); /* Hover par halka sa zoom */
-}
-
-.ai-icon-btn:active {
-    transform: translateY(-2px);
-}
-
-/* -- RESPONSIVE DESIGN FOR MOBILE -- */
+/* --- RESPONSIVE MOBILE FIXES --- */
 @media (max-width: 1024px) {
     .ai-verify-section { padding: 100px 24px; }
-    .ai-title { font-size: 48px; }
-    .ai-subtitle { font-size: 17px; margin-bottom: 50px; }
+    .ai-title { font-size: 46px; }
 }
 
 @media (max-width: 768px) {
     .ai-verify-section { padding: 80px 20px; }
     .ai-title { font-size: 36px; margin-bottom: 20px; }
     .ai-subtitle { font-size: 16px; margin-bottom: 40px; }
-    .ai-btn-wrapper { gap: 24px; }
-    .ai-icon-btn { width: 70px; height: 70px; border-radius: 16px; }
-    .ai-icon { width: 36px; height: 36px; }
+    .ai-btn-wrapper { gap: 32px; }
+    .ai-icon-link .ai-icon { width: 80px; height: 80px; border-radius: 20px; }
 }
 
 @media (max-width: 480px) {
     .ai-verify-section { padding: 60px 16px; }
-    .ai-title { font-size: 26px; }
+    .ai-title { font-size: 28px; }
     .ai-subtitle { font-size: 14px; margin-bottom: 32px; }
-    .ai-btn-wrapper { gap: 20px; }
-    .ai-icon-btn { width: 64px; height: 64px; }
-    .ai-icon { width: 32px; height: 32px; }
+    .ai-btn-wrapper { gap: 24px; }
+    .ai-icon-link .ai-icon { width: 70px; height: 70px; border-radius: 16px; }
 }
 </style>
