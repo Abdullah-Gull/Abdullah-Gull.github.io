@@ -113,17 +113,29 @@
     margin: 0;
 }
 
-/* --- BRAND ICON STYLING (BADA SIZE) --- */
+/* --- BRAND ICON STYLING (PERFECT COMPACT SIZE) --- */
 .ai-icon-link .ai-icon {
-    width: 95px;         /* Shandaar bada size jaisa image mein tha */
-    height: 95px;
-    object-fit: contain;
-    border-radius: 24px; /* Premium Apple-style smooth corners */
-    background: #16171a; /* Matt Black background behind transparent icons */
-    border: 1px solid rgba(255, 255, 255, 0.05); /* Hidden subtle border */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); /* Jet Black Deep Shadow */
+    width: 65px;         /* Size chota kar ke perfect kar diya */
+    height: 65px;        /* Bilkul square box */
+    object-fit: cover;   /* Icons agar bade chote hain to auto crop ho kar barabar dikhenge */
+    border-radius: 16px; /* Chote size ke mutabiq smooth rounded corners */
+    background: #16171a; /* Matt Black background */
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Deep subtle shadow */
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     margin: 0 !important;
+}
+
+/* --- HOVER ANIMATION (CHOTE ICONS KE LIYE PERFECT GLOW) --- */
+.ai-icon-link:hover {
+    transform: translateY(-6px); /* Halka sa upar uthega */
+}
+
+.ai-icon-link:hover .ai-icon {
+    background: #1c1d22; 
+    border-color: rgba(255, 140, 0, 0.5); /* Solid Amazon Orange Border */
+    box-shadow: 0 15px 35px rgba(255, 140, 0, 0.25); /* Luxury Orange Glow */
+    filter: brightness(1.1); 
 }
 
 /* --- HOVER ANIMATION (PREMIUM ORANGE GLOW) --- */
