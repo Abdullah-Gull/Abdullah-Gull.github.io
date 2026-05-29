@@ -835,712 +835,421 @@ a:focus {
 
 
     <body> 
-        <!-- GET IN TOUCH SECTION -->
+       <style>
+        /* Google Fonts Import for Premium Typography */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        /* RESET & BASE STYLES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #0b0c0e;
+        }
+
+        /* SECTION MAIN CONTAINER */
+        .get-in-touch-section {
+            background-color: #0b0c0e; /* Luxury Matte Black BG */
+            color: #a0a5b1;
+            padding: 80px 20px;
+            display: block;
+        }
+
+        .git-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* TOP HEADER AREA */
+        .git-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 0 10px;
+        }
+
+        .git-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .git-header p {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #b0b5c1;
+        }
+
+        /* TEXT COLOR HIGHLIGHTS */
+        .orange-text {
+            color: #ff9900; /* Signature Amazon Orange */
+        }
+
+        .orange-text-glow {
+            color: #ffaa1d;
+            font-weight: 600;
+        }
+
+        .white-text {
+            color: #ffffff;
+        }
+
+        /* MAIN CONTENT CARD GRID STYLE VIA TABLE-CELL FOR MAXIMUM STABILITY */
+        .git-main-card {
+            background: #121316; /* Deep Charcoal Dark Card */
+            border: 1px solid #1f2126;
+            border-radius: 24px;
+            display: table;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* COLUMNS */
+        .git-left-col, .git-right-col {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
+            padding: 50px;
+        }
+
+        /* LEFT COLUMN STYLING */
+        .git-left-col {
+            background-color: #121316;
+        }
+
+        .git-left-col h3 {
+            font-size: 28px;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .git-left-col .subtitle {
+            font-size: 16px;
+            color: #ff9900;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .git-left-col .tagline {
+            font-size: 14px;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        /* Bullet Points List */
+        .git-bullets {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+
+        .git-bullets li {
+            display: table;
+            margin-bottom: 18px;
+            line-height: 1.4;
+        }
+
+        .check-icon {
+            display: table-cell;
+            width: 25px;
+            color: #ff9900;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .bullet-text {
+            display: table-cell;
+            color: #a0a5b1;
+            font-size: 14.5px;
+        }
+
+        .cta-mini-text {
+            font-size: 14px;
+            color: #ffffff;
+            font-weight: 500;
+            margin-bottom: 35px;
+        }
+
+        /* STATS DESIGN SECTION */
+        .git-stats-container {
+            background: #18191d;
+            border: 1px solid #23252a;
+            border-radius: 16px;
+            display: table;
+            width: 100%;
+            padding: 22px 10px;
+            text-align: center;
+        }
+
+        .stat-box {
+            display: table-cell;
+            width: 32%;
+            vertical-align: middle;
+        }
+
+        .stat-box h4 {
+            color: #ffffff;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            font-size: 11px;
+            color: #808593;
+            line-height: 1.3;
+            padding: 0 5px;
+        }
+
+        .stat-box-divider {
+            display: table-cell;
+            width: 1px;
+            background-color: #2b2e36;
+            height: 50px;
+        }
+
+        /* RIGHT COLUMN (FORM BLOCK) */
+        .git-right-col {
+            background-color: #16171c; /* Contrast Dark Background */
+            border-left: 1px solid #1f2126;
+        }
+
+        .form-header {
+            margin-bottom: 30px;
+        }
+
+        .form-header h3 {
+            font-size: 28px;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            font-size: 14px;
+            color: #808593;
+            line-height: 1.5;
+        }
+
+        /* FORM FIELD STYLES */
+        .git-form-group {
+            margin-bottom: 22px;
+        }
+
+        .git-form-group label {
+            display: block !important;
+            font-size: 11px !important;
+            font-weight: 700 !important;
+            color: #ffffff !important;
+            letter-spacing: 1.5px !important;
+            margin-bottom: 10px !important;
+            text-transform: uppercase !important;
+        }
+
+        /* Premium Input Shape Settings Fixed */
+        .git-form input, 
+        .git-form textarea {
+            width: 100% !important;
+            background: #1d1e24 !important; /* Matte charcoal dark input fields */
+            border: 1px solid #282a32 !important;
+            color: #ffffff !important;
+            padding: 16px 20px !important;
+            border-radius: 12px !important; /* Sleek smooth curves */
+            font-size: 14px !important;
+            outline: none !important;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+            display: block !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        /* Placeholder Styling */
+        .git-form input::placeholder, 
+        .git-form textarea::placeholder {
+            color: #606675 !important;
+            font-size: 14px;
+        }
+
+        /* Interaction Aura Effect on Input Focus */
+        .git-form input:focus, 
+        .git-form textarea:focus {
+            border-color: #ff9900 !important;
+            background: #22232a !important;
+            box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .git-form textarea {
+            height: 130px !important;
+            resize: none !important;
+            line-height: 1.5 !important;
+        }
+
+        /* ELITE LUXURY BUTTON CONFIGURATION */
+        .git-submit-btn {
+            width: 100%;
+            background: #ffa733; /* Vibrant warm orange */
+            color: #0b0c0e;
+            border: none;
+            padding: 16px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.15);
+        }
+
+        .git-submit-btn span {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover states */
+        .git-submit-btn:hover {
+            background: #ff9900;
+            box-shadow: 0 8px 25px rgba(255, 153, 0, 0.35);
+        }
+
+        .git-submit-btn:hover .btn-arrow {
+            transform: translateX(4px); /* Arrow moves slightly to the right smoothly */
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 900px) {
+            .git-main-card {
+                display: block;
+            }
+            .git-left-col, .git-right-col {
+                display: block;
+                width: 100%;
+                padding: 35px 25px;
+            }
+            .git-right-col {
+                border-left: none;
+                border-top: 1px solid #1f2126;
+            }
+            .git-header h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
 <section class="get-in-touch-section">
-    <div class="get-in-touch-container">
-        <!-- Left Pane: Contact Information -->
-        <div class="contact-info-pane">
-            <h2 class="contact-title">
-                Get in touch with <span class="highlight-us">us</span>
-            </h2>
-
-            <!-- Benefits List -->
-            <ul class="benefits-list">
-                <li>
-                    <i class="fas fa-check"></i>
-                    <span>Expert Amazon strategy consultation</span>
-                </li>
-                <li>
-                    <i class="fas fa-check"></i>
-                    <span>Data-driven growth recommendations</span>
-                </li>
-                <li>
-                    <i class="fas fa-check"></i>
-                    <span>Customized scaling roadmap</span>
-                </li>
-                <li>
-                    <i class="fas fa-check"></i>
-                    <span>Dedicated account support</span>
-                </li>
-                <li>
-                    <i class="fas fa-check"></i>
-                    <span>Performance guarantee commitment</span>
-                </li>
-            </ul>
-
- <!-- Stats Container -->
-            <div class="stats-container">
-                <div class="stat-item">
-                    <span class="stat-number">45+</span>
-                    <span class="stat-label">Brands Managed</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number">$150K+</span>
-                    <span class="stat-label">MONTHLY REVENUE</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number">15+</span>
-                    <span class="stat-label">Team Members</span>
-                </div>
-            </div>
+    <div class="git-container">
+        
+        <div class="git-header">
+            <h2>Get in <span class="orange-text">touch</span></h2>
+            <p><strong class="white-text">Abdullah Gull</strong> is an <span class="orange-text-glow">Amazon-focused ecommerce growth partner</span> specializing in marketplace strategy and execution to scale brand performance on Amazon Seller Central and Vendor Central.</p>
         </div>
 
-
-        <!-- Right Pane: Contact Form -->
-        <div class="contact-form-pane">
-          <form action="https://formspree.io/f/mojpjjqk" method="POST" id="contactForm">
-    
-    <div class="input-group">
-        <label>FULL NAME</label>
-        <input type="text" name="name" placeholder="Your name" required>
-    </div>
-
-    <div class="input-group">
-        <label>EMAIL ADDRESS</label>
-        <input type="email" name="email" placeholder="your@email.com" required>
-    </div>
-
-    <div class="input-group">
-        <label>COMPANY NAME</label>
-        <input type="text" name="company" placeholder="Your company">
-    </div>
-
-    <div class="input-group">
-        <label>PHONE NUMBER</label>
-        <input type="text" name="phone" placeholder="+1 (555) 000-0000">
-    </div>
-
-    <div class="input-group">
-        <label>TELL US ABOUT YOUR BUSINESS</label>
-        <textarea name="message" placeholder="Share your goals and challenges..." required></textarea>
-    </div>
-
-    <button type="submit">Send Message →</button>
-</form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Partners Strip -->
-    <div class="partners-strip">
-        <div class="partners-container">
-            <span class="partners-label">Trusted by Leading Platforms</span>
-            <div class="partners-logos">
-                <div class="partner-badge">
-                    <i class="fab fa-aws"></i>
-                    <span>AWS Partner</span>
-                </div>
-                <div class="partner-badge">
-                    <i class="fab fa-google"></i>
-                    <span>Google Partner</span>
-                </div>
-                <div class="partner-badge">
-                    <svg class="partner-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
-                    </svg>
-                    <span>Helium 10</span>
-                </div>
-                <div class="partner-badge">
-                    <i class="fab fa-meta"></i>
-                    <span>Meta Partner</span>
-                </div>
-                <div class="partner-badge">
-                    <i class="fas fa-store"></i>
-                    <span>Walmart</span>
+        <div class="git-main-card">
+            
+            <div class="git-left-col">
+                <h3>Get in touch with us</h3>
+                <p class="subtitle">Discover How Our Amazon Solutions Can Propel Your Business</p>
+                <p class="tagline">Your brand deserves to thrive on Amazon.</p>
+                
+                <ul class="git-bullets">
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span class="bullet-text">Boost Sales, Visibility & ROI</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span class="bullet-text">Tailored Solutions for Your Unique Needs</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span class="bullet-text">Continuous Optimization, No Extra Fees</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span class="bullet-text">Streamline Operations and Minimize Costs</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span class="bullet-text">Comprehensive Amazon Services to Maximize Your Potential</span>
+                    </li>
+                </ul>
+                
+                <p class="cta-mini-text">Let's connect and unlock your Amazon store's true potential!</p>
+                
+                <div class="git-stats-container">
+                    <div class="stat-box">
+                        <h4>45+</h4>
+                        <p>Brand Managed</p>
+                    </div>
+                    <div class="stat-box-divider"></div>
+                    <div class="stat-box">
+                        <h4>$150K+</h4>
+                        <p>MONTHLY REVENUE</p>
+                    </div>
+                    <div class="stat-box-divider"></div>
+                    <div class="stat-box">
+                        <h4>15+</h4>
+                        <p>Team Members</p>
+                    </div>
                 </div>
             </div>
+
+            <div class="git-right-col">
+                <div class="form-header">
+                    <h3>Contact Us</h3>
+                    <p>We'd love to hear from you! Please fill out the form and we'll get back to you as soon as possible.</p>
+                </div>
+                
+                <form action="https://formspree.io/f/mojpjjqk" method="POST" class="git-form">
+                    
+                    <div class="git-form-group">
+                        <label>FULL NAME</label>
+                        <input type="text" name="name" placeholder="Your name" required>
+                    </div>
+
+                    <div class="git-form-group">
+                        <label>EMAIL ADDRESS</label>
+                        <input type="email" name="email" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="git-form-group">
+                        <label>COMPANY NAME</label>
+                        <input type="text" name="company" placeholder="Your company">
+                    </div>
+
+                    <div class="git-form-group">
+                        <label>PHONE NUMBER</label>
+                        <input type="text" name="phone" placeholder="+1 (555) 000-0000">
+                    </div>
+
+                    <div class="git-form-group">
+                        <label>TELL US ABOUT YOUR BUSINESS</label>
+                        <textarea name="message" placeholder="Share your goals and challenges..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="git-submit-btn">
+                        <span>Send Message</span>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+            </div>
+
         </div>
     </div>
 </section>
 
-<!-- PREMIUM DARK MODE CSS -->
-<style>
-    /* --- GET IN TOUCH SECTION --- */
-    .get-in-touch-section {
-        background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
-        padding: 120px 5% 80px;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .get-in-touch-section::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -10%;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%);
-        border-radius: 50%;
-        pointer-events: none;
-    }
-
-    .get-in-touch-section::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--primary-orange), transparent);
-    }
-
-    .get-in-touch-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1.2fr;
-        gap: 80px;
-        align-items: center;
-        position: relative;
-        z-index: 2;
-        margin-bottom: 80px;
-    }
-
-    /* --- LEFT PANE: CONTACT INFO --- */
-    .contact-info-pane {
-        animation: slideInLeft 0.8s ease-out;
-    }
-
-    .contact-title {
-        font-size: 52px;
-        font-weight: 900;
-        color: var(--light-text);
-        margin: 0 0 32px 0;
-        line-height: 1.2;
-        letter-spacing: -1px;
-    }
-
-    .contact-title .highlight-us {
-        background: linear-gradient(135deg, #FF8C00, #FFB84D);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    /* --- BENEFITS LIST --- */
-    .benefits-list {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 48px 0;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .benefits-list li {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        font-size: 15px;
-        color: var(--subtle-gray);
-        transition: all 0.3s var(--transition-smooth);
-    }
-
-    .benefits-list li:hover {
-        color: var(--light-text);
-        transform: translateX(8px);
-    }
-
-    .benefits-list li i {
-        font-size: 16px;
-        color: var(--primary-orange);
-        flex-shrink: 0;
-    }
-
-    /* --- STATS CONTAINER --- */
-    .stats-container {
-        background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6));
-        border: 1px solid var(--border-color);
-        border-radius: 16px;
-        padding: 32px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-        align-items: center;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-    }
-
-    .stat-item {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
-    }
-
-    .stat-number {
-        font-size: 28px;
-        font-weight: 900;
-        background: linear-gradient(135deg, #FF8C00, #FFB84D);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    .stat-label {
-        font-size: 12px;
-        font-weight: 700;
-        color: var(--subtle-gray);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .stat-divider {
-        height: 40px;
-        width: 1px;
-        background: linear-gradient(180deg, transparent, var(--border-color), transparent);
-        margin: 0 12px;
-        grid-column: auto;
-    }
-
-    /* --- RIGHT PANE: CONTACT FORM --- */
-    .contact-form-pane {
-        animation: slideInRight 0.8s ease-out;
-    }
-
-    .form-card {
-        background: linear-gradient(135deg, rgba(26, 27, 31, 0.9), rgba(42, 43, 47, 0.8));
-        border: 1.5px solid var(--primary-orange);
-        border-radius: 24px;
-        padding: 50px;
-        box-shadow: 0 20px 60px rgba(255, 140, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        transition: all 0.4s var(--transition-smooth);
-    }
-
-    .form-card:hover {
-        border-color: #FFB84D;
-        box-shadow: 0 24px 80px rgba(255, 140, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-
-    /* --- FORM STYLING --- */
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .form-group {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .form-group label {
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--light-text);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2));
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 14px 16px;
-        color: var(--light-text);
-        font-family: inherit;
-        font-size: 14px;
-        transition: all 0.3s var(--transition-smooth);
-    }
-
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-        color: rgba(255, 255, 255, 0.3);
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-        outline: none;
-        background: linear-gradient(135deg, rgba(255, 140, 0, 0.1), rgba(255, 140, 0, 0.05));
-        border-color: var(--primary-orange);
-        box-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
-    }
-
-    .form-group.full-width {
-        grid-column: 1 / -1;
-    }
-
-    .form-group textarea {
-        resize: vertical;
-        min-height: 120px;
-    }
-
-    /* --- SUBMIT BUTTON --- */
-    .send-message-btn {
-        background: linear-gradient(135deg, #FF8C00, #FFB84D);
-        color: #fff;
-        border: none;
-        padding: 16px 36px;
-        border-radius: 50px;
-        font-weight: 700;
-        font-size: 15px;
-        letter-spacing: 0.5px;
-        cursor: pointer;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 12px 28px rgba(255, 140, 0, 0.25);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        position: relative;
-        overflow: hidden;
-        margin-top: 16px;
-    }
-
-    .send-message-btn::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .send-message-btn:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 16px 40px rgba(255, 140, 0, 0.35);
-    }
-
-    .send-message-btn:hover::before {
-        left: 100%;
-    }
-
-    .send-message-btn i {
-        font-size: 14px;
-        transition: all 0.3s var(--transition-smooth);
-    }
-
-    .send-message-btn:hover i {
-        transform: translateX(4px);
-    }
-
-    /* --- PARTNERS STRIP --- */
-    .partners-strip {
-        background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.05), transparent);
-        border-top: 1px solid var(--border-color);
-        border-bottom: 1px solid var(--border-color);
-        padding: 40px 5%;
-        position: relative;
-        z-index: 2;
-    }
-
-    .partners-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 60px;
-        flex-wrap: wrap;
-    }
-
-    .partners-label {
-        font-size: 12px;
-        font-weight: 800;
-        color: var(--subtle-gray);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        white-space: nowrap;
-    }
-
-    .partners-logos {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
-    }
-
-    .partner-badge {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--subtle-gray);
-        transition: all 0.3s var(--transition-smooth);
-    }
-
-    .partner-badge:hover {
-        color: var(--primary-orange);
-    }
-
-    .partner-badge i {
-        font-size: 18px;
-        transition: all 0.3s var(--transition-smooth);
-    }
-
-    .partner-badge:hover i {
-        transform: scale(1.2);
-    }
-
-    .partner-icon {
-        width: 20px;
-        height: 20px;
-        stroke: currentColor;
-    }
-
-    /* --- ANIMATIONS --- */
-    @keyframes slideInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    @keyframes slideInRight {
-        from {
-            opacity: 0;
-            transform: translateX(40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    /* --- RESPONSIVE DESIGN --- */
-    @media (max-width: 1200px) {
-        .get-in-touch-section {
-            padding: 100px 5% 80px;
-        }
-
-        .get-in-touch-container {
-            gap: 60px;
-            margin-bottom: 60px;
-        }
-
-        .contact-title {
-            font-size: 44px;
-            margin-bottom: 28px;
-        }
-
-        .form-card {
-            padding: 40px;
-        }
-
-        .stats-container {
-            padding: 24px;
-            gap: 20px;
-        }
-    }
-
-    @media (max-width: 1024px) {
-        .get-in-touch-container {
-            grid-template-columns: 1fr;
-            gap: 50px;
-        }
-
-        .contact-info-pane {
-            order: 2;
-        }
-
-        .contact-form-pane {
-            order: 1;
-        }
-
-        .contact-title {
-            font-size: 38px;
-        }
-
-        .stats-container {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    @media (max-width: 768px) {
-        .get-in-touch-section {
-            padding: 80px 5% 60px;
-        }
-
-        .get-in-touch-container {
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .contact-title {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .benefits-list {
-            gap: 12px;
-            margin-bottom: 32px;
-        }
-
-        .benefits-list li {
-            font-size: 14px;
-        }
-
-        .stats-container {
-            padding: 24px;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
-
-        .stat-number {
-            font-size: 22px;
-        }
-
-        .stat-label {
-            font-size: 11px;
-        }
-
-        .form-card {
-            padding: 32px;
-        }
-
-        .contact-form {
-            gap: 20px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 12px 14px;
-            font-size: 13px;
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-        }
-
-        .send-message-btn {
-            padding: 14px 28px;
-            font-size: 14px;
-        }
-
-        .partners-container {
-            gap: 40px;
-        }
-
-        .partners-logos {
-            gap: 24px;
-        }
-
-        .partner-badge {
-            gap: 6px;
-            font-size: 12px;
-        }
-
-        .partner-badge i {
-            font-size: 16px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .get-in-touch-section {
-            padding: 60px 5% 40px;
-        }
-
-        .get-in-touch-container {
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .contact-title {
-            font-size: 24px;
-            margin-bottom: 16px;
-        }
-
-        .benefits-list {
-            gap: 10px;
-            margin-bottom: 24px;
-        }
-
-        .benefits-list li {
-            font-size: 13px;
-        }
-
-        .stats-container {
-            padding: 20px;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
-
-        .stat-item {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .stat-item:last-child {
-            border-bottom: none;
-        }
-
-        .stat-divider {
-            display: none;
-        }
-
-        .stat-number {
-            font-size: 20px;
-        }
-
-        .form-card {
-            padding: 24px;
-            border-radius: 16px;
-        }
-
-        .contact-form {
-            gap: 16px;
-        }
-
-        .form-group label {
-            font-size: 12px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 10px 12px;
-            font-size: 12px;
-            border-radius: 8px;
-        }
-
-        .form-group textarea {
-            min-height: 80px;
-        }
-
-        .send-message-btn {
-            padding: 12px 24px;
-            font-size: 13px;
-            gap: 8px;
-            margin-top: 12px;
-        }
-
-        .partners-strip {
-            padding: 30px 5%;
-        }
-
-        .partners-container {
-            gap: 20px;
-        }
-
-        .partners-logos {
-            gap: 16px;
-        }
-
-        .partner-badge {
-            gap: 6px;
-            font-size: 11px;
-        }
-
-        .partner-badge i {
-            font-size: 14px;
-        }
-    }
-</style>
 
     
         <!-- FOOTER SECTION - Based on Image Reference -->
