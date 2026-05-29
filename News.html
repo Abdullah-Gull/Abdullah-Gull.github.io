@@ -820,12 +820,10 @@ a:focus {
 </style>
     <link rel="stylesheet" href="style.css">
 
-
     <style>
-        /* Google Fonts for Elite Corporate Typography */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-        /* RESET & MASTER STYLES */
+        /* RESET & BASE SYSTEM */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -834,17 +832,18 @@ a:focus {
         }
 
         body {
-            background-color: #0b0c0e; /* Luxury Matte Black */
+            background-color: #0b0c0e;
             color: #a0a5b1;
-            padding: 60px 20px;
+            padding: 40px 20px;
+            line-height: 1.6;
         }
 
         .hub-container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
-        /* DYNAMIC VIEWS CONTROL */
+        /* VIEW TOGGLE SYSTEM */
         .view-section {
             display: none;
         }
@@ -853,31 +852,34 @@ a:focus {
         }
 
         /* ==========================================================================
-           1. MAIN DASHBOARD VIEW STYLES
+           1. MAIN DASHBOARD VIEW (GRID FIX)
            ========================================================================== */
         .hub-header {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             border-bottom: 1px solid #1f2126;
-            padding-bottom: 20px;
+            padding-bottom: 30px;
         }
 
         .hub-header h1 {
-            font-size: 36px;
+            font-size: 38px;
             color: #ffffff;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
         }
 
         .hub-header p {
             font-size: 15px;
             color: #808593;
+            max-width: 800px;
         }
 
-        /* Grid Configuration */
+        /* Prevent overlapping using standard row/column gap allocation */
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
+            margin-bottom: 60px;
         }
 
         .article-card {
@@ -886,19 +888,21 @@ a:focus {
             border-radius: 16px;
             overflow: hidden;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
         }
 
         .article-card:hover {
             transform: translateY(-6px);
-            border-color: #ff9900; /* Amazon Orange Trigger */
+            border-color: #ff9900;
         }
 
         .card-img-wrapper {
             width: 100%;
-            height: 200px;
+            height: 210px;
             background: #1d1e24;
-            position: relative;
             overflow: hidden;
         }
 
@@ -910,6 +914,10 @@ a:focus {
 
         .card-content {
             padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
         }
 
         .card-content h3 {
@@ -917,7 +925,7 @@ a:focus {
             color: #ffffff;
             font-weight: 600;
             line-height: 1.4;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -928,25 +936,27 @@ a:focus {
             font-size: 12px;
             color: #606675;
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* ==========================================================================
-           2. SINGLE ARTICLE VIEW STYLES (NATIVE NARRATIVE LAYOUT)
+           2. SINGLE ARTICLE VIEW (OVERLAP FIX VIA INDEPENDENT LAYOUT CELL)
            ========================================================================== */
         .back-btn {
             background: transparent;
             border: 1px solid #282a32;
             color: #ffffff;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 30px;
             font-size: 13px;
             font-weight: 600;
             cursor: pointer;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .back-btn:hover {
@@ -954,19 +964,21 @@ a:focus {
             color: #ff9900;
         }
 
+        /* Flexible Grid to isolate sidebar items from overlaying main text */
         .article-layout {
             display: grid;
-            grid-template-columns: 8fr 4fr; /* Main Content Area vs Sidebar */
-            gap: 40px;
+            grid-template-columns: 8fr 4fr;
+            gap: 50px;
+            align-items: start;
         }
 
-        /* Left Side Content */
         .main-article-body h1 {
-            font-size: 38px;
+            font-size: 40px;
             color: #ffffff;
             font-weight: 700;
             line-height: 1.3;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
         }
 
         .article-meta-bar {
@@ -975,26 +987,26 @@ a:focus {
             justify-content: space-between;
             border-bottom: 1px solid #1f2126;
             padding-bottom: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .author-mini {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         .author-mini img {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             object-fit: cover;
-            border: 1px solid #ff9900;
+            border: 2px solid #ff9900;
         }
 
         .author-mini-info h5 {
             color: #ffffff;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
         }
 
@@ -1003,18 +1015,17 @@ a:focus {
             color: #606675;
         }
 
-        /* Share Cluster */
         .share-cluster {
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
 
         .share-icon {
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             background: #121316;
             border: 1px solid #282a32;
-            border-radius: 6px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1029,13 +1040,12 @@ a:focus {
             color: #ff9900;
         }
 
-        /* Feature Banner */
         .article-feature-banner {
             width: 100%;
-            height: 450px;
-            border-radius: 16px;
+            height: 480px;
+            border-radius: 20px;
             overflow: hidden;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             border: 1px solid #1f2126;
         }
 
@@ -1045,106 +1055,113 @@ a:focus {
             object-fit: cover;
         }
 
-        /* Typography Hierarchy for Native Understanding */
+        /* ADVANCED NATIVE STREAM CONTENT BLOCK */
         .content-stream p {
             font-size: 16px;
-            line-height: 1.7;
+            line-height: 1.8;
             color: #b0b5c1;
             margin-bottom: 25px;
+            text-align: justify;
         }
 
         .content-stream h2 {
-            font-size: 24px;
+            font-size: 26px;
             color: #ffffff;
             font-weight: 700;
-            margin: 40px 0 20px 0;
-            border-left: 3px solid #ff9900; /* Premium Orange Indicator line */
-            padding-left: 15px;
+            margin: 45px 0 20px 0;
+            border-left: 4px solid #ff9900;
+            padding-left: 18px;
+            letter-spacing: -0.3px;
         }
 
         .content-stream ul {
-            margin-bottom: 25px;
-            padding-left: 20px;
+            margin-bottom: 30px;
+            padding-left: 25px;
         }
 
         .content-stream ul li {
-            font-size: 15px;
+            font-size: 15.5px;
             color: #b0b5c1;
-            margin-bottom: 12px;
-            line-height: 1.5;
+            margin-bottom: 14px;
+            line-height: 1.6;
         }
 
-        /* Premium Callout Box */
         .premium-callout {
             background: #121316;
             border-left: 4px solid #ff9900;
-            padding: 25px;
-            border-radius: 0 12px 12px 0;
-            margin: 35px 0;
+            padding: 30px;
+            border-radius: 0 16px 16px 0;
+            margin: 40px 0;
+            box-shadow: inset 5px 0 20px rgba(0,0,0,0.2);
         }
 
         .premium-callout p {
-            font-size: 15px;
+            font-size: 16px;
             font-style: italic;
             color: #ffffff;
             margin-bottom: 0;
+            line-height: 1.6;
         }
 
-        /* Author Profile Footer Card */
+        /* AUTHOR BIO CARD STYLING */
         .author-profile-footer {
             background: #121316;
             border: 1px solid #1f2126;
-            border-radius: 16px;
-            padding: 30px;
-            margin-top: 50px;
+            border-radius: 20px;
+            padding: 35px;
+            margin-top: 60px;
             display: flex;
-            gap: 20px;
+            gap: 25px;
             align-items: center;
         }
 
         .author-profile-footer img {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #ff9900;
+            flex-shrink: 0;
         }
 
         .author-footer-details h4 {
             color: #ffffff;
-            font-size: 18px;
-            margin-bottom: 6px;
+            font-size: 19px;
+            margin-bottom: 8px;
         }
 
         .author-footer-details p {
             font-size: 14px;
             color: #808593;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* Right Side Sidebar */
+        /* SIDEBAR COMPONENT FEED */
         .sidebar-panel {
             background: #121316;
             border: 1px solid #1f2126;
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 30px;
-            height: fit-content;
+            position: sticky;
+            top: 40px; /* Moves fluidly along viewport without clipping */
         }
 
         .sidebar-panel h4 {
             color: #ffffff;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #1f2126;
+            padding-bottom: 12px;
         }
 
         .mini-feed-item {
             display: block;
             text-decoration: none;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
+            margin-bottom: 22px;
+            padding-bottom: 22px;
             border-bottom: 1px solid #1f2126;
         }
 
@@ -1157,8 +1174,9 @@ a:focus {
         .mini-feed-item h5 {
             color: #ffffff;
             font-size: 14px;
-            line-height: 1.4;
-            margin-bottom: 6px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            font-weight: 600;
             transition: color 0.2s ease;
         }
 
@@ -1169,24 +1187,36 @@ a:focus {
         .mini-feed-item span {
             font-size: 11px;
             color: #606675;
+            text-transform: uppercase;
         }
 
-        /* RESPONSIVENESS */
-        @media (max-width: 900px) {
+        /* RESPONSIVE LAYOUT MATRIX */
+        @media (max-width: 1024px) {
             .articles-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             .article-layout {
                 grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .sidebar-panel {
+                position: static;
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 680px) {
             .articles-grid {
                 grid-template-columns: 1fr;
             }
             .main-article-body h1 {
-                font-size: 28px;
+                font-size: 30px;
+            }
+            .article-feature-banner {
+                height: 300px;
+            }
+            .author-profile-footer {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -1197,57 +1227,55 @@ a:focus {
 
     <div id="dashboardView" class="view-section active">
         <div class="hub-header">
-            <h1>Amazon Seller News</h1>
-            <p>Be informed Amazon seller and keep up with the latest Amazon news, Gain insights and strategies to help your business thrive on Amazon.</p>
+            <h1>Amazon Seller News & Strategy Hub</h1>
+            <p>Advanced algorithmic updates, critical policy modifications, and tactical data frameworks tailored for modern high-revenue brands scaling on Amazon Seller Central and Vendor Central.</p>
         </div>
 
         <div class="articles-grid" id="mainGridContainer">
             </div>
     </div>
 
-
     <div id="articleView" class="view-section">
         <button class="back-btn" onclick="switchToDashboard()">← Back to Dashboard</button>
         
         <div class="article-layout">
             <div class="main-article-body">
-                <h1 id="artTitle">Article Title Placeholder</h1>
+                <h1 id="artTitle">Strategic Matrix Formulation</h1>
                 
                 <div class="article-meta-bar">
                     <div class="author-mini">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Abdullah Gull" id="artAuthorImg">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Abdullah Gull">
                         <div class="author-mini-info">
-                            <h5 id="artAuthorName">Abdullah Gull</h5>
-                            <p id="artDate">May 25, 2026 • Read Time: 5 mins</p>
+                            <h5>Abdullah Gull</h5>
+                            <p id="artDate">Processing Data...</p>
                         </div>
                     </div>
                     <div class="share-cluster">
-                        <a href="#" class="share-icon">f</a>
-                        <a href="#" class="share-icon">in</a>
-                        <a href="#" class="share-icon">𝕏</a>
+                        <a href="#" class="share-icon" onclick="event.preventDefault();">f</a>
+                        <a href="#" class="share-icon" onclick="event.preventDefault();">in</a>
+                        <a href="#" class="share-icon" onclick="event.preventDefault();">𝕏</a>
                     </div>
                 </div>
 
                 <div class="article-feature-banner">
-                    <img src="" alt="Feature Banner" id="artBanner">
+                    <img src="" alt="Feature Resource Banner" id="artBanner">
                 </div>
 
                 <div class="content-stream" id="artBodyStream">
                     </div>
 
                 <div class="author-profile-footer">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Abdullah Gull">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Abdullah Gull">
                     <div class="author-footer-details">
                         <h4>Abdullah Gull</h4>
-                        <p>Hi, I'm Abdullah Gull, an Amazon FBA specialist and e-commerce growth partner. We growth hack e-commerce and marketplaces through PPC, SEO, design, and catalog management strategies tailored specifically to scale brand performance globally.</p>
+                        <p>Abdullah Gull is a specialized Amazon e-commerce growth partner. He leads full-service marketplace scaling operations, managing cross-functional deployments spanning advanced PPC matrix design, programmatic SEO listings, architectural catalog cleanups, and premium asset conversion pipelines to systematically maximize brand equity and revenue footprint.</p>
                     </div>
                 </div>
             </div>
 
             <div class="sidebar-panel">
-                <h4>Other News</h4>
-                <div id="sidebarFeed">
-                    </div>
+                <h4>Trending Intelligence</h4>
+                <div id="sidebarFeed"></div>
             </div>
         </div>
     </div>
@@ -1255,66 +1283,246 @@ a:focus {
 </div>
 
 <script>
-    // 1. DATA REPOSITORY (Native Datasets Matching Your Images)
+    // 20 ENTIRELY SEPARATE DATA TOPICS FOR MAXIMUM PROFESSIONAL CONTENT FOOTPRINT
     const database = [
         {
             id: 1,
-            title: "Amazon Associates Affiliate Program Slashes Commissions for Publishers",
+            title: "Amazon Associates Affiliate Program Slashes Commissions for Enterprise Publishers",
             date: "May 25, 2026",
-            image: "https://images.unsplash.com/photo-1581291518655-9523c932dedf?auto=format&fit=crop&w=600&q=80",
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
             body: `
-                <p>The Amazon Associates affiliate program reportedly cut publisher commissions by up to 50%, removed performance bonuses, and reduced reporting visibility, leaving many affiliates reassessing their business models.</p>
-                <p>Recent updates to the Amazon Associates affiliate program are creating uncertainty across the affiliate marketing industry. Publishers say the reported commission cuts and reporting changes could significantly impact how affiliate businesses operate in 2026.</p>
-                <p>The timing adds even more pressure for publishers already dealing with lower search visibility and rising acquisition costs. Many affiliates are now looking more seriously at diversification strategies, including Walmart, TikTok Shop, and direct e-commerce partnerships.</p>
-                
-                <h2>Amazon Quietly Restructures Affiliate Payout System</h2>
-                <p>According to an AdWeek article, the Amazon Associates affiliate program reportedly underwent major changes over the past several months, affecting publisher payouts and campaign reporting capabilities. Several publishers and partners familiar with the matter said the updates were never publicly announced by Amazon.</p>
-                <p>According to reports, Amazon affiliate commissions were reduced by as much as 50% in some publisher categories. The company also removed milestone-based bonuses that previously rewarded high-performing affiliates for reaching sales targets.</p>
-                
+                <p>The Amazon Associates affiliate network has silently enforced deep structural cuts on publisher referral structures, reducing premium payouts by up to 50% across high-traffic categories. This silent shift has triggered substantial turbulence among media conglomerates and authority review portfolios that depend heavily on Amazon's attribution modeling for monetization infrastructure.</p>
+                <h2>Algorithmic Adjustments & Payout Compression</h2>
+                <p>Industry evaluations indicate that standard commissions in critical electronics and consumer appliances have fallen down to lower base thresholds. Furthermore, milestone performance incentives that previously allowed elite networks to unlock tier-based bonuses have been completely removed without warning.</p>
                 <div class="premium-callout">
-                    <p>"Some publishers have reportedly seen Amazon commission rates cut by up to 50%, with premium rates in certain categories falling from around 10% to 4% or 5%." — Industry Insights Report</p>
+                    <p>"The compression of top-tier affiliate referral variables marks a distinct transition where Amazon prioritizes its internal ad ecosystem over off-site affiliate funnels."</p>
                 </div>
-
-                <h2>Amazon Slashes Commissions and Tightens Reporting Access for Publishers</h2>
-                <p>The Amazon Associates affiliate program has reportedly undergone a broad restructuring that includes significant cuts to commission rates and reduced reporting visibility for publishers, as reported by Shopifreaks. These changes have been observed across multiple publisher segments and were not publicly announced by Amazon.</p>
-                <ul>
-                    <li>Reduced commission rates across some publisher categories</li>
-                    <li>Removal of milestone-based incentive bonuses</li>
-                    <li>Reduced visibility in affiliate reporting tools</li>
-                    <li>Changes communicated privately to affected publishers</li>
-                </ul>
+                <h2>Operational Framework Countermeasures</h2>
+                <p>Sellers relying on affiliate content to feed traffic should expect drop-offs in external review velocity. Forward-thinking brands must deploy custom conversion paths and direct alternative loops like TikTok Shop or direct storefront integrations to stabilize aggregate sales performance.</p>
             `
         },
         {
             id: 2,
-            title: "Amazon New Arrival and Notable Arrival Badges Give New Listings a Better Shot",
-            date: "May 22, 2026",
-            image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=600&q=80",
+            title: "Cracking the A10 Rank Vector: Advanced Conversions Over Simple Search Volume",
+            date: "May 24, 2026",
+            image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80",
             body: `
-                <p>Amazon is rolling out new visual enhancements for brand new listings. The "New Arrival" badges aim to help fresh products compete against established competitors with thousands of reviews.</p>
-                <h2>Visibility Boost on A9/A10 Algorithm</h2>
-                <p>This update gives a significant conversion boost during the initial product launch honeymoon phase. Sellers must monitor inventory pipelines carefully to ensure continuous trajectory without going out of stock.</p>
+                <p>Amazon's current search algorithm iterations indicate a significant departure from standard keyword frequency mechanisms, moving into user behavioral signals and contextual conversion metrics. High search density keyword optimization no longer guarantees top visibility placement.</p>
+                <h2>The Primacy of High-Intent Conversions</h2>
+                <p>The current ranking structure gives immense weight to organic purchase velocity coming from off-site brand navigation and clean add-to-cart ratios. Internal search query matching is heavily balanced by programmatic user satisfaction parameters.</p>
+                <ul>
+                    <li>Prioritize external referral paths that mimic organic discovery loops.</li>
+                    <li>Optimize product listings for micro-demographic conversions rather than raw volume.</li>
+                    <li>Minimize bounce rates within the first 10 seconds of user arrivals.</li>
+                </ul>
             `
         },
         {
             id: 3,
-            title: "Amazon DD+7 Payment Policy Update Leaves Sellers Waiting Longer",
-            date: "May 20, 2026",
-            image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80",
+            title: "Mastering FBA Account Reserves: Mitigating the Delivery Date Payout Constraints",
+            date: "May 22, 2026",
+            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80",
             body: `
-                <p>The upcoming delivery date plus 7 days base payout constraint has generated heavy operational discussions. Cash flow management is now becoming the critical pillar for FBA brands.</p>
-                <h2>Adapting Cash Flows For FBA Logistics</h2>
-                <p>Working capital reserves will require fine-tuning to counter account level reserves. Streamlined catalog controls are vital to maintaining stable payouts.</p>
+                <p>The systematic transition of Amazon's base transaction settlements onto a structural standard has constrained capital scaling configurations for enterprise operators. Working capital management must now incorporate structural reserves natively.</p>
+                <h2>Architectural Cash Flow Protection</h2>
+                <p>Operating cash frameworks must maintain a baseline reserve matching historical weekly fulfillment volume. Failure to account for localized logistical hold periods will severely restrict supply line manufacturing operations.</p>
+            `
+        },
+        {
+            id: 4,
+            title: "Amazon Marketing Cloud (AMC): Advanced SQL Queries for Precise Customer Attribution",
+            date: "May 20, 2026",
+            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Standard reporting consoles on Seller Central only expose aggregated, single-dimensional purchase attributions. Utilizing Amazon Marketing Cloud allows data specialists to execute multi-touch custom clean-room analysis via complex SQL structures.</p>
+                <h2>De-duplicating DSP and Sponsored Ad Paths</h2>
+                <p>By mapping independent customer journey logs within the secure clean room environment, brands can eliminate wasted ad spend where Display banners and Sponsored Brand assets overlap on identical conversion paths.</p>
+            `
+        },
+        {
+            id: 5,
+            title: "FBA Inventory Placement Fee Strategies: Restructuring Distribution Over Multi-Logistics Nodes",
+            date: "May 18, 2026",
+            image: "https://images.unsplash.com/photo-1549194388-f61be84a6e9e?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>New updates regarding placement algorithms charge premiums for concentrated localized inbound shipments. Brands can bypass high placement penalties by choosing multi-destination distribution methods.</p>
+                <h2>Optimal Freight Selection Models</h2>
+                <p>By using direct factory cross-docking models to sort products before customs check-in, brands can hit diverse regional fulfillment targets natively, cutting inbound placement fees entirely.</p>
+            `
+        },
+        {
+            id: 6,
+            title: "Navigating Section 3 Suspension Threats: Advanced Compliance Strategy for Global Brands",
+            date: "May 15, 2026",
+            image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Section 3 suspensions represent severe business disruptions for Amazon operators. Developing clear corporate compliance channels and supply chain document validation trails is the only defense against automated dropshipping policy warnings.</p>
+                <h2>Verifying Upstream Supply Authorization</h2>
+                <p>Brands must secure clean digital footprints connecting factory raw material invoices directly to registered trademarks. Loosely structured supply authorizations will fail manual account review protocols.</p>
+            `
+        },
+        {
+            id: 7,
+            title: "SABER Testing Compliance: Meeting Technical Standards for International Electronics",
+            date: "May 12, 2026",
+            image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Regulatory sweeps across global Amazon platforms require strict validation parameters for technical goods. Electronic components must have clean test reports directly attached to ASIN data structures.</p>
+                <h2>Mitigating Unannounced Compliance Suppression</h2>
+                <p>Pre-emptively submit accredited laboratory compliance records directly within the Account Health portal. Waiting for automatic bots to flag product safety specifications risks lengthy seasonal inventory lockdowns.</p>
+            `
+        },
+        {
+            id: 8,
+            title: "Programmatic Premium A+ Content Architecture: Driving Higher Average Order Value",
+            date: "May 10, 2026",
+            image: "https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Basic visual structures are insufficient for high-converting premium listings. Advanced A+ layouts must use custom interactive tables, comprehensive comparison matrixes, and lifestyle video banners to capture professional audiences.</p>
+                <h2>Cross-Selling Content Frameworks</h2>
+                <p>Structure your modules to highlight your brand's complementary catalog ecosystem. This increases Average Order Value (AOV) by providing customers with a natural upgrading pathway directly on the current active detail page.</p>
+            `
+        },
+        {
+            id: 9,
+            title: "Amazon DSP Optimization: Harnessing Off-Amazon Audience Behavioral Retargeting",
+            date: "May 08, 2026",
+            image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>The Demand-Side Platform (DSP) allows operators to secure programmatic ad placements outside the conventional Amazon domain. Success requires defining clean audience segmentation rules rather than relying on automated audience pools.</p>
+                <h2>Designing Contextual Inbound Funnels</h2>
+                <p>Build custom lookalike segments based on active CRM purchase loops. Run localized creative assets targeting consumers who browsed your listing but didn't complete checkout within a 14-day window.</p>
+            `
+        },
+        {
+            id: 10,
+            title: "The Death of Bulk Review Manipulations: Elevating Organic Review Acquisition Models",
+            date: "May 05, 2026",
+            image: "https://images.unsplash.com/photo-1521791136368-1a46827d3ad4?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Artificial review velocity models are systematically caught by Amazon's behavioral pattern detectors. Brands must shift completely to legitimate, programmatic follow-up sequences and authorized sampling frameworks.</p>
+                <h2>Leveraging Authorized Vine Matrix Deployments</h2>
+                <p>Deploy product variations across multiple specialized parent listings to safely increase honest initial reviews, ensuring your launch retains its critical early ranking velocity safely.</p>
+            `
+        },
+        {
+            id: 11,
+            title: "Automating Seller Central Actions: Integrating the Selling Partner API (SP-API) Securely",
+            date: "May 02, 2026",
+            image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Manual tracking of complex business performance data leads to calculation lag. Integrating custom backend software directly with the Selling Partner API allows brands to monitor changing inventory data automatically.</p>
+                <h2>Constructing Real-Time Profit Tracking Systems</h2>
+                <p>Stream real-time financial reporting metrics directly into internal tracking dashboards to dynamically adjust live PPC bids based on actual gross margins.</p>
+            `
+        },
+        {
+            id: 12,
+            title: "Brand Registry 2.0 Infringement Enforcement: Protecting Patent and Trademark Assets",
+            date: "Apr 28, 2026",
+            image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Hijackers and low-cost counterfeit operators disrupt established listing dynamics. Using advanced automated protection strategies under Project Zero allows brands to remove copyright bad actors without long validation processes.</p>
+                <h2>Securing Legal Dominance</h2>
+                <p>Incorporate your design patents directly within Amazon's automated brand vault to neutralize unauthorized catalog copies before they compromise buybox ownership.</p>
+            `
+        },
+        {
+            id: 13,
+            title: "Sponsored Products Dayparting: Fine-Tuning Hourly Bid Allocations For Maximum Conversions",
+            date: "Apr 25, 2026",
+            image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Running uniform PPC advertising configurations continuously across 24-hour cycles leads to wasted ad spend during low-conversion nighttime windows. Implementing precise hourly bid adjustments channels your ad budget into peak buying hours.</p>
+                <h2>Isolating Target Time Blocks</h2>
+                <p>Analyze clean hourly conversion data patterns to discover your sweet spot. Systematically lower ad bids during low-intent periods while increasing visibility targets when conversions spike.</p>
+            `
+        },
+        {
+            id: 14,
+            title: "International Expansion Frameworks: Navigating Tax Compliance for Pan-European FBA Stores",
+            date: "Apr 22, 2026",
+            image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Expanding across the Pan-EU network requires addressing complicated regional tax frameworks. Incorrect cross-border tax documentation can lead to severe account holds across multiple regional marketplaces.</p>
+                <h2>Establishing a Centralized Tax Compliance Structure</h2>
+                <p>Set up automated VAT identification systems across each targeted region before enabling international logistics distribution. This shields your margins from surprise retroactive compliance fees.</p>
+            `
+        },
+        {
+            id: 15,
+            title: "Variations Management Optimization: Preserving Ranking Power on Complicated ASIN Structures",
+            date: "Apr 20, 2026",
+            image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Splitting active item configurations carelessly can destroy historical SEO keyword indexing. Learning how to properly combine listings under clean parent structures preserves reviews while providing an intuitive catalog experience.</p>
+                <h2>Strategic Parent-Child Mapping</h2>
+                <p>Map your item variants cleanly to avoid triggering internal duplicate listing warnings. This strategy helps funnel mixed buyers smoothly toward underperforming variations.</p>
+            `
+        },
+        {
+            id: 16,
+            title: "Negotiating with Enterprise Manufacturers: Securing Sustainable Margins against Rising Shipping Costs",
+            date: "Apr 18, 2026",
+            image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Product profit margins face constant pressure from changing global supply chain rates. Developing robust, structured manufacturing contracts helps keep unit costs stable across extended production cycles.</p>
+                <h2>Structuring Volume-Based Pricing Milestones</h2>
+                <p>Link your raw material purchase expectations to clear tier-based volume discounts. This framework protects your gross profitability from sudden changes in domestic logistics costs.</p>
+            `
+        },
+        {
+            id: 17,
+            title: "Amazon Vine Program Strategy: Accelerated Review Inception for Technical Products",
+            date: "Apr 15, 2026",
+            image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Launching technical consumer goods without an initial base of reviews often stalls sales momentum. Leveraging the Vine program securely serves as a critical launchpad for generating high-quality early feedback.</p>
+                <h2>Ensuring Clear Technical Information Accompanying Inbound Batches</h2>
+                <p>Include highly detailed instruction manuals within your packaging to help reviewers fully understand advanced features. This keeps confusion from translating into negative early product feedback.</p>
+            `
+        },
+        {
+            id: 18,
+            title: "Customized Brand Store Design: Elevating Conversion Performance via Creative Asset Flow",
+            date: "Apr 12, 2026",
+            image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Default storefront layouts often struggle to build deep brand affinity with modern consumers. Designing custom product store grids improves shopping navigation, keeping traffic engaged inside your brand's sandbox.</p>
+                <h2>Developing Intuitive Product Discovery Layouts</h2>
+                <p>Arrange your digital assets so top-selling items take visual priority over secondary collections. This design approach shortens the path to purchase and improves overall brand session value.</p>
+            `
+        },
+        {
+            id: 19,
+            title: "Amazon Custom Program Setup: Unleashing Personalized Print-On-Demand Print Engines",
+            date: "Apr 10, 2026",
+            image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Providing customized features helps capture niche audiences looking for personalized gifts. Setting up the Custom program configuration maps out clear interfaces where shoppers specify exact engraving text entries.</p>
+                <h2>Preventing Order Customization Processing Lag</h2>
+                <p>Deploy specialized image generation scripts to map customer text files straight to your production floor. This automation eliminates manual entry errors and keeps fulfillment timelines on track.</p>
+            `
+        },
+        {
+            id: 20,
+            title: "The Mechanics of Amazon Custom Font Integrations: Driving Distinctive Typography Visual Flows",
+            date: "Apr 05, 2026",
+            image: "https://images.unsplash.com/photo-1561070791-26c113006238?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Relying on standard system typography can dilute your brand identity across digital touchpoints. Utilizing premium brand font pairings across secondary listing layouts sets an polished visual standard for high-end consumer audiences.</p>
+                <h2>Implementing Clean Typography Hierarchies</h2>
+                <p>Coordinate your heading font weights cleanly to create an easy-to-read visual structure. Clear typographic presentation directly reduces checkout friction by helping buyers absorb key product specs quickly.</p>
             `
         }
     ];
 
-    // 2. INITIALIZATION ENGINE
+    // INITIALIZATION RUNTIME
     window.addEventListener('DOMContentLoaded', () => {
         renderDashboardGrid();
     });
 
-    // 3. RENDER DASHBOARD
+    // GRID POPULATION SYSTEM
     function renderDashboardGrid() {
         const gridContainer = document.getElementById('mainGridContainer');
         gridContainer.innerHTML = '';
@@ -1337,21 +1545,21 @@ a:focus {
         });
     }
 
-    // 4. TRANSITION ENGINE (DYNAMIC VIEW SWITCHING)
+    // VIEW ROUTING CONTROLLER
     function switchToArticle(id) {
         const article = database.find(item => item.id === id);
         if (!article) return;
 
-        // Set Content Metrics
+        // Structural Content Population
         document.getElementById('artTitle').innerText = article.title;
-        document.getElementById('artDate').innerText = `${article.date} • Read Time: 5 mins`;
+        document.getElementById('artDate').innerText = `${article.date} • Strategic Intelligence Runtime: 5 mins`;
         document.getElementById('artBanner').src = article.image;
         document.getElementById('artBodyStream').innerHTML = article.body;
 
-        // Render Sidebar Component (Excluding current viewing article)
+        // Sidebar Generation
         renderSidebar(id);
 
-        // View Management
+        // UI State Switch
         document.getElementById('dashboardView').classList.remove('active');
         document.getElementById('articleView').classList.add('active');
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1363,14 +1571,14 @@ a:focus {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // 5. SIDEBAR FEED GENERATOR
+    // SIDEBAR FEED POPULATION
     function renderSidebar(currentId) {
         const sidebarFeed = document.getElementById('sidebarFeed');
         sidebarFeed.innerHTML = '';
 
-        const contextList = database.filter(item => item.id !== currentId);
+        const filterList = database.filter(item => item.id !== currentId).slice(0, 5); // Display top 5 upcoming items
         
-        contextList.forEach(item => {
+        filterList.forEach(item => {
             const link = document.createElement('a');
             link.className = 'mini-feed-item';
             link.href = '#';
@@ -1387,6 +1595,7 @@ a:focus {
         });
     }
 </script>
+
 
 
 
