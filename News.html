@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Seller News & Resources - Abdullah Gull</title>
 <header class="main-header">
     <div class="header-container">
         <div class="logo-area">
@@ -812,6 +818,572 @@ a:focus {
     <link rel="stylesheet" href="style.css">
 
 
+    <style>
+        /* Google Fonts for Elite Corporate Typography */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        /* RESET & MASTER STYLES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #0b0c0e; /* Luxury Matte Black */
+            color: #a0a5b1;
+            padding: 60px 20px;
+        }
+
+        .hub-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* DYNAMIC VIEWS CONTROL */
+        .view-section {
+            display: none;
+        }
+        .view-section.active {
+            display: block;
+        }
+
+        /* ==========================================================================
+           1. MAIN DASHBOARD VIEW STYLES
+           ========================================================================== */
+        .hub-header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #1f2126;
+            padding-bottom: 20px;
+        }
+
+        .hub-header h1 {
+            font-size: 36px;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hub-header p {
+            font-size: 15px;
+            color: #808593;
+        }
+
+        /* Grid Configuration */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .article-card {
+            background: #121316;
+            border: 1px solid #1f2126;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-6px);
+            border-color: #ff9900; /* Amazon Orange Trigger */
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 200px;
+            background: #1d1e24;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card-content h3 {
+            font-size: 18px;
+            color: #ffffff;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-content .meta-date {
+            font-size: 12px;
+            color: #606675;
+            font-weight: 500;
+        }
+
+        /* ==========================================================================
+           2. SINGLE ARTICLE VIEW STYLES (NATIVE NARRATIVE LAYOUT)
+           ========================================================================== */
+        .back-btn {
+            background: transparent;
+            border: 1px solid #282a32;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            border-color: #ff9900;
+            color: #ff9900;
+        }
+
+        .article-layout {
+            display: grid;
+            grid-template-columns: 8fr 4fr; /* Main Content Area vs Sidebar */
+            gap: 40px;
+        }
+
+        /* Left Side Content */
+        .main-article-body h1 {
+            font-size: 38px;
+            color: #ffffff;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .article-meta-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #1f2126;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .author-mini {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-mini img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #ff9900;
+        }
+
+        .author-mini-info h5 {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .author-mini-info p {
+            font-size: 12px;
+            color: #606675;
+        }
+
+        /* Share Cluster */
+        .share-cluster {
+            display: flex;
+            gap: 10px;
+        }
+
+        .share-icon {
+            width: 32px;
+            height: 32px;
+            background: #121316;
+            border: 1px solid #282a32;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .share-icon:hover {
+            border-color: #ff9900;
+            color: #ff9900;
+        }
+
+        /* Feature Banner */
+        .article-feature-banner {
+            width: 100%;
+            height: 450px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 35px;
+            border: 1px solid #1f2126;
+        }
+
+        .article-feature-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Typography Hierarchy for Native Understanding */
+        .content-stream p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #b0b5c1;
+            margin-bottom: 25px;
+        }
+
+        .content-stream h2 {
+            font-size: 24px;
+            color: #ffffff;
+            font-weight: 700;
+            margin: 40px 0 20px 0;
+            border-left: 3px solid #ff9900; /* Premium Orange Indicator line */
+            padding-left: 15px;
+        }
+
+        .content-stream ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        .content-stream ul li {
+            font-size: 15px;
+            color: #b0b5c1;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        /* Premium Callout Box */
+        .premium-callout {
+            background: #121316;
+            border-left: 4px solid #ff9900;
+            padding: 25px;
+            border-radius: 0 12px 12px 0;
+            margin: 35px 0;
+        }
+
+        .premium-callout p {
+            font-size: 15px;
+            font-style: italic;
+            color: #ffffff;
+            margin-bottom: 0;
+        }
+
+        /* Author Profile Footer Card */
+        .author-profile-footer {
+            background: #121316;
+            border: 1px solid #1f2126;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 50px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .author-profile-footer img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ff9900;
+        }
+
+        .author-footer-details h4 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .author-footer-details p {
+            font-size: 14px;
+            color: #808593;
+            line-height: 1.5;
+        }
+
+        /* Right Side Sidebar */
+        .sidebar-panel {
+            background: #121316;
+            border: 1px solid #1f2126;
+            border-radius: 16px;
+            padding: 30px;
+            height: fit-content;
+        }
+
+        .sidebar-panel h4 {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .mini-feed-item {
+            display: block;
+            text-decoration: none;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #1f2126;
+        }
+
+        .mini-feed-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .mini-feed-item h5 {
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 6px;
+            transition: color 0.2s ease;
+        }
+
+        .mini-feed-item:hover h5 {
+            color: #ff9900;
+        }
+
+        .mini-feed-item span {
+            font-size: 11px;
+            color: #606675;
+        }
+
+        /* RESPONSIVENESS */
+        @media (max-width: 900px) {
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            .main-article-body h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hub-container">
+
+    <div id="dashboardView" class="view-section active">
+        <div class="hub-header">
+            <h1>Amazon Seller News</h1>
+            <p>Be informed Amazon seller and keep up with the latest Amazon news, Gain insights and strategies to help your business thrive on Amazon.</p>
+        </div>
+
+        <div class="articles-grid" id="mainGridContainer">
+            </div>
+    </div>
+
+
+    <div id="articleView" class="view-section">
+        <button class="back-btn" onclick="switchToDashboard()">← Back to Dashboard</button>
+        
+        <div class="article-layout">
+            <div class="main-article-body">
+                <h1 id="artTitle">Article Title Placeholder</h1>
+                
+                <div class="article-meta-bar">
+                    <div class="author-mini">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Abdullah Gull" id="artAuthorImg">
+                        <div class="author-mini-info">
+                            <h5 id="artAuthorName">Abdullah Gull</h5>
+                            <p id="artDate">May 25, 2026 • Read Time: 5 mins</p>
+                        </div>
+                    </div>
+                    <div class="share-cluster">
+                        <a href="#" class="share-icon">f</a>
+                        <a href="#" class="share-icon">in</a>
+                        <a href="#" class="share-icon">𝕏</a>
+                    </div>
+                </div>
+
+                <div class="article-feature-banner">
+                    <img src="" alt="Feature Banner" id="artBanner">
+                </div>
+
+                <div class="content-stream" id="artBodyStream">
+                    </div>
+
+                <div class="author-profile-footer">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Abdullah Gull">
+                    <div class="author-footer-details">
+                        <h4>Abdullah Gull</h4>
+                        <p>Hi, I'm Abdullah Gull, an Amazon FBA specialist and e-commerce growth partner. We growth hack e-commerce and marketplaces through PPC, SEO, design, and catalog management strategies tailored specifically to scale brand performance globally.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-panel">
+                <h4>Other News</h4>
+                <div id="sidebarFeed">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // 1. DATA REPOSITORY (Native Datasets Matching Your Images)
+    const database = [
+        {
+            id: 1,
+            title: "Amazon Associates Affiliate Program Slashes Commissions for Publishers",
+            date: "May 25, 2026",
+            image: "https://images.unsplash.com/photo-1581291518655-9523c932dedf?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>The Amazon Associates affiliate program reportedly cut publisher commissions by up to 50%, removed performance bonuses, and reduced reporting visibility, leaving many affiliates reassessing their business models.</p>
+                <p>Recent updates to the Amazon Associates affiliate program are creating uncertainty across the affiliate marketing industry. Publishers say the reported commission cuts and reporting changes could significantly impact how affiliate businesses operate in 2026.</p>
+                <p>The timing adds even more pressure for publishers already dealing with lower search visibility and rising acquisition costs. Many affiliates are now looking more seriously at diversification strategies, including Walmart, TikTok Shop, and direct e-commerce partnerships.</p>
+                
+                <h2>Amazon Quietly Restructures Affiliate Payout System</h2>
+                <p>According to an AdWeek article, the Amazon Associates affiliate program reportedly underwent major changes over the past several months, affecting publisher payouts and campaign reporting capabilities. Several publishers and partners familiar with the matter said the updates were never publicly announced by Amazon.</p>
+                <p>According to reports, Amazon affiliate commissions were reduced by as much as 50% in some publisher categories. The company also removed milestone-based bonuses that previously rewarded high-performing affiliates for reaching sales targets.</p>
+                
+                <div class="premium-callout">
+                    <p>"Some publishers have reportedly seen Amazon commission rates cut by up to 50%, with premium rates in certain categories falling from around 10% to 4% or 5%." — Industry Insights Report</p>
+                </div>
+
+                <h2>Amazon Slashes Commissions and Tightens Reporting Access for Publishers</h2>
+                <p>The Amazon Associates affiliate program has reportedly undergone a broad restructuring that includes significant cuts to commission rates and reduced reporting visibility for publishers, as reported by Shopifreaks. These changes have been observed across multiple publisher segments and were not publicly announced by Amazon.</p>
+                <ul>
+                    <li>Reduced commission rates across some publisher categories</li>
+                    <li>Removal of milestone-based incentive bonuses</li>
+                    <li>Reduced visibility in affiliate reporting tools</li>
+                    <li>Changes communicated privately to affected publishers</li>
+                </ul>
+            `
+        },
+        {
+            id: 2,
+            title: "Amazon New Arrival and Notable Arrival Badges Give New Listings a Better Shot",
+            date: "May 22, 2026",
+            image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>Amazon is rolling out new visual enhancements for brand new listings. The "New Arrival" badges aim to help fresh products compete against established competitors with thousands of reviews.</p>
+                <h2>Visibility Boost on A9/A10 Algorithm</h2>
+                <p>This update gives a significant conversion boost during the initial product launch honeymoon phase. Sellers must monitor inventory pipelines carefully to ensure continuous trajectory without going out of stock.</p>
+            `
+        },
+        {
+            id: 3,
+            title: "Amazon DD+7 Payment Policy Update Leaves Sellers Waiting Longer",
+            date: "May 20, 2026",
+            image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80",
+            body: `
+                <p>The upcoming delivery date plus 7 days base payout constraint has generated heavy operational discussions. Cash flow management is now becoming the critical pillar for FBA brands.</p>
+                <h2>Adapting Cash Flows For FBA Logistics</h2>
+                <p>Working capital reserves will require fine-tuning to counter account level reserves. Streamlined catalog controls are vital to maintaining stable payouts.</p>
+            `
+        }
+    ];
+
+    // 2. INITIALIZATION ENGINE
+    window.addEventListener('DOMContentLoaded', () => {
+        renderDashboardGrid();
+    });
+
+    // 3. RENDER DASHBOARD
+    function renderDashboardGrid() {
+        const gridContainer = document.getElementById('mainGridContainer');
+        gridContainer.innerHTML = '';
+
+        database.forEach(article => {
+            const card = document.createElement('div');
+            card.className = 'article-card';
+            card.onclick = () => switchToArticle(article.id);
+            
+            card.innerHTML = `
+                <div class="card-img-wrapper">
+                    <img src="${article.image}" alt="${article.title}">
+                </div>
+                <div class="card-content">
+                    <h3>${article.title}</h3>
+                    <div class="meta-date">${article.date}</div>
+                </div>
+            `;
+            gridContainer.appendChild(card);
+        });
+    }
+
+    // 4. TRANSITION ENGINE (DYNAMIC VIEW SWITCHING)
+    function switchToArticle(id) {
+        const article = database.find(item => item.id === id);
+        if (!article) return;
+
+        // Set Content Metrics
+        document.getElementById('artTitle').innerText = article.title;
+        document.getElementById('artDate').innerText = `${article.date} • Read Time: 5 mins`;
+        document.getElementById('artBanner').src = article.image;
+        document.getElementById('artBodyStream').innerHTML = article.body;
+
+        // Render Sidebar Component (Excluding current viewing article)
+        renderSidebar(id);
+
+        // View Management
+        document.getElementById('dashboardView').classList.remove('active');
+        document.getElementById('articleView').classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function switchToDashboard() {
+        document.getElementById('articleView').classList.remove('active');
+        document.getElementById('dashboardView').classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 5. SIDEBAR FEED GENERATOR
+    function renderSidebar(currentId) {
+        const sidebarFeed = document.getElementById('sidebarFeed');
+        sidebarFeed.innerHTML = '';
+
+        const contextList = database.filter(item => item.id !== currentId);
+        
+        contextList.forEach(item => {
+            const link = document.createElement('a');
+            link.className = 'mini-feed-item';
+            link.href = '#';
+            link.onclick = (e) => {
+                e.preventDefault();
+                switchToArticle(item.id);
+            };
+
+            link.innerHTML = `
+                <h5>${item.title}</h5>
+                <span>${item.date}</span>
+            `;
+            sidebarFeed.appendChild(link);
+        });
+    }
+</script>
 
 
 
@@ -1481,4 +2053,5 @@ a:focus {
     }
 </script>
 
-
+</body>
+</html>
