@@ -821,957 +821,161 @@ a:focus {
     <link rel="stylesheet" href="style.css">
 
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-        /* RESET & PREMIUM DESIGN CORE */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: #0b0c0e;
-            color: #a0a5b1;
-            padding: 40px 20px;
-            line-height: 1.65;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .hub-container {
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        /* DYNAMIC VIEW ROUTER RULES */
-        .view-section {
-            display: none;
-        }
-        .view-section.active {
-            display: block;
-        }
-
-        /* ==========================================================================
-           1. RESOURCE HUB DASHBOARD (GRID DESIGN SYSTEM)
-           ========================================================================== */
-        .hub-header {
-            margin-bottom: 55px;
-            border-bottom: 1px solid #1f2126;
-            padding-bottom: 35px;
-        }
-
-        .hub-header h1 {
-            font-size: 40px;
-            color: #ffffff;
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: -0.03em;
-        }
-
-        .hub-header p {
-            font-size: 16px;
-            color: #808593;
-            max-width: 850px;
-        }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 35px;
-            margin-bottom: 70px;
-        }
-
-        .article-card {
-            background: #121316;
-            border: 1px solid #1f2126;
-            border-radius: 16px;
-            overflow: hidden;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
-        }
-
-        .article-card:hover {
-            transform: translateY(-8px);
-            border-color: #ff9900;
-        }
-
-        .card-img-wrapper {
-            width: 100%;
-            height: 220px;
-            background: #1d1e24;
-            overflow: hidden;
-        }
-
-        .card-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .article-card:hover .card-img-wrapper img {
-            transform: scale(1.04);
-        }
-
-        .card-content {
-            padding: 26px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
-        }
-
-        .card-content h3 {
-            font-size: 19px;
-            color: #ffffff;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 18px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .card-content .meta-date {
-            font-size: 12px;
-            color: #606675;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* ==========================================================================
-           2. SINGLE ARTICLE INTERFACE (ISOLATED FLEX MATRIX)
-           ========================================================================== */
-        .back-btn {
-            background: transparent;
-            border: 1px solid #282a32;
-            color: #ffffff;
-            padding: 12px 26px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-bottom: 40px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .back-btn:hover {
-            border-color: #ff9900;
-            color: #ff9900;
-            box-shadow: 0 0 15px rgba(255, 153, 0, 0.2);
-        }
-
-        .article-layout {
-            display: grid;
-            grid-template-columns: 8fr 4fr;
-            gap: 55px;
-            align-items: start;
-        }
-
-        .main-article-body h1 {
-            font-size: 42px;
-            color: #ffffff;
-            font-weight: 700;
-            line-height: 1.25;
-            margin-bottom: 25px;
-            letter-spacing: -0.02em;
-        }
-
-        .article-meta-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid #1f2126;
-            padding-bottom: 22px;
-            margin-bottom: 40px;
-        }
-
-        .author-mini {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .author-mini img {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #ff9900;
-        }
-
-        .author-mini-info h5 {
-            color: #ffffff;
-            font-size: 15px;
-            font-weight: 600;
-        }
-
-        .author-mini-info p {
-            font-size: 12px;
-            color: #606675;
-        }
-
-        .share-cluster {
-            display: flex;
-            gap: 12px;
-        }
-
-        .share-icon {
-            width: 38px;
-            height: 38px;
-            background: #121316;
-            border: 1px solid #282a32;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-size: 14px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .share-icon:hover {
-            border-color: #ff9900;
-            color: #ff9900;
-        }
-
-        .article-feature-banner {
-            width: 100%;
-            height: 500px;
-            border-radius: 20px;
-            overflow: hidden;
-            margin-bottom: 45px;
-            border: 1px solid #1f2126;
-        }
-
-        .article-feature-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .content-stream p {
-            font-size: 16.5px;
-            line-height: 1.85;
-            color: #b0b5c1;
-            margin-bottom: 28px;
-            text-align: justify;
-        }
-
-        .content-stream h2 {
-            font-size: 28px;
-            color: #ffffff;
-            font-weight: 700;
-            margin: 50px 0 25px 0;
-            border-left: 4px solid #ff9900;
-            padding-left: 20px;
-            letter-spacing: -0.01em;
-        }
-
-        .content-stream ul {
-            margin-bottom: 35px;
-            padding-left: 25px;
-        }
-
-        .content-stream ul li {
-            font-size: 16px;
-            color: #b0b5c1;
-            margin-bottom: 16px;
-            line-height: 1.7;
-        }
-
-        .premium-callout {
-            background: #121316;
-            border-left: 4px solid #ff9900;
-            padding: 35px;
-            border-radius: 0 16px 16px 0;
-            margin: 45px 0;
-            box-shadow: inset 5px 0 25px rgba(0,0,0,0.3);
-        }
-
-        .premium-callout p {
-            font-size: 16.5px;
-            font-style: italic;
-            color: #ffffff;
-            margin-bottom: 0;
-            line-height: 1.7;
-        }
-
-        .author-profile-footer {
-            background: #121316;
-            border: 1px solid #1f2126;
-            border-radius: 20px;
-            padding: 40px;
-            margin-top: 70px;
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .author-profile-footer img {
-            width: 95px;
-            height: 95px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #ff9900;
-            flex-shrink: 0;
-        }
-
-        .author-footer-details h4 {
-            color: #ffffff;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .author-footer-details p {
-            font-size: 14.5px;
-            color: #808593;
-            line-height: 1.65;
-        }
-
-        .sidebar-panel {
-            background: #121316;
-            border: 1px solid #1f2126;
-            border-radius: 20px;
-            padding: 30px;
-            position: sticky;
-            top: 40px;
-        }
-
-        .sidebar-panel h4 {
-            color: #ffffff;
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-bottom: 1px solid #1f2126;
-            padding-bottom: 14px;
-        }
-
-        .mini-feed-item {
-            display: block;
-            text-decoration: none;
-            margin-bottom: 24px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid #1f2126;
-        }
-
-        .mini-feed-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .mini-feed-item h5 {
-            color: #ffffff;
-            font-size: 14.5px;
-            line-height: 1.5;
-            margin-bottom: 10px;
-            font-weight: 600;
-            transition: color 0.2s ease;
-        }
-
-        .mini-feed-item:hover h5 {
-            color: #ff9900;
-        }
-
-        .mini-feed-item span {
-            font-size: 11.5px;
-            color: #606675;
-            text-transform: uppercase;
-        }
-
-        /* ==========================================================================
-           3. PREMIUM CONTACT FORM SYSTEM (FIXED ELEMENTS & ALIGNMENT)
-           ========================================================================== */
-        .premium-lead-section {
-            margin-top: 100px;
-            border-top: 1px solid #1f2126;
-            padding-top: 80px;
-            margin-bottom: 60px;
-        }
-
-        .form-layout-wrapper {
-            background: #121316;
-            border: 1px solid #ff9900; /* Custom orange neon brand border */
-            border-radius: 24px;
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 50px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 153, 0, 0.05);
-        }
-
-        .form-layout-wrapper h2 {
-            color: #ffffff;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-            text-align: center;
-        }
-
-        .form-layout-wrapper p {
-            color: #808593;
-            font-size: 14.5px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .form-group-block {
-            margin-bottom: 26px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group-block label {
-            color: #ffffff;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        .form-group-block input,
-        .form-group-block textarea {
-            background: #191a1f;
-            border: 1px solid #2d3039;
-            border-radius: 10px;
-            padding: 16px 20px;
-            color: #ffffff;
-            font-size: 15px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            width: 100%; /* Prevents breaking structure */
-            outline: none;
-        }
-
-        .form-group-block input:focus,
-        .form-group-block textarea:focus {
-            border-color: #ff9900;
-            background: #1f2128;
-            box-shadow: 0 0 12px rgba(255, 153, 0, 0.15);
-        }
-
-        .form-group-block textarea {
-            resize: vertical;
-            min-height: 140px;
-        }
-
-        .submit-brand-btn {
-            background: #ff9900;
-            color: #0b0c0e;
-            border: none;
-            border-radius: 30px;
-            padding: 18px 35px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .submit-brand-btn:hover {
-            background: #ffaa22;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 153, 0, 0.35);
-        }
-
-        /* RESPONSIVE RENDERING ENGINE */
-        @media (max-width: 1024px) {
-            .articles-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .article-layout {
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-            .sidebar-panel {
-                position: static;
-            }
-        }
-
-        @media (max-width: 680px) {
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-            .main-article-body h1 {
-                font-size: 32px;
-            }
-            .article-feature-banner {
-                height: 320px;
-            }
-            .form-layout-wrapper {
-                padding: 30px 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<div class="hub-container">
-
-    <div id="dashboardView" class="view-section active">
-        <div class="hub-header">
-            <h1>Amazon Marketplace Intelligence & Strategy Hub</h1>
-            <p>Advanced algorithmic updates, critical policy modifications, and tactical data frameworks tailored for modern high-revenue brands scaling on Amazon Seller Central and Vendor Central.</p>
-        </div>
-
-        <div class="articles-grid" id="mainGridContainer">
-            </div>
-    </div>
-
-    <div id="articleView" class="view-section">
-        <button class="back-btn" onclick="switchToDashboard()">← Back to Dashboard</button>
-        
-        <div class="article-layout">
-            <div class="main-article-body">
-                <h1 id="artTitle">Processing Data Stream...</h1>
-                
-                <div class="article-meta-bar">
-                    <div class="author-mini">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Abdullah Gull">
-                        <div class="author-mini-info">
-                            <h5>Abdullah Gull</h5>
-                            <p id="artDate">Intelligence Stream</p>
-                        </div>
-                    </div>
-                    <div class="share-cluster">
-                        <a href="#" class="share-icon" onclick="event.preventDefault();">f</a>
-                        <a href="#" class="share-icon" onclick="event.preventDefault();">in</a>
-                        <a href="#" class="share-icon" onclick="event.preventDefault();">𝕏</a>
+    <div class="section" style="background-color: #121215; border: 1px solid #1f1f24; border-radius: 12px; padding: 40px; margin-bottom: 80px;">
+    <h2 class="section-title" style="font-size: 28px; font-weight: 700; color: #ffffff; margin-top: 0; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; border-left: 4px solid #ff9900; padding-left: 15px;">
+        Turning Strategy into Measurable Growth
+    </h2>
+    <p class="section-subtitle" style="font-size: 16px; color: #a1a1aa; margin-bottom: 35px;">
+        Our success is directly tied to the growth and expansion of our amazing clients.
+    </p>
+    
+    <table class="hero-summary-table" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+        <tr>
+            <td class="hero-left" style="padding: 20px; vertical-align: top; background-color: #18181c; border: 1px solid #27272a; border-radius: 8px; width: 60%;">
+                <p style="font-size: 18px; margin-top: 0; color: #ffffff; font-weight: 600;">
+                    Sustained Growth for Enterprise Brands
+                </p>
+                <p style="color: #d4d4d8; font-size: 15px; line-height: 1.65;">
+                    <span class="highlight" style="color: #ff9900; font-weight: 600;">Abdullah Gull</span> is a specialized Amazon e-commerce growth partner. He leads full-service marketplace scaling operations, managing cross-functional deployments spanning advanced PPC matrix design, programmatic SEO listings, architectural catalog cleanups, and premium asset conversion pipelines to systematically maximize brand equity and revenue footprint.
+                </p>
+                <p style="color: #d4d4d8; font-size: 15px; line-height: 1.65; margin-top: 15px;">
+                    We analyze every granular detail of your store performance, from conversion velocity to stock optimization patterns, creating custom scaling roadmaps that outperform general market metrics.
+                </p>
+            </td>
+            <td class="hero-right" style="padding: 20px; vertical-align: top; background-color: #1e1e24; border: 1px solid #ff9900; border-radius: 8px; width: 40%; text-align: center;">
+                <div style="padding-top: 25px;">
+                    <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #ff9900; font-weight: bold;">Total Controlled Revenue</div>
+                    <div style="font-size: 42px; font-weight: 800; color: #ffffff; margin: 15px 0;">$2,602,821</div>
+                    <div style="font-size: 13px; color: #a1a1aa; padding: 0 15px; line-height: 1.5;">
+                        Consistent double-digit year-over-year revenue velocity across managed portfolio brands.
                     </div>
                 </div>
+            </td>
+        </tr>
+    </table>
 
-                <div class="article-feature-banner">
-                    <img src="" alt="Feature Resource Banner" id="artBanner">
+    <table style="width: 100%; border-collapse: separate; border-spacing: 20px; margin-left: -20px; margin-right: -20px;">
+        <tr>
+            <td style="width: 33.33%; padding: 0;">
+                <div class="stats-box" style="background-color: #18181c; border: 1px solid #27272a; padding: 25px; text-align: center; border-radius: 8px;">
+                    <div class="stats-number" style="font-size: 36px; font-weight: 800; color: #ff9900; margin-bottom: 5px;">45+</div>
+                    <div class="stats-label" style="font-size: 13px; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.5px;">Brands Currently Managed</div>
                 </div>
-
-                <div class="content-stream" id="artBodyStream">
-                    </div>
-
-                <div class="author-profile-footer">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Abdullah Gull">
-                    <div class="author-footer-details">
-                        <h4>Abdullah Gull</h4>
-                        <p>Abdullah Gull is a specialized Amazon e-commerce growth partner. He leads full-service marketplace scaling operations, managing cross-functional deployments spanning advanced PPC matrix design, programmatic SEO listings, architectural catalog cleanups, and premium asset conversion pipelines to systematically maximize brand equity and revenue footprint.</p>
-                    </div>
+            </td>
+            <td style="width: 33.33%; padding: 0;">
+                <div class="stats-box" style="background-color: #18181c; border: 1px solid #27272a; padding: 25px; text-align: center; border-radius: 8px;">
+                    <div class="stats-number" style="font-size: 36px; font-weight: 800; color: #ff9900; margin-bottom: 5px;">$150K+</div>
+                    <div class="stats-label" style="font-size: 13px; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.5px;">Monthly Average Revenue</div>
                 </div>
-            </div>
-
-            <div class="sidebar-panel">
-                <h4>Trending Intelligence</h4>
-                <div id="sidebarFeed"></div>
-            </div>
-        </div>
-    </div>
-
-    <section class="premium-lead-section">
-        <div class="form-layout-wrapper">
-            <h2>Get in Touch With Us</h2>
-            <p>We'd love to hear from you! Please fill out the form and we'll get back to you as soon as possible.</p>
-            
-            <form action="https://formspree.io/f/mojpjjqk" method="POST">
-                
-                <div class="form-group-block">
-                    <label for="full-name">Full Name</label>
-                    <input type="text" id="full-name" name="name" placeholder="Your name" required>
+            </td>
+            <td style="width: 33.33%; padding: 0;">
+                <div class="stats-box" style="background-color: #18181c; border: 1px solid #27272a; padding: 25px; text-align: center; border-radius: 8px;">
+                    <div class="stats-number" style="font-size: 36px; font-weight: 800; color: #ff9900; margin-bottom: 5px;">15+</div>
+                    <div class="stats-label" style="font-size: 13px; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.5px;">Expert Team Members</div>
                 </div>
-
-                <div class="form-group-block">
-                    <label for="email-address">Email Address</label>
-                    <input type="email" id="email-address" name="email" placeholder="your@email.com" required>
-                </div>
-
-                <div class="form-group-block">
-                    <label for="company-name">Company Name</label>
-                    <input type="text" id="company-name" name="company" placeholder="Your company" required>
-                </div>
-
-                <div class="form-group-block">
-                    <label for="phone-number">Phone Number</label>
-                    <input type="tel" id="phone-number" name="phone" placeholder="+1 (555) 000-0000" required>
-                </div>
-
-                <div class="form-group-block">
-                    <label for="business-notes">Tell Us About Your Business</label>
-                    <textarea id="business-notes" name="message" placeholder="Share your goals and challenges..." required></textarea>
-                </div>
-
-                <button type="submit" class="submit-brand-btn">Send Message ➔</button>
-            </form>
-        </div>
-    </section>
-
+            </td>
+        </tr>
+    </table>
 </div>
 
-<script>
-    // 20 ENTIRELY SEPARATE, DEEP HIGH-VALUE CONTENT INDUSTRIAL ARTICLES 
-    const database = [
-        {
-            id: 1,
-            title: "Amazon Associates Affiliate Program Slashes Commissions for Enterprise Publishers",
-            date: "May 25, 2026",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>The Amazon Associates affiliate network has silently enforced deep structural cuts on publisher referral structures, reducing premium payouts by up to 50% across high-traffic categories. This silent shift has triggered substantial turbulence among media conglomerates and authority review portfolios that depend heavily on Amazon's attribution modeling for monetization infrastructure.</p>
-                <h2>Algorithmic Adjustments & Payout Compression</h2>
-                <p>Industry evaluations indicate that standard commissions in critical electronics and consumer appliances have fallen down to lower base thresholds. Furthermore, milestone performance incentives that previously allowed elite networks to unlock tier-based bonuses have been completely removed without warning.</p>
-                <div class="premium-callout">
-                    <p>"The compression of top-tier affiliate referral variables marks a distinct transition where Amazon prioritizes its internal ad ecosystem over off-site affiliate funnels."</p>
-                </div>
-                <h2>Operational Framework Countermeasures</h2>
-                <p>Sellers relying on affiliate content to feed traffic should expect drop-offs in external review velocity. Forward-thinking brands must deploy custom conversion paths and direct alternative loops like TikTok Shop or direct storefront integrations to stabilize aggregate sales performance.</p>
-            `
-        },
-        {
-            id: 2,
-            title: "Cracking the A10 Rank Vector: Advanced Conversions Over Simple Search Volume",
-            date: "May 24, 2026",
-            image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Amazon's current search algorithm iterations indicate a significant departure from standard keyword frequency mechanisms, moving into user behavioral signals and contextual conversion metrics. High search density keyword optimization no longer guarantees top visibility placement.</p>
-                <h2>The Primacy of High-Intent Conversions</h2>
-                <p>The current ranking structure gives immense weight to organic purchase velocity coming from off-site brand navigation and clean add-to-cart ratios. Internal search query matching is heavily balanced by programmatic user satisfaction parameters.</p>
-                <ul>
-                    <li>Prioritize external referral paths that mimic organic discovery loops.</li>
-                    <li>Optimize product listings for micro-demographic conversions rather than raw volume.</li>
-                    <li>Minimize bounce rates within the first 10 seconds of user arrivals.</li>
-                </ul>
-                <h2>Algorithmic Signal Breakdown</h2>
-                <p>By shifting focus toward localized retention tracking, Amazon rewards accounts that sustain long session spans. This development renders historical brute-force keyword-stuffing methodologies obsolete.</p>
-            `
-        },
-        {
-            id: 3,
-            title: "Mastering FBA Account Reserves: Mitigating the Delivery Date Payout Constraints",
-            date: "May 22, 2026",
-            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>The systematic transition of Amazon's base transaction settlements onto a structural standard has constrained capital scaling configurations for enterprise operators. Working capital management must now incorporate structural reserves natively.</p>
-                <h2>Architectural Cash Flow Protection</h2>
-                <p>Operating cash frameworks must maintain a baseline reserve matching historical weekly fulfillment volume. Failure to account for localized logistical hold periods will severely restrict supply line manufacturing operations.</p>
-                <h2>Formulating Multi-Tier Buffer Pools</h2>
-                <p>Sellers should deploy redundant credit facilities or separate trade financing terms to offset the automated 7-to-14 day payment locks applied post-delivery, securing undisrupted global supply operations.</p>
-            `
-        },
-        {
-            id: 4,
-            title: "Amazon Marketing Cloud (AMC): Advanced SQL Queries for Precise Customer Attribution",
-            date: "May 20, 2026",
-            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Standard reporting consoles on Seller Central only expose aggregated, single-dimensional purchase attributions. Utilizing Amazon Marketing Cloud allows data specialists to execute multi-touch custom clean-room analysis via complex SQL structures.</p>
-                <h2>De-duplicating DSP and Sponsored Ad Paths</h2>
-                <p>By mapping independent customer journey logs within the secure clean room environment, brands can eliminate wasted ad spend where Display banners and Sponsored Brand assets overlap on identical conversion paths.</p>
-                <h2>Extracting Lifetime Value Cohorts</h2>
-                <p>Advanced cross-channel script executions allow growth partners to isolate precise geographic regions generating the highest repeat consumer frequency, maximizing targeted programmatic distribution.</p>
-            `
-        },
-        {
-            id: 5,
-            title: "FBA Inventory Placement Fee Strategies: Restructuring Distribution Over Multi-Logistics Nodes",
-            date: "May 18, 2026",
-            image: "https://images.unsplash.com/photo-1549194388-f61be84a6e9e?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>New updates regarding placement algorithms charge premiums for concentrated localized inbound shipments. Brands can bypass high placement penalties by choosing multi-destination distribution methods.</p>
-                <h2>Optimal Freight Selection Models</h2>
-                <p>By using direct factory cross-docking models to sort products before customs check-in, brands can hit diverse regional fulfillment targets natively, cutting inbound placement fees entirely.</p>
-                <h2>Strategic Shipping Plan Consolidation</h2>
-                <p>Splitting inbound freight allocations into at least 4 parallel regional fulfillment centers satisfies Amazon's decentralized network requirements, protecting profit margins from artificial placement surcharges.</p>
-            `
-        },
-        {
-            id: 6,
-            title: "Navigating Section 3 Suspension Threats: Advanced Compliance Strategy for Global Brands",
-            date: "May 15, 2026",
-            image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Section 3 suspensions represent severe business disruptions for Amazon operators. Developing clear corporate compliance channels and supply chain document validation trails is the only defense against automated dropshipping policy warnings.</p>
-                <h2>Verifying Upstream Supply Authorization</h2>
-                <p>Brands must secure clean digital footprints connecting factory raw material invoices directly to registered trademarks. Loosely structured supply authorizations will fail manual account review protocols.</p>
-                <h2>Constructing Defensible Appeal Frameworks</h2>
-                <p>When triggered by automated risk bots, your resolution payload must contain absolute matching address lines between your supply source certificates, commercial customs clearance logs, and verified corporate banking statements.</p>
-            `
-        },
-        {
-            id: 7,
-            title: "SABER Testing Compliance: Meeting Technical Standards for International Electronics",
-            date: "May 12, 2026",
-            image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Regulatory sweeps across global Amazon platforms require strict validation parameters for technical goods. Electronic components must have clean test reports directly attached to ASIN data structures.</p>
-                <h2>Mitigating Unannounced Compliance Suppression</h2>
-                <p>Pre-emptively submit accredited laboratory compliance records directly within the Account Health portal. Waiting for automatic bots to flag product safety specifications risks lengthy seasonal inventory lockdowns.</p>
-                <h2>Harmonized Global Laboratory Alignment</h2>
-                <p>Ensure that testing files match strict ISO/IEC standards. Any naming differences between foreign manufacturing partners and your local registered corporate entities will result in document rejection.</p>
-            `
-        },
-        {
-            id: 8,
-            title: "Programmatic Premium A+ Content Architecture: Driving Higher Average Order Value",
-            date: "May 10, 2026",
-            image: "https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Basic visual structures are insufficient for high-converting premium listings. Advanced A+ layouts must use custom interactive tables, comprehensive comparison matrixes, and lifestyle video banners to capture professional audiences.</p>
-                <h2>Cross-Selling Content Frameworks</h2>
-                <p>Structure your modules to highlight your brand's complementary catalog ecosystem. This increases Average Order Value (AOV) by providing customers with a natural upgrading pathway directly on the current active detail page.</p>
-                <h2>Visual Asset Optimization</h2>
-                <p>Use high-contrast copy layouts alongside 4K product render blocks to ensure readability on mobile device viewports, which now represent over 70% of marketplace buyer traffic trends.</p>
-            `
-        },
-        {
-            id: 9,
-            title: "Amazon DSP Optimization: Harnessing Off-Amazon Audience Behavioral Retargeting",
-            date: "May 08, 2026",
-            image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>The Demand-Side Platform (DSP) allows operators to secure programmatic ad placements outside the conventional Amazon domain. Success requires defining clean audience segmentation rules rather than relying on automated audience pools.</p>
-                <h2>Designing Contextual Inbound Funnels</h2>
-                <p>Build custom lookalike segments based on active CRM purchase loops. Run localized creative assets targeting consumers who browsed your listing but didn't complete checkout within a 14-day window.</p>
-                <h2>Frequency Cap Optimization Matrix</h2>
-                <p>Restrict ad exposure patterns to a maximum of 3 impressions per user inside any active 48-hour cycle. This prevents audience over-saturation and preserves efficiency indexes across display media channels.</p>
-            `
-        },
-        {
-            id: 10,
-            title: "The Death of Bulk Review Manipulations: Elevating Organic Review Acquisition Models",
-            date: "May 05, 2026",
-            image: "https://images.unsplash.com/photo-1521791136368-1a46827d3ad4?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Artificial review velocity models are systematically caught by Amazon's behavioral pattern detectors. Brands must shift completely to legitimate, programmatic follow-up sequences and authorized sampling frameworks.</p>
-                <h2>Leveraging Authorized Vine Matrix Deployments</h2>
-                <p>Deploy product variations across multiple specialized parent listings to safely increase honest initial reviews, ensuring your launch retains its critical early ranking velocity safely.</p>
-                <h2>Post-Purchase Engagement Design</h2>
-                <p>Create clean, value-focused product manuals that naturally guide buyers toward custom customer support channels, addressing concerns before they result in negative reviews.</p>
-            `
-        },
-        {
-            id: 11,
-            title: "Automating Seller Central Actions: Integrating the Selling Partner API (SP-API) Securely",
-            date: "May 02, 2026",
-            image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Manual tracking of complex business performance data leads to calculation lag. Integrating custom backend software directly with the Selling Partner API allows brands to monitor changing inventory data automatically.</p>
-                <h2>Constructing Real-Time Profit Tracking Systems</h2>
-                <p>Stream real-time financial reporting metrics directly into internal tracking dashboards to dynamically adjust live PPC bids based on actual gross margins.</p>
-                <h2>Automating Inventory Outage Mitigation</h2>
-                <p>Build predictive webhooks that flag low-stock trends across dynamic global transit pipelines, automatically initiating factory replenishment cycles based on live demand data forecasting streams.</p>
-            `
-        },
-        {
-            id: 12,
-            title: "Brand Registry 2.0 Infringement Enforcement: Protecting Patent and Trademark Assets",
-            date: "Apr 28, 2026",
-            image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Hijackers and low-cost counterfeit operators disrupt established listing dynamics. Using advanced automated protection strategies under Project Zero allows brands to remove copyright bad actors without long validation processes.</p>
-                <h2>Securing Legal Dominance</h2>
-                <p>Incorporate your design patents directly within Amazon's automated brand vault to neutralize unauthorized catalog copies before they compromise buybox ownership.</p>
-                <h2>Proactive Market Scan Orchestration</h2>
-                <p>Configure automated algorithmic tracking parameters to instantly report unapproved variations using your intellectual property across international marketplaces.</p>
-            `
-        },
-        {
-            id: 13,
-            title: "Sponsored Products Dayparting: Fine-Tuning Hourly Bid Allocations For Maximum Conversions",
-            date: "Apr 25, 2026",
-            image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Running uniform PPC advertising configurations continuously across 24-hour cycles leads to wasted ad spend during low-conversion nighttime windows. Implementing precise hourly bid adjustments channels your ad budget into peak buying hours.</p>
-                <h2>Isolating Target Time Blocks</h2>
-                <p>Analyze clean hourly conversion data patterns to discover your sweet spot. Systematically lower ad bids during low-intent periods while increasing visibility targets when conversions spike.</p>
-                <h2>Algorithmic Shift Realignment</h2>
-                <p>Deploy specialized external software tools to dynamically alter underlying budget weights. This prevents automated pacing systems from exhausting target campaign capital prematurely.</p>
-            `
-        },
-        {
-            id: 14,
-            title: "International Expansion Frameworks: Navigating Tax Compliance for Pan-European FBA Stores",
-            date: "Apr 22, 2026",
-            image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Expanding across the Pan-EU network requires addressing complicated regional tax frameworks. Incorrect cross-border tax documentation can lead to severe account holds across multiple regional marketplaces.</p>
-                <h2>Establishing a Centralized Tax Compliance Structure</h2>
-                <p>Set up automated VAT identification systems across each targeted region before enabling international logistics distribution. This shields your margins from surprise retroactive compliance fees.</p>
-                <h2>OSS and IOSS Operational Mastery</h2>
-                <p>Utilize the One-Stop-Shop filing frameworks to simplify multi-country tax declarations, allowing your enterprise brand to navigate cross-border trade boundaries efficiently.</p>
-            `
-        },
-        {
-            id: 15,
-            title: "Variations Management Optimization: Preserving Ranking Power on Complicated ASIN Structures",
-            date: "Apr 20, 2026",
-            image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Splitting active item configurations carelessly can destroy historical SEO keyword indexing. Learning how to properly combine listings under clean parent structures preserves reviews while providing an intuitive catalog experience.</p>
-                <h2>Strategic Parent-Child Mapping</h2>
-                <p>Map your item variants cleanly to avoid triggering internal duplicate listing warnings. This strategy helps funnel mixed buyers smoothly toward underperforming variations.</p>
-                <h2>Mitigating Fragmented Review Accumulations</h2>
-                <p>Audit historical variation combinations to ensure visual configurations do not dilute core conversion metrics or cause compliance issues with automated catalog bots.</p>
-            `
-        },
-        {
-            id: 16,
-            title: "Negotiating with Enterprise Manufacturers: Securing Sustainable Margins against Rising Shipping Costs",
-            date: "Apr 18, 2026",
-            image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Product profit margins face constant pressure from changing global supply chain rates. Developing robust, structured manufacturing contracts helps keep unit costs stable across extended production cycles.</p>
-                <h2>Structuring Volume-Based Pricing Milestones</h2>
-                <p>Link your raw material purchase expectations to clear tier-based volume discounts. This framework protects your gross profitability from sudden changes in domestic logistics costs.</p>
-                <h2>Diversifying Manufacturing Nodes</h2>
-                <p>Maintain parallel backup facilities across distinct geographic locations to minimize supply chain disruptions and reduce reliance on a single geographic source.</p>
-            `
-        },
-        {
-            id: 17,
-            title: "Amazon Vine Program Strategy: Accelerated Review Inception for Technical Products",
-            date: "Apr 15, 2026",
-            image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Launching technical consumer goods without an initial base of reviews often stalls sales momentum. Leveraging the Vine program securely serves as a critical launchpad for generating high-quality early feedback.</p>
-                <h2>Ensuring Clear Technical Information Accompanying Inbound Batches</h2>
-                <p>Include highly detailed instruction manuals within your packaging to help reviewers fully understand advanced features. This keeps confusion from translating into negative early product feedback.</p>
-                <h2>Targeting Feedback Cohorts</h2>
-                <p>Analyze initial feedback signals to pre-emptively fine-tune future retail production runs, correcting product limitations before high-volume commercial shipments launch.</p>
-            `
-        },
-        {
-            id: 18,
-            title: "Customized Brand Store Design: Elevating Conversion Performance via Creative Asset Flow",
-            date: "Apr 12, 2026",
-            image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Default storefront layouts often struggle to build deep brand affinity with modern consumers. Designing custom product store grids improves shopping navigation, keeping traffic engaged inside your brand's sandbox.</p>
-                <h2>Developing Intuitive Product Discovery Layouts</h2>
-                <p>Arrange your digital assets so top-selling items take visual priority over secondary collections. This design approach shortens the path to purchase and improves overall brand session value.</p>
-                <h2>Integrating Tailored Video Backgrounds</h2>
-                <p>Deploy immersive, high-definition video modules within your storefront to naturally display products in use, boosting conversion rates across your entire catalog ecosystem.</p>
-            `
-        },
-        {
-            id: 19,
-            title: "Amazon Custom Program Setup: Unleashing Personalized Print-On-Demand Print Engines",
-            date: "Apr 10, 2026",
-            image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Providing customized features helps capture niche audiences looking for personalized gifts. Setting up the Custom program configuration maps out clear interfaces where shoppers specify exact engraving text entries.</p>
-                <h2>Preventing Order Customization Processing Lag</h2>
-                <p>Deploy specialized image generation scripts to map customer text files straight to your production floor. This automation eliminates manual entry errors and keeps fulfillment timelines on track.</p>
-                <h2>Optimizing the Personalization UX</h2>
-                <p>Design clear boundaries for custom text input areas to prevent layout distortion on finished items, ensuring consistent production quality.</p>
-            `
-        },
-        {
-            id: 20,
-            title: "The Mechanics of Amazon Custom Font Integrations: Driving Distinctive Typography Visual Flows",
-            date: "Apr 05, 2026",
-            image: "https://images.unsplash.com/photo-1561070791-26c113006238?auto=format&fit=crop&w=600&q=80",
-            body: `
-                <p>Relying on standard system typography can dilute your brand identity across digital touchpoints. Utilizing premium brand font pairings across secondary listing layouts sets a polished visual standard for high-end consumer audiences.</p>
-                <h2>Implementing Clean Typography Hierarchies</h2>
-                <p>Coordinate your heading font weights cleanly to create an easy-to-read visual structure. Clear typographic presentation directly reduces checkout friction by helping buyers absorb key product specs quickly.</p>
-                <h2>Validating Cross-Device Rendering Compatibility</h2>
-                <p>Test your customized text styles across diverse screen formats to confirm that font scaling remains highly readable on both desktop monitors and mobile interfaces.</p>
-            `
-        }
-    ];
 
-    // LAUNCH ENGINE
-    window.addEventListener('DOMContentLoaded', () => {
-        renderDashboardGrid();
-    });
+<div class="section" style="background-color: #121215; border: 1px solid #1f1f24; border-radius: 12px; padding: 40px; margin-bottom: 80px;">
+    <h2 class="section-title" style="font-size: 28px; font-weight: 700; color: #ffffff; margin-top: 0; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; border-left: 4px solid #ff9900; padding-left: 15px;">
+        Client Reviews & Success Stories
+    </h2>
+    <p class="section-subtitle" style="font-size: 16px; color: #a1a1aa; margin-bottom: 35px;">
+        Hear from premium Amazon sellers and global brands who reached full potential with Abdullah Gull.
+    </p>
+    
+    <table class="layout-table" style="width: 100%; border-collapse: separate; border-spacing: 20px; margin-left: -20px; margin-right: -20px;">
+        <tr>
+            <td style="vertical-align: top; background-color: #18181c; border: 1px solid #27272a; padding: 25px; border-radius: 8px; width: 33.33%;">
+                <div class="review-stars" style="color: #ff9900; font-size: 18px; margin-bottom: 10px;">★★★★★</div>
+                <div class="review-text" style="font-style: italic; color: #d4d4d8; font-size: 14px; margin-bottom: 15px; line-height: 1.6;">"Abdullah Gull has been an absolute lifesaver for our store! Our operations were messy and visibility was low. In just a few months, our visibility dramatically increased and our ACOS cut directly in half."</div>
+                <div class="review-author" style="font-weight: 600; color: #ffffff; font-size: 14px;">Sarah Cox</div>
+                <div class="review-meta" style="font-size: 12px; color: #71717a;">Verified Amazon FBA Brand Owner</div>
+            </td>
+            <td style="vertical-align: top; background-color: #18181c; border: 1px solid #27272a; padding: 25px; border-radius: 8px; width: 33.33%;">
+                <div class="review-stars" style="color: #ff9900; font-size: 18px; margin-bottom: 10px;">★★★★★</div>
+                <div class="review-text" style="font-style: italic; color: #d4d4d8; font-size: 14px; margin-bottom: 15px; line-height: 1.6;">"The depth of knowledge and clarity of execution is outstanding. Abdullah structured a comprehensive listing makeover that surged organic traffic velocity by 45% within 30 days."</div>
+                <div class="review-author" style="font-weight: 600; color: #ffffff; font-size: 14px;">Curt Harden</div>
+                <div class="review-meta" style="font-size: 12px; color: #71717a;">TwinTech LLC, Managing Partner</div>
+            </td>
+            <td style="vertical-align: top; background-color: #18181c; border: 1px solid #27272a; padding: 25px; border-radius: 8px; width: 33.33%;">
+                <div class="review-stars" style="color: #ff9900; font-size: 18px; margin-bottom: 10px;">★★★★★</div>
+                <div class="review-text" style="font-style: italic; color: #d4d4d8; font-size: 14px; margin-bottom: 15px; line-height: 1.6;">"I highly recommend Abdullah Gull to anyone looking to insulate their brand from aggressive competitors. His advanced compliance strategy resolved complex Section 3 threats instantly."</div>
+                <div class="review-author" style="font-weight: 600; color: #ffffff; font-size: 14px;">Elizabeth Wilson</div>
+                <div class="review-meta" style="font-size: 12px; color: #71717a;">Ecom Enterprise Director</div>
+            </td>
+        </tr>
+    </table>
 
-    // BUILD TRACK GRID
-    function renderDashboardGrid() {
-        const gridContainer = document.getElementById('mainGridContainer');
-        gridContainer.innerHTML = '';
+    <table class="layout-table" style="width: 100%; border-collapse: separate; border-spacing: 20px; margin-left: -20px; margin-right: -20px; margin-top: 10px;">
+        <tr>
+            <td style="vertical-align: top; background-color: #18181c; border: 1px solid #27272a; padding: 25px; border-radius: 8px; width: 33.33%;">
+                <div class="review-stars" style="color: #ff9900; font-size: 18px; margin-bottom: 10px;">★★★★★</div>
+                <div class="review-text" style="font-style: italic; color: #d4d4d8; font-size: 14px; margin-bottom: 15px; line-height: 1.6;">"We see growth in everything they handled regarding PPC optimization. Super responsive, highly transparent data updates, and a true partner in our long-term multi-channel e-commerce growth."</div>
+                <div class="review-author" style="font-weight: 600; color: #ffffff; font-size: 14px;">Sebastian Herz</div>
+                <div class="review-meta" style="font-size: 12px; color: #71717a;">Premium Brand Group</div>
+            </td>
+            <td style="vertical-align: top; background-color: #18181c; border: 1px solid #27272a; padding: 25px; border-radius: 8px; width: 33.33%;">
+                <div class="review-stars" style="color: #ff9900; font-size: 18px; margin-bottom: 10px;">★★★★★</div>
+                <div class="review-text" style="font-style: italic; color: #d4d4d8; font-size: 14px; margin-bottom: 15px; line-height: 1.6;">"The custom scaling architecture provided solved our largest inventory placement issues, avoiding heavy fulfillment penalties completely. Genuine, data-driven experts."</div>
+                <div class="review-author" style="font-weight: 600; color: #ffffff; font-size: 14px;">Paul Samuel</div>
+                <div class="review-meta" style="font-size: 12px; color: #71717a;">Logistics & Supply Chain Lead</div>
+            </td>
+            <td style="vertical-align: top; background-color: #18181c; border: 1px solid #27272a; padding: 25px; border-radius: 8px; width: 33.33%;">
+                <div class="review-stars" style="color: #ff9900; font-size: 18px; margin-bottom: 10px;">★★★★★</div>
+                <div class="review-text" style="font-style: italic; color: #d4d4d8; font-size: 14px; margin-bottom: 15px; line-height: 1.6;">"Excellent turnaround time! Abdullah's team cleaned up a highly corrupted variation catalog structure that had suppressed our seasonal sales for nearly two consecutive quarters."</div>
+                <div class="review-author" style="font-weight: 600; color: #ffffff; font-size: 14px;">Theo Prodomitis</div>
+                <div class="review-meta" style="font-size: 12px; color: #71717a;">7-Figure Storefront Owner</div>
+            </td>
+        </tr>
+    </table>
+</div>
 
-        database.forEach(article => {
-            const card = document.createElement('div');
-            card.className = 'article-card';
-            card.onclick = () => switchToArticle(article.id);
+
+<div class="section" style="background-color: #09090b; border: 1px solid #1f1f24; border-radius: 12px; padding: 40px; margin-bottom: 60px;">
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-size: 32px; font-weight: 800; margin: 0; color: #ffffff;">Get In Touch With <span style="color: #ff9900;">Us</span></h2>
+        <p style="color: #a1a1aa; font-size: 15px; margin-top: 10px; max-width: 500px; margin-left: auto; margin-right: auto;">
+            Ready to scale your Amazon marketplace footprint? Fill out your business metrics and deployment goals below to consult with Abdullah Gull.
+        </p>
+    </div>
+
+    <div class="contact-wrapper" style="background-color: #121215; border: 2px solid #ff9900; border-radius: 16px; padding: 40px; max-width: 650px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <form action="https://formspree.io/f/mojpjjqk" method="POST">
             
-            card.innerHTML = `
-                <div class="card-img-wrapper">
-                    <img src="${article.image}" alt="${article.title}">
-                </div>
-                <div class="card-content">
-                    <h3>${article.title}</h3>
-                    <div class="meta-date">${article.date}</div>
-                </div>
-            `;
-            gridContainer.appendChild(card);
-        });
-    }
+            <div class="form-group" style="margin-bottom: 25px;">
+                <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #e4e4e7; margin-bottom: 8px;">Full Name</label>
+                <input type="text" name="name" placeholder="Your name" required style="width: 100%; background-color: #1a1a1e; border: 1px solid #3f3f46; border-radius: 8px; padding: 14px 16px; color: #ffffff; font-size: 14px; box-sizing: border-box;">
+            </div>
 
-    // VIEW MANAGEMENT CORE ROUTER
-    function switchToArticle(id) {
-        const article = database.find(item => item.id === id);
-        if (!article) return;
+            <div class="form-group" style="margin-bottom: 25px;">
+                <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #e4e4e7; margin-bottom: 8px;">Email Address</label>
+                <input type="email" name="email" placeholder="your@email.com" required style="width: 100%; background-color: #1a1a1e; border: 1px solid #3f3f46; border-radius: 8px; padding: 14px 16px; color: #ffffff; font-size: 14px; box-sizing: border-box;">
+            </div>
 
-        // Populate Structural Body Data
-        document.getElementById('artTitle').innerText = article.title;
-        document.getElementById('artDate').innerText = `${article.date} • Strategic Intelligence Runtime: 6 mins`;
-        document.getElementById('artBanner').src = article.image;
-        document.getElementById('artBodyStream').innerHTML = article.body;
+            <div class="form-group" style="margin-bottom: 25px;">
+                <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #e4e4e7; margin-bottom: 8px;">Company Name</label>
+                <input type="text" name="company" placeholder="Your company" style="width: 100%; background-color: #1a1a1e; border: 1px solid #3f3f46; border-radius: 8px; padding: 14px 16px; color: #ffffff; font-size: 14px; box-sizing: border-box;">
+            </div>
 
-        // Build Contextual Sidebar
-        renderSidebar(id);
+            <div class="form-group" style="margin-bottom: 25px;">
+                <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #e4e4e7; margin-bottom: 8px;">Phone Number</label>
+                <input type="tel" name="phone" placeholder="+1 (555) 000-000-00" style="width: 100%; background-color: #1a1a1e; border: 1px solid #3f3f46; border-radius: 8px; padding: 14px 16px; color: #ffffff; font-size: 14px; box-sizing: border-box;">
+            </div>
 
-        // Render UI Switch state
-        document.getElementById('dashboardView').classList.remove('active');
-        document.getElementById('articleView').classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+            <div class="form-group" style="margin-bottom: 25px;">
+                <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #e4e4e7; margin-bottom: 8px;">Tell Us About Your Business</label>
+                <textarea name="message" placeholder="Share your goals, marketplace metrics, and catalog challenges..." style="width: 100%; background-color: #1a1a1e; border: 1px solid #3f3f46; border-radius: 8px; padding: 14px 16px; color: #ffffff; font-size: 14px; min-height: 120px; resize: vertical; box-sizing: border-box;"></textarea>
+            </div>
 
-    function switchToDashboard() {
-        document.getElementById('articleView').classList.remove('active');
-        document.getElementById('dashboardView').classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // POPULATE SIDEBAR CONTEXT ITEMS
-    function renderSidebar(currentId) {
-        const sidebarFeed = document.getElementById('sidebarFeed');
-        sidebarFeed.innerHTML = '';
-
-        const filterList = database.filter(item => item.id !== currentId).slice(0, 5);
-        
-        filterList.forEach(item => {
-            const link = document.createElement('a');
-            link.className = 'mini-feed-item';
-            link.href = '#';
-            link.onclick = (e) => {
-                e.preventDefault();
-                switchToArticle(item.id);
-            };
-
-            link.innerHTML = `
-                <h5>${item.title}</h5>
-                <span>${item.date}</span>
-            `;
-            sidebarFeed.appendChild(link);
-        });
-    }
-</script>
+            <button type="submit" style="width: 100%; background-color: #ff9900; color: #000000; border: none; border-radius: 30px; padding: 16px; font-size: 16px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 10px;">Send Message →</button>
+            
+        </form>
+    </div>
+</div>
 
 
 
