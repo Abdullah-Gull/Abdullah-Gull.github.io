@@ -1,85 +1,616 @@
-<div class="ag-ai-verification-wrapper" style="
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 16px;
-    margin: 30px 0;
-    flex-wrap: wrap;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="y1q1dcrXaLMTTUpBn4ZAqFOn8_tzt710IFcoDVw_cq8" />
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZZJMV9V17"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VZZJMV9V17');
+    </script>
+
+    <title>Blog | Abdullah Gull - Amazon PPC & E-commerce Articles</title>
+    <meta name="description" content="Read expert articles on Amazon PPC management, SEO optimization, FBA strategy, and e-commerce tips from Abdullah Gull.">
+    <meta name="keywords" content="amazon blog, ppc tips, seo guide, ecommerce strategy, amazon seller tips">
+    <meta name="author" content="Abdullah Gull" />
+    
+    <link rel="icon" type="image/png" href="https://i.ibb.co/GvjXV0mL/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
     <style>
-        .ag-ai-pill-btn {
+        /* --- BLOG PAGE SPECIFIC STYLES --- */
+        .blog-header {
+            text-align: center;
+            padding: 120px 5% 80px;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .blog-header h1 {
+            font-size: 56px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--light-text);
+            font-weight: 800;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .blog-header h1 span {
+            color: var(--primary-orange);
+            background: linear-gradient(135deg, #FF8C00, #FFB84D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .blog-header p {
+            font-size: 18px;
+            color: var(--subtle-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --- BLOG GRID SECTION --- */
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 5%;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .blog-card {
+            background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6));
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-card:hover {
+            border-color: rgba(255, 140, 0, 0.3);
+            box-shadow: 0 12px 48px rgba(255, 140, 0, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.1), rgba(255, 140, 0, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-orange);
+            font-size: 48px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s var(--transition-smooth);
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 28px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            color: var(--subtle-gray);
+        }
+
+        .blog-category {
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 140, 0, 0.1));
+            color: var(--primary-orange);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-card h3 {
+            font-size: 20px;
+            margin: 12px 0;
+            line-height: 1.4;
+            color: var(--light-text);
+            transition: color 0.3s var(--transition-smooth);
+        }
+
+        .blog-card:hover h3 {
+            color: var(--primary-orange);
+        }
+
+        .blog-excerpt {
+            color: var(--subtle-gray);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .blog-date {
+            font-size: 12px;
+            color: var(--subtle-gray);
+        }
+
+        .blog-read-btn {
+            text-decoration: none;
+            color: var(--primary-orange);
+            font-weight: 600;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .blog-read-btn:hover {
+            color: #FFB84D;
+            gap: 10px;
+        }
+
+        /* --- FEATURED POST --- */
+        .featured-post {
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.1), rgba(255, 140, 0, 0.05));
+            border: 2px solid var(--primary-orange);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.15), rgba(255, 140, 0, 0.08));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: var(--primary-orange);
+            overflow: hidden;
+            order: 2;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            order: 1;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF8C00, #FFB84D);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .featured-content h2 {
+            font-size: 36px;
+            color: var(--light-text);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .featured-content h2 span {
+            color: var(--primary-orange);
+        }
+
+        .featured-content p {
+            color: var(--subtle-gray) !important;
+            font-size: 16px !important;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .featured-btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: #E8E8ED;
-            color: #1D1D1F;
-            font-size: 0.95rem;
-            font-weight: 600;
-            padding: 12px 24px;
-            border-radius: 9999px;
+            background: linear-gradient(135deg, #FF8C00, #FFB84D);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 50px;
             text-decoration: none;
-            border: 1px solid transparent;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            font-weight: 700;
+            transition: all 0.3s var(--transition-smooth);
+            box-shadow: 0 8px 24px rgba(255, 140, 0, 0.25);
+        }
+
+        .featured-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(255, 140, 0, 0.35);
+        }
+
+        /* --- SEARCH & FILTER --- */
+        .blog-controls {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6));
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 12px 20px;
+            color: var(--light-text);
+            font-size: 14px;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary-orange);
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tag {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--subtle-gray);
+            padding: 8px 16px;
+            border-radius: 50px;
             cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s var(--transition-smooth);
         }
-        /* Elevate Lift & Glow on Hover */
-        .ag-ai-pill-btn:hover {
-            background: #FFFFFF;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+        .filter-tag:hover,
+        .filter-tag.active {
+            background: var(--primary-orange);
+            border-color: var(--primary-orange);
+            color: #fff;
         }
-        /* Click State Compression */
-        .ag-ai-pill-btn:active {
-            transform: translateY(1px);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+        /* --- PAGINATION --- */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 60px;
+            align-items: center;
         }
-        /* Brand Specific Vector Overrides */
-        .ag-ai-pill-btn.chatgpt .ag-ai-svg { fill: #000000; transition: fill 0.3s; }
-        .ag-ai-pill-btn.claude .ag-ai-svg { fill: #D97756; transition: fill 0.3s; }
-        .ag-ai-pill-btn.perplexity .ag-ai-svg { fill: #39A8A8; transition: fill 0.3s; }
-        
-        /* Dark Theme Adaptive Guard (If parent container is black) */
-        @media (prefers-color-scheme: dark) {
-            .ag-ai-pill-btn {
-                background: rgba(255, 255, 255, 0.08) !important;
-                color: #F5F5F7 !important;
-                border: 1px solid rgba(255, 255, 255, 0.05) !important;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+
+        .pagination-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border-color);
+            background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6));
+            color: var(--subtle-gray);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .pagination-btn:hover,
+        .pagination-btn.active {
+            background: var(--primary-orange);
+            border-color: var(--primary-orange);
+            color: #fff;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 36px;
             }
-            .ag-ai-pill-btn:hover {
-                background: rgba(255, 255, 255, 0.15) !important;
-                border-color: rgba(255, 153, 0, 0.4) !important; /* Amazon Orange Tint Accent */
+
+            .featured-post {
+                grid-template-columns: 1fr;
+                padding: 28px;
+                gap: 24px;
             }
-            .ag-ai-pill-btn.chatgpt:hover .ag-ai-svg { fill: #FFFFFF; }
+
+            .featured-image {
+                order: 1;
+            }
+
+            .featured-content {
+                order: 2;
+            }
+
+            .featured-content h2 {
+                font-size: 28px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .blog-controls {
+                flex-direction: column;
+            }
+
+            .search-box {
+                width: 100%;
+            }
         }
     </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="https://abdullah-gull.github.io/abdullah-gull.jpg" alt="Abdullah Gull - Amazon PPC & E-commerce Consultant">
+                <a href="index.html" class="logo-link">Abdullah <span>Gull</span></a>
+            </div>
 
-    <a href="#" class="ag-ai-pill-btn chatgpt" aria-label="Verify Profile via ChatGPT">
-        <span class="ag-ai-icon-holder" style="display: flex; align-items: center; justify-content: center; width: 20px; height: 20px;">
-            <svg class="ag-ai-svg" viewBox="0 0 24 24" style="width: 100%; height: 100%;">
-                <path d="M21.74 11.93a4.7 4.7 0 0 0-.25-2.27A4.84 4.84 0 0 0 17.15 6a4.73 4.73 0 0 0-4.32-2.73 4.84 4.84 0 0 0-4.43 3A4.7 4.7 0 0 0 4 7.23a4.84 4.84 0 0 0-.17 5A4.7 4.7 0 0 0 4.1 14.5a4.84 4.84 0 0 0 4.34 3.71 4.72 4.72 0 0 0 4.3 2.72 4.84 4.84 0 0 0 4.46-3 4.7 4.7 0 0 0 4.35-.91 4.84 4.84 0 0 0 .19-5.09zM12.9 20.16a3.63 3.63 0 0 1-2.92-1.42l.14-.08 4.22-2.44a.73.73 0 0 0 .37-.63v-5.91l1.77 1a.1.1 0 0 1 .05.08v4.86a3.67 3.67 0 0 1-3.63 3.55zm-7-2.61a3.64 3.64 0 0 1-.92-3.13l.13.08 4.23 2.44a.74.74 0 0 0 .73 0l5.12-2.95v2l-4.21 2.43a3.67 3.67 0 0 1-5.1-1.21zm-1.63-7A3.64 3.64 0 0 1 2 7.7a3.67 3.67 0 0 1 4.18-2.34l-.07.12-4.23 2.45a.75.75 0 0 0-.36.63v5.92l-1.77-1a.11.11 0 0 1-.05-.08zM11.1 3.84a3.63 3.63 0 0 1 2.92 1.42l-.14.08L9.66 7.78a.74.74 0 0 0-.37.63v5.91L7.52 13.3a.1.1 0 0 1-.05-.08V8.39a3.67 3.67 0 0 1 3.63-3.55zm7 2.61a3.64 3.64 0 0 1 .92 3.13l-.13-.08-4.23-2.44a.74.74 0 0 0-.73 0l-5.12 2.95v-2l4.21-2.43a3.67 3.67 0 0 1 5.1 1.21zm1.63 7a3.64 3.64 0 0 1-2.18 2.85a3.67 3.67 0 0 1-4.18 2.34l.07-.12 4.23-2.45a.75.75 0 0 0 .36-.63V9.66l1.77 1a.11.11 0 0 1 .05.08zm-7.83-.8l-1.61-.93 3.12-1.8 1.62.93v3.59l-3.13 1.8z"/>
-            </svg>
-        </span>
-        <span class="ag-ai-text">Ask ChatGPT</span>
-    </a>
+            <nav class="nav-capsule">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About us</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact us</a>
+            </nav>
 
-    <a href="#" class="ag-ai-pill-btn claude" aria-label="Verify Profile via Claude">
-        <span class="ag-ai-icon-holder" style="display: flex; align-items: center; justify-content: center; width: 22px; height: 22px;">
-            <svg class="ag-ai-svg" viewBox="0 0 24 24" style="width: 100%; height: 100%;">
-                <path d="M11.39 3.06c-.46-.08-.94.14-1.15.55L6.68 10.7c-.12.24-.13.51-.03.75s.31.42.56.49l2.88.77c.46.12.94-.12 1.12-.55l1.9-4.52 1.4 4.7c.12.42.5.71.94.71h3.11c.46 0 .86-.31.96-.76l1.37-6.07c.1-.45-.13-.91-.55-1.07-.42-.16-.9.01-1.1.41l-1.02 2.53-1.63-5.46a1.002 1.002 0 0 0-1.28-.67c-.43.14-.69.57-.64 1.02l.62 5.09-2.09-4.99a.99.99 0 0 0-1.31-.6zm-6.2 9.47c-.41-.21-.91-.1-1.19.26-.28.36-.26.87.05 1.2l4.13 4.41c.21.22.5.34.8.34h3.69c.49 0 .91-.35.99-.83l.53-3.1c.08-.48-.22-.94-.7-1.06-.48-.12-.97.14-1.13.6l-.72 2.05-2.73-2.92c-.34-.36-.81-.46-1.23-.32zM12 19c-3.87 0-7 3.13-7 7h14c0-3.87-3.13-7-7-7z"/>
-            </svg>
-        </span>
-        <span class="ag-ai-text">Ask Claude</span>
-    </a>
+            <div class="header-right">
+                <a href="meeting.html" class="get-in-touch-btn">Get In Touch</a>
+            </div>
+        </div>
+    </header>
 
-    <a href="#" class="ag-ai-pill-btn perplexity" aria-label="Verify Profile via Perplexity">
-        <span class="ag-ai-icon-holder" style="display: flex; align-items: center; justify-content: center; width: 18px; height: 18px;">
-            <svg class="ag-ai-svg" viewBox="0 0 24 24" style="width: 100%; height: 100%;">
-                <path d="M12 2a10 10 0 0 0-6.88 17.24c.33.31.81.39 1.22.18l3.66-1.83a1 1 0 0 1 .89 0l3.66 1.83c.41.21.89.13 1.22-.18A10 10 0 0 0 12 2zm1 14.5v-9a1 1 0 0 0-2 0v9a1 1 0 0 0 2 0zm-1-11a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4.5 4.5a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm-9 0a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1z"/>
-            </svg>
-        </span>
-        <span class="ag-ai-text">Ask Perplexity</span>
-    </a>
-</div>
+    <!-- BLOG HEADER -->
+    <section class="blog-header">
+        <h1>Amazon & <span>E-commerce Blog</span></h1>
+        <p>Expert insights on PPC management, SEO optimization, FBA strategy, and proven techniques to scale your Amazon business</p>
+    </section>
+
+    <!-- MAIN BLOG SECTION -->
+    <div class="blog-container">
+        <!-- FEATURED POST -->
+        <div class="featured-post">
+            <div class="featured-content">
+                <span class="featured-badge">📌 Featured</span>
+                <h2>Amazon PPC <span>Masterclass:</span> How to Reduce ACOS by 40%</h2>
+                <p>Learn the exact PPC optimization strategies that have helped dozens of sellers cut their Advertising Cost of Sales in half. This comprehensive guide covers keyword research, bid strategy, campaign structure, and advanced tactics.</p>
+                <a href="#" class="featured-btn">Read Full Article <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="featured-image">
+                <i class="fas fa-chart-line"></i>
+            </div>
+        </div>
+
+        <!-- SEARCH & FILTER -->
+        <div class="blog-controls">
+            <input type="text" class="search-box" placeholder="Search articles...">
+            <div class="filter-tags">
+                <button class="filter-tag active">All</button>
+                <button class="filter-tag">PPC</button>
+                <button class="filter-tag">SEO</button>
+                <button class="filter-tag">FBA</button>
+                <button class="filter-tag">Strategy</button>
+            </div>
+        </div>
+
+        <!-- BLOG GRID -->
+        <div class="blog-grid">
+            <!-- Card 1 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">SEO</span>
+                        <span>15 June 2024</span>
+                    </div>
+                    <h3>Complete A9 Algorithm Guide for 2024</h3>
+                    <p class="blog-excerpt">Master the Amazon A9 search algorithm with our in-depth guide. Learn keyword placement, search term optimization, and ranking strategies.</p>
+                    <div class="blog-footer">
+                        <span class="blog-date">8 min read</span>
+                        <a href="#" class="blog-read-btn">Read <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">PPC</span>
+                        <span>12 June 2024</span>
+                    </div>
+                    <h3>Sponsored Ads Strategy Breakdown</h3>
+                    <p class="blog-excerpt">Learn how to structure your Sponsored Products campaigns for maximum ROI. Includes campaign templates and budget allocation strategies.</p>
+                    <div class="blog-footer">
+                        <span class="blog-date">10 min read</span>
+                        <a href="#" class="blog-read-btn">Read <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <i class="fas fa-box"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">FBA</span>
+                        <span>10 June 2024</span>
+                    </div>
+                    <h3>FBA Product Launch Blueprint</h3>
+                    <p class="blog-excerpt">Complete roadmap for launching products on Amazon FBA. From inventory planning to launch day tactics and day-1 revenue goals.</p>
+                    <div class="blog-footer">
+                        <span class="blog-date">12 min read</span>
+                        <a href="#" class="blog-read-btn">Read <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <i class="fas fa-image"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Strategy</span>
+                        <span>8 June 2024</span>
+                    </div>
+                    <h3>A+ Content Design That Converts</h3>
+                    <p class="blog-excerpt">Design high-converting A+ content pages that increase conversion rates by 25-40%. Includes best practices and winning templates.</p>
+                    <div class="blog-footer">
+                        <span class="blog-date">7 min read</span>
+                        <a href="#" class="blog-read-btn">Read <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <i class="fas fa-list-check"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">SEO</span>
+                        <span>5 June 2024</span>
+                    </div>
+                    <h3>Amazon Listing Optimization Checklist</h3>
+                    <p class="blog-excerpt">Complete checklist for optimizing every element of your Amazon product listing for maximum visibility and conversions.</p>
+                    <div class="blog-footer">
+                        <span class="blog-date">9 min read</span>
+                        <a href="#" class="blog-read-btn">Read <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">PPC</span>
+                        <span>2 June 2024</span>
+                    </div>
+                    <h3>Bid Strategy & Automation Tips</h3>
+                    <p class="blog-excerpt">Master PPC bidding strategies including automated rules, seasonal adjustments, and profit-first bidding models for better margins.</p>
+                    <div class="blog-footer">
+                        <span class="blog-date">11 min read</span>
+                        <a href="#" class="blog-read-btn">Read <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGINATION -->
+        <div class="pagination">
+            <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <span style="color: var(--subtle-gray);">...</span>
+            <button class="pagination-btn">12</button>
+            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <script>
+        // Set active nav link
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === 'blog.html' || currentPage.includes('blog')) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
