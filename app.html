@@ -2,58 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SellerBoard AI Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Amazon AI Agent</title>
     <style>
-        body { background-color: #0f1115; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .amazon-orange { color: #FF9900; }
-        .bg-amazon-dark { background-color: #131921; }
+        body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; background: #f4f7f6; }
+        textarea { width: 100%; height: 150px; padding: 10px; border-radius: 8px; border: 1px solid #ccc; }
+        button { background: #ff9900; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        #output { background: white; padding: 20px; margin-top: 20px; border-radius: 8px; border: 1px solid #ddd; white-space: pre-wrap; }
     </style>
 </head>
-<body class="p-4 md:p-8">
+<body>
 
-    <div class="flex flex-col items-center mb-6">
-        <div class="bg-black text-white px-6 py-2 rounded-full text-xs font-bold flex items-center gap-2 border border-gray-800 shadow-lg cursor-pointer">
-            <span class="w-2 h-2 bg-green-500 rounded-full inline-block animate-pulse"></span>
-            SellerBoard Live Feed
-            <span class="amazon-orange">🔥</span>
-        </div>
-    </div>
+    <h2>Amazon Listing Optimizer Agent</h2>
+    <textarea id="userInput" placeholder="Product ka description ya features yahan likhein..."></textarea>
+    <button onclick="runAgent()">Analyze with AI</button>
 
-    <div class="max-w-4xl mx-auto flex justify-between items-center border-b border-gray-800 pb-4 mb-6">
-        <div>
-            <h1 class="text-xl font-extrabold tracking-tight">SellerBoard AI</h1>
-            <p class="text-[10px] text-blue-500 font-bold tracking-wider">CONNECTED: AMAZON US</p>
-        </div>
-        <div class="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center">
-            <span class="amazon-orange text-lg">🏪</span>
-        </div>
-    </div>
+    <div id="output">Result yahan show hoga...</div>
 
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-2xl shadow-sm">
-            <p class="text-xs text-gray-400 font-medium">Total Sales (Revenue)</p>
-            <h3 class="text-2xl font-bold mt-1 text-white">$4,290.00</h3>
-            <p class="text-[11px] amazon-orange font-semibold mt-2">30 units bika</p>
-        </div>
+    <script>
+        // Yahan apni API KEY daalein
+        const API_KEY = "YOUR_GEMINI_API_KEY_HERE"; 
 
-        <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-2xl shadow-sm">
-            <p class="text-xs text-gray-400 font-medium">Net Profit (After Expenses)</p>
-            <h3 class="text-2xl font-bold mt-1 text-green-500">$1,180.00</h3>
-            <p class="text-[11px] text-gray-400 font-semibold mt-2">ROI: <span class="text-green-400">27.5%</span></p>
-        </div>
+        async function runAgent() {
+            const input = document.getElementById("userInput").value;
+            const outputDiv = document.getElementById("output");
+            outputDiv.innerText = "Agent kaam kar raha hai...";
 
-        <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-2xl shadow-sm">
-            <p class="text-xs text-gray-400 font-medium">Profit Margin Percent</p>
-            <h3 class="text-2xl font-bold mt-1 text-cyan-400">14.2%</h3>
-            <p class="text-[11px] text-gray-500 font-semibold mt-2">Estimated target margin</p>
-        </div>
-    </div>
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
-    <div class="max-w-4xl mx-auto mt-8 bg-zinc-900/50 border border-dashed border-zinc-800 rounded-2xl p-6 text-center">
-        <p class="text-sm text-zinc-400">Secure link with SP-API is active.</p>
-    </div>
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: "Tum Amazon Expert ho. Is product ko analyze karo aur SEO-friendly title aur 5 bullet points likho: " + input }] }]
+                    })
+                });
 
+                const data = await response.json();
+                outputDiv.innerText = data.candidates[0].content.parts[0].text;
+            } catch (error) {
+                outputDiv.innerText = "Error: API Key check karein ya internet connection.";
+            }
+        }
+    </script>
 </body>
 </html>
