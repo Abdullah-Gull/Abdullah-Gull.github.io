@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0d0e10;        /* Matte dark charcoal background from image_aaa7dd.png */
-            --card-bg: #161719;        /* Slightly lighter dark tone for blocks */
-            --accent-orange: #ff9e29;   /* Premium vibrant orange from image_aaa7dd.png */
+            --bg-color: #0d0e10;        /* Premium Matte Dark Charcoal */
+            --card-bg: #161719;        /* Sleek card panel color */
+            --accent-orange: #ff9e29;   /* Matte Amazon Orange */
             --text-main: #ffffff;
             --text-muted: #8e9296;
             --border-color: #222428;    /* Soft low-contrast borders */
@@ -30,21 +30,21 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         .container {
             max-width: 1200px;
             width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 50px;
             align-items: flex-start;
         }
 
-        /* Left Side Content & Service Navigation (From image_aaa7dd.png) */
+        /* Left Side Content (From image_aabdc6.png & image_aabe00.png) */
         .content-section {
-            padding-right: 10px;
+            padding-right: 15px;
         }
 
         .brand-name {
@@ -53,77 +53,64 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .main-title {
-            font-size: 2.8rem;
-            font-weight: 800;
-            line-height: 1.2;
             margin-bottom: 15px;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
+        .main-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .main-title span {
+            color: var(--accent-orange);
+        }
+
+        .highlight-text {
+            font-size: 1.25rem;
+            color: var(--accent-orange);
+            font-weight: 600;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .description {
+            font-size: 1.05rem;
             color: var(--text-muted);
+            line-height: 1.6;
             margin-bottom: 30px;
         }
 
-        /* Service Sidebar Layout from image_aaa7dd.png */
-        .service-box {
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            max-width: 380px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        /* Features Badges Grid (From image_aabdc6.png) */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 35px;
         }
 
-        .service-header {
-            background-color: var(--accent-orange);
-            color: #000000;
-            padding: 18px 24px;
-            font-size: 0.95rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .service-item {
-            padding: 18px 24px;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
+        .feature-item {
             display: flex;
             align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #e1e3e6;
         }
 
-        .service-item:last-child {
-            border-bottom: none;
-        }
-
-        .service-item.active {
-            background: linear-gradient(rgba(255, 158, 41, 0.08), rgba(255, 158, 41, 0.02));
+        .feature-item i {
             color: var(--accent-orange);
-            border-left: 2px solid var(--accent-orange);
+            font-size: 1.1rem;
         }
 
-        .service-item.active::before {
-            content: "→";
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        /* Right Side Form Card */
+        /* Right Side Form Card (Premium Matte Theme) */
         .form-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
         .form-top {
@@ -150,6 +137,7 @@
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
 
         .form-subtitle {
@@ -158,7 +146,7 @@
             margin-bottom: 30px;
         }
 
-        /* User Provided Form Layout and Fields Styling */
+        /* Form Input Styling with UpperCase Labels */
         .git-form-group {
             margin-bottom: 20px;
             display: flex;
@@ -167,7 +155,7 @@
         }
 
         .git-form-group label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
             color: var(--accent-orange);
             letter-spacing: 1px;
@@ -199,9 +187,10 @@
 
         .git-form textarea {
             resize: vertical;
-            min-height: 110px;
+            min-height: 100px;
         }
 
+        /* Orange CTA Button */
         .git-submit-btn {
             width: 100%;
             background-color: var(--accent-orange);
@@ -247,9 +236,11 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            .service-box {
-                max-width: 100%;
-                margin-top: 25px;
+            .content-section {
+                padding-right: 0;
+            }
+            .main-title {
+                font-size: 2.6rem;
             }
         }
     </style>
@@ -258,24 +249,35 @@
 
     <div class="container">
         
-        <!-- Left Column: Info + Service Topics (image_aaa7dd.png) -->
+        <!-- Left Column: Content (From image_aabdc6.png / image_aabe00.png layout) -->
         <div class="content-section">
             <div class="brand-name">Abdullah Gull</div>
-            <h1 class="main-title">Full Service Account Management</h1>
-            <p class="subtitle">I grow your market share, continuously.</p>
+            <h1 class="main-title">Amazon <span>Full-Service</span> Seller Central Management</h1>
             
-            <div class="service-box">
-                <div class="service-header">Service Topics</div>
-                <div class="service-item active">PPC Management</div>
-                <div class="service-item">Amazon SEO (A9)</div>
-                <div class="service-item">Listing Optimization</div>
-                <div class="service-item">Storefront Design</div>
-                <div class="service-item">Account Audit</div>
-                <div class="service-item">Product Launch</div>
+            <p class="highlight-text">Your entire Seller Central account — run by an Amazon specialist.</p>
+            
+            <p class="description">
+                I act as your dedicated expert partner. From listing optimization and advanced PPC management to account health monitoring and case resolution, I personally own the execution so you can focus entirely on your core product and scaling your brand.
+            </p>
+            
+            <!-- Bullet Highlights from image_aabdc6.png -->
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fa-solid fa-cubes"></i> Brands Scaled Successfully
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-chart-line"></i> Strategic Revenue Growth
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-crown"></i> Seller Central Specialist
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-globe"></i> Global Market Expertise
+                </div>
             </div>
         </div>
 
-        <!-- Right Column: Customized Formspree Form -->
+        <!-- Right Column: Form Card with Formspree Action Hooked -->
         <div class="form-card">
             <div class="form-top">
                 <span class="tag">Free Audit</span>
@@ -290,7 +292,7 @@
             <h2 class="form-title">Talk to a Seller Central strategist</h2>
             <p class="form-subtitle">48-hour turnaround. No sales pitch.</p>
             
-            <!-- Integration of your exact Formspree structure -->
+            <!-- Connected to your Formspree ID perfectly -->
             <form action="https://formspree.io/f/mojpjjqk" method="POST" class="git-form">
                 
                 <div class="git-form-group">
