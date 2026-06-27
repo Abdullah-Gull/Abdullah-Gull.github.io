@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah Gull - Amazon FBA Specialist</title>
-    <!-- Font Awesome for Stars & Icons -->
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg-color: #0d0e10;        /* Premium Matte Dark Charcoal */
-            --card-bg: #161719;        /* Sleek card panel color */
-            --accent-orange: #ff9e29;   /* Matte Amazon Orange */
+            --card-bg: #161719;        /* Sleek card background */
+            --accent-orange: #ff9e29;   /* Luxury Vibrant Orange */
             --text-main: #ffffff;
             --text-muted: #8e9296;
-            --border-color: #222428;    /* Soft low-contrast borders */
+            --border-color: #222428;    /* Low contrast border */
         }
 
         * {
@@ -37,14 +37,14 @@
             max-width: 1200px;
             width: 100%;
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: 1fr 1.2fr;
             gap: 50px;
-            align-items: flex-start;
+            align-items: center;
         }
 
-        /* Left Side Content (From image_aabdc6.png & image_aabe00.png) */
+        /* Left Side Content (From image_dc8e3b.png layout) */
         .content-section {
-            padding-right: 15px;
+            padding-right: 10px;
         }
 
         .brand-name {
@@ -57,9 +57,9 @@
         }
 
         .main-title {
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 800;
-            line-height: 1.15;
+            line-height: 1.2;
             margin-bottom: 20px;
         }
 
@@ -67,170 +67,83 @@
             color: var(--accent-orange);
         }
 
-        .highlight-text {
+        .subtitle {
             font-size: 1.25rem;
-            color: var(--accent-orange);
-            font-weight: 600;
-            margin-bottom: 15px;
-            line-height: 1.4;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-weight: 500;
         }
 
         .description {
             font-size: 1.05rem;
             color: var(--text-muted);
             line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        /* Features Badges Grid (From image_aabdc6.png) */
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
             margin-bottom: 35px;
         }
 
-        .feature-item {
+        .btn-group {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #e1e3e6;
+            gap: 15px;
         }
 
-        .feature-item i {
-            color: var(--accent-orange);
-            font-size: 1.1rem;
-        }
-
-        /* Right Side Form Card (Premium Matte Theme) */
-        .form-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .form-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .tag {
-            color: var(--accent-orange);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-        }
-
-        .stars {
-            color: var(--accent-orange);
-            font-size: 0.85rem;
-        }
-
-        .form-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-
-        .form-subtitle {
+        .btn {
+            padding: 14px 28px;
+            border-radius: 50px;
             font-size: 1rem;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
-
-        /* Form Input Styling with UpperCase Labels */
-        .git-form-group {
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .git-form-group label {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--accent-orange);
-            letter-spacing: 1px;
-        }
-
-        .git-form input, 
-        .git-form textarea {
-            width: 100%;
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            padding: 14px 18px;
-            border-radius: 10px;
-            color: var(--text-main);
-            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
             transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .git-form input:focus, 
-        .git-form textarea:focus {
-            outline: none;
-            border-color: var(--accent-orange);
-            box-shadow: 0 0 10px rgba(255, 158, 41, 0.1);
-        }
-
-        .git-form input::placeholder, 
-        .git-form textarea::placeholder {
-            color: #4e5256;
-        }
-
-        .git-form textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        /* Orange CTA Button */
-        .git-submit-btn {
-            width: 100%;
+        .btn-primary {
             background-color: var(--accent-orange);
             color: #000000;
-            border: none;
-            padding: 16px;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-            margin-top: 10px;
+            border: 2px solid var(--accent-orange);
         }
 
-        .git-submit-btn:hover {
-            opacity: 0.95;
-            transform: translateY(-1px);
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--accent-orange);
         }
 
-        .btn-arrow {
-            font-size: 1.1rem;
-            transition: transform 0.2s ease;
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid #333;
         }
 
-        .git-submit-btn:hover .btn-arrow {
-            transform: translateX(4px);
+        .btn-secondary:hover {
+            border-color: var(--text-muted);
+            background-color: rgba(255, 255, 255, 0.05);
         }
 
-        .form-footer {
-            text-align: center;
-            font-size: 0.8rem;
-            color: #4e5256;
-            margin-top: 15px;
+        /* Right Side: Cal.com Embed Container Layout */
+        .cal-wrapper-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            overflow: hidden;
         }
 
-        /* Responsive */
+        .cal-embed-container {
+            width: 100%;
+            height: 520px; /* Perfect height to prevent cutting off calendar options */
+            border-radius: 14px;
+            overflow: hidden;
+            background-color: #101113; /* Deep integration backdrop */
+        }
+
+        /* Cal.com UI adjustment overrides to complement your palette */
+        #my-cal-inline-30min iframe {
+            color-scheme: dark !important;
+        }
+
+        /* Responsive Configuration */
         @media (max-width: 968px) {
             .container {
                 grid-template-columns: 1fr;
@@ -239,8 +152,8 @@
             .content-section {
                 padding-right: 0;
             }
-            .main-title {
-                font-size: 2.6rem;
+            .cal-embed-container {
+                height: 580px; /* Extra breathing space for smaller screens mobile views */
             }
         }
     </style>
@@ -249,86 +162,64 @@
 
     <div class="container">
         
-        <!-- Left Column: Content (From image_aabdc6.png / image_aabe00.png layout) -->
+        <!-- Left Column: Content Block -->
         <div class="content-section">
             <div class="brand-name">Abdullah Gull</div>
-            <h1 class="main-title">Amazon <span>Full-Service</span> Seller Central Management</h1>
-            
-            <p class="highlight-text">Your entire Seller Central account — run by an Amazon specialist.</p>
-            
+            <h1 class="main-title">Full Service Account Management</h1>
+            <p class="subtitle">I grow your market share, continuously.</p>
             <p class="description">
-                I act as your dedicated expert partner. From listing optimization and advanced PPC management to account health monitoring and case resolution, I personally own the execution so you can focus entirely on your core product and scaling your brand.
+                As an Amazon expert, I manage all the core pillars of Amazon: SEO, PPC, catalog development, design, and conversion scaling. When these variables are fully optimized and working in sync, your entire catalog gains organic market share.
             </p>
-            
-            <!-- Bullet Highlights from image_aabdc6.png -->
-            <div class="features-grid">
-                <div class="feature-item">
-                    <i class="fa-solid fa-cubes"></i> Brands Scaled Successfully
-                </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-chart-line"></i> Strategic Revenue Growth
-                </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-crown"></i> Seller Central Specialist
-                </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-globe"></i> Global Market Expertise
-                </div>
+            <div class="btn-group">
+                <a href="#booking-section" class="btn btn-primary">Book a Session</a>
+                <a href="#" class="btn btn-secondary">See What's Included</a>
             </div>
         </div>
 
-        <!-- Right Column: Form Card with Formspree Action Hooked -->
-        <div class="form-card">
-            <div class="form-top">
-                <span class="tag">Free Audit</span>
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-            </div>
-            <h2 class="form-title">Talk to a Seller Central strategist</h2>
-            <p class="form-subtitle">48-hour turnaround. No sales pitch.</p>
-            
-            <!-- Connected to your Formspree ID perfectly -->
-            <form action="https://formspree.io/f/mojpjjqk" method="POST" class="git-form">
+        <!-- Right Column: Connected Live Cal.com Scheduler -->
+        <div class="cal-wrapper-card" id="booking-section">
+            <div class="cal-embed-container">
+                <div style="width:100%; height:100%; overflow:auto" id="my-cal-inline-30min"></div>
                 
-                <div class="git-form-group">
-                    <label>FULL NAME</label>
-                    <input type="text" name="name" placeholder="Your name" required>
-                </div>
-                
-                <div class="git-form-group">
-                    <label>EMAIL ADDRESS</label>
-                    <input type="email" name="email" placeholder="your@email.com" required>
-                </div>
-                
-                <div class="git-form-group">
-                    <label>COMPANY NAME</label>
-                    <input type="text" name="company" placeholder="Your company">
-                </div>
-                
-                <div class="git-form-group">
-                    <label>PHONE NUMBER</label>
-                    <input type="text" name="phone" placeholder="+1 (555) 000-0000">
-                </div>
-                
-                <div class="git-form-group">
-                    <label>TELL US ABOUT YOUR BUSINESS</label>
-                    <textarea name="message" placeholder="Share your goals and challenges..." required></textarea>
-                </div>
-                
-                <button type="submit" class="git-submit-btn">
-                    <span>Send Message</span>
-                    <span class="btn-arrow">→</span>
-                </button>
-                
-            </form>
-            
-            <div class="form-footer">
-                Your info is private. No spam, no shared lists.
+                <!-- Your Exact Provided Cal.com Embed Script Integrated Seamlessly -->
+                <script type="text/javascript">
+                  (function (C, A, L) { 
+                     let p = function (a, ar) { a.q.push(ar); }; 
+                     let d = C.document; 
+                     C.Cal = C.Cal || function () { 
+                       let cal = C.Cal; 
+                       let ar = arguments; 
+                       if (!cal.loaded) { 
+                         cal.ns = {}; 
+                         cal.q = cal.q || []; 
+                         d.head.appendChild(d.createElement("script")).src = A; 
+                         cal.loaded = true; 
+                       } 
+                       if (ar[0] === L) { 
+                         const api = function () { p(api, arguments); }; 
+                         const namespace = ar[1]; 
+                         api.q = api.q || []; 
+                         if(typeof namespace === "string"){ 
+                          cal.ns[namespace] = cal.ns[namespace] || api; 
+                          p(cal.ns[namespace], ar); 
+                          p(cal, ["initNamespace", namespace]); 
+                        } else p(cal, ar); 
+                         return; 
+                      } 
+                       p(cal, ar); 
+                     }; 
+                   })(window, "https://app.cal.com/embed/embed.js", "init");
+                   
+                  Cal("init", "30min", {origin:"https://app.cal.com"});
+                  
+                  Cal.ns["30min"]("inline", {
+                    elementOrSelector:"#my-cal-inline-30min",
+                    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"},
+                    calLink: "abdullah-gull/30min",
+                  });
+                  
+                  Cal.ns["30min"]("ui", {"theme":"dark","hideEventTypeDetails":false,"layout":"month_view"});
+                </script>
             </div>
         </div>
 
