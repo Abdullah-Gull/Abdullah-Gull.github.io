@@ -8,20 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0a0a0a;
-            --card-bg: #141414;
-            --accent-orange: #FF9900; /* Amazon Premium Orange */
+            --bg-color: #0d0e10;        /* Matte dark charcoal background from image_aaa7dd.png */
+            --card-bg: #161719;        /* Slightly lighter dark tone for blocks */
+            --accent-orange: #ff9e29;   /* Premium vibrant orange from image_aaa7dd.png */
             --text-main: #ffffff;
-            --text-muted: #a0a0a0;
-            --input-bg: #1e1e1e;
-            --input-border: #2a2a2a;
+            --text-muted: #8e9296;
+            --border-color: #222428;    /* Soft low-contrast borders */
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
@@ -40,12 +39,12 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
-            align-items: center;
+            align-items: flex-start;
         }
 
-        /* Left Side Content (From image_aa9f5d.png) */
+        /* Left Side Content & Service Navigation (From image_aaa7dd.png) */
         .content-section {
-            padding-right: 20px;
+            padding-right: 10px;
         }
 
         .brand-name {
@@ -54,79 +53,80 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .main-title {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 800;
             line-height: 1.2;
-            margin-bottom: 20px;
-            color: var(--text-main);
+            margin-bottom: 15px;
         }
 
         .subtitle {
             font-size: 1.2rem;
-            color: var(--accent-orange);
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .description {
-            font-size: 1.05rem;
             color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
-        .btn-group {
-            display: flex;
-            gap: 15px;
+        /* Service Sidebar Layout from image_aaa7dd.png */
+        .service-box {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            max-width: 380px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .btn {
-            padding: 14px 28px;
-            border-radius: 50px;
+        .service-header {
+            background-color: var(--accent-orange);
+            color: #000000;
+            padding: 18px 24px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-item {
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-muted);
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
         }
 
-        .btn-primary {
-            background-color: var(--accent-orange);
-            color: #000000;
-            border: 2px solid var(--accent-orange);
+        .service-item:last-child {
+            border-bottom: none;
         }
 
-        .btn-primary:hover {
-            background-color: transparent;
+        .service-item.active {
+            background: linear-gradient(rgba(255, 158, 41, 0.08), rgba(255, 158, 41, 0.02));
             color: var(--accent-orange);
+            border-left: 2px solid var(--accent-orange);
         }
 
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 2px solid #333;
+        .service-item.active::before {
+            content: "→";
+            margin-right: 10px;
+            font-weight: bold;
         }
 
-        .btn-secondary:hover {
-            border-color: var(--text-muted);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* Right Side Form Card (From image_aa9f9c.png) */
+        /* Right Side Form Card */
         .form-card {
             background-color: var(--card-bg);
-            border: 1px solid #222;
-            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
 
-        .form-header {
+        .form-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -143,14 +143,13 @@
 
         .stars {
             color: var(--accent-orange);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .form-title {
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 8px;
-            color: var(--text-main);
         }
 
         .form-subtitle {
@@ -159,46 +158,57 @@
             margin-bottom: 30px;
         }
 
-        .form-group-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 15px;
+        /* User Provided Form Layout and Fields Styling */
+        .git-form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        .form-control {
+        .git-form-group label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            letter-spacing: 1px;
+        }
+
+        .git-form input, 
+        .git-form textarea {
             width: 100%;
-            background-color: var(--input-bg);
-            border: 1px solid var(--input-border);
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
             padding: 14px 18px;
             border-radius: 10px;
             color: var(--text-main);
             font-size: 0.95rem;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        .form-control:focus {
+        .git-form input:focus, 
+        .git-form textarea:focus {
             outline: none;
             border-color: var(--accent-orange);
+            box-shadow: 0 0 10px rgba(255, 158, 41, 0.1);
         }
 
-        .form-control::placeholder {
-            color: #555555;
+        .git-form input::placeholder, 
+        .git-form textarea::placeholder {
+            color: #4e5256;
         }
 
-        textarea.form-control {
+        .git-form textarea {
             resize: vertical;
-            min-height: 100px;
-            margin-bottom: 20px;
+            min-height: 110px;
         }
 
-        .submit-btn {
+        .git-submit-btn {
             width: 100%;
             background-color: var(--accent-orange);
             color: #000000;
             border: none;
             padding: 16px;
-            border-radius: 12px;
+            border-radius: 10px;
             font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
@@ -206,35 +216,40 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-            transition: opacity 0.3s ease;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            margin-top: 10px;
         }
 
-        .submit-btn:hover {
-            opacity: 0.9;
+        .git-submit-btn:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
+
+        .btn-arrow {
+            font-size: 1.1rem;
+            transition: transform 0.2s ease;
+        }
+
+        .git-submit-btn:hover .btn-arrow {
+            transform: translateX(4px);
         }
 
         .form-footer {
             text-align: center;
             font-size: 0.8rem;
-            color: #555555;
+            color: #4e5256;
             margin-top: 15px;
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 968px) {
             .container {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            .content-section {
-                padding-right: 0;
-                text-align: center;
-            }
-            .btn-group {
-                justify-content: center;
-            }
-            .main-title {
-                font-size: 2.5rem;
+            .service-box {
+                max-width: 100%;
+                margin-top: 25px;
             }
         }
     </style>
@@ -243,23 +258,26 @@
 
     <div class="container">
         
-        <!-- Left Column: Info (Based on image_aa9f5d.png) -->
+        <!-- Left Column: Info + Service Topics (image_aaa7dd.png) -->
         <div class="content-section">
             <div class="brand-name">Abdullah Gull</div>
             <h1 class="main-title">Full Service Account Management</h1>
             <p class="subtitle">I grow your market share, continuously.</p>
-            <p class="description">
-                As an Amazon expert, I personally manage all the core pillars of your Amazon business: SEO, PPC, catalog optimization, design, and strategic growth. When these elements work seamlessly together, your entire catalog scales efficiently.
-            </p>
-            <div class="btn-group">
-                <a href="#audit-form" class="btn btn-primary">Request a Quote</a>
-                <a href="#" class="btn btn-secondary">See What's Included</a>
+            
+            <div class="service-box">
+                <div class="service-header">Service Topics</div>
+                <div class="service-item active">PPC Management</div>
+                <div class="service-item">Amazon SEO (A9)</div>
+                <div class="service-item">Listing Optimization</div>
+                <div class="service-item">Storefront Design</div>
+                <div class="service-item">Account Audit</div>
+                <div class="service-item">Product Launch</div>
             </div>
         </div>
 
-        <!-- Right Column: Lead Form (Based on image_aa9f9c.png) -->
-        <div class="form-card" id="audit-form">
-            <div class="form-header">
+        <!-- Right Column: Customized Formspree Form -->
+        <div class="form-card">
+            <div class="form-top">
                 <span class="tag">Free Audit</span>
                 <div class="stars">
                     <i class="fa-solid fa-star"></i>
@@ -272,22 +290,39 @@
             <h2 class="form-title">Talk to a Seller Central strategist</h2>
             <p class="form-subtitle">48-hour turnaround. No sales pitch.</p>
             
-            <form>
-                <div class="form-group-row">
-                    <input type="text" class="form-control" placeholder="Full name" required>
-                    <input type="email" class="form-control" placeholder="Work email" required>
+            <!-- Integration of your exact Formspree structure -->
+            <form action="https://formspree.io/f/mojpjjqk" method="POST" class="git-form">
+                
+                <div class="git-form-group">
+                    <label>FULL NAME</label>
+                    <input type="text" name="name" placeholder="Your name" required>
                 </div>
                 
-                <div class="form-group-row">
-                    <input type="text" class="form-control" placeholder="Brand name" required>
-                    <input type="text" class="form-control" placeholder="Monthly Amazon revenue">
+                <div class="git-form-group">
+                    <label>EMAIL ADDRESS</label>
+                    <input type="email" name="email" placeholder="your@email.com" required>
                 </div>
                 
-                <textarea class="form-control" placeholder="What do you need help with on Seller Central?"></textarea>
+                <div class="git-form-group">
+                    <label>COMPANY NAME</label>
+                    <input type="text" name="company" placeholder="Your company">
+                </div>
                 
-                <button type="submit" class="submit-btn">
-                    Request Free Seller Central Audit <i class="fa-solid fa-arrow-right"></i>
+                <div class="git-form-group">
+                    <label>PHONE NUMBER</label>
+                    <input type="text" name="phone" placeholder="+1 (555) 000-0000">
+                </div>
+                
+                <div class="git-form-group">
+                    <label>TELL US ABOUT YOUR BUSINESS</label>
+                    <textarea name="message" placeholder="Share your goals and challenges..." required></textarea>
+                </div>
+                
+                <button type="submit" class="git-submit-btn">
+                    <span>Send Message</span>
+                    <span class="btn-arrow">→</span>
                 </button>
+                
             </form>
             
             <div class="form-footer">
