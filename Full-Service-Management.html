@@ -7,9 +7,12 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ==========================================================================
+           GLOBAL VARIABLES & BASE STYLES
+           ========================================================================== */
         :root {
             --bg-color: #0d0e10;        /* Premium Matte Dark Charcoal */
-            --card-bg: #161719;        /* Sleek card background */
+            --card-bg: #161719;         /* Sleek card background */
             --accent-orange: #ff9e29;   /* Luxury Vibrant Orange */
             --text-main: #ffffff;
             --text-muted: #8e9296;
@@ -26,23 +29,28 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             padding: 60px 20px;
         }
 
-        .container {
+        /* Base Section Wrapper */
+        .main-wrapper {
             max-width: 1200px;
-            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 100px; /* Separates booking view from services grid cleanly */
+        }
+
+        /* ==========================================================================
+           SECTION 1: HERO & CAL.COM BOOKING LAYOUT
+           ========================================================================== */
+        .hero-booking-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 50px;
             align-items: center;
         }
 
-        /* Left Side Content (From image_dc8e3b.png layout) */
         .content-section {
             padding-right: 10px;
         }
@@ -61,10 +69,6 @@
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 20px;
-        }
-
-        .main-title span {
-            color: var(--accent-orange);
         }
 
         .subtitle {
@@ -119,7 +123,6 @@
             background-color: rgba(255, 255, 255, 0.05);
         }
 
-        /* Right Side: Cal.com Embed Container Layout */
         .cal-wrapper-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -132,20 +135,135 @@
 
         .cal-embed-container {
             width: 100%;
-            height: 520px; /* Perfect height to prevent cutting off calendar options */
+            height: 520px;
             border-radius: 14px;
             overflow: hidden;
-            background-color: #101113; /* Deep integration backdrop */
+            background-color: #101113; 
         }
 
-        /* Cal.com UI adjustment overrides to complement your palette */
         #my-cal-inline-30min iframe {
             color-scheme: dark !important;
         }
 
-        /* Responsive Configuration */
+        /* ==========================================================================
+           SECTION 2: 12-SERVICES GRID SYSTEM
+           ========================================================================== */
+        .services-section {
+            width: 100%;
+        }
+
+        .header-block {
+            max-width: 700px;
+            margin-bottom: 50px;
+        }
+
+        .brand-tag {
+            color: var(--accent-orange);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            color: var(--text-main);
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            color: var(--accent-orange);
+        }
+
+        .section-description {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                        border-color 0.3s ease, 
+                        box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-orange);
+            box-shadow: 0 12px 30px rgba(255, 158, 41, 0.08);
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            color: var(--accent-orange);
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-main);
+            letter-spacing: -0.3px;
+        }
+
+        .card-divider {
+            width: 100%;
+            height: 1px;
+            background-color: var(--border-color);
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .learn-more-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: gap 0.2s ease;
+        }
+
+        .learn-more-link:hover {
+            gap: 12px;
+        }
+
+        /* ==========================================================================
+           RESPONSIVE CONFIGURATION
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 968px) {
-            .container {
+            .hero-booking-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
@@ -153,367 +271,231 @@
                 padding-right: 0;
             }
             .cal-embed-container {
-                height: 580px; /* Extra breathing space for smaller screens mobile views */
+                height: 580px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title, .main-title {
+                font-size: 2.2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="main-wrapper">
         
-        <!-- Left Column: Content Block -->
-        <div class="content-section">
-            <div class="brand-name">Abdullah Gull</div>
-            <h1 class="main-title">Full Service Account Management</h1>
-            <p class="subtitle">I grow your market share, continuously.</p>
-            <p class="description">
-                As an Amazon expert, I manage all the core pillars of Amazon: SEO, PPC, catalog development, design, and conversion scaling. When these variables are fully optimized and working in sync, your entire catalog gains organic market share.
-            </p>
-            <div class="btn-group">
-                <a href="#booking-section" class="btn btn-primary">Book a Session</a>
-                <a href="#" class="btn btn-secondary">See What's Included</a>
+        <!-- SECTION 1: HERO CALENDAR SECTION -->
+        <section class="hero-booking-grid">
+            <div class="content-section">
+                <div class="brand-name">Abdullah Gull</div>
+                <h1 class="main-title">Full Service Account Management</h1>
+                <p class="subtitle">I grow your market share, continuously.</p>
+                <p class="description">
+                    As an Amazon expert, I manage all the core pillars of Amazon: SEO, PPC, catalog development, design, and conversion scaling. When these variables are fully optimized and working in sync, your entire catalog gains organic market share.
+                </p>
+                <div class="btn-group">
+                    <a href="#services-anchor" class="btn btn-primary">Our Services</a>
+                    <a href="#" class="btn btn-secondary">See What's Included</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Right Column: Connected Live Cal.com Scheduler -->
-        <div class="cal-wrapper-card" id="booking-section">
-            <div class="cal-embed-container">
-                <div style="width:100%; height:100%; overflow:auto" id="my-cal-inline-30min"></div>
-                
-                <!-- Your Exact Provided Cal.com Embed Script Integrated Seamlessly -->
-                <script type="text/javascript">
-                  (function (C, A, L) { 
-                     let p = function (a, ar) { a.q.push(ar); }; 
-                     let d = C.document; 
-                     C.Cal = C.Cal || function () { 
-                       let cal = C.Cal; 
-                       let ar = arguments; 
-                       if (!cal.loaded) { 
-                         cal.ns = {}; 
-                         cal.q = cal.q || []; 
-                         d.head.appendChild(d.createElement("script")).src = A; 
-                         cal.loaded = true; 
-                       } 
-                       if (ar[0] === L) { 
-                         const api = function () { p(api, arguments); }; 
-                         const namespace = ar[1]; 
-                         api.q = api.q || []; 
-                         if(typeof namespace === "string"){ 
-                          cal.ns[namespace] = cal.ns[namespace] || api; 
-                          p(cal.ns[namespace], ar); 
-                          p(cal, ["initNamespace", namespace]); 
-                        } else p(cal, ar); 
-                         return; 
-                      } 
-                       p(cal, ar); 
-                     }; 
-                   })(window, "https://app.cal.com/embed/embed.js", "init");
-                   
-                  Cal("init", "30min", {origin:"https://app.cal.com"});
-                  
-                  Cal.ns["30min"]("inline", {
-                    elementOrSelector:"#my-cal-inline-30min",
-                    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"},
-                    calLink: "abdullah-gull/30min",
-                  });
-                  
-                  Cal.ns["30min"]("ui", {"theme":"dark","hideEventTypeDetails":false,"layout":"month_view"});
-                </script>
+            <div class="cal-wrapper-card" id="booking-section">
+                <div class="cal-embed-container">
+                    <div style="width:100%; height:100%; overflow:auto" id="my-cal-inline-30min"></div>
+                    
+                    <script type="text/javascript">
+                      (function (C, A, L) { 
+                         let p = function (a, ar) { a.q.push(ar); }; 
+                         let d = C.document; 
+                         C.Cal = C.Cal || function () { 
+                           let cal = C.Cal; 
+                           let ar = arguments; 
+                           if (!cal.loaded) { 
+                             cal.ns = {}; 
+                             cal.q = cal.q || []; 
+                             d.head.appendChild(d.createElement("script")).src = A; 
+                             cal.loaded = true; 
+                           } 
+                           if (ar[0] === L) { 
+                             const api = function () { p(api, arguments); }; 
+                             const namespace = ar[1]; 
+                             api.q = api.q || []; 
+                             if(typeof namespace === "string"){ 
+                              cal.ns[namespace] = cal.ns[namespace] || api; 
+                              p(cal.ns[namespace], ar); 
+                              p(cal, ["initNamespace", namespace]); 
+                            } else p(cal, ar); 
+                             return; 
+                          } 
+                           p(cal, ar); 
+                         }; 
+                       })(window, "https://app.cal.com/embed/embed.js", "init");
+                       
+                      Cal("init", "30min", {origin:"https://app.cal.com"});
+                      
+                      Cal.ns["30min"]("inline", {
+                        elementOrSelector:"#my-cal-inline-30min",
+                        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"},
+                        calLink: "abdullah-gull/30min",
+                      });
+                      
+                      Cal.ns["30min"]("ui", {"theme":"dark","hideEventTypeDetails":false,"layout":"month_view"});
+                    </script>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- SECTION 2: SERVICES GRID -->
+        <section class="services-section" id="services-anchor">
+            <div class="header-block">
+                <div class="brand-tag">Abdullah Gull</div>
+                <h2 class="section-title">Full-Service <span>Amazon Growth Partner</span></h2>
+                <p class="section-description">
+                    It takes more than just having a good product to succeed on Amazon. With full-service data-driven management, you get a holistic approach to optimization, scaling, and operational efficiency to achieve your absolute target goals.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Card 1: PPC -->
+                <div class="service-card">
+                    <div>
+                        <div class="card-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                        <h3 class="card-title">PPC</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">Boost sales, cut wasteful spend. Your direct partner in transparent, high-performing Amazon advertising structures.</p>
+                    </div>
+                    <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 2: SEO -->
+                <div class="service-card">
+                    <div>
+                        <div class="card-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <h3 class="card-title">SEO</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">Watch your search rankings soar with a proven, custom-tailored Amazon SEO keyword indexation mapping roadmap.</p>
+                    </div>
+                    <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 3: Design -->
+                <div class="service-card">
+                    <div>
+                        <div class="card-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+                        <h3 class="card-title">Design</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">CTR-optimized Amazon listing images, compelling high-end A+ Content layouts, and conversion-optimized Brand Stores.</p>
+                    </div>
+                    <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 4: Merchandising -->
+                <div class="service-card">
+                    <div>
+                        <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+                        <h3 class="card-title">Merchandising</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">Your product catalog, completely perfected. I optimize variations, metadata attributes, and bundles to maximize cross-sells.</p>
+                    </div>
+                    <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 5: Catalog Troubleshooting -->
+                <div class="service-card">
+                    <div>
+                        <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3 class="card-title">Catalog Fixes</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">Having persistent trouble with suppressed listings, stranded inventory, or hijackers? I deploy fast operational resolutions.</p>
+                    </div>
+                    <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 6: Main Image CTR Hack -->
+                <div class="service-card">
+                    <div>
+                        <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3 class="card-title">Main Image CTR</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">Ready to multiply organic session traffic? Custom rendering assets engineered directly to dominate the search landscape grid.</p>
+                    </div>
+                    <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 7: Reporting and Monitoring -->
+                <div class="service-card">
+                    <div>
+                        <div class="card-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                        <h3 class="card-title">Reporting</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">Stay ahead of volatility. Track transparent metric updates, inventory velocities, and real-time operations health dashboards.</p>
+                    </div>
+                    <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 8: Platform Management -->
+                <div class="service-card">
+                    <div>
+                        <div class="card-icon"><i class="fa-solid fa-sliders"></i></div>
+                        <h3 class="card-title">Platform Operations</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">Stress-free operational scaling. Complete hands-on oversight over compliance, cases, and automated execution.</p>
+                    </div>
+                    <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 9: Audit -->
+                <div class="service-card">
+                    <div>
+                        <div class="card-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                        <h3 class="card-title">Deep Audit</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">A granular dive into backend structures to pinpoint leaks in spend, listing health, and market share opportunities.</p>
+                    </div>
+                    <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 10: Shipping Plans -->
+                <div class="service-card">
+                    <div>
+                        <div class="card-icon"><i class="fa-solid fa-box-open"></i></div>
+                        <h3 class="card-title">Shipping Plans</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">Avoid complex FBA pitfalls. Strategic shipment scheduling keeps your inventory flowing smoothly without extra fees.</p>
+                    </div>
+                    <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 11: Copywriting -->
+                <div class="service-card">
+                    <div>
+                        <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                        <h3 class="card-title">Copywriting</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">Want listings that compel immediate purchases? Expert conversion-focused copywriting turns casual clickers into loyal buyers.</p>
+                    </div>
+                    <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 12: Market Share Growth -->
+                <div class="service-card">
+                    <div>
+                        <div class="card-icon"><i class="fa-solid fa-ranking-star"></i></div>
+                        <h3 class="card-title">Market Scaling</h3>
+                        <div class="card-divider"></div>
+                        <p class="card-text">Win new organic customers and outpace direct competitors with advanced catalog positioning and promotional tactics.</p>
+                    </div>
+                    <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
 
     </div>
-
-    <section class="section-container">
-        
-        <!-- Header Text from image_dc9c3e.png layout -->
-        <div class="header-block">
-            <div class="brand-tag">Abdullah Gull</div>
-            <h2 class="section-title">Full-Service <span>Amazon Growth Partner</span></h2>
-            <p class="section-description">
-                It takes more than just having a good product to succeed on Amazon. With full-service data-driven management, you get a holistic approach to optimization, scaling, and operational efficiency to achieve your absolute target goals.
-            </p>
-        </div>
-
-        <!-- 12 Services Grid (Exact layout structure from image_dc9c3e.png) -->
-        <div class="services-grid">
-            
-            <!-- Card 1: PPC -->
-            <div class="service-card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
-                    <h3 class="card-title">PPC</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-text">Boost sales, cut wasteful spend. Your direct partner in transparent, high-performing Amazon advertising structures.</p>
-                </div>
-                <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-
-            <!-- Card 2: SEO -->
-            <div class="service-card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <h3 class="card-title">SEO</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-text">Watch your search rankings soar with a proven, custom-tailored Amazon SEO keyword indexation mapping roadmap.</p>
-                </div>
-                <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-
-            <!-- Card 3: Design -->
-            <div class="service-card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-pen-ruler"></i></div>
-                    <h3 class="card-title">Design</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-text">CTR-optimized Amazon listing images, compelling high-end A+ Content layouts, and conversion-optimized Brand Stores.</p>
-                </div>
-                <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-
-            <!-- Card 4: Merchandising -->
-            <div class="service-card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
-                    <h3 class="card-title">Merchandising</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-text">Your product catalog, completely perfected. I optimize variations, metadata attributes, and bundles to maximize cross-sells.</p>
-                </div>
-                <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-
-            <!-- Card 5: Catalog Troubleshooting -->
-            <div class="service-card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                    <h3 class="card-title">Catalog Fixes</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-text">Having persistent trouble with suppressed listings, stranded inventory, or hijackers? I deploy fast operational resolutions.</p>
-                </div>
-                <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-
-            <!-- Card 6: Main Image CTR Hack -->
-            <div class="service-card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                    <h3 class="card-title">Main Image CTR</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-text">Ready to multiply organic session traffic? Custom rendering assets engineered directly to dominate the search landscape grid.</p>
-                </div>
-                <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-
-            <!-- Card 7: Reporting and Monitoring -->
-            <div class="service-card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-chart-pie"></i></div>
-                    <h3 class="card-title">Reporting</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-text">Stay ahead of volatility. Track transparent metric updates, inventory velocities, and real-time operations health dashboards.</p>
-                </div>
-                <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-
-            <!-- Card 8: Platform Management -->
-            <div class="service-card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-sliders"></i></div>
-                    <h3 class="card-title">Platform Operations</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-text">Stress-free operational scaling. Complete hands-on oversight over compliance, cases, and automated execution.</p>
-                </div>
-                <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-
-            <!-- Card 9: Audit -->
-            <div class="service-card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-clipboard-check"></i></div>
-                    <h3 class="card-title">Deep Audit</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-text">A granular dive into backend structures to pinpoint leaks in spend, listing health, and market share opportunities.</p>
-                </div>
-                <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-
-            <!-- Card 10: Shipping Plans -->
-            <div class="service-card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-box-open"></i></div>
-                    <h3 class="card-title">Shipping Plans</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-text">Avoid complex FBA pitfalls. Strategic shipment scheduling keeps your inventory flowing smoothly without extra fees.</p>
-                </div>
-                <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-
-            <!-- Card 11: Copywriting -->
-            <div class="service-card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
-                    <h3 class="card-title">Copywriting</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-text">Want listings that compel immediate purchases? Expert conversion-focused copywriting turns casual clickers into loyal buyers.</p>
-                </div>
-                <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-
-            <!-- Card 12: Market Share Growth -->
-            <div class="service-card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-ranking-star"></i></div>
-                    <h3 class="card-title">Market Scaling</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-text">Win new organic customers and outpace direct competitors with advanced catalog positioning and promotional tactics.</p>
-                </div>
-                <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-            <style>
-       :root {
-    --bg-color: #0d0e10;        /* Premium Matte Dark Charcoal Base */
-    --card-bg: #161719;         /* Sleek Dark Card Background */
-    --accent-orange: #ff9e29;    /* Luxury Vibrant Amazon Orange */
-    --text-main: #ffffff;       /* Pure White Text */
-    --text-muted: #8e9296;      /* Subdued Gray Text */
-    --border-color: #222428;     /* Low-contrast Subtle Border */
-}
-
-/* Section Wrapper Layout */
-.section-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    background-color: var(--bg-color);
-}
-
-/* Top Header Block */
-.header-block {
-    max-width: 700px;
-    margin-bottom: 50px;
-}
-
-.brand-tag {
-    color: var(--accent-orange);
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-.section-title {
-    color: var(--text-main);
-    font-size: 2.8rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.section-title span {
-    color: var(--accent-orange);
-}
-
-.section-description {
-    font-size: 1.05rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-}
-
-/* Grid Layout Architecture (4 Columns) */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-/* Premium Individual Card Styling */
-.service-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                border-color 0.3s ease, 
-                box-shadow 0.3s ease;
-}
-
-/* Premium Glow & Hover Interaction */
-.service-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-orange);
-    box-shadow: 0 12px 30px rgba(255, 158, 41, 0.08);
-}
-
-/* Card Elements */
-.card-icon {
-    font-size: 1.8rem;
-    color: var(--accent-orange);
-    margin-bottom: 20px;
-}
-
-.card-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: var(--text-main);
-    letter-spacing: -0.3px;
-}
-
-.card-divider {
-    width: 100%;
-    height: 1px;
-    background-color: var(--border-color);
-    margin-bottom: 15px;
-}
-
-.card-text {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    margin-bottom: 25px;
-    flex-grow: 1;
-}
-
-/* Action Link (Learn More Arrow Button) */
-.learn-more-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--accent-orange);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 700;
-    transition: gap 0.2s ease;
-}
-
-.learn-more-link:hover {
-    gap: 12px;
-}
-
-/* Responsive Breakpoints for Mobile & Tablets */
-@media (max-width: 1024px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 Columns on Tablets */
-    }
-}
-
-@media (max-width: 650px) {
-    .services-grid {
-        grid-template-columns: 1fr; /* 1 Column on Mobile */
-    }
-    .section-title {
-        font-size: 2.2rem;
-    }
-}
-    </style>
-
-        </div>
-    </section>
 
 </body>
 </html>
