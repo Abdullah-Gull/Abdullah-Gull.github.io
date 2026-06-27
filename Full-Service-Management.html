@@ -225,150 +225,6 @@
 
     </div>
 
-    <style>
-       :root {
-    --bg-color: #0d0e10;        /* Premium Matte Dark Charcoal Base */
-    --card-bg: #161719;         /* Sleek Dark Card Background */
-    --accent-orange: #ff9e29;    /* Luxury Vibrant Amazon Orange */
-    --text-main: #ffffff;       /* Pure White Text */
-    --text-muted: #8e9296;      /* Subdued Gray Text */
-    --border-color: #222428;     /* Low-contrast Subtle Border */
-}
-
-/* Section Wrapper Layout */
-.section-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    background-color: var(--bg-color);
-}
-
-/* Top Header Block */
-.header-block {
-    max-width: 700px;
-    margin-bottom: 50px;
-}
-
-.brand-tag {
-    color: var(--accent-orange);
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-.section-title {
-    color: var(--text-main);
-    font-size: 2.8rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.section-title span {
-    color: var(--accent-orange);
-}
-
-.section-description {
-    font-size: 1.05rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-}
-
-/* Grid Layout Architecture (4 Columns) */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-/* Premium Individual Card Styling */
-.service-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                border-color 0.3s ease, 
-                box-shadow 0.3s ease;
-}
-
-/* Premium Glow & Hover Interaction */
-.service-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-orange);
-    box-shadow: 0 12px 30px rgba(255, 158, 41, 0.08);
-}
-
-/* Card Elements */
-.card-icon {
-    font-size: 1.8rem;
-    color: var(--accent-orange);
-    margin-bottom: 20px;
-}
-
-.card-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: var(--text-main);
-    letter-spacing: -0.3px;
-}
-
-.card-divider {
-    width: 100%;
-    height: 1px;
-    background-color: var(--border-color);
-    margin-bottom: 15px;
-}
-
-.card-text {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    margin-bottom: 25px;
-    flex-grow: 1;
-}
-
-/* Action Link (Learn More Arrow Button) */
-.learn-more-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--accent-orange);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 700;
-    transition: gap 0.2s ease;
-}
-
-.learn-more-link:hover {
-    gap: 12px;
-}
-
-/* Responsive Breakpoints for Mobile & Tablets */
-@media (max-width: 1024px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 Columns on Tablets */
-    }
-}
-
-@media (max-width: 650px) {
-    .services-grid {
-        grid-template-columns: 1fr; /* 1 Column on Mobile */
-    }
-    .section-title {
-        font-size: 2.2rem;
-    }
-}
-    </style>
-</head>
-<body>
-
     <section class="section-container">
         
         <!-- Header Text from image_dc9c3e.png layout -->
@@ -514,6 +370,147 @@
                 </div>
                 <a href="#" class="learn-more-link">Learn more <i class="fa-solid fa-circle-arrow-right"></i></a>
             </div>
+            <style>
+       :root {
+    --bg-color: #0d0e10;        /* Premium Matte Dark Charcoal Base */
+    --card-bg: #161719;         /* Sleek Dark Card Background */
+    --accent-orange: #ff9e29;    /* Luxury Vibrant Amazon Orange */
+    --text-main: #ffffff;       /* Pure White Text */
+    --text-muted: #8e9296;      /* Subdued Gray Text */
+    --border-color: #222428;     /* Low-contrast Subtle Border */
+}
+
+/* Section Wrapper Layout */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    background-color: var(--bg-color);
+}
+
+/* Top Header Block */
+.header-block {
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+
+.brand-tag {
+    color: var(--accent-orange);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    color: var(--text-main);
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.section-title span {
+    color: var(--accent-orange);
+}
+
+.section-description {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Grid Layout Architecture (4 Columns) */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* Premium Individual Card Styling */
+.service-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* Premium Glow & Hover Interaction */
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-orange);
+    box-shadow: 0 12px 30px rgba(255, 158, 41, 0.08);
+}
+
+/* Card Elements */
+.card-icon {
+    font-size: 1.8rem;
+    color: var(--accent-orange);
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-main);
+    letter-spacing: -0.3px;
+}
+
+.card-divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-color);
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* Action Link (Learn More Arrow Button) */
+.learn-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: gap 0.2s ease;
+}
+
+.learn-more-link:hover {
+    gap: 12px;
+}
+
+/* Responsive Breakpoints for Mobile & Tablets */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 Columns on Tablets */
+    }
+}
+
+@media (max-width: 650px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 Column on Mobile */
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+    </style>
 
         </div>
     </section>
