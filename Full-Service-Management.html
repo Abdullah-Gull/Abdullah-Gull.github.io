@@ -1,368 +1,394 @@
-<!-- ================= PREMIUM AMAZON HERO AUDIT SECTION ================= -->
-<section class="amz-hero-audit-section">
-    <div class="amz-container">
+<!-- ================================================================= -->
+<!-- --- START OF ABDULLAH GULL PREMIUM AUDIT SECTION --- -->
+<!-- ================================================================= -->
+
+<style>
+/* --- CUSTOM VARIABLE INTERSECTION (SAFETY FALLBACKS) --- */
+:root {
+    --primary-orange: #FF8C00;
+    --dark-matte-black: #0B0C0E;
+    --card-bg-black: #121316;
+    --input-bg-black: #1A1B1F;
+    --border-luxury: #2A2B2F;
+    --text-pure-white: #F5F5F7;
+    --text-muted-gray: #8E8E93;
+}
+
+/* --- AUDIT SECTION CONTAINER STYLING --- */
+.audit-section {
+    background-color: var(--dark-matte-black);
+    padding: 100px 5%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Luxury orange layout glow backdrop */
+.audit-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 140, 0, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.audit-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+/* --- LEFT SIDE: BRAND CONTENT DISPLAY --- */
+.audit-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 140, 0, 0.1);
+    border: 1px solid rgba(255, 140, 0, 0.3);
+    color: var(--primary-orange);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+.audit-content h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: var(--text-pure-white);
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.audit-content h1 span {
+    color: var(--primary-orange);
+    background: linear-gradient(135deg, #FF8C00, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.audit-subtext {
+    font-size: 16px;
+    color: var(--text-muted-gray);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 520px;
+}
+
+/* Feature Metrics Layout */
+.audit-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.audit-features li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 140, 0, 0.1);
+    border-radius: 50%;
+    color: var(--primary-orange);
+    font-size: 14px;
+}
+
+.feature-text {
+    font-size: 15px;
+    color: var(--text-pure-white);
+    font-weight: 500;
+}
+
+/* Anchor Interactive Buttons */
+.audit-action-btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-audit-primary {
+    background: linear-gradient(135deg, #FF8C00, #FFA500);
+    color: #FFFFFF;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+    box-shadow: 0 8px 24px rgba(255, 140, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-audit-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(255, 140, 0, 0.3);
+}
+
+.btn-audit-secondary {
+    border: 1.5px solid var(--border-luxury);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-pure-white);
+    padding: 13px 26px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-audit-secondary:hover {
+    background: #1A1B1F;
+    border-color: var(--primary-orange);
+    color: var(--primary-orange);
+}
+
+/* --- RIGHT SIDE: PREMIUM LEAD FORM CARD --- */
+.audit-card-wrapper {
+    width: 100%;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.3), transparent);
+    border-radius: 24px;
+}
+
+.audit-card {
+    background: var(--card-bg-black);
+    border: 1px solid var(--border-luxury);
+    border-radius: 22px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.rating-stars {
+    color: var(--primary-orange);
+    font-size: 14px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.audit-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-pure-white);
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.form-tagline {
+    font-size: 13px;
+    color: var(--text-muted-gray);
+    margin-bottom: 28px;
+}
+
+/* Form Execution Controls */
+.lead-generation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-row-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.lead-generation-form input,
+.lead-generation-form textarea {
+    width: 100%;
+    background: var(--input-bg-black);
+    border: 1px solid var(--border-luxury);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text-pure-white);
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.lead-generation-form input:focus,
+.lead-generation-form textarea:focus {
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.1);
+}
+
+/* Submit Action Grid CTA Button */
+.btn-submit-form {
+    width: 100%;
+    background: linear-gradient(135deg, #FF8C00, #FFA500);
+    border: none;
+    color: #FFFFFF;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-top: 8px;
+}
+
+.btn-submit-form:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.3);
+}
+
+.form-footer-notice {
+    font-size: 12px;
+    color: var(--text-muted-gray);
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* --- AUTOMATIC LAYOUT RESPONSIVENESS OVERRIDES --- */
+@media (max-width: 992px) {
+    .audit-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .audit-content {
+        text-align: center;
+    }
+    
+    .audit-subtext {
+        margin: 0 auto 32px;
+    }
+    
+    .audit-features {
+        align-items: flex-start;
+        max-width: 400px;
+        margin: 0 auto 40px;
+    }
+    
+    .audit-action-btns {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .audit-content h1 {
+        font-size: 32px;
+    }
+    
+    .form-row-split {
+        grid-template-columns: 1fr;
+    }
+    
+    .audit-card {
+        padding: 24px;
+    }
+}
+</style>
+
+<section class="audit-section">
+    <div class="audit-container">
         
-        <!-- Left Content Column -->
-        <div class="amz-content-col">
-            <div class="amz-badge">
-                <span class="badge-dot"></span> ABDXXAH EXPERT • USA
+        <!-- LEFT SIDE: DISCOVERY CONTENT BLOCK -->
+        <div class="audit-content">
+            <div class="audit-badge">
+                <i class="fa-solid fa-user-tie"></i> Amazon Strategist
             </div>
             
-            <h1 class="amz-main-title">
-                Amazon <span class="highlight-orange">Full-Service</span> Seller Central Management
-            </h1>
+            <h1>Unlock Your <br><span>Full-Service Seller Central Management</span> <br>with Abdullah Gull</h1>
             
-            <h2 class="amz-subtitle">
-                Your entire Amazon FBA ecosystem — scaled by Abdullah Gull and his expert team.
-            </h2>
-            
-            <p class="amz-description">
-                We act as your dedicated in-house Amazon growth partners. From advanced PPC optimization and organic SEO to account health management and strategic brand scaling, our specialist team handles the complexity so you can focus on product sourcing and vision.
+            <p class="audit-subtext">
+                Transform your entire Seller Central account, managed directly by Abdullah Gull and his hand-picked expert team.
             </p>
             
-            <!-- Trust Grid Metrics -->
-            <div class="amz-trust-grid">
-                <div class="trust-item">
-                    <span class="trust-icon">🚀</span>
-                    <p>Amazon FBA Specialists</p>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-icon">👥</span>
-                    <p>5+ Expert Staff Members</p>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-icon">📈</span>
-                    <p>Data-Driven PPC Scaling</p>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-icon">🗺️</span>
-                    <p>Global Brand Expansion</p>
-                </div>
-            </div>
+            <ul class="audit-features">
+                <li>
+                    <span class="feature-icon"><i class="fa-solid fa-trophy"></i></span>
+                    <span class="feature-text">High-Impact Brand Growth Strategies</span>
+                </li>
+                <li>
+                    <span class="feature-icon"><i class="fa-solid fa-chart-line"></i></span>
+                    <span class="feature-text">Dedicated PPC & Conversion Experts</span>
+                </li>
+                <li>
+                    <span class="feature-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                    <span class="feature-text">Complete USA Market Focus</span>
+                </li>
+                <li>
+                    <span class="feature-icon"><i class="fa-solid fa-star"></i></span>
+                    <span class="feature-text">Verified Seller Central Account Protection</span>
+                </li>
+            </ul>
             
-            <!-- Left Side CTAs -->
-            <div class="amz-btn-group">
-                <a href="#audit-form" class="btn-primary">Get Free Audit <span class="arrow">→</span></a>
-                <a href="#portfolio" class="btn-secondary">View Case Studies</a>
+            <div class="audit-action-btns">
+                <a href="#audit-form" class="btn-audit-primary">Request Your Audit &rarr;</a>
+                <a href="#cases" class="btn-audit-secondary">View Client Success Stories</a>
             </div>
         </div>
         
-        <!-- Right Form Card Column -->
-        <div class="amz-form-col" id="audit-form">
+        <!-- RIGHT SIDE: PREMIUM LEAD CAPTURE SYSTEM -->
+        <div id="audit-form" class="audit-card-wrapper">
             <div class="audit-card">
-                <div class="card-header">
-                    <span class="card-tag">FREE AUDIT</span>
-                    <div class="stars">★★★★★</div>
+                <div class="rating-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
                 </div>
                 
-                <h3 class="card-title">Talk to an Amazon Specialist</h3>
-                <p class="card-subtitle">48-hour turnaround. No sales pitch. Pure strategy.</p>
+                <h2>Talk Directly with Your Dedicated Amazon Strategist</h2>
+                <p class="form-tagline">48-Hour Full Account Review. Personalized. Non-Generic.</p>
                 
-                <!-- Action Form -->
-                <form class="audit-actual-form">
-                    <div class="form-row-2">
-                        <div class="input-group">
-                            <input type="text" placeholder="Full name" required>
-                        </div>
-                        <div class="input-group">
-                            <input type="email" placeholder="Work email" required>
-                        </div>
+                <form class="lead-generation-form">
+                    <div class="form-row-split">
+                        <input type="text" placeholder="First Name" required>
+                        <input type="email" placeholder="Email Address" required>
                     </div>
                     
-                    <div class="input-group">
-                        <input type="text" placeholder="Brand Name / Store URL" required>
-                    </div>
+                    <input type="text" placeholder="Brand Name" required>
                     
-                    <div class="input-group">
-                        <select required class="custom-select">
-                            <option value="" disabled selected hidden>Monthly Amazon Revenue</option>
-                            <option value="new">Launching New Brand</option>
-                            <option value="1k-10k">$1,000 - $10,000</option>
-                            <option value="10k-50k">$10,000 - $50,000</option>
-                            <option value="50k+">$50,000+</option>
-                        </select>
-                    </div>
+                    <input type="text" placeholder="Amazon Monthly Revenue" required>
                     
-                    <div class="input-group">
-                        <textarea placeholder="What is your biggest bottleneck on Amazon right now? (PPC, SEO, Buy Box, etc.)" rows="4" required></textarea>
-                    </div>
+                    <textarea placeholder="Tell Abdullah What You Need Help With on Seller Central?" rows="4" required></textarea>
                     
-                    <button type="submit" class="btn-submit">
-                        Request Free Seller Central Audit <span class="arrow">→</span>
-                    </button>
+                    <button type="submit" class="btn-submit-form">SCHEDULE FREE AUDIT</button>
                 </form>
                 
-                <p class="form-footer-note">Your info is private. No spam, no shared lists.</p>
+                <p class="form-footer-notice">
+                    <i class="fa-solid fa-lock"></i> Confidentiality assured. No spam or third-party sharing.
+                </p>
             </div>
         </div>
-
+        
     </div>
-
-    <!-- Scoped Styling CSS Inside Section -->
-    <style>
-        .amz-hero-audit-section {
-            background-color: #0c0e12;
-            padding: 100px 20px;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .amz-container {
-            max-width: 1200px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        @media (max-width: 991px) {
-            .amz-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-
-        .amz-badge {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 24px;
-        }
-
-        .badge-dot {
-            width: 7px;
-            height: 7px;
-            background-color: #ff9900;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 10px #ff9900;
-        }
-
-        .amz-main-title {
-            font-size: 48px;
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -1px;
-            margin-bottom: 20px;
-        }
-
-        .highlight-orange {
-            color: #ff9900;
-        }
-
-        .amz-subtitle {
-            font-size: 18px;
-            font-weight: 600;
-            color: #ff9900;
-            line-height: 1.4;
-            margin-bottom: 16px;
-        }
-
-        .amz-description {
-            font-size: 15px;
-            color: #a0aec0;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .amz-trust-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 35px;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .trust-icon {
-            font-size: 18px;
-        }
-
-        .trust-item p {
-            font-size: 14px;
-            font-weight: 600;
-            color: #e2e8f0;
-            margin: 0;
-        }
-
-        .amz-btn-group {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background-color: #ff9900;
-            color: #000000;
-            padding: 14px 28px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 14px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
-        }
-
-        .btn-primary:hover {
-            background-color: #e08800;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 14px 28px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 14px;
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.2s ease;
-        }
-
-        .btn-secondary:hover {
-            border-color: #ff9900;
-            background-color: rgba(255, 153, 0, 0.05);
-        }
-
-        .audit-card {
-            background: #14171f;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .card-tag {
-            font-size: 10px;
-            font-weight: 800;
-            color: #ff9900;
-            letter-spacing: 1.5px;
-            border: 1px solid rgba(255, 153, 0, 0.3);
-            padding: 4px 10px;
-            border-radius: 6px;
-        }
-
-        .stars {
-            color: #ff9900;
-            font-size: 14px;
-            letter-spacing: 2px;
-        }
-
-        .card-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: #ffffff;
-        }
-
-        .card-subtitle {
-            font-size: 13px;
-            color: #a0aec0;
-            margin-bottom: 26px;
-        }
-
-        .audit-actual-form {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .form-row-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        @media (max-width: 576px) {
-            .form-row-2 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .input-group input, 
-        .input-group textarea,
-        .custom-select {
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-            padding: 14px 16px;
-            color: #ffffff;
-            font-size: 14px;
-            outline: none;
-            box-sizing: border-box;
-            transition: all 0.2s ease;
-        }
-
-        .input-group input:focus, 
-        .input-group textarea:focus,
-        .custom-select:focus {
-            border-color: #ff9900;
-            background-color: rgba(255, 153, 0, 0.02);
-        }
-
-        .custom-select option {
-            background-color: #14171f;
-            color: #ffffff;
-        }
-
-        .btn-submit {
-            background-color: #ff9900;
-            color: #000000;
-            border: none;
-            border-radius: 12px;
-            padding: 16px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s ease;
-            margin-top: 10px;
-        }
-
-        .btn-submit:hover {
-            background-color: #e08800;
-            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
-        }
-
-        .form-footer-note {
-            font-size: 11px;
-            color: #718096;
-            text-align: center;
-            margin-top: 16px;
-        }
-    </style>
 </section>
+
+<!-- ================================================================= -->
+<!-- --- END OF ABDULLAH GULL PREMIUM AUDIT SECTION --- -->
+<!-- ================================================================= -->
