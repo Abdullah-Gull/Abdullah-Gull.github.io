@@ -1290,6 +1290,291 @@
         }
     }
 </style>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon SEO Section</title>
+    
+    <!-- Internal CSS (Aap ki sahulat ke liye aik sath laga diya hai) -->
+    <style>
+        /* General Setup */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212; /* Black Background */
+            color: #ffffff;
+        }
+
+        /* Section Layout */
+        .amazon-seo-section {
+            padding: 60px 20px;
+            background-color: #121212;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        /* Desktop Responsive Layout */
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1.2fr 1fr;
+                gap: 60px;
+            }
+        }
+
+        /* Left Content Styles */
+        .section-title {
+            color: #ff9900; /* Orange Color */
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+        }
+
+        .sub-title {
+            color: #ff9900;
+            font-size: 1.3rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-left: 4px solid #ff9900;
+            padding-left: 10px;
+        }
+
+        .seo-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+
+        .seo-list li {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+            color: #cccccc;
+        }
+
+        .seo-list li::before {
+            content: "•";
+            color: #ff9900;
+            font-weight: bold;
+            font-size: 1.3rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .seo-list li strong {
+            color: #ffffff;
+        }
+
+        .cta-text {
+            font-style: italic;
+            color: #e0e0e0;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        /* Call to Action Button */
+        .btn-container {
+            margin-top: 25px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #ff9900;
+            color: #121212;
+            padding: 14px 28px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+        }
+
+        .cta-btn:hover {
+            background-color: #e68a00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.5);
+        }
+
+        /* Right Media Styles */
+        .seo-media {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .seo-graphic-img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        /* Video Thumbnail Styling */
+        .video-box {
+            text-align: center;
+            max-width: 450px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .video-link {
+            display: block;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #333;
+            transition: border-color 0.3s ease;
+        }
+
+        .video-link:hover {
+            border-color: #ff9900;
+        }
+
+        .video-thumb {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        /* Custom Play Button Overlay */
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .video-link:hover .play-overlay {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .play-icon {
+            background: #ff9900;
+            color: #121212;
+            font-size: 1.5rem;
+            padding: 15px 22px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .video-link:hover .play-icon {
+            transform: scale(1.1);
+        }
+
+        .video-caption {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        /* Back Link */
+        .back-link-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .back-link {
+            color: #ff9900;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<section class="amazon-seo-section">
+    <div class="container">
+        
+        <!-- Left Side: Content -->
+        <div class="seo-content">
+            <h2 class="section-title">Amazon SEO</h2>
+            <p class="intro-text">
+                With years of knowledge and experience behind me, SEO has become second nature. I've unearthed the ins and outs when it comes to selecting and implementing keywords for your product listings. My best-in-class 4-phase SEO plan will help your products rank on the first page and sell in just a few clicks.
+            </p>
+
+            <h3 class="sub-title">Proven Expertise</h3>
+            <ul class="seo-list">
+                <li><strong>Years of Experience:</strong> My deep knowledge turns Amazon SEO into a science.</li>
+                <li><strong>4-Phase SEO Plan:</strong> A strategic approach to push your products to the first page.</li>
+            </ul>
+
+            <h3 class="sub-title">Comprehensive SEO Services</h3>
+            <ul class="seo-list">
+                <li><strong>Keyword & Competitor Research:</strong> Identify the best keywords and understand your competition.</li>
+                <li><strong>Targeted Keyword Selection:</strong> Choose the most effective keywords for optimal results.</li>
+                <li><strong>Ongoing Rank Tracking:</strong> Monitor keyword performance to ensure continuous improvement.</li>
+            </ul>
+
+            <p class="cta-text">Elevate your product visibility and sales with my expert Amazon SEO.</p>
+
+            <div class="btn-container">
+                <a href="#" class="cta-btn">Talk to an Amazon expert</a>
+            </div>
+        </div>
+
+        <!-- Right Side: Images & Links -->
+        <div class="seo-media">
+            <!-- Top Search Graphic Image -->
+            <div class="graphic-box">
+                <img src="https://abdullah-gull.github.io/images/seo-imge.jpg" alt="Amazon SEO Search" class="seo-graphic-img">
+            </div>
+
+            <!-- YouTube Video Link -->
+            <div class="video-box">
+                <a href="https://youtu.be/zDcl28t_U90" target="_blank" class="video-link">
+                    <img src="https://img.youtube.com/vi/zDcl28t_U90/maxresdefault.jpg" alt="Amazon SEO Masterclass" class="video-thumb">
+                    <div class="play-overlay">
+                        <span class="play-icon">▶</span>
+                    </div>
+                </a>
+                <p class="video-caption">Learn from Steven Pope in this in-depth Amazon SEO Masterclass.</p>
+            </div>
+
+            <!-- Back to Services -->
+            <div class="back-link-container">
+                <a href="#" class="back-link">← Back to Services</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
     </div>
 
 </body>
