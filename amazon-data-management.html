@@ -1,414 +1,195 @@
-<style>
-        /* Google Fonts Import for Premium Typography */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+'use client';
 
-        /* RESET & BASE STYLES */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-        }
+import React, { useState } from 'react';
 
-        body {
-            background-color: #0b0c0e;
-        }
+// Interfaces for structured data type safety
+interface TabPanelData {
+  id: string;
+  title: string;
+  description: string;
+  features: string[];
+}
 
-        /* SECTION MAIN CONTAINER */
-        .get-in-touch-section {
-            background-color: #0b0c0e; /* Luxury Matte Black BG */
-            color: #a0a5b1;
-            padding: 80px 20px;
-            display: block;
-        }
+export default function ServicesTabs() {
+  // Active Tab state mapping
+  const [activeTab, setActiveTab] = useState<string>('ppc');
 
-        .git-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  // Tab buttons specification
+  const tabButtons = [
+    { id: 'ppc', label: 'PPC Management' },
+    { id: 'seo', label: 'Amazon SEO (A9)' },
+    { id: 'listing', label: 'Listing Optimization' },
+    { id: 'storefront', label: 'Storefront Design' },
+    { id: 'audit', label: 'Account Audit' },
+    { id: 'launch', label: 'Product Launch' },
+  ];
 
-        /* TOP HEADER AREA */
-        .git-header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 0 10px;
-        }
+  // Tab content mapping data
+  const tabContent: Record<string, TabPanelData> = {
+    ppc: {
+      id: 'ppc',
+      title: 'Amazon PPC Management',
+      description: 'Master your advertising strategy with comprehensive PPC management. I optimize your campaigns across Sponsored Products, Sponsored Brands, and Sponsored Display ads to maximize visibility and profitability. Through continuous A/B testing, keyword refinement, and bid optimization, I ensure every rupee spent generates measurable returns.',
+      features: [
+        'Campaign strategy & structure',
+        'Keyword research & targeting',
+        'Bid optimization & automation',
+        'ACOS reduction techniques',
+        'Competitor analysis',
+      ],
+    },
+    seo: {
+      id: 'seo',
+      title: 'Amazon SEO (A9)',
+      description: 'Dominate Amazon search results with strategic A9 SEO optimization. I implement proven techniques to boost your product visibility, improve ranking position, and drive organic traffic. From keyword optimization to backend keyword placement, every element is fine-tuned for maximum discoverability.',
+      features: [
+        'A9 algorithm optimization',
+        'Keyword placement strategy',
+        'Search volume analysis',
+        'Competitor keyword research',
+        'Backend optimization',
+      ],
+    },
+    listing: {
+      id: 'listing',
+      title: 'Listing Optimization',
+      description: 'Transform your product listings into conversion powerhouses. I craft compelling titles, bullet points, and descriptions that highlight key benefits while incorporating high-converting keywords. Each element is strategically designed to capture buyer intent and maximize conversion rates.',
+      features: [
+        'Title optimization',
+        'Bullet point enhancement',
+        'Description copywriting',
+        'Image optimization',
+        'A+ Content creation',
+      ],
+    },
+    storefront: {
+      id: 'storefront',
+      title: 'Storefront Design',
+      description: 'Create a professional brand presence with strategic storefront design. I design cohesive, visually appealing storefronts that reflect your brand identity and drive customer loyalty. Your storefront becomes a powerful sales tool that builds trust and encourages repeat purchases.',
+      features: [
+        'Store layout planning',
+        'Brand consistency',
+        'Category organization',
+        'Visual branding',
+        'Customer journey mapping',
+      ],
+    },
+    audit: {
+      id: 'audit',
+      title: 'Account Audit',
+      description: 'Get a comprehensive analysis of your Amazon account performance. I conduct detailed audits identifying growth opportunities, addressing inefficiencies, and uncovering hidden potential. This data-driven assessment provides a roadmap to accelerate your sales and profitability.',
+      features: [
+        'Performance metrics review',
+        'Competitor benchmarking',
+        'Listing health assessment',
+        'PPC efficiency analysis',
+        'Growth recommendations',
+      ],
+    },
+    launch: {
+      id: 'launch',
+      title: 'Product Launch',
+      description: 'Launch your products strategically to achieve rapid visibility and sales momentum. I manage the complete launch process including pre-launch preparation, visibility strategy, and initial sales acceleration. Every launch is optimized for maximum market impact and sustainable growth.',
+      features: [
+        'Pre-launch optimization',
+        'Launch strategy planning',
+        'Review acceleration',
+        'Initial sales boost',
+        'Ranking acceleration',
+      ],
+    },
+  };
 
-        .git-header h2 {
-            font-size: 42px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
+  return (
+    <section class="relative overflow-hidden bg-gradient-to-br from-[#0B0C0E] to-[#1A1B1F] text-[#F5F5F7] px-[5%] py-[60px] sm:py-20 md:px-[6%] lg:px-[8%] lg:py-[120px]">
+      {/* Decorative background ambient light */}
+      <div class="pointer-events-none absolute left-[10%] top-[-50%] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(255,140,0,0.05)_0%,transparent_70%)]" />
 
-        .git-header p {
-            font-size: 16px;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #b0b5c1;
-        }
-
-        /* TEXT COLOR HIGHLIGHTS */
-        .orange-text {
-            color: #ff9900; /* Signature Amazon Orange */
-        }
-
-        .orange-text-glow {
-            color: #ffaa1d;
-            font-weight: 600;
-        }
-
-        .white-text {
-            color: #ffffff;
-        }
-
-        /* MAIN CONTENT CARD GRID STYLE VIA TABLE-CELL FOR MAXIMUM STABILITY */
-        .git-main-card {
-            background: #121316; /* Deep Charcoal Dark Card */
-            border: 1px solid #1f2126;
-            border-radius: 24px;
-            display: table;
-            width: 100%;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        /* COLUMNS */
-        .git-left-col, .git-right-col {
-            display: table-cell;
-            width: 50%;
-            vertical-align: top;
-            padding: 50px;
-        }
-
-        /* LEFT COLUMN STYLING */
-        .git-left-col {
-            background-color: #121316;
-        }
-
-        .git-left-col h3 {
-            font-size: 28px;
-            color: #ffffff;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .git-left-col .subtitle {
-            font-size: 16px;
-            color: #ff9900;
-            font-weight: 500;
-            margin-bottom: 25px;
-        }
-
-        .git-left-col .tagline {
-            font-size: 14px;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-
-        /* Bullet Points List */
-        .git-bullets {
-            list-style: none;
-            margin-bottom: 35px;
-        }
-
-        .git-bullets li {
-            display: table;
-            margin-bottom: 18px;
-            line-height: 1.4;
-        }
-
-        .check-icon {
-            display: table-cell;
-            width: 25px;
-            color: #ff9900;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .bullet-text {
-            display: table-cell;
-            color: #a0a5b1;
-            font-size: 14.5px;
-        }
-
-        .cta-mini-text {
-            font-size: 14px;
-            color: #ffffff;
-            font-weight: 500;
-            margin-bottom: 35px;
-        }
-
-        /* STATS DESIGN SECTION */
-        .git-stats-container {
-            background: #18191d;
-            border: 1px solid #23252a;
-            border-radius: 16px;
-            display: table;
-            width: 100%;
-            padding: 22px 10px;
-            text-align: center;
-        }
-
-        .stat-box {
-            display: table-cell;
-            width: 32%;
-            vertical-align: middle;
-        }
-
-        .stat-box h4 {
-            color: #ffffff;
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .stat-box p {
-            font-size: 11px;
-            color: #808593;
-            line-height: 1.3;
-            padding: 0 5px;
-        }
-
-        .stat-box-divider {
-            display: table-cell;
-            width: 1px;
-            background-color: #2b2e36;
-            height: 50px;
-        }
-
-        /* RIGHT COLUMN (FORM BLOCK) */
-        .git-right-col {
-            background-color: #16171c; /* Contrast Dark Background */
-            border-left: 1px solid #1f2126;
-        }
-
-        .form-header {
-            margin-bottom: 30px;
-        }
-
-        .form-header h3 {
-            font-size: 28px;
-            color: #ffffff;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .form-header p {
-            font-size: 14px;
-            color: #808593;
-            line-height: 1.5;
-        }
-
-        /* FORM FIELD STYLES */
-        .git-form-group {
-            margin-bottom: 22px;
-        }
-
-        .git-form-group label {
-            display: block !important;
-            font-size: 11px !important;
-            font-weight: 700 !important;
-            color: #ffffff !important;
-            letter-spacing: 1.5px !important;
-            margin-bottom: 10px !important;
-            text-transform: uppercase !important;
-        }
-
-        /* Premium Input Shape Settings Fixed */
-        .git-form input, 
-        .git-form textarea {
-            width: 100% !important;
-            background: #1d1e24 !important; /* Matte charcoal dark input fields */
-            border: 1px solid #282a32 !important;
-            color: #ffffff !important;
-            padding: 16px 20px !important;
-            border-radius: 12px !important; /* Sleek smooth curves */
-            font-size: 14px !important;
-            outline: none !important;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-            display: block !important;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-        }
-
-        /* Placeholder Styling */
-        .git-form input::placeholder, 
-        .git-form textarea::placeholder {
-            color: #606675 !important;
-            font-size: 14px;
-        }
-
-        /* Interaction Aura Effect on Input Focus */
-        .git-form input:focus, 
-        .git-form textarea:focus {
-            border-color: #ff9900 !important;
-            background: #22232a !important;
-            box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-        }
-
-        .git-form textarea {
-            height: 130px !important;
-            resize: none !important;
-            line-height: 1.5 !important;
-        }
-
-        /* ELITE LUXURY BUTTON CONFIGURATION */
-        .git-submit-btn {
-            width: 100%;
-            background: #ffa733; /* Vibrant warm orange */
-            color: #0b0c0e;
-            border: none;
-            padding: 16px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 15px;
-            cursor: pointer;
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.15);
-        }
-
-        .git-submit-btn span {
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-
-        /* Hover states */
-        .git-submit-btn:hover {
-            background: #ff9900;
-            box-shadow: 0 8px 25px rgba(255, 153, 0, 0.35);
-        }
-
-        .git-submit-btn:hover .btn-arrow {
-            transform: translateX(4px); /* Arrow moves slightly to the right smoothly */
-        }
-
-        /* MOBILE RESPONSIVENESS */
-        @media (max-width: 900px) {
-            .git-main-card {
-                display: block;
-            }
-            .git-left-col, .git-right-col {
-                display: block;
-                width: 100%;
-                padding: 35px 25px;
-            }
-            .git-right-col {
-                border-left: none;
-                border-top: 1px solid #1f2126;
-            }
-            .git-header h2 {
-                font-size: 32px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<section class="get-in-touch-section">
-    <div class="git-container">
-        
-        <div class="git-header">
-            <h2>Get in <span class="orange-text">touch</span></h2>
-            <p><strong class="white-text">Abdullah Gull</strong> is an <span class="orange-text-glow">Amazon-focused ecommerce growth partner</span> specializing in marketplace strategy and execution to scale brand performance on Amazon Seller Central and Vendor Central.</p>
+      <div class="relative z-10 mx-auto max-w-[1400px]">
+        {/* Section Header */}
+        <div class="mb-10 text-center animate-[fadeInDown_0.8s_ease-out] sm:mb-12 md:mb-20">
+          <h2 class="mb-4 text-2xl font-extrabold tracking-[-1px] sm:text-3xl md:text-4xl lg:text-[52px] lg:leading-tight">
+            Expert <span class="bg-gradient-to-br from-[#FF8C00] to-[#FFB84D] bg-clip-text text-transparent">Amazon</span> Services by Abdullah Gull
+          </h2>
+          <p class="mx-auto max-w-[700px] text-sm leading-relaxed text-[#8E8E93] sm:text-base md:text-[17px] md:leading-[1.8]">
+            I provide a holistic approach to drive traffic and boost conversions. By building custom PPC campaigns and optimizing your catalog, I strengthen your brand performance on the world's largest marketplace.
+          </p>
         </div>
 
-        <div class="git-main-card">
+        {/* Tabs Wrapper Layout */}
+        <div class="flex flex-col gap-10 lg:flex-row lg:gap-[50px] lg:items-start">
+          
+          {/* Left/Top: Tab Buttons Column */}
+          <div class="flex flex-col w-full shrink-0 sm:grid sm:grid-cols-2 lg:flex lg:flex-col lg:w-[280px]">
+            {/* Tab Section Header Label */}
+            <div class="sm:col-span-2 bg-gradient-to-br from-[#FF8C00] to-[#FFB84D] text-white px-6 py-4 font-bold rounded-t-xl text-[12px] sm:text-[13px] tracking-widest uppercase shadow-[0_8px_24px_rgba(255,140,0,0.2)]">
+              Service Topics
+            </div>
             
-            <div class="git-left-col">
-                <h3>Get in touch with us</h3>
-                <p class="subtitle">Discover How Our Amazon Solutions Can Propel Your Business</p>
-                <p class="tagline">Your brand deserves to thrive on Amazon.</p>
-                
-                <ul class="git-bullets">
-                    <li>
-                        <span class="check-icon">✓</span>
-                        <span class="bullet-text">Boost Sales, Visibility & ROI</span>
-                    </li>
-                    <li>
-                        <span class="check-icon">✓</span>
-                        <span class="bullet-text">Tailored Solutions for Your Unique Needs</span>
-                    </li>
-                    <li>
-                        <span class="check-icon">✓</span>
-                        <span class="bullet-text">Continuous Optimization, No Extra Fees</span>
-                    </li>
-                    <li>
-                        <span class="check-icon">✓</span>
-                        <span class="bullet-text">Streamline Operations and Minimize Costs</span>
-                    </li>
-                    <li>
-                        <span class="check-icon">✓</span>
-                        <span class="bullet-text">Comprehensive Amazon Services to Maximize Your Potential</span>
-                    </li>
-                </ul>
-                
-                <p class="cta-mini-text">Let's connect and unlock your Amazon store's true potential!</p>
-                
-                <div class="git-stats-container">
-                    <div class="stat-box">
-                        <h4>200+</h4>
-                        <p>Brand Currently Managed</p>
-                    </div>
-                    <div class="stat-box-divider"></div>
-                    <div class="stat-box">
-                        <h4>$500M+</h4>
-                        <p>Million Revenue Generated On Amazon Annually</p>
-                    </div>
-                    <div class="stat-box-divider"></div>
-                    <div class="stat-box">
-                        <h4>200+</h4>
-                        <p>Employees</p>
-                    </div>
+            {/* Interactive Tab Controls */}
+            {tabButtons.map((btn) => (
+              <button
+                key={btn.id}
+                onClick={() => setActiveTab(btn.id)}
+                class={`group relative flex items-center text-left py-3.5 px-4 sm:py-[18px] sm:px-6 text-sm font-semibold border border-[#2A2B2F] border-t-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] whitespace-nowrap outline-none focus-visible:ring-2 focus-visible:ring-[#FF8C00]
+                  ${
+                    activeTab === btn.id
+                      ? 'bg-gradient-to-br from-[rgba(255,140,0,0.2)] to-[rgba(255,140,0,0.1)] border-l-4 border-l-[#FF8C00] border-[#FF8C00] text-[#FF8C00] font-bold shadow-[inset_0_0_20px_rgba(255,140,0,0.1)]'
+                      : 'bg-gradient-to-br from-[rgba(26,27,31,0.8)] to-[rgba(42,43,47,0.6)] text-[#8E8E93] hover:bg-gradient-to-br hover:from-[rgba(255,140,0,0.15)] hover:to-[rgba(255,140,0,0.05)] hover:text-[#FF8C00] hover:border-[#FF8C00]/30'
+                  }
+                `}
+              >
+                {/* Arrow Icon Indicator via utility and transitions */}
+                <span 
+                  class={`mr-3 text-lg text-[#FF8C00] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
+                    ${activeTab === btn.id ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'}
+                  `}
+                >
+                  &rarr;
+                </span>
+                {btn.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Right/Bottom: Dynamic Content Box */}
+          <div class="relative flex-1 overflow-hidden rounded-xl sm:rounded-2xl border border-[#2A2B2F] bg-gradient-to-br from-[rgba(26,27,31,0.8)] to-[rgba(42,43,47,0.6)] px-6 py-8 sm:p-10 md:p-[60px] shadow-[0_20px_60px_rgba(0,0,0,0.4)] inset-shadow-[0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-[10px]">
+            {/* Inner Content Decorative Shadow */}
+            <div class="pointer-events-none absolute right-[-20%] top-[-50%] h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(255,140,0,0.05)_0%,transparent_70%)]" />
+
+            {/* Render Data Dynamic Content Panel */}
+            {tabContent[activeTab] && (
+              <div class="relative z-10 animate-[fadeInUp_0.5s_ease-out]">
+                <h3 class="mb-4 text-2xl font-extrabold tracking-tight text-[#F5F5F7] sm:text-3xl md:text-[36px]">
+                  {tabContent[activeTab].title}
+                </h3>
+                <p class="mb-6 sm:mb-8 text-sm sm:text-base leading-[1.8] text-[#8E8E93]">
+                  {tabContent[activeTab].description}
+                </p>
+
+                {/* Features Feature List Grid */}
+                <div class="mt-8">
+                  <ul class="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+                    {tabContent[activeTab].features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        class="flex items-center gap-2 rounded-lg border border-[rgba(255,140,0,0.2)] bg-gradient-to-br from-[rgba(255,140,0,0.1)] to-[rgba(255,140,0,0.05)] p-2 sm:p-3 text-[12px] sm:text-sm text-[#8E8E93] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-gradient-to-br hover:from-[rgba(255,140,0,0.2)] hover:to-[rgba(255,140,0,0.1)] hover:border-[rgba(255,140,0,0.4)] hover:text-[#F5F5F7]"
+                      >
+                        {/* Checkmark symbol */}
+                        <span class="shrink-0 text-base font-extrabold text-[#FF8C00]">
+                          &#10003;
+                        </span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-            </div>
-
-            <div class="git-right-col">
-                <div class="form-header">
-                    <h3>Contact Us</h3>
-                    <p>We'd love to hear from you! Please fill out the form and we'll get back to you as soon as possible.</p>
-                </div>
-                
-                <form action="https://formspree.io/f/mojpjjqk" method="POST" class="git-form">
-                    
-                    <div class="git-form-group">
-                        <label>FULL NAME</label>
-                        <input type="text" name="name" placeholder="Your name" required>
-                    </div>
-
-                    <div class="git-form-group">
-                        <label>EMAIL ADDRESS</label>
-                        <input type="email" name="email" placeholder="your@email.com" required>
-                    </div>
-
-                    <div class="git-form-group">
-                        <label>COMPANY NAME</label>
-                        <input type="text" name="company" placeholder="Your company">
-                    </div>
-
-                    <div class="git-form-group">
-                        <label>PHONE NUMBER</label>
-                        <input type="text" name="phone" placeholder="+1 (555) 000-0000">
-                    </div>
-
-                    <div class="git-form-group">
-                        <label>TELL US ABOUT YOUR BUSINESS</label>
-                        <textarea name="message" placeholder="Share your goals and challenges..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="git-submit-btn">
-                        <span>Send Message</span>
-                        <span class="btn-arrow">→</span>
-                    </button>
-                </form>
-            </div>
+              </div>
+            )}
+          </div>
 
         </div>
-    </div>
-</section>
+      </div>
+    </section>
+  );
+}
