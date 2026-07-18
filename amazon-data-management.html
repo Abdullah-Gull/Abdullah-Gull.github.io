@@ -1,11 +1,16 @@
-// services-section.jsx
+// components/services-section.jsx
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronRight, Home, Search, TrendingUp, Image, Layers, ShoppingCart } from 'lucide-react';
 
 export default function ServicesSection() {
   const [activeTab, setActiveTab] = useState('seller-central');
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   const sellerCentralServices = [
     {
@@ -13,42 +18,36 @@ export default function ServicesSection() {
       icon: Home,
       title: "Full Service Account Management",
       description: "I manage daily Seller Central tasks so your catalog, listings, ads, and account health stay on track.",
-      link: "Learn More"
     },
     {
       id: 2,
       icon: Search,
       title: "Amazon SEO",
       description: "I map buyer-intent keywords to titles, bullets, backend terms, and content areas that affect Amazon search visibility.",
-      link: "Learn More"
     },
     {
       id: 3,
       icon: TrendingUp,
       title: "Amazon PPC",
       description: "I build and manage Sponsored Products, Sponsored Brands, and Sponsored Display campaigns with a focus on cleaner spend.",
-      link: "Learn More"
     },
     {
       id: 4,
       icon: ShoppingCart,
       title: "Listing Optimization",
       description: "I rewrite product pages so shoppers understand the product faster and have lower reasons to leave.",
-      link: "Learn More"
     },
     {
       id: 5,
       icon: Image,
       title: "Image Optimization",
       description: "I guide main images, secondary images, lifestyle images, and infographics to improve clicks and buying confidence.",
-      link: "Learn More"
     },
     {
       id: 6,
       icon: Layers,
       title: "A+ Content",
       description: "I create brand-focused A+ layouts that explain features, answer doubts, and support better conversion.",
-      link: "Learn More"
     }
   ];
 
@@ -58,201 +57,321 @@ export default function ServicesSection() {
       icon: Home,
       title: "Vendor Onboarding",
       description: "I help brands prepare product data, content, catalog details, and retail setup for a cleaner Vendor Central start.",
-      link: "Learn More"
     },
     {
       id: 2,
       icon: ShoppingCart,
       title: "Inventory Management",
       description: "I track stock signals, sales patterns, and risk areas that can lead to lost buy box visibility or missed demand.",
-      link: "Learn More"
     },
     {
       id: 3,
       icon: TrendingUp,
       title: "Retail Advertising Management",
       description: "I manage retail media campaigns with clear attention to sales, visibility, spend, and margin pressure.",
-      link: "Learn More"
     },
     {
       id: 4,
       icon: Layers,
       title: "A+ Content Creation",
       description: "I build A+ Content that explains product value and helps shoppers compare the product with confidence.",
-      link: "Learn More"
     },
     {
       id: 5,
       icon: Image,
       title: "Sponsored Ad Management",
       description: "I manage sponsored ads across the funnel so campaigns support both ranking and profitable sales.",
-      link: "Learn More"
     },
     {
       id: 6,
       icon: Search,
       title: "Product Listing Optimization",
       description: "I improve titles, bullets, descriptions, product data, and content to help Amazon and shoppers understand each ASIN.",
-      link: "Learn More"
     }
   ];
 
-  const ServiceCard = ({ service, index }) => {
-    const Icon = service.icon;
-    return (
-      <div
-        className="group relative overflow-hidden rounded-2xl border-2 border-gray-100 bg-white p-8 transition-all duration-500 hover:border-orange-400 hover:shadow-xl hover:-translate-y-2"
-        style={{
-          animation: `slideInUp 0.6s ease-out ${index * 0.1}s both`
-        }}
-      >
-        {/* Gradient background on hover */}
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-50/0 to-orange-50/0 group-hover:from-orange-50 group-hover:to-transparent transition-all duration-500 -z-10" />
-        
-        {/* Icon */}
-        <div className="mb-6 inline-flex p-3 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl group-hover:from-orange-200 group-hover:to-orange-100 transition-all duration-500">
-          <Icon className="w-6 h-6 text-orange-500" />
-        </div>
-
-        {/* Content */}
-        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-300">
-          {service.title}
-        </h3>
-        
-        <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
-          {service.description}
-        </p>
-
-        {/* Learn More Link */}
-        <a
-          href="#"
-          className="inline-flex items-center gap-2 text-orange-500 font-semibold text-sm hover:text-orange-600 group/link transition-all duration-300"
-        >
-          {service.link}
-          <ChevronRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
-        </a>
-
-        {/* Border accent animation */}
-        <div className="absolute inset-0 rounded-2xl pointer-events-none border-2 border-transparent group-hover:border-orange-300 transition-all duration-500 opacity-0 group-hover:opacity-50" />
-      </div>
-    );
-  };
-
   return (
-    <section className="relative w-full bg-gradient-to-b from-gray-50 to-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <ServicesContainer activeTab={activeTab} setActiveTab={setActiveTab} isLoaded={isLoaded}>
+      <ServiceHeader activeTab={activeTab} />
+      <ServiceTabSelector activeTab={activeTab} setActiveTab={setActiveTab} isLoaded={isLoaded} />
+      <ServiceGrid activeTab={activeTab} sellerServices={sellerCentralServices} vendorServices={vendorCentralServices} isLoaded={isLoaded} />
+    </ServicesContainer>
+  );
+}
+
+// Container Component
+function ServicesContainer({ children, activeTab, setActiveTab, isLoaded }) {
+  return (
+    <section className="relative w-full bg-gradient-to-b from-gray-50 via-white to-gray-50 py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-orange-100/20 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-orange-100/10 to-transparent rounded-full blur-3xl" />
-      </div>
+      <DecorativeElements />
 
-      <div className="relative max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16 animate-fadeInDown">
-          <div className="inline-block mb-4">
-            <span className="inline-block px-4 py-2 bg-gradient-to-r from-orange-100 to-orange-50 rounded-full">
-              <p className="text-orange-600 font-bold text-xs uppercase tracking-widest">
-                {activeTab === 'seller-central' ? 'Seller Central' : 'Vendor Central'}
-              </p>
-            </span>
-          </div>
-
-          <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-6 leading-tight">
-            {activeTab === 'seller-central' 
-              ? 'Seller Central Services' 
-              : 'Vendor Central Services'}
-          </h2>
-
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-            I provide expert management across all your Amazon marketplace needs. Seller Central gives brands more control over pricing, inventory, listings, ads, and customer-facing product pages while Vendor Central works differently because Amazon buys from you and sells to the customer.
-          </p>
-        </div>
-
-        {/* Tab Selector */}
-        <div className="flex justify-center gap-4 mb-16 animate-fadeInUp">
-          {['seller-central', 'vendor-central'].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 ${
-                activeTab === tab
-                  ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg scale-105'
-                  : 'bg-white border-2 border-gray-200 text-gray-700 hover:border-orange-300'
-              }`}
-            >
-              {tab === 'seller-central' ? 'Seller Central' : 'Vendor Central'}
-            </button>
-          ))}
-        </div>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {(activeTab === 'seller-central' 
-            ? sellerCentralServices 
-            : vendorCentralServices
-          ).map((service, index) => (
-            <ServiceCard key={service.id} service={service} index={index} />
-          ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="mt-20 text-center animate-fadeInUp">
-          <div className="inline-block">
-            <p className="text-gray-600 mb-4">Ready to transform your Amazon business?</p>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 group"
-            >
-              Schedule Strategy Call
-              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
+      <div className="relative max-w-6xl mx-auto">
+        {children}
       </div>
 
       {/* Animations */}
-      <style jsx>{`
-        @keyframes slideInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fadeInDown {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fadeInDown {
-          animation: fadeInDown 0.8s ease-out;
-        }
-
-        .animate-fadeInUp {
-          animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-      `}</style>
+      <AnimationStyles />
     </section>
+  );
+}
+
+// Decorative Elements Component
+function DecorativeElements() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-bl from-orange-100/20 to-transparent rounded-full blur-3xl opacity-40" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-orange-100/10 to-transparent rounded-full blur-3xl opacity-40" />
+    </div>
+  );
+}
+
+// Header Component
+function ServiceHeader({ activeTab }) {
+  const [isLoaded, setIsLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
+  return (
+    <HeaderContainer>
+      <HeaderBadge activeTab={activeTab} isLoaded={isLoaded} />
+      <HeaderTitle activeTab={activeTab} isLoaded={isLoaded} />
+      <HeaderDescription isLoaded={isLoaded} />
+    </HeaderContainer>
+  );
+}
+
+function HeaderContainer({ children }) {
+  return <div className="text-center mb-16">{children}</div>;
+}
+
+function HeaderBadge({ activeTab, isLoaded }) {
+  return (
+    <div className={`inline-block mb-4 transition-all duration-700 ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+      <span className="inline-block px-4 py-2 bg-gradient-to-r from-orange-100 to-orange-50 rounded-full">
+        <p className="text-orange-600 font-bold text-xs uppercase tracking-widest">
+          {activeTab === 'seller-central' ? 'Seller Central' : 'Vendor Central'}
+        </p>
+      </span>
+    </div>
+  );
+}
+
+function HeaderTitle({ activeTab, isLoaded }) {
+  return (
+    <h2 className={`text-4xl sm:text-5xl font-black text-gray-900 mb-6 leading-tight transition-all duration-700 ${
+      isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+    }`}>
+      {activeTab === 'seller-central' 
+        ? 'Seller Central Services' 
+        : 'Vendor Central Services'}
+    </h2>
+  );
+}
+
+function HeaderDescription({ isLoaded }) {
+  return (
+    <p className={`text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed transition-all duration-700 ${
+      isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+    }`}
+    style={{ transitionDelay: isLoaded ? '50ms' : '0ms' }}>
+      Seller Central gives brands more control over pricing, inventory, listings, ads, and customer-facing product pages while Vendor Central works differently because Amazon buys from the brand and sells to the customer.
+    </p>
+  );
+}
+
+// Tab Selector Component
+function ServiceTabSelector({ activeTab, setActiveTab, isLoaded }) {
+  const tabs = ['seller-central', 'vendor-central'];
+
+  return (
+    <div className={`flex justify-center gap-4 mb-16 flex-wrap transition-all duration-700 ${
+      isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+    }`}
+    style={{ transitionDelay: isLoaded ? '100ms' : '0ms' }}>
+      {tabs.map((tab) => (
+        <TabButton
+          key={tab}
+          tab={tab}
+          isActive={activeTab === tab}
+          onClick={() => setActiveTab(tab)}
+        />
+      ))}
+    </div>
+  );
+}
+
+function TabButton({ tab, isActive, onClick }) {
+  const tabLabel = tab === 'seller-central' ? 'Seller Central' : 'Vendor Central';
+
+  return (
+    <button
+      onClick={onClick}
+      className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-500 border-2 ${
+        isActive
+          ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white border-orange-400 shadow-lg'
+          : 'bg-white border-gray-200 text-gray-700 hover:border-orange-300 hover:text-orange-600'
+      }`}
+    >
+      {tabLabel}
+    </button>
+  );
+}
+
+// Grid Component
+function ServiceGrid({ activeTab, sellerServices, vendorServices, isLoaded }) {
+  const services = activeTab === 'seller-central' ? sellerServices : vendorServices;
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service, index) => (
+        <ServiceCard key={service.id} service={service} index={index} isLoaded={isLoaded} />
+      ))}
+    </div>
+  );
+}
+
+// Service Card Component
+function ServiceCard({ service, index, isLoaded }) {
+  const Icon = service.icon;
+
+  return (
+    <div
+      className={`group relative overflow-hidden rounded-lg transition-all duration-700 transform ${
+        isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+      style={{
+        transitionDelay: isLoaded ? `${index * 60}ms` : '0ms',
+      }}
+    >
+      {/* White background card */}
+      <CardBackground />
+
+      {/* Hover overlay */}
+      <CardOverlay />
+
+      {/* Content */}
+      <CardContent service={service} Icon={Icon} />
+
+      {/* Bottom accent line */}
+      <CardAccentLine />
+    </div>
+  );
+}
+
+function CardBackground() {
+  return (
+    <div className="absolute inset-0 bg-white rounded-lg border-2 border-gray-100 group-hover:border-orange-300 transition-all duration-500" />
+  );
+}
+
+function CardOverlay() {
+  return (
+    <div className="absolute inset-0 bg-gradient-to-br from-orange-50/0 to-orange-50/0 group-hover:from-orange-50 group-hover:to-transparent transition-all duration-500 rounded-lg" />
+  );
+}
+
+function CardContent({ service, Icon }) {
+  return (
+    <div className="relative z-10 h-full p-8 flex flex-col">
+      <CardIcon Icon={Icon} />
+      <CardTitle title={service.title} />
+      <CardDescription description={service.description} />
+      <CardLink />
+    </div>
+  );
+}
+
+function CardIcon({ Icon }) {
+  return (
+    <div className="mb-6 inline-flex w-fit">
+      <div className="p-3 bg-gradient-to-br from-orange-100 to-orange-50 rounded-lg group-hover:from-orange-200 group-hover:to-orange-100 transition-all duration-500">
+        <Icon className="w-6 h-6 text-orange-500 group-hover:text-orange-600 transition-colors duration-300" />
+      </div>
+    </div>
+  );
+}
+
+function CardTitle({ title }) {
+  return (
+    <h3 className="text-lg font-black text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-300 leading-tight">
+      {title}
+    </h3>
+  );
+}
+
+function CardDescription({ description }) {
+  return (
+    <p className="text-gray-600 text-sm leading-relaxed flex-grow group-hover:text-gray-700 transition-colors duration-300">
+      {description}
+    </p>
+  );
+}
+
+function CardLink() {
+  return (
+    <a
+      href="#"
+      className="inline-flex items-center gap-2 text-orange-500 font-bold text-sm hover:text-orange-600 group/link transition-all duration-300 w-fit mt-4"
+    >
+      LEARN MORE
+      <ChevronRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
+    </a>
+  );
+}
+
+function CardAccentLine() {
+  return (
+    <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-orange-400 via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 w-full" />
+  );
+}
+
+// Animation Styles Component
+function AnimationStyles() {
+  return (
+    <style jsx>{`
+      @keyframes slideInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fadeInDown {
+        animation: fadeInDown 0.8s ease-out;
+      }
+
+      .animate-fadeInUp {
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+      }
+    `}</style>
   );
 }
