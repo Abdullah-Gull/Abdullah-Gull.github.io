@@ -184,6 +184,7 @@ body {
 .nav-link:hover::before {
     left: 0;
 }
+
 /* --- GET IN TOUCH BUTTON --- */
 .get-in-touch-btn {
     text-decoration: none;
@@ -297,130 +298,6 @@ body {
     padding-left: 25px;
 }
 
-/* --- HERO SECTION --- */
-.hero-split {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 80px 8%;
-    gap: 50px;
-    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-split::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    flex: 1;
-}
-
-.hero-content h1 {
-    font-size: 64px;
-    line-height: 1.15;
-    margin-bottom: 24px;
-    color: var(--light-text);
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-.hero-content h1 span {
-    color: var(--primary-orange);
-    background: linear-gradient(135deg, #FF8C00, #FFB84D);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.badge-gold {
-    color: var(--primary-orange);
-    letter-spacing: 2px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    border-left: 3px solid var(--primary-orange);
-    padding-left: 12px;
-    font-size: 13px;
-    text-transform: uppercase;
-}
-
-.hero-subtext {
-    color: var(--subtle-gray);
-    margin-bottom: 36px;
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #FF8C00, #FFB84D);
-    color: #fff;
-    padding: 16px 36px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    display: inline-block;
-    transition: all 0.3s var(--transition-smooth);
-    border: 1px solid transparent;
-    box-shadow: 0 12px 28px rgba(255, 140, 0, 0.25);
-    letter-spacing: 0.5px;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s var(--transition-smooth);
-}
-
-.btn-primary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(255, 140, 0, 0.35);
-}
-
-.btn-primary:hover::before {
-    left: 100%;
-}
-
-.image-wrapper {
-    flex: 1;
-    position: relative;
-    z-index: 2;
-}
-
-.image-wrapper img {
-    width: 100%;
-    max-width: 450px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 60px rgba(255, 140, 0, 0.1);
-    transition: all 0.4s var(--transition-smooth);
-    object-fit: cover;
-}
-
-.image-wrapper img:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5), 0 0 80px rgba(255, 140, 0, 0.2);
-    border-color: rgba(255, 140, 0, 0.2);
-}
-
 /* --- FOOTER SOCIAL ICONS --- */
 .social-icon-box {
     display: inline-flex !important;
@@ -482,19 +359,6 @@ p {
         padding: 28px;
         gap: 20px;
     }
-
-    .hero-split {
-        padding: 60px 6%;
-        gap: 30px;
-    }
-
-    .hero-content h1 {
-        font-size: 50px;
-    }
-
-    .image-wrapper img {
-        max-width: 380px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -538,36 +402,6 @@ p {
         padding-left: 0;
         padding-top: 16px;
         margin-top: 16px;
-    }
-
-    .hero-split {
-        flex-direction: column;
-        text-align: center;
-        padding: 50px 5%;
-        min-height: auto;
-    }
-
-    .hero-split::before {
-        opacity: 0.5;
-        right: -30%;
-        width: 400px;
-        height: 400px;
-    }
-
-    .hero-content h1 {
-        font-size: 36px;
-        line-height: 1.2;
-        margin-bottom: 16px;
-    }
-
-    .hero-subtext {
-        margin-bottom: 28px;
-        font-size: 16px;
-    }
-
-    .image-wrapper img {
-        max-width: 100%;
-        width: 100%;
     }
 
     .logo-text {
@@ -622,30 +456,6 @@ p {
     .mega-col a {
         font-size: 12px;
         padding: 8px 0;
-    }
-
-    .hero-split {
-        padding: 30px 5%;
-    }
-
-    .hero-content h1 {
-        font-size: 28px;
-        margin-bottom: 12px;
-    }
-
-    .badge-gold {
-        font-size: 11px;
-        margin-bottom: 12px;
-    }
-
-    .hero-subtext {
-        font-size: 14px;
-        margin-bottom: 20px;
-    }
-
-    .btn-primary {
-        padding: 12px 24px;
-        font-size: 13px;
     }
 
     .social-icon-box {
@@ -908,129 +718,72 @@ a:focus {
     </div>
 </header>
     
-    <section class="hero-split">
-    <div class="hero-content">
-        <div class="badge-gold">TOP-RATED AMAZON FBA SPECIALIST</div>
-        
-        <h1>Abdullah Gull: <br><span>Scaling Amazon Brands Globally</span></h1>
-        
-        <p class="hero-subtext">
-<b>Abdullah Gull</b> provides performance-driven <b>Amazon Ecosystem Scaling</b>, specializing in <b>Algorithmic PPC Optimization</b>, <b>Advanced SEO</b>, <b>High-Converting Listing Architecture</b>, and <b>Full Account Management</b>. By taking complete charge of your <b>Seller Central or Vendor Central</b> operations, I enable you to focus entirely on product innovation and manufacturing. Partnering with a dedicated <b>Amazon Marketing Expert</b> allows you to eliminate wasted ad spend, maximize ROI, and deploy data-driven scaling frameworks built for long-term marketplace dominance.        </p>
-            <div class="hero-btns">
-            <a href="https://abdullah-gull.github.io/audit.html" class="btn-primary">Get Free Amazon Audit</a>
-        </div>
+   <script src="https://cdn.tailwindcss.com"></script>
+<section class="bg-[#0b0b0b] text-white min-h-[90vh] flex items-center py-16 lg:py-24 px-6 sm:px-12 lg:px-24 font-sans selection:bg-[#ff8c00] selection:text-black relative overflow-hidden">
+  
+  <!-- Main Grid Container -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full z-10 relative">
+    
+    <!-- LEFT SIDE: Text Content Box -->
+    <div class="lg:col-span-6 flex flex-col justify-center text-left relative z-20">
+      
+      <!-- Top Badge -->
+      <div class="flex items-center gap-2 mb-6">
+        <div class="w-2 h-2 rounded-full bg-[#ff8c00]"></div>
+        <span class="text-[#ff8c00] text-xs font-bold uppercase tracking-widest">TOP-RATED AMAZON FBA SPECIALIST</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.1] mb-6 text-white">
+        Abdullah Gull: <br>
+        <span class="text-[#ff8c00]">Scaling Amazon Brands Globally</span>
+      </h1>
+
+      <!-- Descriptive Paragraph Content -->
+      <p class="text-zinc-400 text-base md:text-lg leading-relaxed mb-10 max-w-[640px]">
+        Abdullah Gull provides performance-driven Amazon Ecosystem Scaling, specializing in Algorithmic PPC Optimization, Advanced SEO, High-Converting Listing Architecture, and Full Account Management. By taking complete charge of your Seller Central or Vendor Central operations, I enable you to focus entirely on product innovation and manufacturing. Partnering with a dedicated Amazon Marketing Expert allows you to eliminate wasted ad spend, maximize ROI, and deploy data-driven scaling frameworks built for long-term marketplace dominance.
+      </p>
+
+      <!-- Dual Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mb-10 w-full sm:w-auto">
+        <a href="#audit" class="group bg-[#ffaa00] text-black font-bold px-8 py-4 rounded-full text-sm uppercase tracking-wider flex items-center justify-center shadow-lg shadow-[#ffaa00]/10 hover:bg-white transition-all duration-300">
+          Get Free Amazon Audit
+          <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="#contact" class="group bg-[#ff8c00] text-white font-bold px-8 py-4 rounded-full text-sm uppercase tracking-wider flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300">
+          Scale your Amazon sales
+          <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Bottom mini line -->
+      <div class="flex items-center text-zinc-500 text-sm md:text-base">
+        <div class="w-8 h-0.5 bg-[#ff8c00] mr-3"></div>
+        <p>Not sure where to start? Get a FREE listing audit.</p>
+      </div>
+      
     </div>
-                
-<div class="hero-image-area">
-    <div class="image-wrapper">
-        <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" alt="Abdullah Gull - Amazon FBA Expert and PPC Specialist" 
-                 style="width: 100%; max-width: 450px; border-radius: 20px;">
+
+    <!-- RIGHT SIDE: BIGGER IMAGE CONTAINER (Fills the entire marked red box) -->
+    <div class="lg:col-span-6 flex items-center justify-center lg:justify-end w-full relative z-10 mt-10 lg:mt-0">
+      
+      <!-- Glow background -->
+      <div class="absolute right-[5%] w-[400px] h-[400px] bg-[#ff8c00]/10 rounded-full blur-[140px] -z-10"></div>
+      
+      <!-- Scaled Up Container to fit the exact red box mark -->
+      <div class="w-full max-w-[650px] lg:max-w-none xl:max-w-[680px] flex items-center justify-center overflow-hidden rounded-2xl transform scale-[1.05] origin-center lg:origin-right transition-transform duration-300">
+        <img 
+          src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" 
+          alt="Abdullah Gull - Amazon Growth Partner" 
+          class="w-full h-auto max-h-[600px] lg:max-h-[640px] object-contain filter brightness-110 contrast-105 select-none"
+        >
+      </div>
+      
     </div>
-</div>
-   <script>
-    // Mega Menu Toggle
-    function toggleMegaMenu(event) {
-        event.preventDefault();
-        const megaPanel = document.getElementById('megaPanel');
-        const isVisible = megaPanel.classList.contains('show-menu');
-        
-        // Close all other menus
-        document.querySelectorAll('.mega-menu-panel').forEach(panel => {
-            panel.classList.remove('show-menu');
-        });
-        
-        // Toggle current menu
-        if (!isVisible) {
-            megaPanel.classList.add('show-menu');
-        }
-    }
+    
+  </div>
 
-    // Close mega menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const servicesToggle = document.getElementById('servicesToggle');
-        const megaPanel = document.getElementById('megaPanel');
-        
-        if (!servicesToggle.contains(event.target) && !megaPanel.contains(event.target)) {
-            megaPanel.classList.remove('show-menu');
-        }
-    });
-
-    // Set Active Nav Link Based on Current Page
-    document.addEventListener('DOMContentLoaded', function() {
-        const currentPage = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            const href = link.getAttribute('href');
-            
-            // Match current page
-            if (href === 'index.html' && (currentPage === '/' || currentPage.endsWith('index.html'))) {
-                link.classList.add('active');
-            } else if (href === 'about.html' && currentPage.includes('about')) {
-                link.classList.add('active');
-            } else if (href === 'blog.html' && currentPage.includes('blog')) {
-                link.classList.add('active');
-            } else if (href === 'contact.html' && currentPage.includes('contact')) {
-                link.classList.add('active');
-            }
-        });
-    });
-</script>
-
-<!-- Additional CSS for Badge Styling -->
-<style>
-    .badge-new {
-        display: inline-block;
-        background: linear-gradient(135deg, #FF8C00, #FFB84D);
-        color: #fff;
-        padding: 3px 8px;
-        border-radius: 12px;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        margin-left: 8px;
-        text-transform: uppercase;
-    }
-
-    .free-tools {
-        transition: all 0.3s var(--transition-smooth) !important;
-    }
-
-    .free-tools:hover {
-        transform: translateX(4px);
-    }
-
-    /* Dropdown Wrapper Styling */
-    .dropdown-item-wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
-    }
-
-    .dropdown-toggle {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .badge-new {
-            font-size: 10px;
-            padding: 2px 6px;
-            margin-left: 4px;
-        }
-
-        .mega-menu-panel {
-            padding: 20px !important;
-        }
-
-        .mega-col a {
-            font-size: 13px;
-        }
-    }
-</style>
+</section>
  </section>
 	
 	<body>
