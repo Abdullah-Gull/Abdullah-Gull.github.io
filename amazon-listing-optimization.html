@@ -1,320 +1,155 @@
-<!-- ================================================================= -->
-<!-- AMAZON SERVICES SECTION START (HTML)                              -->
-<!-- ================================================================= -->
-<section class="services-section">
-  <div class="services-container">
-    
-    <!-- Section Header -->
-    <div class="services-header">
-      <h2>Amazon Marketplace Expertise</h2>
-      <p>I help brands maximize control over pricing, listings, ads, and store presence. Whether navigating Seller Central or managing Vendor Central relations, I design custom strategies to scale your sales velocity.</p>
-    </div>
+'use client';
 
-    <!-- Advanced Tab Switcher -->
-    <div class="tab-container">
-      <button class="tab-btn active" onclick="switchTab(event, 'seller-central')">Seller Central</button>
-      <button class="tab-btn" onclick="switchTab(event, 'vendor-central')">Vendor Central</button>
-    </div>
+import { useState } from 'react';
 
-    <!-- Seller Central Grid -->
-    <div id="seller-central" class="services-grid tab-content active">
-      
-      <div class="service-card">
-        <div class="icon-box"><i class="fas fa-store"></i></div>
-        <h3>Full-Account Management</h3>
-        <p>I take over your daily operations, inventory health, case logs, and performance metrics so your account stays compliant and continuously scales.</p>
-        <a href="#" class="learn-more">Explore Strategy <span class="arrow">→</span></a>
+export default function AmazonServices() {
+  const [activeTab, setActiveTab] = useState('seller-central');
+
+  const sellerServices = [
+    {
+      icon: '🏪',
+      title: 'Full-Account Management',
+      desc: 'I take over your daily operations, inventory health, case logs, and performance metrics so your account stays compliant and continuously scales.',
+    },
+    {
+      icon: '🔍',
+      title: 'Amazon SEO & Visibility',
+      desc: 'I map high-intent buyer keywords into back-end search terms, titles, and bullets to rapidly lift your organic rankings and conversion metrics.',
+    },
+    {
+      icon: '📢',
+      title: 'Precision PPC Campaigns',
+      desc: 'I architect and optimize Sponsored Products, Brands, and Display campaigns, eliminating wasted ad spend while driving profitable top-line revenue.',
+    },
+    {
+      icon: '✏️',
+      title: 'Listing Optimization',
+      desc: 'I reconstruct your product detail pages to answer customer friction points immediately, lowering bounce rates and driving higher unit session percentages.',
+    },
+    {
+      icon: '🖼️',
+      title: 'Visual Asset Optimization',
+      desc: 'I direct main images, lifestyle graphics, and detailed infographics that turn passive browsers into high-confidence buyers.',
+    },
+    {
+      icon: '🥞',
+      title: 'Premium A+ Content',
+      desc: 'I build custom, brand-focused A+ structures that cross-sell your catalog, decrease product returns, and elevate overall brand equity.',
+    },
+  ];
+
+  const vendorServices = [
+    {
+      icon: '🤝',
+      title: 'Vendor Onboarding',
+      desc: 'I streamline your initial setup, data catalog ingestion, and retail configurations for a highly efficient and flawless Vendor Central launch.',
+    },
+    {
+      icon: '📦',
+      title: 'Inventory & Buy-Box Management',
+      desc: 'I closely track automated purchase orders and stock patterns to minimize buy-box losses and prevent expensive chargebacks.',
+    },
+    {
+      icon: '📈',
+      title: 'Retail Media Management',
+      desc: 'I execute strategic co-op and retail marketing initiatives designed to boost sales velocities while successfully protecting your margins.',
+    },
+    {
+      icon: '🏆',
+      title: 'A+ Content Creation',
+      desc: 'I map out premium conversion modules that demonstrate value clearly, allowing wholesale buyers to trust your brand completely.',
+    },
+    {
+      icon: '🚀',
+      title: 'Sponsored Ad Management',
+      desc: 'I design full-funnel ad sequences tailored specifically for first-party listings to capture maximum visibility on competitive keywords.',
+    },
+    {
+      icon: '📝',
+      title: '1P Listing Enhancement',
+      desc: 'I overhaul descriptive bullet structures, technical data, and rich media assets to align seamlessly with Amazon\'s rigorous 1P retail standards.',
+    },
+  ];
+
+  return (
+    <section className="bg-[#0b0b0b] text-white py-20 px-6 sm:px-10 font-sans">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-5 tracking-tight">
+            Amazon Marketplace Expertise
+          </h2>
+          <p className="text-zinc-400 text-base sm:text-lg leading-relaxed">
+            I help brands maximize control over pricing, listings, ads, and store presence. 
+            Whether navigating Seller Central or managing Vendor Central relations, I design 
+            custom strategies to scale your sales velocity.
+          </p>
+        </div>
+
+        {/* Custom Orange Tab Switcher */}
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex bg-[#161616] p-1.5 rounded-full border border-zinc-800">
+            <button
+              onClick={() => setActiveTab('seller-central')}
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                activeTab === 'seller-central'
+                  ? 'bg-orange-600 text-white shadow-lg shadow-orange-600/20'
+                  : 'text-zinc-400 hover:text-white'
+              }`}
+            >
+              Seller Central
+            </button>
+            <button
+              onClick={() => setActiveTab('vendor-central')}
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                activeTab === 'vendor-central'
+                  ? 'bg-orange-600 text-white shadow-lg shadow-orange-600/20'
+                  : 'text-zinc-400 hover:text-white'
+              }`}
+            >
+              Vendor Central
+            </button>
+          </div>
+        </div>
+
+        {/* Dynamic Service Grids */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500">
+          {(activeTab === 'seller-central' ? sellerServices : vendorServices).map((service, index) => (
+            <div
+              key={index}
+              className="bg-[#121212] border border-zinc-900 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:border-orange-600 group hover:bg-[#151515]"
+            >
+              <div>
+                {/* Icon Box */}
+                <div className="w-12 h-12 rounded-xl bg-orange-600/10 flex items-center justify-center text-xl mb-6 transition-colors duration-300 group-hover:bg-orange-600 text-orange-500 group-hover:text-white">
+                  {service.icon}
+                </div>
+                
+                {/* Heading */}
+                <h3 className="text-lg font-bold mb-3 text-white group-hover:text-orange-500 transition-colors duration-200">
+                  {service.title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  {service.desc}
+                </p>
+              </div>
+
+              {/* Action Button */}
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-orange-500 hover:text-orange-400 transition-colors duration-200"
+              >
+                Explore Strategy 
+                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </a>
+            </div>
+          ))}
+        </div>
+
       </div>
-
-      <div class="service-card">
-        <div class="icon-box"><i class="fas fa-search"></i></div>
-        <h3>Amazon SEO & Visibility</h3>
-        <p>I map high-intent buyer keywords into back-end search terms, titles, and bullets to rapidly lift your organic rankings and conversion metrics.</p>
-        <a href="#" class="learn-more">Explore Strategy <span class="arrow">→</span></a>
-      </div>
-
-      <div class="service-card">
-        <div class="icon-box"><i class="fas fa-bullhorn"></i></div>
-        <h3>Precision PPC Campaigns</h3>
-        <p>I architect and optimize Sponsored Products, Brands, and Display campaigns, eliminating wasted ad spend while driving profitable top-line revenue.</p>
-        <a href="#" class="learn-more">Explore Strategy <span class="arrow">→</span></a>
-      </div>
-
-      <div class="service-card">
-        <div class="icon-box"><i class="fas fa-pencil-alt"></i></div>
-        <h3>Listing Optimization</h3>
-        <p>I reconstruct your product detail pages to answer customer friction points immediately, lowering bounce rates and driving higher unit session percentages.</p>
-        <a href="#" class="learn-more">Explore Strategy <span class="arrow">→</span></a>
-      </div>
-
-      <div class="service-card">
-        <div class="icon-box"><i class="fas fa-images"></i></div>
-        <h3>Visual Asset Optimization</h3>
-        <p>I direct main images, lifestyle graphics, and detailed infographics that turn passive browsers into high-confidence buyers.</p>
-        <a href="#" class="learn-more">Explore Strategy <span class="arrow">→</span></a>
-      </div>
-
-      <div class="service-card">
-        <div class="icon-box"><i class="fas fa-layer-group"></i></div>
-        <h3>Premium A+ Content</h3>
-        <p>I build custom, brand-focused A+ structures that cross-sell your catalog, decrease product returns, and elevate overall brand equity.</p>
-        <a href="#" class="learn-more">Explore Strategy <span class="arrow">→</span></a>
-      </div>
-
-    </div>
-
-    <!-- Vendor Central Grid -->
-    <div id="vendor-central" class="services-grid tab-content">
-      
-      <div class="service-card">
-        <div class="icon-box"><i class="fas fa-handshake"></i></div>
-        <h3>Vendor Onboarding</h3>
-        <p>I streamline your initial setup, data catalog ingestion, and retail configurations for a highly efficient and flawless Vendor Central launch.</p>
-        <a href="#" class="learn-more">Explore Strategy <span class="arrow">→</span></a>
-      </div>
-
-      <div class="service-card">
-        <div class="icon-box"><i class="fas fa-boxes"></i></div>
-        <h3>Inventory & Buy-Box Management</h3>
-        <p>I closely track automated purchase orders and stock patterns to minimize buy-box losses and prevent expensive chargebacks.</p>
-        <a href="#" class="learn-more">Explore Strategy <span class="arrow">→</span></a>
-      </div>
-
-      <div class="service-card">
-        <div class="icon-box"><i class="fas fa-chart-line"></i></div>
-        <h3>Retail Media Management</h3>
-        <p>I execute strategic co-op and retail marketing initiatives designed to boost sales velocities while successfully protecting your margins.</p>
-        <a href="#" class="learn-more">Explore Strategy <span class="arrow">→</span></a>
-      </div>
-
-      <div class="service-card">
-        <div class="icon-box"><i class="fas fa-award"></i></div>
-        <h3>A+ Content Creation</h3>
-        <p>I map out premium conversion modules that demonstrate value clearly, allowing wholesale buyers to trust your brand completely.</p>
-        <a href="#" class="learn-more">Explore Strategy <span class="arrow">→</span></a>
-      </div>
-
-      <div class="service-card">
-        <div class="icon-box"><i class="fas fa-ad"></i></div>
-        <h3>Sponsored Ad Management</h3>
-        <p>I design full-funnel ad sequences tailored specifically for first-party listings to capture maximum visibility on competitive keywords.</p>
-        <a href="#" class="learn-more">Explore Strategy <span class="arrow">→</span></a>
-      </div>
-
-      <div class="service-card">
-        <div class="icon-box"><i class="fas fa-edit"></i></div>
-        <h3>1P Listing Enhancement</h3>
-        <p>I overhaul descriptive bullet structures, technical data, and rich media assets to align seamlessly with Amazon's rigorous 1P retail standards.</p>
-        <a href="#" class="learn-more">Explore Strategy <span class="arrow">→</span></a>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- FontAwesome Icons Support (Icons loading ke liye) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
-<!-- ================================================================= -->
-<!-- STYLING RULES (CSS)                                               -->
-<!-- ================================================================= -->
-<style>
-/* Section Base styling */
-.services-section {
-  background-color: #0b0b0b; /* Deep Premium Black */
-  color: #ffffff;
-  padding: 80px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    </section>
+  );
 }
-
-.services-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Header Elements */
-.services-header {
-  text-align: center;
-  max-width: 750px;
-  margin: 0 auto 50px auto;
-}
-
-.services-header h2 {
-  font-size: 2.5rem;
-  color: #ffffff;
-  margin-bottom: 20px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-}
-
-.services-header p {
-  color: #a0a0a0;
-  line-height: 1.6;
-  font-size: 1.05rem;
-}
-
-/* Advanced Tab Controls */
-.tab-container {
-  display: flex;
-  justify-content: center;
-  background-color: #161616;
-  width: fit-content;
-  margin: 0 auto 45px auto;
-  padding: 6px;
-  border-radius: 50px;
-  border: 1px solid #262626;
-}
-
-.tab-btn {
-  background: transparent;
-  border: none;
-  color: #a0a0a0;
-  padding: 12px 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  border-radius: 50px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.tab-btn.active {
-  background-color: #ff6a00; /* Vibrant Matte Orange */
-  color: #ffffff;
-  box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
-}
-
-.tab-btn:hover:not(.active) {
-  color: #ffffff;
-}
-
-/* Tab Content Toggle Logic */
-.tab-content {
-  display: none;
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.tab-content.active {
-  display: grid;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive Grid setup */
-.services-grid {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
-}
-
-/* Glassmorphism Premium Cards */
-.service-card {
-  background: #121212;
-  border: 1px solid #1f1f1f;
-  border-radius: 16px;
-  padding: 35px 30px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  background: #181818;
-  border-color: #ff6a00;
-  box-shadow: 0 10px 30px rgba(255, 106, 0, 0.08);
-}
-
-/* Card Elements styling */
-.icon-box {
-  width: 50px;
-  height: 50px;
-  background-color: rgba(255, 106, 0, 0.1);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 25px;
-  transition: all 0.3s ease;
-}
-
-.icon-box i {
-  color: #ff6a00;
-  font-size: 1.3rem;
-}
-
-.service-card:hover .icon-box {
-  background-color: #ff6a00;
-}
-
-.service-card:hover .icon-box i {
-  color: #ffffff;
-}
-
-.service-card h3 {
-  font-size: 1.35rem;
-  color: #ffffff;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-.service-card p {
-  color: #8e8e93;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 25px;
-  flex-grow: 1;
-}
-
-/* Action Links */
-.learn-more {
-  color: #ff6a00;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.2s ease;
-}
-
-.learn-more .arrow {
-  transition: transform 0.2s ease;
-}
-
-.service-card:hover .learn-more .arrow {
-  transform: translateX(5px);
-}
-
-.learn-more:hover {
-  color: #ff8533;
-}
-</style>
-
-
-<!-- ================================================================= -->
-<!-- INTERACTION SCRIPTS (JavaScript)                                  -->
-<!-- ================================================================= -->
-<script>
-function switchTab(event, tabId) {
-  // Select all layout grids and hide them
-  const contents = document.querySelectorAll('.tab-content');
-  contents.forEach(content => {
-    content.classList.remove('active');
-  });
-
-  // Select all tabs and remove active highlight
-  const buttons = document.querySelectorAll('.tab-btn');
-  buttons.forEach(button => {
-    button.classList.remove('active');
-  });
-
-  // Activate the clicked layout grid and tab button
-  const activeContent = document.getElementById(tabId);
-  activeContent.classList.add('active');
-  event.currentTarget.classList.add('active');
-}
-</script>
