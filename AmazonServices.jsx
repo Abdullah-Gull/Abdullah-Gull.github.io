@@ -77,7 +77,7 @@ export default function AmazonServices() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl font-extrabold mb-5 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-5 tracking-tight text-white">
             Amazon Marketplace Expertise
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg leading-relaxed">
@@ -87,14 +87,14 @@ export default function AmazonServices() {
           </p>
         </div>
 
-        {/* Custom Orange Tab Switcher */}
+        {/* Tailwind Customized Orange Tab Switcher */}
         <div className="flex justify-center mb-12">
           <div className="inline-flex bg-[#161616] p-1.5 rounded-full border border-zinc-800">
             <button
               onClick={() => setActiveTab('seller-central')}
               className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                 activeTab === 'seller-central'
-                  ? 'bg-orange-600 text-white shadow-lg shadow-orange-600/20'
+                  ? 'bg-[#ff5e00] text-white shadow-lg shadow-[#ff5e00]/20'
                   : 'text-zinc-400 hover:text-white'
               }`}
             >
@@ -104,7 +104,7 @@ export default function AmazonServices() {
               onClick={() => setActiveTab('vendor-central')}
               className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                 activeTab === 'vendor-central'
-                  ? 'bg-orange-600 text-white shadow-lg shadow-orange-600/20'
+                  ? 'bg-[#ff5e00] text-white shadow-lg shadow-[#ff5e00]/20'
                   : 'text-zinc-400 hover:text-white'
               }`}
             >
@@ -113,21 +113,21 @@ export default function AmazonServices() {
           </div>
         </div>
 
-        {/* Dynamic Service Grids */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500">
+        {/* Services Layout Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {(activeTab === 'seller-central' ? sellerServices : vendorServices).map((service, index) => (
             <div
               key={index}
-              className="bg-[#121212] border border-zinc-900 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:border-orange-600 group hover:bg-[#151515]"
+              className="bg-[#121212] border border-zinc-900 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:border-[#ff5e00] group hover:bg-[#151515]"
             >
               <div>
-                {/* Icon Box */}
-                <div className="w-12 h-12 rounded-xl bg-orange-600/10 flex items-center justify-center text-xl mb-6 transition-colors duration-300 group-hover:bg-orange-600 text-orange-500 group-hover:text-white">
+                {/* Advanced Icon Box with Tailwind Transitions */}
+                <div className="w-12 h-12 rounded-xl bg-[#ff5e00]/10 flex items-center justify-center text-xl mb-6 transition-colors duration-300 group-hover:bg-[#ff5e00] text-[#ff5e00] group-hover:text-white">
                   {service.icon}
                 </div>
                 
                 {/* Heading */}
-                <h3 className="text-lg font-bold mb-3 text-white group-hover:text-orange-500 transition-colors duration-200">
+                <h3 className="text-lg font-bold mb-3 text-white group-hover:text-[#ff5e00] transition-colors duration-200">
                   {service.title}
                 </h3>
                 
@@ -137,10 +137,10 @@ export default function AmazonServices() {
                 </p>
               </div>
 
-              {/* Action Button */}
+              {/* Action Button styled with Orange theme */}
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-orange-500 hover:text-orange-400 transition-colors duration-200"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#ff5e00] hover:text-[#ff7a29] transition-colors duration-200"
               >
                 Explore Strategy 
                 <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
