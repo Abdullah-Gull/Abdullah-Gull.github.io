@@ -41,7 +41,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
 
     <!-- Your Design Styles (Keep all your CSS here) -->
- <style>
+<style>
     /* --- GLOBAL THEME VARIABLES --- */
 :root {
     --primary-orange: #FF8C00;
@@ -134,7 +134,7 @@ body {
     color: var(--primary-orange);
 }
 
-/* --- NAVIGATION CAPSULE --- */
+/* --- NAVIGATION CAPSULE (FIXED OVERLAPPING) --- */
 .nav-capsule {
     display: flex;
     align-items: center;
@@ -155,34 +155,23 @@ body {
     font-size: 14px;
     font-weight: 500;
     border-radius: 50px;
-    transition: all 0.3s var(--transition-smooth);
+    transition: color 0.3s var(--transition-smooth), background-color 0.3s var(--transition-smooth);
     background: transparent !important;
     position: relative;
-    overflow: hidden;
+    z-index: 1;
 }
 
+/* Slide animation logic removed to completely fix the sticky background issue */
 .nav-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--primary-orange);
-    border-radius: 50px;
-    z-index: -1;
-    transition: left 0.3s var(--transition-smooth);
+    content: none !important;
 }
 
+/* Safe and Clean Active/Hover Background allocation */
 .nav-link.active,
 .nav-link:hover {
     color: #fff !important;
     font-weight: 600;
-}
-
-.nav-link.active::before,
-.nav-link:hover::before {
-    left: 0;
+    background-color: var(--primary-orange) !important;
 }
 
 /* --- GET IN TOUCH BUTTON --- */
