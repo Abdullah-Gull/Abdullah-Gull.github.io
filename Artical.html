@@ -1,184 +1,172 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<section id="strategy-hub" class="bg-[#0b0b0b] text-white py-24 px-6 sm:px-12 lg:px-24 font-sans selection:bg-[#ff8c00] selection:text-black relative overflow-hidden">
+<section id="strategy-hub" class="bg-[#0b0b0b] text-white py-16 px-4 sm:px-8 lg:px-16 font-sans selection:bg-[#ff8c00] selection:text-black relative overflow-hidden">
   
   <!-- Background Glow Element -->
-  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ff8c00]/5 rounded-full blur-[150px] pointer-events-none"></div>
+  <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-[#ff8c00]/5 rounded-full blur-[120px] pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto relative z-10">
     
     <!-- Section Header -->
-    <div class="text-center max-w-4xl mx-auto mb-20">
-      <div class="inline-flex items-center gap-2 mb-6 border border-zinc-800 bg-zinc-900/50 px-4 py-1.5 rounded-full">
-        <div class="w-2 h-2 rounded-full bg-[#ff8c00] animate-pulse"></div>
-        <span class="text-[#ff8c00] text-xs font-bold uppercase tracking-widest">Growth Engine</span>
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 mb-4 border border-zinc-800 bg-zinc-900/50 px-3 py-1 rounded-full">
+        <div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00] animate-pulse"></div>
+        <span class="text-[#ff8c00] text-[10px] font-bold uppercase tracking-widest">Growth Engine</span>
       </div>
-      <h2 class="text-5xl sm:text-6xl font-black tracking-tight leading-[1] mb-8 text-white selection:text-[#ff8c00]">
+      <h2 class="text-4xl sm:text-5xl font-black tracking-tight mb-4 text-white">
         My Strategy: <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#ff8c00]">PPC vs SEO</span>
       </h2>
-      <p class="text-zinc-400 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
-        I combine both paid and organic strategies to create a balanced, sustainable growth engine for your Amazon business. Here’s how each approach works synergistically to dominate your market.
+      <p class="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        I combine paid and organic strategies to create a balanced growth engine for your Amazon business.
       </p>
     </div>
 
-    <!-- ADVANCE GRID CONTAINER -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+    <!-- COMPACT GRID CONTAINER -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
       
-      <!-- 1. AMAZON PPC: The Sprint (Glassmorphic Card) -->
-      <div class="strategy-card group relative bg-[#121212] border border-zinc-800 rounded-3xl p-10 flex flex-col transition-all duration-500 hover:border-[#ff8c00]/30 hover:-translate-y-3 hover:shadow-2xl hover:shadow-[#ff8c00]/10 overflow-hidden">
-        
-        <!-- Hover Glow -->
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ff8c00] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-        <div class="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-[#ffaa00]/10 to-transparent rounded-full blur-[80px] group-hover:from-[#ffaa00]/20 transition-all duration-500"></div>
-
-        <!-- Card Header -->
-        <div class="flex items-center gap-6 mb-10 pb-8 border-b border-zinc-800">
-          <div class="w-16 h-16 bg-zinc-900 border border-zinc-800 rounded-2xl flex items-center justify-center text-[#ff8c00] group-hover:bg-[#ff8c00] group-hover:text-black transition-colors duration-300">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
-          </div>
-          <h3 class="text-3xl font-extrabold tracking-tight text-white group-hover:text-[#ff8c00] transition-colors duration-300">Amazon PPC</h3>
-        </div>
-
-        <!-- Card Content -->
-        <div class="flex-grow space-y-8">
-          <div class="mb-10">
-            <h4 class="text-lg font-bold text-zinc-100 mb-4">Instant Market Dominance</h4>
-            <p class="text-zinc-400 text-sm leading-relaxed">I deploy high-precision bidding frameworks engineered to capture high-intent commercial traffic. My PPC strategy focuses on:</p>
-          </div>
+      <!-- 1. AMAZON PPC -->
+      <div class="strategy-card group relative bg-[#121212] border border-zinc-800 rounded-2xl p-7 flex flex-col justify-between transition-all duration-500 hover:border-[#ff8c00]/30 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#ff8c00]/5 overflow-hidden">
+        <div>
+          <!-- Hover Glow -->
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ff8c00] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
           
-          <ul class="space-y-6 text-sm text-zinc-300">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#ff8c00] mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Top-of-Search Placements:</strong> Dominate prime advertising real estate instantly.</span>
+          <!-- Header -->
+          <div class="flex items-center gap-4 mb-6 pb-4 border-b border-zinc-800">
+            <div class="w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-xl flex items-center justify-center text-[#ff8c00] group-hover:bg-[#ff8c00] group-hover:text-black transition-colors duration-300">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white group-hover:text-[#ff8c00] transition-colors duration-300">Amazon PPC</h3>
+          </div>
+
+          <!-- Description -->
+          <p class="text-zinc-400 text-xs mb-5 leading-relaxed">High-precision bidding frameworks engineered to capture high-intent commercial traffic:</p>
+          
+          <!-- Bullets -->
+          <ul class="space-y-3.5 text-xs text-zinc-300">
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>Top Placements:</strong> Dominate prime ad real estate instantly.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#ff8c00] mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>ACOS Optimization:</strong> Maximize ROI by continuously lowering advertising cost of sale.</span>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>ACOS Optimization:</strong> Continuous ROI-driven cost reduction.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#ff8c00] mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Keyword Precision:</strong> Target exact buyer intent with laser-focused campaigns.</span>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>Keyword Precision:</strong> Laser-focused target buyer intent.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#ff8c00] mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Rapid Testing:</strong> Quick iteration and scaling of winning campaigns.</span>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>Rapid Testing:</strong> Scale winning variations quickly.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#ff8c00] mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Immediate Results:</strong> Generate sales velocity and social proof quickly.</span>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>Sales Velocity:</strong> Generate quick initial social proof.</span>
             </li>
           </ul>
         </div>
 
-        <!-- Card Footer -->
-        <div class="mt-12 pt-8 border-t border-zinc-800 text-center">
-          <p class="text-xs text-zinc-500 font-medium uppercase tracking-widest mb-3">Target Profile</p>
-          <span class="text-sm text-[#ffaa00] font-bold group-hover:text-white transition-colors duration-300">Perfect for: New launches, market testing, and aggressive growth phases.</span>
+        <!-- Footer -->
+        <div class="mt-8 pt-4 border-t border-zinc-800 text-center">
+          <p class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">Target Profile</p>
+          <span class="text-xs text-[#ffaa00] font-semibold group-hover:text-white transition-colors duration-300">New launches & aggressive testing.</span>
         </div>
       </div>
 
-      <!-- 2. AMAZON SEO: The Marathon (Glassmorphic Card) -->
-      <div class="strategy-card group relative bg-[#121212] border border-zinc-800 rounded-3xl p-10 flex flex-col transition-all duration-500 hover:border-[#ff8c00]/30 hover:-translate-y-3 hover:shadow-2xl hover:shadow-[#ff8c00]/10 overflow-hidden">
-        
-        <!-- Hover Glow -->
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ff8c00] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-        <div class="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-[#ffaa00]/10 to-transparent rounded-full blur-[80px] group-hover:from-[#ffaa00]/20 transition-all duration-500"></div>
-
-        <!-- Card Header -->
-        <div class="flex items-center gap-6 mb-10 pb-8 border-b border-zinc-800">
-          <div class="w-16 h-16 bg-zinc-900 border border-zinc-800 rounded-2xl flex items-center justify-center text-[#ff8c00] group-hover:bg-[#ff8c00] group-hover:text-black transition-colors duration-300">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          </div>
-          <h3 class="text-3xl font-extrabold tracking-tight text-white group-hover:text-[#ff8c00] transition-colors duration-300">Amazon SEO</h3>
-        </div>
-
-        <!-- Card Content -->
-        <div class="flex-grow space-y-8">
-          <div class="mb-10">
-            <h4 class="text-lg font-bold text-zinc-100 mb-4">Sustainable Organic Growth</h4>
-            <p class="text-zinc-400 text-sm leading-relaxed">Organic dominance is the foundation of long-term profitability. My SEO strategy secures permanent rankings through:</p>
-          </div>
+      <!-- 2. AMAZON SEO -->
+      <div class="strategy-card group relative bg-[#121212] border border-zinc-800 rounded-2xl p-7 flex flex-col justify-between transition-all duration-500 hover:border-[#ff8c00]/30 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#ff8c00]/5 overflow-hidden">
+        <div>
+          <!-- Hover Glow -->
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ff8c00] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
           
-          <ul class="space-y-6 text-sm text-zinc-300">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#ff8c00] mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>A9 Algorithm Mastery:</strong> Deep keyword placement optimization.</span>
+          <!-- Header -->
+          <div class="flex items-center gap-4 mb-6 pb-4 border-b border-zinc-800">
+            <div class="w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-xl flex items-center justify-center text-[#ff8c00] group-hover:bg-[#ff8c00] group-hover:text-black transition-colors duration-300">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white group-hover:text-[#ff8c00] transition-colors duration-300">Amazon SEO</h3>
+          </div>
+
+          <!-- Description -->
+          <p class="text-zinc-400 text-xs mb-5 leading-relaxed">Organic dominance structures to secure permanent rankings and high conversion:</p>
+          
+          <!-- Bullets -->
+          <ul class="space-y-3.5 text-xs text-zinc-300">
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>A9 Algorithm:</strong> Advanced backend keyword optimization.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#ff8c00] mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Compound Free Traffic:</strong> Build sustainable traffic that grows over time.</span>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>Free Traffic:</strong> Build sustainable compounding asset growth.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#ff8c00] mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Listing Conversion:</strong> Optimize every element for maximum conversion rates.</span>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>Listing CRO:</strong> Maximize visual elements for conversions.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#ff8c00] mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Review Acceleration:</strong> Strategic review management for ranking boost.</span>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>Review Velocity:</strong> Smart systems for review collection.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#ff8c00] mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Zero Advertising Costs:</strong> Achieve profitability without continuous ad spend.</span>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>Zero Ad Cost:</strong> Profit margins protection blueprint.</span>
             </li>
           </ul>
         </div>
 
-        <!-- Card Footer -->
-        <div class="mt-12 pt-8 border-t border-zinc-800 text-center">
-          <p class="text-xs text-zinc-500 font-medium uppercase tracking-widest mb-3">Target Profile</p>
-          <span class="text-sm text-[#ffaa00] font-bold group-hover:text-white transition-colors duration-300">Perfect for: Long-term stability, margin protection, and scaling profitability.</span>
+        <!-- Footer -->
+        <div class="mt-8 pt-4 border-t border-zinc-800 text-center">
+          <p class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">Target Profile</p>
+          <span class="text-xs text-[#ffaa00] font-semibold group-hover:text-white transition-colors duration-300">Long-term stability & margin safety.</span>
         </div>
       </div>
 
-      <!-- 3. HYBRID APPROACH: The Machine (Highlighted Glassmorphic Card) -->
-      <div class="strategy-card group relative bg-zinc-900/30 border-2 border-[#ff8c00]/50 rounded-3xl p-10 flex flex-col transition-all duration-500 lg:scale-105 hover:-translate-y-3 hover:shadow-2xl hover:shadow-[#ff8c00]/20 overflow-hidden backdrop-blur-sm">
-        
-        <!-- Premium Highlight Elements -->
-        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-white via-[#ffaa00] to-white transform scale-x-100 transition-transform duration-500"></div>
-        <div class="absolute -top-20 -right-20 w-56 h-56 bg-gradient-to-br from-[#ffaa00]/30 to-transparent rounded-full blur-[90px] transition-all duration-500"></div>
-
-        <!-- Card Header -->
-        <div class="flex items-center gap-6 mb-10 pb-8 border-b border-[#ff8c00]/20">
-          <div class="w-16 h-16 bg-[#ff8c00] rounded-2xl flex items-center justify-center text-black transition-colors duration-300">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
-          </div>
-          <h3 class="text-3xl font-extrabold tracking-tight text-[#ff8c00] group-hover:text-white transition-colors duration-300">Hybrid Approach</h3>
-        </div>
-
-        <!-- Card Content -->
-        <div class="flex-grow space-y-8">
-          <div class="mb-10">
-            <h4 class="text-lg font-bold text-white mb-4">Balanced Excellence</h4>
-            <p class="text-zinc-300 text-sm leading-relaxed">The most powerful strategy combines both methods for maximum market impact:</p>
-          </div>
+      <!-- 3. HYBRID APPROACH -->
+      <div class="strategy-card group relative bg-zinc-900/30 border-2 border-[#ff8c00]/50 rounded-2xl p-7 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#ff8c00]/10 overflow-hidden backdrop-blur-sm">
+        <div>
+          <!-- Highlight bar -->
+          <div class="absolute top-0 left-0 w-full h-1 bg-[#ff8c00]"></div>
           
-          <ul class="space-y-6 text-sm text-zinc-100">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-white mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Fast-Track Rankings:</strong> Use PPC to quickly establish market presence.</span>
+          <!-- Header -->
+          <div class="flex items-center gap-4 mb-6 pb-4 border-b border-[#ff8c00]/20">
+            <div class="w-12 h-12 bg-[#ff8c00] rounded-xl flex items-center justify-center text-black">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-[#ff8c00]">Hybrid Approach</h3>
+          </div>
+
+          <!-- Description -->
+          <p class="text-zinc-300 text-xs mb-5 leading-relaxed">The unified framework combining both execution layers for maximum market impact:</p>
+          
+          <!-- Bullets -->
+          <ul class="space-y-3.5 text-xs text-zinc-100">
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-white mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>Fast-Track:</strong> Use active PPC to gain fast traction.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-white mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>SEO Compounding:</strong> Build organic rankings in parallel.</span>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-white mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>SEO Compounding:</strong> Build underlying ranking factors.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-white mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Data Insights:</strong> Leverage PPC data to optimize SEO strategy.</span>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-white mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>Data Insights:</strong> Feed conversion logs directly into keyword models.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-white mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Reduced Dependency:</strong> Gradually reduce ad spend as organic grows.</span>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-white mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>Lower Dependencies:</strong> Systematic ad reliance reduction.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-white mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Maximum Profitability:</strong> Lowest CAC with highest lifetime value.</span>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-white mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span><strong>Max Profits:</strong> Achieve the lowest CAC vs LTV ratios.</span>
             </li>
           </ul>
         </div>
 
-        <!-- Card Footer -->
-        <div class="mt-12 pt-8 border-t border-[#ff8c00]/20 text-center">
-          <p class="text-xs text-zinc-100 font-medium uppercase tracking-widest mb-3">Target Profile</p>
-          <span class="text-sm text-white font-black">Perfect for: Rapid scaling with sustainable long-term growth.</span>
+        <!-- Footer -->
+        <div class="mt-8 pt-4 border-t border-[#ff8c00]/20 text-center">
+          <p class="text-[10px] text-zinc-100 font-bold uppercase tracking-widest mb-1">Target Profile</p>
+          <span class="text-xs text-white font-black">Rapid scaling with sustainable long-term asset growth.</span>
         </div>
       </div>
     
@@ -187,29 +175,26 @@
   </div>
 </section>
 
-<!-- Smooth JavaScript for Intersection Observer (Optional but Recommended) -->
+<!-- Smooth JavaScript for Animation -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const cards = document.querySelectorAll('.strategy-card');
-    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          // Delayed fade-in for each card
           setTimeout(() => {
             entry.target.style.opacity = 1;
             entry.target.style.transform = 'translateY(0)';
-          }, index * 150); 
+          }, index * 100); 
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05 });
 
     cards.forEach(card => {
-      // Set initial state
       card.style.opacity = 0;
-      card.style.transform = 'translateY(30px)';
-      card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.5s ease, border-color 0.5s ease';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.4s ease, border-color 0.4s ease';
       observer.observe(card);
     });
   });
