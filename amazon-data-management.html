@@ -1,195 +1,258 @@
+// services-section.jsx
 'use client';
 
 import React, { useState } from 'react';
+import { ChevronRight, Home, Search, TrendingUp, Image, Layers, ShoppingCart } from 'lucide-react';
 
-// Interfaces for structured data type safety
-interface TabPanelData {
-  id: string;
-  title: string;
-  description: string;
-  features: string[];
-}
+export default function ServicesSection() {
+  const [activeTab, setActiveTab] = useState('seller-central');
 
-export default function ServicesTabs() {
-  // Active Tab state mapping
-  const [activeTab, setActiveTab] = useState<string>('ppc');
-
-  // Tab buttons specification
-  const tabButtons = [
-    { id: 'ppc', label: 'PPC Management' },
-    { id: 'seo', label: 'Amazon SEO (A9)' },
-    { id: 'listing', label: 'Listing Optimization' },
-    { id: 'storefront', label: 'Storefront Design' },
-    { id: 'audit', label: 'Account Audit' },
-    { id: 'launch', label: 'Product Launch' },
+  const sellerCentralServices = [
+    {
+      id: 1,
+      icon: Home,
+      title: "Full Service Account Management",
+      description: "I manage daily Seller Central tasks so your catalog, listings, ads, and account health stay on track.",
+      link: "Learn More"
+    },
+    {
+      id: 2,
+      icon: Search,
+      title: "Amazon SEO",
+      description: "I map buyer-intent keywords to titles, bullets, backend terms, and content areas that affect Amazon search visibility.",
+      link: "Learn More"
+    },
+    {
+      id: 3,
+      icon: TrendingUp,
+      title: "Amazon PPC",
+      description: "I build and manage Sponsored Products, Sponsored Brands, and Sponsored Display campaigns with a focus on cleaner spend.",
+      link: "Learn More"
+    },
+    {
+      id: 4,
+      icon: ShoppingCart,
+      title: "Listing Optimization",
+      description: "I rewrite product pages so shoppers understand the product faster and have lower reasons to leave.",
+      link: "Learn More"
+    },
+    {
+      id: 5,
+      icon: Image,
+      title: "Image Optimization",
+      description: "I guide main images, secondary images, lifestyle images, and infographics to improve clicks and buying confidence.",
+      link: "Learn More"
+    },
+    {
+      id: 6,
+      icon: Layers,
+      title: "A+ Content",
+      description: "I create brand-focused A+ layouts that explain features, answer doubts, and support better conversion.",
+      link: "Learn More"
+    }
   ];
 
-  // Tab content mapping data
-  const tabContent: Record<string, TabPanelData> = {
-    ppc: {
-      id: 'ppc',
-      title: 'Amazon PPC Management',
-      description: 'Master your advertising strategy with comprehensive PPC management. I optimize your campaigns across Sponsored Products, Sponsored Brands, and Sponsored Display ads to maximize visibility and profitability. Through continuous A/B testing, keyword refinement, and bid optimization, I ensure every rupee spent generates measurable returns.',
-      features: [
-        'Campaign strategy & structure',
-        'Keyword research & targeting',
-        'Bid optimization & automation',
-        'ACOS reduction techniques',
-        'Competitor analysis',
-      ],
+  const vendorCentralServices = [
+    {
+      id: 1,
+      icon: Home,
+      title: "Vendor Onboarding",
+      description: "I help brands prepare product data, content, catalog details, and retail setup for a cleaner Vendor Central start.",
+      link: "Learn More"
     },
-    seo: {
-      id: 'seo',
-      title: 'Amazon SEO (A9)',
-      description: 'Dominate Amazon search results with strategic A9 SEO optimization. I implement proven techniques to boost your product visibility, improve ranking position, and drive organic traffic. From keyword optimization to backend keyword placement, every element is fine-tuned for maximum discoverability.',
-      features: [
-        'A9 algorithm optimization',
-        'Keyword placement strategy',
-        'Search volume analysis',
-        'Competitor keyword research',
-        'Backend optimization',
-      ],
+    {
+      id: 2,
+      icon: ShoppingCart,
+      title: "Inventory Management",
+      description: "I track stock signals, sales patterns, and risk areas that can lead to lost buy box visibility or missed demand.",
+      link: "Learn More"
     },
-    listing: {
-      id: 'listing',
-      title: 'Listing Optimization',
-      description: 'Transform your product listings into conversion powerhouses. I craft compelling titles, bullet points, and descriptions that highlight key benefits while incorporating high-converting keywords. Each element is strategically designed to capture buyer intent and maximize conversion rates.',
-      features: [
-        'Title optimization',
-        'Bullet point enhancement',
-        'Description copywriting',
-        'Image optimization',
-        'A+ Content creation',
-      ],
+    {
+      id: 3,
+      icon: TrendingUp,
+      title: "Retail Advertising Management",
+      description: "I manage retail media campaigns with clear attention to sales, visibility, spend, and margin pressure.",
+      link: "Learn More"
     },
-    storefront: {
-      id: 'storefront',
-      title: 'Storefront Design',
-      description: 'Create a professional brand presence with strategic storefront design. I design cohesive, visually appealing storefronts that reflect your brand identity and drive customer loyalty. Your storefront becomes a powerful sales tool that builds trust and encourages repeat purchases.',
-      features: [
-        'Store layout planning',
-        'Brand consistency',
-        'Category organization',
-        'Visual branding',
-        'Customer journey mapping',
-      ],
+    {
+      id: 4,
+      icon: Layers,
+      title: "A+ Content Creation",
+      description: "I build A+ Content that explains product value and helps shoppers compare the product with confidence.",
+      link: "Learn More"
     },
-    audit: {
-      id: 'audit',
-      title: 'Account Audit',
-      description: 'Get a comprehensive analysis of your Amazon account performance. I conduct detailed audits identifying growth opportunities, addressing inefficiencies, and uncovering hidden potential. This data-driven assessment provides a roadmap to accelerate your sales and profitability.',
-      features: [
-        'Performance metrics review',
-        'Competitor benchmarking',
-        'Listing health assessment',
-        'PPC efficiency analysis',
-        'Growth recommendations',
-      ],
+    {
+      id: 5,
+      icon: Image,
+      title: "Sponsored Ad Management",
+      description: "I manage sponsored ads across the funnel so campaigns support both ranking and profitable sales.",
+      link: "Learn More"
     },
-    launch: {
-      id: 'launch',
-      title: 'Product Launch',
-      description: 'Launch your products strategically to achieve rapid visibility and sales momentum. I manage the complete launch process including pre-launch preparation, visibility strategy, and initial sales acceleration. Every launch is optimized for maximum market impact and sustainable growth.',
-      features: [
-        'Pre-launch optimization',
-        'Launch strategy planning',
-        'Review acceleration',
-        'Initial sales boost',
-        'Ranking acceleration',
-      ],
-    },
+    {
+      id: 6,
+      icon: Search,
+      title: "Product Listing Optimization",
+      description: "I improve titles, bullets, descriptions, product data, and content to help Amazon and shoppers understand each ASIN.",
+      link: "Learn More"
+    }
+  ];
+
+  const ServiceCard = ({ service, index }) => {
+    const Icon = service.icon;
+    return (
+      <div
+        className="group relative overflow-hidden rounded-2xl border-2 border-gray-100 bg-white p-8 transition-all duration-500 hover:border-orange-400 hover:shadow-xl hover:-translate-y-2"
+        style={{
+          animation: `slideInUp 0.6s ease-out ${index * 0.1}s both`
+        }}
+      >
+        {/* Gradient background on hover */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-50/0 to-orange-50/0 group-hover:from-orange-50 group-hover:to-transparent transition-all duration-500 -z-10" />
+        
+        {/* Icon */}
+        <div className="mb-6 inline-flex p-3 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl group-hover:from-orange-200 group-hover:to-orange-100 transition-all duration-500">
+          <Icon className="w-6 h-6 text-orange-500" />
+        </div>
+
+        {/* Content */}
+        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-300">
+          {service.title}
+        </h3>
+        
+        <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+          {service.description}
+        </p>
+
+        {/* Learn More Link */}
+        <a
+          href="#"
+          className="inline-flex items-center gap-2 text-orange-500 font-semibold text-sm hover:text-orange-600 group/link transition-all duration-300"
+        >
+          {service.link}
+          <ChevronRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
+        </a>
+
+        {/* Border accent animation */}
+        <div className="absolute inset-0 rounded-2xl pointer-events-none border-2 border-transparent group-hover:border-orange-300 transition-all duration-500 opacity-0 group-hover:opacity-50" />
+      </div>
+    );
   };
 
   return (
-    <section class="relative overflow-hidden bg-gradient-to-br from-[#0B0C0E] to-[#1A1B1F] text-[#F5F5F7] px-[5%] py-[60px] sm:py-20 md:px-[6%] lg:px-[8%] lg:py-[120px]">
-      {/* Decorative background ambient light */}
-      <div class="pointer-events-none absolute left-[10%] top-[-50%] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(255,140,0,0.05)_0%,transparent_70%)]" />
+    <section className="relative w-full bg-gradient-to-b from-gray-50 to-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-orange-100/20 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-orange-100/10 to-transparent rounded-full blur-3xl" />
+      </div>
 
-      <div class="relative z-10 mx-auto max-w-[1400px]">
-        {/* Section Header */}
-        <div class="mb-10 text-center animate-[fadeInDown_0.8s_ease-out] sm:mb-12 md:mb-20">
-          <h2 class="mb-4 text-2xl font-extrabold tracking-[-1px] sm:text-3xl md:text-4xl lg:text-[52px] lg:leading-tight">
-            Expert <span class="bg-gradient-to-br from-[#FF8C00] to-[#FFB84D] bg-clip-text text-transparent">Amazon</span> Services by Abdullah Gull
+      <div className="relative max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16 animate-fadeInDown">
+          <div className="inline-block mb-4">
+            <span className="inline-block px-4 py-2 bg-gradient-to-r from-orange-100 to-orange-50 rounded-full">
+              <p className="text-orange-600 font-bold text-xs uppercase tracking-widest">
+                {activeTab === 'seller-central' ? 'Seller Central' : 'Vendor Central'}
+              </p>
+            </span>
+          </div>
+
+          <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            {activeTab === 'seller-central' 
+              ? 'Seller Central Services' 
+              : 'Vendor Central Services'}
           </h2>
-          <p class="mx-auto max-w-[700px] text-sm leading-relaxed text-[#8E8E93] sm:text-base md:text-[17px] md:leading-[1.8]">
-            I provide a holistic approach to drive traffic and boost conversions. By building custom PPC campaigns and optimizing your catalog, I strengthen your brand performance on the world's largest marketplace.
+
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+            I provide expert management across all your Amazon marketplace needs. Seller Central gives brands more control over pricing, inventory, listings, ads, and customer-facing product pages while Vendor Central works differently because Amazon buys from you and sells to the customer.
           </p>
         </div>
 
-        {/* Tabs Wrapper Layout */}
-        <div class="flex flex-col gap-10 lg:flex-row lg:gap-[50px] lg:items-start">
-          
-          {/* Left/Top: Tab Buttons Column */}
-          <div class="flex flex-col w-full shrink-0 sm:grid sm:grid-cols-2 lg:flex lg:flex-col lg:w-[280px]">
-            {/* Tab Section Header Label */}
-            <div class="sm:col-span-2 bg-gradient-to-br from-[#FF8C00] to-[#FFB84D] text-white px-6 py-4 font-bold rounded-t-xl text-[12px] sm:text-[13px] tracking-widest uppercase shadow-[0_8px_24px_rgba(255,140,0,0.2)]">
-              Service Topics
-            </div>
-            
-            {/* Interactive Tab Controls */}
-            {tabButtons.map((btn) => (
-              <button
-                key={btn.id}
-                onClick={() => setActiveTab(btn.id)}
-                class={`group relative flex items-center text-left py-3.5 px-4 sm:py-[18px] sm:px-6 text-sm font-semibold border border-[#2A2B2F] border-t-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] whitespace-nowrap outline-none focus-visible:ring-2 focus-visible:ring-[#FF8C00]
-                  ${
-                    activeTab === btn.id
-                      ? 'bg-gradient-to-br from-[rgba(255,140,0,0.2)] to-[rgba(255,140,0,0.1)] border-l-4 border-l-[#FF8C00] border-[#FF8C00] text-[#FF8C00] font-bold shadow-[inset_0_0_20px_rgba(255,140,0,0.1)]'
-                      : 'bg-gradient-to-br from-[rgba(26,27,31,0.8)] to-[rgba(42,43,47,0.6)] text-[#8E8E93] hover:bg-gradient-to-br hover:from-[rgba(255,140,0,0.15)] hover:to-[rgba(255,140,0,0.05)] hover:text-[#FF8C00] hover:border-[#FF8C00]/30'
-                  }
-                `}
-              >
-                {/* Arrow Icon Indicator via utility and transitions */}
-                <span 
-                  class={`mr-3 text-lg text-[#FF8C00] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
-                    ${activeTab === btn.id ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'}
-                  `}
-                >
-                  &rarr;
-                </span>
-                {btn.label}
-              </button>
-            ))}
+        {/* Tab Selector */}
+        <div className="flex justify-center gap-4 mb-16 animate-fadeInUp">
+          {['seller-central', 'vendor-central'].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 ${
+                activeTab === tab
+                  ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg scale-105'
+                  : 'bg-white border-2 border-gray-200 text-gray-700 hover:border-orange-300'
+              }`}
+            >
+              {tab === 'seller-central' ? 'Seller Central' : 'Vendor Central'}
+            </button>
+          ))}
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {(activeTab === 'seller-central' 
+            ? sellerCentralServices 
+            : vendorCentralServices
+          ).map((service, index) => (
+            <ServiceCard key={service.id} service={service} index={index} />
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-20 text-center animate-fadeInUp">
+          <div className="inline-block">
+            <p className="text-gray-600 mb-4">Ready to transform your Amazon business?</p>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+            >
+              Schedule Strategy Call
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </a>
           </div>
-
-          {/* Right/Bottom: Dynamic Content Box */}
-          <div class="relative flex-1 overflow-hidden rounded-xl sm:rounded-2xl border border-[#2A2B2F] bg-gradient-to-br from-[rgba(26,27,31,0.8)] to-[rgba(42,43,47,0.6)] px-6 py-8 sm:p-10 md:p-[60px] shadow-[0_20px_60px_rgba(0,0,0,0.4)] inset-shadow-[0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-[10px]">
-            {/* Inner Content Decorative Shadow */}
-            <div class="pointer-events-none absolute right-[-20%] top-[-50%] h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(255,140,0,0.05)_0%,transparent_70%)]" />
-
-            {/* Render Data Dynamic Content Panel */}
-            {tabContent[activeTab] && (
-              <div class="relative z-10 animate-[fadeInUp_0.5s_ease-out]">
-                <h3 class="mb-4 text-2xl font-extrabold tracking-tight text-[#F5F5F7] sm:text-3xl md:text-[36px]">
-                  {tabContent[activeTab].title}
-                </h3>
-                <p class="mb-6 sm:mb-8 text-sm sm:text-base leading-[1.8] text-[#8E8E93]">
-                  {tabContent[activeTab].description}
-                </p>
-
-                {/* Features Feature List Grid */}
-                <div class="mt-8">
-                  <ul class="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
-                    {tabContent[activeTab].features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        class="flex items-center gap-2 rounded-lg border border-[rgba(255,140,0,0.2)] bg-gradient-to-br from-[rgba(255,140,0,0.1)] to-[rgba(255,140,0,0.05)] p-2 sm:p-3 text-[12px] sm:text-sm text-[#8E8E93] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-gradient-to-br hover:from-[rgba(255,140,0,0.2)] hover:to-[rgba(255,140,0,0.1)] hover:border-[rgba(255,140,0,0.4)] hover:text-[#F5F5F7]"
-                      >
-                        {/* Checkmark symbol */}
-                        <span class="shrink-0 text-base font-extrabold text-[#FF8C00]">
-                          &#10003;
-                        </span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
-          </div>
-
         </div>
       </div>
+
+      {/* Animations */}
+      <style jsx>{`
+        @keyframes slideInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInDown {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fadeInDown {
+          animation: fadeInDown 0.8s ease-out;
+        }
+
+        .animate-fadeInUp {
+          animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+      `}</style>
     </section>
   );
 }
