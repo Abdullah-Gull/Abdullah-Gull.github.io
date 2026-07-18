@@ -1,11 +1,11 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <section class="bg-[#0b0b0b] text-white min-h-[90vh] flex items-center py-16 lg:py-24 px-6 sm:px-12 lg:px-24 font-sans selection:bg-[#ff8c00] selection:text-black relative overflow-hidden">
   
-  <!-- Main Balanced Grid (Exact reference to image 2 layout structure) -->
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full z-10 relative">
+  <!-- Main Grid Container -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full z-10 relative">
     
-    <!-- LEFT SIDE: Text Content Box (As marked in your first image) -->
-    <div class="lg:col-span-7 flex flex-col justify-center text-left relative z-20">
+    <!-- LEFT SIDE: Text Content Box -->
+    <div class="lg:col-span-6 flex flex-col justify-center text-left relative z-20">
       
       <!-- Top Badge -->
       <div class="flex items-center gap-2 mb-6">
@@ -13,18 +13,18 @@
         <span class="text-[#ff8c00] text-xs font-bold uppercase tracking-widest">TOP-RATED AMAZON FBA SPECIALIST</span>
       </div>
 
-      <!-- Main Headline: Original content kept -->
+      <!-- Main Headline -->
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.1] mb-6 text-white">
         Abdullah Gull: <br>
         <span class="text-[#ff8c00]">Scaling Amazon Brands Globally</span>
       </h1>
 
-      <!-- Descriptive Paragraph Content: Exactly kept from your screenshot -->
+      <!-- Descriptive Paragraph Content -->
       <p class="text-zinc-400 text-base md:text-lg leading-relaxed mb-10 max-w-[640px]">
         Abdullah Gull provides performance-driven Amazon Ecosystem Scaling, specializing in Algorithmic PPC Optimization, Advanced SEO, High-Converting Listing Architecture, and Full Account Management. By taking complete charge of your Seller Central or Vendor Central operations, I enable you to focus entirely on product innovation and manufacturing. Partnering with a dedicated Amazon Marketing Expert allows you to eliminate wasted ad spend, maximize ROI, and deploy data-driven scaling frameworks built for long-term marketplace dominance.
       </p>
 
-      <!-- Dual Action Buttons aligned cleanly underneath -->
+      <!-- Dual Action Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 mb-10 w-full sm:w-auto">
         <a href="#audit" class="group bg-[#ffaa00] text-black font-bold px-8 py-4 rounded-full text-sm uppercase tracking-wider flex items-center justify-center shadow-lg shadow-[#ffaa00]/10 hover:bg-white transition-all duration-300">
           Get Free Amazon Audit
@@ -44,15 +44,18 @@
       
     </div>
 
-    <!-- RIGHT SIDE: Exact Marked Box Area for Image -->
-    <div class="lg:col-span-5 flex items-center justify-center w-full relative z-10 mt-10 lg:mt-0">
+    <!-- RIGHT SIDE: BIGGER IMAGE CONTAINER (Fills the entire marked red box) -->
+    <div class="lg:col-span-6 flex items-center justify-center lg:justify-end w-full relative z-10 mt-10 lg:mt-0">
       
-      <!-- Balanced Box Container: Locks the image within the exact dimensions of your red box -->
-      <div class="w-full max-w-[500px] flex items-center justify-center overflow-hidden rounded-2xl">
+      <!-- Glow background -->
+      <div class="absolute right-[5%] w-[400px] h-[400px] bg-[#ff8c00]/10 rounded-full blur-[140px] -z-10"></div>
+      
+      <!-- Scaled Up Container to fit the exact red box mark -->
+      <div class="w-full max-w-[650px] lg:max-w-none xl:max-w-[680px] flex items-center justify-center overflow-hidden rounded-2xl transform scale-[1.05] origin-center lg:origin-right transition-transform duration-300">
         <img 
           src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" 
           alt="Abdullah Gull - Amazon Growth Partner" 
-          class="w-full h-auto max-h-[500px] object-contain filter brightness-110 contrast-105 select-none"
+          class="w-full h-auto max-h-[600px] lg:max-h-[640px] object-contain filter brightness-110 contrast-105 select-none"
         >
       </div>
       
