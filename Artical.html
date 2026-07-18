@@ -1,201 +1,212 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<section id="strategy-hub" class="bg-[#0b0b0b] text-white py-16 px-4 sm:px-8 lg:px-16 font-sans selection:bg-[#ff8c00] selection:text-black relative overflow-hidden">
+<section id="faq-hub" class="bg-[#0b0b0b] text-white py-24 px-6 sm:px-12 lg:px-24 font-sans selection:bg-[#ff8c00] selection:text-black relative overflow-hidden">
   
-  <!-- Background Glow Element -->
-  <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-[#ff8c00]/5 rounded-full blur-[120px] pointer-events-none"></div>
+  <!-- Subtle Background Glow -->
+  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#ff8c00]/5 rounded-full blur-[150px] pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto relative z-10">
     
-    <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <div class="inline-flex items-center gap-2 mb-4 border border-zinc-800 bg-zinc-900/50 px-3 py-1 rounded-full">
-        <div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00] animate-pulse"></div>
-        <span class="text-[#ff8c00] text-[10px] font-bold uppercase tracking-widest">Growth Engine</span>
-      </div>
-      <h2 class="text-4xl sm:text-5xl font-black tracking-tight mb-4 text-white">
-        My Strategy: <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#ff8c00]">PPC vs SEO</span>
-      </h2>
-      <p class="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-        I combine paid and organic strategies to create a balanced growth engine for your Amazon business.
-      </p>
-    </div>
-
-    <!-- COMPACT GRID CONTAINER -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
       
-      <!-- 1. AMAZON PPC -->
-      <div class="strategy-card group relative bg-[#121212] border border-zinc-800 rounded-2xl p-7 flex flex-col justify-between transition-all duration-500 hover:border-[#ff8c00]/30 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#ff8c00]/5 overflow-hidden">
+      <!-- LEFT COLUMN: INTERACTIVE FAQ ACCORDION (8 Columns wide) -->
+      <div class="lg:col-span-7 space-y-8">
         <div>
-          <!-- Hover Glow -->
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ff8c00] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-          
-          <!-- Header -->
-          <div class="flex items-center gap-4 mb-6 pb-4 border-b border-zinc-800">
-            <div class="w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-xl flex items-center justify-center text-[#ff8c00] group-hover:bg-[#ff8c00] group-hover:text-black transition-colors duration-300">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
-            </div>
-            <h3 class="text-2xl font-bold text-white group-hover:text-[#ff8c00] transition-colors duration-300">Amazon PPC</h3>
-          </div>
-
-          <!-- Description -->
-          <p class="text-zinc-400 text-xs mb-5 leading-relaxed">High-precision bidding frameworks engineered to capture high-intent commercial traffic:</p>
-          
-          <!-- Bullets -->
-          <ul class="space-y-3.5 text-xs text-zinc-300">
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Top Placements:</strong> Dominate prime ad real estate instantly.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>ACOS Optimization:</strong> Continuous ROI-driven cost reduction.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Keyword Precision:</strong> Laser-focused target buyer intent.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Rapid Testing:</strong> Scale winning variations quickly.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Sales Velocity:</strong> Generate quick initial social proof.</span>
-            </li>
-          </ul>
+          <h2 class="text-4xl sm:text-5xl font-black tracking-tight mb-4">
+            Frequently Asked <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8c00] to-[#ffaa00]">Questions</span>
+          </h2>
+          <p class="text-zinc-400 text-sm sm:text-base max-w-xl">
+            Everything you need to know about working with me to scale your Amazon business.
+          </p>
         </div>
 
-        <!-- Footer -->
-        <div class="mt-8 pt-4 border-t border-zinc-800 text-center">
-          <p class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">Target Profile</p>
-          <span class="text-xs text-[#ffaa00] font-semibold group-hover:text-white transition-colors duration-300">New launches & aggressive testing.</span>
+        <!-- FAQ Accordion Loop Container -->
+        <div class="border-t border-zinc-800/80 divide-y divide-zinc-800/80">
+          
+          <!-- Q1 -->
+          <div class="faq-item group py-5">
+            <button class="faq-trigger w-full flex justify-between items-center text-left py-2 font-bold text-sm sm:text-base text-zinc-200 hover:text-[#ff8c00] transition-colors duration-300 focus:outline-none">
+              <span>What's included in your Amazon audit?</span>
+              <span class="faq-icon-wrapper ml-4 shrink-0 w-6 h-6 rounded-full border border-zinc-700 group-hover:border-[#ff8c00] flex items-center justify-center transition-all duration-300">
+                <svg class="faq-icon w-3 h-3 text-zinc-400 group-hover:text-[#ff8c00] transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+              </span>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out opacity-0">
+              <p class="text-zinc-400 text-xs sm:text-sm pt-3 pb-2 leading-relaxed">
+                My deep-dive audit covers full listing health check, structural PPC spend leakage detection, BSR organic ranking visibility maps, and a complete competitor gap analysis to spot immediate growth opportunities.
+              </p>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="faq-item group py-5">
+            <button class="faq-trigger w-full flex justify-between items-center text-left py-2 font-bold text-sm sm:text-base text-zinc-200 hover:text-[#ff8c00] transition-colors duration-300 focus:outline-none">
+              <span>How long does it take to see results?</span>
+              <span class="faq-icon-wrapper ml-4 shrink-0 w-6 h-6 rounded-full border border-zinc-700 group-hover:border-[#ff8c00] flex items-center justify-center transition-all duration-300">
+                <svg class="faq-icon w-3 h-3 text-zinc-400 group-hover:text-[#ff8c00] transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+              </span>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out opacity-0">
+              <p class="text-zinc-400 text-xs sm:text-sm pt-3 pb-2 leading-relaxed">
+                PPC structural optimizations and bid adjustments usually reflect efficiency within 14 days. Full SEO shifts, keyword indexing corrections, and organic BSR compounding scale continuously between 30 to 90 days.
+              </p>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="faq-item group py-5">
+            <button class="faq-trigger w-full flex justify-between items-center text-left py-2 font-bold text-sm sm:text-base text-zinc-200 hover:text-[#ff8c00] transition-colors duration-300 focus:outline-none">
+              <span>Do you work with new sellers or established brands?</span>
+              <span class="faq-icon-wrapper ml-4 shrink-0 w-6 h-6 rounded-full border border-zinc-700 group-hover:border-[#ff8c00] flex items-center justify-center transition-all duration-300">
+                <svg class="faq-icon w-3 h-3 text-zinc-400 group-hover:text-[#ff8c00] transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+              </span>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out opacity-0">
+              <p class="text-zinc-400 text-xs sm:text-sm pt-3 pb-2 leading-relaxed">
+                I primarily scale established brands doing private label that possess verified market traction. However, I partner with highly funded new startups that have ready-to-launch innovative market setups.
+              </p>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="faq-item group py-5">
+            <button class="faq-trigger w-full flex justify-between items-center text-left py-2 font-bold text-sm sm:text-base text-zinc-200 hover:text-[#ff8c00] transition-colors duration-300 focus:outline-none">
+              <span>What's your pricing model?</span>
+              <span class="faq-icon-wrapper ml-4 shrink-0 w-6 h-6 rounded-full border border-zinc-700 group-hover:border-[#ff8c00] flex items-center justify-center transition-all duration-300">
+                <svg class="faq-icon w-3 h-3 text-zinc-400 group-hover:text-[#ff8c00] transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+              </span>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out opacity-0">
+              <p class="text-zinc-400 text-xs sm:text-sm pt-3 pb-2 leading-relaxed">
+                Pricing structures are customized depending on accounts scale, market depth, and SKUs catalog sizing. I structure transparent retainers or customized revenue performance scaling programs built to fit objectives.
+              </p>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="faq-item group py-5">
+            <button class="faq-trigger w-full flex justify-between items-center text-left py-2 font-bold text-sm sm:text-base text-zinc-200 hover:text-[#ff8c00] transition-colors duration-300 focus:outline-none">
+              <span>Can you manage multiple marketplaces besides US?</span>
+              <span class="faq-icon-wrapper ml-4 shrink-0 w-6 h-6 rounded-full border border-zinc-700 group-hover:border-[#ff8c00] flex items-center justify-center transition-all duration-300">
+                <svg class="faq-icon w-3 h-3 text-zinc-400 group-hover:text-[#ff8c00] transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+              </span>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out opacity-0">
+              <p class="text-zinc-400 text-xs sm:text-sm pt-3 pb-2 leading-relaxed">
+                Yes. I cover global optimization structures across Amazon North America (US, CA, MX) as well as European hubs (UK, DE, FR, IT, ES), adapting multi-lingual SEO execution layers perfectly.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- 2. AMAZON SEO -->
-      <div class="strategy-card group relative bg-[#121212] border border-zinc-800 rounded-2xl p-7 flex flex-col justify-between transition-all duration-500 hover:border-[#ff8c00]/30 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#ff8c00]/5 overflow-hidden">
-        <div>
-          <!-- Hover Glow -->
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ff8c00] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+      <!-- RIGHT COLUMN: OFFICIAL AMAZON PARTNER CARD (5 Columns wide) -->
+      <div class="lg:col-span-5 w-full lg:sticky lg:top-8 mt-8 lg:mt-0">
+        <div class="relative bg-[#121212] border border-zinc-800 rounded-3xl p-8 sm:p-10 flex flex-col items-center text-center shadow-2xl overflow-hidden transition-all duration-500 hover:border-[#ff8c00]/30 group">
           
-          <!-- Header -->
-          <div class="flex items-center gap-4 mb-6 pb-4 border-b border-zinc-800">
-            <div class="w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-xl flex items-center justify-center text-[#ff8c00] group-hover:bg-[#ff8c00] group-hover:text-black transition-colors duration-300">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            </div>
-            <h3 class="text-2xl font-bold text-white group-hover:text-[#ff8c00] transition-colors duration-300">Amazon SEO</h3>
+          <!-- Orange accent bar on top -->
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ff8c00] via-[#ffaa00] to-[#ff8c00]"></div>
+          
+          <!-- Badge Header pill -->
+          <div class="inline-flex items-center gap-2 border border-[#ff8c00]/30 bg-[#ff8c00]/5 px-4 py-1.5 rounded-full mb-8">
+            <span class="text-[#ff8c00] text-[10px] font-bold uppercase tracking-widest">Official Partner Status</span>
           </div>
 
-          <!-- Description -->
-          <p class="text-zinc-400 text-xs mb-5 leading-relaxed">Organic dominance structures to secure permanent rankings and high conversion:</p>
-          
-          <!-- Bullets -->
-          <ul class="space-y-3.5 text-xs text-zinc-300">
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>A9 Algorithm:</strong> Advanced backend keyword optimization.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Free Traffic:</strong> Build sustainable compounding asset growth.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Listing CRO:</strong> Maximize visual elements for conversions.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Review Velocity:</strong> Smart systems for review collection.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-[#ff8c00] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Zero Ad Cost:</strong> Profit margins protection blueprint.</span>
-            </li>
-          </ul>
-        </div>
+          <!-- REAL REAL AMAZON ADS LOGO IN INTEGRATED FRAMEWORK -->
+          <div class="mb-6 flex flex-col items-center gap-3">
+            <!-- SVG Vector Representation of True Amazon Architecture -->
+            <svg class="w-32 h-auto text-white group-hover:text-[#ff8c00] transition-colors duration-300" viewBox="0 0 100 30" fill="currentColor">
+              <path d="M15.2 16.7c0 2.2-1.3 3.6-3.8 3.6-1.9 0-3.3-1-3.6-2.6h-.1v2.3H4.5V6.4h3.3v4.6h.1c.4-1.5 1.7-2.3 3.5-2.3 2.5 0 3.8 1.4 3.8 3.6v4.4zm-3.2-4.1c0-1.1-.5-1.7-1.4-1.7-.9 0-1.5.7-1.5 1.7v2.3c0 1.1.5 1.8 1.5 1.8.9 0 1.4-.6 1.4-1.8v-2.3zm12.3 7.7c-2.4 0-4.1-1.5-4.1-3.9 0-2.5 1.7-4 4.1-4 1.3 0 2.3.5 2.8 1.4h.1V6.4h3.3v13.6h-3.2v-2.1h-.1c-.5.9-1.5 2.4-3.1 2.4zm.5-5.5c-.9 0-1.5.7-1.5 1.7 0 1 .6 1.7 1.5 1.7.9 0 1.5-.7 1.5-1.7 0-1-.6-1.7-1.5-1.7zm11.2 5.8c-2.3 0-3.9-1-4.2-2.5h3.3c.2.6.7.9 1.2.9.5 0 .8-.2.8-.5 0-.8-4.2-.4-4.2-3.4 0-1.6 1.4-2.5 3.5-2.5 2 0 3.4.9 3.7 2.3h-3.2c-.1-.5-.5-.7-1-.7-.4 0-.6.1-.6.4 0 .8 4.2.3 4.2 3.3 0 1.8-1.4 2.7-3.5 2.7zM50.4 20.3c-2.7 0-4.6-1.9-4.6-4.6s1.9-4.6 4.6-4.6 4.6 1.9 4.6 4.6-1.9 4.6-4.6 4.6zm0-7c-1.3 0-2.1.9-2.1 2.4s.8 2.4 2.1 2.4 2.1-.9 2.1-2.4-.8-2.4-2.1-2.4zm10.7.3c-.7-.6-1.4-.9-2.3-.9-1.9 0-3.3 1.4-3.3 3.6v4.4h-3.3V9.1h3.1v1.9h.1c.4-1.2 1.5-2.2 2.9-2.2.9 0 1.9.4 2.5 1.1l-.8 2.4zm5.5 1.1c0-1.7.9-2.6 2.6-2.6 1.1 0 1.8.5 2.1 1.3h.1V9.1h3.3v11.2h-3.1v-1.9h-.1c-.4.9-1.2 2.2-2.7 2.2-1.7-.1-2.3-1-2.3-2.7V14.7zm4.8 3.3v-2.1c0-.9-.4-1.4-1.1-1.4-.6 0-1.1.5-1.1 1.4v2.1c0 .9.5 1.4 1.1 1.4.7 0 1.1-.5 1.1-1.4z"/>
+              <!-- Iconic Smile curve vector -->
+              <path d="M4.6 22.5c15.2 4.1 36.1 6.1 53.4.9 2.5-.8 5.4-2 7.2-3.8.5-.5 1-.2.7.4-1.9 3.5-6.1 5.3-9.8 6.4-16.7 4.7-36.8 3.6-53.1-1-.6-.2-.8-.8-.4-2.9z" fill="#ff8c00"/>
+              <!-- Arrow tip vector -->
+              <path d="M66.4 18.2c-.4 1.4-1 3.5-1.9 4.7-.3.4-.1.7.4.5 3.3-1.1 7.6-1.3 9.1-3.6.4-.6-.1-.9-.9-.7-2.1.4-5.2-.2-6.7-.9z" fill="#ff8c00"/>
+            </svg>
+            <h3 class="text-xl font-extrabold tracking-tight mt-1">Ads Advanced Partner</h3>
+          </div>
 
-        <!-- Footer -->
-        <div class="mt-8 pt-4 border-t border-zinc-800 text-center">
-          <p class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">Target Profile</p>
-          <span class="text-xs text-[#ffaa00] font-semibold group-hover:text-white transition-colors duration-300">Long-term stability & margin safety.</span>
+          <!-- Premium Star Rating Display -->
+          <div class="flex items-center gap-1.5 mb-6 text-[#ff8c00]">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+
+          <p class="text-zinc-400 text-xs leading-relaxed mb-8 max-w-xs">
+            Certified expert recognized by Amazon for exceptional PPC management and advertising excellence.
+          </p>
+
+          <!-- Metrics Points (Clean & Compact Flex structure) -->
+          <div class="w-full space-y-4 text-left border-t border-zinc-800/80 pt-6 flex-grow">
+            <div class="flex items-center gap-3 text-xs sm:text-sm font-semibold text-zinc-200">
+              <span class="w-5 h-5 bg-[#ff8c00]/10 border border-[#ff8c00]/30 rounded-full flex items-center justify-center text-[#ff8c00] shrink-0">✓</span>
+              <span>Amazon Ads Advanced Partner</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs sm:text-sm font-semibold text-zinc-200">
+              <span class="w-5 h-5 bg-[#ff8c00]/10 border border-[#ff8c00]/30 rounded-full flex items-center justify-center text-[#ff8c00] shrink-0">✓</span>
+              <span>200+ Successful Campaigns</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs sm:text-sm font-semibold text-zinc-200">
+              <span class="w-5 h-5 bg-[#ff8c00]/10 border border-[#ff8c00]/30 rounded-full flex items-center justify-center text-[#ff8c00] shrink-0">✓</span>
+              <span>$2M+ Revenue Generated</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs sm:text-sm font-semibold text-zinc-200">
+              <span class="w-5 h-5 bg-[#ff8c00]/10 border border-[#ff8c00]/30 rounded-full flex items-center justify-center text-[#ff8c00] shrink-0">✓</span>
+              <span>4.9★ Client Rating</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs sm:text-sm font-semibold text-zinc-200">
+              <span class="w-5 h-5 bg-[#ff8c00]/10 border border-[#ff8c00]/30 rounded-full flex items-center justify-center text-[#ff8c00] shrink-0">✓</span>
+              <span>4+ Years eCommerce Experience</span>
+            </div>
+          </div>
+
+          <!-- Solid Action Button with subtle neon glow on hover -->
+          <button class="w-full mt-10 bg-gradient-to-r from-[#ff8c00] to-[#ffaa00] text-black font-black py-4 px-6 rounded-xl text-sm transition-all duration-300 transform active:scale-[0.98] hover:shadow-xl hover:shadow-[#ff8c00]/20 tracking-wide focus:outline-none">
+            Get Started Today
+          </button>
         </div>
       </div>
 
-      <!-- 3. HYBRID APPROACH -->
-      <div class="strategy-card group relative bg-zinc-900/30 border-2 border-[#ff8c00]/50 rounded-2xl p-7 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#ff8c00]/10 overflow-hidden backdrop-blur-sm">
-        <div>
-          <!-- Highlight bar -->
-          <div class="absolute top-0 left-0 w-full h-1 bg-[#ff8c00]"></div>
-          
-          <!-- Header -->
-          <div class="flex items-center gap-4 mb-6 pb-4 border-b border-[#ff8c00]/20">
-            <div class="w-12 h-12 bg-[#ff8c00] rounded-xl flex items-center justify-center text-black">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
-            </div>
-            <h3 class="text-2xl font-bold text-[#ff8c00]">Hybrid Approach</h3>
-          </div>
-
-          <!-- Description -->
-          <p class="text-zinc-300 text-xs mb-5 leading-relaxed">The unified framework combining both execution layers for maximum market impact:</p>
-          
-          <!-- Bullets -->
-          <ul class="space-y-3.5 text-xs text-zinc-100">
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-white mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Fast-Track:</strong> Use active PPC to gain fast traction.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-white mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>SEO Compounding:</strong> Build underlying ranking factors.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-white mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Data Insights:</strong> Feed conversion logs directly into keyword models.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-white mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Lower Dependencies:</strong> Systematic ad reliance reduction.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-white mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-              <span><strong>Max Profits:</strong> Achieve the lowest CAC vs LTV ratios.</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Footer -->
-        <div class="mt-8 pt-4 border-t border-[#ff8c00]/20 text-center">
-          <p class="text-[10px] text-zinc-100 font-bold uppercase tracking-widest mb-1">Target Profile</p>
-          <span class="text-xs text-white font-black">Rapid scaling with sustainable long-term asset growth.</span>
-        </div>
-      </div>
-    
     </div>
 
   </div>
 </section>
 
-<!-- Smooth JavaScript for Animation -->
+<!-- Smooth Slide Accordion Logic -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.strategy-card');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-          }, index * 100); 
-          observer.unobserve(entry.target);
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const trigger = item.querySelector('.faq-trigger');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+
+      trigger.addEventListener('click', () => {
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+        // Close all open items first for exclusive accordion effect
+        faqItems.forEach(otherItem => {
+          const otherContent = otherItem.querySelector('.faq-content');
+          const otherIcon = otherItem.querySelector('.faq-icon');
+          otherContent.style.maxHeight = '0px';
+          otherContent.style.opacity = '0';
+          if (otherIcon) {
+            otherIcon.style.transform = 'rotate(0deg)';
+          }
+        });
+
+        // Toggle current item
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+          if (icon) {
+            icon.style.transform = 'rotate(135deg)'; // Rotates '+' into an explicit close 'x' icon
+          }
         }
       });
-    }, { threshold: 0.05 });
-
-    cards.forEach(card => {
-      card.style.opacity = 0;
-      card.style.transform = 'translateY(20px)';
-      card.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.4s ease, border-color 0.4s ease';
-      observer.observe(card);
     });
   });
 </script>
