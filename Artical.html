@@ -77,14 +77,35 @@
   </div>
 </header>
 
-<!-- Mobile Slide-in Menu -->
-<div id="mobileMenu" class="fixed top-0 right-[-100%] w-[250px] h-full bg-[#0B0C0E] z-[9999] p-8 flex flex-col gap-6 transition-all border-l border-[#2A2B2F]">
-    <div class="text-white text-xl cursor-pointer self-end" onclick="toggleMobileMenu()">✕</div>
-    <a href="index.html" class="text-white">Home</a>
-    <a href="about.html" class="text-white">About us</a>
-    <a href="services.html" class="text-white">Services</a>
-    <a href="blog.html" class="text-white">Blog</a>
-    <a href="contact.html" class="text-white">Contact us</a>
+<!-- Mobile Full-Screen Menu -->
+<div id="mobileMenu" class="fixed inset-0 bg-[#0B0C0E] z-[9999] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 ease-in-out">
+    <!-- Close Button -->
+    <div class="absolute top-6 right-8 text-white text-3xl cursor-pointer" onclick="toggleMobileMenu()">✕</div>
+    
+    <!-- Menu Links -->
+    <a href="index.html" class="text-white text-2xl font-bold hover:text-[#FF8C00]">Home</a>
+    <a href="about.html" class="text-white text-2xl font-bold hover:text-[#FF8C00]">About us</a>
+    <a href="services.html" class="text-white text-2xl font-bold hover:text-[#FF8C00]">Services</a>
+    <a href="blog.html" class="text-white text-2xl font-bold hover:text-[#FF8C00]">Blog</a>
+    <a href="contact.html" class="text-white text-2xl font-bold hover:text-[#FF8C00]">Contact us</a>
+    
+    <!-- CTA inside menu -->
+    <a href="meeting.html" class="bg-[#FF8C00] text-black px-8 py-3 rounded-full font-bold mt-4 hover:scale-105 transition-transform">Get In Touch</a>
+</div>
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        // Agar menu chupa hua hai (translate-x-full), to usey screen par layein (translate-x-0)
+        if (menu.classList.contains('translate-x-full')) {
+            menu.classList.remove('translate-x-full');
+            menu.classList.add('translate-x-0');
+        } else {
+            // Agar pehle se khula hai, to wapis chupayein
+            menu.classList.remove('translate-x-0');
+            menu.classList.add('translate-x-full');
+        }
+    }
+</script>
 </div>
 <script>
     function toggleMobileMenu() {
