@@ -5698,7 +5698,46 @@ I provide a holistic approach to drive traffic and boost conversions. By buildin
             }
         }
     </script>    
+<!-- ========================================================================= -->
+<!-- BACK TO TOP BUTTON WITH SMOOTH SCROLL LOGIC                               -->
+<!-- ========================================================================= -->
 
+<!-- 1. Button HTML (Tailwind CSS styled) -->
+<button 
+  id="backToTopBtn" 
+  onclick="scrollToTop()"
+  class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-white text-black border border-zinc-800 flex items-center justify-center shadow-lg cursor-pointer transition-all duration-300 translate-y-20 opacity-0 z-50 hover:bg-[#ff8c00] hover:text-black hover:scale-110"
+  title="Go to top"
+>
+  <!-- Clean Up Arrow SVG Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+  </svg>
+</button>
+
+<!-- 2. Scroll Show/Hide & Smooth Function Script -->
+<script>
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  // Jab user page par 300px neeche scroll karega, tab button screen par show hoga
+  window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      backToTopBtn.classList.remove("translate-y-20", "opacity-0");
+      backToTopBtn.classList.add("translate-y-0", "opacity-100");
+    } else {
+      backToTopBtn.classList.remove("translate-y-0", "opacity-100");
+      backToTopBtn.classList.add("translate-y-20", "opacity-0");
+    }
+  };
+
+  // Smooth scroll up function
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
 
 </body>
 </html>
