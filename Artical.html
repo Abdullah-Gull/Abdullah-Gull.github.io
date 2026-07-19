@@ -1,364 +1,56 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<section id="premium-faq-section" class="py-24 px-4 sm:px-8 lg:px-16 bg-[#060606] text-white font-sans selection:bg-[#ff8c00] selection:text-black">
-  <div class="max-w-7xl mx-auto">
+<section class="relative py-28 px-4 sm:px-8 lg:px-16 bg-[#060606] text-white overflow-hidden font-sans select-none">
+  
+  <!-- ========================================== -->
+  <!-- ABSTRACT BACKGROUND CIRCLES (From Image 1 Style) -->
+  <!-- ========================================== -->
+  <!-- Left Decorative Outline Circle -->
+  <div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/3 w-[500px] h-[500px] rounded-full border border-zinc-900/40 pointer-events-none hidden md:block"></div>
+  <!-- Right Multi-layered Intersecting Circles -->
+  <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] rounded-full border border-zinc-900/30 pointer-events-none hidden md:block">
+    <div class="absolute inset-10 rounded-full border border-zinc-900/40"></div>
+  </div>
+
+  <!-- Main Centered Content Grid Wrapper -->
+  <div class="max-w-4xl mx-auto text-center relative z-10 space-y-8">
     
-    <!-- Outer Split Layout Grid with Equal Height Flex Tracking -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-      
-      <!-- ========================================== -->
-      <!-- LEFT COLUMN: Heading & Accordion List (7 Cols) -->
-      <!-- ========================================== -->
-      <div class="lg:col-span-7 space-y-8 flex flex-col justify-between">
-        
-        <!-- Section Header Label -->
-        <div class="space-y-3">
-          <div class="flex items-center gap-2 text-[#ff8c00] font-bold text-xs uppercase tracking-widest">
-            <span class="flex items-center justify-center w-5 h-5 rounded-full border border-[#ff8c00]/40 text-[10px] font-black">?</span>
-            FAQS
-          </div>
-          <h2 class="text-4xl sm:text-5xl font-black tracking-tight leading-none">
-            Frequently Asked <span class="text-[#ff8c00]">Questions</span>
-          </h2>
-          <p class="text-zinc-400 text-sm max-w-xl font-medium pt-1">
-            Everything you need to know about working with me and scaling your Amazon business.
-          </p>
-        </div>
-
-        <!-- Accordions Dynamic Hook Wrapper -->
-        <div class="space-y-4 flex-grow mt-6">
-          
-          <!-- FAQ Item 01 -->
-          <div class="faq-item group border border-zinc-800 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden active-faq" data-open="true">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300">
-              <div class="flex items-center gap-5">
-                <span class="faq-number font-mono text-sm font-bold text-[#ff8c00] transition-colors duration-300">01</span>
-                <span class="text-sm sm:text-base font-bold text-zinc-100 group-hover:text-white transition-colors duration-300">What's included in your Amazon audit?</span>
-              </div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-[#ff8c00] text-zinc-950 transition-all duration-300 transform rotate-180">
-                <svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-              </div>
-            </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-[500px]">
-              <div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1">
-                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">
-                  Our comprehensive audit includes account analysis, competitor benchmarking, PPC campaign review, listing optimization assessment, keyword research, and a detailed growth roadmap. You'll receive a full report with actionable recommendations.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ Item 02 -->
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300">
-              <div class="flex items-center gap-5">
-                <span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">02</span>
-                <span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">How long does it take to see results?</span>
-              </div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform">
-                <svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-              </div>
-            </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
-              <div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1">
-                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">
-                  PPC results appear within 2-4 weeks as we optimize campaigns. SEO takes 6-12 weeks for significant ranking improvements. Most clients see 20-40% improvement in sales within the first 90 days with combined strategies.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ Item 03 -->
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300">
-              <div class="flex items-center gap-5">
-                <span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">03</span>
-                <span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">Do you work with new sellers or established brands?</span>
-              </div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform">
-                <svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-              </div>
-            </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
-              <div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1">
-                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">
-                  I work with both! Whether you're launching your first product or scaling an established brand, I customize strategies based on your current stage. New sellers benefit from foundational optimization, while established brands focus on advanced scaling.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ Item 04 -->
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300">
-              <div class="flex items-center gap-5">
-                <span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">04</span>
-                <span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">What's your pricing model?</span>
-              </div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform">
-                <svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-              </div>
-            </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
-              <div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1">
-                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">
-                  I offer flexible models: monthly retainers for ongoing management, project-based fees for specific services, and performance-based options. Most clients invest $2,000-$10,000+ monthly depending on scope and goals. Let's discuss what works for you.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ Item 05 -->
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300">
-              <div class="flex items-center gap-5">
-                <span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">05</span>
-                <span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">Can you manage multiple marketplaces besides Amazon?</span>
-              </div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform">
-                <svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-              </div>
-            </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
-              <div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1">
-                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">
-                  Yes! I specialize in Amazon but also manage Shopify, Walmart, eBay, and other platforms. Multi-platform strategy maximizes your reach and diversifies revenue. We can create integrated campaigns across channels for cohesive brand presence.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ Item 06 -->
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300">
-              <div class="flex items-center gap-5">
-                <span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">06</span>
-                <span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">How do you measure success and ROI?</span>
-              </div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform">
-                <svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-              </div>
-            </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
-              <div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1">
-                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">
-                  We track KPIs including sales growth, ACOS, conversion rate, keyword rankings, and revenue. Monthly reports break down performance metrics, actionable insights, and next steps. Success is measured by your profitability and market expansion goals.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ Item 07 -->
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300">
-              <div class="flex items-center gap-5">
-                <span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">07</span>
-                <span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">Do you offer consulting or only management?</span>
-              </div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform">
-                <svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-              </div>
-            </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
-              <div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1">
-                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">
-                  Both! I offer one-on-one coaching calls, strategic consulting for specific challenges, training workshops, and full account management. Choose the support level that fits your needs and budget.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ Item 08 -->
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300">
-              <div class="flex items-center gap-5">
-                <span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">08</span>
-                <span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">What makes you different from other Amazon agencies?</span>
-              </div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform">
-                <svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-              </div>
-            </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
-              <div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1">
-                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">
-                  I combine strategic expertise with hands-on management. No cookie-cutter approaches—every strategy is custom-built for your brand. With 500+ clients and $50M+ in revenue generated, I deliver proven results with dedicated attention and transparency.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ Item 09 -->
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300">
-              <div class="flex items-center gap-5">
-                <span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">09</span>
-                <span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">How often do we communicate?</span>
-              </div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform">
-                <svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-              </div>
-            </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
-              <div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1">
-                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">
-                  Monthly strategy calls, weekly performance updates, and always available via email for urgent matters. We maintain transparent communication so you're always informed on your account status and next steps.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ Item 10 -->
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300">
-              <div class="flex items-center gap-5">
-                <span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">10</span>
-                <span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">What's the first step to getting started?</span>
-              </div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform">
-                <svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-              </div>
-            </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
-              <div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1">
-                <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">
-                  Schedule a free consultation call! We'll discuss your goals, current challenges, and how I can help. If it's a good fit, we'll create a custom proposal. No pressure—just genuine conversations about scaling your business.
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ========================================== -->
-      <!-- RIGHT COLUMN: Equal Height Premium Side Card (5 Cols) -->
-      <!-- ========================================== -->
-      <div class="lg:col-span-5 flex flex-col h-full">
-        <div class="relative bg-gradient-to-b from-zinc-900 to-black p-8 sm:p-10 rounded-[32px] border border-zinc-800 shadow-2xl overflow-hidden group flex flex-col justify-between h-full flex-grow">
-          
-          <!-- Outer Neon Orange Glow Effect -->
-          <div class="absolute -inset-px rounded-[32px] bg-gradient-to-b from-[#ff8c00]/25 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-          
-          <div class="relative z-10 flex flex-col items-center text-center space-y-6 flex-grow justify-center">
-            
-            <!-- Updated Branded Logo Asset Box (No White Blocks) -->
-            <div class="bg-white p-6 rounded-3xl w-64 h-64 shadow-[0_0_50px_rgba(255,140,0,0.12)] flex flex-col items-center justify-center space-y-3 transform group-hover:scale-[1.02] transition-transform duration-500">
-              <img class="w-44 object-contain" src="https://abdullah-gull.github.io/images/images%20(1).jpg" alt="Amazon Partner Emblem">
-              <div class="w-[85%] h-[1px] bg-zinc-200/80 my-1"></div>
-              <div class="text-xl font-black text-black tracking-wider uppercase font-sans">
-                Advanced<br><span class="text-[#ff8c00]">Partner</span>
-              </div>
-            </div>
-
-            <!-- Enhanced Typography Content Wrapper -->
-            <div class="space-y-2 pt-4">
-              <h3 class="text-2xl font-black tracking-tight text-white">
-                Amazon Ads <span class="text-[#ff8c00]">Advanced Partner</span>
-              </h3>
-              <p class="text-zinc-400 text-xs sm:text-sm max-w-sm mx-auto leading-relaxed font-medium">
-                Recognized directly by Amazon for outstanding strategic execution, campaign scalability, and advertising performance.
-              </p>
-            </div>
-
-            <div class="w-full h-[1px] bg-zinc-800/60 my-2"></div>
-
-            <!-- Highly Scaled Professional Credentials List -->
-            <div class="w-full text-left space-y-4 pl-4 sm:pl-8 flex-grow flex flex-col justify-center">
-              <div class="flex items-center gap-3 text-sm text-zinc-200 font-bold tracking-wide">
-                <span class="flex items-center justify-center w-5 h-5 rounded-full bg-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>
-                Certified Amazon Ads Advanced Partner
-              </div>
-              <div class="flex items-center gap-3 text-sm text-zinc-200 font-bold tracking-wide">
-                <span class="flex items-center justify-center w-5 h-5 rounded-full bg-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>
-                200+ Successful Marketplace Campaigns
-              </div>
-              <div class="flex items-center gap-3 text-sm text-zinc-200 font-bold tracking-wide">
-                <span class="flex items-center justify-center w-5 h-5 rounded-full bg-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>
-                $2M+ Attributable Revenue Generated
-              </div>
-              <div class="flex items-center gap-3 text-sm text-zinc-200 font-bold tracking-wide">
-                <span class="flex items-center justify-center w-5 h-5 rounded-full bg-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>
-                4.9★ Elite Level Client Satisfaction Rating
-              </div>
-              <div class="flex items-center gap-3 text-sm text-zinc-200 font-bold tracking-wide">
-                <span class="flex items-center justify-center w-5 h-5 rounded-full bg-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>
-                4+ Years Continuous eCommerce Expansion
-              </div>
-            </div>
-
-            <!-- Fixed Interactive Bottom Call-to-Action Link -->
-            <a href="#" class="w-full sm:w-80 bg-gradient-to-r from-[#e65c00] to-[#ff8c00] text-black font-black text-sm py-4 px-6 rounded-full flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-[#ff8c00]/20 mt-6 select-none">
-              Get Started Today
-              <span class="flex items-center justify-center w-5 h-5 rounded-full border border-black/30 text-xs font-black">&rarr;</span>
-            </a>
-
-          </div>
-        </div>
-      </div>
-
+    <!-- Top Micro Tag Pill -->
+    <div class="inline-flex items-center gap-2 bg-zinc-900/60 border border-zinc-800/80 px-4 py-1.5 rounded-full shadow-inner">
+      <span class="w-2 h-2 rounded-full bg-[#ff8c00] animate-pulse"></span>
+      <span class="text-[10px] sm:text-xs font-bold tracking-widest text-zinc-400 uppercase font-mono">OUR PURPOSE & WHO I AM</span>
     </div>
+
+    <!-- Massive Centered Headline Hierarchy -->
+    <div class="space-y-4">
+      <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.1] text-zinc-100 max-w-3xl mx-auto">
+        Empowering brands to grow faster on <span class="text-[#ff8c00] bg-gradient-to-r from-[#ff8c00] to-[#e65c00] bg-clip-text text-transparent">Amazon</span> by boosting visibility.
+      </h1>
+      
+      <!-- Accent Sub-Heading Anchor -->
+      <h3 class="text-lg sm:text-xl font-bold tracking-wide text-zinc-400 font-mono pt-2">
+        &mdash; Amazon Strategy Builder &mdash;
+      </h3>
+    </div>
+
+    <!-- Subtle Centered Horizontal Separator Divider Line -->
+    <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#ff8c00]/50 to-transparent mx-auto my-4"></div>
+
+    <!-- Long-form Descriptive Content Paragraphs Block -->
+    <div class="max-w-2xl mx-auto space-y-5 text-sm sm:text-base text-zinc-400 font-medium leading-relaxed">
+      <p>
+        Success on Amazon isn't just about working; it's about the <span class="text-white font-semibold">right strategy</span>. I haven't come here simply to complete tasks, but to grow together with you. My experience and dedication have only one goal: to take your brand to a level where yours is the only name people mention.
+      </p>
+      <p class="text-xs sm:text-sm text-zinc-500">
+        From managing every detail of your account to running ads that actually perform, I focus on one thing: <span class="text-[#ff8c00]/80 font-bold">results</span>. I'll simplify the Amazon mess for you and build a clear strategy that turns your brand's potential into profit you can count on.
+      </p>
+    </div>
+
+    <!-- Interactive Conversion CTA Action Button -->
+    <div class="pt-6">
+      <a href="#" class="inline-flex items-center justify-center bg-gradient-to-r from-[#e65c00] to-[#ff8c00] text-black font-black text-xs sm:text-sm px-8 py-3.5 rounded-full tracking-wider uppercase transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] shadow-lg shadow-[#ff8c00]/10 hover:shadow-[#ff8c00]/20">
+        View Work
+      </a>
+    </div>
+
   </div>
 </section>
-
-<!-- Custom Structural Classes Overrides -->
-<style>
-  .active-faq {
-    border-color: rgba(255, 140, 0, 0.4) !important;
-    background-color: rgba(255, 140, 0, 0.02) !important;
-  }
-</style>
-
-<!-- Accordion Functionality Script -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const faqItems = document.querySelectorAll('.faq-item');
-
-    faqItems.forEach(item => {
-      const toggleButton = item.querySelector('.faq-toggle');
-      const contentDiv = item.querySelector('.faq-content');
-      const iconDiv = item.querySelector('.faq-icon');
-      const numberSpan = item.querySelector('.faq-number');
-      const titleText = item.querySelector('.faq-toggle span:nth-child(2)');
-
-      if (item.getAttribute('data-open') === 'true') {
-        contentDiv.style.maxHeight = contentDiv.scrollHeight + 'px';
-      } else {
-        contentDiv.style.maxHeight = '0px';
-      }
-
-      toggleButton.addEventListener('click', () => {
-        const isCurrentlyOpen = item.getAttribute('data-open') === 'true';
-
-        faqItems.forEach(otherItem => {
-          if (otherItem !== item) {
-            otherItem.setAttribute('data-open', 'false');
-            otherItem.classList.remove('active-faq');
-            otherItem.querySelector('.faq-content').style.maxHeight = '0px';
-            otherItem.querySelector('.faq-icon').classList.remove('rotate-180', 'bg-[#ff8c00]', 'text-zinc-950');
-            otherItem.querySelector('.faq-icon').classList.add('bg-zinc-900', 'border-zinc-800', 'text-zinc-400');
-            otherItem.querySelector('.faq-number').classList.replace('text-[#ff8c00]', 'text-zinc-500');
-            otherItem.querySelector('.faq-toggle span:nth-child(2)').classList.replace('text-zinc-100', 'text-zinc-300');
-          }
-        });
-
-        if (isCurrentlyOpen) {
-          item.setAttribute('data-open', 'false');
-          item.classList.remove('active-faq');
-          contentDiv.style.maxHeight = '0px';
-          iconDiv.classList.remove('rotate-180', 'bg-[#ff8c00]', 'text-zinc-950');
-          iconDiv.classList.add('bg-zinc-900', 'border-zinc-800', 'text-zinc-400');
-          numberSpan.classList.replace('text-[#ff8c00]', 'text-zinc-500');
-          titleText.classList.replace('text-zinc-100', 'text-zinc-300');
-        } else {
-          item.setAttribute('data-open', 'true');
-          item.classList.add('active-faq');
-          contentDiv.style.maxHeight = contentDiv.scrollHeight + 'px';
-          iconDiv.classList.add('rotate-180', 'bg-[#ff8c00]', 'text-zinc-950');
-          iconDiv.classList.remove('bg-zinc-900', 'border-zinc-800', 'text-zinc-400');
-          numberSpan.classList.replace('text-zinc-500', 'text-[#ff8c00]');
-          titleText.classList.replace('text-zinc-300', 'text-zinc-100');
-        }
-      });
-    });
-  });
-</script>
