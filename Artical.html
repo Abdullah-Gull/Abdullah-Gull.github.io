@@ -1,6 +1,6 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Updated Hero Section -->
+<!-- Updated Hero Section with Full-Fill Image -->
 <section class="bg-[#050505] text-white py-20 px-6 sm:px-12 lg:px-20 font-sans overflow-hidden">
   <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
     
@@ -27,12 +27,13 @@
       </div>
     </div>
 
-    <!-- Right Content (Full-size Image) -->
-    <div class="relative flex justify-center items-center">
-      <div class="absolute w-[500px] h-[500px] bg-[#ff8c00]/10 rounded-full blur-[120px]"></div>
-      
-      <!-- Image is now larger and centered -->
-      <img src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" alt="Abdullah Gull" class="relative z-10 w-full max-w-[600px] h-auto drop-shadow-2xl">
+    <!-- Right Content (Fixed Full Container Image) -->
+    <div class="relative w-full h-full flex items-center justify-center">
+      <img 
+        src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" 
+        alt="Abdullah Gull" 
+        class="w-full h-auto max-h-[500px] object-contain drop-shadow-2xl rounded-2xl"
+      >
     </div>
     
   </div>
