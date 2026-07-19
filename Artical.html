@@ -1,10 +1,19 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- ========================================================================= -->
-<!-- CONTACT SECTION (ORANGE PREMIUM THEME - HTML + TAILWIND)                  -->
+<!-- CONTACT SECTION (ORANGE PREMIUM THEME - HTML + TAILWIND + INTERACTIVE JS) -->
 <!-- ========================================================================= -->
-<section class="w-full bg-[#000000] text-white py-16 px-6 sm:px-12 lg:px-20 font-sans select-none overflow-hidden">
-  <div class="max-w-[1340px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<section class="w-full bg-[#000000] text-white py-16 px-6 sm:px-12 lg:px-20 font-sans select-none overflow-hidden relative min-h-[750px] flex items-center justify-center">
+  
+  <!-- BACKGROUND INTERACTIVE DYNAMIC MESH CANVAS -->
+  <canvas id="meshCanvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-40 z-0"></canvas>
+
+  <!-- Ambient Glow Background Overlays -->
+  <div class="absolute left-[-10%] top-[-10%] w-[450px] h-[450px] bg-[#ff8c00]/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
+  <div class="absolute right-[-10%] bottom-[-10%] w-[500px] h-[500px] bg-[#ff8c00]/5 rounded-full blur-[140px] pointer-events-none z-0"></div>
+
+  <!-- Content Wrapper -->
+  <div class="max-w-[1340px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
     
     <!-- ================= LEFT COLUMN (CONTENT & ORANGE CARDS) ================= -->
     <div class="lg:col-span-6 flex flex-col space-y-8">
@@ -22,7 +31,7 @@
       <div class="space-y-4 w-full max-w-[480px]">
         
         <!-- Email Card (Orange Theme) -->
-        <a href="mailto:sales@alphaspikes.com" class="group flex items-center gap-4 p-4 rounded-[24px] bg-[#ff8c00] text-black border border-transparent shadow-[0_10px_30px_rgba(255,140,0,0.15)] transition-all hover:scale-[1.01] hover:bg-[#ffa534]">
+        <a href="mailto:abdullahgullwork@outlook.com" class="group flex items-center gap-4 p-4 rounded-[24px] bg-[#ff8c00] text-black border border-transparent shadow-[0_10px_30px_rgba(255,140,0,0.15)] transition-all hover:scale-[1.01] hover:bg-[#ffa534]">
           <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center shrink-0">
             <!-- Email Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5">
@@ -31,21 +40,21 @@
           </div>
           <div class="flex flex-col">
             <span class="text-[10px] font-black text-black/60 uppercase tracking-wider">EMAIL</span>
-            <span class="text-base font-bold text-black tracking-wide">sales@alphaspikes.com</span>
+            <span class="text-base font-bold text-black tracking-wide">abdullahgullwork@outlook.com</span>
           </div>
         </a>
 
         <!-- Call Card (Orange Theme) -->
-        <a href="tel:+13073104045" class="group flex items-center gap-4 p-4 rounded-[24px] bg-[#ff8c00] text-black border border-transparent shadow-[0_10px_30px_rgba(255,140,0,0.15)] transition-all hover:scale-[1.01] hover:bg-[#ffa534]">
+        <a href="tel:+923179834286" class="group flex items-center gap-4 p-4 rounded-[24px] bg-[#ff8c00] text-black border border-transparent shadow-[0_10px_30px_rgba(255,140,0,0.15)] transition-all hover:scale-[1.01] hover:bg-[#ffa534]">
           <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center shrink-0">
             <!-- Phone Icon SVG -->
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a12.035 12.035 0 0 1-7.108-7.108c-.157-.44.009-.927.387-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25a2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a12.035 12.035 0 0 1-7.108-7.108c-.157-.44.009-.927.387-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z" />
             </svg>
           </div>
           <div class="flex flex-col">
             <span class="text-[10px] font-black text-black/60 uppercase tracking-wider">CALL</span>
-            <span class="text-base font-bold text-black tracking-wide">+1 307-310-4045</span>
+            <span class="text-base font-bold text-black tracking-wide">+92 317 9834286</span>
           </div>
         </a>
       </div>
@@ -68,7 +77,7 @@
           </div>
           <div class="flex items-start gap-4">
             <div class="w-7 h-7 rounded-full border border-zinc-700 bg-transparent flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5">3</div>
-            <p class="text-[14px] font-medium text-zinc-300 line-height-relaxed">Fill out the contact form and I will follow up within one business day with a clear next step.</p>
+            <p class="text-[14px] font-medium text-zinc-300 leading-relaxed">Fill out the contact form and I will follow up within one business day with a clear next step.</p>
           </div>
           <div class="flex items-start gap-4">
             <div class="text-[#ff8c00] text-xl font-bold shrink-0 w-7 text-center leading-none mt-0.5">★</div>
@@ -101,7 +110,7 @@
     <!-- ================= RIGHT COLUMN (TAB GRID IMPLEMENTATION) ================= -->
     <div class="lg:col-span-6 w-full flex justify-center lg:justify-end">
       <!-- Outer Interactive Frame Container -->
-      <div id="interactiveMockup" class="w-full max-w-[580px] aspect-[4/3] bg-[#0c0c0e] border border-zinc-800 rounded-[28px] p-3 shadow-2xl relative overflow-hidden cursor-pointer group transition-all duration-300">
+      <div id="interactiveMockup" class="w-full max-w-[580px] aspect-[4/3] bg-[#0c0c0e]/80 backdrop-blur-md border border-zinc-800 rounded-[28px] p-3 shadow-2xl relative overflow-hidden cursor-pointer group transition-all duration-300">
         
         <!-- Screen Inside Layout -->
         <div class="w-full h-full rounded-[20px] bg-black overflow-hidden grid grid-cols-3 grid-rows-3 gap-[3px] relative border border-zinc-900">
@@ -153,23 +162,121 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- JAVASCRIPT PARALLAX INTERACTION                                           -->
+<!-- JAVASCRIPT ANIMATIONS & DYNAMIC PARTICLES ENGINE                          -->
 <!-- ========================================================================= -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. CARD TILT INTERACTION
     const mockupFrame = document.getElementById("interactiveMockup");
-
     mockupFrame.addEventListener("mousemove", (e) => {
       const rect = mockupFrame.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
-      
-      // Card tilt effect on hover
-      mockupFrame.style.transform = `perspective(1000px) rotateX(${-y * 0.015}deg) rotateY(${x * 0.015}deg) scale(1.01)`;
+      mockupFrame.style.transform = `perspective(1000px) rotateX(${-y * 0.012}deg) rotateY(${x * 0.012}deg) scale(1.005)`;
     });
-
     mockupFrame.addEventListener("mouseleave", () => {
       mockupFrame.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
     });
+
+    // 2. DYNAMIC MESH PARTICLES CANVAS ENGINE
+    const canvas = document.getElementById("meshCanvas");
+    const ctx = canvas.getContext("2d");
+    
+    let particles = [];
+    const maxParticles = 65; // Density of background nodes
+    let width = canvas.width = canvas.offsetWidth;
+    let height = canvas.height = canvas.offsetHeight;
+    
+    let mouse = { x: null, y: null, radius: 170 };
+    
+    window.addEventListener("resize", () => {
+      if(canvas.offsetWidth) {
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
+      }
+    });
+    
+    // Capture tracking across the whole section structure
+    canvas.parentElement.addEventListener("mousemove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+    
+    canvas.parentElement.addEventListener("mouseleave", () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
+        this.radius = Math.random() * 1.5 + 1;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        
+        // Bounce on boundaries
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+        
+        // Mouse interact pull effect
+        if (mouse.x != null && mouse.y != null) {
+          let dx = mouse.x - this.x;
+          let dy = mouse.y - this.y;
+          let dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < mouse.radius) {
+            let force = (mouse.radius - dist) / mouse.radius;
+            this.x -= dx * force * 0.02;
+            this.y -= dy * force * 0.02;
+          }
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(255, 140, 0, 0.35)";
+        ctx.fill();
+      }
+    }
+
+    // Initialize nodes
+    for (let i = 0; i < maxParticles; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateMesh() {
+      ctx.clearRect(0, 0, width, height);
+      
+      // Loop & connect coordinates
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+        
+        for (let j = i + 1; j < particles.length; j++) {
+          let dx = particles[i].x - particles[j].x;
+          let dy = particles[i].y - particles[j].y;
+          let dist = Math.sqrt(dx * dx + dy * dy);
+          
+          if (dist < 110) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            let alpha = (110 - dist) / 110 * 0.12;
+            ctx.strokeStyle = `rgba(255, 140, 0, ${alpha})`;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateMesh);
+    }
+    
+    animateMesh();
   });
 </script>
