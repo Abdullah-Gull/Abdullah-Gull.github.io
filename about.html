@@ -215,519 +215,561 @@
   ]
 }
 </script>
-  <!-- Your Design Styles (Keep all your CSS here) -->
-<style>
-    /* --- GLOBAL THEME VARIABLES --- */
-:root {
-    --primary-orange: #FF8C00;
-    --dark-bg: #0B0C0E;
-    --dark-secondary: #1A1B1F;
-    --light-text: #F5F5F7;
-    --subtle-gray: #8E8E93;
-    --border-color: #2A2B2F;
-    --glass-dark: rgba(255, 255, 255, 0.05);
-    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-body {
-    background-color: var(--dark-bg);
-    color: var(--light-text);
-    overflow-x: hidden;
-    line-height: 1.6;
-}
-
-/* --- HEADER SECTION --- */
-.main-header {
-    position: relative;
-    width: 100%;
-    padding-top: 20px;
-    z-index: 1000;
-    background: var(--dark-bg);
-}
-
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(135deg, rgba(26, 27, 31, 0.5), rgba(42, 43, 47, 0.3));
-    backdrop-filter: blur(20px);
-    padding: 12px 30px;
-    border-radius: 100px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    transition: all 0.3s var(--transition-smooth);
-}
-
-.header-container:hover {
-    border-color: rgba(255, 140, 0, 0.2);
-    box-shadow: 0 8px 32px rgba(255, 140, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-link {
-    text-decoration: none !important;
-    color: var(--light-text) !important;
-    transition: all 0.3s var(--transition-smooth);
-}
-
-.logo-area img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid var(--primary-orange);
-    object-fit: cover;
-    transition: all 0.3s var(--transition-smooth);
-    box-shadow: 0 0 20px rgba(255, 140, 0, 0.1);
-}
-
-.logo-area img:hover {
-    box-shadow: 0 0 30px rgba(255, 140, 0, 0.3);
-    transform: scale(1.05);
-}
-
-.logo-text {
-    font-weight: 700;
-    font-size: 18px;
-    letter-spacing: -0.5px;
-}
-
-.logo-text span {
-    color: var(--primary-orange);
-}
-
-/* --- NAVIGATION CAPSULE (FIXED OVERLAPPING) --- */
-.nav-capsule {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6));
-    border: 1px solid var(--border-color);
-    padding: 8px 12px;
-    border-radius: 50px;
-    gap: 4px;
-    position: relative;
-    transition: all 0.3s var(--transition-smooth);
-}
-
-.nav-link {
-    color: var(--subtle-gray) !important;
-    text-decoration: none !important;
-    padding: 10px 18px;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 50px;
-    transition: color 0.3s var(--transition-smooth), background-color 0.3s var(--transition-smooth);
-    background: transparent !important;
-    position: relative;
-    z-index: 1;
-}
-
-/* Slide animation logic removed to completely fix the sticky background issue */
-.nav-link::before {
-    content: none !important;
-}
-
-/* Safe and Clean Active/Hover Background allocation */
-.nav-link.active,
-.nav-link:hover {
-    color: #fff !important;
-    font-weight: 600;
-    background-color: var(--primary-orange) !important;
-}
-
-/* --- GET IN TOUCH BUTTON --- */
-.get-in-touch-btn {
-    text-decoration: none;
-    color: var(--primary-orange) !important;
-    border: 1.5px solid var(--primary-orange);
-    padding: 10px 22px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    transition: all 0.3s var(--transition-smooth);
-    position: relative;
-    overflow: hidden;
-    background: transparent;
-}
-
-.get-in-touch-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: var(--primary-orange);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    transition: width 0.4s, height 0.4s;
-}
-
-.get-in-touch-btn:hover {
-    color: #fff !important;
-    box-shadow: 0 8px 24px rgba(255, 140, 0, 0.3);
-}
-
-.get-in-touch-btn:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
-/* --- MEGA MENU PANEL --- */
-.mega-menu-panel {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    opacity: 0;
-    background: linear-gradient(135deg, rgba(26, 27, 31, 0.95), rgba(42, 43, 47, 0.9));
-    backdrop-filter: blur(20px);
-    width: 950px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
-    border-top: 2px solid var(--primary-orange);
-    border-radius: 16px;
-    padding: 35px;
-    z-index: 9999;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    pointer-events: none;
-    transition: all 0.4s var(--transition-smooth);
-}
-
-.mega-menu-panel.show-menu {
-    display: grid !important;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-    pointer-events: auto;
-}
-
-.mega-col h4 {
-    color: var(--primary-orange);
-    font-size: 15px;
-    margin-bottom: 18px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-}
-
-.mega-col a {
-    color: var(--subtle-gray);
-    text-decoration: none;
-    display: block;
-    padding: 10px 0;
-    font-size: 14px;
-    transition: all 0.2s var(--transition-smooth);
-    position: relative;
-}
-
-.mega-col a::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 1px;
-    background: var(--primary-orange);
-    transition: width 0.3s var(--transition-smooth);
-}
-
-.mega-col a:hover {
-    color: var(--primary-orange);
-}
-
-.mega-col a:hover::before {
-    width: 30px;
-}
-
-.mega-col.border-left {
-    border-left: 1px solid var(--border-color);
-    padding-left: 25px;
-}
-
-/* --- FOOTER SOCIAL ICONS --- */
-.social-icon-box {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: linear-gradient(135deg, rgba(42, 43, 47, 0.8), rgba(26, 27, 31, 0.8)) !important;
-    color: var(--primary-orange) !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: 50% !important;
-    width: 44px;
-    height: 44px;
-    transition: all 0.3s var(--transition-smooth);
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.social-icon-box:hover {
-    background: linear-gradient(135deg, #FF8C00, #FFB84D) !important;
-    color: #fff !important;
-    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
-    transform: translateY(-4px);
-    border-color: rgba(255, 140, 0, 0.5) !important;
-}
-
-/* --- GENERAL TEXT & PARAGRAPHS --- */
-p {
-    color: var(--subtle-gray) !important;
-    font-size: 15px !important;
-    line-height: 1.7;
-}
-
-/* --- BUTTON/LINK HOVERS --- */
-.btn-gold {
-    background-color: var(--primary-orange) !important;
-    color: #fff !important;
-    padding: 14px 28px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    transition: all 0.3s var(--transition-smooth) !important;
-    border: 1px solid var(--primary-orange);
-}
-
-.btn-gold:hover {
-    background-color: #FFB84D !important;
-    border-color: #FFB84D;
-    box-shadow: 0 12px 28px rgba(255, 140, 0, 0.3);
-    transform: translateY(-2px);
-}
-
-/* --- RESPONSIVE DESIGN --- */
-@media (max-width: 1024px) {
-    .mega-menu-panel {
-        width: 85vw !important;
-        left: 50% !important;
-        transform: translateX(-50%) translateY(10px);
-        grid-template-columns: repeat(2, 1fr) !important;
-        padding: 28px;
-        gap: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .header-container {
-        padding: 10px 20px;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .nav-capsule {
-        width: 100%;
-        order: 3;
-        margin-top: 10px;
-        flex-wrap: wrap;
-        padding: 6px 8px;
-    }
-
-    .nav-link {
-        padding: 8px 14px;
-        font-size: 13px;
-        margin: 3px;
-    }
-
-    .get-in-touch-btn {
-        padding: 8px 18px;
-        font-size: 12px;
-    }
-
-    .mega-menu-panel {
-        width: 90vw !important;
-        left: 50% !important;
-        transform: translateX(-50%) translateY(10px);
-        grid-template-columns: 1fr !important;
-        padding: 24px;
-        top: 65px;
-    }
-
-    .mega-col.border-left {
-        border-left: none;
-        border-top: 1px solid var(--border-color);
-        padding-left: 0;
-        padding-top: 16px;
-        margin-top: 16px;
-    }
-
-    .logo-text {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header-container {
-        flex-direction: column;
-        gap: 12px;
-        padding: 8px 15px;
-        border-radius: 20px;
-    }
-
-    .logo-area img {
-        width: 32px;
-        height: 32px;
-    }
-
-    .logo-text {
-        font-size: 14px;
-    }
-
-    .nav-capsule {
-        width: 100%;
-        gap: 2px;
-    }
-
-    .nav-link {
-        padding: 7px 10px;
-        font-size: 12px;
-        margin: 2px;
-    }
-
-    .get-in-touch-btn {
-        padding: 7px 15px;
-        font-size: 11px;
-    }
-
-    .mega-menu-panel {
-        width: 95vw !important;
-        padding: 18px;
-        gap: 12px;
-    }
-
-    .mega-col h4 {
-        font-size: 13px;
-        margin-bottom: 12px;
-    }
-
-    .mega-col a {
-        font-size: 12px;
-        padding: 8px 0;
-    }
-
-    .social-icon-box {
-        width: 40px !important;
-        height: 40px !important;
-        font-size: 16px;
-    }
-}
-
-/* --- SMOOTH SCROLLING --- */
-html {
-    scroll-behavior: smooth;
-}
-
-/* --- LINKS DEFAULT --- */
-a {
-    transition: all 0.3s var(--transition-smooth);
-}
-
-/* --- FOCUS STATES FOR ACCESSIBILITY --- */
-button:focus,
-a:focus {
-    outline: 2px solid var(--primary-orange);
-    outline-offset: 2px;
-}
-</style>
-    <link rel="stylesheet" href="style.css">
-
-</head>
+ </head>
    
 
 <body>
     <header class="main-header">
-    <div class="header-container">
-        <div class="logo-area">
-            <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" alt="Abdullah Gull">
-            <a href="index.html" class="logo-link">Abdullah <span>Gull</span></a>
-        </div>
+    
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            orange: '#FF8C00',
+            orangeLight: '#FFB84D',
+            bg: '#0B0C0E',
+            secondary: '#1A1B1F',
+            border: '#2A2B2F',
+            text: '#F5F5F7',
+            muted: '#8E8E93',
+          }
+        },
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        borderRadius: {
+          capsule: '100px',
+        }
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 
-     <nav class="nav-capsule">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about.html" class="nav-link active">About me</a>
+  /* Smooth accordion for mobile sub-menus */
+  .accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .accordion-item.open .accordion-panel { max-height: 600px; }
+  .accordion-item.open .accordion-icon { transform: rotate(45deg); }
+  .accordion-icon { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
 
-    <!-- Services Clickable Wrapper -->
-    <div class="dropdown-item-wrapper" id="servicesToggle" onclick="toggleMegaMenu(event)">
-        <a href="javascript:void(0)" class="nav-link dropdown-toggle">
-            Services <i class="fa fa-chevron-down" style="margin-left:5px;"></i>
+  /* Mega menu */
+  .mega-menu-panel {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  }
+  .mega-menu-panel.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+
+  /* Mobile full screen menu */
+  #mobileMenu {
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  #mobileMenu.open { transform: translateY(0); }
+
+  /* ---------- Sticky header scroll states ---------- */
+  #desktopHeaderWrap {
+    transition: padding 0.3s ease;
+  }
+  #headerCapsule {
+    transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  #desktopHeaderWrap.scrolled {
+    padding-top: 0.75rem;
+  }
+  #desktopHeaderWrap.scrolled #headerCapsule {
+    background: linear-gradient(135deg, rgba(26,27,31,0.94), rgba(11,12,14,0.9));
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+
+  #mobileHeaderWrap {
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+  }
+  #mobileHeaderWrap.scrolled {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    background: #0B0C0E;
+  }
+
+  /* ---------- Global mobile safety net ---------- */
+  /* Stops any section from causing left-right (horizontal) scroll on phones */
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  /* Images/videos never overflow their container, whatever fixed px width they were given */
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  /* Any section you build stays inside the screen and gets sensible side padding on phones */
+  .site-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px)  { .site-container { padding-inline: 1.5rem; } }
+  @media (min-width: 1024px) { .site-container { padding-inline: 2rem; } }
+</style>
+<body class="bg-brand-bg text-brand-text" data-current-page="home">
+
+<!-- =========================================================
+     DESKTOP HEADER (hidden below lg breakpoint)
+     ========================================================= -->
+<header id="desktopHeaderWrap" class="hidden lg:block fixed top-0 inset-x-0 z-[999] w-full pt-5">
+  <div class="max-w-6xl mx-auto px-6">
+    <div id="headerCapsule" class="relative flex items-center justify-between gap-6
+                bg-gradient-to-br from-brand-secondary/50 to-brand-border/30
+                backdrop-blur-xl border border-brand-border
+                rounded-capsule px-6 py-3
+                shadow-[0_8px_32px_rgba(0,0,0,0.4)]
+                hover:border-brand-orange/20
+                hover:shadow-[0_8px_32px_rgba(255,140,0,0.1)]">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 shrink-0">
+        <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg"
+             alt="Abdullah Gull - Amazon PPC & E-commerce Consultant"
+             class="w-10 h-10 rounded-full object-cover border-2 border-brand-orange
+                    shadow-[0_0_20px_rgba(255,140,0,0.1)] transition-all duration-300
+                    hover:shadow-[0_0_30px_rgba(255,140,0,0.3)] hover:scale-105">
+        <span class="font-bold text-[18px] tracking-tight">
+          Abdullah <span class="text-brand-orange">Gull</span>
+        </span>
+      </a>
+
+      <!-- Centered Nav -->
+      <nav class="absolute left-1/2 -translate-x-1/2 flex items-center gap-1
+                  bg-gradient-to-br from-brand-secondary/80 to-brand-border/60
+                  border border-brand-border rounded-full px-3 py-2">
+        <a href="index.html" data-nav-link data-page="home"
+           class="desktop-nav-link px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted
+                  transition-colors duration-300 hover:text-white hover:bg-brand-orange hover:font-semibold">
+          Home
         </a>
-        
-        <div class="mega-menu-panel" id="megaPanel">
+        <a href="about.html" data-nav-link data-page="about"
+           class="desktop-nav-link px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted
+                  transition-colors duration-300 hover:text-white hover:bg-brand-orange hover:font-semibold">
+          About us
+        </a>
+
+        <!-- Services / Mega Menu trigger -->
+        <div class="relative" id="servicesWrapper">
+          <button id="servicesToggle" type="button" data-nav-link data-page="services"
+             class="desktop-nav-link flex items-center gap-1 px-[18px] py-[10px] rounded-full text-sm font-medium
+                    text-brand-muted transition-colors duration-300
+                    hover:text-white hover:bg-brand-orange hover:font-semibold"
+             aria-expanded="false" aria-controls="megaPanel">
+            Services
+            <svg class="w-3 h-3 mt-px transition-transform duration-300" id="servicesChevron"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+
+          <!-- Mega Menu Panel -->
+          <div id="megaPanel"
+               class="mega-menu-panel absolute top-[70px] left-1/2 w-[950px] max-w-[90vw]
+                      grid grid-cols-4 gap-6 p-9 rounded-2xl
+                      bg-gradient-to-br from-brand-secondary/95 to-brand-border/90
+                      backdrop-blur-xl border border-brand-border border-t-2 border-t-brand-orange
+                      shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+
             <!-- Column 1 -->
-            <div class="mega-col">
-               <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> Full service management</a>
-                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> Advertising (PPC) management</a>
-                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> Amazon SEO</a>
-                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> Amazon account audit</a>
-                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> SOPs</a>
-                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> All services</a>
-                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> Consulting</a>
-                <a href="https://abdullah-gull.github.io/services.html"><i class="fa fa-arrow-circle-right"></i> Book a coaching call</a>
+            <div class="flex flex-col">
+              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">
+                <i class="fa fa-arrow-circle-right"></i> Full service management
+              </a>
+              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">
+                <i class="fa fa-arrow-circle-right"></i> Advertising (PPC) management
+              </a>
+              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">
+                <i class="fa fa-arrow-circle-right"></i> Amazon SEO
+              </a>
+              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">
+                <i class="fa fa-arrow-circle-right"></i> Amazon account audit
+              </a>
+              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">
+                <i class="fa fa-arrow-circle-right"></i> SOPs
+              </a>
+              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">
+                <i class="fa fa-arrow-circle-right"></i> All services
+              </a>
+              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">
+                <i class="fa fa-arrow-circle-right"></i> Consulting
+              </a>
+              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">
+                <i class="fa fa-arrow-circle-right"></i> Book a coaching call
+              </a>
             </div>
 
             <!-- Column 2 -->
-            <div class="mega-col border-left">
-                <h4><i class="fa fa-arrow-circle-right"></i> Design</h4>
-                <a href="https://abdullah-gull.github.io/services.html">Brand guidelines</a>
-                <a href="https://abdullah-gull.github.io/services.html">Brand story</a>
-                <a href="https://abdullah-gull.github.io/services.html">Brand store</a>
-                <a href="https://abdullah-gull.github.io/services.html">Listing images</a>
-                <a href="https://abdullah-gull.github.io/services.html">Enhanced brand content A+</a>
-                <a href="https://abdullah-gull.github.io/services.html">Main image CTR hack</a>
-                <a href="https://abdullah-gull.github.io/services.html">Listing optimization</a>
-                <a href="https://abdullah-gull.github.io/services.html">Full listing optimization</a>
+            <div class="flex flex-col border-l border-brand-border pl-6">
+              <h4 class="text-brand-orange text-[15px] font-bold uppercase tracking-wider mb-[18px]">Design</h4>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Brand guidelines</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Brand story</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Brand store</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Listing images</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Enhanced brand content A+</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Main image CTR hack</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Listing optimization</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Full listing optimization</a>
             </div>
 
             <!-- Column 3 -->
-            <div class="mega-col border-left">
-               <h4><i class="fa fa-arrow-circle-right"></i> Troubleshooting</h4>
-                <a href="https://abdullah-gull.github.io/services.html">Listing reinstatement</a>
-                <a href="https://abdullah-gull.github.io/services.html">Account suspension</a>
-                <a href="https://abdullah-gull.github.io/services.html">PPC Advertising audit</a>
-                <a href="https://abdullah-gull.github.io/services.html">Brand name change</a>
-                <a href="https://abdullah-gull.github.io/services.html">Troubleshooting hours</a>
-                <a href="https://abdullah-gull.github.io/services.html">UPC to GS1 change</a>
+            <div class="flex flex-col border-l border-brand-border pl-6">
+              <h4 class="text-brand-orange text-[15px] font-bold uppercase tracking-wider mb-[18px]">Troubleshooting</h4>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Listing reinstatement</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Account suspension</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">PPC Advertising audit</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Brand name change</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Troubleshooting hours</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">UPC to GS1 change</a>
             </div>
 
             <!-- Column 4 -->
-            <div class="mega-col border-left">
-                <h4><i class="fa fa-arrow-circle-right"></i> Other services</h4>
-                <a href="https://abdullah-gull.github.io/services.html">Amazon DSP</a>
-                <a href="https://abdullah-gull.github.io/services.html">Trademark registration</a>
-                <a href="https://abdullah-gull.github.io/services.html">Vendor Central full service</a>
-                <a href="https://abdullah-gull.github.io/services.html">Walmart Account Audit <span class="badge-new">NEW</span></a>
-                <a href="https://abdullah-gull.github.io/services.html">Walmart Advertising Audit <span class="badge-new">NEW</span></a>
-                <div class="divider"></div>
-                <a href="https://abdullah-gull.github.io/services.html" class="free-tools"><i class="fa fa-arrow-circle-right"></i> Free Amazon tools</a>
+            <div class="flex flex-col border-l border-brand-border pl-6">
+              <h4 class="text-brand-orange text-[15px] font-bold uppercase tracking-wider mb-[18px]">Other services</h4>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Amazon DSP</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Trademark registration</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Vendor Central full service</a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">
+                Walmart Account Audit <span class="ml-1 text-[10px] font-bold text-brand-orange border border-brand-orange rounded px-1 py-px">NEW</span>
+              </a>
+              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">
+                Walmart Advertising Audit <span class="ml-1 text-[10px] font-bold text-brand-orange border border-brand-orange rounded px-1 py-px">NEW</span>
+              </a>
+              <div class="h-px bg-brand-border my-2"></div>
+              <a href="services.html" class="flex items-center gap-2 py-[10px] text-sm text-brand-orange font-semibold hover:text-brand-orangeLight transition-colors">
+                <i class="fa fa-arrow-circle-right"></i> Free Amazon tools
+              </a>
             </div>
+          </div>
         </div>
+
+        <a href="blog.html" data-nav-link data-page="blog"
+           class="desktop-nav-link px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted
+                  transition-colors duration-300 hover:text-white hover:bg-brand-orange hover:font-semibold">
+          Blog
+        </a>
+        <a href="contact.html" data-nav-link data-page="contact"
+           class="desktop-nav-link px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted
+                  transition-colors duration-300 hover:text-white hover:bg-brand-orange hover:font-semibold">
+          Contact us
+        </a>
+      </nav>
+
+      <!-- Get In Touch -->
+      <a href="meeting.html"
+         class="shrink-0 text-brand-orange border border-brand-orange rounded-full
+                px-[22px] py-[10px] text-[13px] font-bold tracking-wide
+                transition-all duration-300 hover:text-white hover:bg-brand-orange
+                hover:shadow-[0_8px_24px_rgba(255,140,0,0.3)]">
+        Get In Touch
+      </a>
+    </div>
+  </div>
+</header>
+<div id="desktopSpacer" class="hidden lg:block"></div>
+
+<!-- =========================================================
+     MOBILE HEADER (visible below lg breakpoint)
+     ========================================================= -->
+<header id="mobileHeaderWrap" class="lg:hidden fixed top-0 inset-x-0 z-[999] w-full bg-brand-bg text-brand-text border-b border-brand-border">
+  <!-- Top row: logo + hamburger -->
+  <div class="flex items-center justify-between px-4 py-3">
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg"
+           alt="Abdullah Gull - Amazon PPC & E-commerce Consultant"
+           class="w-9 h-9 rounded-full object-cover border-2 border-brand-orange">
+      <span class="font-bold text-lg tracking-tight text-brand-text">
+        Abdullah <span class="text-brand-orange">Gull</span>
+      </span>
+    </a>
+
+    <button id="mobileMenuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"
+            class="w-11 h-11 rounded-full bg-brand-orange flex items-center justify-center
+                   shadow-md active:scale-95 transition-transform">
+      <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Bottom row: quick links -->
+  <div class="flex items-center gap-6 px-4 pb-3">
+    <a href="quote.html" class="text-sm font-medium text-brand-muted hover:text-brand-orange transition-colors">Fast quote</a>
+    <a href="contact.html" class="text-sm font-medium text-brand-muted hover:text-brand-orange transition-colors">Contact Us</a>
+  </div>
+</header>
+<div id="mobileSpacer" class="lg:hidden"></div>
+
+<!-- =========================================================
+     MOBILE FULL-SCREEN MENU
+     ========================================================= -->
+<div id="mobileMenu"
+     class="lg:hidden fixed inset-0 z-[1000] bg-brand-bg text-brand-text overflow-y-auto">
+
+  <!-- Close button -->
+  <div class="flex justify-end px-5 pt-5">
+    <button id="mobileMenuClose" type="button" aria-label="Close menu"
+            class="w-11 h-11 rounded-full bg-brand-orange flex items-center justify-center
+                   shadow-md active:scale-95 transition-transform">
+      <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="px-5 pt-2 pb-16">
+
+    <a href="index.html" data-nav-link data-page="home" class="mobile-nav-link block py-4 border-b border-brand-border text-[15px] font-medium">Home</a>
+    <a href="about.html" data-nav-link data-page="about" class="mobile-nav-link block py-4 border-b border-brand-border text-[15px] font-medium">About us</a>
+    <a href="services.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">Full service management</a>
+    <a href="services.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">Advertising (PPC) management</a>
+    <a href="services.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">Amazon SEO</a>
+    <a href="services.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">Amazon account audit</a>
+
+    <!-- Accordion: Design -->
+    <div class="accordion-item border-b border-brand-border">
+      <button type="button" class="accordion-trigger w-full flex items-center justify-between py-4 text-[15px] font-medium text-left">
+        Design
+        <svg class="accordion-icon w-4 h-4 text-brand-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+        </svg>
+      </button>
+      <div class="accordion-panel">
+        <div class="flex flex-col pb-3 pl-3">
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Brand guidelines</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Brand story</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Brand store</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Listing images</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Enhanced brand content A+</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Main image CTR hack</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Listing optimization</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Full listing optimization</a>
+        </div>
+      </div>
     </div>
 
-    <a href="blog.html" class="nav-link">Blog</a>
-    <a href="contact.html" class="nav-link">Contact us</a>
-</nav>
-        
-        <div class="header-right">
-            <a href="meeting.html" class="get-in-touch-btn">Get In Touch</a>
+    <!-- Accordion: Troubleshooting -->
+    <div class="accordion-item border-b border-brand-border">
+      <button type="button" class="accordion-trigger w-full flex items-center justify-between py-4 text-[15px] font-medium text-left">
+        Troubleshooting
+        <svg class="accordion-icon w-4 h-4 text-brand-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+        </svg>
+      </button>
+      <div class="accordion-panel">
+        <div class="flex flex-col pb-3 pl-3">
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Listing reinstatement</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Account suspension</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">PPC Advertising audit</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Brand name change</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Troubleshooting hours</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">UPC to GS1 change</a>
         </div>
+      </div>
     </div>
+
+    <!-- Accordion: SOPs -->
+    <div class="accordion-item border-b border-brand-border">
+      <button type="button" class="accordion-trigger w-full flex items-center justify-between py-4 text-[15px] font-medium text-left">
+        SOPs
+        <svg class="accordion-icon w-4 h-4 text-brand-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+        </svg>
+      </button>
+      <div class="accordion-panel">
+        <div class="flex flex-col pb-3 pl-3">
+          <a href="services.html" class="py-2 text-sm text-brand-muted">All SOPs</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Custom SOP build</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accordion: Other services -->
+    <div class="accordion-item border-b border-brand-border">
+      <button type="button" class="accordion-trigger w-full flex items-center justify-between py-4 text-[15px] font-medium text-left">
+        Other services
+        <svg class="accordion-icon w-4 h-4 text-brand-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+        </svg>
+      </button>
+      <div class="accordion-panel">
+        <div class="flex flex-col pb-3 pl-3">
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Amazon DSP</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Trademark registration</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Vendor Central full service</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted flex items-center gap-2">
+            Walmart Account Audit <span class="text-[10px] font-bold text-brand-orange border border-brand-orange rounded px-1 py-px">NEW</span>
+          </a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted flex items-center gap-2">
+            Walmart Advertising Audit <span class="text-[10px] font-bold text-brand-orange border border-brand-orange rounded px-1 py-px">NEW</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <a href="services.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">All services</a>
+    <a href="meeting.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">Book a coaching call</a>
+    <a href="blog.html" data-nav-link data-page="blog" class="mobile-nav-link block py-4 border-b border-brand-border text-[15px] font-medium">Blog</a>
+    <a href="services.html" class="block py-4 border-b border-brand-border text-[15px] font-medium text-brand-orange">Free Amazon tools</a>
+    <a href="contact.html" data-nav-link data-page="contact" class="mobile-nav-link block py-4 text-[15px] font-medium">Contact us</a>
+
+    <a href="meeting.html"
+       class="mt-8 block text-center bg-brand-orange text-white font-semibold
+              rounded-full py-[14px] hover:bg-brand-orangeLight transition-colors">
+      Get In Touch
+    </a>
+  </nav>
+</div>
+
+
+<script>
+  // ---------- Desktop Mega Menu ----------
+  const servicesWrapper = document.getElementById('servicesWrapper');
+  const servicesToggle  = document.getElementById('servicesToggle');
+  const servicesChevron = document.getElementById('servicesChevron');
+  const megaPanel        = document.getElementById('megaPanel');
+
+  function openMegaMenu() {
+    megaPanel.classList.add('open');
+    servicesToggle.setAttribute('aria-expanded', 'true');
+    servicesChevron.style.transform = 'rotate(180deg)';
+  }
+  function closeMegaMenu() {
+    megaPanel.classList.remove('open');
+    servicesToggle.setAttribute('aria-expanded', 'false');
+    servicesChevron.style.transform = 'rotate(0deg)';
+  }
+  function toggleMegaMenu(e) {
+    e.stopPropagation();
+    if (megaPanel.classList.contains('open')) {
+      closeMegaMenu();
+    } else {
+      openMegaMenu();
+    }
+  }
+
+  servicesToggle.addEventListener('click', toggleMegaMenu);
+  servicesWrapper.addEventListener('mouseenter', openMegaMenu);
+  servicesWrapper.addEventListener('mouseleave', closeMegaMenu);
+
+  document.addEventListener('click', (e) => {
+    if (!servicesWrapper.contains(e.target)) closeMegaMenu();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMegaMenu();
+  });
+
+  // ---------- Mobile Full-Screen Menu ----------
+  const mobileMenu       = document.getElementById('mobileMenu');
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileMenuClose  = document.getElementById('mobileMenuClose');
+
+  function toggleMobileMenu(forceState) {
+    const isOpen = typeof forceState === 'boolean' ? forceState : !mobileMenu.classList.contains('open');
+    mobileMenu.classList.toggle('open', isOpen);
+    mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  mobileMenuToggle.addEventListener('click', () => toggleMobileMenu(true));
+  mobileMenuClose.addEventListener('click', () => toggleMobileMenu(false));
+
+  // ---------- Mobile Accordion (+ / x sub-categories) ----------
+  document.querySelectorAll('.accordion-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.accordion-item');
+      const isOpen = item.classList.contains('open');
+
+      // close other open accordions for a clean single-open behaviour
+      document.querySelectorAll('.accordion-item.open').forEach((openItem) => {
+        if (openItem !== item) openItem.classList.remove('open');
+      });
+
+      item.classList.toggle('open', !isOpen);
+    });
+  });
+
+  // ---------- Active nav link (highlights the current open page) ----------
+  // How this works when you reuse this header on a NEW page:
+  // 1) Copy this whole header block (both <header> tags + the mobile menu + this <script>) onto the new page.
+  // 2) On that page's <body> tag, set data-current-page to match ONE of:
+  //      "home"  "about"  "services"  "blog"  "contact"
+  //    e.g. on about.html:      <body ... data-current-page="about">
+  //         on services.html:   <body ... data-current-page="services">
+  //         on a page that is none of these (like meeting.html):
+  //                              <body ... data-current-page="">  (or just omit it)
+  // That's it — no filename or URL logic involved, so it works no matter how the
+  // page is hosted (clean URLs, subfolders, trailing slashes, etc.)
+  function setActiveNavLinks() {
+    const current = document.body.getAttribute('data-current-page') || '';
+
+    document.querySelectorAll('[data-nav-link]').forEach((link) => {
+      const linkPage = link.getAttribute('data-page') || '';
+      const isActive = current !== '' && linkPage === current;
+
+      if (link.classList.contains('desktop-nav-link')) {
+        link.classList.toggle('bg-brand-orange', isActive);
+        link.classList.toggle('text-white', isActive);
+        link.classList.toggle('font-semibold', isActive);
+        link.classList.toggle('text-brand-muted', !isActive);
+        link.setAttribute('aria-current', isActive ? 'page' : 'false');
+      }
+
+      if (link.classList.contains('mobile-nav-link')) {
+        link.classList.toggle('text-brand-orange', isActive);
+        link.setAttribute('aria-current', isActive ? 'page' : 'false');
+      }
+    });
+  }
+
+  setActiveNavLinks();
+
+  // ---------- Sticky header background + spacer sync on scroll/resize ----------
+  const desktopHeaderWrap = document.getElementById('desktopHeaderWrap');
+  const desktopSpacer     = document.getElementById('desktopSpacer');
+  const mobileHeaderWrap  = document.getElementById('mobileHeaderWrap');
+  const mobileSpacer      = document.getElementById('mobileSpacer');
+
+  function syncSpacers() {
+    if (desktopHeaderWrap && desktopSpacer) {
+      desktopSpacer.style.height = desktopHeaderWrap.offsetHeight + 'px';
+    }
+    if (mobileHeaderWrap && mobileSpacer) {
+      mobileSpacer.style.height = mobileHeaderWrap.offsetHeight + 'px';
+    }
+  }
+
+  function handleScroll() {
+    const scrolled = window.scrollY > 12;
+    if (desktopHeaderWrap) desktopHeaderWrap.classList.toggle('scrolled', scrolled);
+    if (mobileHeaderWrap) mobileHeaderWrap.classList.toggle('scrolled', scrolled);
+  }
+
+  window.addEventListener('load', syncSpacers);
+  window.addEventListener('resize', syncSpacers);
+  window.addEventListener('scroll', handleScroll);
+  syncSpacers();
+  handleScroll();
+</script>
 </header>
 
     
