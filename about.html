@@ -83,251 +83,436 @@
   ]
 }
 </script>   
-     <style>
+      <!-- Your Design Styles (Keep all your CSS here) -->
+<style>
     /* --- GLOBAL THEME VARIABLES --- */
-    :root {
-        --primary-orange: #FF8C00; /* Deep Premium Orange */
-        --dark-text: #1A1D1F;      /* Professional Soft Black */
-        --light-gray: #F8F8F8;     /* Light Gray for Capsules */
-        --white: #FFFFFF;
-        --border-color: #EDEDED;   /* Clean Border */
-        --glass-white: rgba(255, 255, 255, 0.9);
+:root {
+    --primary-orange: #FF8C00;
+    --dark-bg: #0B0C0E;
+    --dark-secondary: #1A1B1F;
+    --light-text: #F5F5F7;
+    --subtle-gray: #8E8E93;
+    --border-color: #2A2B2F;
+    --glass-dark: rgba(255, 255, 255, 0.05);
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* --- HEADER SECTION --- */
+.main-header {
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+    z-index: 1000;
+    background: var(--dark-bg);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(26, 27, 31, 0.5), rgba(42, 43, 47, 0.3));
+    backdrop-filter: blur(20px);
+    padding: 12px 30px;
+    border-radius: 100px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.header-container:hover {
+    border-color: rgba(255, 140, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(255, 140, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-link {
+    text-decoration: none !important;
+    color: var(--light-text) !important;
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.logo-area img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-orange);
+    object-fit: cover;
+    transition: all 0.3s var(--transition-smooth);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.1);
+}
+
+.logo-area img:hover {
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+}
+
+.logo-text span {
+    color: var(--primary-orange);
+}
+
+/* --- NAVIGATION CAPSULE (FIXED OVERLAPPING) --- */
+.nav-capsule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6));
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 50px;
+    gap: 4px;
+    position: relative;
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.nav-link {
+    color: var(--subtle-gray) !important;
+    text-decoration: none !important;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: color 0.3s var(--transition-smooth), background-color 0.3s var(--transition-smooth);
+    background: transparent !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Slide animation logic removed to completely fix the sticky background issue */
+.nav-link::before {
+    content: none !important;
+}
+
+/* Safe and Clean Active/Hover Background allocation */
+.nav-link.active,
+.nav-link:hover {
+    color: #fff !important;
+    font-weight: 600;
+    background-color: var(--primary-orange) !important;
+}
+
+/* --- GET IN TOUCH BUTTON --- */
+.get-in-touch-btn {
+    text-decoration: none;
+    color: var(--primary-orange) !important;
+    border: 1.5px solid var(--primary-orange);
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+
+.get-in-touch-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--primary-orange);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: width 0.4s, height 0.4s;
+}
+
+.get-in-touch-btn:hover {
+    color: #fff !important;
+    box-shadow: 0 8px 24px rgba(255, 140, 0, 0.3);
+}
+
+.get-in-touch-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* --- MEGA MENU PANEL --- */
+.mega-menu-panel {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    background: linear-gradient(135deg, rgba(26, 27, 31, 0.95), rgba(42, 43, 47, 0.9));
+    backdrop-filter: blur(20px);
+    width: 950px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-top: 2px solid var(--primary-orange);
+    border-radius: 16px;
+    padding: 35px;
+    z-index: 9999;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    pointer-events: none;
+    transition: all 0.4s var(--transition-smooth);
+}
+
+.mega-menu-panel.show-menu {
+    display: grid !important;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.mega-col h4 {
+    color: var(--primary-orange);
+    font-size: 15px;
+    margin-bottom: 18px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.mega-col a {
+    color: var(--subtle-gray);
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    font-size: 14px;
+    transition: all 0.2s var(--transition-smooth);
+    position: relative;
+}
+
+.mega-col a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-orange);
+    transition: width 0.3s var(--transition-smooth);
+}
+
+.mega-col a:hover {
+    color: var(--primary-orange);
+}
+
+.mega-col a:hover::before {
+    width: 30px;
+}
+
+.mega-col.border-left {
+    border-left: 1px solid var(--border-color);
+    padding-left: 25px;
+}
+
+/* --- FOOTER SOCIAL ICONS --- */
+.social-icon-box {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, rgba(42, 43, 47, 0.8), rgba(26, 27, 31, 0.8)) !important;
+    color: var(--primary-orange) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 50% !important;
+    width: 44px;
+    height: 44px;
+    transition: all 0.3s var(--transition-smooth);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.social-icon-box:hover {
+    background: linear-gradient(135deg, #FF8C00, #FFB84D) !important;
+    color: #fff !important;
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+    transform: translateY(-4px);
+    border-color: rgba(255, 140, 0, 0.5) !important;
+}
+
+/* --- GENERAL TEXT & PARAGRAPHS --- */
+p {
+    color: var(--subtle-gray) !important;
+    font-size: 15px !important;
+    line-height: 1.7;
+}
+
+/* --- BUTTON/LINK HOVERS --- */
+.btn-gold {
+    background-color: var(--primary-orange) !important;
+    color: #fff !important;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s var(--transition-smooth) !important;
+    border: 1px solid var(--primary-orange);
+}
+
+.btn-gold:hover {
+    background-color: #FFB84D !important;
+    border-color: #FFB84D;
+    box-shadow: 0 12px 28px rgba(255, 140, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1024px) {
+    .mega-menu-panel {
+        width: 85vw !important;
+        left: 50% !important;
+        transform: translateX(-50%) translateY(10px);
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 28px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 10px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
     }
 
-    * { 
-        margin: 0; 
-        padding: 0; 
-        box-sizing: border-box; 
-        font-family: 'Inter', sans-serif; 
+    .nav-capsule {
+        width: 100%;
+        order: 3;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        padding: 6px 8px;
     }
 
-    body { 
-        background-color: var(--white); 
-        color: var(--dark-text); 
-        overflow-x: hidden; 
+    .nav-link {
+        padding: 8px 14px;
+        font-size: 13px;
+        margin: 3px;
     }
 
-    /* --- HEADER SECTION --- */
-    .main-header { 
-        position: relative; 
-        width: 100%; 
-        padding-top: 20px; 
-        z-index: 1000; 
-        background: var(--white); 
+    .get-in-touch-btn {
+        padding: 8px 18px;
+        font-size: 12px;
     }
 
-    .header-container { 
-        max-width: 1200px; 
-        margin: 0 auto; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        background: var(--glass-white); 
-        backdrop-filter: blur(15px); 
-        padding: 10px 25px; 
-        border-radius: 100px; 
-        border: 1px solid var(--border-color);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.04); /* Soft shadow for white theme */
+    .mega-menu-panel {
+        width: 90vw !important;
+        left: 50% !important;
+        transform: translateX(-50%) translateY(10px);
+        grid-template-columns: 1fr !important;
+        padding: 24px;
+        top: 65px;
     }
 
-    .logo-area { display: flex; align-items: center; gap: 10px; }
-    .logo-link { text-decoration: none !important; color: var(--dark-text) !important; }
-    
-    .logo-area img { 
-        width: 40px; 
-        height: 40px; 
-        border-radius: 50%; 
-        border: 2px solid var(--primary-orange); 
-        object-fit: cover; 
-    }
-    
-    .logo-text { font-weight: 700; font-size: 18px; }
-    .logo-text span { color: var(--primary-orange); }
-
-    /* --- NAVIGATION CAPSULE --- */
-    .nav-capsule { 
-        display: flex; 
-        align-items: center;
-        justify-content: center;
-        background: var(--light-gray); 
-        border: 1px solid var(--border-color);
-        padding: 5px 15px; 
-        border-radius: 50px; 
-        gap: 10px; 
-        position: relative;
+    .mega-col.border-left {
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        padding-left: 0;
+        padding-top: 16px;
+        margin-top: 16px;
     }
 
-    .nav-link { 
-        color: #555 !important; 
-        text-decoration: none !important; 
-        padding: 10px 18px; 
-        font-size: 14px; 
-        font-weight: 500;
-        border-radius: 50px; 
-        transition: 0.3s; 
-        background: transparent !important;
+    .logo-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 8px 15px;
+        border-radius: 20px;
     }
 
-    .nav-link.active, .nav-link:hover { 
-        background: var(--primary-orange) !important; 
-        color: #fff !important; 
-        font-weight: 600; 
+    .logo-area img {
+        width: 32px;
+        height: 32px;
     }
 
-    /* --- GET IN TOUCH BUTTON --- */
-    .get-in-touch-btn { 
-        text-decoration: none; 
-        color: var(--primary-orange) !important; 
-        border: 1.5px solid var(--primary-orange); 
-        padding: 8px 20px; 
-        border-radius: 50px; 
-        font-size: 13px; 
-        font-weight: 700; 
-        transition: 0.3s; 
+    .logo-text {
+        font-size: 14px;
     }
 
-    .get-in-touch-btn:hover { 
-        background: var(--primary-orange); 
-        color: #fff !important; 
-        box-shadow: 0 5px 15px rgba(255, 140, 0, 0.2);
+    .nav-capsule {
+        width: 100%;
+        gap: 2px;
     }
 
-    /* --- MEGA MENU PANEL --- */
-    .mega-menu-panel { 
-        display: none; 
-        position: absolute; 
-        top: 60px; 
-        left: 50%; 
-        transform: translateX(-50%); 
-        background: var(--white); 
-        width: 950px; 
-        box-shadow: 0px 20px 40px rgba(0,0,0,0.08); 
-        border: 1px solid var(--border-color); 
-        border-top: 3px solid var(--primary-orange);
-        border-radius: 15px; 
-        padding: 30px; 
-        z-index: 9999; 
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 20px; 
+    .nav-link {
+        padding: 7px 10px;
+        font-size: 12px;
+        margin: 2px;
     }
 
-    .mega-menu-panel.show-menu { display: grid !important; }
-
-    .mega-col h4 { 
-        color: var(--primary-orange); 
-        font-size: 16px; 
-        margin-bottom: 15px; 
-        font-weight: bold; 
+    .get-in-touch-btn {
+        padding: 7px 15px;
+        font-size: 11px;
     }
 
-    .mega-col a { 
-        color: #666; 
-        text-decoration: none; 
-        display: block; 
-        padding: 8px 0; 
-        font-size: 13.5px; 
-        transition: 0.2s; 
+    .mega-menu-panel {
+        width: 95vw !important;
+        padding: 18px;
+        gap: 12px;
     }
 
-    .mega-col a:hover { 
-        color: var(--primary-orange); 
-        padding-left: 5px; 
+    .mega-col h4 {
+        font-size: 13px;
+        margin-bottom: 12px;
     }
 
-    .mega-col.border-left { 
-        border-left: 1px solid var(--border-color); 
-        padding-left: 20px; 
+    .mega-col a {
+        font-size: 12px;
+        padding: 8px 0;
     }
 
-    /* --- HERO SECTION --- */
-    .hero-split {
-        min-height: 80vh;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 60px 8%;
-        gap: 40px;
-        background-color: var(--white);
-    }
-
-    .hero-content h1 { font-size: 60px; line-height: 1.1; margin-bottom: 20px; color: var(--dark-text); }
-    .hero-content h1 span { color: var(--primary-orange); }
-    
-    .badge-gold { 
-        color: var(--primary-orange); 
-        letter-spacing: 4px; 
-        font-weight: 800; 
-        margin-bottom: 10px; 
-        border-left: 3px solid var(--primary-orange); 
-        padding-left: 10px; 
-    }
-    
-    .hero-subtext { color: #666; margin-bottom: 30px; font-size: 18px; }
-
-    .btn-primary { 
-        background: var(--primary-orange); 
-        color: #fff; 
-        padding: 15px 30px; 
-        border-radius: 50px; 
-        text-decoration: none; 
-        font-weight: 700; 
-        display: inline-block; 
-        transition: 0.3s;
-    }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 140, 0, 0.3); }
-
-    .image-wrapper img { 
-        width: 400px; 
-        border-radius: 20px; 
-        border: 1px solid var(--border-color); 
-        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-    }
-
-    /* --- REFINEMENTS & MOBILE FIX --- */
-    @media (max-width: 950px) {
-        .mega-menu-panel {
-            width: 90vw !important; 
-            left: 5vw !important;
-            transform: none !important;
-            grid-template-columns: repeat(2, 1fr) !important;
-            position: absolute !important;
-            background: var(--white) !important;
-        }
-
-        .nav-capsule {
-            display: flex !important;
-            flex-wrap: wrap !important;
-            justify-content: center !important;
-            height: auto !important;
-            padding: 10px !important;
-        }
-
-        .nav-link { font-size: 13px !important; margin: 5px !important; }
-        .hero-split { flex-direction: column; text-align: center; }
-        .hero-content h1 { font-size: 40px; }
-    }
-
-    /* Footer Social Icons */
     .social-icon-box {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        background: var(--light-gray) !important;
-        color: var(--primary-orange) !important;
-        border-radius: 50% !important;
-        width: 40px; height: 40px;
-        transition: 0.3s;
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 16px;
     }
-    .social-icon-box:hover { background: var(--primary-orange) !important; color: #fff !important; }
+}
 
-    p { color: #555555 !important; font-size: 15px !important; line-height: 1.6; }
+/* --- SMOOTH SCROLLING --- */
+html {
+    scroll-behavior: smooth;
+}
 
-    /* Button/Link Hovers */
-    .btn-gold:hover {
-        background-color: var(--primary-orange) !important;
-        color: #fff !important;
-        transition: all 0.3s ease-in-out !important;
-    }
+/* --- LINKS DEFAULT --- */
+a {
+    transition: all 0.3s var(--transition-smooth);
+}
+
+/* --- FOCUS STATES FOR ACCESSIBILITY --- */
+button:focus,
+a:focus {
+    outline: 2px solid var(--primary-orange);
+    outline-offset: 2px;
+}
 </style>
     <link rel="stylesheet" href="style.css">
 
@@ -338,13 +523,13 @@
     <header class="main-header">
     <div class="header-container">
         <div class="logo-area">
-            <img src="https://abdullah-gull.github.io/abdullah-gull.jpg" alt="Abdullah Gull">
+            <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" alt="Abdullah Gull">
             <a href="index.html" class="logo-link">Abdullah <span>Gull</span></a>
         </div>
 
      <nav class="nav-capsule">
     <a href="index.html" class="nav-link">Home</a>
-    <a href="about.html" class="nav-link">About us</a>
+    <a href="about.html" class="nav-link active">About me</a>
 
     <!-- Services Clickable Wrapper -->
     <div class="dropdown-item-wrapper" id="servicesToggle" onclick="toggleMegaMenu(event)">
@@ -415,443 +600,85 @@
 
     
     <body> 
-<!-- ENHANCED ABOUT & PURPOSE SECTION - MATCHING IMAGE REFERENCE -->
-<section class="about-section">
-    <div class="about-container">
-        <!-- Left Column: Content -->
-        <div class="about-content">
-            <!-- Purpose Tag -->
-            <span class="purpose-tag">OUR PURPOSE</span>
+<script src="https://cdn.tailwindcss.com"></script>
+    <section class="relative min-h-[650px] w-full py-24 px-4 sm:px-8 lg:px-16 bg-[#060606] text-white overflow-hidden font-sans flex items-center justify-center select-none">
+      
+      <!-- ========================================== -->
+      <!-- BACKGROUND ARTWORK & ABSTRACT GLOW EFFECTS -->
+      <!-- ========================================== -->
+      
+      <!-- LEFT INNER ARC GLOW & DOT GRID MATRIX -->
+      <div class="absolute inset-y-0 left-0 w-full max-w-xl pointer-events-none hidden md:block select-none">
+        <!-- Orange Dotted Pattern Matrix Layer -->
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ff8c00_1.5px,transparent_1.5px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_at_left,white_60%,transparent_100%)]"></div>
+        <!-- Huge Glowing Neon Curve Arc Border Layer -->
+        <div class="absolute top-1/2 -translate-y-1/2 -left-[450px] w-[650px] h-[650px] rounded-full border-[3px] border-transparent border-r-[#ff8c00] shadow-[15px_0_50px_rgba(255,140,0,0.25)] opacity-80"></div>
+        <div class="absolute top-1/2 -translate-y-1/2 -left-[452px] w-[654px] h-[654px] rounded-full border-[1px] border-transparent border-r-[#e65c00]/40 opacity-90"></div>
+      </div>
 
-            <!-- Main Headline with Red Border Box -->
-            <div class="headline-box">
-                <h1>
-                    Empowering brands to grow faster on <span class="highlight-amazon">Amazon</span> by boosting visibility, increasing sales and streamlining operations for long-term success.
-                </h1>
-            </div>
+      <!-- RIGHT SIDE: GIANT FADED STRATEGY WATERMARK IMAGE -->
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-full max-w-xl opacity-[0.06] md:opacity-[0.09] pointer-events-none transform translate-x-16 select-none z-0">
+        <!-- Right Dotted Pattern overlay matching layout -->
+        <div class="absolute inset-0 opacity-30 bg-[radial-gradient(#ff8c00_1.5px,transparent_1.5px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_at_right,white_50%,transparent_100%)] -z-10"></div>
+        
+        <!-- Strategy Logo Asset Replacement -->
+        <img 
+          src="https://abdullah-gull.github.io/strategy.png?v=101" 
+          alt="Strategy Backdrop" 
+          class="w-full h-auto object-contain mix-blend-screen filter brightness-75 contrast-125"
+        />
+      </div>
 
-            <!-- Who I Am Section -->
-            <div class="who-i-am">
-                <span class="who-tag">Who I Am</span>
-                <h2>Amazon Strategy Builder</h2>
-                
-                <p>
-Success on Amazon isn't just about working; it’s about the right strategy. I haven’t come here simply to complete tasks, but to grow together with you. My experience and dedication have only one goal: to take your brand to a level where yours is the only name people mention.
-                </p>
-
-                <p>
-From managing every detail of your account to running ads that actually perform, I focus on one thing: results. I’ll simplify the Amazon mess for you and build a clear strategy that turns your brand’s potential into profit you can count on.
-                </p>
-
-                <a href="https://abdullah-gull.github.io/services.html" class="view-work-btn">
-                    View Work
-                </a>
-            </div>
+      <!-- ========================================== -->
+      <!-- CORE STRUCTURED MAIN CONTAINER BLOCK       -->
+      <!-- ========================================== -->
+      <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
+        
+        <!-- Pill Label Badge Indicator -->
+        <div class="inline-flex items-center gap-2 bg-black/60 border border-zinc-800 px-4 py-1.5 rounded-full shadow-md backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></span>
+          <span class="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-zinc-300 uppercase font-mono">OUR PURPOSE & WHO I AM</span>
         </div>
 
-        <!-- Right Column: Illustration -->
-        <div class="about-illustration">
-<img src="https://abdullah-gull.github.io/strategy.png?v=101" alt="Abdullah Gull - E-commerce and Amazon Strategy Illustration" class="illustration-image">
+        <!-- Headline Typography Hierarchy Block -->
+        <h1 class="text-3xl sm:text-[54px] font-extrabold tracking-tight leading-[1.1] text-white max-w-3xl mx-auto mt-8 font-sans">
+          Empowering brands to grow faster on <span class="text-[#ff8c00] relative">Amazon<span class="absolute left-0 bottom-1 w-full h-[3px] bg-[#ff8c00]/20 rounded-full"></span></span> by boosting visibility.
+        </h1>
+        
+        <!-- Small Centered Subtext Tag Anchor -->
+        <div class="flex items-center gap-3 mt-4 text-xs sm:text-sm font-bold tracking-widest text-zinc-400 uppercase font-mono">
+          <span class="text-[#ff8c00]/60">&mdash;</span>
+          Amazon Strategy Builder
+          <span class="text-[#ff8c00]/60">&mdash;</span>
         </div>
-    </div>
-</section>
 
-<!-- PREMIUM DARK MODE CSS -->
-<style>
-    /* --- ABOUT & PURPOSE SECTION --- */
-    .about-section {
-        background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
-        padding: 120px 5%;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        color: var(--light-text);
-        position: relative;
-        overflow: hidden;
-    }
+        <!-- Upper Body Description Paragraph Section -->
+        <p class="mt-8 max-w-2xl text-zinc-300 text-sm sm:text-[15px] leading-relaxed font-medium tracking-wide">
+          Success on Amazon isn't just about working; it's about the <span class="text-[#ff8c00] font-semibold">right strategy</span>. I haven't come here simply to complete tasks, but to grow together with you. My experience and dedication have only one goal: to take your brand to a level where yours is the only name people mention.
+        </p>
 
-    .about-section::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -10%;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%);
-        border-radius: 50%;
-        pointer-events: none;
-    }
+        <!-- Lower Dynamic Accent Border Text Box Wrapper -->
+        <div class="w-full max-w-3xl mt-6 p-5 sm:p-6 rounded-xl bg-zinc-900/10 border border-zinc-800/40 relative group overflow-hidden">
+          <!-- Subtle Inner Subtle Orange Glow Strip -->
+          <div class="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[#ff8c00]/40 to-transparent"></div>
+          
+          <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium tracking-wide">
+            From managing every detail of your account to running ads that actually perform, I focus on one thing: <span class="text-[#ff8c00] font-bold">results</span>. I'll simplify the Amazon mess for you and build a clear strategy that turns your brand's potential into profit you can count on.
+          </p>
+        </div>
 
-    .about-section::after {
-        content: '';
-        position: absolute;
-        bottom: -50%;
-        left: -10%;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(255, 140, 0, 0.06) 0%, transparent 70%);
-        border-radius: 50%;
-        pointer-events: none;
-    }
+        <!-- Interactive Animated Dynamic Conversion CTA Button -->
+        <div class="mt-8">
+          <a href="#" class="inline-flex items-center justify-center bg-gradient-to-r from-[#e65c00] to-[#ff8c00] text-black font-black text-xs sm:text-sm px-8 py-3.5 rounded-full tracking-widest uppercase transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-[#ff8c00]/20 hover:shadow-[#ff8c00]/35 group">
+            View Work
+            <span class="ml-2 flex items-center justify-center w-5 h-5 rounded-full bg-black/10 text-xs font-black transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>
+        </div>
 
-    .about-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        align-items: center;
-        gap: 80px;
-        position: relative;
-        z-index: 2;
-    }
-
-    /* --- PURPOSE TAG --- */
-    .purpose-tag {
-        display: inline-block;
-        font-size: 12px;
-        font-weight: 800;
-        color: var(--subtle-gray);
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-bottom: 32px;
-        animation: fadeInDown 0.8s ease-out;
-    }
-
-    /* --- HEADLINE BOX WITH RED BORDER --- */
-    .headline-box {
-        border: 3px solid var(--primary-orange);
-        padding: 40px;
-        border-radius: 12px;
-        margin-bottom: 60px;
-        background: rgba(255, 140, 0, 0.02);
-        animation: slideInUp 0.8s ease-out 0.1s both;
-    }
-
-    .about-content h1 {
-        font-size: 48px;
-        font-weight: 900;
-        line-height: 1.3;
-        margin: 0;
-        color: var(--light-text);
-        letter-spacing: -1px;
-    }
-
-    .about-content h1 .highlight-amazon {
-        background: linear-gradient(135deg, #FF8C00, #FFB84D);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-weight: 900;
-    }
-
-    /* --- WHO I AM SECTION --- */
-    .who-i-am {
-        animation: slideInUp 0.8s ease-out 0.2s both;
-    }
-
-    .who-tag {
-        display: inline-block;
-        font-size: 11px;
-        font-weight: 800;
-        text-transform: uppercase;
-        color: var(--light-text);
-        letter-spacing: 2px;
-        margin-bottom: 12px;
-    }
-
-    .who-i-am h2 {
-        font-size: 32px;
-        font-weight: 900;
-        color: var(--light-text);
-        margin: 12px 0 24px 0;
-        letter-spacing: -0.5px;
-    }
-
-    .who-i-am p {
-        font-size: 15px;
-        line-height: 1.8;
-        color: var(--subtle-gray);
-        margin-bottom: 20px;
-        max-width: 100%;
-    }
-
-    .who-i-am p:last-of-type {
-        margin-bottom: 32px;
-    }
-
-    /* --- VIEW WORK BUTTON --- */
-    .view-work-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 14px 36px;
-        background: linear-gradient(135deg, #FF8C00, #FFB84D);
-        color: #fff;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 14px;
-        letter-spacing: 0.5px;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 12px 28px rgba(255, 140, 0, 0.25);
-        position: relative;
-        overflow: hidden;
-        border: none;
-        cursor: pointer;
-    }
-
-    .view-work-btn::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .view-work-btn:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 16px 40px rgba(255, 140, 0, 0.35);
-    }
-
-    .view-work-btn:hover::before {
-        left: 100%;
-    }
-
-    /* --- ILLUSTRATION SECTION --- */
-    .about-illustration {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        animation: slideInRight 0.8s ease-out;
-    }
-
-    .illustration-image {
-        width: 100%;
-        max-width: 450px;
-        height: auto;
-        border-radius: 20px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 60px rgba(255, 140, 0, 0.1);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        display: block;
-    }
-
-    .illustration-image:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5), 0 0 80px rgba(255, 140, 0, 0.2);
-    }
-
-    /* --- ANIMATIONS --- */
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes slideInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes slideInRight {
-        from {
-            opacity: 0;
-            transform: translateX(40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    /* --- RESPONSIVE DESIGN --- */
-    @media (max-width: 1200px) {
-        .about-section {
-            padding: 100px 5%;
-        }
-
-        .about-container {
-            gap: 60px;
-        }
-
-        .headline-box {
-            padding: 32px;
-            margin-bottom: 48px;
-        }
-
-        .about-content h1 {
-            font-size: 42px;
-        }
-
-        .who-i-am h2 {
-            font-size: 28px;
-        }
-
-        .who-i-am p {
-            font-size: 14px;
-        }
-
-        .illustration-image {
-            max-width: 380px;
-        }
-    }
-
-    @media (max-width: 1024px) {
-        .about-container {
-            grid-template-columns: 1fr;
-            gap: 50px;
-        }
-
-        .about-illustration {
-            order: -1;
-        }
-
-        .headline-box {
-            padding: 28px;
-            margin-bottom: 40px;
-        }
-
-        .about-content h1 {
-            font-size: 36px;
-            line-height: 1.3;
-        }
-
-        .who-i-am h2 {
-            font-size: 26px;
-        }
-
-        .illustration-image {
-            max-width: 100%;
-            max-width: 340px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .about-section {
-            padding: 80px 5%;
-        }
-
-        .about-container {
-            gap: 40px;
-        }
-
-        .purpose-tag {
-            font-size: 11px;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-
-        .headline-box {
-            border: 2px solid var(--primary-orange);
-            padding: 24px;
-            margin-bottom: 32px;
-            border-radius: 8px;
-        }
-
-        .about-content h1 {
-            font-size: 28px;
-            line-height: 1.4;
-        }
-
-        .who-tag {
-            font-size: 10px;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-
-        .who-i-am h2 {
-            font-size: 22px;
-            margin: 8px 0 16px 0;
-        }
-
-        .who-i-am p {
-            font-size: 13px;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
-
-        .view-work-btn {
-            padding: 12px 28px;
-            font-size: 13px;
-        }
-
-        .illustration-image {
-            max-width: 280px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .about-section {
-            padding: 60px 5%;
-        }
-
-        .about-container {
-            gap: 30px;
-        }
-
-        .purpose-tag {
-            font-size: 10px;
-            letter-spacing: 1.5px;
-            margin-bottom: 16px;
-        }
-
-        .headline-box {
-            border: 2px solid var(--primary-orange);
-            padding: 20px;
-            margin-bottom: 28px;
-            border-radius: 6px;
-        }
-
-        .about-content h1 {
-            font-size: 22px;
-            line-height: 1.3;
-            letter-spacing: -0.3px;
-        }
-
-        .who-tag {
-            font-size: 9px;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-        }
-
-        .who-i-am h2 {
-            font-size: 18px;
-            margin: 6px 0 12px 0;
-        }
-
-        .who-i-am p {
-            font-size: 12px;
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
-
-        .who-i-am p:last-of-type {
-            margin-bottom: 20px;
-        }
-
-        .view-work-btn {
-            padding: 10px 24px;
-            font-size: 12px;
-        }
-
-        .illustration-image {
-            max-width: 240px;
-        }
-    }
-</style>
-
+      </div>
+    </section>
+  );
+}
        <style>
    <!-- PREMIUM DARK MODE CSS -->
 <style>
@@ -2249,7 +2076,7 @@ From managing every detail of your account to running ads that actually perform,
             <!-- Profile Avatar with YouTube Badge -->
             <div class="profile-section">
                 <div class="avatar-wrapper">
-                    <img src="https://abdullah-gull.github.io/abdullah-gull.jpg" alt="Abdullah Gull">
+                    <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" alt="Abdullah Gull">
                     <div class="youtube-badge">
                         <i class="fab fa-youtube"></i>
                     </div>
