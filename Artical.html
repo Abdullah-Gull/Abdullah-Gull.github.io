@@ -1,78 +1,126 @@
 <script src="https://cdn.tailwindcss.com"></script>
-    <section class="relative min-h-[650px] w-full py-24 px-4 sm:px-8 lg:px-16 bg-[#060606] text-white overflow-hidden font-sans flex items-center justify-center select-none">
-      
-      <!-- ========================================== -->
-      <!-- BACKGROUND ARTWORK & ABSTRACT GLOW EFFECTS -->
-      <!-- ========================================== -->
-      
-      <!-- LEFT INNER ARC GLOW & DOT GRID MATRIX -->
-      <div class="absolute inset-y-0 left-0 w-full max-w-xl pointer-events-none hidden md:block select-none">
-        <!-- Orange Dotted Pattern Matrix Layer -->
-        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ff8c00_1.5px,transparent_1.5px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_at_left,white_60%,transparent_100%)]"></div>
-        <!-- Huge Glowing Neon Curve Arc Border Layer -->
-        <div class="absolute top-1/2 -translate-y-1/2 -left-[450px] w-[650px] h-[650px] rounded-full border-[3px] border-transparent border-r-[#ff8c00] shadow-[15px_0_50px_rgba(255,140,0,0.25)] opacity-80"></div>
-        <div class="absolute top-1/2 -translate-y-1/2 -left-[452px] w-[654px] h-[654px] rounded-full border-[1px] border-transparent border-r-[#e65c00]/40 opacity-90"></div>
-      </div>
+import React from 'react';
+import Image from 'next/image';
 
-      <!-- RIGHT SIDE: GIANT FADED STRATEGY WATERMARK IMAGE -->
-      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-full max-w-xl opacity-[0.06] md:opacity-[0.09] pointer-events-none transform translate-x-16 select-none z-0">
-        <!-- Right Dotted Pattern overlay matching layout -->
-        <div class="absolute inset-0 opacity-30 bg-[radial-gradient(#ff8c00_1.5px,transparent_1.5px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_at_right,white_50%,transparent_100%)] -z-10"></div>
-        
-        <!-- Strategy Logo Asset Replacement -->
-        <img 
-          src="https://abdullah-gull.github.io/strategy.png?v=101" 
-          alt="Strategy Backdrop" 
-          class="w-full h-auto object-contain mix-blend-screen filter brightness-75 contrast-125"
-        />
-      </div>
-
-      <!-- ========================================== -->
-      <!-- CORE STRUCTURED MAIN CONTAINER BLOCK       -->
-      <!-- ========================================== -->
-      <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
-        
-        <!-- Pill Label Badge Indicator -->
-        <div class="inline-flex items-center gap-2 bg-black/60 border border-zinc-800 px-4 py-1.5 rounded-full shadow-md backdrop-blur-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></span>
-          <span class="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-zinc-300 uppercase font-mono">OUR PURPOSE & WHO I AM</span>
-        </div>
-
-        <!-- Headline Typography Hierarchy Block -->
-        <h1 class="text-3xl sm:text-[54px] font-extrabold tracking-tight leading-[1.1] text-white max-w-3xl mx-auto mt-8 font-sans">
-          Empowering brands to grow faster on <span class="text-[#ff8c00] relative">Amazon<span class="absolute left-0 bottom-1 w-full h-[3px] bg-[#ff8c00]/20 rounded-full"></span></span> by boosting visibility.
-        </h1>
-        
-        <!-- Small Centered Subtext Tag Anchor -->
-        <div class="flex items-center gap-3 mt-4 text-xs sm:text-sm font-bold tracking-widest text-zinc-400 uppercase font-mono">
-          <span class="text-[#ff8c00]/60">&mdash;</span>
-          Amazon Strategy Builder
-          <span class="text-[#ff8c00]/60">&mdash;</span>
-        </div>
-
-        <!-- Upper Body Description Paragraph Section -->
-        <p class="mt-8 max-w-2xl text-zinc-300 text-sm sm:text-[15px] leading-relaxed font-medium tracking-wide">
-          Success on Amazon isn't just about working; it's about the <span class="text-[#ff8c00] font-semibold">right strategy</span>. I haven't come here simply to complete tasks, but to grow together with you. My experience and dedication have only one goal: to take your brand to a level where yours is the only name people mention.
-        </p>
-
-        <!-- Lower Dynamic Accent Border Text Box Wrapper -->
-        <div class="w-full max-w-3xl mt-6 p-5 sm:p-6 rounded-xl bg-zinc-900/10 border border-zinc-800/40 relative group overflow-hidden">
-          <!-- Subtle Inner Subtle Orange Glow Strip -->
-          <div class="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[#ff8c00]/40 to-transparent"></div>
+export default function AboutFounderSection() {
+  return (
+    <section id="about-founder" class="relative py-24 px-4 sm:px-8 lg:px-16 bg-[#060606] text-white font-sans overflow-hidden select-none">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium tracking-wide">
-            From managing every detail of your account to running ads that actually perform, I focus on one thing: <span class="text-[#ff8c00] font-bold">results</span>. I'll simplify the Amazon mess for you and build a clear strategy that turns your brand's potential into profit you can count on.
-          </p>
-        </div>
+          {/* ========================================== */}
+          {/* LEFT COLUMN: PHOTO WITH DYNAMIC GLOW BACKDROP */}
+          {/* ========================================== */}
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative w-full max-w-[450px] aspect-[4/5] rounded-[32px] border border-zinc-800 bg-gradient-to-b from-zinc-900 to-black p-4 shadow-2xl overflow-hidden group">
+              
+              {/* Abstract Golden/Orange Radial Glow Behind the Image */}
+              <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,140,0,0.15)_0%,transparent_70%)] pointer-events-none"></div>
+              
+              {/* Wave Decorative Backdrop Glow Graphic Layer */}
+              <div class="absolute bottom-0 inset-x-0 h-1/3 opacity-30 bg-gradient-to-t from-[#ff8c00]/40 via-transparent to-transparent blur-xl pointer-events-none"></div>
+              <div class="absolute -left-10 bottom-10 w-full h-1/2 opacity-20 bg-[radial-gradient(ellipse_at_bottom_left,#ff8c00_0%,transparent_70%)] pointer-events-none"></div>
 
-        <!-- Interactive Animated Dynamic Conversion CTA Button -->
-        <div class="mt-8">
-          <a href="#" class="inline-flex items-center justify-center bg-gradient-to-r from-[#e65c00] to-[#ff8c00] text-black font-black text-xs sm:text-sm px-8 py-3.5 rounded-full tracking-widest uppercase transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-[#ff8c00]/20 hover:shadow-[#ff8c00]/35 group">
-            View Work
-            <span class="ml-2 flex items-center justify-center w-5 h-5 rounded-full bg-black/10 text-xs font-black transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-          </a>
-        </div>
+              {/* The User Profile Image Frame */}
+              <div class="w-full h-full rounded-[24px] overflow-hidden bg-zinc-950 border border-zinc-800 relative z-10 flex items-center justify-center">
+                <img 
+                  src="https://abdullah-gull.github.io/images/abdullah-gull-photo.jpg" 
+                  alt="Abdullah Gull" 
+                  className="w-full h-full object-cover transform group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                />
+              </div>
+              
+              {/* Outer Thin Orange Accent Line Tracking Glow */}
+              <div class="absolute -inset-px rounded-[32px] bg-gradient-to-b from-[#ff8c00]/20 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            </div>
+          </div>
 
+          {/* ========================================== */}
+          {/* RIGHT COLUMN: DETAILED CREDENTIALS CONTENT */}
+          {/* ========================================== */}
+          <div class="lg:col-span-7 space-y-6">
+            
+            {/* Micro Label Header */}
+            <div class="text-[#ff8c00] font-bold text-xs uppercase tracking-[0.2em] font-mono">
+              AMAZON CONSULTANT
+            </div>
+
+            {/* Main Display Name Hierarchy */}
+            <h2 class="text-4xl sm:text-5xl font-black tracking-tight text-white leading-none">
+              Abdullah Gull
+            </h2>
+
+            {/* Subheading Summary */}
+            <p class="text-lg sm:text-xl font-bold tracking-wide text-zinc-100 max-w-2xl leading-snug">
+              4+ years of hands-on Amazon expertise, built into every account I manage.
+            </p>
+
+            {/* Detailed Description Paragraph Block */}
+            <div class="text-zinc-400 text-sm sm:text-base font-medium leading-relaxed max-w-3xl space-y-4">
+              <p>
+                Abdullah built his consulting practice from the ground up after managing multi-million dollar Amazon accounts across Seller Central and Vendor Central for global brands. That experience shaped how he works today: data first, ad spend that earns its place, and listings built to actually convert.
+              </p>
+            </div>
+
+            {/* 2x2 Clean Grid Value Grid Matrix */}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 pt-6 border-t border-zinc-900 mt-6">
+              
+              {/* Feature Item 01 */}
+              <div class="flex gap-4 items-start">
+                <div class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-[#ff8c00] text-black font-black text-[10px] mt-0.5 shadow-md shadow-[#ff8c00]/10">
+                  &#10003;
+                </div>
+                <div class="space-y-1">
+                  <h4 class="text-sm sm:text-base font-bold text-white tracking-wide">Enterprise experience</h4>
+                  <p class="text-xs sm:text-sm text-zinc-400 font-medium leading-relaxed">
+                    Managed 150+ Amazon stores across Seller Central and Vendor Central.
+                  </p>
+                </div>
+              </div>
+
+              {/* Feature Item 02 */}
+              <div class="flex gap-4 items-start">
+                <div class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-[#ff8c00] text-black font-black text-[10px] mt-0.5 shadow-md shadow-[#ff8c00]/10">
+                  &#10003;
+                </div>
+                <div class="space-y-1">
+                  <h4 class="text-sm sm:text-base font-bold text-white tracking-wide">Data-led strategy</h4>
+                  <p class="text-xs sm:text-sm text-zinc-400 font-medium leading-relaxed">
+                    Hybrid PPC + SEO built on ACOS reduction and rigorous tracking.
+                  </p>
+                </div>
+              </div>
+
+              {/* Feature Item 03 */}
+              <div class="flex gap-4 items-start">
+                <div class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-[#ff8c00] text-black font-black text-[10px] mt-0.5 shadow-md shadow-[#ff8c00]/10">
+                  &#10003;
+                </div>
+                <div class="space-y-1">
+                  <h4 class="text-sm sm:text-base font-bold text-white tracking-wide">Long-term thinking</h4>
+                  <p class="text-xs sm:text-sm text-zinc-400 font-medium leading-relaxed">
+                    Focused on compounding ranking growth, not short-lived spikes.
+                  </p>
+                </div>
+              </div>
+
+              {/* Feature Item 04 */}
+              <div class="flex gap-4 items-start">
+                <div class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-[#ff8c00] text-black font-black text-[10px] mt-0.5 shadow-md shadow-[#ff8c00]/10">
+                  &#10003;
+                </div>
+                <div class="space-y-1">
+                  <h4 class="text-sm sm:text-base font-bold text-white tracking-wide">Client-first philosophy</h4>
+                  <p class="text-xs sm:text-sm text-zinc-400 font-medium leading-relaxed">
+                    4.9 star rating, backed by an Amazon Ads Advanced Partner status.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
   );
