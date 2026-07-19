@@ -1,226 +1,165 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- ========================================================================= -->
-<!-- PREMIUM SERVICE PILLARS SECTION WITH NATIVE INTERACTIVE JAVASCRIPT      -->
+<!-- PREMIUM CAL.COM MEETING BOOKING CONTAINER (MATCHING IMAGE DESIGN)         -->
 <!-- ========================================================================= -->
-<section id="expertise-pillars" class="relative py-28 px-4 sm:px-8 lg:px-16 bg-[#060608] text-white font-sans overflow-hidden select-none selection:bg-[#ff8c00]/20 selection:text-[#ff8c00]">
+<section id="booking-portal" class="relative py-24 px-4 sm:px-8 lg:px-16 bg-[#060608] text-white font-sans overflow-hidden select-none">
   
-  <!-- ========================================== -->
-  <!-- LAYERED BACKGROUND ARTWORK & GLOWS         -->
-  <!-- ========================================== -->
+  <!-- Subtle Background Orange Mesh Grid & Glow Accents -->
   <div class="absolute inset-0 pointer-events-none select-none z-0">
-    <!-- Top-Right Faded Dotted Grid Pattern backdrop -->
-    <div class="absolute top-0 right-0 w-[45%] h-[40%] bg-[linear-gradient(rgba(255,140,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,140,0,0.02)_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(ellipse_at_top_right,white_40%,transparent_100%)] opacity-70"></div>
-    
-    <!-- Massive Central Radial Orange Faded Glow backdrop -->
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,140,0,0.05)_0%,transparent_75%)] opacity-80"></div>
-    
-    <!-- Bottom Decorative SVG Wave Accent Lines backdrop -->
-    <div class="absolute bottom-0 inset-x-0 h-1/4 opacity-40 [mask-image:radial-gradient(ellipse_at_bottom,white_40%,transparent_100%)]">
-      <svg class="w-full h-full text-[#ff8c00]/40" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none" stroke="currentColor">
-        <path d="M0,90 Q25,50 50,75 T100,30 M0,95 Q30,60 60,85 T100,45 M0,85 Q20,40 40,65 T100,20" stroke-width="0.3" stroke-dasharray="1.5 1.5"/>
-      </svg>
-    </div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_top,rgba(255,140,0,0.06)_0%,transparent_70%)] opacity-90"></div>
+    <div class="absolute bottom-0 right-0 w-[30%] h-[30%] bg-[linear-gradient(rgba(255,140,0,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,140,0,0.01)_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_at_bottom_right,white_30%,transparent_100%)]"></div>
   </div>
 
-  <!-- Content Layer Wrapper Grid Matrix -->
-  <div class="max-w-7xl mx-auto relative z-10 space-y-16 flex flex-col items-center">
+  <div class="max-w-6xl mx-auto relative z-10 flex flex-col items-center space-y-12">
     
-    <!-- ========================================== -->
-    <!-- SECTION HEADER: Badge, Title, Desc         -->
-    <!-- ========================================== -->
-    <div class="text-center space-y-8 flex flex-col items-center max-w-3xl opacity-0 translate-y-4 transition-all duration-700 ease-out" id="pillars-header">
-      <!-- Top Badge Label Pill -->
-      <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-zinc-800 bg-zinc-950/60 shadow-lg text-zinc-500 font-medium text-xs sm:text-sm tracking-wider group cursor-pointer">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#ff8c00] animate-pulse transition-transform duration-300 group-hover:scale-110"></span>
-        OUR EXPERTISE
+    <!-- Top Branding & Header Block -->
+    <div class="text-center space-y-4 max-w-xl">
+      <!-- Outer Calendar Glow Icon -->
+      <div class="mx-auto w-12 h-12 rounded-full border border-zinc-800 bg-zinc-950/80 flex items-center justify-center shadow-[0_0_20px_rgba(255,140,0,0.05)] mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+        </svg>
       </div>
-      
-      <!-- Massive Hierarchy Main Headline -->
-      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter text-white leading-[1.1] selection:bg-white selection:text-black font-sans">
-        Our Pillars for <span class="text-[#ff8c00]">Success</span>
+      <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+        Book a <span class="text-[#ff8c00]">Meeting</span>
       </h2>
-      
-      <!-- Sleek Subtle Separator Accent with Central Focus point -->
-      <div class="flex items-center gap-3 w-40 relative my-2">
-        <div class="flex-grow h-[1.5px] rounded-full bg-gradient-to-r from-transparent to-[#ff8c00]"></div>
-        <div class="flex-shrink-0 flex items-center justify-center w-3.5 h-3.5 rounded-full bg-[#ff8c00] text-zinc-950 font-black text-[9px] cursor-pointer shadow-[0_0_15px_rgba(255,140,0,0.1)] group hover:shadow-[0_0_20px_rgba(255,140,0,0.15)] transition-all duration-300">
-          *
-          <div class="absolute -top-1 left-1/2 -translate-x-1/2 w-[1px] h-3 bg-gradient-to-t from-[#ff8c00] to-transparent shadow-[0_0_15px_#ff8c00]"></div>
-        </div>
-        <div class="flex-grow h-[1.5px] rounded-full bg-gradient-to-l from-transparent to-[#ff8c00]"></div>
-      </div>
-      
-      <!-- Strategy Paragraph Block Description -->
-      <p class="text-zinc-400 text-sm sm:text-base font-medium leading-relaxed max-w-xl mx-auto font-sans tracking-wide">
-        Four core pillars that drive exponential growth: scalable traffic generation, conversion optimization, intelligent inventory management, and accelerated profitability through data-driven strategies.
+      <p class="text-zinc-400 text-sm sm:text-base font-medium tracking-wide">
+        Select a date and time to schedule a meeting with your <span class="text-[#ff8c00]">growth partner</span>.
       </p>
     </div>
 
-    <!-- ========================================== -->
-    <!-- PILLAR GRID SYSTEM: 4 Interactive Cards    -->
-    <!-- ========================================== -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full pt-10">
+    <!-- Main Unified Dashboard Interface Card -->
+    <div class="w-full rounded-[32px] border border-zinc-800/80 bg-zinc-950/40 backdrop-blur-md overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-1 lg:grid-cols-12 relative group">
       
-      <!-- CARD 1: SCALABLE TRAFFIC -->
-      <div class="pillar-card relative group p-6 rounded-3xl border border-zinc-800/60 bg-zinc-950/40 backdrop-blur-sm shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8)] opacity-0 translate-y-8 transition-all duration-500 flex flex-col justify-between" data-pillar="scalable-traffic">
-        <!-- Interactive Mouse Follow Glow Layer -->
-        <div class="js-glow-effect absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-[radial-gradient(120px_circle_at_var(--x)_var(--y),rgba(255,140,0,0.08),transparent_80%)]"></div>
-        <div class="absolute -top-px -right-px h-8 w-8 rounded-full bg-gradient-to-bl from-[#ff8c00]/15 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+      <!-- Top Subtle Left Accent Border Corner Light Glow -->
+      <div class="absolute top-0 left-0 w-40 h-[1px] bg-gradient-to-r from-[#ff8c00]/40 to-transparent"></div>
+      <div class="absolute top-0 left-0 w-[1px] h-40 bg-gradient-to-b from-[#ff8c00]/40 to-transparent"></div>
+
+      <!-- LEFT SIDEBAR: Dynamic Meeting Info Context Panel -->
+      <div class="lg:col-span-4 p-8 sm:p-10 border-b lg:border-b-0 lg:border-r border-zinc-800/60 flex flex-col justify-between space-y-12 relative z-10 bg-zinc-950/20">
         
-        <div class="relative z-10 space-y-6 flex flex-col items-center flex-grow">
-          <div class="w-16 h-16 rounded-full border border-zinc-800 bg-zinc-900 shadow-[0_0_10px_rgba(255,140,0,0.05)] flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-7 h-7 stroke-[#ff8c00]">
-              <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="3" fill="currentColor" fill-opacity="1" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v2m0 16v2m10-10h-2M4 12H2" />
+        <div class="space-y-8">
+          <!-- Profile Badge Wrap -->
+          <div class="w-14 h-14 rounded-full border border-zinc-800 bg-zinc-900/60 flex items-center justify-center shadow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#ff8c00" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
             </svg>
           </div>
-          <div class="space-y-1.5 text-center">
-            <h4 class="text-lg sm:text-xl font-bold tracking-wide text-white font-sans selection:bg-white selection:text-black">Scalable Traffic</h4>
-            <div class="w-8 h-[2.5px] bg-[#ff8c00] rounded-full mx-auto"></div>
-          </div>
-          <div class="w-full text-left space-y-4 flex-grow flex flex-col justify-start">
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>PPC Campaign Optimization</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>A+ SEO & Growth</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>Keyword Research & Targeting</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>Bid Strategy Automation</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>Traffic Scaling Framework</div>
+
+          <!-- Meeting Specifications Meta -->
+          <div class="space-y-3">
+            <span class="text-[11px] font-bold text-zinc-500 tracking-[0.15em] uppercase block">Meeting Details</span>
+            <h3 class="text-2xl font-bold tracking-tight text-white">30 Min Strategy Call</h3>
+            
+            <div class="space-y-3 pt-3">
+              <div class="flex items-center gap-3 text-zinc-400 text-sm font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-zinc-500"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                30 Min Duration
+              </div>
+              <div class="flex items-center gap-3 text-zinc-400 text-sm font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-zinc-500"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" /></svg>
+                Google Meet Video Call
+              </div>
+            </div>
           </div>
         </div>
-        <button class="see-more-btn w-full mt-10 text-[#ff8c00] font-bold text-xs py-3 rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 group hover:gap-3 cursor-pointer">
-          SEE MORE <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-        </button>
+
+        <!-- Custom Brand Inner Card Highlight Box -->
+        <div class="p-5 rounded-2xl border border-zinc-800/80 bg-zinc-900/30 relative overflow-hidden group/box shadow-lg">
+          <div class="absolute top-0 left-0 w-1 h-full bg-[#ff8c00]"></div>
+          <div class="space-y-2">
+            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+              <span class="text-[#ff8c00] text-xs">✦</span> Let's Scale Performance
+            </h4>
+            <p class="text-zinc-400 text-xs font-medium leading-relaxed">
+              Discuss your project parameters, outline execution milestones, and establish data-driven growth channels.
+            </p>
+          </div>
+        </div>
+
       </div>
-      
-      <!-- CARD 2: CONVERSION FOCUS -->
-      <div class="pillar-card relative group p-6 rounded-3xl border border-zinc-800/60 bg-zinc-950/40 backdrop-blur-sm shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8)] opacity-0 translate-y-8 transition-all duration-500 flex flex-col justify-between" data-pillar="conversion-focus">
-        <div class="js-glow-effect absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-[radial-gradient(120px_circle_at_var(--x)_var(--y),rgba(255,140,0,0.08),transparent_80%)]"></div>
-        <div class="absolute -top-px -right-px h-8 w-8 rounded-full bg-gradient-to-bl from-[#ff8c00]/15 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-        
-        <div class="relative z-10 space-y-6 flex flex-col items-center flex-grow">
-          <div class="w-16 h-16 rounded-full border border-zinc-800 bg-zinc-900 shadow-[0_0_10px_rgba(255,140,0,0.05)] flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-7 h-7 stroke-[#ff8c00]">
-              <circle cx="12" cy="12" r="10" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v2m0 16v2m10-10h-2M4 12H2" /><path stroke-linecap="round" stroke-linejoin="round" d="M17.364 17.364l-1.414-1.414m0-7.9l1.414-1.414M6.636 6.636l1.414 1.414m0 7.9l-1.414 1.414M12 12v0" /><circle cx="12" cy="12" r="1" fill="currentColor" fill-opacity="1" stroke="none" />
-            </svg>
-          </div>
-          <div class="space-y-1.5 text-center">
-            <h4 class="text-lg sm:text-xl font-bold tracking-wide text-white font-sans selection:bg-white selection:text-black">Conversion Focus</h4>
-            <div class="w-8 h-[2.5px] bg-[#ff8c00] rounded-full mx-auto"></div>
-          </div>
-          <div class="w-full text-left space-y-4 flex-grow flex flex-col justify-start">
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>Listing Optimization</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>High-Converting Copy</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>A+ Content & EBC</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>CTR & Main Image Optimization</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>Review Management</div>
-          </div>
-        </div>
-        <button class="see-more-btn w-full mt-10 text-[#ff8c00] font-bold text-xs py-3 rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 group hover:gap-3 cursor-pointer">
-          SEE MORE <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-        </button>
-      </div>
-      
-      <!-- CARD 3: INVENTORY CONTROL -->
-      <div class="pillar-card relative group p-6 rounded-3xl border border-zinc-800/60 bg-zinc-950/40 backdrop-blur-sm shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8)] opacity-0 translate-y-8 transition-all duration-500 flex flex-col justify-between" data-pillar="inventory-control">
-        <div class="js-glow-effect absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-[radial-gradient(120px_circle_at_var(--x)_var(--y),rgba(255,140,0,0.08),transparent_80%)]"></div>
-        <div class="absolute -top-px -right-px h-8 w-8 rounded-full bg-gradient-to-bl from-[#ff8c00]/15 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-        
-        <div class="relative z-10 space-y-6 flex flex-col items-center flex-grow">
-          <div class="w-16 h-16 rounded-full border border-zinc-800 bg-zinc-900 shadow-[0_0_10px_rgba(255,140,0,0.05)] flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-7 h-7 stroke-[#ff8c00]">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l8-4 8 4v14M9 10l3 3M9 10v6M15 10l-3 3M15 10v6" />
-            </svg>
-          </div>
-          <div class="space-y-1.5 text-center">
-            <h4 class="text-lg sm:text-xl font-bold tracking-wide text-white font-sans selection:bg-white selection:text-black">Inventory Control</h4>
-            <div class="w-8 h-[2.5px] bg-[#ff8c00] rounded-full mx-auto"></div>
-          </div>
-          <div class="w-full text-left space-y-4 flex-grow flex flex-col justify-start">
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>Smart SKU Management</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>Stock Level Optimization</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>Inventory Analytics</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>Replenishment Strategy</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>Seasonal Planning</div>
-          </div>
-        </div>
-        <button class="see-more-btn w-full mt-10 text-[#ff8c00] font-bold text-xs py-3 rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 group hover:gap-3 cursor-pointer">
-          SEE MORE <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-        </button>
-      </div>
-      
-      <!-- CARD 4: PROFIT ACCELERATION -->
-      <div class="pillar-card relative group p-6 rounded-3xl border border-zinc-800/60 bg-zinc-950/40 backdrop-blur-sm shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8)] opacity-0 translate-y-8 transition-all duration-500 flex flex-col justify-between" data-pillar="profit-acceleration">
-        <div class="js-glow-effect absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-[radial-gradient(120px_circle_at_var(--x)_var(--y),rgba(255,140,0,0.08),transparent_80%)]"></div>
-        <div class="absolute -top-px -right-px h-8 w-8 rounded-full bg-gradient-to-bl from-[#ff8c00]/15 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-        
-        <div class="relative z-10 space-y-6 flex flex-col items-center flex-grow">
-          <div class="w-16 h-16 rounded-full border border-zinc-800 bg-zinc-900 shadow-[0_0_10px_rgba(255,140,0,0.05)] flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-7 h-7 stroke-[#ff8c00]">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.6 2.59a14.98 14.98 0 01-6.16 12.12A14.98 14.98 0 0115.59 14.37z" /><circle cx="15.5" cy="8.5" r="1.5" fill="currentColor" stroke="none" fill-opacity="1" />
-            </svg>
-          </div>
-          <div class="space-y-1.5 text-center">
-            <h4 class="text-lg sm:text-xl font-bold tracking-wide text-white font-sans selection:bg-white selection:text-black">Profit Acceleration</h4>
-            <div class="w-8 h-[2.5px] bg-[#ff8c00] rounded-full mx-auto"></div>
-          </div>
-          <div class="w-full text-left space-y-4 flex-grow flex flex-col justify-start">
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>ACoS Reduction</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>Margin Optimization</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>Profitability Analysis</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>Pricing Strategy</div>
-            <div class="flex items-center gap-3.5 text-sm text-zinc-300 font-medium tracking-wide"><span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-[#ff8c00] text-black font-black text-[10px]">&#10003;</span>ROI Maximization</div>
-          </div>
-        </div>
-        <button class="see-more-btn w-full mt-10 text-[#ff8c00] font-bold text-xs py-3 rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 group hover:gap-3 cursor-pointer">
-          SEE MORE <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-        </button>
+
+      <!-- RIGHT PANEL: Embedded Responsive Cal.com App Frame Integration -->
+      <div class="lg:col-span-8 w-full bg-zinc-950/10 min-h-[580px] relative flex flex-col justify-center">
+        <!-- Cal Inline Container Hook -->
+        <div class="w-full h-full min-h-[580px] overflow-auto custom-cal-scrollbar" id="my-cal-inline-30min"></div>
       </div>
 
     </div>
+
+    <!-- Security Footer Indicator Label Info -->
+    <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-zinc-900 bg-zinc-950/40 text-xs font-medium text-zinc-500">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-[#ff8c00]">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+      </svg>
+      Your information is <span class="text-[#ff8c00] font-semibold">secure</span> and will never be shared.
+    </div>
+
   </div>
 </section>
 
-<!-- ========================================== -->
-<!-- COMPONENT FUNCTIONAL INTERACTION LOGIC      -->
-<!-- ========================================== -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // 1. Cascading Entrance Reveal Animations
-    const header = document.getElementById("pillars-header");
-    const cards = document.querySelectorAll(".pillar-card");
+<!-- ========================================================================= -->
+<!-- CAL.COM NATIVE INLINE ENGINE INJECTION                                    -->
+<!-- ========================================================================= -->
+<script type="text/javascript">
+  (function (C, A, L) { 
+    let p = function (a, ar) { a.q.push(ar); }; 
+    let d = C.document; 
+    C.Cal = C.Cal || function () { 
+      let cal = C.Cal; 
+      let ar = arguments; 
+      if (!cal.loaded) { 
+        cal.ns = {}; 
+        cal.q = cal.q || []; 
+        d.head.appendChild(d.createElement("script")).src = A; 
+        cal.loaded = true; 
+      } 
+      if (ar[0] === L) { 
+        const api = function () { p(api, arguments); }; 
+        const namespace = ar[1]; 
+        api.q = api.q || []; 
+        if(typeof namespace === "string"){
+          cal.ns[namespace] = cal.ns[namespace] || api;
+          p(cal.ns[namespace], ar);
+          p(cal, ["initNamespace", namespace]);
+        } else p(cal, ar); 
+        return;
+      } 
+      p(cal, ar); 
+    }; 
+  })(window, "https://app.cal.com/embed/embed.js", "init");
 
-    setTimeout(() => {
-      header.classList.remove("opacity-0", "translate-y-4");
-    }, 150);
+  // Initialize Namespace
+  Cal("init", "30min", {origin:"https://app.cal.com"});
 
-    cards.forEach((card, index) => {
-      setTimeout(() => {
-        card.classList.remove("opacity-0", "translate-y-8");
-      }, 300 + index * 100);
-    });
+  // Configure Interface Parameters with Custom Layout Embed Matching Image Dark Look
+  Cal.ns["30min"]("inline", {
+    elementOrSelector: "#my-cal-inline-30min",
+    calLink: "abdullah-gull/30min",
+    config: {
+      "layout": "month_view",
+      "useSlotsViewOnSmallScreen": "true",
+      "theme": "dark"
+    },
+  });
 
-    // 2. Dynamic Radial Mouse-Tracking Spotlight Lighting Effect
-    cards.forEach((card) => {
-      card.addEventListener("mousemove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left; 
-        const y = e.clientY - rect.top;  
-
-        // Dynamic update mapping coordinates
-        card.style.setProperty("--x", `${x}px`);
-        card.style.setProperty("--y", `${y}px`);
-      });
-    });
-
-    // 3. CTA Action Interaction Trigger Handlers
-    const actionButtons = document.querySelectorAll(".see-more-btn");
-    actionButtons.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        const cardContainer = e.target.closest(".pillar-card");
-        if (cardContainer) {
-          const cardType = cardContainer.getAttribute("data-pillar");
-          console.log(`Action requested for: ${cardType}`);
-          // Yahan aap modalls, router shifts, ya tracking codes hook kar sakte hain!
-        }
-      });
-    });
+  // UI Element Style Mapping Rule Enforcement
+  Cal.ns["30min"]("ui", {
+    "theme": "dark",
+    "hideEventTypeDetails": true, // Left-side hide kar rahe hain kyunki humne custom premium panel bana liya hai
+    "layout": "month_view"
   });
 </script>
+
+<!-- Extra Inline Tweaks to align embedded elements perfectly -->
+<style>
+  #my-cal-inline-30min iframe {
+    background: transparent !important;
+    border-radius: 0 0 32px 32px !important;
+  }
+  @media (min-width: 1024px) {
+    #my-cal-inline-30min iframe {
+      border-radius: 0 32px 32px 0 !important;
+    }
+  }
+</style>
