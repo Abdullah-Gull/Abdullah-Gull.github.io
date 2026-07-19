@@ -1,40 +1,40 @@
 <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
 <style>
-  /* Dot Grid Pattern */
   .dot-grid {
-    background-image: radial-gradient(#333 1px, transparent 1px);
-    background-size: 30px 30px;
+    background-image: radial-gradient(#222 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 </style>
 
-<section class="relative bg-[#050505] text-white py-20 px-12 font-sans overflow-hidden">
-  
-  <!-- Dot Grid & Golden Curve Background (Design mark ke hisab se) -->
-  <div class="absolute inset-0 z-0 dot-grid opacity-30"></div>
-  <div class="absolute -left-20 top-0 w-[500px] h-[500px] border-l-2 border-t-2 border-b-2 border-[#bf953f] rounded-full blur-[1px] opacity-60"></div>
+<section class="bg-[#050505] text-white py-24 px-12 relative overflow-hidden font-['Inter']">
+  <!-- Background Animation -->
+  <div class="absolute inset-0 z-0 dot-grid opacity-40"></div>
+  <div class="absolute -left-20 top-0 w-[500px] h-[500px] border border-[#FF9900]/20 rounded-full blur-[2px]"></div>
 
-  <div class="max-w-[1500px] mx-auto flex items-center gap-12 relative z-10">
+  <div class="max-w-[1500px] mx-auto flex items-center gap-16 relative z-10">
     
     <!-- LEFT CONTENT -->
     <div class="w-1/2">
-      <h1 class="text-7xl font-bold leading-tight mb-8">
-        <span class="text-[#bf953f]">Abdullah Gull:</span><br>
-        Scaling Amazon Brands Globally
+      <h1 class="font-['Playfair_Display'] text-7xl font-bold leading-[1.1] mb-8">
+        Abdullah Gull:<br>
+        <span class="text-[#FF9900]">Scaling Amazon Brands Globally</span>
       </h1>
       
-      <p class="text-zinc-400 text-lg leading-relaxed mb-10 border-l-2 border-[#bf953f] pl-6">
-        Abdullah Gull provides performance-driven Amazon Ecosystem Scaling... Partnering with a dedicated Amazon Marketing Expert allows you to eliminate wasted ad spend.
+      <p class="text-zinc-400 text-lg leading-relaxed mb-10 border-l-4 border-[#FF9900] pl-6">
+        Abdullah Gull provides performance-driven Amazon Ecosystem Scaling. By taking complete charge of your operations, I enable you to focus entirely on product innovation and manufacturing.
       </p>
 
-      <div class="flex gap-6">
-        <button class="bg-[#bf953f] text-black px-10 py-4 font-bold hover:bg-[#d4af37] transition-all">GET FREE AUDIT →</button>
-        <button class="border border-[#bf953f] text-[#bf953f] px-10 py-4 font-bold hover:bg-[#bf953f] hover:text-black transition-all">SCALE YOUR SALES →</button>
+      <div class="flex gap-4">
+        <button class="bg-[#FF9900] text-black px-8 py-4 font-bold hover:bg-orange-600 transition-all">GET FREE AMAZON AUDIT →</button>
+        <button class="border border-[#FF9900] text-[#FF9900] px-8 py-4 font-bold hover:bg-[#FF9900] hover:text-black transition-all">SCALE YOUR SALES →</button>
       </div>
     </div>
 
-    <!-- RIGHT IMAGE -->
-    <div class="w-1/2 relative p-4">
-      <img src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" class="w-full object-contain relative z-10">
+    <!-- RIGHT IMAGE (Locked to the line) -->
+    <div class="w-1/2 relative flex justify-start">
+      <img src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" class="w-full max-w-[700px] object-contain -ml-8">
     </div>
 
   </div>
