@@ -1,166 +1,229 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- ========================================================================= -->
-<!-- CONTACT SECTION (ORANGE PREMIUM THEME - HTML + TAILWIND)                  -->
+<!-- PREMIUM DARK CONVERSATION HUB SECTION (HTML + TAILWIND + JS)             -->
 <!-- ========================================================================= -->
-<section class="w-full bg-[#000000] text-white py-16 px-6 sm:px-12 lg:px-20 font-sans select-none overflow-hidden">
-  <div class="max-w-[1340px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<section class="w-full bg-[#000000] text-white py-20 px-4 sm:px-8 lg:px-16 font-sans relative overflow-hidden select-none">
+  <div class="max-w-[1340px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
     
-    <!-- ================= LEFT COLUMN (CONTENT & ORANGE CARDS) ================= -->
-    <div class="lg:col-span-6 flex flex-col space-y-8">
+    <!-- ================= LEFT COLUMN ================= -->
+    <div class="lg:col-span-5 flex flex-col space-y-7">
       
-      <!-- Top Tagline & Heading -->
-      <div class="space-y-2">
-        <span class="text-[11px] font-black tracking-widest text-[#ff8c00] uppercase block">REACH US</span>
-        <h2 class="text-4xl sm:text-[52px] font-serif font-bold tracking-tight text-white leading-[1.1]">
-          How to Get in Touch
+      <!-- Reach Us Dot Tag -->
+      <div class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></span>
+        <span class="text-[10px] font-black tracking-[0.25em] text-[#ff8c00] uppercase">REACH US</span>
+      </div>
+
+      <!-- Main Typography Header -->
+      <div class="space-y-4">
+        <h2 class="text-5xl sm:text-[54px] font-extrabold tracking-tight leading-[1.05]">
+          Let's Start a <br />
+          <span class="text-[#ff8c00]">Conversation</span>
         </h2>
+        <p class="text-zinc-400 text-sm font-medium leading-relaxed max-w-sm">
+          Have a question or need expert guidance? I'm here to help you grow your Amazon business.
+        </p>
       </div>
 
-      <!-- Contact Orange Cards Container -->
-      <div class="space-y-4 w-full max-w-[480px]">
-        
-        <!-- Email Card (Orange Theme) -->
-        <a href="mailto:sales@alphaspikes.com" class="group flex items-center gap-4 p-4 rounded-[24px] bg-[#ff8c00] text-black border border-transparent shadow-[0_10px_30px_rgba(255,140,0,0.15)] transition-all hover:scale-[1.01] hover:bg-[#ffa534]">
-          <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center shrink-0">
-            <!-- Email Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-            </svg>
+      <!-- Actionable Cards -->
+      <div class="space-y-3 w-full max-w-[440px]">
+        <!-- Email Box -->
+        <a href="mailto:sales@alphaspikes.com" class="group flex items-center justify-between p-4 rounded-[20px] bg-[#0c0c0e] border border-zinc-900 transition-all hover:border-zinc-800">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-zinc-950 border border-zinc-900 flex items-center justify-center shadow-[inset_0_0_12px_rgba(255,140,0,0.1)]">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">EMAIL US</span>
+              <span class="text-[13px] font-bold text-zinc-200 tracking-wide mt-0.5">sales@alphaspikes.com</span>
+            </div>
           </div>
-          <div class="flex flex-col">
-            <span class="text-[10px] font-black text-black/60 uppercase tracking-wider">EMAIL</span>
-            <span class="text-base font-bold text-black tracking-wide">sales@alphaspikes.com</span>
-          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ff8c00" class="w-3.5 h-3.5 mr-1 transform group-hover:translate-x-0.5 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
         </a>
 
-        <!-- Call Card (Orange Theme) -->
-        <a href="tel:+13073104045" class="group flex items-center gap-4 p-4 rounded-[24px] bg-[#ff8c00] text-black border border-transparent shadow-[0_10px_30px_rgba(255,140,0,0.15)] transition-all hover:scale-[1.01] hover:bg-[#ffa534]">
-          <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center shrink-0">
-            <!-- Phone Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-[#ff8c00]">
-              <path d="M4.93 2.93a1 1 0 0 1 1.41 0l2.83 2.83a1 1 0 0 1 0 1.41L7.76 8.59a11.94 11.94 0 0 0 5.65 5.65l1.42-1.42a1 1 0 0 1 1.41 0l2.83 2.83a1 1 0 0 1 0 1.41l-2.12 2.12a3 3 0 0 1-3.66.52A18 18 0 0 1 3.52 7.78a3 3 0 0 1 .52-3.66l2.12-2.12z"/>
-            </svg>
+        <!-- Phone Box -->
+        <a href="tel:+13073104045" class="group flex items-center justify-between p-4 rounded-[20px] bg-[#0c0c0e] border border-zinc-900 transition-all hover:border-zinc-800">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-zinc-950 border border-zinc-900 flex items-center justify-center shadow-[inset_0_0_12px_rgba(255,140,0,0.1)]">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3" /></svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">CALL US</span>
+              <span class="text-[13px] font-bold text-zinc-200 tracking-wide mt-0.5">+1 307-310-4045</span>
+            </div>
           </div>
-          <div class="flex flex-col">
-            <span class="text-[10px] font-black text-black/60 uppercase tracking-wider">CALL</span>
-            <span class="text-base font-bold text-black tracking-wide">+1 307-310-4045</span>
-          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ff8c00" class="w-3.5 h-3.5 mr-1 transform group-hover:translate-x-0.5 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
         </a>
       </div>
 
-      <!-- Availability Notice -->
-      <div class="space-y-5 pt-2">
-        <span class="text-[11px] font-black tracking-wide text-[#ff8c00] uppercase block">
-          WE ARE AVAILABLE MONDAY THROUGH FRIDAY, 9AM TO 6PM EST
-        </span>
-
-        <!-- Step List -->
-        <div class="space-y-5">
-          <div class="flex items-start gap-4">
-            <div class="w-7 h-7 rounded-full border border-zinc-700 bg-transparent flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5">1</div>
-            <p class="text-[14px] font-medium text-zinc-300 leading-relaxed">Email me for account questions, proposals, or partnership inquiries.</p>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-7 h-7 rounded-full border border-zinc-700 bg-transparent flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5">2</div>
-            <p class="text-[14px] font-medium text-zinc-300 leading-relaxed">Book a direct call through my scheduling link if you want to talk through your account situation first.</p>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-7 h-7 rounded-full border border-zinc-700 bg-transparent flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5">3</div>
-            <p class="text-[14px] font-medium text-zinc-300 leading-relaxed">Fill out the contact form and I will follow up within one business day with a clear next step.</p>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="text-[#ff8c00] text-xl font-bold shrink-0 w-7 text-center leading-none mt-0.5">★</div>
-            <p class="text-[14px] font-medium text-zinc-300 leading-relaxed">Not sure what you need yet? That is exactly what the first conversation is for.</p>
+      <!-- Custom Stepper Box Layout -->
+      <div class="w-full max-w-[440px] p-6 rounded-[24px] bg-[#060608] border border-zinc-900/60 space-y-6">
+        <div class="flex items-center gap-3.5 border-b border-zinc-900 pb-4">
+          <span class="text-base text-[#ff8c00]">📅</span>
+          <div>
+            <span class="text-[9px] font-black text-[#ff8c00] tracking-widest uppercase">WE ARE AVAILABLE</span>
+            <p class="text-xs font-bold text-zinc-300 mt-0.5">Monday to Friday, 9AM to 6PM EST</p>
           </div>
         </div>
-      </div>
 
-      <!-- Social Footer Icons Row -->
-      <div class="flex items-center gap-3 pt-4">
-        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white hover:bg-[#ff8c00] hover:text-black transition-colors">
-          <span class="text-xs font-bold font-sans">f</span>
-        </a>
-        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white hover:bg-[#ff8c00] hover:text-black transition-colors">
-          <span class="text-xs font-bold font-sans">📷</span>
-        </a>
-        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white hover:bg-[#ff8c00] hover:text-black transition-colors">
-          <span class="text-xs font-bold font-sans">in</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- ================= RIGHT COLUMN (TAB GRID IMPLEMENTATION) ================= -->
-    <div class="lg:col-span-6 w-full flex justify-center lg:justify-end">
-      <!-- Outer Interactive Frame Container -->
-      <div id="interactiveMockup" class="w-full max-w-[580px] aspect-[4/3] bg-[#0c0c0e] border border-zinc-800 rounded-[28px] p-3 shadow-2xl relative overflow-hidden cursor-pointer group transition-all duration-300">
-        
-        <!-- Screen Inside Layout -->
-        <div class="w-full h-full rounded-[20px] bg-black overflow-hidden grid grid-cols-3 grid-rows-3 gap-[3px] relative border border-zinc-900">
+        <div class="relative space-y-6 pl-1">
+          <div class="absolute left-[13px] top-3 bottom-3 w-[1px] border-l border-dashed border-zinc-800"></div>
           
-          <!-- Box 1 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          <div class="flex items-start gap-4 relative z-10">
+            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">1</div>
+            <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Email me for account questions, proposals, or partnership inquiries.</p>
           </div>
-          <!-- Box 2 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          <div class="flex items-start gap-4 relative z-10">
+            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">2</div>
+            <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Book a direct call through my scheduling link if you want to talk through your account situation first.</p>
           </div>
-          <!-- Box 3 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          <div class="flex items-start gap-4 relative z-10">
+            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">3</div>
+            <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Fill out the contact form and I will follow up within one business day with a clear next step.</p>
           </div>
-          <!-- Box 4 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          <div class="flex items-start gap-4 relative z-10">
+            <div class="w-7 h-7 rounded-full border border-[#ff8c00]/30 bg-[#ff8c00]/5 flex items-center justify-center text-xs font-bold text-[#ff8c00] shrink-0">*</div>
+            <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Not sure what you need yet? That is exactly what the first conversation is for.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Networks Row -->
+      <div class="flex items-center gap-3 pt-1">
+        <span class="text-[9px] font-bold text-zinc-600 tracking-wider uppercase mr-2">CONNECT WITH US</span>
+        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-white transition-colors"><span class="text-xs font-bold">f</span></a>
+        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-white transition-colors"><span class="text-xs">📷</span></a>
+        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-white transition-colors"><span class="text-xs font-bold">in</span></a>
+      </div>
+    </div>
+
+    <!-- ================= RIGHT COLUMN ================= -->
+    <div class="lg:col-span-7 flex flex-col space-y-12 w-full">
+      
+      <!-- Interactive Main Dashboard Panel Layout -->
+      <div id="glowTabletContainer" class="w-full aspect-[4/3] rounded-[32px] border border-zinc-800 bg-[#0d0d11] p-4 shadow-2xl relative overflow-hidden group">
+        <div class="w-full h-full rounded-[22px] bg-black overflow-hidden grid grid-cols-3 grid-rows-3 gap-1 relative border border-zinc-900/60">
+          
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.85]" />
+          </div>
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900">
+            <img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.85]" />
+          </div>
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.85]" />
+          </div>
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900">
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.85]" />
           </div>
 
-          <!-- Box 5: CENTER TARGET PRODUCT WITH GLOW -->
-          <div class="relative w-full h-full bg-zinc-950 border-[3px] border-[#aee2ff] shadow-[0_0_25px_rgba(174,226,255,0.6),inset_0_0_15px_rgba(174,226,255,0.4)] z-10 flex items-center justify-center p-0.5">
-            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover">
+          <!-- Central Target Grid with Shiny Golden Glow -->
+          <div class="relative w-full h-full bg-zinc-950 border-[3px] border-[#ff8c00] shadow-[0_0_25px_rgba(255,140,0,0.45),inset_0_0_15px_rgba(255,140,0,0.3)] z-10 flex items-center justify-center p-0.5">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" />
           </div>
 
-          <!-- Box 6 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900">
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.85]" />
           </div>
-          <!-- Box 7 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://images.unsplash.com/photo-1608248597481-496100c80836?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900">
+            <img src="https://images.unsplash.com/photo-1608248597481-496100c80836?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.85]" />
           </div>
-          <!-- Box 8 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.85]" />
           </div>
-          <!-- Box 9 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.85]" />
           </div>
 
         </div>
       </div>
-    </div>
 
+      <!-- Feature Badges Grid System -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
+        
+        <!-- Badge 1 -->
+        <div class="flex flex-col items-center text-center space-y-2">
+          <div class="w-12 h-12 rounded-full bg-zinc-950 border border-zinc-900 flex items-center justify-center shadow-[inset_0_0_15px_rgba(255,140,0,0.15)]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3" /></svg>
+          </div>
+          <div class="space-y-0.5">
+            <h4 class="text-xs font-bold text-white tracking-wide">Quick Response</h4>
+            <p class="text-[10px] text-zinc-500 leading-tight max-w-[110px] mx-auto">I respond within one business day.</p>
+          </div>
+        </div>
+
+        <!-- Badge 2 -->
+        <div class="flex flex-col items-center text-center space-y-2">
+          <div class="w-12 h-12 rounded-full bg-zinc-950 border border-zinc-900 flex items-center justify-center shadow-[inset_0_0_15px_rgba(255,140,0,0.15)]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+          </div>
+          <div class="space-y-0.5">
+            <h4 class="text-xs font-bold text-white tracking-wide">Expert Guidance</h4>
+            <p class="text-[10px] text-zinc-500 leading-tight max-w-[110px] mx-auto">Get advice tailored to you.</p>
+          </div>
+        </div>
+
+        <!-- Badge 3 -->
+        <div class="flex flex-col items-center text-center space-y-2">
+          <div class="w-12 h-12 rounded-full bg-zinc-950 border border-zinc-900 flex items-center justify-center shadow-[inset_0_0_15px_rgba(255,140,0,0.15)]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
+          </div>
+          <div class="space-y-0.5">
+            <h4 class="text-xs font-bold text-white tracking-wide">Confidential</h4>
+            <p class="text-[10px] text-zinc-500 leading-tight max-w-[110px] mx-auto">Your information is 100% secure.</p>
+          </div>
+        </div>
+
+        <!-- Badge 4 -->
+        <div class="flex flex-col items-center text-center space-y-2">
+          <div class="w-12 h-12 rounded-full bg-zinc-950 border border-zinc-900 flex items-center justify-center shadow-[inset_0_0_15px_rgba(255,140,0,0.15)]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
+          </div>
+          <div class="space-y-0.5">
+            <h4 class="text-xs font-bold text-white tracking-wide">Results Driven</h4>
+            <p class="text-[10px] text-zinc-500 leading-tight max-w-[110px] mx-auto">Focus on strategies that grow business.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Horizontal Conversion Banner -->
+      <div class="w-full p-4 rounded-[20px] bg-[#050507] border border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+        <div class="flex items-center gap-3.5 text-center sm:text-left">
+          <div class="w-9 h-9 rounded-xl border border-zinc-800 bg-black flex items-center justify-center shrink-0 text-xs">⭐</div>
+          <div class="flex flex-col">
+            <span class="text-[13px] font-bold text-white tracking-wide">Ready to Grow Your Amazon Business?</span>
+            <span class="text-[11px] text-zinc-500 font-medium mt-0.5">I'm just a message or call away. Let's build success together.</span>
+          </div>
+        </div>
+        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl bg-[#ff8c00] text-xs font-black text-black uppercase tracking-wider hover:bg-[#ffa534] transition-colors shrink-0">
+          GET IN TOUCH
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" className="w-3.5 h-3.5"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+        </a>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- ========================================================================= -->
-<!-- JAVASCRIPT PARALLAX INTERACTION                                           -->
+<!-- JAVASCRIPT LOGIC                                                         -->
 <!-- ========================================================================= -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const mockupFrame = document.getElementById("interactiveMockup");
+    const tablet = document.getElementById("glowTabletContainer");
 
-    mockupFrame.addEventListener("mousemove", (e) => {
-      const rect = mockupFrame.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
+    // Smooth subtle parallax rotation effect on hover mousemove
+    tablet.addEventListener("mousemove", (e) => {
+      const boundary = tablet.getBoundingClientRect();
+      const horizontalValue = e.clientX - boundary.left - boundary.width / 2;
+      const verticalValue = e.clientY - boundary.top - boundary.height / 2;
       
-      // Card tilt effect on hover
-      mockupFrame.style.transform = `perspective(1000px) rotateX(${-y * 0.015}deg) rotateY(${x * 0.015}deg) scale(1.01)`;
+      tablet.style.transform = `perspective(1000px) rotateX(${-verticalValue * 0.015}deg) rotateY(${horizontalValue * 0.015}deg) scale(1.01)`;
     });
 
-    mockupFrame.addEventListener("mouseleave", () => {
-      mockupFrame.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+    tablet.addEventListener("mouseleave", () => {
+      tablet.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
     });
   });
 </script>
