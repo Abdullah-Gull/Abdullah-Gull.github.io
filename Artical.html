@@ -1,56 +1,80 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<section class="relative py-28 px-4 sm:px-8 lg:px-16 bg-[#060606] text-white overflow-hidden font-sans select-none">
-  
-  <!-- ========================================== -->
-  <!-- ABSTRACT BACKGROUND CIRCLES (From Image 1 Style) -->
-  <!-- ========================================== -->
-  <!-- Left Decorative Outline Circle -->
-  <div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/3 w-[500px] h-[500px] rounded-full border border-zinc-900/40 pointer-events-none hidden md:block"></div>
-  <!-- Right Multi-layered Intersecting Circles -->
-  <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] rounded-full border border-zinc-900/30 pointer-events-none hidden md:block">
-    <div class="absolute inset-10 rounded-full border border-zinc-900/40"></div>
-  </div>
+import React from 'react';
 
-  <!-- Main Centered Content Grid Wrapper -->
-  <div class="max-w-4xl mx-auto text-center relative z-10 space-y-8">
-    
-    <!-- Top Micro Tag Pill -->
-    <div class="inline-flex items-center gap-2 bg-zinc-900/60 border border-zinc-800/80 px-4 py-1.5 rounded-full shadow-inner">
-      <span class="w-2 h-2 rounded-full bg-[#ff8c00] animate-pulse"></span>
-      <span class="text-[10px] sm:text-xs font-bold tracking-widest text-zinc-400 uppercase font-mono">OUR PURPOSE & WHO I AM</span>
-    </div>
-
-    <!-- Massive Centered Headline Hierarchy -->
-    <div class="space-y-4">
-      <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.1] text-zinc-100 max-w-3xl mx-auto">
-        Empowering brands to grow faster on <span class="text-[#ff8c00] bg-gradient-to-r from-[#ff8c00] to-[#e65c00] bg-clip-text text-transparent">Amazon</span> by boosting visibility.
-      </h1>
+export default function AmazonPurposeHero() {
+  return (
+    <section class="relative min-h-[650px] w-full py-24 px-4 sm:px-8 lg:px-16 bg-[#060606] text-white overflow-hidden font-sans flex items-center justify-center select-none">
       
-      <!-- Accent Sub-Heading Anchor -->
-      <h3 class="text-lg sm:text-xl font-bold tracking-wide text-zinc-400 font-mono pt-2">
-        &mdash; Amazon Strategy Builder &mdash;
-      </h3>
-    </div>
+      <!-- ========================================== -->
+      <!-- BACKGROUND ARTWORK & ABSTRACT GLOW EFFECTS -->
+      <!-- ========================================== -->
+      
+      <!-- LEFT INNER ARC GLOW & DOT GRID MATRIX -->
+      <div class="absolute inset-y-0 left-0 w-full max-w-xl pointer-events-none hidden md:block select-none">
+        <!-- Orange Dotted Pattern Matrix Layer -->
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ff8c00_1.5px,transparent_1.5px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_at_left,white_60%,transparent_100%)]"></div>
+        <!-- Huge Glowing Neon Curve Arc Border Layer -->
+        <div class="absolute top-1/2 -translate-y-1/2 -left-[450px] w-[650px] h-[650px] rounded-full border-[3px] border-transparent border-r-[#ff8c00] shadow-[15px_0_50px_rgba(255,140,0,0.25)] opacity-80"></div>
+        <div class="absolute top-1/2 -translate-y-1/2 -left-[452px] w-[654px] h-[654px] rounded-full border-[1px] border-transparent border-r-[#e65c00]/40 opacity-90"></div>
+      </div>
 
-    <!-- Subtle Centered Horizontal Separator Divider Line -->
-    <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#ff8c00]/50 to-transparent mx-auto my-4"></div>
+      <!-- RIGHT SIDE: GIANT FADED AMAZON WATERMARK LOGO -->
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-full max-w-lg opacity-[0.04] md:opacity-[0.07] pointer-events-none transform translate-x-12 select-none">
+        <!-- Right Dotted Pattern overlay matching layout -->
+        <div class="absolute inset-0 opacity-30 bg-[radial-gradient(#ff8c00_1.5px,transparent_1.5px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_at_right,white_50%,transparent_100%)] -z-10"></div>
+        <svg viewBox="0 0 256 77" fill="currentColor" class="w-full text-white">
+          <path d="M41.7 18.6c-6.8 0-12.8 2.2-16.7 5.6V1.7L9.4 6v62.4c0 3.8 2.3 5.4 6.8 4.7l15.6-2.5V56.3c3.6 2.8 9.3 4.8 15.6 4.8 13.8 0 24.3-10.9 24.3-21.2.1-12-10.5-21.3-30-21.3zm-3.2 27.6c-7.2 0-12.3-5-12.3-12.4s5-12.2 12.3-12.2 12.3 4.8 12.3 12.2c0 7.4-5.1 12.4-12.3 12.4zm54.3-27.6c-5.4 0-10.4 2.2-13.6 5.5v-4.4l-15.6 2.3v39.3c0 3.7 2.3 5.1 6.8 4.6l15.6-2.3V44.2c0-7.2 4.4-11.4 10.9-11.4 6 0 9.1 3.8 9.1 9.7v23.2c0 3.7 2.3 5 6.8 4.5l15.6-2.3V40.2c0-13.3-7.5-21.6-25.6-21.6zm44.2 26.8c0 10.7 7.5 15.2 18.2 15.2 5.5 0 10.6-1.1 14.7-3.2V44.8c-3 .9-6.9 1.4-10.7 1.4-5.6 0-8.9-2-8.9-7.2v-.8h20.6c1.1 0 1.7-.8 1.7-1.9v-5c0-11-6.7-19.1-19.2-19.1-13 0-20.7 9.5-20.7 20.2zm13.3-15c4.7 0 7.1 2.8 7.1 6.8h-14c.3-4.2 2.6-6.8 6.9-6.8zm73.3-11.8c-5.2 0-9.8 2.1-13.1 5.3v-4.2l-15.6 2.2V62c0 3.7 2.3 5 6.8 4.5l15.6-2.3V43.2c0-7.2 4.4-11.4 10.8-11.4 6 0 9 3.8 9 9.7v21c0 3.7 2.3 5 6.8 4.5l15.6-2.3V39.2c0-13.3-7.4-21.6-25.5-21.6zm-176.4 46c24.6 14.3 57.3 22 89.9 22 36.2 0 71.8-9.4 97.4-26.2 3.2-2.1 1.7-4.9-2.1-3.6-27.1 9.5-59.9 14.8-95.3 14.8-32.3 0-64.7-4.5-89.2-13.6-3.9-1.5-5.5 1.5-.7 6.6z"/>
+          <path d="M245.3 50.8c-2.3-1.8-8.2-.5-11.2.6-1 .4-1 .9 0 1.2 3.3 1.1 8.8 3.3 11 1.5 2.1-1.7.9-7.5.2-10.7-.2-1-.7-.9-1 .1-.8 3.2-1.3 8.9.1 10.3-.7-1.2 0-1.8.9-3z"/>
+        </svg>
+      </div>
 
-    <!-- Long-form Descriptive Content Paragraphs Block -->
-    <div class="max-w-2xl mx-auto space-y-5 text-sm sm:text-base text-zinc-400 font-medium leading-relaxed">
-      <p>
-        Success on Amazon isn't just about working; it's about the <span class="text-white font-semibold">right strategy</span>. I haven't come here simply to complete tasks, but to grow together with you. My experience and dedication have only one goal: to take your brand to a level where yours is the only name people mention.
-      </p>
-      <p class="text-xs sm:text-sm text-zinc-500">
-        From managing every detail of your account to running ads that actually perform, I focus on one thing: <span class="text-[#ff8c00]/80 font-bold">results</span>. I'll simplify the Amazon mess for you and build a clear strategy that turns your brand's potential into profit you can count on.
-      </p>
-    </div>
+      <!-- ========================================== -->
+      <!-- CORE STRUCTURED MAIN CONTAINER BLOCK       -->
+      <!-- ========================================== -->
+      <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
+        
+        <!-- Pill Label Badge Indicator -->
+        <div class="inline-flex items-center gap-2 bg-black/60 border border-zinc-800 px-4 py-1.5 rounded-full shadow-md backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></span>
+          <span class="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-zinc-300 uppercase font-mono">OUR PURPOSE & WHO I AM</span>
+        </div>
 
-    <!-- Interactive Conversion CTA Action Button -->
-    <div class="pt-6">
-      <a href="#" class="inline-flex items-center justify-center bg-gradient-to-r from-[#e65c00] to-[#ff8c00] text-black font-black text-xs sm:text-sm px-8 py-3.5 rounded-full tracking-wider uppercase transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] shadow-lg shadow-[#ff8c00]/10 hover:shadow-[#ff8c00]/20">
-        View Work
-      </a>
-    </div>
+        <!-- Headline Typography Hierarchy Block -->
+        <h1 class="text-3xl sm:text-[54px] font-extrabold tracking-tight leading-[1.1] text-white max-w-3xl mx-auto mt-8 font-sans">
+          Empowering brands to grow faster on <span class="text-[#ff8c00] relative">Amazon<span class="absolute left-0 bottom-1 w-full h-[3px] bg-[#ff8c00]/20 rounded-full"></span></span> by boosting visibility.
+        </h1>
+        
+        <!-- Small Centered Subtext Tag Anchor -->
+        <div class="flex items-center gap-3 mt-4 text-xs sm:text-sm font-bold tracking-widest text-zinc-400 uppercase font-mono">
+          <span class="text-[#ff8c00]/60">&mdash;</span>
+          Amazon Strategy Builder
+          <span class="text-[#ff8c00]/60">&mdash;</span>
+        </div>
 
-  </div>
-</section>
+        <!-- Upper Body Description Paragraph Section -->
+        <p class="mt-8 max-w-2xl text-zinc-300 text-sm sm:text-[15px] leading-relaxed font-medium tracking-wide">
+          Success on Amazon isn't just about working; it's about the <span class="text-[#ff8c00] font-semibold">right strategy</span>. I haven't come here simply to complete tasks, but to grow together with you. My experience and dedication have only one goal: to take your brand to a level where yours is the only name people mention.
+        </p>
+
+        <!-- Lower Dynamic Accent Border Text Box Wrapper -->
+        <div class="w-full max-w-3xl mt-6 p-5 sm:p-6 rounded-xl bg-zinc-900/10 border border-zinc-800/40 relative group overflow-hidden">
+          <!-- Subtle Inner Subtle Orange Glow Strip -->
+          <div class="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[#ff8c00]/40 to-transparent"></div>
+          
+          <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium tracking-wide">
+            From managing every detail of your account to running ads that actually perform, I focus on one thing: <span class="text-[#ff8c00] font-bold">results</span>. I'll simplify the Amazon mess for you and build a clear strategy that turns your brand's potential into profit you can count on.
+          </p>
+        </div>
+
+        <!-- Interactive Animated Dynamic Conversion CTA Button -->
+        <div class="mt-8">
+          <a href="#" class="inline-flex items-center justify-center bg-gradient-to-r from-[#e65c00] to-[#ff8c00] text-black font-black text-xs sm:text-sm px-8 py-3.5 rounded-full tracking-widest uppercase transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-[#ff8c00]/20 hover:shadow-[#ff8c00]/35 group">
+            View Work
+            <span class="ml-2 flex items-center justify-center w-5 h-5 rounded-full bg-black/10 text-xs font-black transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  );
+}
