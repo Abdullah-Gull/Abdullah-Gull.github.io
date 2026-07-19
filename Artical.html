@@ -1,6 +1,6 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- ========================================================================= -->
-<!-- PREMIUM E-COMMERCE PARTNER BOOKING SECTION (OUTER DESIGN WRAPPER)        -->
+<!-- PREMIUM E-COMMERCE PARTNER BOOKING SECTION (FULLY INTEGRATED WIDGET)     -->
 <!-- ========================================================================= -->
 <section class="booking-section relative min-h-screen py-24 px-4 sm:px-8 lg:px-16 bg-[#060608] text-white font-sans overflow-hidden select-none">
   
@@ -40,7 +40,7 @@
       </p>
     </div>
 
-    <!-- WIDGET CONTAINER MESH LAYOUT (Hides 3D calendar on mobile, floats elegantly on Desktop) -->
+    <!-- WIDGET CONTAINER MESH LAYOUT -->
     <div class="w-full relative flex flex-col items-center">
       
       <!-- Left Side Floating 3D Calendar + Clock Graphic Asset -->
@@ -73,20 +73,53 @@
         </svg>
       </div>
 
-      <!-- THE CORE LUXURY BORDER WRAPPER (Jiske andar aapka clean widget chal raha hai) -->
+      <!-- THE CORE LUXURY BORDER WRAPPER -->
       <div class="w-full rounded-[30px] border border-zinc-800/80 bg-[#09090b] shadow-[0_40px_90px_-20px_rgba(0,0,0,0.95)] p-2 sm:p-4 lg:p-6 relative z-20 overflow-hidden">
         
         <!-- Subtle Top Orange Border Highlight Lines -->
         <div class="absolute top-0 left-1/3 w-1/3 h-[1px] bg-gradient-to-r from-transparent via-[#ff8c00]/30 to-transparent z-30"></div>
 
-        <!-- ⚠️ AAHEN: APNA RAW CAL.COM INLINE INJECTION EMBED CODE YAHAN PASTE KAREIN ⚠️ -->
-        <div class="cal-embed-wrapper-node w-full bg-transparent overflow-hidden rounded-[20px]">
-          
-          <!-- Aapka existing inline div aur script element yahan bina kisi badlao ke aayega -->
-          <div style="width:100%; height:100%; min-height:600px;" id="my-cal-inline-30min"></div>
-          
-          <!-- Apne widget ka original script code yahan as-is rehne dein -->
+        <!-- CALENDAR EMBED FULLY INSTALLED -->
+        <div class="cal-embed-container w-full bg-transparent overflow-hidden rounded-[20px]">
+          <div style="width:100%; height:100%; min-height:600px; overflow:auto" id="my-cal-inline-30min"></div>
+          <script type="text/javascript">
+            (function (C, A, L) { 
+              let p = function (a, ar) { a.q.push(ar); }; 
+              let d = C.document; 
+              C.Cal = C.Cal || function () { 
+                let cal = C.Cal; 
+                let ar = arguments; 
+                if (!cal.loaded) { 
+                  cal.ns = {}; 
+                  cal.q = cal.q || []; 
+                  d.head.appendChild(d.createElement("script")).src = A; 
+                  cal.loaded = true; 
+                } 
+                if (ar[0] === L) { 
+                  const api = function () { p(api, arguments); }; 
+                  const namespace = ar[1]; 
+                  api.q = api.q || []; 
+                  if(typeof namespace === "string"){
+                    cal.ns[namespace] = cal.ns[namespace] || api;
+                    p(cal.ns[namespace], ar);
+                    p(cal, ["initNamespace", namespace]);
+                  } else p(cal, ar); 
+                  return;
+                } 
+                p(cal, ar); 
+              }; 
+            })(window, "https://app.cal.com/embed/embed.js", "init");
 
+            Cal("init", "30min", {origin:"https://app.cal.com"});
+
+            Cal.ns["30min"]("inline", {
+              elementOrSelector:"#my-cal-inline-30min",
+              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"},
+              calLink: "abdullah-gull/30min",
+            });
+
+            Cal.ns["30min"]("ui", {"theme":"dark","hideEventTypeDetails":false,"layout":"month_view"});
+          </script>
         </div>
       </div>
     </div>
