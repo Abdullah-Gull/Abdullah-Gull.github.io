@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="y1q1dcrXaLMTTUpBn4ZAqFOn8_tzt710IFcoDVw_cq8" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZZJMV9V17"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">    <script>
@@ -11,13 +12,12 @@
       gtag('config', 'G-VZZJMV9V17');
     </script>
     <link rel="icon" type="image/png" href="https://i.ibb.co/GvjXV0mL/favicon.png">
-    <link rel="icon" type="image/png" href="https://i.ibb.co/GvjXV0mL/favicon.png">
 <title>Contact Abdullah Gull - Amazon Consultant</title>
 <meta name="description" content="Whether your PPC is bleeding budget, your listings dropped rank overnight, or you just need a full Amazon account audit — contact Abdullah Gull to start the right conversation."/>
 <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
 <meta name="keywords" content="contact amazon consultant, amazon expert contact, hire amazon PPC specialist, amazon SEO consultant contact"/>
 <link rel="canonical" href="https://abdullah-gull.github.io/contact.html" />
- 
+
 <!-- ============ OPEN GRAPH TAGS ============ -->
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
@@ -33,7 +33,7 @@
 <meta property="og:image:height" content="600" />
 <meta property="og:image:alt" content="Contact Abdullah Gull" />
 <meta property="og:image:type" content="image/jpeg" />
- 
+
 <!-- ============ TWITTER CARD TAGS ============ -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Contact Abdullah Gull - Amazon Consultant" />
@@ -43,7 +43,7 @@
 <meta name="twitter:image" content="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" />
 <meta name="twitter:label1" content="Time to read" />
 <meta name="twitter:data1" content="2 minutes" />
- 
+
 <!-- ============ STRUCTURED DATA (JSON-LD) ============ -->
 <script type="application/ld+json">
 {
@@ -156,17 +156,7 @@
   ]
 }
 </script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-VZZJMV9V17');
-</script>
-</head>
-  
-<body>
-    <header class="main-header">
-   
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -194,9 +184,21 @@
   }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  :root {
+    --dark-bg: #0b0c0e;
+    --dark-secondary: #121316;
+    --light-text: #ffffff;
+    --border-color: #2a2b2f;
+    --primary-orange: #ff8c00;
+    --subtle-gray: #a0a5b1;
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * { box-sizing: border-box; }
+
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; }
 
   /* Smooth accordion for mobile sub-menus */
   .accordion-panel {
@@ -215,7 +217,7 @@
     transform: translate(-50%, 8px);
     transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
   }
-  .mega-menu-panel.open {
+  .mega-menu-panel.open, .mega-menu-panel.show-menu {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, 0);
@@ -252,17 +254,14 @@
   }
 
   /* ---------- Global mobile safety net ---------- */
-  /* Stops any section from causing left-right (horizontal) scroll on phones */
   html, body {
     max-width: 100%;
     overflow-x: hidden;
   }
-  /* Images/videos never overflow their container, whatever fixed px width they were given */
   img, video {
     max-width: 100%;
     height: auto;
   }
-  /* Any section you build stays inside the screen and gets sensible side padding on phones */
   .site-container {
     width: 100%;
     max-width: 1200px;
@@ -272,6 +271,7 @@
   @media (min-width: 640px)  { .site-container { padding-inline: 1.5rem; } }
   @media (min-width: 1024px) { .site-container { padding-inline: 2rem; } }
 </style>
+</head>
 <body class="bg-brand-bg text-brand-text" data-current-page="home">
 
 <!-- =========================================================
@@ -289,8 +289,7 @@
 
       <!-- Logo -->
       <a href="index.html" class="flex items-center gap-3 shrink-0">
-        <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg"
-             alt="Abdullah Gull - Amazon PPC & E-commerce Consultant"
+        <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg"alt="Abdullah Gull - Amazon PPC & E-commerce Consultant"
              class="w-10 h-10 rounded-full object-cover border-2 border-brand-orange
                     shadow-[0_0_20px_rgba(255,140,0,0.1)] transition-all duration-300
                     hover:shadow-[0_0_30px_rgba(255,140,0,0.3)] hover:scale-105">
@@ -604,7 +603,7 @@
     servicesToggle.setAttribute('aria-expanded', 'false');
     servicesChevron.style.transform = 'rotate(0deg)';
   }
-  function toggleMegaMenu(e) {
+  function toggleMegaMenuHandler(e) {
     e.stopPropagation();
     if (megaPanel.classList.contains('open')) {
       closeMegaMenu();
@@ -613,7 +612,7 @@
     }
   }
 
-  servicesToggle.addEventListener('click', toggleMegaMenu);
+  servicesToggle.addEventListener('click', toggleMegaMenuHandler);
   servicesWrapper.addEventListener('mouseenter', openMegaMenu);
   servicesWrapper.addEventListener('mouseleave', closeMegaMenu);
 
@@ -655,16 +654,6 @@
   });
 
   // ---------- Active nav link (highlights the current open page) ----------
-  // How this works when you reuse this header on a NEW page:
-  // 1) Copy this whole header block (both <header> tags + the mobile menu + this <script>) onto the new page.
-  // 2) On that page's <body> tag, set data-current-page to match ONE of:
-  //      "home"  "about"  "services"  "blog"  "contact"
-  //    e.g. on about.html:      <body ... data-current-page="about">
-  //         on services.html:   <body ... data-current-page="services">
-  //         on a page that is none of these (like meeting.html):
-  //                              <body ... data-current-page="">  (or just omit it)
-  // That's it — no filename or URL logic involved, so it works no matter how the
-  // page is hosted (clean URLs, subfolders, trailing slashes, etc.)
   function setActiveNavLinks() {
     const current = document.body.getAttribute('data-current-page') || '';
 
@@ -715,57 +704,27 @@
   window.addEventListener('scroll', handleScroll);
   syncSpacers();
   handleScroll();
-</script>
-</header>
-<script>
-    // Mega Menu Toggle
-    function toggleMegaMenu(event) {
-        event.preventDefault();
-        const megaPanel = document.getElementById('megaPanel');
-        const isVisible = megaPanel.classList.contains('show-menu');
-        
-        // Close all other menus
-        document.querySelectorAll('.mega-menu-panel').forEach(panel => {
-            panel.classList.remove('show-menu');
-        });
-        
-        // Toggle current menu
-        if (!isVisible) {
-            megaPanel.classList.add('show-menu');
-        }
-    }
 
-    // Close mega menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const servicesToggle = document.getElementById('servicesToggle');
-        const megaPanel = document.getElementById('megaPanel');
-        
-        if (!servicesToggle.contains(event.target) && !megaPanel.contains(event.target)) {
-            megaPanel.classList.remove('show-menu');
-        }
-    });
+  // ---------- Set Active Nav Link Based on Current Page (URL fallback) ----------
+  document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname;
+      const navLinks = document.querySelectorAll('.nav-link');
 
-    // Set Active Nav Link Based on Current Page
-    document.addEventListener('DOMContentLoaded', function() {
-        const currentPage = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            const href = link.getAttribute('href');
-            
-            // Match current page
-            if (href === 'index.html' && (currentPage === '/' || currentPage.endsWith('index.html'))) {
-                link.classList.add('active');
-            } else if (href === 'about.html' && currentPage.includes('about')) {
-                link.classList.add('active');
-            } else if (href === 'blog.html' && currentPage.includes('blog')) {
-                link.classList.add('active');
-            } else if (href === 'contact.html' && currentPage.includes('contact')) {
-                link.classList.add('active');
-            }
-        });
-    });
+      navLinks.forEach(link => {
+          link.classList.remove('active');
+          const href = link.getAttribute('href');
+
+          if (href === 'index.html' && (currentPage === '/' || currentPage.endsWith('index.html'))) {
+              link.classList.add('active');
+          } else if (href === 'about.html' && currentPage.includes('about')) {
+              link.classList.add('active');
+          } else if (href === 'blog.html' && currentPage.includes('blog')) {
+              link.classList.add('active');
+          } else if (href === 'contact.html' && currentPage.includes('contact')) {
+              link.classList.add('active');
+          }
+      });
+  });
 </script>
 
 <!-- Additional CSS for Badge Styling -->
@@ -820,338 +779,331 @@
             font-size: 13px;
         }
     }
-</style>    
+</style>
 
+<style>
+    /* Google Fonts Import for Premium Typography (already loaded above via <link>) */
 
-    <body> 
-       <style>
-        /* Google Fonts Import for Premium Typography */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    /* SECTION MAIN CONTAINER */
+    .get-in-touch-section {
+        background-color: #0b0c0e; /* Luxury Matte Black BG */
+        color: #a0a5b1;
+        padding: 80px 20px;
+        display: block;
+    }
 
-        /* RESET & BASE STYLES */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-        }
+    .git-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
-        body {
-            background-color: #0b0c0e;
-        }
+    /* TOP HEADER AREA */
+    .git-header {
+        text-align: center;
+        margin-bottom: 50px;
+        padding: 0 10px;
+    }
 
-        /* SECTION MAIN CONTAINER */
-        .get-in-touch-section {
-            background-color: #0b0c0e; /* Luxury Matte Black BG */
-            color: #a0a5b1;
-            padding: 80px 20px;
+    .git-header h2 {
+        font-size: 42px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 20px;
+        letter-spacing: -0.5px;
+    }
+
+    .git-header p {
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #b0b5c1;
+    }
+
+    /* TEXT COLOR HIGHLIGHTS */
+    .orange-text {
+        color: #ff9900; /* Signature Amazon Orange */
+    }
+
+    .orange-text-glow {
+        color: #ffaa1d;
+        font-weight: 600;
+    }
+
+    .white-text {
+        color: #ffffff;
+    }
+
+    /* MAIN CONTENT CARD GRID STYLE VIA TABLE-CELL FOR MAXIMUM STABILITY */
+    .git-main-card {
+        background: #121316; /* Deep Charcoal Dark Card */
+        border: 1px solid #1f2126;
+        border-radius: 24px;
+        display: table;
+        width: 100%;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* COLUMNS */
+    .git-left-col, .git-right-col {
+        display: table-cell;
+        width: 50%;
+        vertical-align: top;
+        padding: 50px;
+    }
+
+    /* LEFT COLUMN STYLING */
+    .git-left-col {
+        background-color: #121316;
+    }
+
+    .git-left-col h3 {
+        font-size: 28px;
+        color: #ffffff;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .git-left-col .subtitle {
+        font-size: 16px;
+        color: #ff9900;
+        font-weight: 500;
+        margin-bottom: 25px;
+    }
+
+    .git-left-col .tagline {
+        font-size: 14px;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    /* Bullet Points List */
+    .git-bullets {
+        list-style: none;
+        margin-bottom: 35px;
+    }
+
+    .git-bullets li {
+        display: table;
+        margin-bottom: 18px;
+        line-height: 1.4;
+    }
+
+    .check-icon {
+        display: table-cell;
+        width: 25px;
+        color: #ff9900;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .bullet-text {
+        display: table-cell;
+        color: #a0a5b1;
+        font-size: 14.5px;
+    }
+
+    .cta-mini-text {
+        font-size: 14px;
+        color: #ffffff;
+        font-weight: 500;
+        margin-bottom: 35px;
+    }
+
+    /* STATS DESIGN SECTION */
+    .git-stats-container {
+        background: #18191d;
+        border: 1px solid #23252a;
+        border-radius: 16px;
+        display: table;
+        width: 100%;
+        padding: 22px 10px;
+        text-align: center;
+    }
+
+    .stat-box {
+        display: table-cell;
+        width: 32%;
+        vertical-align: middle;
+    }
+
+    .stat-box h4 {
+        color: #ffffff;
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .stat-box p {
+        font-size: 11px;
+        color: #808593;
+        line-height: 1.3;
+        padding: 0 5px;
+    }
+
+    .stat-box-divider {
+        display: table-cell;
+        width: 1px;
+        background-color: #2b2e36;
+        height: 50px;
+    }
+
+    /* RIGHT COLUMN (FORM BLOCK) */
+    .git-right-col {
+        background-color: #16171c; /* Contrast Dark Background */
+        border-left: 1px solid #1f2126;
+    }
+
+    .form-header {
+        margin-bottom: 30px;
+    }
+
+    .form-header h3 {
+        font-size: 28px;
+        color: #ffffff;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .form-header p {
+        font-size: 14px;
+        color: #808593;
+        line-height: 1.5;
+    }
+
+    /* FORM FIELD STYLES */
+    .git-form-group {
+        margin-bottom: 22px;
+    }
+
+    .git-form-group label {
+        display: block !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        letter-spacing: 1.5px !important;
+        margin-bottom: 10px !important;
+        text-transform: uppercase !important;
+    }
+
+    /* Premium Input Shape Settings Fixed */
+    .git-form input,
+    .git-form textarea {
+        width: 100% !important;
+        background: #1d1e24 !important; /* Matte charcoal dark input fields */
+        border: 1px solid #282a32 !important;
+        color: #ffffff !important;
+        padding: 16px 20px !important;
+        border-radius: 12px !important; /* Sleek smooth curves */
+        font-size: 16px !important; /* 16px avoids iOS auto-zoom on focus */
+        outline: none !important;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+        display: block !important;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    /* Placeholder Styling */
+    .git-form input::placeholder,
+    .git-form textarea::placeholder {
+        color: #606675 !important;
+        font-size: 14px;
+    }
+
+    /* Interaction Aura Effect on Input Focus */
+    .git-form input:focus,
+    .git-form textarea:focus {
+        border-color: #ff9900 !important;
+        background: #22232a !important;
+        box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .git-form textarea {
+        height: 130px !important;
+        resize: none !important;
+        line-height: 1.5 !important;
+    }
+
+    /* ELITE LUXURY BUTTON CONFIGURATION */
+    .git-submit-btn {
+        width: 100%;
+        background: #ffa733; /* Vibrant warm orange */
+        color: #0b0c0e;
+        border: none;
+        padding: 16px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 15px;
+        cursor: pointer;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 6px 20px rgba(255, 153, 0, 0.15);
+    }
+
+    .git-submit-btn span {
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+
+    /* Hover states */
+    .git-submit-btn:hover {
+        background: #ff9900;
+        box-shadow: 0 8px 25px rgba(255, 153, 0, 0.35);
+    }
+
+    .git-submit-btn:hover .btn-arrow {
+        transform: translateX(4px); /* Arrow moves slightly to the right smoothly */
+    }
+
+    /* MOBILE RESPONSIVENESS */
+    @media (max-width: 900px) {
+        .git-main-card {
             display: block;
         }
-
-        .git-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* TOP HEADER AREA */
-        .git-header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 0 10px;
-        }
-
-        .git-header h2 {
-            font-size: 42px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-
-        .git-header p {
-            font-size: 16px;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #b0b5c1;
-        }
-
-        /* TEXT COLOR HIGHLIGHTS */
-        .orange-text {
-            color: #ff9900; /* Signature Amazon Orange */
-        }
-
-        .orange-text-glow {
-            color: #ffaa1d;
-            font-weight: 600;
-        }
-
-        .white-text {
-            color: #ffffff;
-        }
-
-        /* MAIN CONTENT CARD GRID STYLE VIA TABLE-CELL FOR MAXIMUM STABILITY */
-        .git-main-card {
-            background: #121316; /* Deep Charcoal Dark Card */
-            border: 1px solid #1f2126;
-            border-radius: 24px;
-            display: table;
-            width: 100%;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        /* COLUMNS */
         .git-left-col, .git-right-col {
-            display: table-cell;
-            width: 50%;
-            vertical-align: top;
-            padding: 50px;
-        }
-
-        /* LEFT COLUMN STYLING */
-        .git-left-col {
-            background-color: #121316;
-        }
-
-        .git-left-col h3 {
-            font-size: 28px;
-            color: #ffffff;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .git-left-col .subtitle {
-            font-size: 16px;
-            color: #ff9900;
-            font-weight: 500;
-            margin-bottom: 25px;
-        }
-
-        .git-left-col .tagline {
-            font-size: 14px;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-
-        /* Bullet Points List */
-        .git-bullets {
-            list-style: none;
-            margin-bottom: 35px;
-        }
-
-        .git-bullets li {
-            display: table;
-            margin-bottom: 18px;
-            line-height: 1.4;
-        }
-
-        .check-icon {
-            display: table-cell;
-            width: 25px;
-            color: #ff9900;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .bullet-text {
-            display: table-cell;
-            color: #a0a5b1;
-            font-size: 14.5px;
-        }
-
-        .cta-mini-text {
-            font-size: 14px;
-            color: #ffffff;
-            font-weight: 500;
-            margin-bottom: 35px;
-        }
-
-        /* STATS DESIGN SECTION */
-        .git-stats-container {
-            background: #18191d;
-            border: 1px solid #23252a;
-            border-radius: 16px;
-            display: table;
+            display: block;
             width: 100%;
-            padding: 22px 10px;
-            text-align: center;
+            padding: 35px 25px;
         }
-
-        .stat-box {
-            display: table-cell;
-            width: 32%;
-            vertical-align: middle;
-        }
-
-        .stat-box h4 {
-            color: #ffffff;
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .stat-box p {
-            font-size: 11px;
-            color: #808593;
-            line-height: 1.3;
-            padding: 0 5px;
-        }
-
-        .stat-box-divider {
-            display: table-cell;
-            width: 1px;
-            background-color: #2b2e36;
-            height: 50px;
-        }
-
-        /* RIGHT COLUMN (FORM BLOCK) */
         .git-right-col {
-            background-color: #16171c; /* Contrast Dark Background */
-            border-left: 1px solid #1f2126;
+            border-left: none;
+            border-top: 1px solid #1f2126;
         }
+        .git-header h2 {
+            font-size: 32px;
+        }
+    }
 
-        .form-header {
-            margin-bottom: 30px;
-        }
-
-        .form-header h3 {
-            font-size: 28px;
-            color: #ffffff;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .form-header p {
-            font-size: 14px;
-            color: #808593;
-            line-height: 1.5;
-        }
-
-        /* FORM FIELD STYLES */
-        .git-form-group {
-            margin-bottom: 22px;
-        }
-
-        .git-form-group label {
-            display: block !important;
-            font-size: 11px !important;
-            font-weight: 700 !important;
-            color: #ffffff !important;
-            letter-spacing: 1.5px !important;
-            margin-bottom: 10px !important;
-            text-transform: uppercase !important;
-        }
-
-        /* Premium Input Shape Settings Fixed */
-        .git-form input, 
-        .git-form textarea {
-            width: 100% !important;
-            background: #1d1e24 !important; /* Matte charcoal dark input fields */
-            border: 1px solid #282a32 !important;
-            color: #ffffff !important;
-            padding: 16px 20px !important;
-            border-radius: 12px !important; /* Sleek smooth curves */
-            font-size: 14px !important;
-            outline: none !important;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-            display: block !important;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-        }
-
-        /* Placeholder Styling */
-        .git-form input::placeholder, 
-        .git-form textarea::placeholder {
-            color: #606675 !important;
-            font-size: 14px;
-        }
-
-        /* Interaction Aura Effect on Input Focus */
-        .git-form input:focus, 
-        .git-form textarea:focus {
-            border-color: #ff9900 !important;
-            background: #22232a !important;
-            box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-        }
-
-        .git-form textarea {
-            height: 130px !important;
-            resize: none !important;
-            line-height: 1.5 !important;
-        }
-
-        /* ELITE LUXURY BUTTON CONFIGURATION */
-        .git-submit-btn {
-            width: 100%;
-            background: #ffa733; /* Vibrant warm orange */
-            color: #0b0c0e;
-            border: none;
-            padding: 16px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 15px;
-            cursor: pointer;
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.15);
-        }
-
-        .git-submit-btn span {
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-
-        /* Hover states */
-        .git-submit-btn:hover {
-            background: #ff9900;
-            box-shadow: 0 8px 25px rgba(255, 153, 0, 0.35);
-        }
-
-        .git-submit-btn:hover .btn-arrow {
-            transform: translateX(4px); /* Arrow moves slightly to the right smoothly */
-        }
-
-        /* MOBILE RESPONSIVENESS */
-        @media (max-width: 900px) {
-            .git-main-card {
-                display: block;
-            }
-            .git-left-col, .git-right-col {
-                display: block;
-                width: 100%;
-                padding: 35px 25px;
-            }
-            .git-right-col {
-                border-left: none;
-                border-top: 1px solid #1f2126;
-            }
-            .git-header h2 {
-                font-size: 32px;
-            }
-        }
-    </style>
-</head>
-<body>
+    @media (max-width: 480px) {
+        .get-in-touch-section { padding: 50px 14px; }
+        .git-header h2 { font-size: 26px; }
+        .git-header p { font-size: 14px; }
+        .git-left-col, .git-right-col { padding: 25px 18px; }
+        .git-stats-container { padding: 16px 4px; }
+        .stat-box h4 { font-size: 20px; }
+        .stat-box p { font-size: 10px; }
+    }
+</style>
 
 <section class="get-in-touch-section">
     <div class="git-container">
-        
+
         <div class="git-header">
             <h2>Get in <span class="orange-text">touch</span></h2>
             <p><strong class="white-text">Abdullah Gull</strong> is an <span class="orange-text-glow">Amazon-focused ecommerce growth partner</span> specializing in marketplace strategy and execution to scale brand performance on Amazon Seller Central and Vendor Central.</p>
         </div>
 
         <div class="git-main-card">
-            
+
             <div class="git-left-col">
                 <h3>Get in touch with us</h3>
                 <p class="subtitle">Discover How Our Amazon Solutions Can Propel Your Business</p>
                 <p class="tagline">Your brand deserves to thrive on Amazon.</p>
-                
+
                 <ul class="git-bullets">
                     <li>
                         <span class="check-icon">✓</span>
@@ -1174,9 +1126,9 @@
                         <span class="bullet-text">Comprehensive Amazon Services to Maximize Your Potential</span>
                     </li>
                 </ul>
-                
+
                 <p class="cta-mini-text">Let's connect and unlock your Amazon store's true potential!</p>
-                
+
                 <div class="git-stats-container">
                     <div class="stat-box">
                         <h4>45+</h4>
@@ -1200,9 +1152,9 @@
                     <h3>Contact Us</h3>
                     <p>We'd love to hear from you! Please fill out the form and we'll get back to you as soon as possible.</p>
                 </div>
-                
+
                 <form action="https://formspree.io/f/mojpjjqk" method="POST" class="git-form">
-                    
+
                     <div class="git-form-group">
                         <label>FULL NAME</label>
                         <input type="text" name="name" placeholder="Your name" required>
@@ -1239,8 +1191,6 @@
     </div>
 </section>
 
-<script src="https://cdn.tailwindcss.com"></script>
-
 <!-- Custom Cyber Grid Animations Styles -->
 <style>
   @keyframes cyberWave {
@@ -1259,13 +1209,16 @@
   .animate-float-dots {
     animation: floatDots 12s ease-in-out infinite;
   }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-cyber-wave, .animate-float-dots { animation: none; }
+  }
 </style>
 
 <!-- ========================================================================= -->
 <!-- CONTACT SECTION (ORANGE PREMIUM THEME WITH FIXED VISIBLE CYBER DESIGN)    -->
 <!-- ========================================================================= -->
 <section class="w-full bg-[#000000] text-white py-20 px-6 sm:px-12 lg:px-20 font-sans select-none overflow-hidden relative min-h-[750px] flex items-center justify-center">
-  
+
   <!-- LEFT SIDE BACKGROUND DESIGN (Visible in Empty Space) -->
   <div class="absolute left-0 top-12 w-[320px] h-[550px] opacity-25 pointer-events-none hidden xl:block animate-cyber-wave">
     <!-- Tech Grid Lines -->
@@ -1302,10 +1255,10 @@
 
   <!-- Content Wrapper -->
   <div class="max-w-[1340px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
-    
+
     <!-- ================= LEFT COLUMN (CONTENT & ORANGE CARDS) ================= -->
     <div class="lg:col-span-6 flex flex-col space-y-8">
-      
+
       <!-- Top Tagline & Heading -->
       <div class="space-y-2">
         <span class="text-[11px] font-black tracking-widest text-[#ff8c00] uppercase block">REACH US</span>
@@ -1317,7 +1270,7 @@
 
       <!-- Contact Orange Cards Container -->
       <div class="space-y-4 w-full max-w-[480px]">
-        
+
         <!-- Email Card (Orange Theme) -->
         <a href="mailto:abdullahgullwork@outlook.com" class="group flex items-center gap-4 p-4 rounded-[24px] bg-[#ff8c00] text-black border border-transparent shadow-[0_10px_30px_rgba(255,140,0,0.15)] transition-all hover:scale-[1.01] hover:bg-[#ffa534]">
           <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center shrink-0">
@@ -1326,9 +1279,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
             </svg>
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col min-w-0">
             <span class="text-[10px] font-black text-black/60 uppercase tracking-wider">EMAIL</span>
-            <span class="text-base font-bold text-black tracking-wide">abdullahgullwork@outlook.com</span>
+            <span class="text-base font-bold text-black tracking-wide break-all">abdullahgullwork@outlook.com</span>
           </div>
         </a>
 
@@ -1377,14 +1330,16 @@
       <!-- Social Footer Icons Row -->
       <div class="flex items-center gap-3 pt-4">
         <!-- Facebook Link -->
-        <a href="https://www.Facebook.com/in/abdullahgullamazon1/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white hover:bg-[#ff8c00] hover:text-black transition-colors" title="Follow on Facebook">
+        <a href="https://www.facebook.com/abdullahgullamazon1/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white hover:bg-[#ff8c00] hover:text-black transition-colors" title="Follow on Facebook">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
             <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
           </svg>
         </a>
-        <!-- Instagram Link Placeholder -->
-        <a href="#" class="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white hover:bg-[#ff8c00] hover:text-black transition-colors" title="Follow on Instagram">
-          <span class="text-sm">📷</span>
+        <!-- Instagram Link -->
+        <a href="https://www.instagram.com/abdullahgullofficial/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white hover:bg-[#ff8c00] hover:text-black transition-colors" title="Follow on Instagram">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
         </a>
         <!-- LinkedIn Link -->
         <a href="https://www.linkedin.com/in/abdullah-gull-amazon/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white hover:bg-[#ff8c00] hover:text-black transition-colors" title="Connect on LinkedIn">
@@ -1399,47 +1354,47 @@
     <div class="lg:col-span-6 w-full flex justify-center lg:justify-end">
       <!-- Outer Interactive Frame Container -->
       <div id="interactiveMockup" class="w-full max-w-[580px] aspect-[4/3] bg-[#0c0c0e]/90 border border-zinc-800 rounded-[28px] p-3 shadow-2xl relative overflow-hidden cursor-pointer group transition-all duration-300">
-        
+
         <!-- Screen Inside Layout -->
         <div class="w-full h-full rounded-[20px] bg-black overflow-hidden grid grid-cols-3 grid-rows-3 gap-[3px] relative border border-zinc-900">
-          
+
           <!-- Box 1 -->
           <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 1" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
+            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 1" loading="lazy" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
           </div>
           <!-- Box 2 -->
           <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 2" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
+            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 2" loading="lazy" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
           </div>
           <!-- Box 3 -->
           <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 3" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
+            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 3" loading="lazy" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
           </div>
           <!-- Box 4 -->
           <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 4" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
+            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 4" loading="lazy" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
           </div>
 
           <!-- Box 5: CENTER TARGET PRODUCT WITH GLOW -->
           <div class="relative w-full h-full bg-zinc-950 border-[3px] border-[#ff8c00] shadow-[0_0_25px_rgba(255,140,0,0.5),inset_0_0_15px_rgba(255,140,0,0.3)] z-10 flex items-center justify-center p-0.5">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Abdullah Gull - E-commerce and Amazon Growth Partner Profile Focus" class="w-full h-full object-cover">
+            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Abdullah Gull - E-commerce and Amazon Growth Partner Profile Focus" loading="lazy" class="w-full h-full object-cover">
           </div>
 
           <!-- Box 6 -->
           <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 5" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
+            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 5" loading="lazy" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
           </div>
           <!-- Box 7 -->
           <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 6" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
+            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 6" loading="lazy" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
           </div>
           <!-- Box 8 -->
           <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 7" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
+            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 7" loading="lazy" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
           </div>
           <!-- Box 9 -->
           <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 8" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
+            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 8" loading="lazy" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
           </div>
 
         </div>
@@ -1449,10 +1404,13 @@
   </div>
 </section>
 
-<!-- Card Motion Script -->
+<!-- Card Motion Script (desktop hover effect; no-op on touch devices) -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const mockupFrame = document.getElementById("interactiveMockup");
+    if (!mockupFrame) return;
+    const isTouch = window.matchMedia("(hover: none)").matches;
+    if (isTouch) return;
     mockupFrame.addEventListener("mousemove", (e) => {
       const rect = mockupFrame.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
@@ -1464,8 +1422,8 @@
     });
   });
 </script>
-    
-        <!-- FOOTER SECTION - Based on Image Reference -->
+
+    <!-- FOOTER SECTION - Based on Image Reference -->
 <footer class="footer-section">
     <div class="footer-wrapper">
         <!-- Left Column: Brand & Contact Info -->
@@ -1477,28 +1435,28 @@
 
             <!-- Social Media Links -->
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/abdullah-gull-amazon/" class="social-link linkedin" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/abdullah-gull-amazon/" class="social-link linkedin" title="LinkedIn" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://facebook.com/abdullahgullamazon1/" class="social-link facebook" title="Facebook">
+                <a href="https://facebook.com/abdullahgullamazon1/" class="social-link facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://x.com/Abdullahgullamz" class="social-link twitter" title="Twitter">
+                <a href="https://x.com/Abdullahgullamz" class="social-link twitter" title="Twitter" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-x-twitter"></i>
                 </a>
-                <a href="https://threads.com/abdullahgullamazon" class="social-link threads" title="Threads">
+                <a href="https://threads.com/abdullahgullamazon" class="social-link threads" title="Threads" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-threads"></i>
                 </a>
-                <a href="https://www.youtube.com/@Abdullahgullamazon" class="social-link youtube" title="YouTube">
+                <a href="https://www.youtube.com/@Abdullahgullamazon" class="social-link youtube" title="YouTube" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-youtube"></i>
                 </a>
-                <a href="https://www.instagram.com/abdullahgullofficial" class="social-link instagram" title="Instagram">
+                <a href="https://www.instagram.com/abdullahgullofficial" class="social-link instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.pinterest.com/Abdullahgullamazon/" class="social-link pinterest" title="Pinterest">
+                <a href="https://www.pinterest.com/Abdullahgullamazon/" class="social-link pinterest" title="Pinterest" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-pinterest-p"></i>
                 </a>
-                <a href="https://www.tiktok.com/@abdxxah_965" class="social-link tiktok" title="TikTok">
+                <a href="https://www.tiktok.com/@abdxxah_965" class="social-link tiktok" title="TikTok" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-tiktok"></i>
                 </a>
             </div>
@@ -1517,16 +1475,12 @@
                     <i class="fas fa-envelope"></i>
                     <span>abdullahgullwork@outlook.com</span>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-search"></i>
-                    <span><a href="#">Search</a></span>
-                </div>
             </div>
 
             <!-- Profile Avatar with YouTube Badge -->
             <div class="profile-section">
                 <div class="avatar-wrapper">
-<img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" alt="Abdullah Gull - Amazon PPC & E-commerce Consultant">            
+                    <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" alt="Abdullah Gull - Amazon PPC & E-commerce Consultant" loading="lazy">
                     <div class="youtube-badge">
                         <i class="fab fa-youtube"></i>
                     </div>
@@ -1569,7 +1523,6 @@
                     <li><a href="https://abdullah-gull.github.io/blog.html">Articles</a></li>
                     <li><a href="https://abdullah-gull.github.io/">News</a></li>
                     <li><a href="https://abdullah-gull.github.io/">Events</a></li>
-                    <li><a href="https://abdullah-gull.github.io/Music/abdullah-gull-ppc-beats.mp3.html">Musics</a></li>
                 </ul>
 
                 <!-- Marketplaces Section -->
@@ -1751,6 +1704,7 @@
         font-size: 13px;
         color: var(--subtle-gray);
         transition: all 0.3s var(--transition-smooth);
+        word-break: break-word;
     }
 
     .contact-item i {
@@ -2110,106 +2064,39 @@
     }
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-    var swiper = new Swiper(".logoSwiper", {
-        slidesPerView: "auto",
-        loop: true,
-        speed: 5000,
-        autoplay: { delay: 0, disableOnInteraction: false },
-        allowTouchMove: false,
-    });
-
     function showPage(pageId) {
+        var target = document.getElementById(pageId);
+        if (!target) return;
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
+        target.classList.add('active');
+        var btn = document.getElementById('btn-' + pageId);
         document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-        document.getElementById('btn-' + pageId).classList.add('active');
+        if (btn) btn.classList.add('active');
         window.scrollTo(0, 0);
     }
 </script>
 
-<!-- Aapka baaki coding data -->
-
-    <script>
-        function toggleMegaMenu(event) {
-            event.stopPropagation(); 
-            var panel = document.getElementById("megaPanel");
-            var wrapper = document.getElementById("servicesToggle");
-            
-            panel.classList.toggle("show-menu");
-            wrapper.classList.toggle("active-btn");
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.closest('#servicesToggle')) {
-                var panel = document.getElementById("megaPanel");
-                var wrapper = document.getElementById("servicesToggle");
-                if (panel && panel.classList.contains('show-menu')) {
-                    panel.classList.remove("show-menu");
-                    wrapper.classList.remove("active-btn");
-                }
-            }
-        }
-    </script>
-    <!-- Aapka form aur baki coding yahan khatam ho rahi hai -->
-    
-    <script>
-    document.querySelector('.form-box form').addEventListener('submit', function(e) {
-        e.preventDefault(); // Page refresh hone se rokne ke liye
-        
-        const btn = document.querySelector('.submit-btn');
-        btn.innerText = "Sending..."; // Loading dikhane ke liye
-        
-        // Form se data lena
-        const firstName = document.querySelector('input[name="first_name"]').value;
-        const lastName = document.querySelector('input[name="last_name"]').value;
-        const email = document.querySelector('input[name="email"]').value;
-        const message = document.querySelector('textarea[name="message"]').value;
-
-        // Slack Message Format
-        const slackData = {
-            text: `🚀 *New Inquiry from Portfolio*\n*Name:* ${firstName} ${lastName}\n*Email:* ${email}\n*Message:* ${message}`
-        };
-
-        // Slack ko bhejney ka process
-        fetch('https://hooks.slack.com/services/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', {
-            method: 'POST',
-            body: JSON.stringify(slackData),
-            mode: 'no-cors' // GitHub pages ke liye zaroori hai
-        }).then(() => {
-            alert('Thank you! Message sent to Abdullah\'s Slack.');
-            btn.innerText = "Send Message";
-            this.reset(); // Form khali karne ke liye
-        }).catch(err => {
-            alert('Error: Message nahi bhej sakay.');
-            btn.innerText = "Send Message";
-        });
-    });
-    </script>
 <!-- ========================================================================= -->
 <!-- BACK TO TOP BUTTON WITH SMOOTH SCROLL LOGIC                               -->
 <!-- ========================================================================= -->
 
-<!-- 1. Button HTML (Tailwind CSS styled) -->
-<button 
-  id="backToTopBtn" 
+<button
+  id="backToTopBtn"
   onclick="scrollToTop()"
   class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-white text-black border border-zinc-800 flex items-center justify-center shadow-lg cursor-pointer transition-all duration-300 translate-y-20 opacity-0 z-50 hover:bg-[#ff8c00] hover:text-black hover:scale-110"
   title="Go to top"
+  aria-label="Back to top"
 >
-  <!-- Clean Up Arrow SVG Icon -->
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
   </svg>
 </button>
 
-<!-- 2. Scroll Show/Hide & Smooth Function Script -->
 <script>
   const backToTopBtn = document.getElementById("backToTopBtn");
 
-  // Jab user page par 300px neeche scroll karega, tab button screen par show hoga
-  window.onscroll = function() {
+  window.addEventListener("scroll", function() {
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
       backToTopBtn.classList.remove("translate-y-20", "opacity-0");
       backToTopBtn.classList.add("translate-y-0", "opacity-100");
@@ -2217,9 +2104,8 @@
       backToTopBtn.classList.remove("translate-y-0", "opacity-100");
       backToTopBtn.classList.add("translate-y-20", "opacity-0");
     }
-  };
+  });
 
-  // Smooth scroll up function
   function scrollToTop() {
     window.scrollTo({
       top: 0,
@@ -2227,5 +2113,6 @@
     });
   }
 </script>
-</body> <!-- Yeh body ka aakhri tag hai -->
+
+</body>
 </html>
