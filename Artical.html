@@ -64,6 +64,29 @@
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   #mobileMenu.open { transform: translateY(0); }
+
+  /* ---------- Sticky header scroll states ---------- */
+  #desktopHeaderWrap {
+    transition: padding 0.3s ease;
+  }
+  #headerCapsule {
+    transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  #desktopHeaderWrap.scrolled {
+    padding-top: 0.75rem;
+  }
+  #desktopHeaderWrap.scrolled #headerCapsule {
+    background: linear-gradient(135deg, rgba(26,27,31,0.94), rgba(11,12,14,0.9));
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+
+  #mobileHeaderWrap {
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+  }
+  #mobileHeaderWrap.scrolled {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    background: #0B0C0E;
+  }
 </style>
 </head>
 <body class="bg-brand-bg text-brand-text">
@@ -71,14 +94,14 @@
 <!-- =========================================================
      DESKTOP HEADER (hidden below lg breakpoint)
      ========================================================= -->
-<header class="hidden lg:block sticky top-0 z-[999] w-full pt-5">
+<header id="desktopHeaderWrap" class="hidden lg:block fixed top-0 inset-x-0 z-[999] w-full pt-5">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="relative flex items-center justify-between gap-6
+    <div id="headerCapsule" class="relative flex items-center justify-between gap-6
                 bg-gradient-to-br from-brand-secondary/50 to-brand-border/30
                 backdrop-blur-xl border border-brand-border
                 rounded-capsule px-6 py-3
                 shadow-[0_8px_32px_rgba(0,0,0,0.4)]
-                transition-all duration-300 hover:border-brand-orange/20
+                hover:border-brand-orange/20
                 hover:shadow-[0_8px_32px_rgba(255,140,0,0.1)]">
 
       <!-- Logo -->
@@ -97,13 +120,13 @@
       <nav class="absolute left-1/2 -translate-x-1/2 flex items-center gap-1
                   bg-gradient-to-br from-brand-secondary/80 to-brand-border/60
                   border border-brand-border rounded-full px-3 py-2">
-        <a href="index.html"
-           class="px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted
-                  transition-colors duration-300 bg-brand-orange text-white font-semibold">
+        <a href="index.html" data-nav-link
+           class="desktop-nav-link px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted
+                  transition-colors duration-300 hover:text-white hover:bg-brand-orange hover:font-semibold">
           Home
         </a>
-        <a href="about.html"
-           class="px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted
+        <a href="about.html" data-nav-link
+           class="desktop-nav-link px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted
                   transition-colors duration-300 hover:text-white hover:bg-brand-orange hover:font-semibold">
           About us
         </a>
@@ -203,13 +226,13 @@
           </div>
         </div>
 
-        <a href="blog.html"
-           class="px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted
+        <a href="blog.html" data-nav-link
+           class="desktop-nav-link px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted
                   transition-colors duration-300 hover:text-white hover:bg-brand-orange hover:font-semibold">
           Blog
         </a>
-        <a href="contact.html"
-           class="px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted
+        <a href="contact.html" data-nav-link
+           class="desktop-nav-link px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted
                   transition-colors duration-300 hover:text-white hover:bg-brand-orange hover:font-semibold">
           Contact us
         </a>
@@ -226,11 +249,12 @@
     </div>
   </div>
 </header>
+<div id="desktopSpacer" class="hidden lg:block"></div>
 
 <!-- =========================================================
      MOBILE HEADER (visible below lg breakpoint)
      ========================================================= -->
-<header class="lg:hidden sticky top-0 z-[999] w-full bg-brand-bg text-brand-text border-b border-brand-border">
+<header id="mobileHeaderWrap" class="lg:hidden fixed top-0 inset-x-0 z-[999] w-full bg-brand-bg text-brand-text border-b border-brand-border">
   <!-- Top row: logo + hamburger -->
   <div class="flex items-center justify-between px-4 py-3">
     <a href="index.html" class="flex items-center gap-2">
@@ -257,6 +281,7 @@
     <a href="contact.html" class="text-sm font-medium text-brand-muted hover:text-brand-orange transition-colors">Contact Us</a>
   </div>
 </header>
+<div id="mobileSpacer" class="lg:hidden"></div>
 
 <!-- =========================================================
      MOBILE FULL-SCREEN MENU
@@ -277,6 +302,8 @@
 
   <nav class="px-5 pt-2 pb-16">
 
+    <a href="index.html" data-nav-link class="mobile-nav-link block py-4 border-b border-brand-border text-[15px] font-medium">Home</a>
+    <a href="about.html" data-nav-link class="mobile-nav-link block py-4 border-b border-brand-border text-[15px] font-medium">About us</a>
     <a href="services.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">Full service management</a>
     <a href="services.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">Advertising (PPC) management</a>
     <a href="services.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">Amazon SEO</a>
@@ -365,9 +392,9 @@
 
     <a href="services.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">All services</a>
     <a href="meeting.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">Book a coaching call</a>
-    <a href="blog.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">Blog</a>
+    <a href="blog.html" data-nav-link class="mobile-nav-link block py-4 border-b border-brand-border text-[15px] font-medium">Blog</a>
     <a href="services.html" class="block py-4 border-b border-brand-border text-[15px] font-medium text-brand-orange">Free Amazon tools</a>
-    <a href="contact.html" class="block py-4 text-[15px] font-medium">Contact us</a>
+    <a href="contact.html" data-nav-link class="mobile-nav-link block py-4 text-[15px] font-medium">Contact us</a>
 
     <a href="meeting.html"
        class="mt-8 block text-center bg-brand-orange text-white font-semibold
@@ -383,10 +410,16 @@
 <main class="max-w-6xl mx-auto px-6 py-24 text-center">
   <h1 class="text-3xl lg:text-5xl font-bold mb-4">Header preview</h1>
   <p class="text-brand-muted max-w-xl mx-auto">
-    Resize the browser or view on mobile to see the desktop glass-capsule header
-    switch to the two-row mobile header with the full-screen menu.
+    Scroll down to test the sticky header background, and resize the browser
+    to see the desktop glass-capsule header switch to the two-row mobile header.
   </p>
 </main>
+<div class="max-w-6xl mx-auto px-6 pb-32 space-y-6">
+  <div class="h-40 rounded-2xl border border-brand-border bg-brand-secondary/40 flex items-center justify-center text-brand-muted">Demo section 1</div>
+  <div class="h-40 rounded-2xl border border-brand-border bg-brand-secondary/40 flex items-center justify-center text-brand-muted">Demo section 2</div>
+  <div class="h-40 rounded-2xl border border-brand-border bg-brand-secondary/40 flex items-center justify-center text-brand-muted">Demo section 3</div>
+  <div class="h-40 rounded-2xl border border-brand-border bg-brand-secondary/40 flex items-center justify-center text-brand-muted">Demo section 4</div>
+</div>
 
 <script>
   // ---------- Desktop Mega Menu ----------
@@ -454,6 +487,67 @@
       item.classList.toggle('open', !isOpen);
     });
   });
+
+  // ---------- Active nav link (highlights the current open page) ----------
+  // Works automatically on every page as long as this same header markup
+  // is reused and each page's <a href="..."> matches its own filename
+  // (e.g. about.html link is active only when you are actually on about.html).
+  function getCurrentPage() {
+    let file = window.location.pathname.split('/').pop();
+    if (!file) file = 'index.html'; // covers "/" root URLs
+    return file;
+  }
+
+  function setActiveNavLinks() {
+    const current = getCurrentPage();
+
+    document.querySelectorAll('[data-nav-link]').forEach((link) => {
+      const linkPage = (link.getAttribute('href') || '').split('/').pop();
+      const isActive = linkPage === current;
+
+      if (link.classList.contains('desktop-nav-link')) {
+        link.classList.toggle('bg-brand-orange', isActive);
+        link.classList.toggle('text-white', isActive);
+        link.classList.toggle('font-semibold', isActive);
+        link.classList.toggle('text-brand-muted', !isActive);
+        link.setAttribute('aria-current', isActive ? 'page' : 'false');
+      }
+
+      if (link.classList.contains('mobile-nav-link')) {
+        link.classList.toggle('text-brand-orange', isActive);
+        link.setAttribute('aria-current', isActive ? 'page' : 'false');
+      }
+    });
+  }
+
+  setActiveNavLinks();
+
+  // ---------- Sticky header background + spacer sync on scroll/resize ----------
+  const desktopHeaderWrap = document.getElementById('desktopHeaderWrap');
+  const desktopSpacer     = document.getElementById('desktopSpacer');
+  const mobileHeaderWrap  = document.getElementById('mobileHeaderWrap');
+  const mobileSpacer      = document.getElementById('mobileSpacer');
+
+  function syncSpacers() {
+    if (desktopHeaderWrap && desktopSpacer) {
+      desktopSpacer.style.height = desktopHeaderWrap.offsetHeight + 'px';
+    }
+    if (mobileHeaderWrap && mobileSpacer) {
+      mobileSpacer.style.height = mobileHeaderWrap.offsetHeight + 'px';
+    }
+  }
+
+  function handleScroll() {
+    const scrolled = window.scrollY > 12;
+    if (desktopHeaderWrap) desktopHeaderWrap.classList.toggle('scrolled', scrolled);
+    if (mobileHeaderWrap) mobileHeaderWrap.classList.toggle('scrolled', scrolled);
+  }
+
+  window.addEventListener('load', syncSpacers);
+  window.addEventListener('resize', syncSpacers);
+  window.addEventListener('scroll', handleScroll);
+  syncSpacers();
+  handleScroll();
 </script>
 
 </body>
