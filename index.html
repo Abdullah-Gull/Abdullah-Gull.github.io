@@ -368,6 +368,66 @@ a:focus {
     
 </head>
 <body>
+	<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            orange: '#FF8C00',
+            orangeLight: '#FFB84D',
+            bg: '#0B0C0E',
+            secondary: '#1A1B1F',
+            border: '#2A2B2F',
+            text: '#F5F5F7',
+            muted: '#8E8E93',
+          }
+        },
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        borderRadius: {
+          capsule: '100px',
+        }
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+  /* Smooth accordion for mobile sub-menus */
+  .accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .accordion-item.open .accordion-panel { max-height: 600px; }
+  .accordion-item.open .accordion-icon { transform: rotate(45deg); }
+  .accordion-icon { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+
+  /* Mega menu */
+  .mega-menu-panel {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  }
+  .mega-menu-panel.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+
+  /* Mobile full screen menu */
+  #mobileMenu {
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  #mobileMenu.open { transform: translateY(0); }
+</style>
 	<body class="bg-brand-bg text-brand-text">
 
 <!-- =========================================================
@@ -678,18 +738,6 @@ a:focus {
     </a>
   </nav>
 </div>
-
-<!-- =========================================================
-     PAGE CONTENT PLACEHOLDER
-     ========================================================= -->
-<main class="max-w-6xl mx-auto px-6 py-24 text-center">
-  <h1 class="text-3xl lg:text-5xl font-bold mb-4">Header preview</h1>
-  <p class="text-brand-muted max-w-xl mx-auto">
-    Resize the browser or view on mobile to see the desktop glass-capsule header
-    switch to the two-row mobile header with the full-screen menu.
-  </p>
-</main>
-
 <script>
   // ---------- Desktop Mega Menu ----------
   const servicesWrapper = document.getElementById('servicesWrapper');
