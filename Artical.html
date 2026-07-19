@@ -1,29 +1,24 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
-  .luxury-gold {
-    background: linear-gradient(90deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .gold-border {
-    border: 1px solid rgba(191, 149, 63, 0.3);
+  /* Dot Grid Pattern */
+  .dot-grid {
+    background-image: radial-gradient(#333 1px, transparent 1px);
+    background-size: 30px 30px;
   }
 </style>
 
-<section class="bg-[#050505] text-white py-20 px-12 font-sans relative overflow-hidden">
+<section class="relative bg-[#050505] text-white py-20 px-12 font-sans overflow-hidden">
   
-  <!-- BACKGROUND GOLDEN ACCENTS (Design mark ke hisab se) -->
-  <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#bf953f] to-transparent"></div>
-  <div class="absolute top-10 left-10 w-[200px] h-[2px] bg-gradient-to-r from-[#bf953f] to-transparent"></div>
+  <!-- Dot Grid & Golden Curve Background (Design mark ke hisab se) -->
+  <div class="absolute inset-0 z-0 dot-grid opacity-30"></div>
+  <div class="absolute -left-20 top-0 w-[500px] h-[500px] border-l-2 border-t-2 border-b-2 border-[#bf953f] rounded-full blur-[1px] opacity-60"></div>
 
-  <div class="max-w-[1500px] mx-auto flex items-center gap-12">
+  <div class="max-w-[1500px] mx-auto flex items-center gap-12 relative z-10">
     
     <!-- LEFT CONTENT -->
     <div class="w-1/2">
-      <!-- Luxury Gold Heading -->
-      <h1 class="text-7xl font-['Playfair_Display'] font-bold leading-tight mb-8">
-        <span class="luxury-gold">Abdullah Gull:</span><br>
+      <h1 class="text-7xl font-bold leading-tight mb-8">
+        <span class="text-[#bf953f]">Abdullah Gull:</span><br>
         Scaling Amazon Brands Globally
       </h1>
       
@@ -32,14 +27,14 @@
       </p>
 
       <div class="flex gap-6">
-        <button class="bg-[#bf953f] text-black px-10 py-4 rounded-sm font-bold hover:bg-[#d4af37] transition-all">GET FREE AUDIT →</button>
-        <button class="border border-[#bf953f] text-[#bf953f] px-10 py-4 rounded-sm font-bold hover:bg-[#bf953f] hover:text-black transition-all">SCALE YOUR SALES →</button>
+        <button class="bg-[#bf953f] text-black px-10 py-4 font-bold hover:bg-[#d4af37] transition-all">GET FREE AUDIT →</button>
+        <button class="border border-[#bf953f] text-[#bf953f] px-10 py-4 font-bold hover:bg-[#bf953f] hover:text-black transition-all">SCALE YOUR SALES →</button>
       </div>
     </div>
 
-    <!-- RIGHT IMAGE WITH GOLD FRAME -->
-    <div class="w-1/2 relative gold-border p-2">
-      <img src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" class="w-full object-contain">
+    <!-- RIGHT IMAGE -->
+    <div class="w-1/2 relative p-4">
+      <img src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" class="w-full object-contain relative z-10">
     </div>
 
   </div>
