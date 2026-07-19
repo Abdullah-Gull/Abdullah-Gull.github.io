@@ -1,43 +1,36 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<!-- Replace your current header with this exact code -->
-<header class="bg-[#050505] w-full relative z-50 border-b border-zinc-800" x-data="{ open: false }">
-  
-  <!-- Top Row: Logo & Yellow/Orange Hamburger (Like Steven Pope) -->
-  <div class="flex justify-between items-center px-4 py-3">
+<header class="main-header w-full pt-5 z-[1000] bg-[#0B0C0E]">
+  <div class="header-container max-w-[1200px] mx-auto flex justify-between items-center bg-gradient-to-br from-[#1a1b1f80] to-[#2a2b2f4d] backdrop-blur-[20px] py-3 px-8 rounded-[100px] border border-[#2A2B2F] shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)] transition-all duration-300 hover:border-[#FF8C00]/20 hover:shadow-[0_8px_32px_rgba(255,140,0,0.1),inset_0_1px_0_rgba(255,255,255,0.08)]">
     
     <!-- Logo Area -->
-    <div class="flex items-center gap-2">
-      <!-- Aap chaho toh apni picture yahan laga sakte ho -->
-      <div class="w-8 h-8 rounded-full bg-[#FF9900] flex items-center justify-center text-black font-bold text-xs">AG</div>
-      <span class="text-white font-bold text-xl tracking-tight">Abdullah Gull</span>
+    <div class="logo-area flex items-center gap-3">
+      <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" class="w-10 h-10 rounded-full border-2 border-[#FF8C00] object-cover transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,140,0,0.3)]">
+      <a href="index.html" class="text-[#F5F5F7] font-bold text-lg tracking-[-0.5px]">Abdullah <span class="text-[#FF8C00]">Gull</span></a>
     </div>
 
-    <!-- Hamburger Icon in Orange Circle -->
-    <button @click="open = !open" class="bg-[#FF9900] text-black w-11 h-11 flex items-center justify-center rounded-full shadow-lg">
-      <!-- 3 Lines Icon -->
-      <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-      <!-- Cross Icon -->
-      <svg x-show="open" style="display: none;" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
-    </button>
-  </div>
+    <!-- Navigation Capsule -->
+    <nav class="nav-capsule flex items-center bg-gradient-to-br from-[#1a1b1fcc] to-[#2a2b2f99] border border-[#2A2B2F] p-2 rounded-[50px] gap-1">
+      <a href="index.html" class="text-[#8E8E93] hover:text-white hover:bg-[#FF8C00] active:bg-[#FF8C00] px-[18px] py-[10px] text-sm font-semibold rounded-[50px] transition-all">Home</a>
+      <a href="about.html" class="text-[#8E8E93] hover:text-white hover:bg-[#FF8C00] px-[18px] py-[10px] text-sm font-semibold rounded-[50px] transition-all">About us</a>
+      
+      <!-- Services Dropdown Wrapper -->
+      <div class="relative group">
+        <button class="text-[#8E8E93] hover:text-white px-[18px] py-[10px] text-sm font-semibold rounded-[50px] flex items-center">
+          Services <i class="fa fa-chevron-down ml-1"></i>
+        </button>
+        <!-- Mega Menu (Tailwind Grid) -->
+        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-5 hidden group-hover:grid grid-cols-4 gap-6 w-[950px] bg-[#1A1B1F] p-8 rounded-[16px] border border-[#2A2B2F] border-t-2 border-t-[#FF8C00] shadow-2xl">
+           <!-- Column 1 example -->
+           <div class="flex flex-col gap-2">
+             <a href="services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-2">Full service management</a>
+             <!-- Baqi links isi tarah add karein -->
+           </div>
+        </div>
+      </div>
+      <a href="blog.html" class="text-[#8E8E93] hover:text-white hover:bg-[#FF8C00] px-[18px] py-[10px] text-sm font-semibold rounded-[50px] transition-all">Blog</a>
+    </nav>
 
-  <!-- Second Row: Quick Links (Fast quote & Contact Us jaisa) -->
-  <div class="flex gap-6 px-4 pb-4 text-white font-semibold text-md">
-    <a href="#" class="hover:text-[#FF9900]">Free Audit</a>
-    <a href="#" class="hover:text-[#FF9900]">Contact Us</a>
+    <!-- Get In Touch -->
+    <a href="meeting.html" class="text-[#FF8C00] border border-[#FF8C00] px-[22px] py-[10px] rounded-[50px] text-[13px] font-bold hover:text-white hover:shadow-[0_8px_24px_rgba(255,140,0,0.3)] transition-all">Get In Touch</a>
   </div>
-
-  <!-- Mobile Dropdown Menu (Click karne par open hoga) -->
-  <div x-show="open" 
-       style="display: none;"
-       x-transition:enter="transition ease-out duration-200"
-       x-transition:enter-start="opacity-0 -translate-y-2"
-       x-transition:enter-end="opacity-100 translate-y-0"
-       class="absolute top-full left-0 w-full bg-[#111] border-b border-zinc-800 flex flex-col shadow-2xl">
-    <a href="#" class="text-white p-4 border-b border-zinc-800 hover:bg-[#FF9900] hover:text-black transition-all">Home</a>
-    <a href="#" class="text-white p-4 border-b border-zinc-800 hover:bg-[#FF9900] hover:text-black transition-all">About Us</a>
-    <a href="#" class="text-white p-4 border-b border-zinc-800 hover:bg-[#FF9900] hover:text-black transition-all">Services</a>
-    <a href="#" class="text-white p-4 hover:bg-[#FF9900] hover:text-black transition-all">Blog</a>
-  </div>
-
 </header>
