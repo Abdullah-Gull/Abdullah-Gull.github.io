@@ -1,93 +1,99 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- ========================================================================= -->
-<!-- PREMIUM CAL.COM MEETING BOOKING CONTAINER (CLEAN GRID INLINE IMPLEMENTATION)-->
+<!-- PREMIUM DYNAMIC MEETING BOOKING SYSTEM (MATCHING DASHBOARD UI CONCEPT)     -->
 <!-- ========================================================================= -->
 <section id="booking-portal" class="relative py-24 px-4 sm:px-8 lg:px-16 bg-[#060608] text-white font-sans overflow-hidden select-none">
   
-  <!-- Subtle Background Orange Mesh Grid & Glow Accents -->
+  <!-- Ambient Graphic Glow Layers Backdrop -->
   <div class="absolute inset-0 pointer-events-none select-none z-0">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_top,rgba(255,140,0,0.06)_0%,transparent_70%)] opacity-90"></div>
-    <div class="absolute bottom-0 right-0 w-[30%] h-[30%] bg-[linear-gradient(rgba(255,140,0,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,140,0,0.01)_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_at_bottom_right,white_30%,transparent_100%)]"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[70%] h-[55%] bg-[radial-gradient(ellipse_at_top,rgba(255,140,0,0.05)_0%,transparent_75%)] opacity-90"></div>
+    <div class="absolute right-0 top-1/4 w-[30%] h-[40%] bg-[linear-gradient(rgba(255,140,0,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,140,0,0.015)_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_at_center,white,transparent_80%)] opacity-40"></div>
   </div>
 
-  <div class="max-w-6xl mx-auto relative z-10 flex flex-col items-center space-y-12">
+  <div class="max-w-7xl mx-auto relative z-10 flex flex-col items-center space-y-12">
     
-    <!-- Top Branding & Header Block -->
-    <div class="text-center space-y-4 max-w-xl">
-      <div class="mx-auto w-12 h-12 rounded-full border border-zinc-800 bg-zinc-950/80 flex items-center justify-center shadow-[0_0_20px_rgba(255,140,0,0.05)] mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5">
+    <!-- Header Block Component Section -->
+    <div class="text-center space-y-3 max-w-2xl">
+      <div class="mx-auto w-12 h-12 rounded-full border border-zinc-800 bg-zinc-950/90 flex items-center justify-center shadow-[0_0_20px_rgba(255,140,0,0.08)] mb-4 relative">
+        <div class="absolute inset-0 rounded-full bg-[#ff8c00]/10 blur-sm"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5 relative z-10">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
         </svg>
       </div>
-      <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+      <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
         Book a <span class="text-[#ff8c00]">Meeting</span>
       </h2>
-      <p class="text-zinc-400 text-sm sm:text-base font-medium tracking-wide">
-        Select a date and time to schedule a meeting with your <span class="text-[#ff8c00]">growth partner</span>.
+      <p class="text-zinc-400 text-xs sm:text-sm font-medium tracking-wide max-w-lg mx-auto leading-relaxed">
+        Select a date and time to schedule a meeting with your <span class="text-[#ff8c00]">Amazon Expert</span>. Let's discuss how I can help scale your Amazon business.
       </p>
     </div>
 
-    <!-- Main Unified Dashboard Interface Card -->
-    <div class="w-full rounded-[32px] border border-zinc-800/80 bg-zinc-950/40 backdrop-blur-md overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-1 lg:grid-cols-12 relative group">
+    <!-- Ultimate Dashboard Container Card Matrix (Forces 3-Column Visual Layout Look) -->
+    <div class="w-full rounded-[32px] border border-zinc-800/60 bg-zinc-950/40 backdrop-blur-md overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.95)] relative group unique-cal-wrapper">
       
-      <!-- Top Subtle Left Accent Border Corner Light Glow -->
-      <div class="absolute top-0 left-0 w-40 h-[1px] bg-gradient-to-r from-[#ff8c00]/40 to-transparent"></div>
-      <div class="absolute top-0 left-0 w-[1px] h-40 bg-gradient-to-b from-[#ff8c00]/40 to-transparent"></div>
+      <!-- Linear Luxury Top/Left Border Highlights -->
+      <div class="absolute top-0 left-0 w-48 h-[1px] bg-gradient-to-r from-[#ff8c00]/30 via-[#ff8c00]/10 to-transparent"></div>
+      <div class="absolute top-0 left-0 w-[1px] h-48 bg-gradient-to-b from-[#ff8c00]/30 via-[#ff8c00]/10 to-transparent"></div>
 
-      <!-- LEFT SIDEBAR: Custom Premium Details Panel -->
-      <div class="lg:col-span-4 p-8 sm:p-10 border-b lg:border-b-0 lg:border-r border-zinc-800/60 flex flex-col justify-between space-y-12 relative z-10 bg-zinc-950/20">
+      <!-- MAIN LAYOUT WRAPPER GRID -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 w-full min-h-[620px]">
         
-        <div class="space-y-8">
-          <!-- Profile Icon Wrapper -->
-          <div class="w-14 h-14 rounded-full border border-zinc-800 bg-zinc-900/60 flex items-center justify-center shadow-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#ff8c00" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-            </svg>
-          </div>
+        <!-- COLUMN 1: LEFT SIDEBAR METADATA PROFILE DISPLAY PANEL -->
+        <div class="lg:col-span-4 p-8 sm:p-10 border-b lg:border-b-0 lg:border-r border-zinc-800/40 flex flex-col justify-between space-y-12 relative z-10 bg-zinc-950/15">
+          
+          <div class="space-y-8">
+            <!-- Professional Inner Profile Wrapper Element -->
+            <div class="w-14 h-14 rounded-full border border-zinc-800 bg-zinc-900/40 flex items-center justify-center shadow-md relative group/profile">
+              <div class="absolute inset-0 rounded-full border border-[#ff8c00]/0 group-hover/profile:border-[#ff8c00]/40 transition-colors duration-300"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#ff8c00" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+            </div>
 
-          <!-- Meeting Specifications Context Details -->
-          <div class="space-y-3">
-            <span class="text-[11px] font-bold text-zinc-500 tracking-[0.15em] uppercase block">Meeting Details</span>
-            <h3 class="text-2xl font-bold tracking-tight text-white">30 Min Strategy Call</h3>
-            
-            <div class="space-y-3 pt-3">
-              <div class="flex items-center gap-3 text-zinc-400 text-sm font-medium">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-zinc-500"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                30 Min Duration
-              </div>
-              <div class="flex items-center gap-3 text-zinc-400 text-sm font-medium">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-zinc-500"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" /></svg>
-                Google Meet Video Call
+            <!-- Custom Content Dynamic Title Specifications -->
+            <div class="space-y-4">
+              <span class="text-[10px] font-bold text-zinc-500 tracking-[0.2em] uppercase block">Meeting Details</span>
+              <h3 class="text-2xl font-bold tracking-tight text-white select-text">30 Min Meeting</h3>
+              
+              <div class="space-y-3.5 pt-2">
+                <div class="flex items-center gap-3 text-zinc-400 text-sm font-medium">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-zinc-600"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  30 Min Duration
+                </div>
+                <div class="flex items-center gap-3 text-zinc-400 text-sm font-medium">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-zinc-600"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" /></svg>
+                  Google Meet Video Call
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Call Out Box Graphic Component Accent -->
-        <div class="p-5 rounded-2xl border border-zinc-800/80 bg-zinc-900/30 relative overflow-hidden group/box shadow-lg">
-          <div class="absolute top-0 left-0 w-1 h-full bg-[#ff8c00]"></div>
-          <div class="space-y-2">
-            <h4 class="text-sm font-bold text-white flex items-center gap-2">
-              <span class="text-[#ff8c00] text-xs">✦</span> Let's Scale Performance
-            </h4>
-            <p class="text-zinc-400 text-xs font-medium leading-relaxed">
-              Discuss your project parameters, outline execution milestones, and establish data-driven growth channels.
-            </p>
+          <!-- Bottom Feature Graphic Target Metric Card Block -->
+          <div class="p-5 rounded-2xl border border-zinc-800/80 bg-zinc-900/20 relative overflow-hidden shadow-lg group/box">
+            <div class="absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-[#ff8c00] to-[#ff8c00]/40"></div>
+            <div class="space-y-2">
+              <h4 class="text-xs font-bold text-white flex items-center gap-2 tracking-wide">
+                <span class="text-[#ff8c00] text-sm animate-pulse">✦</span> Let's Grow Your Amazon Business
+              </h4>
+              <p class="text-zinc-500 text-[11px] font-medium leading-relaxed select-text">
+                Discuss your goals and scale smarter with data-driven strategies.
+              </p>
+            </div>
           </div>
+
+        </div>
+
+        <!-- COLUMNS 2 & 3: HIGH-FIDELITY EMBED NODE AREA FOR CAL.COM -->
+        <div class="lg:col-span-8 w-full bg-zinc-950/5 relative flex flex-col justify-center min-h-[580px]">
+          <!-- Target Injection Anchor Container -->
+          <div class="w-full h-full min-h-[580px] overflow-x-hidden overflow-y-auto custom-cal-scrollbar" id="my-cal-inline-30min"></div>
         </div>
 
       </div>
-
-      <!-- RIGHT PANEL: Clean Frame Engine Container Space -->
-      <div class="lg:col-span-8 w-full bg-zinc-950/10 min-h-[580px] relative flex flex-col justify-center">
-        <!-- Optimized Hook Node Area -->
-        <div class="w-full h-full min-h-[580px] overflow-auto custom-cal-scrollbar" id="my-cal-inline-30min"></div>
-      </div>
-
     </div>
 
-    <!-- Security Footer Indicator Label Info -->
-    <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-zinc-900 bg-zinc-950/40 text-xs font-medium text-zinc-500">
+    <!-- Bottom Verification Security Shield Row Badge -->
+    <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-zinc-900/80 bg-zinc-950/50 text-xs font-medium text-zinc-500 transition-all duration-300 hover:border-zinc-850">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-[#ff8c00]">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
       </svg>
@@ -98,7 +104,7 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- CAL.COM ENGINE INJECTION METHOD WITH EXPLICIT HIDE FLAGS                  -->
+<!-- ADVANCED CAL.COM EMBED SCRIPT ENGINE                                     -->
 <!-- ========================================================================= -->
 <script type="text/javascript">
   (function (C, A, L) { 
@@ -128,13 +134,13 @@
     }; 
   })(window, "https://app.cal.com/embed/embed.js", "init");
 
-  // Init Engine
+  // Init Instance Hook for 30 Minute Strategy Pipeline
   Cal("init", "30min", {origin:"https://app.cal.com"});
 
-  // Element Injection Mapping
+  // Bind Engine Properties dynamically to Element Selector node
   Cal.ns["30min"]("inline", {
     elementOrSelector: "#my-cal-inline-30min",
-    calLink: "abdullah-gull/30min",
+    calLink: "abdullah-gull/30min", // Appended user link path
     config: {
       "layout": "month_view",
       "useSlotsViewOnSmallScreen": "true",
@@ -142,35 +148,42 @@
     },
   });
 
-  // CRITICAL FIX: explicit ui parameter settings to drop internal duplicating components
+  // STRICT RULE SETTINGS: Completely hide default metadata components inside iframe to preserve UI layout look
   Cal.ns["30min"]("ui", {
     "theme": "dark",
-    "hideEventTypeDetails": true,  // Hides the duplicated event details completely inside iframe!
+    "hideEventTypeDetails": true,  // Hides Cal's own left panel layout duplication!
     "layout": "month_view"
   });
 </script>
 
-<!-- CSS Styling Tweak adjustments to handle default inner layouts seamlessly -->
+<!-- ========================================================================= -->
+<!-- COMPONENT LEVEL IFRAME STRUCTURAL OVERRIDES                              -->
+<!-- ========================================================================= -->
 <style>
+  /* Strip out default background shadows from within cal engine frame */
   #my-cal-inline-30min iframe {
     background: transparent !important;
-    border-radius: 0 0 32px 32px !important;
+    border: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 580px;
   }
-  @media (min-width: 1024px) {
-    #my-cal-inline-30min iframe {
-      border-radius: 0 32px 32px 0 !important;
-      min-width: 100% !important;
-    }
+  
+  /* Override styles inside wrapper element to ensure smooth padding blending */
+  .unique-cal-wrapper iframe {
+    --cal-brand-color: #ff8c00 !important;
+    --cal-bg-color: transparent !important;
   }
-  /* Custom scrollbar tracking for internal layout adjustments */
+
+  /* Custom minimal tracking element scrollbars */
   .custom-cal-scrollbar::-webkit-scrollbar {
-    width: 5px;
+    width: 4px;
   }
   .custom-cal-scrollbar::-webkit-scrollbar-track {
     background: transparent;
   }
   .custom-cal-scrollbar::-webkit-scrollbar-thumb {
     background: #27272a;
-    border-radius: 10px;
+    border-radius: 9999px;
   }
 </style>
