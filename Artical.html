@@ -1,36 +1,95 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <header class="main-header w-full pt-5 z-[1000] bg-[#0B0C0E]">
-  <div class="header-container max-w-[1200px] mx-auto flex justify-between items-center bg-gradient-to-br from-[#1a1b1f80] to-[#2a2b2f4d] backdrop-blur-[20px] py-3 px-8 rounded-[100px] border border-[#2A2B2F] shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)] transition-all duration-300 hover:border-[#FF8C00]/20 hover:shadow-[0_8px_32px_rgba(255,140,0,0.1),inset_0_1px_0_rgba(255,255,255,0.08)]">
+  <div class="header-container max-w-[1200px] mx-auto flex justify-between items-center bg-gradient-to-br from-[#1a1b1f80] to-[#2a2b2f4d] backdrop-blur-[20px] py-3 px-8 rounded-[100px] border border-[#2A2B2F] shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
     
-    <!-- Logo Area -->
+    <!-- Logo -->
     <div class="logo-area flex items-center gap-3">
-      <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" class="w-10 h-10 rounded-full border-2 border-[#FF8C00] object-cover transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,140,0,0.3)]">
-      <a href="index.html" class="text-[#F5F5F7] font-bold text-lg tracking-[-0.5px]">Abdullah <span class="text-[#FF8C00]">Gull</span></a>
+      <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" class="w-10 h-10 rounded-full border-2 border-[#FF8C00] object-cover">
+      <a href="index.html" class="text-[#F5F5F7] font-bold text-lg">Abdullah <span class="text-[#FF8C00]">Gull</span></a>
     </div>
 
-    <!-- Navigation Capsule -->
-    <nav class="nav-capsule flex items-center bg-gradient-to-br from-[#1a1b1fcc] to-[#2a2b2f99] border border-[#2A2B2F] p-2 rounded-[50px] gap-1">
-      <a href="index.html" class="text-[#8E8E93] hover:text-white hover:bg-[#FF8C00] active:bg-[#FF8C00] px-[18px] py-[10px] text-sm font-semibold rounded-[50px] transition-all">Home</a>
-      <a href="about.html" class="text-[#8E8E93] hover:text-white hover:bg-[#FF8C00] px-[18px] py-[10px] text-sm font-semibold rounded-[50px] transition-all">About us</a>
+    <!-- Desktop Menu (Hidden on Mobile) -->
+    <nav class="nav-capsule hidden md:flex items-center bg-gradient-to-br from-[#1a1b1fcc] to-[#2a2b2f99] border border-[#2A2B2F] p-2 rounded-[50px] gap-1">
+      <a href="index.html" class="text-[#8E8E93] hover:text-white hover:bg-[#FF8C00] px-5 py-2.5 text-sm font-semibold rounded-[50px] transition-all">Home</a>
+      <a href="about.html" class="text-[#8E8E93] hover:text-white hover:bg-[#FF8C00] px-5 py-2.5 text-sm font-semibold rounded-[50px] transition-all">About us</a>
       
-      <!-- Services Dropdown Wrapper -->
+      <!-- Services Mega Menu -->
       <div class="relative group">
-        <button class="text-[#8E8E93] hover:text-white px-[18px] py-[10px] text-sm font-semibold rounded-[50px] flex items-center">
-          Services <i class="fa fa-chevron-down ml-1"></i>
+        <button onclick="toggleMegaMenu(event)" class="text-[#8E8E93] hover:text-white px-5 py-2.5 text-sm font-semibold rounded-[50px] flex items-center">
+          Services ▾
         </button>
-        <!-- Mega Menu (Tailwind Grid) -->
-        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-5 hidden group-hover:grid grid-cols-4 gap-6 w-[950px] bg-[#1A1B1F] p-8 rounded-[16px] border border-[#2A2B2F] border-t-2 border-t-[#FF8C00] shadow-2xl">
-           <!-- Column 1 example -->
+        <!-- Mega Menu Panel -->
+        <div id="megaPanel" class="absolute top-full left-1/2 -translate-x-1/2 mt-4 hidden group-hover:grid grid-cols-4 gap-6 w-[950px] bg-[#1A1B1F] p-8 rounded-2xl border border-[#2A2B2F] border-t-4 border-t-[#FF8C00] shadow-2xl z-50">
+           <!-- Column 1 -->
            <div class="flex flex-col gap-2">
-             <a href="services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-2">Full service management</a>
-             <!-- Baqi links isi tarah add karein -->
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Full service management</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Advertising (PPC) management</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Amazon SEO</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Amazon account audit</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">SOPs</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">All services</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Consulting</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Book a coaching call</a>
+           </div>
+           <!-- Column 2 -->
+           <div class="flex flex-col gap-2 border-l border-[#2A2B2F] pl-6">
+             <h4 class="text-[#FF8C00] font-bold text-xs uppercase mb-2">Design</h4>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Brand guidelines</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Brand story</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Brand store</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Listing images</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Enhanced brand content A+</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Main image CTR hack</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Listing optimization</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Full listing optimization</a>
+           </div>
+           <!-- Column 3 -->
+           <div class="flex flex-col gap-2 border-l border-[#2A2B2F] pl-6">
+             <h4 class="text-[#FF8C00] font-bold text-xs uppercase mb-2">Troubleshooting</h4>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Listing reinstatement</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Account suspension</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">PPC Advertising audit</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Brand name change</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Troubleshooting hours</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">UPC to GS1 change</a>
+           </div>
+           <!-- Column 4 -->
+           <div class="flex flex-col gap-2 border-l border-[#2A2B2F] pl-6">
+             <h4 class="text-[#FF8C00] font-bold text-xs uppercase mb-2">Other services</h4>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Amazon DSP</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Trademark registration</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Vendor Central full service</a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Walmart Audit <span class="bg-[#FF8C00] text-black text-[10px] px-1 rounded">NEW</span></a>
+             <a href="https://abdullah-gull.github.io/services.html" class="text-[#8E8E93] hover:text-[#FF8C00] text-sm py-1">Free Amazon tools</a>
            </div>
         </div>
       </div>
-      <a href="blog.html" class="text-[#8E8E93] hover:text-white hover:bg-[#FF8C00] px-[18px] py-[10px] text-sm font-semibold rounded-[50px] transition-all">Blog</a>
+      
+      <a href="blog.html" class="text-[#8E8E93] hover:text-white hover:bg-[#FF8C00] px-5 py-2.5 text-sm font-semibold rounded-[50px] transition-all">Blog</a>
+      <a href="contact.html" class="text-[#8E8E93] hover:text-white hover:bg-[#FF8C00] px-5 py-2.5 text-sm font-semibold rounded-[50px] transition-all">Contact us</a>
     </nav>
 
+    <!-- Mobile Toggle (Visible only on mobile) -->
+    <div class="md:hidden text-white text-2xl cursor-pointer" onclick="toggleMobileMenu()">☰</div>
+
     <!-- Get In Touch -->
-    <a href="meeting.html" class="text-[#FF8C00] border border-[#FF8C00] px-[22px] py-[10px] rounded-[50px] text-[13px] font-bold hover:text-white hover:shadow-[0_8px_24px_rgba(255,140,0,0.3)] transition-all">Get In Touch</a>
+    <a href="meeting.html" class="text-[#FF8C00] border border-[#FF8C00] px-6 py-2.5 rounded-[50px] text-xs font-bold hover:bg-[#FF8C00] hover:text-white transition-all">Get In Touch</a>
   </div>
 </header>
+
+<!-- Mobile Slide-in Menu -->
+<div id="mobileMenu" class="fixed top-0 right-[-100%] w-[250px] h-full bg-[#0B0C0E] z-[9999] p-8 flex flex-col gap-6 transition-all border-l border-[#2A2B2F]">
+    <div class="text-white text-xl cursor-pointer self-end" onclick="toggleMobileMenu()">✕</div>
+    <a href="index.html" class="text-white">Home</a>
+    <a href="about.html" class="text-white">About us</a>
+    <a href="services.html" class="text-white">Services</a>
+    <a href="blog.html" class="text-white">Blog</a>
+    <a href="contact.html" class="text-white">Contact us</a>
+</div>
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('right-0');
+        menu.classList.toggle('right-[-100%]');
+    }
+</script>
