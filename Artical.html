@@ -1,43 +1,46 @@
 <script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+  .luxury-gold {
+    background: linear-gradient(90deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gold-border {
+    border: 1px solid rgba(191, 149, 63, 0.3);
+  }
+</style>
 
-<!-- Tagra Professional Hero Section -->
-<section class="relative bg-[#050505] text-white py-20 px-6 lg:px-20 font-sans min-h-[600px] flex items-center overflow-hidden">
+<section class="bg-[#050505] text-white py-20 px-12 font-sans relative overflow-hidden">
   
-  <div class="max-w-[1500px] mx-auto w-full flex items-center relative z-10">
+  <!-- BACKGROUND GOLDEN ACCENTS (Design mark ke hisab se) -->
+  <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#bf953f] to-transparent"></div>
+  <div class="absolute top-10 left-10 w-[200px] h-[2px] bg-gradient-to-r from-[#bf953f] to-transparent"></div>
+
+  <div class="max-w-[1500px] mx-auto flex items-center gap-12">
     
-    <!-- LEFT CONTENT: 50% Width -->
-    <div class="w-1/2 pr-12">
-      <h1 class="text-6xl sm:text-7xl font-extrabold leading-[1.05] tracking-tight mb-8">
-        Abdullah Gull:<br>
-        <span class="text-[#ff8c00]">Scaling Amazon Brands Globally</span>
+    <!-- LEFT CONTENT -->
+    <div class="w-1/2">
+      <!-- Luxury Gold Heading -->
+      <h1 class="text-7xl font-['Playfair_Display'] font-bold leading-tight mb-8">
+        <span class="luxury-gold">Abdullah Gull:</span><br>
+        Scaling Amazon Brands Globally
       </h1>
-      <p class="text-zinc-400 text-lg leading-relaxed mb-10 max-w-[500px]">
-Abdullah Gull provides performance-driven Amazon Ecosystem Scaling, specializing in Algorithmic PPC Optimization, Advanced SEO, High-Converting Listing Architecture, and Full Account Management. By taking complete charge of your Seller Central or Vendor Central operations, I enable you to focus entirely on product innovation and manufacturing. Partnering with a dedicated Amazon Marketing Expert allows you to eliminate wasted ad spend, maximize ROI, and deploy data-driven scaling frameworks built for long-term marketplace dominance.      </p>
       
-      <div class="flex gap-4">
-        <button class="bg-[#ff8c00] text-black px-8 py-4 rounded-full font-bold hover:bg-orange-500 transition-all shadow-[0_0_20px_rgba(255,140,0,0.3)]">GET FREE AMAZON AUDIT →</button>
-        <button class="bg-transparent border border-zinc-700 px-8 py-4 rounded-full font-bold hover:bg-zinc-800 transition-all">SCALE YOUR SALES →</button>
+      <p class="text-zinc-400 text-lg leading-relaxed mb-10 border-l-2 border-[#bf953f] pl-6">
+        Abdullah Gull provides performance-driven Amazon Ecosystem Scaling... Partnering with a dedicated Amazon Marketing Expert allows you to eliminate wasted ad spend.
+      </p>
+
+      <div class="flex gap-6">
+        <button class="bg-[#bf953f] text-black px-10 py-4 rounded-sm font-bold hover:bg-[#d4af37] transition-all">GET FREE AUDIT →</button>
+        <button class="border border-[#bf953f] text-[#bf953f] px-10 py-4 rounded-sm font-bold hover:bg-[#bf953f] hover:text-black transition-all">SCALE YOUR SALES →</button>
       </div>
     </div>
 
-    <!-- RIGHT IMAGE: Precise alignment to center line -->
-    <!-- -ml-[size] adjust karke aap red line se exact mila sakte hain -->
-    <div class="w-1/2 relative">
-      <img 
-        src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" 
-        alt="Abdullah Gull" 
-        class="w-[120%] max-w-none relative -ml-[10%] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
-      >
+    <!-- RIGHT IMAGE WITH GOLD FRAME -->
+    <div class="w-1/2 relative gold-border p-2">
+      <img src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" class="w-full object-contain">
     </div>
+
   </div>
-
-  <!-- Decorative Background Glow (Behind content) -->
-  <div class="absolute top-0 right-0 w-[600px] h-full bg-gradient-to-l from-[#ff8c00]/10 to-transparent z-0"></div>
 </section>
-
-<!-- Optional JavaScript for smooth entry animation -->
-<script>
-  window.addEventListener('load', () => {
-    document.querySelector('img').classList.add('animate-in', 'fade-in', 'slide-in-from-right-10', 'duration-1000');
-  });
-</script>
