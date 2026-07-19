@@ -1,216 +1,169 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conversation Hub</title>
-  
-  <!-- Tailwind CSS Script -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- React aur Babel Client Scripts -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-</head>
-<body class="bg-black text-white">
+<!-- ========================================================================= -->
+<!-- CONTACT SECTION (EXACT IMAGE CLONE WITH PURE HTML + TAILWIND + JS)        -->
+<!-- ========================================================================= -->
+<section class="w-full bg-[#000000] text-white py-16 px-6 sm:px-12 lg:px-20 font-sans select-none overflow-hidden">
+  <div class="max-w-[1340px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    
+    <!-- ================= LEFT COLUMN (CONTENT & CONTACT CARDS) ================= -->
+    <div class="lg:col-span-6 flex flex-col space-y-8">
+      
+      <!-- Top Tagline -->
+      <div class="space-y-2">
+        <span class="text-[11px] font-black tracking-widest text-[#ff8c00] uppercase block">REACH US</span>
+        <h2 class="text-4xl sm:text-[52px] font-serif font-bold tracking-tight text-white leading-[1.1]">
+          How to Get in Touch
+        </h2>
+      </div>
 
-  <!-- React App Root Container -->
-  <div id="root"></div>
-
-  <!-- Type="text/babel" lagana zaroori hai browser render ke liye -->
-  <script type="text/babel">
-    function ConversationHub() {
-      return (
-        <section className="w-full bg-black text-white py-20 px-4 sm:px-8 lg:px-16 font-sans relative overflow-hidden select-none">
-          <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
-            {/* ================= LEFT COLUMN ================= */}
-            <div className="lg:col-span-5 flex flex-col space-y-7">
-              
-              {/* Reach Me Tag */}
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></span>
-                <span className="text-[10px] font-black tracking-[0.25em] text-[#ff8c00] uppercase">REACH ME</span>
-              </div>
-
-              {/* Heading */}
-              <div className="space-y-4">
-                <h2 className="text-5xl sm:text-[54px] font-extrabold tracking-tight leading-[1.05]">
-                  Let's Start a <br />
-                  <span className="text-[#ff8c00]">Conversation</span>
-                </h2>
-                <p className="text-zinc-400 text-sm font-medium leading-relaxed max-w-sm">
-                  Have a question or need expert guidance? I'm here to help you grow your Amazon business.
-                </p>
-              </div>
-
-              {/* Contact Channels Grid */}
-              <div className="space-y-3 w-full max-w-[440px]">
-                {/* Email Channel */}
-                <a href="mailto:sales@alphaspikes.com" className="group flex items-center justify-between p-4.5 rounded-[20px] bg-[#0c0c0e] border border-zinc-900 transition-all hover:border-zinc-800">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-zinc-950 border border-zinc-900 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ff8c00" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">EMAIL ME</span>
-                      <span className="text-[13px] font-bold text-zinc-200 tracking-wide mt-0.5">sales@alphaspikes.com</span>
-                    </div>
-                  </div>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="#ff8c00" className="w-3.5 h-3.5 mr-1 transform group-hover:translate-x-0.5 transition-transform"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
-                </a>
-
-                {/* Call Channel */}
-                <a href="tel:+13073104045" className="group flex items-center justify-between p-4.5 rounded-[20px] bg-[#0c0c0e] border border-zinc-900 transition-all hover:border-zinc-800">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-zinc-950 border border-zinc-900 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ff8c00" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3" /></svg>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">CALL ME</span>
-                      <span className="text-[13px] font-bold text-zinc-200 tracking-wide mt-0.5">+1 307-310-4045</span>
-                    </div>
-                  </div>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="#ff8c00" className="w-3.5 h-3.5 mr-1 transform group-hover:translate-x-0.5 transition-transform"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
-                </a>
-              </div>
-
-              {/* Stepper Process Card */}
-              <div className="w-full max-w-[440px] p-6 rounded-[24px] bg-[#060608] border border-zinc-900/60 space-y-6">
-                <div className="flex items-center gap-3.5 border-b border-zinc-900 pb-4">
-                  <span className="text-base text-[#ff8c00]">📅</span>
-                  <div>
-                    <span className="text-[9px] font-black text-[#ff8c00] tracking-widest uppercase">I AM AVAILABLE</span>
-                    <p className="text-xs font-bold text-zinc-300 mt-0.5">Monday to Friday, 9AM to 6PM EST</p>
-                  </div>
-                </div>
-
-                <div className="relative space-y-6 pl-1">
-                  <div className="absolute left-[13px] top-3 bottom-3 w-[1px] border-l border-dashed border-zinc-800"></div>
-                  
-                  <div className="flex items-start gap-4 relative z-10">
-                    <div className="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">1</div>
-                    <p className="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Email me for account questions, proposals, or partnership inquiries.</p>
-                  </div>
-                  <div className="flex items-start gap-4 relative z-10">
-                    <div className="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">2</div>
-                    <p className="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Book a direct call through my scheduling link if you want to talk through your account situation first.</p>
-                  </div>
-                  <div className="flex items-start gap-4 relative z-10">
-                    <div className="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">3</div>
-                    <p className="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Fill out the contact form and I will follow up within one business day with a clear next step.</p>
-                  </div>
-                  <div className="flex items-start gap-4 relative z-10">
-                    <div className="w-7 h-7 rounded-full border border-[#ff8c00]/30 bg-[#ff8c00]/5 flex items-center justify-center text-xs font-bold text-[#ff8c00] shrink-0">*</div>
-                    <p className="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Not sure what you need yet? That is exactly what the first conversation is for.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Socials Link Row */}
-              <div className="flex items-center gap-3 pt-1">
-                <span className="text-[9px] font-bold text-zinc-600 tracking-wider uppercase mr-2">CONNECT WITH ME</span>
-                {['fb', 'ig', 'in'].map((social) => (
-                  <a key={social} href="#" className="w-8 h-8 rounded-full bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-white transition-colors">
-                    <span className="text-[11px] font-bold uppercase">{social}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* ================= RIGHT COLUMN ================= */}
-            <div className="lg:col-span-7 flex flex-col space-y-12 w-full">
-              
-              {/* Main Showcase Container (Tablet Frame Setup) */}
-              <div className="w-full aspect-[4/3] rounded-[32px] border border-zinc-800 bg-[#0d0d11] p-4 shadow-2xl relative overflow-hidden group">
-                <div className="w-full h-full rounded-[22px] bg-black overflow-hidden grid grid-cols-3 grid-rows-3 gap-1 relative border border-zinc-900/60">
-                  
-                  <div className="relative overflow-hidden w-full h-full bg-zinc-900">
-                    <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=600&auto=format&fit=crop" alt="Product" className="w-full h-full object-cover brightness-[0.85]" />
-                  </div>
-
-                  <div className="relative overflow-hidden w-full h-full bg-zinc-900">
-                    <img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?q=80&w=600&auto=format&fit=crop" alt="Product" className="w-full h-full object-cover brightness-[0.85]" />
-                  </div>
-
-                  <div className="relative overflow-hidden w-full h-full bg-zinc-900">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600&auto=format&fit=crop" alt="Product" className="w-full h-full object-cover brightness-[0.85]" />
-                  </div>
-
-                  <div className="relative overflow-hidden w-full h-full bg-zinc-900">
-                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=600&auto=format&fit=crop" alt="Product" className="w-full h-full object-cover brightness-[0.85]" />
-                  </div>
-
-                  {/* Highlight Product */}
-                  <div className="relative w-full h-full bg-zinc-950 border-[3px] border-[#ff8c00] shadow-[inset_0_0_20px_rgba(255,140,0,0.3)] z-10 flex items-center justify-center p-0.5">
-                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=600&auto=format&fit=crop" alt="Main Highlight Product" className="w-full h-full object-cover" />
-                  </div>
-
-                  <div className="relative overflow-hidden w-full h-full bg-zinc-900">
-                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=600&auto=format&fit=crop" alt="Product" className="w-full h-full object-cover brightness-[0.85]" />
-                  </div>
-
-                  <div className="relative overflow-hidden w-full h-full bg-zinc-900">
-                    <img src="https://images.unsplash.com/photo-1608248597481-496100c80836?q=80&w=600&auto=format&fit=crop" alt="Product" className="w-full h-full object-cover brightness-[0.85]" />
-                  </div>
-
-                  <div className="relative overflow-hidden w-full h-full bg-zinc-900">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600&auto=format&fit=crop" alt="Product" className="w-full h-full object-cover brightness-[0.85]" />
-                  </div>
-
-                  <div className="relative overflow-hidden w-full h-full bg-zinc-900">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop" alt="Product" className="w-full h-full object-cover brightness-[0.85]" />
-                  </div>
-
-                </div>
-              </div>
-
-              {/* Feature Value Badges */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
-                {[
-                  { label: 'Quick Response', desc: 'I respond within one business day.', icon: '🎧' },
-                  { label: 'Expert Guidance', desc: 'Tailored marketplace strategies for your brand.', icon: '🛡' },
-                  { label: 'Confidential', desc: 'Your information is 100% secure.', icon: '🔒' },
-                  { label: 'Results Driven', desc: 'I focus on strategies that grow your business.', icon: '📈' }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex flex-col items-center text-center space-y-2">
-                    <div className="w-10 h-10 rounded-full bg-zinc-900/80 border border-zinc-800/60 flex items-center justify-center text-sm shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
-                      {item.icon}
-                    </div>
-                    <div className="space-y-0.5">
-                      <h4 className="text-[11px] font-bold text-white tracking-wide">{item.label}</h4>
-                      <p className="text-[10px] text-zinc-500 leading-tight max-w-[120px] mx-auto">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Action Bar */}
-              <div className="w-full p-4.5 rounded-[20px] bg-[#050507] border border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
-                <div className="flex items-center gap-3.5 text-center sm:text-left">
-                  <div className="w-9 h-9 rounded-xl border border-zinc-800 bg-black flex items-center justify-center shrink-0 text-xs">⭐</div>
-                  <div className="flex flex-col">
-                    <span className="text-[13px] font-bold text-white tracking-wide">Ready to Grow Your Amazon Business?</span>
-                    <span className="text-[11px] text-zinc-500 font-medium mt-0.5">I'm just a message or call away. Let's build success together.</span>
-                  </div>
-                </div>
-                <a href="#contact" className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl bg-[#ff8c00] text-xs font-black text-black uppercase tracking-wider hover:bg-[#ffa534] transition-colors shrink-0">
-                  GET IN TOUCH
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-3.5 h-3.5"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-                </a>
-              </div>
-
-            </div>
+      <!-- Contact White Cards Container -->
+      <div class="space-y-4 w-full max-w-[480px]">
+        
+        <!-- Email Card (White Background) -->
+        <a href="mailto:sales@alphaspikes.com" class="group flex items-center gap-4 p-4 rounded-[24px] bg-white text-black border border-transparent shadow-lg transition-all hover:scale-[1.01]">
+          <div class="w-12 h-12 rounded-xl bg-[#ff8c00] flex items-center justify-center shrink-0">
+            <!-- Email Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+            </svg>
           </div>
-        </section>
-      );
-    }
+          <div class="flex flex-col">
+            <span class="text-[10px] font-black text-zinc-400 uppercase tracking-wider">EMAIL</span>
+            <span class="text-base font-bold text-zinc-900 tracking-wide">sales@alphaspikes.com</span>
+          </div>
+        </a>
 
-    // Render component into root DOM node
-    const root = tragedies = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<ConversationHub />);
-  </script>
-</body>
-</html>
+        <!-- Call Card (White Background) -->
+        <a href="tel:+13073104045" class="group flex items-center gap-4 p-4 rounded-[24px] bg-white text-black border border-transparent shadow-lg transition-all hover:scale-[1.01]">
+          <div class="w-12 h-12 rounded-xl bg-[#ff8c00] flex items-center justify-center shrink-0">
+            <!-- Phone Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-white">
+              <path d="M4.93 2.93a1 1 0 0 1 1.41 0l2.83 2.83a1 1 0 0 1 0 1.41L7.76 8.59a11.94 11.94 0 0 0 5.65 5.65l1.42-1.42a1 1 0 0 1 1.41 0l2.83 2.83a1 1 0 0 1 0 1.41l-2.12 2.12a3 3 0 0 1-3.66.52A18 18 0 0 1 3.52 7.78a3 3 0 0 1 .52-3.66l2.12-2.12z"/>
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[10px] font-black text-zinc-400 uppercase tracking-wider">CALL</span>
+            <span class="text-base font-bold text-zinc-900 tracking-wide">+1 307-310-4045</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Availability Notice -->
+      <div class="space-y-5 pt-2">
+        <span class="text-[11px] font-black tracking-wide text-[#ff8c00] uppercase block">
+          WE ARE AVAILABLE MONDAY THROUGH FRIDAY, 9AM TO 6PM EST
+        </span>
+
+        <!-- Step List -->
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="w-7 h-7 rounded-full border border-zinc-700 bg-transparent flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5">1</div>
+            <p class="text-[14px] font-medium text-zinc-300 leading-relaxed">Email me for account questions, proposals, or partnership inquiries.</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-7 h-7 rounded-full border border-zinc-700 bg-transparent flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5">2</div>
+            <p class="text-[14px] font-medium text-zinc-300 leading-relaxed">Book a direct call through my scheduling link if you want to talk through your account situation first.</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-7 h-7 rounded-full border border-zinc-700 bg-transparent flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5">3</div>
+            <p class="text-[14px] font-medium text-zinc-300 leading-relaxed">Fill out the contact form and I will follow up within one business day with a clear next step.</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="text-[#ff8c00] text-xl font-bold shrink-0 w-7 text-center leading-none mt-0.5">★</div>
+            <p class="text-[14px] font-medium text-zinc-300 leading-relaxed">Not sure what you need yet? That is exactly what the first conversation is for.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Footer Icons Row -->
+      <div class="flex items-center gap-3 pt-4">
+        <a href="#" class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black hover:bg-[#ff8c00] hover:text-white transition-colors">
+          <span class="text-xs font-bold font-sans">f</span>
+        </a>
+        <a href="#" class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black hover:bg-[#ff8c00] hover:text-white transition-colors">
+          <span class="text-xs font-bold font-sans">📷</span>
+        </a>
+        <a href="#" class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black hover:bg-[#ff8c00] hover:text-white transition-colors">
+          <span class="text-xs font-bold font-sans">in</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ================= RIGHT COLUMN (TAB GRID IMPLEMENTATION) ================= -->
+    <div class="lg:col-span-6 w-full flex justify-center lg:justify-end">
+      <!-- Outer Interactive Frame Container -->
+      <div id="interactiveMockup" class="w-full max-w-[580px] aspect-[4/3] bg-[#0c0c0e] border border-zinc-800 rounded-[28px] p-3 shadow-2xl relative overflow-hidden cursor-pointer group">
+        
+        <!-- Screen Inside Layout -->
+        <div class="w-full h-full rounded-[20px] bg-black overflow-hidden grid grid-cols-3 grid-rows-3 gap-[3px] relative border border-zinc-900">
+          
+          <!-- Box 1 -->
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900 transition-all duration-300 grid-item">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75] group-hover:brightness-[0.85] transition-all">
+          </div>
+          <!-- Box 2 -->
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900 transition-all duration-300 grid-item">
+            <img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          </div>
+          <!-- Box 3 -->
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900 transition-all duration-300 grid-item">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          </div>
+          <!-- Box 4 -->
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900 transition-all duration-300 grid-item">
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          </div>
+
+          <!-- Box 5: CENTER ELEMENT WITH SHINY BLUE BORDER GLOW -->
+          <div class="relative w-full h-full bg-zinc-950 border-[3px] border-[#aee2ff] shadow-[0_0_25px_rgba(174,226,255,0.6),inset_0_0_15px_rgba(174,226,255,0.4)] z-10 flex items-center justify-center p-0.5">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover">
+          </div>
+
+          <!-- Box 6 -->
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900 transition-all duration-300 grid-item">
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          </div>
+          <!-- Box 7 -->
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900 transition-all duration-300 grid-item">
+            <img src="https://images.unsplash.com/photo-1608248597481-496100c80836?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          </div>
+          <!-- Box 8 -->
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900 transition-all duration-300 grid-item">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          </div>
+          <!-- Box 9 -->
+          <div class="relative overflow-hidden w-full h-full bg-zinc-900 transition-all duration-300 grid-item">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.75]">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- JAVASCRIPT LOGIC FOR DYNAMIC INTERACTIVE EFFECTS                          -->
+<!-- ========================================================================= -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const mockupFrame = document.getElementById("interactiveMockup");
+    const items = mockupFrame.querySelectorAll(".grid-item img");
+
+    // Dynamic scale and rotate parallax gesture on frame hover
+    mockupFrame.addEventListener("mousemove", (e) => {
+      const rect = mockupFrame.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      // Subtly tilts the whole dashboard grid frame
+      mockupFrame.style.transform = `perspective(1000px) rotateX(${-y * 0.02}deg) rotateY(${x * 0.02}deg) scale(1.01)`;
+    });
+
+    mockupFrame.addEventListener("mouseleave", () => {
+      mockupFrame.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+      items.forEach(img => img.style.transform = "scale(1)");
+    });
+  });
+</script>
