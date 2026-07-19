@@ -1,27 +1,17 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
-<section class="bg-[#050505] text-white py-20 px-6 sm:px-12 lg:px-20 font-sans relative min-h-[600px] flex items-center">
-  
-  <!-- Image Background (Positioned Absolutely) -->
-  <div class="absolute inset-0 z-0">
-    <img 
-      src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" 
-      alt="Abdullah Gull" 
-      class="w-full h-full object-cover object-left opacity-90"
-    >
-    <!-- Overlay to keep text readable -->
-    <div class="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/90 to-transparent"></div>
-  </div>
-
-  <!-- Content (Positioned Relative to sit on top of image) -->
-  <div class="max-w-[1300px] w-full mx-auto relative z-10">
-    <div class="max-w-[600px] space-y-8">
+<section class="bg-[#050505] text-white py-20 px-6 sm:px-12 lg:px-20 font-sans">
+  <!-- Layout container with no spacing between text and image -->
+  <div class="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-0">
+    
+    <!-- Left Content -->
+    <div class="space-y-8 z-10">
       <div class="space-y-4">
         <h1 class="text-5xl sm:text-7xl font-extrabold leading-[1.1]">
           Abdullah Gull:<br>
           <span class="text-[#ff8c00]">Scaling Amazon Brands Globally</span>
         </h1>
-        <p class="text-zinc-300 text-lg leading-relaxed">
+        <p class="text-zinc-400 text-lg leading-relaxed max-w-[550px]">
           Abdullah Gull provides performance-driven Amazon Ecosystem Scaling, specializing in Algorithmic PPC Optimization, Advanced SEO, High-Converting Listing Architecture, and Full Account Management. By taking complete charge of your Seller Central or Vendor Central operations, I enable you to focus entirely on product innovation and manufacturing.
         </p>
       </div>
@@ -35,5 +25,15 @@
         </button>
       </div>
     </div>
+
+    <!-- Right Image Section (Started right after text) -->
+    <div class="relative w-full flex justify-start items-center overflow-visible">
+      <img 
+        src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" 
+        alt="Abdullah Gull" 
+        class="w-full max-w-[700px] h-auto object-contain"
+      >
+    </div>
+    
   </div>
 </section>
