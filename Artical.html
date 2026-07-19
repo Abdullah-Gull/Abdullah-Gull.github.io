@@ -1,234 +1,222 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<!-- ========================================================================= -->
-<!-- PREMIUM DYNAMIC CONVERSATION HUB (EXACT 100% DESIGN CLONE)                -->
-<!-- ========================================================================= -->
-<section class="w-full bg-black text-white py-20 px-4 sm:px-8 lg:px-16 font-sans relative overflow-hidden select-none">
-  <div class="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-    
-    <!-- ================= LEFT COLUMN ================= -->
-    <div class="lg:col-span-5 flex flex-col space-y-7">
-      
-      <!-- Reach Me Tag -->
-      <div class="flex items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></span>
-        <span class="text-[10px] font-black tracking-[0.25em] text-[#ff8c00] uppercase">REACH ME</span>
-      </div>
+import React from 'react';
 
-      <!-- Heading -->
-      <div class="space-y-4">
-        <h2 class="text-5xl sm:text-[54px] font-extrabold tracking-tight leading-[1.05]">
-          Let's Start a <br>
-          <span class="text-[#ff8c00]">Conversation</span>
-        </h2>
-        <p class="text-zinc-400 text-sm font-medium leading-relaxed max-w-sm">
-          Have a question or need expert guidance? I'm here to help you grow your Amazon business.
-        </p>
-      </div>
-
-      <!-- Contact Channels Grid -->
-      <div class="space-y-3 w-full max-w-[440px]">
-        <!-- Email Channel -->
-        <a href="mailto:sales@alphaspikes.com" class="group flex items-center justify-between p-4.5 rounded-[20px] bg-[#0c0c0e] border border-zinc-900 transition-all hover:border-zinc-800">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-zinc-950 border border-zinc-900 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">EMAIL ME</span>
-              <span class="text-[13px] font-bold text-zinc-200 tracking-wide mt-0.5">sales@alphaspikes.com</span>
-            </div>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ff8c00" class="w-3.5 h-3.5 mr-1 transform group-hover:translate-x-0.5 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
-        </a>
-
-        <!-- Call Channel -->
-        <a href="tel:+13073104045" class="group flex items-center justify-between p-4.5 rounded-[20px] bg-[#0c0c0e] border border-zinc-900 transition-all hover:border-zinc-800">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-zinc-950 border border-zinc-900 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3" /></svg>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">CALL ME</span>
-              <span class="text-[13px] font-bold text-zinc-200 tracking-wide mt-0.5">+1 307-310-4045</span>
-            </div>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ff8c00" class="w-3.5 h-3.5 mr-1 transform group-hover:translate-x-0.5 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
-        </a>
-      </div>
-
-      <!-- Stepper Process Card -->
-      <div class="w-full max-w-[440px] p-6 rounded-[24px] bg-[#060608] border border-zinc-900/60 space-y-6">
-        <div class="flex items-center gap-3.5 border-b border-zinc-900 pb-4">
-          <span class="text-base text-[#ff8c00]">📅</span>
-          <div>
-            <span class="text-[9px] font-black text-[#ff8c00] tracking-widest uppercase">I AM AVAILABLE</span>
-            <p class="text-xs font-bold text-zinc-300 mt-0.5">Monday to Friday, 9AM to 6PM EST</p>
-          </div>
-        </div>
-
-        <div class="relative space-y-6 pl-1">
-          <div class="absolute left-[13px] top-3 bottom-3 w-[1px] border-l border-dashed border-zinc-800"></div>
+export default function ConversationHub() {
+  return (
+    <section className="w-full bg-black text-white py-20 px-4 sm:px-8 lg:px-16 font-sans relative overflow-hidden select-none">
+      <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        {/* ================= LEFT COLUMN ================= */}
+        <div className="lg:col-span-5 flex flex-col space-y-7">
           
-          <div class="flex items-start gap-4 relative z-10">
-            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">1</div>
-            <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Email me for account questions, proposals, or partnership inquiries.</p>
+          {/* Reach Me Tag */}
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></span>
+            <span className="text-[10px] font-black tracking-[0.25em] text-[#ff8c00] uppercase">REACH ME</span>
           </div>
-          <div class="flex items-start gap-4 relative z-10">
-            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">2</div>
-            <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Book a direct call through my scheduling link if you want to talk through your account situation first.</p>
+
+          {/* Heading */}
+          <div className="space-y-4">
+            <h2 className="text-5xl sm:text-[54px] font-extrabold tracking-tight leading-[1.05]">
+              Let's Start a <br />
+              <span className="text-[#ff8c00]">Conversation</span>
+            </h2>
+            <p className="text-zinc-400 text-sm font-medium leading-relaxed max-w-sm">
+              Have a question or need expert guidance? I'm here to help you grow your Amazon business.
+            </p>
           </div>
-          <div class="flex items-start gap-4 relative z-10">
-            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">3</div>
-            <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Fill out the contact form and I will follow up within one business day with a clear next step.</p>
+
+          {/* Contact Channels Grid */}
+          <div className="space-y-3 w-full max-w-[440px]">
+            {/* Email Channel */}
+            <a href="mailto:sales@alphaspikes.com" className="group flex items-center justify-between p-4.5 rounded-[20px] bg-[#0c0c0e] border border-zinc-900 transition-all hover:border-zinc-800">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-zinc-950 border border-zinc-900 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ff8c00" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">EMAIL ME</span>
+                  <span className="text-[13px] font-bold text-zinc-200 tracking-wide mt-0.5">sales@alphaspikes.com</span>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="#ff8c00" className="w-3.5 h-3.5 mr-1 transform group-hover:translate-x-0.5 transition-transform"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+            </a>
+
+            {/* Call Channel */}
+            <a href="tel:+13073104045" className="group flex items-center justify-between p-4.5 rounded-[20px] bg-[#0c0c0e] border border-zinc-900 transition-all hover:border-zinc-800">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-zinc-950 border border-zinc-900 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ff8c00" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3" /></svg>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">CALL ME</span>
+                  <span className="text-[13px] font-bold text-zinc-200 tracking-wide mt-0.5">+1 307-310-4045</span>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="#ff8c00" className="w-3.5 h-3.5 mr-1 transform group-hover:translate-x-0.5 transition-transform"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+            </a>
           </div>
-          <div class="flex items-start gap-4 relative z-10">
-            <div class="w-7 h-7 rounded-full border border-[#ff8c00]/30 bg-[#ff8c00]/5 flex items-center justify-center text-xs font-bold text-[#ff8c00] shrink-0">*</div>
-            <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Not sure what you need yet? That is exactly what the first conversation is for.</p>
+
+          {/* Stepper Process Card */}
+          <div className="w-full max-w-[440px] p-6 rounded-[24px] bg-[#060608] border border-zinc-900/60 space-y-6">
+            <div className="flex items-center gap-3.5 border-b border-zinc-900 pb-4">
+              <span className="text-base text-[#ff8c00]">📅</span>
+              <div>
+                <span className="text-[9px] font-black text-[#ff8c00] tracking-widest uppercase">I AM AVAILABLE</span>
+                <p className="text-xs font-bold text-zinc-300 mt-0.5">Monday to Friday, 9AM to 6PM EST</p>
+              </div>
+            </div>
+
+            <div className="relative space-y-6 pl-1">
+              <div className="absolute left-[13px] top-3 bottom-3 w-[1px] border-l border-dashed border-zinc-800"></div>
+              
+              <div className="flex items-start gap-4 relative z-10">
+                <div className="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">1</div>
+                <p className="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Email me for account questions, proposals, or partnership inquiries.</p>
+              </div>
+              <div className="flex items-start gap-4 relative z-10">
+                <div className="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">2</div>
+                <p className="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Book a direct call through my scheduling link if you want to talk through your account situation first.</p>
+              </div>
+              <div className="flex items-start gap-4 relative z-10">
+                <div className="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">3</div>
+                <p className="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Fill out the contact form and I will follow up within one business day with a clear next step.</p>
+              </div>
+              <div className="flex items-start gap-4 relative z-10">
+                <div className="w-7 h-7 rounded-full border border-[#ff8c00]/30 bg-[#ff8c00]/5 flex items-center justify-center text-xs font-bold text-[#ff8c00] shrink-0">*</div>
+                <p className="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Not sure what you need yet? That is exactly what the first conversation is for.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Socials Link Row */}
+          <div className="flex items-center gap-3 pt-1">
+            <span className="text-[9px] font-bold text-zinc-600 tracking-wider uppercase mr-2">CONNECT WITH ME</span>
+            {['fb', 'ig', 'in'].map((social) => (
+              <a key={social} href="#" className="w-8 h-8 rounded-full bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-white transition-colors">
+                <span className="text-[11px] font-bold uppercase">{social}</span>
+              </a>
+            ))}
           </div>
         </div>
-      </div>
 
-      <!-- Socials Link Row -->
-      <div class="flex items-center gap-3 pt-1">
-        <span class="text-[9px] font-bold text-zinc-600 tracking-wider uppercase mr-2">CONNECT WITH ME</span>
-        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-white transition-colors">
-          <span class="text-[11px] font-bold uppercase">fb</span>
-        </a>
-        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-white transition-colors">
-          <span class="text-[11px] font-bold uppercase">ig</span>
-        </a>
-        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-white transition-colors">
-          <span class="text-[11px] font-bold uppercase">in</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- ================= RIGHT COLUMN (EXACT MATCH) ================= -->
-    <div class="lg:col-span-7 flex flex-col space-y-12 w-full">
-      
-      <!-- Main 9-Grid Outer Container -->
-      <div class="w-full rounded-[24px] border border-zinc-950 bg-black p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] relative overflow-hidden">
-        <div class="grid grid-cols-3 gap-4">
+        {/* ================= RIGHT COLUMN (EXACT DASHBOARD MATCH) ================= */}
+        <div className="lg:col-span-7 flex flex-col space-y-12 w-full">
           
-          <!-- Box 1: Audit -->
-          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
-            <span class="text-[9px] font-mono text-zinc-600 tracking-wider">01 / AUDIT</span>
-            <div class="text-sm font-bold text-zinc-300">Listing Analysis</div>
-            <span class="text-[10px] text-zinc-700 font-medium">Ready</span>
-          </div>
+          {/* Main 9-Grid Outer Container */}
+          <div className="w-full rounded-[24px] border border-zinc-950 bg-black p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] relative overflow-hidden">
+            <div className="grid grid-cols-3 gap-4">
+              
+              {/* Box 1: Audit */}
+              <div className="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
+                <span className="text-[9px] font-mono text-zinc-600 tracking-wider">01 / AUDIT</span>
+                <div className="text-sm font-bold text-zinc-300">Listing Analysis</div>
+                <span className="text-[10px] text-zinc-700 font-medium">Ready</span>
+              </div>
 
-          <!-- Box 2: PPC -->
-          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
-            <span class="text-[9px] font-mono text-zinc-600 tracking-wider">02 / PPC</span>
-            <div class="text-sm font-bold text-zinc-300">ROAS Engine</div>
-            <div class="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden">
-              <div class="bg-zinc-700 w-[65%] h-full rounded-full"></div>
+              {/* Box 2: PPC */}
+              <div className="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
+                <span className="text-[9px] font-mono text-zinc-600 tracking-wider">02 / PPC</span>
+                <div className="text-sm font-bold text-zinc-300">ROAS Engine</div>
+                <div className="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden">
+                  <div className="bg-zinc-700 w-[65%] h-full rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Box 3: SEO */}
+              <div className="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
+                <span className="text-[9px] font-mono text-zinc-600 tracking-wider">03 / SEO</span>
+                <div className="text-sm font-bold text-zinc-300">Index Tracker</div>
+                <span className="text-[11px] text-[#ff8c00] font-mono font-bold">94.8%</span>
+              </div>
+
+              {/* Box 4: B2B */}
+              <div className="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
+                <span className="text-[9px] font-mono text-zinc-600 tracking-wider">04 / B2B</span>
+                <div className="text-sm font-bold text-zinc-300">Wholesale Link</div>
+                <span className="w-2 h-2 rounded-full bg-emerald-500/80 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></span>
+              </div>
+
+              {/* Box 5: CENTER TARGET BLOCK (EXACT HIGHLIGHT CLONE) */}
+              <div className="p-4 rounded-xl border border-[#ff8c00] bg-gradient-to-b from-[#ff8c00]/5 to-transparent flex flex-col justify-between min-h-[120px] relative shadow-[0_0_35px_rgba(255,140,0,0.06)]">
+                {/* Visual Corner Pin Indicator */}
+                <span className="absolute top-0 right-0 w-1.5 h-1.5 bg-[#ff8c00] rounded-bl-sm"></span>
+                <span className="text-[9px] font-mono text-[#ff8c00] tracking-wider font-bold">05 / SCALE</span>
+                <div className="text-[13px] font-black text-white tracking-tight uppercase">AMAZON PARTNER</div>
+                <span className="text-[9px] text-zinc-400 font-medium">Growth Phase</span>
+              </div>
+
+              {/* Box 6: Brand */}
+              <div className="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
+                <span className="text-[9px] font-mono text-zinc-600 tracking-wider">06 / BRAND</span>
+                <div className="text-sm font-bold text-zinc-300">A+ Content</div>
+                <span className="text-[9px] text-zinc-500 font-medium">Active</span>
+              </div>
+
+              {/* Box 7: Flow */}
+              <div className="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
+                <span className="text-[9px] font-mono text-zinc-600 tracking-wider">07 / FLOW</span>
+                <div className="text-sm font-bold text-zinc-300">Inventory Feed</div>
+                <div className="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden">
+                  <div className="bg-zinc-700 w-[45%] h-full rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Box 8: Live */}
+              <div className="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
+                <span className="text-[9px] font-mono text-zinc-600 tracking-wider">08 / LIVE</span>
+                <div className="text-sm font-bold text-zinc-300">BuyBox Guard</div>
+                <span className="text-[10px] text-emerald-500 font-bold tracking-wide">Secured</span>
+              </div>
+
+              {/* Box 9: Int */}
+              <div className="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
+                <span className="text-[9px] font-mono text-zinc-600 tracking-wider">09 / INT</span>
+                <div className="text-sm font-bold text-zinc-300">Global Launch</div>
+                <span className="text-[10px] text-zinc-600 font-medium">Queue</span>
+              </div>
+
             </div>
           </div>
 
-          <!-- Box 3: SEO -->
-          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
-            <span class="text-[9px] font-mono text-zinc-600 tracking-wider">03 / SEO</span>
-            <div class="text-sm font-bold text-zinc-300">Index Tracker</div>
-            <span class="text-[11px] text-[#ff8c00] font-mono font-bold">94.8%</span>
+          {/* Core Feature Value Badges (Under Grid) */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
+            {[
+              { label: 'Quick Response', desc: 'Response within 24 business hours.', icon: '🎧' },
+              { label: 'Expert Guidance', desc: 'Tailored Amazon strategy insights.', icon: '🛡' },
+              { label: 'Confidential', desc: 'Your custom data is completely secure.', icon: '🔒' },
+              { label: 'Results Driven', desc: 'Focused entirely on profit scaling.', icon: '📈' }
+            ].map((item, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center space-y-2">
+                <div className="w-10 h-10 rounded-full bg-zinc-900/80 border border-zinc-800/60 flex items-center justify-center text-sm">
+                  {item.icon}
+                </div>
+                <div className="space-y-0.5">
+                  <h4 className="text-[11px] font-bold text-white tracking-wide">{item.label}</h4>
+                  <p className="text-[10px] text-zinc-500 leading-tight max-w-[110px] mx-auto">{item.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
-          <!-- Box 4: B2B -->
-          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
-            <span class="text-[9px] font-mono text-zinc-600 tracking-wider">04 / B2B</span>
-            <div class="text-sm font-bold text-zinc-300">Wholesale Link</div>
-            <span class="w-2 h-2 rounded-full bg-emerald-500/80 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></span>
-          </div>
-
-          <!-- Box 5: CENTER TARGET BLOCK -->
-          <div class="p-4 rounded-xl border border-[#ff8c00] bg-gradient-to-b from-[#ff8c00]/5 to-transparent flex flex-col justify-between min-h-[120px] relative shadow-[0_0_35px_rgba(255,140,0,0.06)]">
-            <span class="absolute top-0 right-0 w-1.5 h-1.5 bg-[#ff8c00] rounded-bl-sm"></span>
-            <span class="text-[9px] font-mono text-[#ff8c00] tracking-wider font-bold">05 / SCALE</span>
-            <div class="text-[13px] font-black text-white tracking-tight uppercase">AMAZON PARTNER</div>
-            <span class="text-[9px] text-zinc-400 font-medium">Growth Phase</span>
-          </div>
-
-          <!-- Box 6: Brand -->
-          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
-            <span class="text-[9px] font-mono text-zinc-600 tracking-wider">06 / BRAND</span>
-            <div class="text-sm font-bold text-zinc-300">A+ Content</div>
-            <span class="text-[9px] text-zinc-500 font-medium">Active</span>
-          </div>
-
-          <!-- Box 7: Flow -->
-          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
-            <span class="text-[9px] font-mono text-zinc-600 tracking-wider">07 / FLOW</span>
-            <div class="text-sm font-bold text-zinc-300">Inventory Feed</div>
-            <div class="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden">
-              <div class="bg-zinc-700 w-[45%] h-full rounded-full"></div>
+          {/* Sticky Conversion Footer Action Bar */}
+          <div className="w-full p-4.5 rounded-[20px] bg-[#050507] border border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+            <div className="flex items-center gap-3.5 text-center sm:text-left">
+              <div className="w-9 h-9 rounded-xl border border-zinc-800 bg-black flex items-center justify-center shrink-0 text-xs">⭐</div>
+              <div className="flex flex-col">
+                <span className="text-[13px] font-bold text-white tracking-wide">Ready to Grow Your Amazon Business?</span>
+                <span className="text-[11px] text-zinc-500 font-medium mt-0.5">I'm just a message or call away. Let's build success together.</span>
+              </div>
             </div>
-          </div>
-
-          <!-- Box 8: Live -->
-          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
-            <span class="text-[9px] font-mono text-zinc-600 tracking-wider">08 / LIVE</span>
-            <div class="text-sm font-bold text-zinc-300">BuyBox Guard</div>
-            <span class="text-[10px] text-emerald-500 font-bold tracking-wide">Secured</span>
-          </div>
-
-          <!-- Box 9: Int -->
-          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
-            <span class="text-[9px] font-mono text-zinc-600 tracking-wider">09 / INT</span>
-            <div class="text-sm font-bold text-zinc-300">Global Launch</div>
-            <span class="text-[10px] text-zinc-600 font-medium">Queue</span>
+            <a href="#contact" className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl bg-[#ff8c00] text-xs font-black text-black uppercase tracking-wider hover:bg-[#ffa534] transition-colors shrink-0">
+              GET IN TOUCH
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-3.5 h-3.5"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            </a>
           </div>
 
         </div>
+
       </div>
-
-      <!-- Core Feature Value Badges -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
-        <div class="flex flex-col items-center text-center space-y-2">
-          <div class="w-10 h-10 rounded-full bg-zinc-900/80 border border-zinc-800/60 flex items-center justify-center text-sm">🎧</div>
-          <div class="space-y-0.5">
-            <h4 class="text-[11px] font-bold text-white tracking-wide">Quick Response</h4>
-            <p class="text-[10px] text-zinc-500 leading-tight max-w-[110px] mx-auto">Response within 24 business hours.</p>
-          </div>
-        </div>
-        <div class="flex flex-col items-center text-center space-y-2">
-          <div class="w-10 h-10 rounded-full bg-zinc-900/80 border border-zinc-800/60 flex items-center justify-center text-sm">🛡</div>
-          <div class="space-y-0.5">
-            <h4 class="text-[11px] font-bold text-white tracking-wide">Expert Guidance</h4>
-            <p class="text-[10px] text-zinc-500 leading-tight max-w-[110px] mx-auto">Tailored Amazon strategy insights.</p>
-          </div>
-        </div>
-        <div class="flex flex-col items-center text-center space-y-2">
-          <div class="w-10 h-10 rounded-full bg-zinc-900/80 border border-zinc-800/60 flex items-center justify-center text-sm">🔒</div>
-          <div class="space-y-0.5">
-            <h4 class="text-[11px] font-bold text-white tracking-wide">Confidential</h4>
-            <p class="text-[10px] text-zinc-500 leading-tight max-w-[110px] mx-auto">Your custom data is completely secure.</p>
-          </div>
-        </div>
-        <div class="flex flex-col items-center text-center space-y-2">
-          <div class="w-10 h-10 rounded-full bg-zinc-900/80 border border-zinc-800/60 flex items-center justify-center text-sm">📈</div>
-          <div class="space-y-0.5">
-            <h4 class="text-[11px] font-bold text-white tracking-wide">Results Driven</h4>
-            <p class="text-[10px] text-zinc-500 leading-tight max-w-[110px] mx-auto">Focused entirely on profit scaling.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sticky Conversion Footer Action Bar -->
-      <div class="w-full p-4.5 rounded-[20px] bg-[#050507] border border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
-        <div class="flex items-center gap-3.5 text-center sm:text-left">
-          <div class="w-9 h-9 rounded-xl border border-zinc-800 bg-black flex items-center justify-center shrink-0 text-xs">⭐</div>
-          <div class="flex flex-col">
-            <span class="text-[13px] font-bold text-white tracking-wide">Ready to Grow Your Amazon Business?</span>
-            <span class="text-[11px] text-zinc-500 font-medium mt-0.5">I'm just a message or call away. Let's build success together.</span>
-          </div>
-        </div>
-        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl bg-[#ff8c00] text-xs font-black text-black uppercase tracking-wider hover:bg-[#ffa534] transition-colors shrink-0">
-          GET IN TOUCH
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3.5 h-3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-        </a>
-      </div>
-
-    </div>
-
-  </div>
-</section>
+    </section>
+  );
+}
