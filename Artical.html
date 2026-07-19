@@ -1,123 +1,182 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- ========================================================================= -->
-<!-- ABOUT / FOUNDER SECTION (HTML + TAILWIND CSS)                             -->
+<!-- MISSION, VISION & METRICS STRATEGY SECTION (HTML + TAILWIND CSS)          -->
 <!-- ========================================================================= -->
-<section id="about-founder" class="relative py-24 px-4 sm:px-8 lg:px-16 bg-[#060606] text-white font-sans overflow-hidden select-none">
-  <div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<section id="mission-vision-metrics" class="relative py-20 px-4 sm:px-8 lg:px-16 bg-[#0c0c0e] text-white font-sans overflow-hidden select-none flex items-center justify-center">
+  
+  <!-- Main Premium Wrapper Card Frame -->
+  <div class="w-full max-w-7xl mx-auto p-6 sm:p-12 rounded-[32px] border border-zinc-800/60 bg-[#060608] relative overflow-hidden shadow-2xl">
+    
+    <!-- Background Waves & Grid Accent Highlights -->
+    <div class="absolute bottom-0 right-0 w-[45%] h-[40%] opacity-[0.12] pointer-events-none select-none z-0">
+      <svg class="w-full h-full text-[#ff8c00]" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none" stroke="currentColor">
+        <path d="M0,90 Q25,50 50,75 T100,30 M0,95 Q30,60 60,85 T100,45 M0,85 Q20,40 40,65 T100,20" stroke-width="0.5" stroke-dasharray="1 1"/>
+      </svg>
+    </div>
+
+    <!-- 2 Column Layout Structure Block -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 relative z-10 items-stretch">
       
       <!-- ========================================== -->
-      <!-- LEFT COLUMN: PHOTO WITH DYNAMIC GLOW BACKDROP -->
+      <!-- LEFT BLOCK: MISSION & VISION STRATEGY      -->
       <!-- ========================================== -->
-      <div class="lg:col-span-5 flex justify-center">
-        <div class="relative w-full max-w-[430px] aspect-[4/5] rounded-[32px] border border-zinc-800 bg-gradient-to-b from-zinc-900 to-black p-4 shadow-2xl overflow-hidden group">
-          
-          <!-- Abstract Golden/Orange Radial Glow Behind the Image -->
-          <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,140,0,0.15)_0%,transparent_70%)] pointer-events-none"></div>
-          
-          <!-- Wave Decorative Backdrop Glow Graphic Layer -->
-          <div class="absolute bottom-0 inset-x-0 h-1/3 opacity-30 bg-gradient-to-t from-[#ff8c00]/40 via-transparent to-transparent blur-xl pointer-events-none"></div>
-          <div class="absolute -left-10 bottom-10 w-full h-1/2 opacity-20 bg-[radial-gradient(ellipse_at_bottom_left,#ff8c00_0%,transparent_70%)] pointer-events-none"></div>
-
-          <!-- The User Profile Image Frame -->
-          <div class="w-full h-full rounded-[24px] overflow-hidden bg-zinc-950 border border-zinc-800 relative z-10 flex items-center justify-center">
-            <img 
-              src="https://abdullah-gull.github.io/images/abdullah-gull-photo.jpg" 
-              alt="Abdullah Gull" 
-              class="w-full h-full object-cover transform group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-            />
-          </div>
-          
-          <!-- Outer Thin Orange Accent Line Tracking Glow -->
-          <div class="absolute -inset-px rounded-[32px] bg-gradient-to-b from-[#ff8c00]/20 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-        </div>
-      </div>
-
-      <!-- ========================================== -->
-      <!-- RIGHT COLUMN: DETAILED CREDENTIALS CONTENT -->
-      <!-- ========================================== -->
-      <div class="lg:col-span-7 space-y-6">
+      <div class="lg:col-span-7 space-y-12 pr-0 lg:pr-8">
         
-        <!-- Micro Label Header -->
-        <div class="text-[#ff8c00] font-bold text-xs uppercase tracking-[0.25em] font-mono">
-          AMAZON CONSULTANT
-        </div>
-
-        <!-- Main Display Name Hierarchy (Fitted Premium Font) -->
-        <h2 class="text-4xl sm:text-[56px] font-bold tracking-tight text-white leading-none font-serif">
-          Abdullah Gull
-        </h2>
-
-        <!-- Subheading Summary -->
-        <p class="text-base sm:text-lg font-medium tracking-wide text-zinc-300 max-w-2xl leading-relaxed">
-          4+ years of hands-on Amazon expertise, built into every account I manage.
-        </p>
-
-        <!-- Detailed Description Paragraph Block -->
-        <div class="text-zinc-400 text-sm sm:text-[15px] font-normal leading-relaxed max-w-2xl space-y-4 tracking-normal">
-          <p>
-            Abdullah built his consulting practice from the ground up after managing multi-million dollar Amazon accounts across Seller Central and Vendor Central for global brands. That experience shaped how he works today: data first, ad spend that earns its place, and listings built to actually convert.
-          </p>
-        </div>
-
-        <!-- 2x2 Clean Grid Value Grid Matrix -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 pt-6 border-t border-zinc-900 mt-8">
+        <!-- SECTION 1: OUR MISSION -->
+        <div class="space-y-5">
+          <div class="flex items-center gap-4">
+            <!-- Mission Target SVG Icon Frame -->
+            <div class="w-12 h-12 rounded-full border border-[#ff8c00]/30 bg-[#ff8c00]/5 flex items-center justify-center text-[#ff8c00] shadow-[0_0_15px_rgba(255,140,0,0.1)]">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <div class="space-y-1">
+              <h2 class="text-2xl sm:text-3xl font-black tracking-wide text-white">Our <span class="text-[#ff8c00]">Mission</span></h2>
+              <div class="w-12 h-[3px] bg-[#ff8c00] rounded-full"></div>
+            </div>
+          </div>
           
-          <!-- Feature Item 01 -->
-          <div class="flex gap-3.5 items-start">
-            <div class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-[#ff8c00] text-black font-black text-[10px] mt-0.5 shadow-md shadow-[#ff8c00]/10">
-              &#10003;
+          <div class="text-zinc-400 text-sm sm:text-[15px] font-medium leading-relaxed space-y-4 max-w-2xl font-sans tracking-wide">
+            <p>At my consulting practice, my mission is to give Amazon sellers real peace of mind.</p>
+            <p>I am dedicated to driving high-quality traffic and scaling your sales, ensuring your brand doesn't just compete but <span class="text-[#ff8c00] font-semibold">dominates the market</span>.</p>
+            <p>Navigating Seller Central can be a headache, but with me handling the complexity, you can finally focus on the big picture while I <span class="text-[#ff8c00] font-semibold">clear the obstacles</span>.</p>
+          </div>
+
+          <!-- Interactive Micro Accent CTA Action Button -->
+          <div class="pt-2">
+            <button class="inline-flex items-center justify-center border border-[#ff8c00]/40 hover:border-[#ff8c00] bg-transparent text-[#ff8c00] hover:bg-[#ff8c00]/5 font-bold text-xs px-6 py-3 rounded-full tracking-widest uppercase transition-all duration-300 group cursor-pointer shadow-[0_0_15px_rgba(255,140,0,0.05)]">
+              Read Our Success Stories
+              <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">&rsaquo;</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="w-full h-[1px] bg-zinc-900/60"></div>
+
+        <!-- SECTION 2: OUR VISION -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-4">
+            <!-- Vision Eye SVG Icon Frame -->
+            <div class="w-12 h-12 rounded-full border border-[#ff8c00]/30 bg-[#ff8c00]/5 flex items-center justify-center text-[#ff8c00] shadow-[0_0_15px_rgba(255,140,0,0.1)]">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
             </div>
             <div class="space-y-1">
-              <h4 class="text-sm sm:text-base font-semibold text-white tracking-wide font-sans">Enterprise experience</h4>
-              <p class="text-xs sm:text-sm text-zinc-400 font-normal leading-relaxed">
-                Managed 150+ Amazon stores across Seller Central and Vendor Central.
-              </p>
+              <h2 class="text-2xl sm:text-3xl font-black tracking-wide text-white">Our <span class="text-[#ff8c00]">Vision</span></h2>
+              <div class="w-12 h-[3px] bg-[#ff8c00] rounded-full"></div>
             </div>
           </div>
 
-          <!-- Feature Item 02 -->
-          <div class="flex gap-3.5 items-start">
-            <div class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-[#ff8c00] text-black font-black text-[10px] mt-0.5 shadow-md shadow-[#ff8c00]/10">
-              &#10003;
+          <p class="text-zinc-400 text-sm sm:text-[15px] font-medium tracking-wide">
+            My vision is simple: to empower you to reach the peak of your Amazon potential.
+          </p>
+
+          <!-- 4 Stacked Strategic Action Rows -->
+          <div class="space-y-3 max-w-2xl">
+            <!-- Row 1 -->
+            <div class="w-full p-4 rounded-xl border border-zinc-900 bg-zinc-950/40 flex items-center gap-4">
+              <div class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#ff8c00] flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+              </div>
+              <p class="text-zinc-400 text-xs sm:text-sm font-medium leading-relaxed"><span class="text-[#ff8c00] font-semibold">Accelerate:</span> Fast track your sales growth through data-backed strategies.</p>
             </div>
-            <div class="space-y-1">
-              <h4 class="text-sm sm:text-base font-semibold text-white tracking-wide font-sans">Data-led strategy</h4>
-              <p class="text-xs sm:text-sm text-zinc-400 font-normal leading-relaxed">
-                Hybrid PPC + SEO built on ACOS reduction and rigorous tracking.
-              </p>
+            <!-- Row 2 -->
+            <div class="w-full p-4 rounded-xl border border-zinc-900 bg-zinc-950/40 flex items-center gap-4">
+              <div class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#ff8c00] flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+              </div>
+              <p class="text-zinc-400 text-xs sm:text-sm font-medium leading-relaxed"><span class="text-[#ff8c00] font-semibold">Confidence:</span> Provide you with the peace of mind that your account is in expert hands.</p>
+            </div>
+            <!-- Row 3 -->
+            <div class="w-full p-4 rounded-xl border border-zinc-900 bg-zinc-950/40 flex items-center gap-4">
+              <div class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#ff8c00] flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
+              </div>
+              <p class="text-zinc-400 text-xs sm:text-sm font-medium leading-relaxed"><span class="text-[#ff8c00] font-semibold">Integration:</span> Seamlessly align your PPC, SEO, Design, and Catalog for a 360-degree growth engine.</p>
+            </div>
+            <!-- Row 4 -->
+            <div class="w-full p-4 rounded-xl border border-zinc-900 bg-zinc-950/40 flex items-center gap-4">
+              <div class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#ff8c00] flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <p class="text-zinc-400 text-xs sm:text-sm font-medium leading-relaxed"><span class="text-[#ff8c00] font-semibold">Sustainable:</span> Build long-term brand value that lasts beyond short-term wins.</p>
             </div>
           </div>
-
-          <!-- Feature Item 03 -->
-          <div class="flex gap-3.5 items-start">
-            <div class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-[#ff8c00] text-black font-black text-[10px] mt-0.5 shadow-md shadow-[#ff8c00]/10">
-              &#10003;
-            </div>
-            <div class="space-y-1">
-              <h4 class="text-sm sm:text-base font-semibold text-white tracking-wide font-sans">Long-term thinking</h4>
-              <p class="text-xs sm:text-sm text-zinc-400 font-normal leading-relaxed">
-                Focused on compounding ranking growth, not short-lived spikes.
-              </p>
-            </div>
-          </div>
-
-          <!-- Feature Item 04 -->
-          <div class="flex gap-3.5 items-start">
-            <div class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-[#ff8c00] text-black font-black text-[10px] mt-0.5 shadow-md shadow-[#ff8c00]/10">
-              &#10003;
-            </div>
-            <div class="space-y-1">
-              <h4 class="text-sm sm:text-base font-semibold text-white tracking-wide font-sans">Client-first philosophy</h4>
-              <p class="text-xs sm:text-sm text-zinc-400 font-normal leading-relaxed">
-                4.9 star rating, backed by an Amazon Ads Advanced Partner status.
-              </p>
-            </div>
-          </div>
-
         </div>
 
       </div>
+
+      <!-- ========================================== -->
+      <!-- CENTRAL NEON BORDER DIVIDER                -->
+      <!-- ========================================== -->
+      <div class="hidden lg:flex lg:col-span-1 justify-center relative items-center">
+        <!-- Vertical Glowing Border Architecture Line -->
+        <div class="w-[1px] h-full bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 relative">
+          <div class="absolute top-1/4 -left-[1px] w-[3px] h-32 bg-gradient-to-b from-transparent via-[#ff8c00] to-transparent shadow-[0_0_15px_#ff8c00]"></div>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- RIGHT BLOCK: METRIC CARD SYSTEM DISPLAY   -->
+      <!-- ========================================== -->
+      <div class="lg:col-span-4 flex flex-col justify-center space-y-6">
+        
+        <!-- Header Label Wrapper -->
+        <div class="text-center space-y-2 mb-2">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-zinc-800 bg-zinc-950 text-[#ff8c00] shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-base font-extrabold tracking-wider uppercase text-white font-sans">Results-Driven Strategies</h3>
+          <p class="text-[11px] font-mono font-bold tracking-widest text-zinc-500 uppercase">Tailored For Your Business Growth</p>
+        </div>
+
+        <!-- Metric Card 01 -->
+        <div class="w-full p-6 rounded-2xl border border-zinc-900/80 bg-zinc-950/30 backdrop-blur-sm flex items-center gap-5 hover:border-[#ff8c00]/20 transition-colors duration-300 relative group overflow-hidden">
+          <div class="w-14 h-14 rounded-full border border-zinc-800 bg-zinc-900/60 flex items-center justify-center text-[#ff8c00] text-xl font-black font-mono transition-transform duration-500 group-hover:scale-105">
+            $
+          </div>
+          <div class="space-y-0.5">
+            <div class="text-3xl sm:text-4xl font-black text-[#ff8c00] tracking-tight font-sans">$150k+</div>
+            <div class="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase">Monthly Revenue</div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#ff8c00]/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+        </div>
+
+        <!-- Metric Card 02 -->
+        <div class="w-full p-6 rounded-2xl border border-zinc-900/80 bg-zinc-950/30 backdrop-blur-sm flex items-center gap-5 hover:border-[#ff8c00]/20 transition-colors duration-300 relative group overflow-hidden">
+          <div class="w-14 h-14 rounded-full border border-zinc-800 bg-zinc-900/60 flex items-center justify-center text-[#ff8c00] transition-transform duration-500 group-hover:scale-105">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+          </div>
+          <div class="space-y-0.5">
+            <div class="text-3xl sm:text-4xl font-black text-[#ff8c00] tracking-tight font-sans">45+</div>
+            <div class="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase">Brands Managed</div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#ff8c00]/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+        </div>
+
+        <!-- Metric Card 03 -->
+        <div class="w-full p-6 rounded-2xl border border-zinc-900/80 bg-zinc-950/30 backdrop-blur-sm flex items-center gap-5 hover:border-[#ff8c00]/20 transition-colors duration-300 relative group overflow-hidden">
+          <div class="w-14 h-14 rounded-full border border-zinc-800 bg-zinc-900/60 flex items-center justify-center text-[#ff8c00] transition-transform duration-500 group-hover:scale-105">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <div class="space-y-0.5">
+            <div class="text-3xl sm:text-4xl font-black text-[#ff8c00] tracking-tight font-sans">15+</div>
+            <div class="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase">Dedicated Team Members</div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#ff8c00]/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+        </div>
+
+      </div>
+
     </div>
   </div>
 </section>
