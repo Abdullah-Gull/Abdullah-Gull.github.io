@@ -1,256 +1,228 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- ========================================================================= -->
-<!-- PREMIUM DYNAMIC CONVERSATION HUB (TAILWIND CUSTOM GRID & GLOW EFFECT)      -->
+<!-- PREMIUM DYNAMIC CONVERSATION HUB (EXACT 100% DESIGN CLONE)                -->
 <!-- ========================================================================= -->
-<section class="relative min-h-screen py-20 px-4 sm:px-8 lg:px-16 bg-[#030303] text-white font-sans overflow-hidden select-none">
-  
-  <!-- Ambient Backdrop Glows -->
-  <div class="absolute inset-0 pointer-events-none z-0">
-    <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[#ff8c00]/5 filter blur-[120px]"></div>
-    <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#ff8c00]/5 filter blur-[150px]"></div>
-  </div>
-
-  <!-- Main Grid Wrapper -->
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10 items-start">
+<section class="w-full bg-black text-white py-20 px-4 sm:px-8 lg:px-16 font-sans relative overflow-hidden select-none">
+  <div class="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
     
-    <!-- ==================== LEFT SIDE COLUMN ==================== -->
-    <div class="lg:col-span-5 flex flex-col space-y-8">
+    <!-- ================= LEFT COLUMN ================= -->
+    <div class="lg:col-span-5 flex flex-col space-y-7">
       
-      <!-- Top Accent Badge -->
-      <div class="inline-flex items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#ff8c00] shadow-[0_0_8px_#ff8c00]"></span>
-        <span class="text-[11px] font-bold tracking-[0.2em] text-[#ff8c00] uppercase">REACH ME</span>
+      <!-- Reach Me Tag -->
+      <div class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></span>
+        <span class="text-[10px] font-black tracking-[0.25em] text-[#ff8c00] uppercase">REACH ME</span>
       </div>
 
-      <!-- Main Typography Header -->
+      <!-- Heading -->
       <div class="space-y-4">
-        <h2 class="text-5xl sm:text-[56px] font-black tracking-tight leading-[1.05]">
+        <h2 class="text-5xl sm:text-[54px] font-extrabold tracking-tight leading-[1.05]">
           Let's Start a <br>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8c00] to-[#ffa534]">Conversation</span>
+          <span class="text-[#ff8c00]">Conversation</span>
         </h2>
-        <p class="text-zinc-400 text-sm font-medium tracking-wide leading-relaxed max-w-md">
+        <p class="text-zinc-400 text-sm font-medium leading-relaxed max-w-sm">
           Have a question or need expert guidance? I'm here to help you grow your Amazon business.
         </p>
       </div>
 
-      <!-- Premium Actionable Channels -->
-      <div class="space-y-3 w-full">
-        <!-- Email Link Box -->
-        <a href="mailto:sales@alphaspikes.com" class="group flex items-center justify-between p-4 rounded-[18px] border border-zinc-900 bg-[#09090b]/60 backdrop-blur-md transition-all duration-300 hover:border-[#ff8c00]/40 hover:bg-[#ff8c00]/[0.02] shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
+      <!-- Contact Channels Grid -->
+      <div class="space-y-3 w-full max-w-[440px]">
+        <!-- Email Channel -->
+        <a href="mailto:sales@alphaspikes.com" class="group flex items-center justify-between p-4.5 rounded-[20px] bg-[#0c0c0e] border border-zinc-900 transition-all hover:border-zinc-800">
           <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-[#ff8c00]/10 flex items-center justify-center border border-[#ff8c00]/20 shadow-[0_0_15px_rgba(255,140,0,0.1)] group-hover:scale-105 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+            <div class="w-12 h-12 rounded-xl bg-zinc-950 border border-zinc-900 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
             </div>
             <div class="flex flex-col">
-              <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">EMAIL ME</span>
-              <span class="text-sm font-bold text-zinc-200 tracking-wide mt-0.5">sales@alphaspikes.com</span>
+              <span class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">EMAIL ME</span>
+              <span class="text-[13px] font-bold text-zinc-200 tracking-wide mt-0.5">sales@alphaspikes.com</span>
             </div>
           </div>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ff8c00" class="w-4 h-4 mr-1 transform group-hover:translate-x-1 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ff8c00" class="w-3.5 h-3.5 mr-1 transform group-hover:translate-x-0.5 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
         </a>
 
-        <!-- Phone Link Box -->
-        <a href="tel:+13073104045" class="group flex items-center justify-between p-4 rounded-[18px] border border-zinc-900 bg-[#09090b]/60 backdrop-blur-md transition-all duration-300 hover:border-[#ff8c00]/40 hover:bg-[#ff8c00]/[0.02] shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
+        <!-- Call Channel -->
+        <a href="tel:+13073104045" class="group flex items-center justify-between p-4.5 rounded-[20px] bg-[#0c0c0e] border border-zinc-900 transition-all hover:border-zinc-800">
           <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-[#ff8c00]/10 flex items-center justify-center border border-[#ff8c00]/20 shadow-[0_0_15px_rgba(255,140,0,0.1)] group-hover:scale-105 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.622kM2.25 9c0 8.68 7.032 15.75 15.75 15.75a.75.75 0 00.75-.75V19.5a.75.75 0 00-.466-.69l-5.14-2.113a.75.75 0 00-.756.144l-2.082 2.083a18.56 18.56 0 01-8.128-8.128l2.083-2.082a.75.75 0 00.144-.756L4.69 3.116A.75.75 0 004 2.625H1.5a.75.75 0 00-.75.75z" /></svg>
+            <div class="w-12 h-12 rounded-xl bg-zinc-950 border border-zinc-900 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3" /></svg>
             </div>
             <div class="flex flex-col">
-              <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">CALL ME</span>
-              <span class="text-sm font-bold text-zinc-200 tracking-wide mt-0.5">+1 307-310-4045</span>
+              <span class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">CALL ME</span>
+              <span class="text-[13px] font-bold text-zinc-200 tracking-wide mt-0.5">+1 307-310-4045</span>
             </div>
           </div>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ff8c00" class="w-4 h-4 mr-1 transform group-hover:translate-x-1 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ff8c00" class="w-3.5 h-3.5 mr-1 transform group-hover:translate-x-0.5 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
         </a>
       </div>
 
-      <!-- Process Path Dynamic Stepper Block -->
-      <div class="w-full p-5 rounded-[22px] border border-zinc-900/80 bg-[#070709] shadow-[0_15px_35px_rgba(0,0,0,0.6)] space-y-6">
-        
-        <!-- Status Header Inside Card -->
-        <div class="flex items-start gap-3.5 border-b border-zinc-900 pb-4">
-          <div class="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" /></svg>
-          </div>
+      <!-- Stepper Process Card -->
+      <div class="w-full max-w-[440px] p-6 rounded-[24px] bg-[#060608] border border-zinc-900/60 space-y-6">
+        <div class="flex items-center gap-3.5 border-b border-zinc-900 pb-4">
+          <span class="text-base text-[#ff8c00]">📅</span>
           <div>
-            <span class="text-[10px] font-bold text-[#ff8c00] tracking-widest uppercase">I AM AVAILABLE</span>
-            <p class="text-xs font-semibold text-zinc-300 mt-0.5">Monday to Friday, 9AM to 6PM EST</p>
+            <span class="text-[9px] font-black text-[#ff8c00] tracking-widest uppercase">I AM AVAILABLE</span>
+            <p class="text-xs font-bold text-zinc-300 mt-0.5">Monday to Friday, 9AM to 6PM EST</p>
           </div>
         </div>
 
-        <!-- Stepper Visual Array -->
         <div class="relative space-y-6 pl-1">
-          <!-- Dashed Connector Tracker Line -->
           <div class="absolute left-[13px] top-3 bottom-3 w-[1px] border-l border-dashed border-zinc-800"></div>
           
-          <!-- Step 1 -->
           <div class="flex items-start gap-4 relative z-10">
-            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-zinc-950 flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">1</div>
+            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">1</div>
             <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Email me for account questions, proposals, or partnership inquiries.</p>
           </div>
-          <!-- Step 2 -->
           <div class="flex items-start gap-4 relative z-10">
-            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-zinc-950 flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">2</div>
+            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">2</div>
             <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Book a direct call through my scheduling link if you want to talk through your account situation first.</p>
           </div>
-          <!-- Step 3 -->
           <div class="flex items-start gap-4 relative z-10">
-            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-zinc-950 flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">3</div>
+            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-black flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">3</div>
             <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Fill out the contact form and I will follow up within one business day with a clear next step.</p>
           </div>
-          <!-- Step * -->
           <div class="flex items-start gap-4 relative z-10">
             <div class="w-7 h-7 rounded-full border border-[#ff8c00]/30 bg-[#ff8c00]/5 flex items-center justify-center text-xs font-bold text-[#ff8c00] shrink-0">*</div>
             <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Not sure what you need yet? That is exactly what the first conversation is for.</p>
           </div>
         </div>
-
       </div>
 
-      <!-- Footer Media Links -->
-      <div class="flex items-center gap-3 pt-2">
-        <span class="text-[10px] font-bold text-zinc-600 tracking-wider uppercase mr-2">CONNECT WITH ME</span>
-        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:border-[#ff8c00] hover:text-[#ff8c00] transition-colors">
-          <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+      <!-- Socials Link Row -->
+      <div class="flex items-center gap-3 pt-1">
+        <span class="text-[9px] font-bold text-zinc-600 tracking-wider uppercase mr-2">CONNECT WITH ME</span>
+        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-white transition-colors">
+          <span class="text-[11px] font-bold uppercase">fb</span>
         </a>
-        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:border-[#ff8c00] hover:text-[#ff8c00] transition-colors">
-          <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4"><path d="M12.315 2c2.43 0 2.717.01 3.674.053 2.508.116 3.92 1.517 4.036 4.036.044.957.054 1.243.054 3.674 0 2.43-.01 2.717-.053 3.674-.116 2.508-1.517 3.92-4.036 4.036-.957.044-1.243.054-3.674.054-2.43 0-2.717-.01-3.674-.053-2.508-.116-3.92-1.517-4.036-4.036-.957-.044-1.243-.054-3.674-.054zm0-2c-2.473 0-2.783.01-3.747.054-3.4 0-5.3 1.89-5.3 5.3-.044.964-.054 1.274-.054 3.747 0 2.473.01 2.783.054 3.747 0 3.4 1.89 5.3 5.3 5.3.964.044 1.274.054 3.747.054 2.473 0 2.783-.01 3.747-.054 3.4 0 5.3-1.89 5.3-5.3.044-.964.054-1.274.054-3.747 0-2.473-.01-2.783-.054-3.747 0-3.4-1.89-5.3-5.3-5.3-.964-.044-1.274-.054-3.747-.054zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-white transition-colors">
+          <span class="text-[11px] font-bold uppercase">ig</span>
         </a>
-        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:border-[#ff8c00] hover:text-[#ff8c00] transition-colors">
-          <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-white transition-colors">
+          <span class="text-[11px] font-bold uppercase">in</span>
         </a>
       </div>
     </div>
 
-    <!-- ==================== RIGHT SIDE COLUMN ==================== -->
-    <div class="lg:col-span-7 flex flex-col space-y-8 w-full">
+    <!-- ================= RIGHT COLUMN (EXACT MATCH) ================= -->
+    <div class="lg:col-span-7 flex flex-col space-y-12 w-full">
       
-      <!-- HIGH END ABSTRACT VECTOR MOODBOARD FRAME (NO IMAGES BROKEN) -->
-      <div class="w-full aspect-[4/3] rounded-[28px] border border-zinc-800/80 bg-zinc-950 p-4 relative shadow-[0_30px_70px_-15px_rgba(0,0,0,0.9)] overflow-hidden group">
-        
-        <!-- Smooth Spotlight Outer Glow -->
-        <div class="absolute inset-0 rounded-[28px] border border-transparent group-hover:border-[#ff8c00]/20 transition-colors pointer-events-none z-30"></div>
-        
-        <!-- The Grid Content Platform -->
-        <div class="w-full h-full rounded-[20px] bg-[#0c0c0e] border border-zinc-900 grid grid-cols-3 grid-rows-3 gap-3 p-3 relative z-10">
+      <!-- Main 9-Grid Outer Container -->
+      <div class="w-full rounded-[24px] border border-zinc-950 bg-black p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] relative overflow-hidden">
+        <div class="grid grid-cols-3 gap-4">
           
-          <!-- Box 1 -->
-          <div class="rounded-xl border border-zinc-900 bg-zinc-900/20 flex flex-col justify-between p-3.5 hover:border-zinc-800 transition-colors">
+          <!-- Box 1: Audit -->
+          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
             <span class="text-[9px] font-mono text-zinc-600 tracking-wider">01 / AUDIT</span>
-            <div class="text-xs font-bold text-zinc-300">Listing Analysis</div>
-            <div class="text-zinc-600 text-[10px]">Ready</div>
+            <div class="text-sm font-bold text-zinc-300">Listing Analysis</div>
+            <span class="text-[10px] text-zinc-700 font-medium">Ready</span>
           </div>
-          <!-- Box 2 -->
-          <div class="rounded-xl border border-zinc-900 bg-zinc-900/20 flex flex-col justify-between p-3.5 hover:border-zinc-800 transition-colors">
+
+          <!-- Box 2: PPC -->
+          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
             <span class="text-[9px] font-mono text-zinc-600 tracking-wider">02 / PPC</span>
-            <div class="text-xs font-bold text-zinc-300">ROAS Engine</div>
-            <div class="w-full bg-zinc-950 h-1.5 rounded-full overflow-hidden"><div class="bg-zinc-700 w-[70%] h-full"></div></div>
+            <div class="text-sm font-bold text-zinc-300">ROAS Engine</div>
+            <div class="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden">
+              <div class="bg-zinc-700 w-[65%] h-full rounded-full"></div>
+            </div>
           </div>
-          <!-- Box 3 -->
-          <div class="rounded-xl border border-zinc-900 bg-zinc-900/20 flex flex-col justify-between p-3.5 hover:border-zinc-800 transition-colors">
+
+          <!-- Box 3: SEO -->
+          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
             <span class="text-[9px] font-mono text-zinc-600 tracking-wider">03 / SEO</span>
-            <div class="text-xs font-bold text-zinc-300">Index Tracker</div>
-            <div class="text-[#ffa534] text-[10px] font-mono font-bold">94.8%</div>
+            <div class="text-sm font-bold text-zinc-300">Index Tracker</div>
+            <span class="text-[11px] text-[#ff8c00] font-mono font-bold">94.8%</span>
           </div>
-          <!-- Box 4 -->
-          <div class="rounded-xl border border-zinc-900 bg-zinc-900/20 flex flex-col justify-between p-3.5 hover:border-zinc-800 transition-colors">
+
+          <!-- Box 4: B2B -->
+          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
             <span class="text-[9px] font-mono text-zinc-600 tracking-wider">04 / B2B</span>
-            <div class="text-xs font-bold text-zinc-300">Wholesale Link</div>
-            <div class="w-2 h-2 rounded-full bg-emerald-500/80"></div>
+            <div class="text-sm font-bold text-zinc-300">Wholesale Link</div>
+            <span class="w-2 h-2 rounded-full bg-emerald-500/80 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></span>
           </div>
 
-          <!-- TARGET BLOCK: ACTIVE CENTER DROP WITH HIGHLIGHT GLOW -->
-          <div class="rounded-xl border-2 border-[#ff8c00] bg-gradient-to-br from-[#ff8c00]/10 to-transparent flex flex-col justify-between p-4 shadow-[0_0_30px_rgba(255,140,0,0.15)] relative">
-            <div class="absolute -top-1 -right-1 w-2 h-2 bg-[#ff8c00]"></div>
-            <span class="text-[9px] font-mono text-[#ff8c00] tracking-widest font-bold">05 / SCALE</span>
-            <div class="text-sm font-black text-white tracking-tight">AMAZON PARTNER</div>
-            <span class="text-[9px] text-zinc-400 font-medium tracking-wide">Growth Phase</span>
+          <!-- Box 5: CENTER TARGET BLOCK -->
+          <div class="p-4 rounded-xl border border-[#ff8c00] bg-gradient-to-b from-[#ff8c00]/5 to-transparent flex flex-col justify-between min-h-[120px] relative shadow-[0_0_35px_rgba(255,140,0,0.06)]">
+            <span class="absolute top-0 right-0 w-1.5 h-1.5 bg-[#ff8c00] rounded-bl-sm"></span>
+            <span class="text-[9px] font-mono text-[#ff8c00] tracking-wider font-bold">05 / SCALE</span>
+            <div class="text-[13px] font-black text-white tracking-tight uppercase">AMAZON PARTNER</div>
+            <span class="text-[9px] text-zinc-400 font-medium">Growth Phase</span>
           </div>
 
-          <!-- Box 6 -->
-          <div class="rounded-xl border border-zinc-900 bg-zinc-900/20 flex flex-col justify-between p-3.5 hover:border-zinc-800 transition-colors">
+          <!-- Box 6: Brand -->
+          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
             <span class="text-[9px] font-mono text-zinc-600 tracking-wider">06 / BRAND</span>
-            <div class="text-xs font-bold text-zinc-300">A+ Content</div>
-            <div class="text-zinc-600 text-[10px]">Active</div>
+            <div class="text-sm font-bold text-zinc-300">A+ Content</div>
+            <span class="text-[9px] text-zinc-500 font-medium">Active</span>
           </div>
-          <!-- Box 7 -->
-          <div class="rounded-xl border border-zinc-900 bg-zinc-900/20 flex flex-col justify-between p-3.5 hover:border-zinc-800 transition-colors">
+
+          <!-- Box 7: Flow -->
+          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
             <span class="text-[9px] font-mono text-zinc-600 tracking-wider">07 / FLOW</span>
-            <div class="text-xs font-bold text-zinc-300">Inventory Feed</div>
-            <div class="w-full bg-zinc-950 h-1.5 rounded-full overflow-hidden"><div class="bg-zinc-700 w-[85%] h-full"></div></div>
+            <div class="text-sm font-bold text-zinc-300">Inventory Feed</div>
+            <div class="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden">
+              <div class="bg-zinc-700 w-[45%] h-full rounded-full"></div>
+            </div>
           </div>
-          <!-- Box 8 -->
-          <div class="rounded-xl border border-zinc-900 bg-zinc-900/20 flex flex-col justify-between p-3.5 hover:border-zinc-800 transition-colors">
+
+          <!-- Box 8: Live -->
+          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
             <span class="text-[9px] font-mono text-zinc-600 tracking-wider">08 / LIVE</span>
-            <div class="text-xs font-bold text-zinc-300">BuyBox Guard</div>
-            <div class="text-emerald-500 text-[10px] font-bold">Secured</div>
+            <div class="text-sm font-bold text-zinc-300">BuyBox Guard</div>
+            <span class="text-[10px] text-emerald-500 font-bold tracking-wide">Secured</span>
           </div>
-          <!-- Box 9 -->
-          <div class="rounded-xl border border-zinc-900 bg-zinc-900/20 flex flex-col justify-between p-3.5 hover:border-zinc-800 transition-colors">
+
+          <!-- Box 9: Int -->
+          <div class="p-4 rounded-xl border border-zinc-900/80 bg-zinc-900/10 flex flex-col justify-between min-h-[120px]">
             <span class="text-[9px] font-mono text-zinc-600 tracking-wider">09 / INT</span>
-            <div class="text-xs font-bold text-zinc-300">Global Launch</div>
-            <div class="text-zinc-600 text-[10px]">Queue</div>
+            <div class="text-sm font-bold text-zinc-300">Global Launch</div>
+            <span class="text-[10px] text-zinc-600 font-medium">Queue</span>
           </div>
 
         </div>
-
-        <!-- Geometric High Tech Wave Line Graphic at Bottom Corner -->
-        <div class="absolute bottom-[-10px] right-[-10px] w-48 h-48 opacity-10 pointer-events-none">
-          <svg viewBox="0 0 100 100" class="w-full h-full stroke-[#ff8c00] fill-none" stroke-width="0.5">
-            <circle cx="100" cy="100" r="80" />
-            <circle cx="100" cy="100" r="60" />
-            <circle cx="100" cy="100" r="40" />
-          </svg>
-        </div>
-
       </div>
 
-      <!-- Features Row Sub-Grid -->
+      <!-- Core Feature Value Badges -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
-        <!-- Badge 1 -->
-        <div class="flex flex-col items-center text-center p-3 space-y-2">
-          <div class="w-11 h-11 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-sm text-[#ff8c00]">🎧</div>
+        <div class="flex flex-col items-center text-center space-y-2">
+          <div class="w-10 h-10 rounded-full bg-zinc-900/80 border border-zinc-800/60 flex items-center justify-center text-sm">🎧</div>
           <div class="space-y-0.5">
-            <h4 class="text-xs font-bold text-white tracking-wide">Quick Response</h4>
-            <p class="text-[10px] text-zinc-500 leading-normal">Response within 24 business hours.</p>
+            <h4 class="text-[11px] font-bold text-white tracking-wide">Quick Response</h4>
+            <p class="text-[10px] text-zinc-500 leading-tight max-w-[110px] mx-auto">Response within 24 business hours.</p>
           </div>
         </div>
-        <!-- Badge 2 -->
-        <div class="flex flex-col items-center text-center p-3 space-y-2">
-          <div class="w-11 h-11 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-sm text-[#ff8c00]">🛡️</div>
+        <div class="flex flex-col items-center text-center space-y-2">
+          <div class="w-10 h-10 rounded-full bg-zinc-900/80 border border-zinc-800/60 flex items-center justify-center text-sm">🛡</div>
           <div class="space-y-0.5">
-            <h4 class="text-xs font-bold text-white tracking-wide">Expert Guidance</h4>
-            <p class="text-[10px] text-zinc-500 leading-normal">Tailored Amazon strategy insights.</p>
+            <h4 class="text-[11px] font-bold text-white tracking-wide">Expert Guidance</h4>
+            <p class="text-[10px] text-zinc-500 leading-tight max-w-[110px] mx-auto">Tailored Amazon strategy insights.</p>
           </div>
         </div>
-        <!-- Badge 3 -->
-        <div class="flex flex-col items-center text-center p-3 space-y-2">
-          <div class="w-11 h-11 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-sm text-[#ff8c00]">🔒</div>
+        <div class="flex flex-col items-center text-center space-y-2">
+          <div class="w-10 h-10 rounded-full bg-zinc-900/80 border border-zinc-800/60 flex items-center justify-center text-sm">🔒</div>
           <div class="space-y-0.5">
-            <h4 class="text-xs font-bold text-white tracking-wide">Confidential</h4>
-            <p class="text-[10px] text-zinc-500 leading-normal">Your custom data is completely secure.</p>
+            <h4 class="text-[11px] font-bold text-white tracking-wide">Confidential</h4>
+            <p class="text-[10px] text-zinc-500 leading-tight max-w-[110px] mx-auto">Your custom data is completely secure.</p>
           </div>
         </div>
-        <!-- Badge 4 -->
-        <div class="flex flex-col items-center text-center p-3 space-y-2">
-          <div class="w-11 h-11 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-sm text-[#ff8c00]">📈</div>
+        <div class="flex flex-col items-center text-center space-y-2">
+          <div class="w-10 h-10 rounded-full bg-zinc-900/80 border border-zinc-800/60 flex items-center justify-center text-sm">📈</div>
           <div class="space-y-0.5">
-            <h4 class="text-xs font-bold text-white tracking-wide">Results Driven</h4>
-            <p class="text-[10px] text-zinc-500 leading-normal">Focused entirely on profit scaling.</p>
+            <h4 class="text-[11px] font-bold text-white tracking-wide">Results Driven</h4>
+            <p class="text-[10px] text-zinc-500 leading-tight max-w-[110px] mx-auto">Focused entirely on profit scaling.</p>
           </div>
         </div>
       </div>
 
-      <!-- Action Box Bar Component -->
-      <div class="w-full p-4 rounded-2xl border border-zinc-900 bg-[#070709] flex flex-col sm:flex-row items-center justify-between gap-4 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+      <!-- Sticky Conversion Footer Action Bar -->
+      <div class="w-full p-4.5 rounded-[20px] bg-[#050507] border border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
         <div class="flex items-center gap-3.5 text-center sm:text-left">
-          <div class="w-10 h-10 rounded-xl border border-zinc-800 bg-zinc-950 flex items-center justify-center shrink-0 text-[#ff8c00] text-base shadow-[0_0_10px_rgba(255,140,0,0.1)]">⭐</div>
+          <div class="w-9 h-9 rounded-xl border border-zinc-800 bg-black flex items-center justify-center shrink-0 text-xs">⭐</div>
           <div class="flex flex-col">
-            <span class="text-sm font-bold text-white tracking-wide">Ready to Grow Your Amazon Business?</span>
-            <span class="text-[11px] text-zinc-500 font-medium tracking-wide mt-0.5">I'm just a message or call away. Let's build success together.</span>
+            <span class="text-[13px] font-bold text-white tracking-wide">Ready to Grow Your Amazon Business?</span>
+            <span class="text-[11px] text-zinc-500 font-medium mt-0.5">I'm just a message or call away. Let's build success together.</span>
           </div>
         </div>
-        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#ff8c00] to-[#ffa534] text-xs font-bold text-black uppercase tracking-wider hover:opacity-90 shadow-[0_0_25px_rgba(255,140,0,0.2)] transition-all">
+        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl bg-[#ff8c00] text-xs font-black text-black uppercase tracking-wider hover:bg-[#ffa534] transition-colors shrink-0">
           GET IN TOUCH
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3.5 h-3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
         </a>
