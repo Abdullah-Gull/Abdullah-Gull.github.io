@@ -96,7 +96,7 @@
     <link rel="icon" type="image/png" href="https://i.ibb.co/GvjXV0mL/favicon.png">
     <title>Abdullah Gull | Amazon Expert</title>
     </head>
-    <style>
+  <style>
     /* --- GLOBAL THEME VARIABLES --- */
 :root {
     --primary-orange: #FF8C00;
@@ -189,7 +189,7 @@ body {
     color: var(--primary-orange);
 }
 
-/* --- NAVIGATION CAPSULE --- */
+/* --- NAVIGATION CAPSULE (FIXED OVERLAPPING) --- */
 .nav-capsule {
     display: flex;
     align-items: center;
@@ -210,34 +210,23 @@ body {
     font-size: 14px;
     font-weight: 500;
     border-radius: 50px;
-    transition: all 0.3s var(--transition-smooth);
+    transition: color 0.3s var(--transition-smooth), background-color 0.3s var(--transition-smooth);
     background: transparent !important;
     position: relative;
-    overflow: hidden;
+    z-index: 1;
 }
 
+/* Slide animation logic removed to completely fix the sticky background issue */
 .nav-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--primary-orange);
-    border-radius: 50px;
-    z-index: -1;
-    transition: left 0.3s var(--transition-smooth);
+    content: none !important;
 }
 
+/* Safe and Clean Active/Hover Background allocation */
 .nav-link.active,
 .nav-link:hover {
     color: #fff !important;
     font-weight: 600;
-}
-
-.nav-link.active::before,
-.nav-link:hover::before {
-    left: 0;
+    background-color: var(--primary-orange) !important;
 }
 
 /* --- GET IN TOUCH BUTTON --- */
@@ -353,130 +342,6 @@ body {
     padding-left: 25px;
 }
 
-/* --- HERO SECTION --- */
-.hero-split {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 80px 8%;
-    gap: 50px;
-    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-split::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    flex: 1;
-}
-
-.hero-content h1 {
-    font-size: 64px;
-    line-height: 1.15;
-    margin-bottom: 24px;
-    color: var(--light-text);
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-.hero-content h1 span {
-    color: var(--primary-orange);
-    background: linear-gradient(135deg, #FF8C00, #FFB84D);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.badge-gold {
-    color: var(--primary-orange);
-    letter-spacing: 2px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    border-left: 3px solid var(--primary-orange);
-    padding-left: 12px;
-    font-size: 13px;
-    text-transform: uppercase;
-}
-
-.hero-subtext {
-    color: var(--subtle-gray);
-    margin-bottom: 36px;
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #FF8C00, #FFB84D);
-    color: #fff;
-    padding: 16px 36px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    display: inline-block;
-    transition: all 0.3s var(--transition-smooth);
-    border: 1px solid transparent;
-    box-shadow: 0 12px 28px rgba(255, 140, 0, 0.25);
-    letter-spacing: 0.5px;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s var(--transition-smooth);
-}
-
-.btn-primary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(255, 140, 0, 0.35);
-}
-
-.btn-primary:hover::before {
-    left: 100%;
-}
-
-.image-wrapper {
-    flex: 1;
-    position: relative;
-    z-index: 2;
-}
-
-.image-wrapper img {
-    width: 100%;
-    max-width: 450px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 60px rgba(255, 140, 0, 0.1);
-    transition: all 0.4s var(--transition-smooth);
-    object-fit: cover;
-}
-
-.image-wrapper img:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5), 0 0 80px rgba(255, 140, 0, 0.2);
-    border-color: rgba(255, 140, 0, 0.2);
-}
-
 /* --- FOOTER SOCIAL ICONS --- */
 .social-icon-box {
     display: inline-flex !important;
@@ -538,19 +403,6 @@ p {
         padding: 28px;
         gap: 20px;
     }
-
-    .hero-split {
-        padding: 60px 6%;
-        gap: 30px;
-    }
-
-    .hero-content h1 {
-        font-size: 50px;
-    }
-
-    .image-wrapper img {
-        max-width: 380px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -594,36 +446,6 @@ p {
         padding-left: 0;
         padding-top: 16px;
         margin-top: 16px;
-    }
-
-    .hero-split {
-        flex-direction: column;
-        text-align: center;
-        padding: 50px 5%;
-        min-height: auto;
-    }
-
-    .hero-split::before {
-        opacity: 0.5;
-        right: -30%;
-        width: 400px;
-        height: 400px;
-    }
-
-    .hero-content h1 {
-        font-size: 36px;
-        line-height: 1.2;
-        margin-bottom: 16px;
-    }
-
-    .hero-subtext {
-        margin-bottom: 28px;
-        font-size: 16px;
-    }
-
-    .image-wrapper img {
-        max-width: 100%;
-        width: 100%;
     }
 
     .logo-text {
@@ -680,30 +502,6 @@ p {
         padding: 8px 0;
     }
 
-    .hero-split {
-        padding: 30px 5%;
-    }
-
-    .hero-content h1 {
-        font-size: 28px;
-        margin-bottom: 12px;
-    }
-
-    .badge-gold {
-        font-size: 11px;
-        margin-bottom: 12px;
-    }
-
-    .hero-subtext {
-        font-size: 14px;
-        margin-bottom: 20px;
-    }
-
-    .btn-primary {
-        padding: 12px 24px;
-        font-size: 13px;
-    }
-
     .social-icon-box {
         width: 40px !important;
         height: 40px !important;
@@ -734,7 +532,7 @@ a:focus {
    <header class="main-header">
     <div class="header-container">
         <div class="logo-area">
-            <img src="https://Abdullah-Gull.github.io/abdullah-gull.jpg" alt="Abdullah Gull">
+<img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" alt="Abdullah Gull - Amazon PPC & E-commerce Consultant">            
             <a href="index.html" class="logo-link">Abdullah <span>Gull</span></a>
         </div>
 
@@ -1594,7 +1392,7 @@ a:focus {
                 <a href="https://www.linkedin.com/in/abdullah-gull-amazon/" class="social-link linkedin" title="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://facebook.com/abdullah.gull.amazon/" class="social-link facebook" title="Facebook">
+                <a href="https://facebook.com/abdullahgullamazon1/" class="social-link facebook" title="Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
                 <a href="https://x.com/Abdullahgullamz" class="social-link twitter" title="Twitter">
@@ -1640,7 +1438,7 @@ a:focus {
             <!-- Profile Avatar with YouTube Badge -->
             <div class="profile-section">
                 <div class="avatar-wrapper">
-                    <img src="https://Abdullah-Gull.github.io/abdullah-gull.jpg" alt="Abdullah Gull">
+<img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" alt="Abdullah Gull - Amazon PPC & E-commerce Consultant">            
                     <div class="youtube-badge">
                         <i class="fab fa-youtube"></i>
                     </div>
