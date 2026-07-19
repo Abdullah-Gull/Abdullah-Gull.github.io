@@ -1,38 +1,30 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <section class="bg-[#050505] text-white py-20 px-6 sm:px-12 lg:px-20 font-sans">
-  <!-- Grid container -->
-  <div class="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-0">
+  <!-- Use flex instead of grid for precise control -->
+  <div class="max-w-[1500px] mx-auto flex items-center">
     
-    <!-- Left Content -->
-    <div class="space-y-8 z-10">
-      <div class="space-y-4">
-        <h1 class="text-5xl sm:text-7xl font-extrabold leading-[1.1]">
-          Abdullah Gull:<br>
-          <span class="text-[#ff8c00]">Scaling Amazon Brands Globally</span>
-        </h1>
-        <p class="text-zinc-400 text-lg leading-relaxed max-w-[550px]">
-          Abdullah Gull provides performance-driven Amazon Ecosystem Scaling, specializing in Algorithmic PPC Optimization, Advanced SEO, High-Converting Listing Architecture, and Full Account Management. By taking complete charge of your Seller Central or Vendor Central operations, I enable you to focus entirely on product innovation and manufacturing.
-        </p>
-      </div>
-
+    <!-- Left Content (50% width) -->
+    <div class="w-1/2 pr-8 space-y-8">
+      <h1 class="text-5xl sm:text-7xl font-extrabold leading-[1.1]">
+        Abdullah Gull:<br>
+        <span class="text-[#ff8c00]">Scaling Amazon Brands Globally</span>
+      </h1>
+      <p class="text-zinc-400 text-lg leading-relaxed max-w-[550px]">
+        Abdullah Gull provides performance-driven Amazon Ecosystem Scaling, specializing in Algorithmic PPC Optimization, Advanced SEO, High-Converting Listing Architecture, and Full Account Management. By taking complete charge of your Seller Central or Vendor Central operations, I enable you to focus entirely on product innovation and manufacturing.
+      </p>
       <div class="flex flex-wrap gap-4">
-        <button class="bg-[#ff8c00] text-black px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-orange-500 transition-all shadow-[0_0_20px_rgba(255,140,0,0.3)]">
-          GET FREE AMAZON AUDIT →
-        </button>
-        <button class="bg-transparent border border-zinc-700 px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-zinc-800 transition-all">
-          SCALE YOUR AMAZON SALES →
-        </button>
+        <button class="bg-[#ff8c00] text-black px-8 py-4 rounded-full font-bold">GET FREE AMAZON AUDIT →</button>
+        <button class="bg-transparent border border-zinc-700 px-8 py-4 rounded-full font-bold">SCALE YOUR AMAZON SALES →</button>
       </div>
     </div>
 
-    <!-- Right Image Section (Locked to the red line) -->
-    <div class="relative w-full flex justify-start items-center">
-      <!-- Negative margin pulls the image exactly to the start of the right grid column -->
+    <!-- Right Image (Starts exactly at the center line) -->
+    <div class="w-1/2 flex justify-start">
       <img 
         src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" 
         alt="Abdullah Gull" 
-        class="w-full h-auto object-contain -ml-4 lg:-ml-12"
+        class="w-full object-contain -ml-4" 
       >
     </div>
     
