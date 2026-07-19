@@ -1,215 +1,244 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- ========================================================================= -->
-<!-- PREMIUM E-COMMERCE PARTNER BOOKING SECTION (FULL SIDE-DESIGN EXTENSION)  -->
+<!-- PREMIUM DYNAMIC 'LET'S START A CONVERSATION' SECTION                       -->
 <!-- ========================================================================= -->
-<section class="booking-section relative min-h-screen py-24 px-4 sm:px-8 lg:px-16 bg-[#060608] text-white font-sans overflow-hidden select-none">
+<section class="contact-section relative min-h-screen py-20 px-4 sm:px-8 lg:px-16 bg-[#030303] text-white font-sans overflow-hidden select-none">
   
-  <!-- 1. IRD-GIRD KE PREMIUM WAVY PARTICLES AUR ACCENT GLOWS -->
-  <div class="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
-    <!-- Top Left Corner Wavy Dot Grid String -->
-    <div class="absolute -top-12 -left-12 w-[45%] h-[50%] opacity-40 mix-blend-screen bg-[radial-gradient(ellipse_at_top_left,rgba(255,140,0,0.15)_0%,transparent_70%)]">
-      <div class="absolute inset-0" style="background-image: radial-gradient(rgba(255,140,0,0.3) 1px, transparent 0); background-size: 24px 24px; transform: skewY(-12deg) scale(1.4); filter: blur(0.5px);"></div>
-    </div>
-    <!-- Top Right Corner Wavy Dot Grid String -->
-    <div class="absolute -top-16 -right-16 w-[50%] h-[45%] opacity-35 mix-blend-screen bg-[radial-gradient(ellipse_at_top_right,rgba(255,140,0,0.18)_0%,transparent_75%)]">
-      <div class="absolute inset-0" style="background-image: radial-gradient(rgba(255,140,0,0.25) 1.5px, transparent 0); background-size: 28px 28px; transform: rotate(15deg) skewX(10deg); filter: drop-shadow(0 0 4px rgba(255,140,0,0.2));"></div>
-    </div>
-    <!-- Bottom Right Corner Wavy Grid String -->
-    <div class="absolute -bottom-20 -right-12 w-[40%] h-[45%] opacity-40 mix-blend-screen">
-      <div class="absolute inset-0" style="background-image: radial-gradient(rgba(255,140,0,0.22) 1.2px, transparent 0); background-size: 20px 20px; transform: rotate(-25deg) scale(1.3);"></div>
-    </div>
-    <!-- Central Ambient Soft Orange Aura -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[85%] h-[65%] bg-[radial-gradient(ellipse_at_top,rgba(255,140,0,0.07)_0%,transparent_70%)]"></div>
-  </div>
-
-  <!-- ========================================== -->
-  <!-- NEW SIDE DESIGN ASSETS (RED MARKS FIX)      -->
-  <!-- ========================================== -->
-  <!-- Left Side Luxury Lines & Aura -->
-  <div class="hidden 2xl:flex absolute left-8 top-1/4 bottom-1/4 w-32 flex-col justify-between items-center pointer-events-none z-0 opacity-60">
-    <div class="w-[1px] h-32 bg-gradient-to-b from-transparent via-[#ff8c00]/40 to-transparent"></div>
-    <div class="w-2 h-2 rounded-full bg-[#ff8c00] animate-pulse shadow-[0_0_12px_#ff8c00]"></div>
-    <div class="text-[9px] uppercase tracking-[0.4em] text-zinc-600 font-bold rotate-90 my-12 whitespace-nowrap">AMAZON GROWTH PARTNER</div>
-    <div class="w-12 h-12 rounded-full bg-[#ff8c00]/5 border border-zinc-800/80 flex items-center justify-center backdrop-blur-sm">
-      <div class="w-1.5 h-1.5 rounded-full bg-zinc-600"></div>
-    </div>
-    <div class="w-[1px] h-32 bg-gradient-to-b from-transparent via-zinc-800 to-transparent"></div>
-  </div>
-
-  <!-- Right Side Luxury Geometry & Aura -->
-  <div class="hidden 2xl:block absolute right-12 top-1/3 w-48 h-96 pointer-events-none z-0 opacity-55">
-    <!-- Concentric Tech Circles -->
-    <div class="absolute top-0 right-0 w-32 h-32 rounded-full border border-zinc-800/40 flex items-center justify-center">
-      <div class="w-24 h-24 rounded-full border border-dashed border-zinc-700/30 flex items-center justify-center">
-        <div class="w-16 h-16 rounded-full border border-[#ff8c00]/20 bg-[#ff8c00]/5 shadow-[inset_0_0_12px_rgba(255,140,0,0.1)]"></div>
-      </div>
-    </div>
-    <!-- Diagonal Decorative Linear Metrics Grid -->
-    <div class="absolute bottom-4 right-4 flex flex-col space-y-2 alignment-right items-end">
-      <div class="w-20 h-[2px] bg-gradient-to-l from-[#ff8c00]/50 to-transparent"></div>
-      <div class="w-32 h-[1px] bg-gradient-to-l from-zinc-800 to-transparent"></div>
-      <div class="w-16 h-[1px] bg-gradient-to-l from-zinc-800 to-transparent"></div>
-    </div>
-    <!-- Right Ambient Soft Orange Aura Glow -->
-    <div class="absolute -right-24 top-12 w-48 h-48 rounded-full bg-[#ff8c00]/10 filter blur-[60px]"></div>
-  </div>
-  <!-- ========================================== -->
-
-  <!-- MAIN WRAPPER CONTENT -->
-  <div class="max-w-7xl mx-auto relative z-10 flex flex-col items-center space-y-12">
+  <!-- Content Container Grid -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10 items-start">
     
-    <!-- Top Action Pill Badge -->
-    <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[#ff8c00]/30 bg-[#ff8c00]/5 text-[10px] font-bold tracking-[0.25em] text-[#ff8c00] uppercase shadow-[0_0_20px_rgba(255,140,0,0.12)] backdrop-blur-md">
-      <span class="text-xs">📅</span> Book A Meeting
-    </div>
-
-    <!-- Header Core Grid -->
-    <div class="text-center space-y-4 max-w-2xl">
-      <h2 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-white leading-none">
-        Book a <span class="text-[#ff8c00]">Meeting</span>
-      </h2>
-      <p class="text-zinc-400 text-xs sm:text-sm font-medium tracking-wide max-w-xl mx-auto leading-relaxed italic">
-        "Select a date and time to schedule a meeting with me. Let's discuss how I can help scale your Amazon business."
-      </p>
-    </div>
-
-    <!-- WIDGET CONTAINER MESH LAYOUT -->
-    <div class="w-full relative flex flex-col items-center">
+    <!-- LEFT SIDE COLUMN (Text, Info Blocks, Steps, Socials) -->
+    <div class="lg:col-span-5 flex flex-col space-y-8">
       
-      <!-- Left Side Floating 3D Calendar + Clock Graphic Asset -->
-      <div class="hidden xl:block absolute -left-24 bottom-12 z-30 pointer-events-none transform -rotate-12 drop-shadow-[0_25px_40px_rgba(0,0,0,0.85)]">
-        <svg width="140" height="140" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="15" y="30" width="75" height="70" rx="14" fill="url(#plateGrad)" stroke="#27272a" stroke-width="1.5" />
-          <rect x="15" y="30" width="75" height="22" rx="0" fill="url(#topBarGrad)" />
-          <rect x="28" y="20" width="8" height="16" rx="4" fill="url(#ringGrad)" stroke="#18181b" stroke-width="1" />
-          <rect x="56" y="20" width="8" height="16" rx="4" fill="url(#ringGrad)" stroke="#18181b" stroke-width="1" />
-          <rect x="84" y="20" width="8" height="16" rx="4" fill="url(#ringGrad)" stroke="#18181b" stroke-width="1" />
-          <rect x="27" y="62" width="10" height="9" rx="2" fill="#ff8c00" fill-opacity="0.8" />
-          <rect x="43" y="62" width="10" height="9" rx="2" fill="#27272a" />
-          <rect x="59" y="62" width="10" height="9" rx="2" fill="#27272a" />
-          <rect x="75" y="62" width="10" height="9" rx="2" fill="#27272a" />
-          <rect x="27" y="77" width="10" height="9" rx="2" fill="#27272a" />
-          <rect x="43" y="77" width="10" height="9" rx="2" fill="#27272a" />
-          <rect x="59" y="77" width="10" height="9" rx="2" fill="#ff8c00" />
-          <rect x="75" y="77" width="10" height="9" rx="2" fill="#27272a" />
-          <circle cx="85" cy="90" r="22" fill="url(#clockBg)" stroke="#3f3f46" stroke-width="2" />
-          <circle cx="85" cy="90" r="17" fill="#09090b" />
-          <path d="M85 90V79" stroke="#ff8c00" stroke-width="2.5" stroke-linecap="round" />
-          <path d="M85 90L94 95" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-          <circle cx="85" cy="90" r="2.5" fill="#ff8c00" />
-          <defs>
-            <linearGradient id="plateGrad" x1="15" y1="30" x2="90" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#1f1f23"/><stop offset="1" stop-color="#0b0b0d"/></linearGradient>
-            <linearGradient id="topBarGrad" x1="15" y1="30" x2="90" y2="52" gradientUnits="userSpaceOnUse"><stop stop-color="#b45309"/><stop offset="1" stop-color="#7c2d12"/></linearGradient>
-            <linearGradient id="ringGrad" x1="28" y1="20" x2="36" y2="36" gradientUnits="userSpaceOnUse"><stop stop-color="#52525b"/><stop offset="0.5" stop-color="#a1a1aa"/><stop offset="1" stop-color="#27272a"/></linearGradient>
-            <linearGradient id="clockBg" x1="63" y1="68" x2="107" y2="112" gradientUnits="userSpaceOnUse"><stop stop-color="#27272a"/><stop offset="1" stop-color="#09090b"/></linearGradient>
-          </defs>
-        </svg>
+      <!-- Top Accent Pill Badge -->
+      <div class="inline-flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#ff8c00] shadow-[0_0_8px_#ff8c00]"></span>
+        <span class="text-[11px] font-bold tracking-[0.2em] text-[#ff8c00] uppercase">REACH ME</span>
       </div>
 
-      <!-- THE CORE LUXURY BORDER WRAPPER -->
-      <div class="w-full rounded-[30px] border border-zinc-800/80 bg-[#09090b] shadow-[0_40px_90px_-20px_rgba(0,0,0,0.95)] p-2 sm:p-4 lg:p-6 relative z-20 overflow-hidden">
+      <!-- Main Headline Section -->
+      <div class="space-y-4">
+        <h2 class="text-5xl sm:text-[56px] font-black tracking-tight leading-[1.05]">
+          Let's Start a <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8c00] to-[#ffa534]">Conversation</span>
+        </h2>
+        <p class="text-zinc-400 text-sm font-medium tracking-wide leading-relaxed max-w-md">
+          Have a question or need expert guidance? I'm here to help you grow your Amazon business.
+        </p>
+      </div>
+
+      <!-- Interactive Contact Cards Group -->
+      <div class="space-y-3 w-full">
+        <!-- Email Card -->
+        <a href="mailto:sales@alphaspikes.com" class="group flex items-center justify-between p-4 rounded-[18px] border border-zinc-900 bg-[#09090b]/40 backdrop-blur-md transition-all duration-300 hover:border-[#ff8c00]/40 hover:bg-[#ff8c00]/[0.02] shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-[#ff8c00]/10 flex items-center justify-center border border-[#ff8c00]/20 shadow-[0_0_15px_rgba(255,140,0,0.1)] group-hover:scale-105 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">EMAIL ME</span>
+              <span class="text-sm font-bold text-zinc-200 tracking-wide mt-0.5">sales@alphaspikes.com</span>
+            </div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ff8c00" class="w-4 h-4 mr-1 transform group-hover:translate-x-1 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+        </a>
+
+        <!-- Call Card -->
+        <a href="tel:+13073104045" class="group flex items-center justify-between p-4 rounded-[18px] border border-zinc-900 bg-[#09090b]/40 backdrop-blur-md transition-all duration-300 hover:border-[#ff8c00]/40 hover:bg-[#ff8c00]/[0.02] shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-[#ff8c00]/10 flex items-center justify-center border border-[#ff8c00]/20 shadow-[0_0_15px_rgba(255,140,0,0.1)] group-hover:scale-105 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.622kM2.25 9c0 8.68 7.032 15.75 15.75 15.75a.75.75 0 00.75-.75V19.5a.75.75 0 00-.466-.69l-5.14-2.113a.75.75 0 00-.756.144l-2.082 2.083a18.56 18.56 0 01-8.128-8.128l2.083-2.082a.75.75 0 00.144-.756L4.69 3.116A.75.75 0 004 2.625H1.5a.75.75 0 00-.75.75z" /><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3" /></svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">CALL ME</span>
+              <span class="text-sm font-bold text-zinc-200 tracking-wide mt-0.5">+1 307-310-4045</span>
+            </div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ff8c00" class="w-4 h-4 mr-1 transform group-hover:translate-x-1 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+        </a>
+      </div>
+
+      <!-- Process Path & Guidelines Box -->
+      <div class="w-full p-5 rounded-[22px] border border-zinc-900/80 bg-[#070709] shadow-[0_15px_35px_rgba(0,0,0,0.6)] space-y-6">
         
-        <!-- Subtle Top Orange Border Highlight Lines -->
-        <div class="absolute top-0 left-1/3 w-1/3 h-[1px] bg-gradient-to-r from-transparent via-[#ff8c00]/30 to-transparent z-30"></div>
-
-        <!-- CALENDAR EMBED FULLY INSTALLED -->
-        <div class="cal-embed-container w-full bg-transparent overflow-hidden rounded-[20px]">
-          <div style="width:100%; height:100%; min-height:600px; overflow:auto" id="my-cal-inline-30min"></div>
-          <script type="text/javascript">
-            (function (C, A, L) { 
-              let p = function (a, ar) { a.q.push(ar); }; 
-              let d = C.document; 
-              C.Cal = C.Cal || function () { 
-                let cal = C.Cal; 
-                let ar = arguments; 
-                if (!cal.loaded) { 
-                  cal.ns = {}; 
-                  cal.q = cal.q || []; 
-                  d.head.appendChild(d.createElement("script")).src = A; 
-                  cal.loaded = true; 
-                } 
-                if (ar[0] === L) { 
-                  const api = function () { p(api, arguments); }; 
-                  const namespace = ar[1]; 
-                  api.q = api.q || []; 
-                  if(typeof namespace === "string"){
-                    cal.ns[namespace] = cal.ns[namespace] || api;
-                    p(cal.ns[namespace], ar);
-                    p(cal, ["initNamespace", namespace]);
-                  } else p(cal, ar); 
-                  return;
-                } 
-                p(cal, ar); 
-              }; 
-            })(window, "https://app.cal.com/embed/embed.js", "init");
-
-            Cal("init", "30min", {origin:"https://app.cal.com"});
-
-            Cal.ns["30min"]("inline", {
-              elementOrSelector:"#my-cal-inline-30min",
-              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"},
-              calLink: "abdullah-gull/30min",
-            });
-
-            Cal.ns["30min"]("ui", {"theme":"dark","hideEventTypeDetails":false,"layout":"month_view"});
-          </script>
+        <!-- Header Available Details -->
+        <div class="flex items-start gap-3.5 border-b border-zinc-900 pb-4">
+          <div class="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9 3h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0-2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0-2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0-2.25h.008v.008H7.5v-.008zm6.75 4.5h.008v.008h-.008v-.008zm0-2.25h.008v.008h-.008V15zm0-2.25h.008v.008h-.008v-.008zm2.25 4.5h.008v.008H16.5v-.008zm0-2.25h.008v.008H16.5V15z" /></svg>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold text-[#ff8c00] tracking-widest uppercase">I AM AVAILABLE</span>
+            <p class="text-xs font-semibold text-zinc-300 mt-0.5">Monday to Friday, 9AM to 6PM EST</p>
+          </div>
         </div>
+
+        <!-- Vertical Dynamic Stepper -->
+        <div class="relative space-y-6 pl-1">
+          <!-- Connector Line -->
+          <div class="absolute left-[13px] top-3 bottom-3 w-[1px] bg-dashed bg-gradient-to-b from-zinc-800 via-zinc-800 to-transparent border-l border-dashed border-zinc-800"></div>
+          
+          <!-- Step 1 -->
+          <div class="flex items-start gap-4 relative z-10">
+            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-zinc-950 flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">1</div>
+            <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Email me for account questions, proposals, or partnership inquiries.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex items-start gap-4 relative z-10">
+            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-zinc-950 flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">2</div>
+            <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Book a direct call through my scheduling link if you want to talk through your account situation first.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex items-start gap-4 relative z-10">
+            <div class="w-7 h-7 rounded-full border border-zinc-800 bg-zinc-950 flex items-center justify-center text-xs font-bold text-zinc-400 shrink-0">3</div>
+            <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Fill out the contact form and a specialist will follow up within one business day with a clear next step.</p>
+          </div>
+          <!-- Step * -->
+          <div class="flex items-start gap-4 relative z-10">
+            <div class="w-7 h-7 rounded-full border border-[#ff8c00]/30 bg-[#ff8c00]/5 flex items-center justify-center text-xs font-bold text-[#ff8c00] shrink-0">*</div>
+            <p class="text-xs font-medium text-zinc-400 leading-relaxed pt-0.5">Not sure what you need yet? That is exactly what the first conversation is for.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Social Footer Links -->
+      <div class="flex items-center gap-3 pt-2">
+        <span class="text-[10px] font-bold text-zinc-600 tracking-wider uppercase mr-2">CONNECT WITH ME</span>
+        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:border-[#ff8c00] hover:text-[#ff8c00] transition-colors"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.8z"/>
+          <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+        </a>
+        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:border-[#ff8c00] hover:text-[#ff8c00] transition-colors">
+          <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4"><path d="M12.315 2c2.43 0 2.717.01 3.674.053 2.508.116 3.92 1.517 4.036 4.036.044.957.054 1.243.054 3.674 0 2.43-.01 2.717-.053 3.674-.116 2.508-1.517 3.92-4.036 4.036-.957.044-1.243.054-3.674.054-2.43 0-2.717-.01-3.674-.053-2.508-.116-3.92-1.517-4.036-4.036-.044-.957-.054-1.243-.054-3.674 0-2.43.01-2.717.053-3.674.116-2.508 1.517-3.92 4.036-4.036.957-.044 1.243-.054 3.674-.054zm0-2c-2.473 0-2.783.01-3.747.054-3.4 0-5.3 1.89-5.3 5.3-.044.964-.054 1.274-.054 3.747 0 2.473.01 2.783.054 3.747 0 3.4 1.89 5.3 5.3 5.3.964.044 1.274.054 3.747.054 2.473 0 2.783-.01 3.747-.054 3.4 0 5.3-1.89 5.3-5.3.044-.964.054-1.274.054-3.747 0-2.473-.01-2.783-.054-3.747 0-3.4-1.89-5.3-5.3-5.3-.964-.044-1.274-.054-3.747-.054zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:border-[#ff8c00] hover:text-[#ff8c00] transition-colors">
+          <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
       </div>
     </div>
 
-    <!-- 2. BOTTOM PREMIUM METRICS BOX ROW -->
-    <div class="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6 relative z-20">
+    <!-- RIGHT SIDE COLUMN (Premium Moodboard Isometric Showcase + Bottom Matrix Grid) -->
+    <div class="lg:col-span-7 flex flex-col space-y-8 w-full">
       
-      <!-- Secure Box -->
-      <div class="flex items-center gap-4 p-4 rounded-2xl border border-zinc-900 bg-zinc-950/50 backdrop-blur-md">
-        <div class="w-11 h-11 rounded-xl border border-zinc-800 bg-zinc-900/60 flex items-center justify-center shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+      <!-- High-End Device Graphic Frame with Glow Highlight -->
+      <div class="w-full aspect-[4/3] rounded-[28px] border border-zinc-800/80 bg-zinc-950 p-3.5 relative shadow-[0_30px_70px_-15px_rgba(0,0,0,0.9)] overflow-hidden group">
+        
+        <!-- Smooth Orange Spotlight Border Highlight inside Mockup -->
+        <div class="absolute inset-0 rounded-[28px] border border-transparent group-hover:border-[#ff8c00]/20 transition-colors pointer-events-none z-30"></div>
+        
+        <!-- The Mockup Grid Wrapper Mocking the Product Visual Layout -->
+        <div class="w-full h-full rounded-[20px] overflow-hidden relative bg-[#131316] grid grid-cols-3 grid-rows-3 gap-2 p-2">
+          
+          <!-- Box 1: Leather Bag Minimalist Asset -->
+          <div class="bg-zinc-900/40 rounded-lg overflow-hidden flex items-center justify-center border border-zinc-800/40 relative">
+            <div class="absolute inset-0 bg-cover bg-center opacity-85 hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1547949003-9792a18a2601?auto=format&fit=crop&w=300&q=80')"></div>
+          </div>
+          <!-- Box 2: Ceramic Vase Asset -->
+          <div class="bg-zinc-900/40 rounded-lg overflow-hidden flex items-center justify-center border border-zinc-800/40 relative">
+            <div class="absolute inset-0 bg-cover bg-center opacity-85 hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=300&q=80')"></div>
+          </div>
+          <!-- Box 3: Premium Black Watch Asset -->
+          <div class="bg-zinc-900/40 rounded-lg overflow-hidden flex items-center justify-center border border-zinc-800/40 relative">
+            <div class="absolute inset-0 bg-cover bg-center opacity-85 hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=300&q=80')"></div>
+          </div>
+          <!-- Box 4: Matte Sunglasses Asset -->
+          <div class="bg-zinc-900/40 rounded-lg overflow-hidden flex items-center justify-center border border-zinc-800/40 relative">
+            <div class="absolute inset-0 bg-cover bg-center opacity-85 hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=300&q=80')"></div>
+          </div>
+          <!-- Box 5: THE HIGH GLOW TARGET AMZ PRODUCT DROPDOWN (CENTER PIECE) -->
+          <div class="bg-[#18181b] rounded-lg overflow-hidden flex items-center justify-center border-2 border-[#ff8c00] relative shadow-[0_0_30px_rgba(255,140,0,0.25)]">
+            <div class="absolute inset-0 bg-cover bg-center scale-105" style="background-image: url('https://images.unsplash.com/photo-1608248597481-496100c80836?auto=format&fit=crop&w=300&q=80')"></div>
+            <!-- Dynamic Pointer Line Accent Overlays -->
+            <div class="absolute -top-1 -right-1 w-2 h-2 bg-[#ff8c00]"></div>
+          </div>
+          <!-- Box 6: Premium DSLR Camera Asset -->
+          <div class="bg-zinc-900/40 rounded-lg overflow-hidden flex items-center justify-center border border-zinc-800/40 relative">
+            <div class="absolute inset-0 bg-cover bg-center opacity-85 hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=300&q=80')"></div>
+          </div>
+          <!-- Box 7: Organic Skincare Pump Bottle Asset -->
+          <div class="bg-zinc-900/40 rounded-lg overflow-hidden flex items-center justify-center border border-zinc-800/40 relative">
+            <div class="absolute inset-0 bg-cover bg-center opacity-85 hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=300&q=80')"></div>
+          </div>
+          <!-- Box 8: Luxury Sneaker Asset -->
+          <div class="bg-zinc-900/40 rounded-lg overflow-hidden flex items-center justify-center border border-zinc-800/40 relative">
+            <div class="absolute inset-0 bg-cover bg-center opacity-85 hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=300&q=80')"></div>
+          </div>
+          <!-- Box 9: Studio Sleek Headphones Asset -->
+          <div class="bg-zinc-900/40 rounded-lg overflow-hidden flex items-center justify-center border border-zinc-800/40 relative">
+            <div class="absolute inset-0 bg-cover bg-center opacity-85 hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=300&q=80')"></div>
+          </div>
+
         </div>
-        <div class="flex flex-col">
-          <span class="text-xs font-bold text-white tracking-wide">100% Secure</span>
-          <span class="text-[10px] text-zinc-500 font-medium tracking-wide mt-0.5">Your information is safe and encrypted.</span>
+
+        <!-- Simulated Interactive Human Hand Pointing Over Image -->
+        <div class="absolute right-0 bottom-0 w-[55%] h-[65%] pointer-events-none z-20 transform translate-x-4 translate-y-6 select-none opacity-95">
+          <img src="https://i.ibb.co/5G4b2vW/hand-mockup.png" onerror="this.src='https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80'; this.style.mixBlendMode='screen'; this.style.opacity='0.15';" alt="" class="w-full h-full object-contain">
         </div>
       </div>
 
-      <!-- Easy Scheduling Box -->
-      <div class="flex items-center gap-4 p-4 rounded-2xl border border-zinc-900 bg-zinc-950/50 backdrop-blur-md">
-        <div class="w-11 h-11 rounded-xl border border-zinc-800 bg-zinc-900/60 flex items-center justify-center shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" /></svg>
+      <!-- Feature Badges Grid Row -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
+        
+        <!-- Quick Response -->
+        <div class="flex flex-col items-center text-center p-3 space-y-2.5">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800/80 shadow-[0_0_15px_rgba(255,140,0,0.04)] flex items-center justify-center">
+            <div class="w-8 h-8 rounded-full bg-[#ff8c00]/5 flex items-center justify-center border border-[#ff8c00]/10 shadow-[inset_0_0_8px_rgba(255,140,0,0.1)] text-[#ff8c00] text-sm">🎧</div>
+          </div>
+          <div class="space-y-1">
+            <h4 class="text-xs font-bold text-white tracking-wide">Quick Response</h4>
+            <p class="text-[10px] text-zinc-500 font-medium leading-normal max-w-[120px] mx-auto">We respond within one business day.</p>
+          </div>
         </div>
-        <div class="flex flex-col">
-          <span class="text-xs font-bold text-white tracking-wide">Easy Scheduling</span>
-          <span class="text-[10px] text-zinc-500 font-medium tracking-wide mt-0.5">Pick a time that works best for you.</span>
+
+        <!-- Expert Guidance -->
+        <div class="flex flex-col items-center text-center p-3 space-y-2.5">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800/80 shadow-[0_0_15px_rgba(255,140,0,0.04)] flex items-center justify-center">
+            <div class="w-8 h-8 rounded-full bg-[#ff8c00]/5 flex items-center justify-center border border-[#ff8c00]/10 shadow-[inset_0_0_8px_rgba(255,140,0,0.1)] text-[#ff8c00] text-sm">🛡️</div>
+          </div>
+          <div class="space-y-1">
+            <h4 class="text-xs font-bold text-white tracking-wide">Expert Guidance</h4>
+            <p class="text-[10px] text-zinc-500 font-medium leading-normal max-w-[120px] mx-auto">Get advice from Amazon experts, tailored to you.</p>
+          </div>
         </div>
+
+        <!-- Confidential -->
+        <div class="flex flex-col items-center text-center p-3 space-y-2.5">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800/80 shadow-[0_0_15px_rgba(255,140,0,0.04)] flex items-center justify-center">
+            <div class="w-8 h-8 rounded-full bg-[#ff8c00]/5 flex items-center justify-center border border-[#ff8c00]/10 shadow-[inset_0_0_8px_rgba(255,140,0,0.1)] text-[#ff8c00] text-sm">🔒</div>
+          </div>
+          <div class="space-y-1">
+            <h4 class="text-xs font-bold text-white tracking-wide">Confidential</h4>
+            <p class="text-[10px] text-zinc-500 font-medium leading-normal max-w-[120px] mx-auto">Your information is 100% secure.</p>
+          </div>
+        </div>
+
+        <!-- Results Driven -->
+        <div class="flex flex-col items-center text-center p-3 space-y-2.5">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800/80 shadow-[0_0_15px_rgba(255,140,0,0.04)] flex items-center justify-center">
+            <div class="w-8 h-8 rounded-full bg-[#ff8c00]/5 flex items-center justify-center border border-[#ff8c00]/10 shadow-[inset_0_0_8px_rgba(255,140,0,0.1)] text-[#ff8c00] text-sm">📈</div>
+          </div>
+          <div class="space-y-1">
+            <h4 class="text-xs font-bold text-white tracking-wide">Results Driven</h4>
+            <p class="text-[10px] text-zinc-500 font-medium leading-normal max-w-[120px] mx-auto">We focus on strategies that grow your business.</p>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Guidance Box -->
-      <div class="flex items-center gap-4 p-4 rounded-2xl border border-zinc-900 bg-zinc-950/50 backdrop-blur-md">
-        <div class="w-11 h-11 rounded-xl border border-zinc-800 bg-zinc-900/60 flex items-center justify-center shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
+      <!-- Bottom High-End Inline CTA Banner Box -->
+      <div class="w-full p-4 rounded-2xl border border-zinc-900 bg-[#070709] flex flex-col sm:flex-row items-center justify-between gap-4 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+        <div class="flex items-center gap-3.5 text-center sm:text-left">
+          <div class="w-10 h-10 rounded-xl border border-zinc-800 bg-zinc-950 flex items-center justify-center shrink-0 text-[#ff8c00] text-base shadow-[0_0_10px_rgba(255,140,0,0.1)]">⭐</div>
+          <div class="flex flex-col">
+            <span class="text-sm font-bold text-white tracking-wide">Ready to Grow Your Amazon Business?</span>
+            <span class="text-[11px] text-zinc-500 font-medium tracking-wide mt-0.5">We're just a message or call away. Let's build success together.</span>
+          </div>
         </div>
-        <div class="flex flex-col">
-          <span class="text-xs font-bold text-white tracking-wide">Expert Guidance</span>
-          <span class="text-[10px] text-zinc-500 font-medium tracking-wide mt-0.5">Get personalized advice from Amazon experts.</span>
-        </div>
+        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#ff8c00] to-[#ffa534] text-xs font-bold text-black uppercase tracking-wider hover:opacity-90 shadow-[0_0_25px_rgba(255,140,0,0.2)] transition-all">
+          GET IN TOUCH
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3.5 h-3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+        </a>
       </div>
 
-      <!-- Growth Box -->
-      <div class="flex items-center gap-4 p-4 rounded-2xl border border-zinc-900 bg-zinc-950/50 backdrop-blur-md">
-        <div class="w-11 h-11 rounded-xl border border-zinc-800 bg-zinc-900/60 flex items-center justify-center shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
-        </div>
-        <div class="flex flex-col">
-          <span class="text-xs font-bold text-white tracking-wide">Business Growth</span>
-          <span class="text-[10px] text-zinc-500 font-medium tracking-wide mt-0.5">Actionable strategies to scale your success.</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Bottom Lock Label Line -->
-    <div class="inline-flex items-center gap-2 text-zinc-500 text-[11px] font-medium tracking-wider pt-2 relative z-20">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 text-zinc-600"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
-      Your information is <span class="text-[#ff8c00] font-semibold">secure</span> and will never be shared.
     </div>
 
   </div>
