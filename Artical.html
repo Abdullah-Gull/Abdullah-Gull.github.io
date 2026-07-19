@@ -1,7 +1,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <section class="bg-[#050505] text-white py-20 px-6 sm:px-12 lg:px-20 font-sans">
-  <!-- Layout container with no spacing between text and image -->
+  <!-- Grid container -->
   <div class="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-0">
     
     <!-- Left Content -->
@@ -26,12 +26,13 @@
       </div>
     </div>
 
-    <!-- Right Image Section (Started right after text) -->
-    <div class="relative w-full flex justify-start items-center overflow-visible">
+    <!-- Right Image Section (Locked to the red line) -->
+    <div class="relative w-full flex justify-start items-center">
+      <!-- Negative margin pulls the image exactly to the start of the right grid column -->
       <img 
         src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" 
         alt="Abdullah Gull" 
-        class="w-full max-w-[700px] h-auto object-contain"
+        class="w-full h-auto object-contain -ml-4 lg:-ml-12"
       >
     </div>
     
