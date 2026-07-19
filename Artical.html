@@ -1,225 +1,57 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Custom Cyber Grid Animations Styles -->
-<style>
-  @keyframes cyberWave {
-    0% { transform: translateY(0) scaleY(1); opacity: 0.15; }
-    50% { transform: translateY(-15px) scaleY(1.05); opacity: 0.35; }
-    100% { transform: translateY(0) scaleY(1); opacity: 0.15; }
-  }
-  @keyframes floatDots {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
-  }
-  .animate-cyber-wave {
-    animation: cyberWave 8s ease-in-out infinite;
-  }
-  .animate-float-dots {
-    animation: floatDots 12s ease-in-out infinite;
-  }
-</style>
-
-<!-- ========================================================================= -->
-<!-- CONTACT SECTION (ORANGE PREMIUM THEME WITH FIXED VISIBLE CYBER DESIGN)    -->
-<!-- ========================================================================= -->
-<section class="w-full bg-[#000000] text-white py-20 px-6 sm:px-12 lg:px-20 font-sans select-none overflow-hidden relative min-h-[750px] flex items-center justify-center">
-  
-  <!-- LEFT SIDE BACKGROUND DESIGN (Visible in Empty Space) -->
-  <div class="absolute left-0 top-12 w-[320px] h-[550px] opacity-25 pointer-events-none hidden xl:block animate-cyber-wave">
-    <!-- Tech Grid Lines -->
-    <div class="w-full h-full border-l-2 border-t-2 border-[#ff8c00]/30 rounded-br-[120px] relative">
-      <div class="absolute top-8 left-8 w-full h-full border-l border-t border-[#ff8c00]/20 rounded-br-[100px]"></div>
-      <div class="absolute top-16 left-16 w-full h-full border-l border-t border-[#ff8c00]/10 rounded-br-[80px]"></div>
-      <!-- Cyber Dots Pattern -->
-      <div class="absolute bottom-12 left-6 grid grid-cols-6 gap-3 opacity-60 animate-float-dots">
-        <div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/40"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/20"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div>
-        <div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/30"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/10"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/50"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div>
-        <div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/20"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/70"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/30"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- RIGHT SIDE BACKGROUND DESIGN (Visible in Empty Space) -->
-  <div class="absolute right-0 bottom-12 w-[320px] h-[550px] opacity-25 pointer-events-none hidden xl:block animate-cyber-wave" style="animation-delay: -4s;">
-    <!-- Tech Grid Lines Reverse -->
-    <div class="w-full h-full border-r-2 border-b-2 border-[#ff8c00]/30 rounded-tl-[120px] relative">
-      <div class="absolute bottom-8 right-8 w-full h-full border-r border-b border-[#ff8c00]/20 rounded-tl-[100px]"></div>
-      <div class="absolute bottom-16 right-16 w-full h-full border-r border-b border-[#ff8c00]/10 rounded-tl-[80px]"></div>
-      <!-- Accent Tech Badges -->
-      <div class="absolute top-12 right-6 flex flex-col space-y-2 font-mono text-[9px] text-[#ff8c00]/60 tracking-widest text-right">
-        <div>SYS.LOC // 0x42A8</div>
-        <div>DATA.STREAM // CONNECTED</div>
-        <div>GRID.STATUS // ACTIVE</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Ambient Glow Background Overlays -->
-  <div class="absolute left-[-5%] top-[-5%] w-[500px] h-[500px] bg-[#ff8c00]/5 rounded-full blur-[130px] pointer-events-none z-0"></div>
-  <div class="absolute right-[-5%] bottom-[-5%] w-[550px] h-[550px] bg-[#ff8c00]/5 rounded-full blur-[150px] pointer-events-none z-0"></div>
-
-  <!-- Content Wrapper -->
-  <div class="max-w-[1340px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+<!-- Hero Section with Interactive Elements -->
+<section class="bg-[#050505] text-white py-20 px-6 sm:px-12 lg:px-20 font-sans overflow-hidden">
+  <div class="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
     
-    <!-- ================= LEFT COLUMN (CONTENT & ORANGE CARDS) ================= -->
-    <div class="lg:col-span-6 flex flex-col space-y-8">
+    <!-- Left Content -->
+    <div class="space-y-8 z-10">
+      <div class="space-y-4">
+        <h1 class="text-5xl sm:text-7xl font-extrabold leading-[1.1]">
+          Abdullah Gull:<br>
+          <span class="text-[#ff8c00]">Scaling Amazon Brands Globally</span>
+        </h1>
+        <p class="text-zinc-400 text-lg leading-relaxed max-w-[550px]">
+          Abdullah Gull provides performance-driven Amazon Ecosystem Scaling, specializing in Algorithmic PPC Optimization, Advanced SEO, High-Converting Listing Architecture, and Full Account Management. By taking complete charge of your Seller Central or Vendor Central operations, I enable you to focus entirely on product innovation and manufacturing.
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap gap-4">
+        <button class="bg-[#ff8c00] text-black px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-orange-500 transition-all shadow-[0_0_20px_rgba(255,140,0,0.3)]">
+          GET FREE AMAZON AUDIT →
+        </button>
+        <button class="bg-transparent border border-zinc-700 px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-zinc-800 transition-all">
+          SCALE YOUR AMAZON SALES →
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Content (Image & Floating Stats) -->
+    <div class="relative flex justify-center items-center group">
+      <div class="absolute w-[450px] h-[450px] bg-[#ff8c00]/10 rounded-full blur-[100px] group-hover:bg-[#ff8c00]/20 transition-all duration-700"></div>
       
-      <!-- Top Tagline & Heading -->
-      <div class="space-y-2">
-        <span class="text-[11px] font-black tracking-widest text-[#ff8c00] uppercase block">REACH US</span>
-        <h2 class="text-4xl sm:text-[52px] font-bold tracking-tight text-white leading-[1.1]">
-          Let's Start a <br>
-          <span class="text-[#ff8c00]">Conversation</span>
-        </h2>
+      <img src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" alt="Abdullah Gull" class="relative z-10 w-full max-w-[450px] drop-shadow-2xl">
+
+      <!-- Stat Cards -->
+      <div id="statCard" class="absolute -top-10 left-0 bg-[#161616]/80 backdrop-blur-md p-4 rounded-2xl border border-zinc-800 z-20">
+        <div class="text-zinc-400 text-xs">Sales Growth</div>
+        <div class="text-2xl font-bold text-[#ff8c00]">162%</div>
       </div>
-
-      <!-- Contact Orange Cards Container -->
-      <div class="space-y-4 w-full max-w-[480px]">
-        
-        <!-- Email Card (Orange Theme) -->
-        <a href="mailto:abdullahgullwork@outlook.com" class="group flex items-center gap-4 p-4 rounded-[24px] bg-[#ff8c00] text-black border border-transparent shadow-[0_10px_30px_rgba(255,140,0,0.15)] transition-all hover:scale-[1.01] hover:bg-[#ffa534]">
-          <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center shrink-0">
-            <!-- Email Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-            </svg>
-          </div>
-          <div class="flex flex-col">
-            <span class="text-[10px] font-black text-black/60 uppercase tracking-wider">EMAIL</span>
-            <span class="text-base font-bold text-black tracking-wide">abdullahgullwork@outlook.com</span>
-          </div>
-        </a>
-
-        <!-- Call Card (Orange Theme) -->
-        <a href="tel:+923179834286" class="group flex items-center gap-4 p-4 rounded-[24px] bg-[#ff8c00] text-black border border-transparent shadow-[0_10px_30px_rgba(255,140,0,0.15)] transition-all hover:scale-[1.01] hover:bg-[#ffa534]">
-          <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center shrink-0">
-            <!-- Phone Icon SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a12.035 12.035 0 0 1-7.108-7.108c-.157-.44.009-.927.387-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z" />
-            </svg>
-          </div>
-          <div class="flex flex-col">
-            <span class="text-[10px] font-black text-black/60 uppercase tracking-wider">CALL</span>
-            <span class="text-base font-bold text-black tracking-wide">+92 317 9834286</span>
-          </div>
-        </a>
-      </div>
-
-      <!-- Availability Notice -->
-      <div class="space-y-5 pt-2">
-        <span class="text-[11px] font-black tracking-wide text-[#ff8c00] uppercase block">
-          I AM AVAILABLE MONDAY THROUGH FRIDAY, 9AM TO 6PM EST
-        </span>
-
-        <!-- Step List -->
-        <div class="space-y-5">
-          <div class="flex items-start gap-4">
-            <div class="w-7 h-7 rounded-full border border-zinc-700 bg-transparent flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5">1</div>
-            <p class="text-[14px] font-medium text-zinc-300 leading-relaxed">Email me for account questions, proposals, or partnership inquiries.</p>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-7 h-7 rounded-full border border-zinc-700 bg-transparent flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5">2</div>
-            <p class="text-[14px] font-medium text-zinc-300 leading-relaxed">Book a direct call through my scheduling link if you want to talk through your account situation first.</p>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-7 h-7 rounded-full border border-zinc-700 bg-transparent flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5">3</div>
-            <p class="text-[14px] font-medium text-zinc-300 leading-relaxed">Fill out the contact form and I will follow up within one business day with a clear next step.</p>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="text-[#ff8c00] text-xl font-bold shrink-0 w-7 text-center leading-none mt-0.5">★</div>
-            <p class="text-[14px] font-medium text-zinc-300 leading-relaxed">Not sure what you need yet? That is exactly what the first conversation is for.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Social Footer Icons Row -->
-      <div class="flex items-center gap-3 pt-4">
-        <!-- Facebook Link -->
-        <a href="https://www.Facebook.com/in/abdullahgullamazon1/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white hover:bg-[#ff8c00] hover:text-black transition-colors" title="Follow on Facebook">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-          </svg>
-        </a>
-        <!-- Instagram Link Placeholder -->
-        <a href="#" class="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white hover:bg-[#ff8c00] hover:text-black transition-colors" title="Follow on Instagram">
-          <span class="text-sm">📷</span>
-        </a>
-        <!-- LinkedIn Link -->
-        <a href="https://www.linkedin.com/in/abdullah-gull-amazon/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white hover:bg-[#ff8c00] hover:text-black transition-colors" title="Connect on LinkedIn">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-          </svg>
-        </a>
+      <div class="absolute top-10 right-0 bg-[#161616]/80 backdrop-blur-md p-4 rounded-2xl border border-zinc-800 z-20">
+        <div class="text-zinc-400 text-xs">Managed Ad Spend</div>
+        <div class="text-2xl font-bold">$3.2M+</div>
       </div>
     </div>
-
-    <!-- ================= RIGHT COLUMN (TAB GRID IMPLEMENTATION) ================= -->
-    <div class="lg:col-span-6 w-full flex justify-center lg:justify-end">
-      <!-- Outer Interactive Frame Container -->
-      <div id="interactiveMockup" class="w-full max-w-[580px] aspect-[4/3] bg-[#0c0c0e]/90 border border-zinc-800 rounded-[28px] p-3 shadow-2xl relative overflow-hidden cursor-pointer group transition-all duration-300">
-        
-        <!-- Screen Inside Layout -->
-        <div class="w-full h-full rounded-[20px] bg-black overflow-hidden grid grid-cols-3 grid-rows-3 gap-[3px] relative border border-zinc-900">
-          
-          <!-- Box 1 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 1" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
-          </div>
-          <!-- Box 2 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 2" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
-          </div>
-          <!-- Box 3 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 3" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
-          </div>
-          <!-- Box 4 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 4" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
-          </div>
-
-          <!-- Box 5: CENTER TARGET PRODUCT WITH GLOW -->
-          <div class="relative w-full h-full bg-zinc-950 border-[3px] border-[#ff8c00] shadow-[0_0_25px_rgba(255,140,0,0.5),inset_0_0_15px_rgba(255,140,0,0.3)] z-10 flex items-center justify-center p-0.5">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Abdullah Gull - E-commerce and Amazon Growth Partner Profile Focus" class="w-full h-full object-cover">
-          </div>
-
-          <!-- Box 6 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 5" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
-          </div>
-          <!-- Box 7 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 6" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
-          </div>
-          <!-- Box 8 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 7" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
-          </div>
-          <!-- Box 9 -->
-          <div class="relative overflow-hidden w-full h-full bg-zinc-900 grid-item">
-            <img src="https://abdullah-gull.github.io/images/call-mail-with-abdullah.jpg" alt="Amazon business growth consult portfolio workspace thumbnail 8" class="w-full h-full object-cover brightness-[0.65] group-hover:brightness-[0.75] transition-all">
-          </div>
-
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- Card Motion Script -->
+<!-- JavaScript for subtle movement -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const mockupFrame = document.getElementById("interactiveMockup");
-    mockupFrame.addEventListener("mousemove", (e) => {
-      const rect = mockupFrame.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      mockupFrame.style.transform = `perspective(1000px) rotateX(${-y * 0.015}deg) rotateY(${x * 0.015}deg) scale(1.01)`;
-    });
-    mockupFrame.addEventListener("mouseleave", () => {
-      mockupFrame.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
-    });
+  const statCard = document.getElementById('statCard');
+  document.addEventListener('mousemove', (e) => {
+    let xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+    let yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+    statCard.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
   });
 </script>
