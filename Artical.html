@@ -1,26 +1,34 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<!-- Playfair Display for Premium Feel -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 <section class="relative bg-[#050505] text-white py-20 px-12 overflow-hidden">
   <!-- Animated Dot Background -->
-  <div class="absolute inset-0 z-0 dot-bg opacity-40"></div>
+  <div class="absolute inset-0 z-0 dot-bg opacity-40" style="background-image: radial-gradient(#333 1px, transparent 1px); background-size: 30px 30px;"></div>
 
   <div class="max-w-[1400px] mx-auto flex items-center justify-between relative z-10">
     
     <!-- Left Content -->
     <div class="w-[45%]">
-      <!-- Tagra Premium Heading -->
       <h1 class="font-['Playfair_Display'] text-[80px] font-extrabold leading-[0.95] tracking-tight mb-8">
         Abdullah Gull:<br>
         <span class="text-[#FF9900]">Scaling Amazon Brands Globally</span>
       </h1>
       
-      <p class="text-zinc-400 mb-8 border-l-4 border-[#FF9900] pl-6 leading-relaxed">
-        Abdullah Gull provides performance-driven Amazon Ecosystem Scaling, specializing in Algorithmic PPC Optimization, Advanced SEO, High-Converting Listing Architecture, and Full Account Management. By taking complete charge of your Seller Central or Vendor Central operations, I enable you to focus entirely on product innovation and manufacturing.
+      <p class="text-zinc-400 mb-10 border-l-4 border-[#FF9900] pl-6 leading-relaxed">
+        Abdullah Gull provides performance-driven Amazon Ecosystem Scaling, specializing in Algorithmic PPC Optimization, Advanced SEO, High-Converting Listing Architecture, and Full Account Management.
       </p>
       
-      <button class="bg-[#FF9900] text-black px-10 py-4 font-bold uppercase tracking-widest text-sm hover:bg-orange-600 transition-all">GET FREE AMAZON AUDIT →</button>
+      <!-- Buttons Section -->
+      <div class="flex gap-4">
+        <!-- Button 1 -->
+        <button class="bg-[#FF9900] text-black px-8 py-4 font-bold flex items-center gap-2 hover:bg-orange-600 transition-all">
+          GET FREE AMAZON AUDIT <span>→</span>
+        </button>
+        <!-- Button 2 (Reference jaisa border style) -->
+        <button class="border-2 border-[#FF9900] text-[#FF9900] px-8 py-4 font-bold flex items-center gap-2 hover:bg-[#FF9900] hover:text-black transition-all">
+          SOLVE AN AMAZON PROBLEM <span>→</span>
+        </button>
+      </div>
     </div>
 
     <!-- Right Image -->
