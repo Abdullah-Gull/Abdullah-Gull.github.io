@@ -1,16 +1,63 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
+<!-- Custom Cyber Grid Animations Styles -->
+<style>
+  @keyframes cyberWave {
+    0% { transform: translateY(0) scaleY(1); opacity: 0.15; }
+    50% { transform: translateY(-15px) scaleY(1.05); opacity: 0.35; }
+    100% { transform: translateY(0) scaleY(1); opacity: 0.15; }
+  }
+  @keyframes floatDots {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+  }
+  .animate-cyber-wave {
+    animation: cyberWave 8s ease-in-out infinite;
+  }
+  .animate-float-dots {
+    animation: floatDots 12s ease-in-out infinite;
+  }
+</style>
+
 <!-- ========================================================================= -->
-<!-- CONTACT SECTION (ORANGE PREMIUM THEME - HTML + TAILWIND + INTERACTIVE JS) -->
+<!-- CONTACT SECTION (ORANGE PREMIUM THEME WITH FIXED VISIBLE CYBER DESIGN)    -->
 <!-- ========================================================================= -->
-<section class="w-full bg-[#000000] text-white py-16 px-6 sm:px-12 lg:px-20 font-sans select-none overflow-hidden relative min-h-[750px] flex items-center justify-center">
+<section class="w-full bg-[#000000] text-white py-20 px-6 sm:px-12 lg:px-20 font-sans select-none overflow-hidden relative min-h-[750px] flex items-center justify-center">
   
-  <!-- BACKGROUND INTERACTIVE DYNAMIC MESH CANVAS -->
-  <canvas id="meshCanvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-40 z-0"></canvas>
+  <!-- LEFT SIDE BACKGROUND DESIGN (Visible in Empty Space) -->
+  <div class="absolute left-0 top-12 w-[320px] h-[550px] opacity-25 pointer-events-none hidden xl:block animate-cyber-wave">
+    <!-- Tech Grid Lines -->
+    <div class="w-full h-full border-l-2 border-t-2 border-[#ff8c00]/30 rounded-br-[120px] relative">
+      <div class="absolute top-8 left-8 w-full h-full border-l border-t border-[#ff8c00]/20 rounded-br-[100px]"></div>
+      <div class="absolute top-16 left-16 w-full h-full border-l border-t border-[#ff8c00]/10 rounded-br-[80px]"></div>
+      <!-- Cyber Dots Pattern -->
+      <div class="absolute bottom-12 left-6 grid grid-cols-6 gap-3 opacity-60 animate-float-dots">
+        <div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/40"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/20"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div>
+        <div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/30"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/10"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/50"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div>
+        <div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/20"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/70"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]"></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff8c00]/30"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE BACKGROUND DESIGN (Visible in Empty Space) -->
+  <div class="absolute right-0 bottom-12 w-[320px] h-[550px] opacity-25 pointer-events-none hidden xl:block animate-cyber-wave" style="animation-delay: -4s;">
+    <!-- Tech Grid Lines Reverse -->
+    <div class="w-full h-full border-r-2 border-b-2 border-[#ff8c00]/30 rounded-tl-[120px] relative">
+      <div class="absolute bottom-8 right-8 w-full h-full border-r border-b border-[#ff8c00]/20 rounded-tl-[100px]"></div>
+      <div class="absolute bottom-16 right-16 w-full h-full border-r border-b border-[#ff8c00]/10 rounded-tl-[80px]"></div>
+      <!-- Accent Tech Badges -->
+      <div class="absolute top-12 right-6 flex flex-col space-y-2 font-mono text-[9px] text-[#ff8c00]/60 tracking-widest text-right">
+        <div>SYS.LOC // 0x42A8</div>
+        <div>DATA.STREAM // CONNECTED</div>
+        <div>GRID.STATUS // ACTIVE</div>
+      </div>
+    </div>
+  </div>
 
   <!-- Ambient Glow Background Overlays -->
-  <div class="absolute left-[-10%] top-[-10%] w-[450px] h-[450px] bg-[#ff8c00]/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
-  <div class="absolute right-[-10%] bottom-[-10%] w-[500px] h-[500px] bg-[#ff8c00]/5 rounded-full blur-[140px] pointer-events-none z-0"></div>
+  <div class="absolute left-[-5%] top-[-5%] w-[500px] h-[500px] bg-[#ff8c00]/5 rounded-full blur-[130px] pointer-events-none z-0"></div>
+  <div class="absolute right-[-5%] bottom-[-5%] w-[550px] h-[550px] bg-[#ff8c00]/5 rounded-full blur-[150px] pointer-events-none z-0"></div>
 
   <!-- Content Wrapper -->
   <div class="max-w-[1340px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
@@ -49,7 +96,7 @@
           <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center shrink-0">
             <!-- Phone Icon SVG -->
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#ff8c00" class="w-5 h-5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25a2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a12.035 12.035 0 0 1-7.108-7.108c-.157-.44.009-.927.387-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a12.035 12.035 0 0 1-7.108-7.108c-.157-.44.009-.927.387-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z" />
             </svg>
           </div>
           <div class="flex flex-col">
@@ -110,7 +157,7 @@
     <!-- ================= RIGHT COLUMN (TAB GRID IMPLEMENTATION) ================= -->
     <div class="lg:col-span-6 w-full flex justify-center lg:justify-end">
       <!-- Outer Interactive Frame Container -->
-      <div id="interactiveMockup" class="w-full max-w-[580px] aspect-[4/3] bg-[#0c0c0e]/80 backdrop-blur-md border border-zinc-800 rounded-[28px] p-3 shadow-2xl relative overflow-hidden cursor-pointer group transition-all duration-300">
+      <div id="interactiveMockup" class="w-full max-w-[580px] aspect-[4/3] bg-[#0c0c0e]/90 border border-zinc-800 rounded-[28px] p-3 shadow-2xl relative overflow-hidden cursor-pointer group transition-all duration-300">
         
         <!-- Screen Inside Layout -->
         <div class="w-full h-full rounded-[20px] bg-black overflow-hidden grid grid-cols-3 grid-rows-3 gap-[3px] relative border border-zinc-900">
@@ -161,122 +208,18 @@
   </div>
 </section>
 
-<!-- ========================================================================= -->
-<!-- JAVASCRIPT ANIMATIONS & DYNAMIC PARTICLES ENGINE                          -->
-<!-- ========================================================================= -->
+<!-- Card Motion Script -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    
-    // 1. CARD TILT INTERACTION
     const mockupFrame = document.getElementById("interactiveMockup");
     mockupFrame.addEventListener("mousemove", (e) => {
       const rect = mockupFrame.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
-      mockupFrame.style.transform = `perspective(1000px) rotateX(${-y * 0.012}deg) rotateY(${x * 0.012}deg) scale(1.005)`;
+      mockupFrame.style.transform = `perspective(1000px) rotateX(${-y * 0.015}deg) rotateY(${x * 0.015}deg) scale(1.01)`;
     });
     mockupFrame.addEventListener("mouseleave", () => {
       mockupFrame.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
     });
-
-    // 2. DYNAMIC MESH PARTICLES CANVAS ENGINE
-    const canvas = document.getElementById("meshCanvas");
-    const ctx = canvas.getContext("2d");
-    
-    let particles = [];
-    const maxParticles = 65; // Density of background nodes
-    let width = canvas.width = canvas.offsetWidth;
-    let height = canvas.height = canvas.offsetHeight;
-    
-    let mouse = { x: null, y: null, radius: 170 };
-    
-    window.addEventListener("resize", () => {
-      if(canvas.offsetWidth) {
-        width = canvas.width = canvas.offsetWidth;
-        height = canvas.height = canvas.offsetHeight;
-      }
-    });
-    
-    // Capture tracking across the whole section structure
-    canvas.parentElement.addEventListener("mousemove", (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-    });
-    
-    canvas.parentElement.addEventListener("mouseleave", () => {
-      mouse.x = null;
-      mouse.y = null;
-    });
-
-    class Particle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.4;
-        this.vy = (Math.random() - 0.5) * 0.4;
-        this.radius = Math.random() * 1.5 + 1;
-      }
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        
-        // Bounce on boundaries
-        if (this.x < 0 || this.x > width) this.vx *= -1;
-        if (this.y < 0 || this.y > height) this.vy *= -1;
-        
-        // Mouse interact pull effect
-        if (mouse.x != null && mouse.y != null) {
-          let dx = mouse.x - this.x;
-          let dy = mouse.y - this.y;
-          let dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < mouse.radius) {
-            let force = (mouse.radius - dist) / mouse.radius;
-            this.x -= dx * force * 0.02;
-            this.y -= dy * force * 0.02;
-          }
-        }
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(255, 140, 0, 0.35)";
-        ctx.fill();
-      }
-    }
-
-    // Initialize nodes
-    for (let i = 0; i < maxParticles; i++) {
-      particles.push(new Particle());
-    }
-
-    function animateMesh() {
-      ctx.clearRect(0, 0, width, height);
-      
-      // Loop & connect coordinates
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-        
-        for (let j = i + 1; j < particles.length; j++) {
-          let dx = particles[i].x - particles[j].x;
-          let dy = particles[i].y - particles[j].y;
-          let dist = Math.sqrt(dx * dx + dy * dy);
-          
-          if (dist < 110) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            let alpha = (110 - dist) / 110 * 0.12;
-            ctx.strokeStyle = `rgba(255, 140, 0, ${alpha})`;
-            ctx.lineWidth = 0.6;
-            ctx.stroke();
-          }
-        }
-      }
-      requestAnimationFrame(animateMesh);
-    }
-    
-    animateMesh();
   });
 </script>
