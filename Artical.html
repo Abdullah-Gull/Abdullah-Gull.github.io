@@ -1,8 +1,8 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Hero Section with Interactive Elements -->
+<!-- Updated Hero Section -->
 <section class="bg-[#050505] text-white py-20 px-6 sm:px-12 lg:px-20 font-sans overflow-hidden">
-  <div class="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
     
     <!-- Left Content -->
     <div class="space-y-8 z-10">
@@ -27,31 +27,13 @@
       </div>
     </div>
 
-    <!-- Right Content (Image & Floating Stats) -->
-    <div class="relative flex justify-center items-center group">
-      <div class="absolute w-[450px] h-[450px] bg-[#ff8c00]/10 rounded-full blur-[100px] group-hover:bg-[#ff8c00]/20 transition-all duration-700"></div>
+    <!-- Right Content (Full-size Image) -->
+    <div class="relative flex justify-center items-center">
+      <div class="absolute w-[500px] h-[500px] bg-[#ff8c00]/10 rounded-full blur-[120px]"></div>
       
-      <img src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" alt="Abdullah Gull" class="relative z-10 w-full max-w-[450px] drop-shadow-2xl">
-
-      <!-- Stat Cards -->
-      <div id="statCard" class="absolute -top-10 left-0 bg-[#161616]/80 backdrop-blur-md p-4 rounded-2xl border border-zinc-800 z-20">
-        <div class="text-zinc-400 text-xs">Sales Growth</div>
-        <div class="text-2xl font-bold text-[#ff8c00]">162%</div>
-      </div>
-      <div class="absolute top-10 right-0 bg-[#161616]/80 backdrop-blur-md p-4 rounded-2xl border border-zinc-800 z-20">
-        <div class="text-zinc-400 text-xs">Managed Ad Spend</div>
-        <div class="text-2xl font-bold">$3.2M+</div>
-      </div>
+      <!-- Image is now larger and centered -->
+      <img src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg.png" alt="Abdullah Gull" class="relative z-10 w-full max-w-[600px] h-auto drop-shadow-2xl">
     </div>
+    
   </div>
 </section>
-
-<!-- JavaScript for subtle movement -->
-<script>
-  const statCard = document.getElementById('statCard');
-  document.addEventListener('mousemove', (e) => {
-    let xAxis = (window.innerWidth / 2 - e.pageX) / 50;
-    let yAxis = (window.innerHeight / 2 - e.pageY) / 50;
-    statCard.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-  });
-</script>
