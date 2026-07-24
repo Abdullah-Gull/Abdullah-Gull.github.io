@@ -1,348 +1,1096 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gull Of Group | Parent Engineering & Digital Ecosystem</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gull Group | Amazon Commerce, Web &amp; Outreach Growth Partner</title>
+<meta name="description" content="Gull Group is the umbrella for Gull Web, Gull Commerce, and Gull Outreach — website & product development, Amazon/e-commerce management, and B2B lead generation under one roof." />
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<!-- Tailwind (utility layer) + our design-system CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          gg: {
+            bg: '#0B0C0E',
+            surface: '#1A1B1F',
+            border: '#2A2B2F',
+            text: '#F5F5F7',
+            muted: '#9A9BA1',
+            orange: '#FF8C00',
+            orangeLight: '#FFB84D',
+            web: '#3AA0FF',
+            outreach: '#34D17A',
+          }
+        },
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        borderRadius: { capsule: '100px' }
+      }
+    }
+  };
+</script>
+<link rel="stylesheet" href="assets/style.css" />
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        bgDark: '#0B1320',
-                        cardDark: 'rgba(255, 255, 255, 0.05)',
-                        cardBorder: 'rgba(255, 255, 255, 0.12)',
-                        cyanAccent: '#2DD4BF',
-                        blueAccent: '#3B82F6',
-                        coralAccent: '#FF7A59',
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        mono: ['Space Grotesk', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+<style>/* ==========================================================================
+   GULL GROUP — Design tokens
+   Base brand kept consistent with the existing Abdullah Gull identity
+   (dark canvas + orange accent). Each sub-brand gets its own accent so the
+   hero diagram and service cards stay readable at a glance.
+   ========================================================================== */
+:root {
+  --bg: #0b0c0e;
+  --bg-elevated: #131418;
+  --surface: #1a1b1f;
+  --border: #2a2b2f;
+  --text: #f5f5f7;
+  --muted: #9a9ba1;
 
-    <style>
-        /* Deep Glassmorphic Dark Atmosphere Background */
-        body {
-            background-color: #080D1A;
-            background-image: 
-                radial-gradient(circle at 15% 20%, rgba(45, 212, 191, 0.12) 0%, transparent 45%),
-                radial-gradient(circle at 85% 60%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 50% 90%, rgba(255, 122, 89, 0.08) 0%, transparent 40%),
-                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 100% 100%, 100% 100%, 100% 100%, 70px 70px, 70px 70px;
-        }
+  --brand-orange: #ff8c00;      /* Gull Group core / Gull Commerce */
+  --brand-orange-light: #ffb84d;
+  --brand-web: #3aa0ff;         /* Gull Web */
+  --brand-outreach: #34d17a;    /* Gull Outreach */
 
-        /* Glassmorphic Dropdown Animation */
-        .dropdown-menu {
-            display: none;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --header-h: 64px;
+}
 
-        .dropdown-menu.show {
-            display: grid;
-            opacity: 1;
-            transform: translateY(0);
-        }
+* {
+  box-sizing: border-box;
+}
 
-        /* Glass Panel Glow Effect */
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-        }
+html {
+  scroll-behavior: smooth;
+}
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
 
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(45, 212, 191, 0.3);
-        }
-    </style>
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-orange);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.site-container {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 768px) { .site-container { padding-inline: 2rem; } }
+
+/* ==========================================================================
+   HEADER — Apple-style: slim capsule bar, click-to-open panel underneath
+   ========================================================================== */
+.gg-header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  background: rgba(11, 12, 14, 0.72);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: var(--transition);
+}
+.gg-header.is-scrolled {
+  background: rgba(11, 12, 14, 0.92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.gg-header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.gg-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.gg-logo-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--brand-orange), var(--brand-orange-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0b0c0e;
+  font-weight: 900;
+  font-size: 0.95rem;
+}
+.gg-logo span { color: var(--brand-orange); }
+
+/* Desktop nav: pill items, one of which is a toggle button for the panel */
+.gg-nav {
+  display: none;
+}
+@media (min-width: 960px) {
+  .gg-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+  }
+}
+.gg-nav-item {
+  position: relative;
+}
+.gg-nav-link,
+.gg-nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+  font-family: inherit;
+}
+.gg-nav-link:hover,
+.gg-nav-toggle:hover,
+.gg-nav-toggle[aria-expanded="true"] {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+.gg-nav-toggle .chev {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+.gg-nav-toggle[aria-expanded="true"] .chev {
+  transform: rotate(180deg);
+}
+
+.gg-cta {
+  flex-shrink: 0;
+  display: none;
+}
+@media (min-width: 960px) {
+  .gg-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.3rem;
+    border-radius: 999px;
+    background: var(--brand-orange);
+    color: #0b0c0e;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  .gg-cta:hover {
+    background: var(--brand-orange-light);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(255, 140, 0, 0.3);
+  }
+}
+
+/* Icon-triggered slide-down panel (touch/click, not hover-only) */
+.gg-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(19, 20, 24, 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+.gg-panel.is-open {
+  max-height: 480px;
+  opacity: 1;
+}
+.gg-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2.25rem 0 2.75rem;
+}
+@media (max-width: 767px) {
+  .gg-panel-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem 0 2rem; }
+}
+.gg-panel-col h4 {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+.gg-panel-col a {
+  display: block;
+  padding: 0.45rem 0;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.gg-panel-col a:hover {
+  color: var(--text);
+  transform: translateX(3px);
+}
+
+/* Mobile hamburger + full screen menu */
+.gg-burger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--brand-orange);
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+@media (min-width: 960px) { .gg-burger { display: none; } }
+
+.gg-mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: var(--bg);
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+.gg-mobile-menu.is-open { transform: translateY(0); }
+.gg-mobile-accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.gg-mobile-accordion.is-open .gg-mobile-accordion-panel { max-height: 600px; }
+.gg-mobile-accordion.is-open .gg-mobile-accordion-icon { transform: rotate(45deg); }
+.gg-mobile-accordion-icon { transition: transform 0.3s ease; }
+
+.gg-spacer { height: var(--header-h); }
+
+/* ==========================================================================
+   HERO — "Gull Group" interactive brand diagram (inspired by connected
+   node reference layout), rebuilt responsive + accessible
+   ========================================================================== */
+.gg-hero {
+  padding: calc(var(--header-h) + 3.5rem) 0 4rem;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 140, 0, 0.08), transparent 60%),
+    var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.gg-diagram {
+  position: relative;
+  max-width: 760px;
+  margin: 3rem auto 0;
+  min-height: 440px;
+}
+
+.gg-diagram-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 168px;
+  height: 168px;
+  border-radius: 38px;
+  background: linear-gradient(150deg, var(--surface), var(--bg-elevated));
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 3;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 140, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  animation: gg-float 5s ease-in-out infinite;
+}
+.gg-diagram-center strong {
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+.gg-diagram-center strong .accent { color: var(--brand-orange); }
+.gg-diagram-center span {
+  margin-top: 0.35rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@keyframes gg-float {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-8px); }
+}
+
+/* connector lines drawn with an SVG overlay (see inline SVG in HTML) */
+.gg-diagram-lines {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.gg-diagram-lines path {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 6;
+}
+.gg-diagram-lines path.is-web { stroke: rgba(58, 160, 255, 0.35); }
+.gg-diagram-lines path.is-commerce { stroke: rgba(255, 140, 0, 0.4); }
+.gg-diagram-lines path.is-outreach { stroke: rgba(52, 209, 122, 0.35); }
+
+.gg-node {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.gg-node:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+.gg-node-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.gg-node.is-web:hover { border-color: rgba(58, 160, 255, 0.5); }
+.gg-node.is-web .gg-node-dot { background: var(--brand-web); box-shadow: 0 0 10px rgba(58, 160, 255, 0.6); }
+.gg-node.is-commerce:hover { border-color: rgba(255, 140, 0, 0.5); }
+.gg-node.is-commerce .gg-node-dot { background: var(--brand-orange); box-shadow: 0 0 10px rgba(255, 140, 0, 0.6); }
+.gg-node.is-outreach:hover { border-color: rgba(52, 209, 122, 0.5); }
+.gg-node.is-outreach .gg-node-dot { background: var(--brand-outreach); box-shadow: 0 0 10px rgba(52, 209, 122, 0.6); }
+
+/* Node positions — desktop (triangle layout around the three real
+   sub-brands; kept to exactly three so the diagram stays truthful to the
+   actual business structure instead of padding it out with filler nodes) */
+.gg-node[data-pos="web"]      { top: 2%; left: 50%; transform: translateX(-50%); }
+.gg-node[data-pos="commerce"] { bottom: 10%; left: 4%; }
+.gg-node[data-pos="outreach"] { bottom: 10%; right: 4%; }
+
+/* Mobile: stack the diagram into a simple vertical list, drop the lines */
+@media (max-width: 767px) {
+  .gg-diagram { min-height: auto; }
+  .gg-diagram-lines { display: none; }
+  .gg-diagram-center {
+    position: static;
+    transform: none;
+    margin: 0 auto 1.75rem;
+    animation: none;
+  }
+  .gg-node {
+    position: static;
+    transform: none !important;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 0.75rem;
+  }
+  .gg-node-list {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   FOOTER — Samsung-style: clean multi-column link grid on a lighter panel
+   ========================================================================== */
+.gg-footer {
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+}
+.gg-footer-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 1.5rem;
+  padding: 4rem 0 2.5rem;
+}
+@media (min-width: 640px) {
+  .gg-footer-columns { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1024px) {
+  .gg-footer-columns { grid-template-columns: repeat(5, 1fr); }
+}
+.gg-footer-col h5 {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+.gg-footer-col a,
+.gg-footer-col span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.3rem 0;
+  transition: color 0.2s ease;
+}
+.gg-footer-col a:hover { color: var(--brand-orange); }
+
+.gg-footer-bottom {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.gg-footer-legal {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.gg-footer-legal a {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.gg-footer-legal a:hover { color: var(--text); }
+
+.gg-social {
+  display: flex;
+  gap: 0.6rem;
+}
+.gg-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  transition: var(--transition);
+}
+.gg-social a:hover {
+  background: var(--brand-orange);
+  color: #0b0c0e;
+  border-color: var(--brand-orange);
+  transform: translateY(-3px);
+}
+
+/* Back to top */
+.gg-top-btn {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 90;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: var(--transition);
+}
+.gg-top-btn.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.gg-top-btn:hover { background: var(--brand-orange); color: #0b0c0e; }
+
+/* Reveal-on-scroll (progressive enhancement, JS toggles .is-visible) */
+.gg-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.gg-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}</style>
 </head>
-<body class="text-slate-200 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-cyanAccent selection:text-slate-900">
+<body class="font-sans">
 
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-[#080D1A]/75 backdrop-blur-xl border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyanAccent to-blueAccent text-slate-950 font-extrabold text-lg flex items-center justify-center shadow-lg shadow-cyanAccent/20 group-hover:scale-105 transition-transform">
-                    G
-                </div>
-                <div>
-                    <span class="font-extrabold text-xl text-white tracking-tight block leading-tight">Gull Of Group</span>
-                    <span class="text-[10px] font-mono text-cyanAccent uppercase tracking-widest font-semibold">Holding Company</span>
-                </div>
-            </a>
+<!-- ============================================================
+     HEADER — Apple-style capsule bar. The "Services" item is a
+     <button> that toggles a full-width panel underneath (works on
+     both click and touch, unlike hover-only mega menus).
+     ============================================================ -->
+<header id="gg-header" class="gg-header">
+  <div class="site-container">
+    <div class="gg-header-inner">
+      <a href="#top" class="gg-logo">
+        <span class="gg-logo-mark">GG</span>
+        Gull <span>Group</span>
+      </a>
 
-            <!-- Dropdown Navigation -->
-            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-300">
-                
-                <!-- Our Divisions Dropdown -->
-                <div class="relative">
-                    <button id="divisionsBtn" class="flex items-center gap-1.5 py-2 hover:text-cyanAccent transition-colors focus:outline-none">
-                        Our Divisions
-                        <svg class="w-3.5 h-3.5 text-cyanAccent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-
-                    <!-- Dropdown Panel -->
-                    <div id="divisionsMenu" class="dropdown-menu absolute top-full left-0 w-[540px] glass-panel rounded-2xl p-4 shadow-2xl grid-cols-2 gap-3 z-50 mt-2">
-                        
-                        <a href="#" class="p-3.5 rounded-xl glass-card transition-all group">
-                            <span class="text-[10px] font-mono font-bold text-cyanAccent block mb-0.5">ENGINEERING</span>
-                            <h4 class="font-bold text-white text-sm group-hover:text-cyanAccent">Gull Web Studio</h4>
-                            <p class="text-[11px] text-slate-400 mt-1">Full-stack web architecture & responsive UI/UX.</p>
-                        </a>
-
-                        <a href="#" class="p-3.5 rounded-xl glass-card transition-all group">
-                            <span class="text-[10px] font-mono font-bold text-coralAccent block mb-0.5">COMMERCE</span>
-                            <h4 class="font-bold text-white text-sm group-hover:text-coralAccent">Gull Commerce</h4>
-                            <p class="text-[11px] text-slate-400 mt-1">Amazon store scaling & strategy consulting.</p>
-                        </a>
-
-                        <a href="#" class="p-3.5 rounded-xl glass-card transition-all group col-span-2">
-                            <span class="text-[10px] font-mono font-bold text-blueAccent block mb-0.5">GROWTH ENGINE</span>
-                            <h4 class="font-bold text-white text-sm group-hover:text-blueAccent">Gull Digital Growth</h4>
-                            <p class="text-[11px] text-slate-400 mt-0.5">SEO, Schema markup, & global B2B digital footprint.</p>
-                        </a>
-
-                    </div>
-                </div>
-
-                <!-- Capabilities Dropdown -->
-                <div class="relative">
-                    <button id="capabilitiesBtn" class="flex items-center gap-1.5 py-2 hover:text-cyanAccent transition-colors focus:outline-none">
-                        Capabilities
-                        <svg class="w-3.5 h-3.5 text-cyanAccent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-
-                    <div id="capabilitiesMenu" class="dropdown-menu absolute top-full left-0 w-[240px] glass-panel rounded-xl p-2 shadow-2xl flex-col space-y-1 z-50 mt-2">
-                        <a href="#" class="block p-2.5 rounded-lg hover:bg-white/10 text-slate-300 font-medium text-xs">Custom Frontend Systems</a>
-                        <a href="#" class="block p-2.5 rounded-lg hover:bg-white/10 text-slate-300 font-medium text-xs">E-Commerce Infrastructure</a>
-                        <a href="#" class="block p-2.5 rounded-lg hover:bg-white/10 text-slate-300 font-medium text-xs">B2B Strategy & Outreach</a>
-                    </div>
-                </div>
-
-                <a href="#" class="hover:text-cyanAccent transition-colors">Ecosystem</a>
-                <a href="#" class="hover:text-cyanAccent transition-colors">Governance</a>
-            </nav>
-
-            <!-- Call to Action -->
-            <button onclick="toggleModal()" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-blue-600/30">
-                Connect With HQ
-            </button>
-
+      <nav class="gg-nav" aria-label="Primary">
+        <div class="gg-nav-item"><a class="gg-nav-link" href="#top">Home</a></div>
+        <div class="gg-nav-item"><a class="gg-nav-link" href="#about">About</a></div>
+        <div class="gg-nav-item">
+          <button
+            id="gg-panel-toggle"
+            class="gg-nav-toggle"
+            aria-expanded="false"
+            aria-controls="gg-panel"
+            type="button"
+          >
+            Services
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
         </div>
-    </header>
+        <div class="gg-nav-item"><a class="gg-nav-link" href="#faq">FAQ</a></div>
+        <div class="gg-nav-item"><a class="gg-nav-link" href="#contact">Contact</a></div>
+      </nav>
 
-    <!-- Main Hero Section -->
-    <main class="max-w-7xl mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
-        
-        <!-- Hero Left Column -->
-        <div class="lg:col-span-6 space-y-6">
-            
-            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cyanAccent bg-cyanAccent/10 px-3.5 py-1.5 rounded-full border border-cyanAccent/20">
-                <span class="w-2 h-2 rounded-full bg-cyanAccent animate-pulse"></span>
-                Parent Umbrella Hub
-            </div>
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="gg-cta">Get a free audit</a>
+        <button id="gg-burger" class="gg-burger" aria-label="Open menu" aria-expanded="false" aria-controls="gg-mobile-menu" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b0c0e" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
 
-            <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12]">
-                Digital Engineering & Scale <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyanAccent via-blueAccent to-coralAccent">
-                    Under One Group.
-                </span>
-            </h1>
-
-            <p class="text-slate-400 text-base lg:text-lg leading-relaxed font-light">
-                <strong class="text-white">Gull Of Group</strong> serves as the central holding organization powering three specialized wings. We combine modern web architecture, e-commerce optimization, and digital strategy into one unified ecosystem.
-            </p>
-
-            <div class="flex flex-wrap gap-4 pt-2">
-                <button onclick="document.getElementById('divisionsBtn').click()" class="px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-blue-600/30 transition-all">
-                    Explore Wings
-                </button>
-                <a href="#" class="px-7 py-3.5 rounded-xl glass-card text-slate-300 hover:text-white font-bold text-xs uppercase tracking-wider transition-all">
-                    Our Governance
-                </a>
-            </div>
-
-            <!-- Operating Divisions -->
-            <div class="pt-8 border-t border-white/10">
-                <h3 class="text-xs font-extrabold uppercase tracking-widest text-slate-500 mb-4">
-                    Autonomous Operating Divisions
-                </h3>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    
-                    <div class="glass-card rounded-xl p-4 transition-all">
-                        <div class="w-2.5 h-2.5 rounded-full bg-cyanAccent mb-2"></div>
-                        <h4 class="font-bold text-xs uppercase text-white mb-1">Gull Web</h4>
-                        <p class="text-[11px] text-slate-400 leading-normal">Frontend, HTML/CSS, APIs & Web Apps.</p>
-                    </div>
-
-                    <div class="glass-card rounded-xl p-4 transition-all">
-                        <div class="w-2.5 h-2.5 rounded-full bg-coralAccent mb-2"></div>
-                        <h4 class="font-bold text-xs uppercase text-white mb-1">Gull Commerce</h4>
-                        <p class="text-[11px] text-slate-400 leading-normal">Amazon scaling & store management.</p>
-                    </div>
-
-                    <div class="glass-card rounded-xl p-4 transition-all">
-                        <div class="w-2.5 h-2.5 rounded-full bg-blueAccent mb-2"></div>
-                        <h4 class="font-bold text-xs uppercase text-white mb-1">Gull Growth</h4>
-                        <p class="text-[11px] text-slate-400 leading-normal">SEO, Schema & B2B digital footprint.</p>
-                    </div>
-
-                </div>
-            </div>
-
+  <!-- Slide-down services panel -->
+  <div id="gg-panel" class="gg-panel" role="region" aria-label="Services menu">
+    <div class="site-container">
+      <div class="gg-panel-grid">
+        <div class="gg-panel-col">
+          <h4 class="text-gg-web">Gull Web</h4>
+          <a href="#gull-web">Website Design &amp; Development</a>
+          <a href="#gull-web">E-commerce Websites (Shopify / WooCommerce)</a>
+          <a href="#gull-web">Landing Pages &amp; Sales Funnels</a>
+          <a href="#gull-web">Web &amp; Mobile App Development</a>
         </div>
-
-        <!-- Glassmorphic Interactive Console -->
-        <div class="lg:col-span-6 relative flex items-center justify-center">
-            
-            <div class="w-full aspect-square max-w-[480px] glass-panel rounded-3xl p-8 shadow-2xl relative flex flex-col justify-between overflow-hidden border border-white/15">
-                
-                <div class="flex justify-between items-center text-xs font-mono text-slate-400 border-b border-white/10 pb-4">
-                    <span>GULL OF GROUP ARCHITECTURE</span>
-                    <span class="text-cyanAccent font-bold">● ACTIVE</span>
-                </div>
-
-                <!-- Division Status Selector -->
-                <div class="my-auto space-y-4">
-                    
-                    <div id="card-web" onclick="selectTab('web')" class="p-4 rounded-xl glass-card flex items-center justify-between cursor-pointer transition-all border border-cyanAccent/40 bg-cyanAccent/5">
-                        <div class="flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-lg bg-cyanAccent/20 text-cyanAccent font-bold flex items-center justify-center text-xs">W</div>
-                            <div>
-                                <h5 class="font-bold text-xs text-white">Gull Web Studio</h5>
-                                <p class="text-[11px] text-slate-400 font-mono">HTML5 / CSS3 / JavaScript / Responsive UI</p>
-                            </div>
-                        </div>
-                        <span class="text-[10px] font-mono font-bold text-cyanAccent bg-cyanAccent/10 px-2 py-0.5 rounded border border-cyanAccent/20">ONLINE</span>
-                    </div>
-
-                    <div id="card-commerce" onclick="selectTab('commerce')" class="p-4 rounded-xl glass-card flex items-center justify-between cursor-pointer transition-all border border-white/10">
-                        <div class="flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-lg bg-coralAccent/20 text-coralAccent font-bold flex items-center justify-center text-xs">C</div>
-                            <div>
-                                <h5 class="font-bold text-xs text-white">Gull Commerce</h5>
-                                <p class="text-[11px] text-slate-400 font-mono">Amazon Consulting & Scaling Strategy</p>
-                            </div>
-                        </div>
-                        <span class="text-[10px] font-mono font-bold text-coralAccent bg-coralAccent/10 px-2 py-0.5 rounded border border-coralAccent/20">ONLINE</span>
-                    </div>
-
-                </div>
-
-                <div class="pt-4 border-t border-white/10 text-center">
-                    <span class="text-[11px] font-mono text-slate-400 tracking-wider">❖ ALL DIVISIONS OPERATING UNDER ONE PARENT GOVERNANCE</span>
-                </div>
-
-            </div>
-
+        <div class="gg-panel-col">
+          <h4 class="text-gg-orange">Gull Commerce</h4>
+          <a href="#gull-commerce">Amazon Listing Creation &amp; Optimization</a>
+          <a href="#gull-commerce">Amazon PPC &amp; Ad Campaigns</a>
+          <a href="#gull-commerce">Amazon Account Management</a>
+          <a href="#gull-commerce">Shopify &amp; Walmart Marketplace Management</a>
         </div>
-
-    </main>
-
-    <!-- Modal Form -->
-    <div id="contactModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden items-center justify-center p-4">
-        <div class="glass-panel rounded-2xl p-6 w-full max-w-md shadow-2xl relative border border-white/20">
-            <button onclick="toggleModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-sm">✕</button>
-            <h3 class="font-bold text-lg text-white mb-1">Connect With HQ</h3>
-            <p class="text-xs text-slate-400 mb-4">Select a division or consult with the central corporate team.</p>
-
-            <form class="space-y-3" onsubmit="event.preventDefault(); alert('Inquiry submitted to Gull Of Group HQ.'); toggleModal();">
-                <div>
-                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Your Name</label>
-                    <input type="text" required class="w-full px-3 py-2 bg-slate-900/80 border border-white/10 rounded-lg text-xs text-white focus:outline-none focus:border-cyanAccent">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Division Interest</label>
-                    <select class="w-full px-3 py-2 bg-slate-900/80 border border-white/10 rounded-lg text-xs text-white focus:outline-none focus:border-cyanAccent">
-                        <option>General Parent Holding Inquiry</option>
-                        <option>Gull Web Studio (Software/Web)</option>
-                        <option>Gull Commerce (Amazon/E-Com)</option>
-                    </select>
-                </div>
-                <button type="submit" class="w-full py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider mt-2 transition-colors">
-                    Submit Request
-                </button>
-            </form>
+        <div class="gg-panel-col">
+          <h4 class="text-gg-outreach">Gull Outreach</h4>
+          <a href="#gull-outreach">LinkedIn Outreach &amp; Lead Generation</a>
+          <a href="#gull-outreach">Cold Email Campaigns</a>
+          <a href="#gull-outreach">CRM Setup &amp; Management</a>
+          <a href="#gull-outreach">B2B Social Media Marketing</a>
         </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="gg-spacer"></div>
+
+<!-- ============================================================
+     MOBILE FULL-SCREEN MENU
+     ============================================================ -->
+<div id="gg-mobile-menu" class="gg-mobile-menu">
+  <div class="site-container">
+    <div class="flex justify-between items-center py-5">
+      <span class="gg-logo"><span class="gg-logo-mark">GG</span>Gull <span>Group</span></span>
+      <button id="gg-mobile-close" class="gg-burger" aria-label="Close menu" type="button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0b0c0e" stroke-width="3">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
     </div>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/10 bg-[#080D1A]/90 py-6 px-6 text-xs text-slate-500">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="font-bold text-white">Gull Of Group</div>
-            <div>© 2026 Gull Of Group. All Global Rights Reserved.</div>
+    <nav class="pb-16" aria-label="Mobile primary">
+      <a href="#top" class="block py-4 border-b border-gg-border text-[15px] font-semibold">Home</a>
+      <a href="#about" class="block py-4 border-b border-gg-border text-[15px] font-semibold">About</a>
+
+      <div class="gg-mobile-accordion border-b border-gg-border is-open">
+        <button type="button" class="gg-mobile-accordion-trigger w-full flex items-center justify-between py-4 text-[15px] font-semibold text-left">
+          Gull Web
+          <svg class="gg-mobile-accordion-icon w-4 h-4 text-gg-web" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div class="gg-mobile-accordion-panel">
+          <div class="flex flex-col pb-4 pl-3 text-sm text-gg-muted gap-1">
+            <a href="#gull-web" class="py-1">Website Design &amp; Development</a>
+            <a href="#gull-web" class="py-1">E-commerce Websites (Shopify/WooCommerce)</a>
+            <a href="#gull-web" class="py-1">Landing Pages &amp; Sales Funnels</a>
+            <a href="#gull-web" class="py-1">Web &amp; Mobile App Development</a>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <!-- Interactive JavaScript -->
-    <script>
-        const divsBtn = document.getElementById('divisionsBtn');
-        const divsMenu = document.getElementById('divisionsMenu');
-        const capsBtn = document.getElementById('capabilitiesBtn');
-        const capsMenu = document.getElementById('capabilitiesMenu');
+      <div class="gg-mobile-accordion border-b border-gg-border">
+        <button type="button" class="gg-mobile-accordion-trigger w-full flex items-center justify-between py-4 text-[15px] font-semibold text-left">
+          Gull Commerce
+          <svg class="gg-mobile-accordion-icon w-4 h-4 text-gg-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div class="gg-mobile-accordion-panel">
+          <div class="flex flex-col pb-4 pl-3 text-sm text-gg-muted gap-1">
+            <a href="#gull-commerce" class="py-1">Amazon Listing Creation &amp; Optimization</a>
+            <a href="#gull-commerce" class="py-1">Amazon PPC &amp; Ad Campaigns</a>
+            <a href="#gull-commerce" class="py-1">Amazon Account Management</a>
+            <a href="#gull-commerce" class="py-1">Shopify &amp; Walmart Marketplace Management</a>
+          </div>
+        </div>
+      </div>
 
-        divsBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            capsMenu.classList.remove('show');
-            divsMenu.classList.toggle('show');
+      <div class="gg-mobile-accordion border-b border-gg-border">
+        <button type="button" class="gg-mobile-accordion-trigger w-full flex items-center justify-between py-4 text-[15px] font-semibold text-left">
+          Gull Outreach
+          <svg class="gg-mobile-accordion-icon w-4 h-4 text-gg-outreach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div class="gg-mobile-accordion-panel">
+          <div class="flex flex-col pb-4 pl-3 text-sm text-gg-muted gap-1">
+            <a href="#gull-outreach" class="py-1">LinkedIn Outreach &amp; Lead Generation</a>
+            <a href="#gull-outreach" class="py-1">Cold Email Campaigns</a>
+            <a href="#gull-outreach" class="py-1">CRM Setup &amp; Management</a>
+            <a href="#gull-outreach" class="py-1">B2B Social Media Marketing</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#faq" class="block py-4 border-b border-gg-border text-[15px] font-semibold">FAQ</a>
+      <a href="#contact" class="block py-4 text-[15px] font-semibold">Contact</a>
+
+      <a href="#contact" class="mt-8 block text-center bg-gg-orange text-black font-bold rounded-full py-3.5 hover:bg-gg-orangeLight transition-colors">
+        Get a Free Audit
+      </a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============================================================
+     HERO — "Gull Group" interactive diagram
+     ============================================================ -->
+<main id="top">
+<section class="gg-hero">
+  <div class="site-container text-center">
+    <p class="inline-flex items-center gap-2 rounded-full border border-gg-border bg-gg-surface px-4 py-1.5 text-xs font-bold tracking-widest uppercase text-gg-orange mb-6">
+      <span class="w-1.5 h-1.5 rounded-full bg-gg-orange animate-pulse"></span>
+      One Group, Three Growth Engines
+    </p>
+    <h1 class="text-[34px] sm:text-[46px] lg:text-[58px] font-black leading-[1.08] tracking-tight max-w-3xl mx-auto">
+      Meet <span class="text-gg-orange">Gull Group</span> —
+      Web, Commerce &amp; Outreach Under One Roof
+    </h1>
+    <p class="text-gg-muted max-w-xl mx-auto mt-5 text-sm sm:text-base leading-relaxed">
+      Three specialist teams, one accountable partner: we build your website, run your
+      Amazon &amp; marketplace business, and fill your B2B pipeline — so every part of
+      your growth stack actually talks to each other.
+    </p>
+
+    <!-- Interactive diagram -->
+    <div class="gg-diagram gg-node-list" role="group" aria-label="Gull Group brand map">
+      <svg class="gg-diagram-lines" viewBox="0 0 760 440" preserveAspectRatio="none" aria-hidden="true">
+        <path class="is-web" d="M380,220 C380,150 380,90 380,40" />
+        <path class="is-commerce" d="M380,220 C300,280 200,340 90,390" />
+        <path class="is-outreach" d="M380,220 C460,280 560,340 670,390" />
+      </svg>
+
+      <div class="gg-diagram-center">
+        <strong>GULL<br /><span class="accent">GROUP</span></strong>
+        <span>Est. Amazon &amp; Web</span>
+      </div>
+
+      <button type="button" class="gg-node is-web" data-pos="web" data-target="#gull-web">
+        <span class="gg-node-dot"></span> Gull Web
+      </button>
+      <button type="button" class="gg-node is-commerce" data-pos="commerce" data-target="#gull-commerce">
+        <span class="gg-node-dot"></span> Gull Commerce
+      </button>
+      <button type="button" class="gg-node is-outreach" data-pos="outreach" data-target="#gull-outreach">
+        <span class="gg-node-dot"></span> Gull Outreach
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SUB-BRAND SERVICE CARDS
+     ============================================================ -->
+<section id="about" class="py-16 sm:py-20">
+  <div class="site-container">
+    <div class="text-center max-w-2xl mx-auto mb-12 gg-reveal">
+      <h2 class="text-3xl sm:text-4xl font-black tracking-tight mb-4">
+        What Each <span class="text-gg-orange">Gull</span> Brand Does
+      </h2>
+      <p class="text-gg-muted text-sm sm:text-base">
+        Every engagement starts with the brand that matches the problem — engage one,
+        or run all three together for a fully managed growth stack.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- Gull Web -->
+      <article id="gull-web" class="gg-reveal bg-gg-surface border border-gg-border rounded-3xl p-8 scroll-mt-24">
+        <div class="w-12 h-12 rounded-xl bg-gg-web/10 border border-gg-web/30 flex items-center justify-center mb-5">
+          <span class="w-2.5 h-2.5 rounded-full bg-gg-web"></span>
+        </div>
+        <h3 class="text-xl font-bold mb-1">Gull Web</h3>
+        <p class="text-xs font-semibold text-gg-web uppercase tracking-wide mb-4">Website &amp; Product Development</p>
+        <ul class="space-y-2.5 text-sm text-gg-muted">
+          <li class="flex gap-2"><span class="text-gg-web">✓</span>Website design &amp; development</li>
+          <li class="flex gap-2"><span class="text-gg-web">✓</span>E-commerce websites (Shopify / WooCommerce)</li>
+          <li class="flex gap-2"><span class="text-gg-web">✓</span>Landing pages &amp; sales funnels</li>
+          <li class="flex gap-2"><span class="text-gg-web">✓</span>Web &amp; mobile app development</li>
+          <li class="flex gap-2"><span class="text-gg-web">✓</span>UI/UX design</li>
+          <li class="flex gap-2"><span class="text-gg-web">✓</span>Custom web applications</li>
+          <li class="flex gap-2"><span class="text-gg-web">✓</span>WordPress development</li>
+          <li class="flex gap-2"><span class="text-gg-web">✓</span>API integration &amp; automation</li>
+          <li class="flex gap-2"><span class="text-gg-web">✓</span>Website speed &amp; SEO optimization</li>
+          <li class="flex gap-2"><span class="text-gg-web">✓</span>Website maintenance &amp; support</li>
+        </ul>
+      </article>
+
+      <!-- Gull Commerce -->
+      <article id="gull-commerce" class="gg-reveal bg-gg-surface border border-gg-orange/40 rounded-3xl p-8 scroll-mt-24 lg:-translate-y-3 shadow-[0_25px_60px_rgba(255,140,0,0.08)]">
+        <div class="w-12 h-12 rounded-xl bg-gg-orange/10 border border-gg-orange/30 flex items-center justify-center mb-5">
+          <span class="w-2.5 h-2.5 rounded-full bg-gg-orange"></span>
+        </div>
+        <h3 class="text-xl font-bold mb-1">Gull Commerce</h3>
+        <p class="text-xs font-semibold text-gg-orange uppercase tracking-wide mb-4">Amazon &amp; E-commerce Ecosystem</p>
+        <ul class="space-y-2.5 text-sm text-gg-muted">
+          <li class="flex gap-2"><span class="text-gg-orange">✓</span>Amazon listing creation &amp; optimization</li>
+          <li class="flex gap-2"><span class="text-gg-orange">✓</span>Amazon SEO &amp; keyword research</li>
+          <li class="flex gap-2"><span class="text-gg-orange">✓</span>Amazon PPC &amp; ad campaigns</li>
+          <li class="flex gap-2"><span class="text-gg-orange">✓</span>Amazon storefront &amp; A+ content design</li>
+          <li class="flex gap-2"><span class="text-gg-orange">✓</span>Amazon account management</li>
+          <li class="flex gap-2"><span class="text-gg-orange">✓</span>CRM &amp; inventory management</li>
+          <li class="flex gap-2"><span class="text-gg-orange">✓</span>Shopify store setup &amp; management</li>
+          <li class="flex gap-2"><span class="text-gg-orange">✓</span>Walmart marketplace management</li>
+          <li class="flex gap-2"><span class="text-gg-orange">✓</span>Catalog &amp; bulk listing optimization</li>
+          <li class="flex gap-2"><span class="text-gg-orange">✓</span>Product launch strategy</li>
+        </ul>
+      </article>
+
+      <!-- Gull Outreach -->
+      <article id="gull-outreach" class="gg-reveal bg-gg-surface border border-gg-border rounded-3xl p-8 scroll-mt-24">
+        <div class="w-12 h-12 rounded-xl bg-gg-outreach/10 border border-gg-outreach/30 flex items-center justify-center mb-5">
+          <span class="w-2.5 h-2.5 rounded-full bg-gg-outreach"></span>
+        </div>
+        <h3 class="text-xl font-bold mb-1">Gull Outreach</h3>
+        <p class="text-xs font-semibold text-gg-outreach uppercase tracking-wide mb-4">B2B Lead Generation &amp; Marketing</p>
+        <ul class="space-y-2.5 text-sm text-gg-muted">
+          <li class="flex gap-2"><span class="text-gg-outreach">✓</span>LinkedIn outreach &amp; lead generation</li>
+          <li class="flex gap-2"><span class="text-gg-outreach">✓</span>Cold email campaigns</li>
+          <li class="flex gap-2"><span class="text-gg-outreach">✓</span>Email list building &amp; verification</li>
+          <li class="flex gap-2"><span class="text-gg-outreach">✓</span>CRM setup &amp; management</li>
+          <li class="flex gap-2"><span class="text-gg-outreach">✓</span>Sales funnel automation</li>
+          <li class="flex gap-2"><span class="text-gg-outreach">✓</span>B2B digital marketing strategy</li>
+          <li class="flex gap-2"><span class="text-gg-outreach">✓</span>Market research &amp; prospecting</li>
+          <li class="flex gap-2"><span class="text-gg-outreach">✓</span>Appointment setting</li>
+          <li class="flex gap-2"><span class="text-gg-outreach">✓</span>Outreach copywriting</li>
+          <li class="flex gap-2"><span class="text-gg-outreach">✓</span>B2B social media marketing</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ (kept short — anchor target used by the nav)
+     ============================================================ -->
+<section id="faq" class="py-16 sm:py-20 border-t border-gg-border">
+  <div class="site-container max-w-3xl">
+    <h2 class="text-3xl font-black tracking-tight text-center mb-10 gg-reveal">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      <details class="gg-reveal bg-gg-surface border border-gg-border rounded-2xl p-5 group">
+        <summary class="cursor-pointer font-semibold list-none flex justify-between items-center">
+          Can I hire just one Gull brand, or does it have to be all three?
+          <span class="text-gg-orange group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="text-sm text-gg-muted mt-3 leading-relaxed">
+          Either — most clients start with one (usually Gull Commerce for Amazon) and
+          add Gull Web or Gull Outreach once that channel is running well.
+        </p>
+      </details>
+      <details class="gg-reveal bg-gg-surface border border-gg-border rounded-2xl p-5 group">
+        <summary class="cursor-pointer font-semibold list-none flex justify-between items-center">
+          How fast can we get started?
+          <span class="text-gg-orange group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="text-sm text-gg-muted mt-3 leading-relaxed">
+          A free audit call is typically scheduled within 48 hours, with a proposal to follow.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================================================
+     FOOTER — Samsung-style organized multi-column grid
+     ============================================================ -->
+<footer id="contact" class="gg-footer">
+  <div class="site-container">
+    <div class="gg-footer-columns">
+      <div class="gg-footer-col">
+        <h5 class="text-gg-web">Gull Web</h5>
+        <a href="#gull-web">Website Development</a>
+        <a href="#gull-web">E-commerce Builds</a>
+        <a href="#gull-web">App Development</a>
+        <a href="#gull-web">UI/UX Design</a>
+        <a href="#gull-web">SEO &amp; Speed</a>
+      </div>
+      <div class="gg-footer-col">
+        <h5 class="text-gg-orange">Gull Commerce</h5>
+        <a href="#gull-commerce">Amazon Management</a>
+        <a href="#gull-commerce">PPC &amp; Ad Campaigns</a>
+        <a href="#gull-commerce">Listing Optimization</a>
+        <a href="#gull-commerce">A+ Content Design</a>
+        <a href="#gull-commerce">Shopify &amp; Walmart</a>
+      </div>
+      <div class="gg-footer-col">
+        <h5 class="text-gg-outreach">Gull Outreach</h5>
+        <a href="#gull-outreach">LinkedIn Lead Gen</a>
+        <a href="#gull-outreach">Cold Email</a>
+        <a href="#gull-outreach">CRM Management</a>
+        <a href="#gull-outreach">Sales Automation</a>
+        <a href="#gull-outreach">Social Marketing</a>
+      </div>
+      <div class="gg-footer-col">
+        <h5>Company</h5>
+        <a href="#about">About Gull Group</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="#top">Careers</a>
+        <a href="#top">Case Studies</a>
+      </div>
+      <div class="gg-footer-col">
+        <h5>Get in touch</h5>
+        <span>Global | Remote</span>
+        <a href="mailto:hello@gullgroup.co">hello@gullgroup.co</a>
+        <a href="#contact">Book a call</a>
+        <a href="#contact">Request a proposal</a>
+      </div>
+    </div>
+
+    <div class="gg-footer-bottom">
+      <p class="text-xs text-gg-muted">© 2026 Gull Group. All rights reserved.</p>
+      <div class="gg-footer-legal">
+        <a href="#top">Privacy Policy</a>
+        <a href="#top">Terms of Service</a>
+      </div>
+      <div class="gg-social" aria-label="Social media links">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter / X">X</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="gg-top-btn" class="gg-top-btn" aria-label="Back to top" type="button">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+  </svg>
+</button>
+
+<script>
+    
+    /**
+ * Gull Group — site interactions.
+ * Plain, dependency-free JS: header mega-panel (click/touch to open),
+ * mobile full-screen menu with accordions, sticky header state,
+ * scroll-reveal, and a back-to-top control.
+ */
+(function () {
+  "use strict";
+
+  /* ---------------------------------------------------------------------
+   * 1. Desktop mega-panel — opens on click/touch (not hover-only), so it
+   *    works identically with mouse and touch input.
+   * ------------------------------------------------------------------- */
+  const panelToggle = document.getElementById("gg-panel-toggle");
+  const panel = document.getElementById("gg-panel");
+
+  function closePanel() {
+    if (!panel) return;
+    panel.classList.remove("is-open");
+    panelToggle?.setAttribute("aria-expanded", "false");
+  }
+
+  function openPanel() {
+    if (!panel) return;
+    panel.classList.add("is-open");
+    panelToggle?.setAttribute("aria-expanded", "true");
+  }
+
+  if (panelToggle && panel) {
+    panelToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const isOpen = panel.classList.contains("is-open");
+      isOpen ? closePanel() : openPanel();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!panel.contains(event.target) && !panelToggle.contains(event.target)) {
+        closePanel();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closePanel();
+    });
+  }
+
+  /* ---------------------------------------------------------------------
+   * 2. Mobile full-screen menu
+   * ------------------------------------------------------------------- */
+  const burger = document.getElementById("gg-burger");
+  const mobileMenu = document.getElementById("gg-mobile-menu");
+  const mobileClose = document.getElementById("gg-mobile-close");
+
+  function toggleMobileMenu(open) {
+    if (!mobileMenu) return;
+    mobileMenu.classList.toggle("is-open", open);
+    burger?.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+
+  burger?.addEventListener("click", () => toggleMobileMenu(true));
+  mobileClose?.addEventListener("click", () => toggleMobileMenu(false));
+
+  document.querySelectorAll(".gg-mobile-accordion-trigger").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const item = trigger.closest(".gg-mobile-accordion");
+      const wasOpen = item.classList.contains("is-open");
+      document
+        .querySelectorAll(".gg-mobile-accordion.is-open")
+        .forEach((open) => open !== item && open.classList.remove("is-open"));
+      item.classList.toggle("is-open", !wasOpen);
+    });
+  });
+
+  // Close the mobile menu automatically after tapping a real link
+  mobileMenu?.querySelectorAll("a[href]").forEach((link) => {
+    link.addEventListener("click", () => toggleMobileMenu(false));
+  });
+
+  /* ---------------------------------------------------------------------
+   * 3. Sticky header background once the page scrolls
+   * ------------------------------------------------------------------- */
+  const header = document.getElementById("gg-header");
+  function handleScroll() {
+    header?.classList.toggle("is-scrolled", window.scrollY > 8);
+
+    const topBtn = document.getElementById("gg-top-btn");
+    topBtn?.classList.toggle("is-visible", window.scrollY > 480);
+  }
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  handleScroll();
+
+  /* ---------------------------------------------------------------------
+   * 4. Back to top
+   * ------------------------------------------------------------------- */
+  document.getElementById("gg-top-btn")?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  /* ---------------------------------------------------------------------
+   * 5. Diagram nodes → smooth-scroll to the matching service section
+   * ------------------------------------------------------------------- */
+  document.querySelectorAll(".gg-node[data-target]").forEach((node) => {
+    node.addEventListener("click", () => {
+      const target = document.querySelector(node.getAttribute("data-target"));
+      target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    // keyboard support since nodes are <button>/<a> already, this is a no-op
+    // safety net for any div-based node markup added later.
+    node.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        node.click();
+      }
+    });
+  });
+
+  /* ---------------------------------------------------------------------
+   * 6. Scroll-reveal for sections marked .gg-reveal
+   * ------------------------------------------------------------------- */
+  const revealTargets = document.querySelectorAll(".gg-reveal");
+  if ("IntersectionObserver" in window && revealTargets.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
         });
-
-        capsBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            divsMenu.classList.remove('show');
-            capsMenu.classList.toggle('show');
-        });
-
-        window.addEventListener('click', () => {
-            divsMenu.classList.remove('show');
-            capsMenu.classList.remove('show');
-        });
-
-        function toggleModal() {
-            const modal = document.getElementById('contactModal');
-            modal.classList.toggle('hidden');
-            modal.classList.toggle('flex');
-        }
-
-        function selectTab(type) {
-            const cardWeb = document.getElementById('card-web');
-            const cardCom = document.getElementById('card-commerce');
-
-            if(type === 'web') {
-                cardWeb.className = "p-4 rounded-xl glass-card flex items-center justify-between cursor-pointer transition-all border border-cyanAccent/40 bg-cyanAccent/5";
-                cardCom.className = "p-4 rounded-xl glass-card flex items-center justify-between cursor-pointer transition-all border border-white/10";
-            } else {
-                cardCom.className = "p-4 rounded-xl glass-card flex items-center justify-between cursor-pointer transition-all border border-coralAccent/40 bg-coralAccent/5";
-                cardWeb.className = "p-4 rounded-xl glass-card flex items-center justify-between cursor-pointer transition-all border border-white/10";
-            }
-        }
+      },
+      { threshold: 0.15 }
+    );
+    revealTargets.forEach((el) => observer.observe(el));
+  } else {
+    revealTargets.forEach((el) => el.classList.add("is-visible"));
+  }
+})();
     </script>
 </body>
 </html>
