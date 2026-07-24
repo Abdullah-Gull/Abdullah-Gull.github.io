@@ -1,390 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gull Empire</title>
-  <style>
-    /* Reset & Fonts */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gull of Group Level Premium Design</title>
+    <!-- Use a premium, modern font from Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & BASIC STYLING --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-    body {
-      background-color: #0b0f0d;
-      color: #e2e8f0;
-      line-height: 1.6;
-      padding: 20px 0;
-    }
+        :root {
+            --bg-color: #010101; /* Deep, True Black */
+            --text-color: #f1f1f1; /* High Contrast White */
+            --accent-color: #ff5e3a; /* Main Highlight (CodiesHub orange vibe) */
+            --subtle-color: #777777; /* For labels and metadata */
+            --card-bg: #121212; /* Subtle card/panel background */
+            --transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
 
-    /* Header Navigation */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-    }
+        /* --- GLOBAL PREMIUM COMPONENTS --- */
+        .premium-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: transparent;
+            color: var(--text-color);
+            border: 2px solid var(--text-color);
+            padding: 18px 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: var(--transition);
+            overflow: hidden;
+            position: relative;
+        }
 
-    .logo {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #d4af37;
-      letter-spacing: 1px;
-    }
+        .premium-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--text-color);
+            transition: var(--transition);
+            z-index: -1;
+        }
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
+        .premium-btn:hover {
+            color: var(--bg-color);
+        }
 
-    nav a {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: #94a3b8;
-      transition: color 0.3s;
-    }
+        .premium-btn:hover::after {
+            left: 0;
+        }
 
-    nav a:hover {
-      color: #d4af37;
-    }
+        .accent {
+            color: var(--accent-color);
+        }
 
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 60px 0 40px;
-    }
+        /* --- HEADER --- */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 30px 0;
+        }
 
-    .sub-badge {
-      color: #d4af37;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      color: #d4af37;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
 
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: #94a3b8;
-      font-size: 0.95rem;
-    }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
 
-    .btn-primary {
-      background-color: #d4af37;
-      color: #0b0f0d;
-      padding: 12px 28px;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      display: inline-block;
-      transition: opacity 0.3s;
-    }
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
 
-    .btn-primary:hover {
-      opacity: 0.9;
-    }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
 
-    /* Stats Counter */
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      margin-top: 50px;
-    }
+        nav a:hover::after {
+            width: 100%;
+        }
 
-    .stat-item h3 {
-      font-size: 1.5rem;
-      color: #ffffff;
-      font-weight: 700;
-    }
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
 
-    .stat-item p {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #64748b;
-      margin-top: 2px;
-    }
+        /* Hero Left: Text & Call to Action */
+        .hero-left {
+            padding-right: 50px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
 
-    /* Section Header */
-    .section-title {
-      text-align: center;
-      margin: 80px 0 40px;
-    }
+        .hero-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--subtle-color);
+            display: block;
+            margin-bottom: 20px;
+            animation-delay: 0.2s;
+        }
 
-    .section-title .badge {
-      color: #d4af37;
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
+        .hero-h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+            animation-delay: 0.4s;
+        }
 
-    .section-title h2 {
-      font-size: 1.8rem;
-      color: #ffffff;
-      margin-top: 8px;
-    }
+        .hero-p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--subtle-color);
+            max-width: 550px;
+            margin-bottom: 50px;
+            animation-delay: 0.6s;
+        }
 
-    .section-title p {
-      color: #94a3b8;
-      font-size: 0.85rem;
-      max-width: 500px;
-      margin: 10px auto 0;
-    }
+        .hero-cta {
+            animation-delay: 0.8s;
+        }
 
-    /* Kingdoms Cards */
-    .kingdoms {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
+        /* Hero Right: Sophisticated Grid & Visuals */
+        .hero-right {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            height: 100%;
+            padding: 50px;
+            opacity: 0;
+            animation: fadeInRight 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
 
-    .card {
-      background: rgba(18, 26, 22, 0.6);
-      border: 1px solid #1e2923;
-      border-radius: 8px;
-      padding: 30px;
-      position: relative;
-    }
+        .hero-right::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 94, 58, 0.1) 100%);
+            z-index: -1;
+        }
 
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 25px;
-    }
+        .grid-item {
+            background-color: var(--card-bg);
+            border: 1px solid #1a1a1a;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
 
-    .kingdom-tag {
-      font-size: 0.65rem;
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+        .grid-item:hover {
+            border-color: var(--accent-color);
+            transform: scale(1.02);
+            z-index: 10;
+        }
 
-    .card-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-top: 4px;
-    }
+        /* Place individual items on the grid for complex look */
+        .grid-item-1 { grid-area: 1 / 1 / 4 / 6; } /* Top left box */
+        .grid-item-2 { grid-area: 2 / 7 / 6 / 13; } /* Large middle box */
+        .grid-item-3 { grid-area: 5 / 1 / 10 / 5; } /* Tall bottom-left box */
+        .grid-item-4 { grid-area: 7 / 6 / 11 / 10; } /* Small bottom box */
+        .grid-item-5 { grid-area: 8 / 11 / 11 / 13; } /* Very small box */
 
-    .web-title { color: #38bdf8; }
-    .commerce-title { color: #fb923c; }
-    .outreach-title { color: #818cf8; }
+        /* Inside content for grid items */
+        .grid-content {
+            padding: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    .card-subtitle {
-      font-size: 0.75rem;
-      color: #64748b;
-      margin-top: 2px;
-    }
+        .grid-num { font-size: 0.9rem; color: var(--subtle-color); font-weight: 300;}
+        .grid-text { font-size: 1.1rem; font-weight: 600; color: var(--text-color); margin-top: auto;}
 
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
+        /* Visual lines to add complexity like CodiesHub */
+        .visual-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: repeating-linear-gradient(90deg, #111 0px, #111 1px, transparent 1px, transparent 100px);
+            opacity: 0.4;
+            z-index: -2;
+        }
 
-    .dot-green { background-color: #34d399; }
-    .dot-orange { background-color: #fb923c; }
-    .dot-purple { background-color: #818cf8; }
+        /* --- BASIC KEYFRAME ANIMATIONS --- */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    /* Service Grid */
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px 40px;
-    }
+        @keyframes fadeInRight {
+            to {
+                opacity: 1;
+            }
+        }
 
-    .service-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.85rem;
-      color: #cbd5e1;
-    }
+        /* Staggered animation triggers using CSS delay */
+        .hero-left * {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
 
-    .service-item::before {
-      content: '•';
-      color: #d4af37;
-      font-size: 1.2rem;
-    }
+        /* --- RESPONSIVE DESIGN (High Level needs to be adaptive) --- */
+        @media (max-width: 1100px) {
+            .hero-h1 { font-size: 4rem; }
+            .hero-p { font-size: 1.1rem; }
+        }
 
-    /* Footer */
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 80px;
-      padding-top: 20px;
-      border-top: 1px solid #1e2923;
-      font-size: 0.75rem;
-      color: #64748b;
-    }
+        @media (max-width: 900px) {
+            .container { padding: 0 30px; }
+            .hero { grid-template-columns: 1fr; grid-template-rows: auto auto; height: auto; padding: 150px 0 100px; }
+            .hero-left { padding-right: 0; text-align: center; margin-bottom: 80px; }
+            .hero-p { margin: 0 auto 50px; }
+            .hero-h1 { font-size: 3rem; }
+            .hero-right { height: 600px; padding: 20px; }
+            nav ul { display: none; } /* Simplified mobile nav for this demo */
+        }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2rem; }
-      .services-grid { grid-template-columns: 1fr; }
-      .stats { gap: 30px; }
-    }
-  </style>
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- Header -->
     <header>
-      <div class="logo">Gull Empire</div>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Work</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
+        <div class="container header-content">
+            <div class="logo">CODISHUB<span class="accent">LEVEL</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#">Studio</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Innovations</a></li>
+                    <li><a href="#">Process</a></li>
+                    <li><a href="#">Journal</a></li>
+                </ul>
+            </nav>
+            <button class="premium-btn">Start Project</button>
+        </div>
     </header>
 
-    <!-- Hero Section -->
+    <div class="visual-lines"></div>
+
     <section class="hero">
-      <div class="sub-badge">👑 Founder & CEO — Gull Empire</div>
-      <h1>One Empire.<br>Three Kingdoms.</h1>
-      <p>Website Development, Amazon & E-commerce, and B2B Outreach engineered under one brand, one vision, one founder.</p>
-      <a href="#" class="btn-primary">Explore Services →</a>
-
-      <!-- Stats -->
-      <div class="stats">
-        <div class="stat-item">
-          <h3>03</h3>
-          <p>Divisions</p>
+        <div class="container hero-left">
+            <span class="hero-label">Strategic Digital Experience</span>
+            <h1 class="hero-h1">Building the <span class="accent">Architecture</span> of the Future.</h1>
+            <p class="hero-p">We design, engineering, and elevate high-impact digital products. Turning complex ideas into intuitive solutions.</p>
+            <div class="hero-cta">
+                <button class="premium-btn">Explore Innovations <span class="accent">→</span></button>
+            </div>
         </div>
-        <div class="stat-item">
-          <h3>25+</h3>
-          <p>Services</p>
+        <div class="hero-right">
+            <!-- These grid boxes can hold complex graphics or simple interactive elements -->
+            <div class="grid-item grid-item-1">
+                <div class="grid-content">
+                    <span class="grid-num">/01</span>
+                    <h3 class="grid-text">UX Architecture</h3>
+                </div>
+            </div>
+            <div class="grid-item grid-item-2">
+                <!-- Large central box for a main graphic/concept -->
+            </div>
+            <div class="grid-item grid-item-3">
+                <div class="grid-content">
+                    <span class="grid-num">/03</span>
+                    <h3 class="grid-text">Platform Engineering</h3>
+                </div>
+            </div>
+            <div class="grid-item grid-item-4">
+            </div>
+            <div class="grid-item grid-item-5">
+            </div>
         </div>
-        <div class="stat-item">
-          <h3>01</h3>
-          <p>Founder</p>
-        </div>
-      </div>
     </section>
-
-    <!-- Kingdoms Section -->
-    <section>
-      <div class="section-title">
-        <span class="badge">What We Offer</span>
-        <h2>The Three Kingdoms</h2>
-        <p>Every service under Gull Empire is organized into three focused divisions, each led by its own team.</p>
-      </div>
-
-      <div class="kingdoms">
-        <!-- Kingdom 1 -->
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <span class="kingdom-tag">Kingdom 01</span>
-              <h3 class="card-title web-title">Gull Web</h3>
-              <p class="card-subtitle">Websites & Product Development</p>
-            </div>
-            <span class="status-dot dot-green"></span>
-          </div>
-          <div class="services-grid">
-            <div class="service-item">Website Design & Development</div>
-            <div class="service-item">E-commerce Websites (Shopify/WooCommerce)</div>
-            <div class="service-item">Landing Pages & Sales Funnels</div>
-            <div class="service-item">Web & Mobile App Development</div>
-            <div class="service-item">UI/UX Design</div>
-            <div class="service-item">WordPress Development</div>
-            <div class="service-item">Custom Web Applications</div>
-            <div class="service-item">API Integration & Automation</div>
-            <div class="service-item">Website Speed & SEO Optimization</div>
-            <div class="service-item">Website Maintenance & Support</div>
-          </div>
-        </div>
-
-        <!-- Kingdom 2 -->
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <span class="kingdom-tag">Kingdom 02</span>
-              <h3 class="card-title commerce-title">Gull Commerce</h3>
-              <p class="card-subtitle">Amazon & E-commerce Ecosystem</p>
-            </div>
-            <span class="status-dot dot-orange"></span>
-          </div>
-          <div class="services-grid">
-            <div class="service-item">Amazon Listing Creation & Optimization</div>
-            <div class="service-item">Amazon SEO & Keyword Research</div>
-            <div class="service-item">Amazon PPC & Ad Campaigns</div>
-            <div class="service-item">Amazon Storefront & A+ Content Design</div>
-            <div class="service-item">Amazon Account Management</div>
-            <div class="service-item">FBA & Inventory Management</div>
-            <div class="service-item">Shopify Store Setup & Management</div>
-            <div class="service-item">Walmart Marketplace Management</div>
-            <div class="service-item">Catalog & Bulk Listing Optimization</div>
-            <div class="service-item">Product Launch Strategy</div>
-          </div>
-        </div>
-
-        <!-- Kingdom 3 -->
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <span class="kingdom-tag">Kingdom 03</span>
-              <h3 class="card-title outreach-title">Gull Outreach</h3>
-              <p class="card-subtitle">B2B Lead Generation & Marketing</p>
-            </div>
-            <span class="status-dot dot-purple"></span>
-          </div>
-          <div class="services-grid">
-            <div class="service-item">LinkedIn Outreach & Lead Generation</div>
-            <div class="service-item">Cold Email Campaigns</div>
-            <div class="service-item">Email List Building & Verification</div>
-            <div class="service-item">CRM Setup & Management</div>
-            <div class="service-item">Sales Funnel Automation</div>
-            <div class="service-item">B2B Digital Marketing Strategy</div>
-            <div class="service-item">Market Research & Prospecting</div>
-            <div class="service-item">Appointment Setting</div>
-            <div class="service-item">Outreach Copywriting</div>
-            <div class="service-item">B2B Social Media Marketing</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="logo">GULL EMPIRE</div>
-      <div>© All Rights Reserved</div>
-    </footer>
-  </div>
 
 </body>
 </html>
