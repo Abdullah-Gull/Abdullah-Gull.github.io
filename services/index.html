@@ -1,350 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gull of Group Level Premium Design</title>
-    <!-- Use a premium, modern font from Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Gull Of Group | Next-Gen Enterprise Solutions</title>
     
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP & ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGold: '#D4AF37',
+                        brandDark: '#070908',
+                        brandCard: '#0f1411',
+                        brandBorder: '#1e2923',
+                    },
+                    fontFamily: {
+                        heading: ['Syne', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        /* --- RESET & BASIC STYLING --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Space Grotesk', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --bg-color: #010101; /* Deep, True Black */
-            --text-color: #f1f1f1; /* High Contrast White */
-            --accent-color: #ff5e3a; /* Main Highlight (CodiesHub orange vibe) */
-            --subtle-color: #777777; /* For labels and metadata */
-            --card-bg: #121212; /* Subtle card/panel background */
-            --transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
+            background-color: #070908;
+            color: #E2E8F0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            cursor: none; /* Custom Cursor enabled */
+        }
+        
+        /* Grid Background Effect */
+        .bg-grid-pattern {
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, rgba(212, 175, 55, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 50px;
-        }
-
-        /* --- GLOBAL PREMIUM COMPONENTS --- */
-        .premium-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background-color: transparent;
-            color: var(--text-color);
-            border: 2px solid var(--text-color);
-            padding: 18px 40px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            cursor: pointer;
-            transition: var(--transition);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .premium-btn::after {
-            content: '';
+        /* Ambient Glow */
+        .glow-orb {
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: var(--text-color);
-            transition: var(--transition);
-            z-index: -1;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
-        .premium-btn:hover {
-            color: var(--bg-color);
+        /* Glassmorphic Card */
+        .glass-card {
+            background: rgba(15, 20, 17, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
         }
-
-        .premium-btn:hover::after {
-            left: 0;
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
         }
-
-        .accent {
-            color: var(--accent-color);
-        }
-
-        /* --- HEADER --- */
-        header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 30px 0;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-size: 0.95rem;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0%;
-            height: 2px;
-            background-color: var(--accent-color);
-            bottom: -5px;
-            left: 0;
-            transition: var(--transition);
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Hero Left: Text & Call to Action */
-        .hero-left {
-            padding-right: 50px;
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-        }
-
-        .hero-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--subtle-color);
-            display: block;
-            margin-bottom: 20px;
-            animation-delay: 0.2s;
-        }
-
-        .hero-h1 {
-            font-size: 5rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 30px;
-            letter-spacing: -2px;
-            animation-delay: 0.4s;
-        }
-
-        .hero-p {
-            font-size: 1.25rem;
-            font-weight: 300;
-            color: var(--subtle-color);
-            max-width: 550px;
-            margin-bottom: 50px;
-            animation-delay: 0.6s;
-        }
-
-        .hero-cta {
-            animation-delay: 0.8s;
-        }
-
-        /* Hero Right: Sophisticated Grid & Visuals */
-        .hero-right {
-            position: relative;
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: repeat(10, 1fr);
-            height: 100%;
-            padding: 50px;
-            opacity: 0;
-            animation: fadeInRight 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-        }
-
-        .hero-right::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 94, 58, 0.1) 100%);
-            z-index: -1;
-        }
-
-        .grid-item {
-            background-color: var(--card-bg);
-            border: 1px solid #1a1a1a;
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .grid-item:hover {
-            border-color: var(--accent-color);
-            transform: scale(1.02);
-            z-index: 10;
-        }
-
-        /* Place individual items on the grid for complex look */
-        .grid-item-1 { grid-area: 1 / 1 / 4 / 6; } /* Top left box */
-        .grid-item-2 { grid-area: 2 / 7 / 6 / 13; } /* Large middle box */
-        .grid-item-3 { grid-area: 5 / 1 / 10 / 5; } /* Tall bottom-left box */
-        .grid-item-4 { grid-area: 7 / 6 / 11 / 10; } /* Small bottom box */
-        .grid-item-5 { grid-area: 8 / 11 / 11 / 13; } /* Very small box */
-
-        /* Inside content for grid items */
-        .grid-content {
-            padding: 20px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .grid-num { font-size: 0.9rem; color: var(--subtle-color); font-weight: 300;}
-        .grid-text { font-size: 1.1rem; font-weight: 600; color: var(--text-color); margin-top: auto;}
-
-        /* Visual lines to add complexity like CodiesHub */
-        .visual-lines {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: repeating-linear-gradient(90deg, #111 0px, #111 1px, transparent 1px, transparent 100px);
-            opacity: 0.4;
-            z-index: -2;
-        }
-
-        /* --- BASIC KEYFRAME ANIMATIONS --- */
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Staggered animation triggers using CSS delay */
-        .hero-left * {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-        }
-
-        /* --- RESPONSIVE DESIGN (High Level needs to be adaptive) --- */
-        @media (max-width: 1100px) {
-            .hero-h1 { font-size: 4rem; }
-            .hero-p { font-size: 1.1rem; }
-        }
-
-        @media (max-width: 900px) {
-            .container { padding: 0 30px; }
-            .hero { grid-template-columns: 1fr; grid-template-rows: auto auto; height: auto; padding: 150px 0 100px; }
-            .hero-left { padding-right: 0; text-align: center; margin-bottom: 80px; }
-            .hero-p { margin: 0 auto 50px; }
-            .hero-h1 { font-size: 3rem; }
-            .hero-right { height: 600px; padding: 20px; }
-            nav ul { display: none; } /* Simplified mobile nav for this demo */
-        }
-
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden selection:bg-brandGold selection:text-brandDark">
 
-    <header>
-        <div class="container header-content">
-            <div class="logo">CODISHUB<span class="accent">LEVEL</span></div>
-            <nav>
-                <ul>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Innovations</a></li>
-                    <li><a href="#">Process</a></li>
-                    <li><a href="#">Journal</a></li>
-                </ul>
+    <!-- Custom Animated Cursor -->
+    <div id="cursor-dot" class="fixed w-3 h-3 bg-brandGold rounded-full pointer-events-none z-[9999] transition-transform duration-75 ease-out -translate-x-1/2 -translate-y-1/2"></div>
+    <div id="cursor-ring" class="fixed w-10 h-10 border border-brandGold/50 rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out -translate-x-1/2 -translate-y-1/2"></div>
+
+    <!-- Background Grid & Glows -->
+    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+    <div class="glow-orb -top-40 -left-40"></div>
+    <div class="glow-orb top-1/2 -right-40"></div>
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 px-6 lg:px-16 py-6 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass-card px-8 py-4 rounded-full">
+            <a href="#" class="font-heading text-2xl font-extrabold tracking-wider text-brandGold flex items-center gap-2">
+                <span class="inline-block w-3 h-3 bg-brandGold rounded-full animate-ping"></span>
+                GULL OF GROUP
+            </a>
+            
+            <nav class="hidden md:flex gap-8 text-xs uppercase tracking-widest text-slate-400 font-semibold">
+                <a href="#about" class="hover:text-brandGold transition-colors duration-300">Overview</a>
+                <a href="#kingdoms" class="hover:text-brandGold transition-colors duration-300">Kingdoms</a>
+                <a href="#stats" class="hover:text-brandGold transition-colors duration-300">Impact</a>
             </nav>
-            <button class="premium-btn">Start Project</button>
+
+            <a href="#contact" class="px-6 py-2.5 rounded-full bg-brandGold text-brandDark font-bold text-xs uppercase tracking-wider hover:bg-white transition-all duration-300 shadow-lg shadow-brandGold/20">
+                Contact HQ
+            </a>
         </div>
     </header>
 
-    <div class="visual-lines"></div>
+    <!-- Main Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 z-10">
+        <div class="max-w-5xl mx-auto text-center space-y-8">
+            
+            <div class="hero-anim inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brandGold/30 bg-brandGold/10 text-brandGold text-xs uppercase tracking-widest font-semibold">
+                👑 One Brand. Three Kingdoms. Infinite Scale.
+            </div>
 
-    <section class="hero">
-        <div class="container hero-left">
-            <span class="hero-label">Strategic Digital Experience</span>
-            <h1 class="hero-h1">Building the <span class="accent">Architecture</span> of the Future.</h1>
-            <p class="hero-p">We design, engineering, and elevate high-impact digital products. Turning complex ideas into intuitive solutions.</p>
-            <div class="hero-cta">
-                <button class="premium-btn">Explore Innovations <span class="accent">→</span></button>
+            <h1 class="hero-anim font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight tracking-tight">
+                Architecting <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGold via-amber-200 to-yellow-600">
+                    Digital Empires.
+                </span>
+            </h1>
+
+            <p class="hero-anim text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                <strong class="text-white font-medium">Gull Of Group</strong> unites Web Engineering, E-Commerce Infrastructure, and B2B Growth Engines under one unified corporate vision.
+            </p>
+
+            <div class="hero-anim flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                <a href="#kingdoms" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brandGold text-brandDark font-bold text-sm uppercase tracking-wider hover:scale-105 transition-all duration-300 shadow-xl shadow-brandGold/20">
+                    Explore Divisions ↓
+                </a>
+                <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-full border border-slate-700 hover:border-brandGold text-white font-medium text-sm tracking-wider transition-all duration-300">
+                    Corporate Vision
+                </a>
             </div>
-        </div>
-        <div class="hero-right">
-            <!-- These grid boxes can hold complex graphics or simple interactive elements -->
-            <div class="grid-item grid-item-1">
-                <div class="grid-content">
-                    <span class="grid-num">/01</span>
-                    <h3 class="grid-text">UX Architecture</h3>
+
+            <!-- Stats Bar -->
+            <div id="stats" class="hero-anim grid grid-cols-3 gap-6 pt-16 max-w-3xl mx-auto border-t border-slate-800/80">
+                <div>
+                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white">03</h2>
+                    <p class="text-xs uppercase tracking-widest text-slate-500 mt-1">Focused Divisions</p>
+                </div>
+                <div>
+                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brandGold">25+</h2>
+                    <p class="text-xs uppercase tracking-widest text-slate-500 mt-1">Enterprise Services</p>
+                </div>
+                <div>
+                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white">100%</h2>
+                    <p class="text-xs uppercase tracking-widest text-slate-500 mt-1">Synergy Engine</p>
                 </div>
             </div>
-            <div class="grid-item grid-item-2">
-                <!-- Large central box for a main graphic/concept -->
-            </div>
-            <div class="grid-item grid-item-3">
-                <div class="grid-content">
-                    <span class="grid-num">/03</span>
-                    <h3 class="grid-text">Platform Engineering</h3>
-                </div>
-            </div>
-            <div class="grid-item grid-item-4">
-            </div>
-            <div class="grid-item grid-item-5">
-            </div>
+
         </div>
     </section>
 
+    <!-- Three Kingdoms Cards Section -->
+    <section id="kingdoms" class="relative z-10 py-24 px-6 max-w-7xl mx-auto">
+        
+        <div class="text-center space-y-4 mb-20 section-title">
+            <span class="text-brandGold text-xs font-semibold uppercase tracking-widest">Structure & Capability</span>
+            <h2 class="font-heading text-4xl md:text-6xl font-extrabold text-white">The Three Kingdoms</h2>
+            <p class="text-slate-400 max-w-xl mx-auto text-sm">Organized into specialized divisions to deliver maximum authority and speed.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Kingdom 01 -->
+            <div class="kingdom-card glass-card p-8 rounded-3xl transition-all duration-500 group relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/10 rounded-full blur-2xl group-hover:bg-sky-500/20 transition-all"></div>
+                
+                <div class="flex justify-between items-start mb-8">
+                    <div>
+                        <span class="text-xs text-slate-500 font-mono tracking-widest uppercase">Kingdom 01</span>
+                        <h3 class="font-heading text-3xl font-bold text-sky-400 mt-1">Gull Web</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Software & Web Development</p>
+                    </div>
+                    <span class="w-3 h-3 rounded-full bg-sky-400 shadow-lg shadow-sky-400/50"></span>
+                </div>
+
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-center gap-3"><span class="text-sky-400">❖</span> Custom Web Applications</li>
+                    <li class="flex items-center gap-3"><span class="text-sky-400">❖</span> E-Commerce Stores (Shopify/Woo)</li>
+                    <li class="flex items-center gap-3"><span class="text-sky-400">❖</span> UI/UX & High-Converting Funnels</li>
+                    <li class="flex items-center gap-3"><span class="text-sky-400">❖</span> API Integration & Automation</li>
+                    <li class="flex items-center gap-3"><span class="text-sky-400">❖</span> Technical SEO & Speed Optimization</li>
+                </ul>
+            </div>
+
+            <!-- Kingdom 02 -->
+            <div class="kingdom-card glass-card p-8 rounded-3xl transition-all duration-500 group relative overflow-hidden border-brandGold/30">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-all"></div>
+                
+                <div class="flex justify-between items-start mb-8">
+                    <div>
+                        <span class="text-xs text-slate-500 font-mono tracking-widest uppercase">Kingdom 02</span>
+                        <h3 class="font-heading text-3xl font-bold text-amber-400 mt-1">Gull Commerce</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Amazon & Scale Ecosystem</p>
+                    </div>
+                    <span class="w-3 h-3 rounded-full bg-amber-400 shadow-lg shadow-amber-400/50"></span>
+                </div>
+
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-center gap-3"><span class="text-amber-400">❖</span> Amazon Listing Optimization & SEO</li>
+                    <li class="flex items-center gap-3"><span class="text-amber-400">❖</span> Full PPC & Advertising Management</li>
+                    <li class="flex items-center gap-3"><span class="text-amber-400">❖</span> Storefront & A+ Content Design</li>
+                    <li class="flex items-center gap-3"><span class="text-amber-400">❖</span> FBA Inventory & Operations</li>
+                    <li class="flex items-center gap-3"><span class="text-amber-400">❖</span> Multi-Channel Launch Strategy</li>
+                </ul>
+            </div>
+
+            <!-- Kingdom 03 -->
+            <div class="kingdom-card glass-card p-8 rounded-3xl transition-all duration-500 group relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all"></div>
+                
+                <div class="flex justify-between items-start mb-8">
+                    <div>
+                        <span class="text-xs text-slate-500 font-mono tracking-widest uppercase">Kingdom 03</span>
+                        <h3 class="font-heading text-3xl font-bold text-indigo-400 mt-1">Gull Outreach</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">B2B Growth & Lead Gen</p>
+                    </div>
+                    <span class="w-3 h-3 rounded-full bg-indigo-400 shadow-lg shadow-indigo-400/50"></span>
+                </div>
+
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-center gap-3"><span class="text-indigo-400">❖</span> LinkedIn Automated Outreach</li>
+                    <li class="flex items-center gap-3"><span class="text-indigo-400">❖</span> High-Deliverability Cold Email</li>
+                    <li class="flex items-center gap-3"><span class="text-indigo-400">❖</span> B2B Prospecting & Verification</li>
+                    <li class="flex items-center gap-3"><span class="text-indigo-400">❖</span> Sales Funnel & CRM Setup</li>
+                    <li class="flex items-center gap-3"><span class="text-indigo-400">❖</span> Appointment Setting Systems</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-slate-800/60 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-500">
+            <div class="font-heading text-lg font-bold text-brandGold tracking-wider">GULL OF GROUP</div>
+            <p>© All Rights Reserved. Engineered for Global Scale.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript For High-Level Interactive Magic -->
+    <script>
+        // 1. Custom Smooth Cursor Motion
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorRing = document.getElementById('cursor-ring');
+
+        window.addEventListener('mousemove', (e) => {
+            const { clientX: x, clientY: y } = e;
+            cursorDot.style.left = `${x}px`;
+            cursorDot.style.top = `${y}px`;
+            
+            cursorRing.animate({
+                left: `${x}px`,
+                top: `${y}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // 2. GSAP Animations on Load & Scroll
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Entrance
+        gsap.from(".hero-anim", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.15,
+            ease: "power3.out"
+        });
+
+        // Cards Scroll Animation
+        gsap.from(".kingdom-card", {
+            scrollTrigger: {
+                trigger: "#kingdoms",
+                start: "top 75%",
+            },
+            y: 80,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+    </script>
 </body>
 </html>
