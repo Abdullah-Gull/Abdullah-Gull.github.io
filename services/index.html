@@ -3,366 +3,388 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gull Group of Companies | Corporate Portal</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts & FontAwesome Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Gull Empire</title>
+  <style>
+    /* Reset & Fonts */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0b0f0d;
+      color: #e2e8f0;
+      line-height: 1.6;
+      padding: 20px 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #d4af37;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #94a3b8;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
+
+    .sub-badge {
+      color: #d4af37;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #d4af37;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background-color: #d4af37;
+      color: #0b0f0d;
+      padding: 12px 28px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-block;
+      transition: opacity 0.3s;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    /* Stats Counter */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 50px;
+    }
+
+    .stat-item h3 {
+      font-size: 1.5rem;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .stat-item p {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* Section Header */
+    .section-title {
+      text-align: center;
+      margin: 80px 0 40px;
+    }
+
+    .section-title .badge {
+      color: #d4af37;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      color: #94a3b8;
+      font-size: 0.85rem;
+      max-width: 500px;
+      margin: 10px auto 0;
+    }
+
+    /* Kingdoms Cards */
+    .kingdoms {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .card {
+      background: rgba(18, 26, 22, 0.6);
+      border: 1px solid #1e2923;
+      border-radius: 8px;
+      padding: 30px;
+      position: relative;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+
+    .kingdom-tag {
+      font-size: 0.65rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .web-title { color: #38bdf8; }
+    .commerce-title { color: #fb923c; }
+    .outreach-title { color: #818cf8; }
+
+    .card-subtitle {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .dot-green { background-color: #34d399; }
+    .dot-orange { background-color: #fb923c; }
+    .dot-purple { background-color: #818cf8; }
+
+    /* Service Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px 40px;
+    }
+
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+
+    .service-item::before {
+      content: '•';
+      color: #d4af37;
+      font-size: 1.2rem;
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 80px;
+      padding-top: 20px;
+      border-top: 1px solid #1e2923;
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .stats { gap: 30px; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Background Glow FX -->
-  <div class="bg-glow"></div>
-
-  <!-- Header / Navigation -->
-  <header class="navbar">
-    <div class="logo">
-      <span class="logo-accent">GULL</span> GROUP
-    </div>
-    <nav>
-      <a href="#about">Overview</a>
-      <a href="#structure">Structure</a>
-      <a href="#divisions">Divisions</a>
-      <a href="#contact" class="nav-btn">Contact Us</a>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero" id="about">
-    <div class="badge">A Multi-Disciplinary Enterprise</div>
-    <h1>Innovating Business Across <br><span class="gradient-text">Global Industries</span></h1>
-    <p class="hero-desc">
-      Gull Group operates across E-Commerce, Software Technologies, B2B Growth, and Digital Transformation—driving scalability for global brands.
-    </p>
-  </section>
-
-  <!-- Corporate Structure Diagram Banner Section -->
-  <section class="structure-section" id="structure">
-    <div class="section-title">
-      <h2>Group Architecture</h2>
-      <p>Our Operational Hierarchy & Strategic Divisions</p>
-    </div>
-    
-    <div class="banner-wrapper">
-      <!-- Direct image of your flowchart diagram -->
-      <img src="images/group-diagram.png" alt="Gull Group Organizational Chart" class="diagram-img">
-    </div>
-  </section>
-
-  <!-- Divisions Grid Section -->
-  <section class="divisions-section" id="divisions">
-    <div class="section-title">
-      <h2>Our Core Business Divisions</h2>
-      <p>Delivering Excellence Through Specialized Subsidiary Brands</p>
-    </div>
-
-    <div class="grid-container">
-      
-      <!-- Division Card 1: E-Commerce -->
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-cart-flatbed-suitcases"></i></div>
-        <h3>Gull E-Commerce Solutions</h3>
-        <p>Full-suite Amazon FBA management, PPC optimization, catalog architecture, and product launch strategy.</p>
-        <ul class="card-features">
-          <li><i class="fa-solid fa-check"></i> Amazon FBA Management</li>
-          <li><i class="fa-solid fa-check"></i> PPC Advertising</li>
-          <li><i class="fa-solid fa-check"></i> Listing Optimization</li>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">Gull Empire</div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
-        <a href="ecommerce.html" class="card-btn">Explore Division <i class="fa-solid fa-arrow-right"></i></a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="sub-badge">👑 Founder & CEO — Gull Empire</div>
+      <h1>One Empire.<br>Three Kingdoms.</h1>
+      <p>Website Development, Amazon & E-commerce, and B2B Outreach engineered under one brand, one vision, one founder.</p>
+      <a href="#" class="btn-primary">Explore Services →</a>
+
+      <!-- Stats -->
+      <div class="stats">
+        <div class="stat-item">
+          <h3>03</h3>
+          <p>Divisions</p>
+        </div>
+        <div class="stat-item">
+          <h3>25+</h3>
+          <p>Services</p>
+        </div>
+        <div class="stat-item">
+          <h3>01</h3>
+          <p>Founder</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kingdoms Section -->
+    <section>
+      <div class="section-title">
+        <span class="badge">What We Offer</span>
+        <h2>The Three Kingdoms</h2>
+        <p>Every service under Gull Empire is organized into three focused divisions, each led by its own team.</p>
       </div>
 
-      <!-- Division Card 2: Web & Tech -->
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-code"></i></div>
-        <h3>Gull Web & Tech Labs</h3>
-        <p>Custom web development, front-end architecture, headless CMS integrations, and cloud deployment solutions.</p>
-        <ul class="card-features">
-          <li><i class="fa-solid fa-check"></i> Front-End Development</li>
-          <li><i class="fa-solid fa-check"></i> GitHub & Cloud Hosting</li>
-          <li><i class="fa-solid fa-check"></i> Custom Admin Dashboards</li>
-        </ul>
-        <a href="web-dev.html" class="card-btn">Explore Division <i class="fa-solid fa-arrow-right"></i></a>
+      <div class="kingdoms">
+        <!-- Kingdom 1 -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <span class="kingdom-tag">Kingdom 01</span>
+              <h3 class="card-title web-title">Gull Web</h3>
+              <p class="card-subtitle">Websites & Product Development</p>
+            </div>
+            <span class="status-dot dot-green"></span>
+          </div>
+          <div class="services-grid">
+            <div class="service-item">Website Design & Development</div>
+            <div class="service-item">E-commerce Websites (Shopify/WooCommerce)</div>
+            <div class="service-item">Landing Pages & Sales Funnels</div>
+            <div class="service-item">Web & Mobile App Development</div>
+            <div class="service-item">UI/UX Design</div>
+            <div class="service-item">WordPress Development</div>
+            <div class="service-item">Custom Web Applications</div>
+            <div class="service-item">API Integration & Automation</div>
+            <div class="service-item">Website Speed & SEO Optimization</div>
+            <div class="service-item">Website Maintenance & Support</div>
+          </div>
+        </div>
+
+        <!-- Kingdom 2 -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <span class="kingdom-tag">Kingdom 02</span>
+              <h3 class="card-title commerce-title">Gull Commerce</h3>
+              <p class="card-subtitle">Amazon & E-commerce Ecosystem</p>
+            </div>
+            <span class="status-dot dot-orange"></span>
+          </div>
+          <div class="services-grid">
+            <div class="service-item">Amazon Listing Creation & Optimization</div>
+            <div class="service-item">Amazon SEO & Keyword Research</div>
+            <div class="service-item">Amazon PPC & Ad Campaigns</div>
+            <div class="service-item">Amazon Storefront & A+ Content Design</div>
+            <div class="service-item">Amazon Account Management</div>
+            <div class="service-item">FBA & Inventory Management</div>
+            <div class="service-item">Shopify Store Setup & Management</div>
+            <div class="service-item">Walmart Marketplace Management</div>
+            <div class="service-item">Catalog & Bulk Listing Optimization</div>
+            <div class="service-item">Product Launch Strategy</div>
+          </div>
+        </div>
+
+        <!-- Kingdom 3 -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <span class="kingdom-tag">Kingdom 03</span>
+              <h3 class="card-title outreach-title">Gull Outreach</h3>
+              <p class="card-subtitle">B2B Lead Generation & Marketing</p>
+            </div>
+            <span class="status-dot dot-purple"></span>
+          </div>
+          <div class="services-grid">
+            <div class="service-item">LinkedIn Outreach & Lead Generation</div>
+            <div class="service-item">Cold Email Campaigns</div>
+            <div class="service-item">Email List Building & Verification</div>
+            <div class="service-item">CRM Setup & Management</div>
+            <div class="service-item">Sales Funnel Automation</div>
+            <div class="service-item">B2B Digital Marketing Strategy</div>
+            <div class="service-item">Market Research & Prospecting</div>
+            <div class="service-item">Appointment Setting</div>
+            <div class="service-item">Outreach Copywriting</div>
+            <div class="service-item">B2B Social Media Marketing</div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Division Card 3: Marketing & Leads -->
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <h3>Gull Growth & Lead Gen</h3>
-        <p>Targeted B2B lead generation, market intelligence, multi-platform brand positioning, and enterprise outreach.</p>
-        <ul class="card-features">
-          <li><i class="fa-solid fa-check"></i> B2B Prospect Sourcing</li>
-          <li><i class="fa-solid fa-check"></i> Executive Brand Building</li>
-          <li><i class="fa-solid fa-check"></i> Data Verification</li>
-        </ul>
-        <a href="leads.html" class="card-btn">Explore Division <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
+    <!-- Footer -->
+    <footer>
+      <div class="logo">GULL EMPIRE</div>
+      <div>© All Rights Reserved</div>
+    </footer>
+  </div>
 
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer id="contact">
-    <div class="footer-content">
-      <div class="footer-logo"><span class="logo-accent">GULL</span> GROUP</div>
-      <p>© 2026 Gull Group of Companies. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <Style>
-  /* --- Root Variables (Color Palette & Fonts) --- */
-:root {
-  --bg-color: #0b0f19;
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --card-border: rgba(255, 255, 255, 0.08);
-  --primary-accent: #00f2fe;
-  --secondary-accent: #4facfe;
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
-  --font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  font-family: var(--font-family);
-  line-height: 1.6;
-  overflow-x: hidden;
-  position: relative;
-}
-
-/* Background Lighting Effect */
-.bg-glow {
-  position: absolute;
-  top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0, 242, 254, 0.15) 0%, rgba(11, 15, 25, 0) 70%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* --- Header / Navigation --- */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
-  background: rgba(11, 15, 25, 0.8);
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 1px solid var(--card-border);
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.logo-accent {
-  color: var(--primary-accent);
-}
-
-.navbar nav a {
-  color: var(--text-muted);
-  text-decoration: none;
-  margin-left: 25px;
-  font-size: 0.95rem;
-  transition: 0.3s ease;
-}
-
-.navbar nav a:hover {
-  color: var(--primary-accent);
-}
-
-.navbar nav .nav-btn {
-  background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
-  color: #000;
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-weight: 600;
-}
-
-/* --- Hero Section --- */
-.hero {
-  text-align: center;
-  padding: 80px 20px 40px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.badge {
-  display: inline-block;
-  padding: 6px 16px;
-  background: rgba(0, 242, 254, 0.1);
-  border: 1px solid rgba(0, 242, 254, 0.3);
-  color: var(--primary-accent);
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-desc {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  margin-top: 20px;
-}
-
-/* --- Group Structure Banner Section --- */
-.structure-section {
-  padding: 60px 8%;
-  text-align: center;
-}
-
-.section-title h2 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.section-title p {
-  color: var(--text-muted);
-  margin-bottom: 40px;
-}
-
-.banner-wrapper {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 20px;
-  padding: 20px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  display: inline-block;
-  width: 100%;
-  max-width: 1000px;
-}
-
-.diagram-img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  display: block;
-}
-
-/* --- Divisions Grid Section --- */
-.divisions-section {
-  padding: 80px 8%;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 16px;
-  padding: 35px 25px;
-  transition: all 0.4s ease;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  border-color: var(--primary-accent);
-  box-shadow: 0 15px 30px rgba(0, 242, 254, 0.15);
-}
-
-.card-icon {
-  font-size: 2rem;
-  color: var(--primary-accent);
-  margin-bottom: 20px;
-}
-
-.card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-
-.card p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-}
-
-.card-features {
-  list-style: none;
-  margin-bottom: 25px;
-}
-
-.card-features li {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.card-features li i {
-  color: var(--primary-accent);
-  margin-right: 8px;
-}
-
-.card-btn {
-  text-decoration: none;
-  color: var(--primary-accent);
-  font-weight: 600;
-  font-size: 0.95rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: 0.3s ease;
-}
-
-.card-btn:hover {
-  gap: 12px;
-}
-
-/* --- Footer --- */
-footer {
-  border-top: 1px solid var(--card-border);
-  padding: 40px 8%;
-  text-align: center;
-  margin-top: 60px;
-}
-
-.footer-content p {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  margin-top: 10px;
-}
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-  .hero h1 { font-size: 2.2rem; }
-  .navbar nav { display: none; } /* Can be converted to mobile drawer */
-}
-</style>
 </body>
 </html>
