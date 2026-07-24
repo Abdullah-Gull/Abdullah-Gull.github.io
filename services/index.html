@@ -11,18 +11,19 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primaryDark: '#0F172A',
-                        brandBlue: '#2563EB',
-                        brandCoral: '#F07563',
-                        softSage: '#4A6B5D',
-                        bgLight: '#F8FAFC',
+                        bgDark: '#0B1320',
+                        cardDark: 'rgba(255, 255, 255, 0.05)',
+                        cardBorder: 'rgba(255, 255, 255, 0.12)',
+                        cyanAccent: '#2DD4BF',
+                        blueAccent: '#3B82F6',
+                        coralAccent: '#FF7A59',
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
@@ -34,100 +35,122 @@
     </script>
 
     <style>
-        /* Modern Subtle Grid Pattern */
-        .bg-grid-pattern {
-            background-size: 60px 60px;
+        /* Deep Glassmorphic Dark Atmosphere Background */
+        body {
+            background-color: #080D1A;
             background-image: 
-                linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+                radial-gradient(circle at 15% 20%, rgba(45, 212, 191, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 85% 60%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 90%, rgba(255, 122, 89, 0.08) 0%, transparent 40%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 70px 70px, 70px 70px;
         }
 
-        /* Custom Dropdown Animation via CSS */
-        .dropdown-content {
+        /* Glassmorphic Dropdown Animation */
+        .dropdown-menu {
             display: none;
             opacity: 0;
-            transform: translateY(8px);
-            transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translateY(10px);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .dropdown-content.show {
+        .dropdown-menu.show {
             display: grid;
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Glass Panel Glow Effect */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(45, 212, 191, 0.3);
+        }
     </style>
 </head>
-<body class="bg-bgLight text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between bg-grid-pattern">
+<body class="text-slate-200 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-cyanAccent selection:text-slate-900">
 
-    <!-- Navbar / Umbrella Header -->
-    <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between relative">
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-[#080D1A]/75 backdrop-blur-xl border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             
-            <!-- Parent Logo -->
-            <a href="#" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-primaryDark text-white font-extrabold text-lg flex items-center justify-center shadow-md">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyanAccent to-blueAccent text-slate-950 font-extrabold text-lg flex items-center justify-center shadow-lg shadow-cyanAccent/20 group-hover:scale-105 transition-transform">
                     G
                 </div>
                 <div>
-                    <span class="font-extrabold text-xl text-slate-900 tracking-tight block leading-tight">Gull Of Group</span>
-                    <span class="text-[10px] font-mono text-brandBlue font-semibold uppercase tracking-wider">Holding Company</span>
+                    <span class="font-extrabold text-xl text-white tracking-tight block leading-tight">Gull Of Group</span>
+                    <span class="text-[10px] font-mono text-cyanAccent uppercase tracking-widest font-semibold">Holding Company</span>
                 </div>
             </a>
 
-            <!-- Dropdown Navigation Links -->
-            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-600">
+            <!-- Dropdown Navigation -->
+            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-300">
                 
-                <!-- Division Dropdown Toggle -->
+                <!-- Our Divisions Dropdown -->
                 <div class="relative">
-                    <button id="divisionsBtn" class="flex items-center gap-1.5 py-2 hover:text-brandBlue transition-colors focus:outline-none">
+                    <button id="divisionsBtn" class="flex items-center gap-1.5 py-2 hover:text-cyanAccent transition-colors focus:outline-none">
                         Our Divisions
-                        <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="w-3.5 h-3.5 text-cyanAccent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
 
-                    <!-- JavaScript Controlled Mega Dropdown -->
-                    <div id="divisionsMenu" class="dropdown-content absolute top-full left-0 w-[520px] bg-white border border-slate-200 rounded-2xl p-4 shadow-xl grid-cols-2 gap-3 z-50 mt-2">
+                    <!-- Dropdown Panel -->
+                    <div id="divisionsMenu" class="dropdown-menu absolute top-full left-0 w-[540px] glass-panel rounded-2xl p-4 shadow-2xl grid-cols-2 gap-3 z-50 mt-2">
                         
-                        <a href="#" class="p-3.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all">
-                            <span class="text-[10px] font-mono font-bold text-brandBlue block mb-0.5">ENGINEERING</span>
-                            <h4 class="font-bold text-slate-900 text-sm">Gull Web Studio</h4>
-                            <p class="text-[11px] text-slate-500 mt-1">Full-stack web architecture & enterprise UI/UX.</p>
+                        <a href="#" class="p-3.5 rounded-xl glass-card transition-all group">
+                            <span class="text-[10px] font-mono font-bold text-cyanAccent block mb-0.5">ENGINEERING</span>
+                            <h4 class="font-bold text-white text-sm group-hover:text-cyanAccent">Gull Web Studio</h4>
+                            <p class="text-[11px] text-slate-400 mt-1">Full-stack web architecture & responsive UI/UX.</p>
                         </a>
 
-                        <a href="#" class="p-3.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all">
-                            <span class="text-[10px] font-mono font-bold text-brandCoral block mb-0.5">COMMERCE</span>
-                            <h4 class="font-bold text-slate-900 text-sm">Gull Commerce</h4>
-                            <p class="text-[11px] text-slate-500 mt-1">Amazon store strategy & multi-channel scale.</p>
+                        <a href="#" class="p-3.5 rounded-xl glass-card transition-all group">
+                            <span class="text-[10px] font-mono font-bold text-coralAccent block mb-0.5">COMMERCE</span>
+                            <h4 class="font-bold text-white text-sm group-hover:text-coralAccent">Gull Commerce</h4>
+                            <p class="text-[11px] text-slate-400 mt-1">Amazon store scaling & strategy consulting.</p>
                         </a>
 
-                        <a href="#" class="p-3.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all col-span-2">
-                            <span class="text-[10px] font-mono font-bold text-softSage block mb-0.5">GROWTH ENGINE</span>
-                            <h4 class="font-bold text-slate-900 text-sm">Gull Digital Growth</h4>
-                            <p class="text-[11px] text-slate-500 mt-0.5">Cross-platform visibility, search optimization & client acquisition.</p>
+                        <a href="#" class="p-3.5 rounded-xl glass-card transition-all group col-span-2">
+                            <span class="text-[10px] font-mono font-bold text-blueAccent block mb-0.5">GROWTH ENGINE</span>
+                            <h4 class="font-bold text-white text-sm group-hover:text-blueAccent">Gull Digital Growth</h4>
+                            <p class="text-[11px] text-slate-400 mt-0.5">SEO, Schema markup, & global B2B digital footprint.</p>
                         </a>
 
                     </div>
                 </div>
 
-                <!-- Capabilities Dropdown Toggle -->
+                <!-- Capabilities Dropdown -->
                 <div class="relative">
-                    <button id="capabilitiesBtn" class="flex items-center gap-1.5 py-2 hover:text-brandBlue transition-colors focus:outline-none">
+                    <button id="capabilitiesBtn" class="flex items-center gap-1.5 py-2 hover:text-cyanAccent transition-colors focus:outline-none">
                         Capabilities
-                        <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="w-3.5 h-3.5 text-cyanAccent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
 
-                    <div id="capabilitiesMenu" class="dropdown-content absolute top-full left-0 w-[240px] bg-white border border-slate-200 rounded-xl p-2 shadow-xl flex-col space-y-1 z-50 mt-2">
-                        <a href="#" class="block p-2.5 rounded-lg hover:bg-slate-50 text-slate-700 font-medium text-xs">Custom Frontend Systems</a>
-                        <a href="#" class="block p-2.5 rounded-lg hover:bg-slate-50 text-slate-700 font-medium text-xs">E-Commerce Infrastructure</a>
-                        <a href="#" class="block p-2.5 rounded-lg hover:bg-slate-50 text-slate-700 font-medium text-xs">B2B Strategy & Outreach</a>
+                    <div id="capabilitiesMenu" class="dropdown-menu absolute top-full left-0 w-[240px] glass-panel rounded-xl p-2 shadow-2xl flex-col space-y-1 z-50 mt-2">
+                        <a href="#" class="block p-2.5 rounded-lg hover:bg-white/10 text-slate-300 font-medium text-xs">Custom Frontend Systems</a>
+                        <a href="#" class="block p-2.5 rounded-lg hover:bg-white/10 text-slate-300 font-medium text-xs">E-Commerce Infrastructure</a>
+                        <a href="#" class="block p-2.5 rounded-lg hover:bg-white/10 text-slate-300 font-medium text-xs">B2B Strategy & Outreach</a>
                     </div>
                 </div>
 
-                <a href="#" class="hover:text-brandBlue transition-colors">Ecosystem</a>
-                <a href="#" class="hover:text-brandBlue transition-colors">Governance</a>
+                <a href="#" class="hover:text-cyanAccent transition-colors">Ecosystem</a>
+                <a href="#" class="hover:text-cyanAccent transition-colors">Governance</a>
             </nav>
 
-            <!-- CTA -->
-            <button onclick="toggleContactModal()" class="px-5 py-2.5 rounded-xl bg-primaryDark hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md">
+            <!-- Call to Action -->
+            <button onclick="toggleModal()" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-blue-600/30">
                 Connect With HQ
             </button>
 
@@ -137,58 +160,58 @@
     <!-- Main Hero Section -->
     <main class="max-w-7xl mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
         
-        <!-- Hero Column Left -->
+        <!-- Hero Left Column -->
         <div class="lg:col-span-6 space-y-6">
             
-            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brandBlue bg-blue-50 px-3.5 py-1.5 rounded-lg border border-blue-100">
-                <span class="w-2 h-2 rounded-full bg-brandBlue animate-ping"></span>
+            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cyanAccent bg-cyanAccent/10 px-3.5 py-1.5 rounded-full border border-cyanAccent/20">
+                <span class="w-2 h-2 rounded-full bg-cyanAccent animate-pulse"></span>
                 Parent Umbrella Hub
             </div>
 
-            <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.15]">
+            <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12]">
                 Digital Engineering & Scale <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandBlue via-slate-900 to-brandCoral">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyanAccent via-blueAccent to-coralAccent">
                     Under One Group.
                 </span>
             </h1>
 
-            <p class="text-slate-600 text-base lg:text-lg leading-relaxed font-normal">
-                <strong>Gull Of Group</strong> serves as the central holding organization powering three specialized wings. We combine modern web architecture, e-commerce optimization, and digital strategy into one unified ecosystem.
+            <p class="text-slate-400 text-base lg:text-lg leading-relaxed font-light">
+                <strong class="text-white">Gull Of Group</strong> serves as the central holding organization powering three specialized wings. We combine modern web architecture, e-commerce optimization, and digital strategy into one unified ecosystem.
             </p>
 
             <div class="flex flex-wrap gap-4 pt-2">
-                <button onclick="document.getElementById('divisionsBtn').click()" class="px-7 py-3.5 rounded-xl bg-brandBlue hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-blue-500/20 transition-all">
+                <button onclick="document.getElementById('divisionsBtn').click()" class="px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-blue-600/30 transition-all">
                     Explore Wings
                 </button>
-                <a href="#" class="px-7 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold text-xs uppercase tracking-wider transition-all shadow-sm">
+                <a href="#" class="px-7 py-3.5 rounded-xl glass-card text-slate-300 hover:text-white font-bold text-xs uppercase tracking-wider transition-all">
                     Our Governance
                 </a>
             </div>
 
-            <!-- Active Wings Cards -->
-            <div class="pt-8 border-t border-slate-200">
-                <h3 class="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-4">
+            <!-- Operating Divisions -->
+            <div class="pt-8 border-t border-white/10">
+                <h3 class="text-xs font-extrabold uppercase tracking-widest text-slate-500 mb-4">
                     Autonomous Operating Divisions
                 </h3>
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     
-                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-all">
-                        <div class="w-2.5 h-2.5 rounded-full bg-brandBlue mb-2"></div>
-                        <h4 class="font-bold text-xs uppercase text-slate-900 mb-1">Gull Web</h4>
-                        <p class="text-[11px] text-slate-500">Frontend, HTML/CSS, APIs & Web Apps.</p>
+                    <div class="glass-card rounded-xl p-4 transition-all">
+                        <div class="w-2.5 h-2.5 rounded-full bg-cyanAccent mb-2"></div>
+                        <h4 class="font-bold text-xs uppercase text-white mb-1">Gull Web</h4>
+                        <p class="text-[11px] text-slate-400 leading-normal">Frontend, HTML/CSS, APIs & Web Apps.</p>
                     </div>
 
-                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-all">
-                        <div class="w-2.5 h-2.5 rounded-full bg-brandCoral mb-2"></div>
-                        <h4 class="font-bold text-xs uppercase text-slate-900 mb-1">Gull Commerce</h4>
-                        <p class="text-[11px] text-slate-500">Amazon scaling & store management.</p>
+                    <div class="glass-card rounded-xl p-4 transition-all">
+                        <div class="w-2.5 h-2.5 rounded-full bg-coralAccent mb-2"></div>
+                        <h4 class="font-bold text-xs uppercase text-white mb-1">Gull Commerce</h4>
+                        <p class="text-[11px] text-slate-400 leading-normal">Amazon scaling & store management.</p>
                     </div>
 
-                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-all">
-                        <div class="w-2.5 h-2.5 rounded-full bg-softSage mb-2"></div>
-                        <h4 class="font-bold text-xs uppercase text-slate-900 mb-1">Gull Growth</h4>
-                        <p class="text-[11px] text-slate-500">SEO, Schema, & B2B digital footprint.</p>
+                    <div class="glass-card rounded-xl p-4 transition-all">
+                        <div class="w-2.5 h-2.5 rounded-full bg-blueAccent mb-2"></div>
+                        <h4 class="font-bold text-xs uppercase text-white mb-1">Gull Growth</h4>
+                        <p class="text-[11px] text-slate-400 leading-normal">SEO, Schema & B2B digital footprint.</p>
                     </div>
 
                 </div>
@@ -196,45 +219,45 @@
 
         </div>
 
-        <!-- Interactive Visual Column Right -->
+        <!-- Glassmorphic Interactive Console -->
         <div class="lg:col-span-6 relative flex items-center justify-center">
             
-            <div class="w-full aspect-square max-w-[480px] bg-white border border-slate-200 rounded-3xl p-8 shadow-xl relative flex flex-col justify-between">
+            <div class="w-full aspect-square max-w-[480px] glass-panel rounded-3xl p-8 shadow-2xl relative flex flex-col justify-between overflow-hidden border border-white/15">
                 
-                <div class="flex justify-between items-center text-xs font-mono text-slate-400 border-b border-slate-100 pb-4">
+                <div class="flex justify-between items-center text-xs font-mono text-slate-400 border-b border-white/10 pb-4">
                     <span>GULL OF GROUP ARCHITECTURE</span>
-                    <span class="text-brandBlue font-bold">● ACTIVE</span>
+                    <span class="text-cyanAccent font-bold">● ACTIVE</span>
                 </div>
 
-                <!-- Division Switcher Box (Interactive JS) -->
+                <!-- Division Status Selector -->
                 <div class="my-auto space-y-4">
                     
-                    <div id="card-web" onclick="switchActiveTab('web')" class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-between cursor-pointer hover:border-brandBlue transition-all">
+                    <div id="card-web" onclick="selectTab('web')" class="p-4 rounded-xl glass-card flex items-center justify-between cursor-pointer transition-all border border-cyanAccent/40 bg-cyanAccent/5">
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-blue-100 text-brandBlue font-bold flex items-center justify-center text-xs">W</div>
+                            <div class="w-9 h-9 rounded-lg bg-cyanAccent/20 text-cyanAccent font-bold flex items-center justify-center text-xs">W</div>
                             <div>
-                                <h5 class="font-bold text-xs text-slate-900">Gull Web Studio</h5>
-                                <p class="text-[10px] text-slate-500">HTML5 / CSS3 / JavaScript / Responsive UI</p>
+                                <h5 class="font-bold text-xs text-white">Gull Web Studio</h5>
+                                <p class="text-[11px] text-slate-400 font-mono">HTML5 / CSS3 / JavaScript / Responsive UI</p>
                             </div>
                         </div>
-                        <span class="text-[10px] font-mono font-bold text-brandBlue">ONLINE</span>
+                        <span class="text-[10px] font-mono font-bold text-cyanAccent bg-cyanAccent/10 px-2 py-0.5 rounded border border-cyanAccent/20">ONLINE</span>
                     </div>
 
-                    <div id="card-commerce" onclick="switchActiveTab('commerce')" class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-between cursor-pointer hover:border-brandCoral transition-all">
+                    <div id="card-commerce" onclick="selectTab('commerce')" class="p-4 rounded-xl glass-card flex items-center justify-between cursor-pointer transition-all border border-white/10">
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-orange-100 text-brandCoral font-bold flex items-center justify-center text-xs">C</div>
+                            <div class="w-9 h-9 rounded-lg bg-coralAccent/20 text-coralAccent font-bold flex items-center justify-center text-xs">C</div>
                             <div>
-                                <h5 class="font-bold text-xs text-slate-900">Gull Commerce</h5>
-                                <p class="text-[10px] text-slate-500">Amazon Consulting & Scaling Strategy</p>
+                                <h5 class="font-bold text-xs text-white">Gull Commerce</h5>
+                                <p class="text-[11px] text-slate-400 font-mono">Amazon Consulting & Scaling Strategy</p>
                             </div>
                         </div>
-                        <span class="text-[10px] font-mono font-bold text-brandCoral">ONLINE</span>
+                        <span class="text-[10px] font-mono font-bold text-coralAccent bg-coralAccent/10 px-2 py-0.5 rounded border border-coralAccent/20">ONLINE</span>
                     </div>
 
                 </div>
 
-                <div class="pt-4 border-t border-slate-100 text-center">
-                    <span class="text-[11px] font-mono text-slate-400">❖ ALL DIVISIONS OPERATING UNDER ONE PARENT GOVERNANCE</span>
+                <div class="pt-4 border-t border-white/10 text-center">
+                    <span class="text-[11px] font-mono text-slate-400 tracking-wider">❖ ALL DIVISIONS OPERATING UNDER ONE PARENT GOVERNANCE</span>
                 </div>
 
             </div>
@@ -243,27 +266,27 @@
 
     </main>
 
-    <!-- Modal Form for Consultation (Pure JS Toggle) -->
-    <div id="contactModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 w-full max-w-md shadow-2xl relative">
-            <button onclick="toggleContactModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-sm">✕</button>
-            <h3 class="font-bold text-lg text-slate-900 mb-1">Connect With Gull Of Group</h3>
-            <p class="text-xs text-slate-500 mb-4">Select a division or consult with central corporate team.</p>
+    <!-- Modal Form -->
+    <div id="contactModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+        <div class="glass-panel rounded-2xl p-6 w-full max-w-md shadow-2xl relative border border-white/20">
+            <button onclick="toggleModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-sm">✕</button>
+            <h3 class="font-bold text-lg text-white mb-1">Connect With HQ</h3>
+            <p class="text-xs text-slate-400 mb-4">Select a division or consult with the central corporate team.</p>
 
-            <form class="space-y-3" onsubmit="event.preventDefault(); alert('Request sent to Gull Of Group HQ.'); toggleContactModal();">
+            <form class="space-y-3" onsubmit="event.preventDefault(); alert('Inquiry submitted to Gull Of Group HQ.'); toggleModal();">
                 <div>
-                    <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Your Name</label>
-                    <input type="text" required class="w-full px-3 py-2 border border-slate-200 rounded-lg text-xs focus:outline-none focus:border-brandBlue">
+                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Your Name</label>
+                    <input type="text" required class="w-full px-3 py-2 bg-slate-900/80 border border-white/10 rounded-lg text-xs text-white focus:outline-none focus:border-cyanAccent">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Division Interest</label>
-                    <select class="w-full px-3 py-2 border border-slate-200 rounded-lg text-xs focus:outline-none focus:border-brandBlue">
+                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Division Interest</label>
+                    <select class="w-full px-3 py-2 bg-slate-900/80 border border-white/10 rounded-lg text-xs text-white focus:outline-none focus:border-cyanAccent">
                         <option>General Parent Holding Inquiry</option>
                         <option>Gull Web Studio (Software/Web)</option>
                         <option>Gull Commerce (Amazon/E-Com)</option>
                     </select>
                 </div>
-                <button type="submit" class="w-full py-2.5 rounded-lg bg-brandBlue text-white font-bold text-xs uppercase tracking-wider mt-2 hover:bg-blue-700 transition-colors">
+                <button type="submit" class="w-full py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider mt-2 transition-colors">
                     Submit Request
                 </button>
             </form>
@@ -271,16 +294,15 @@
     </div>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-200 bg-white py-6 px-6 text-xs text-slate-500">
+    <footer class="border-t border-white/10 bg-[#080D1A]/90 py-6 px-6 text-xs text-slate-500">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="font-bold text-slate-900">Gull Of Group</div>
+            <div class="font-bold text-white">Gull Of Group</div>
             <div>© 2026 Gull Of Group. All Global Rights Reserved.</div>
         </div>
     </footer>
 
-    <!-- Pure JavaScript Functionality -->
+    <!-- Interactive JavaScript -->
     <script>
-        // Dropdown Navigation Handler
         const divsBtn = document.getElementById('divisionsBtn');
         const divsMenu = document.getElementById('divisionsMenu');
         const capsBtn = document.getElementById('capabilitiesBtn');
@@ -298,30 +320,27 @@
             capsMenu.classList.toggle('show');
         });
 
-        // Close dropdowns on outside click
         window.addEventListener('click', () => {
             divsMenu.classList.remove('show');
             capsMenu.classList.remove('show');
         });
 
-        // Modal Handler
-        function toggleContactModal() {
+        function toggleModal() {
             const modal = document.getElementById('contactModal');
             modal.classList.toggle('hidden');
             modal.classList.toggle('flex');
         }
 
-        // Interactive Tab Selector
-        function switchActiveTab(type) {
+        function selectTab(type) {
             const cardWeb = document.getElementById('card-web');
             const cardCom = document.getElementById('card-commerce');
 
             if(type === 'web') {
-                cardWeb.classList.add('border-brandBlue', 'bg-blue-50/50');
-                cardCom.classList.remove('border-brandCoral', 'bg-orange-50/50');
+                cardWeb.className = "p-4 rounded-xl glass-card flex items-center justify-between cursor-pointer transition-all border border-cyanAccent/40 bg-cyanAccent/5";
+                cardCom.className = "p-4 rounded-xl glass-card flex items-center justify-between cursor-pointer transition-all border border-white/10";
             } else {
-                cardCom.classList.add('border-brandCoral', 'bg-orange-50/50');
-                cardWeb.classList.remove('border-brandBlue', 'bg-blue-50/50');
+                cardCom.className = "p-4 rounded-xl glass-card flex items-center justify-between cursor-pointer transition-all border border-coralAccent/40 bg-coralAccent/5";
+                cardWeb.className = "p-4 rounded-xl glass-card flex items-center justify-between cursor-pointer transition-all border border-white/10";
             }
         }
     </script>
