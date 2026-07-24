@@ -1,35 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gull Of Group | Next-Gen Enterprise Solutions</title>
-    
+    <title>Gull Of Group - Enterprise AI Solutions</title>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- GSAP & ScrollTrigger CDN -->
+
+    <!-- GSAP for Smooth Entrance Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
-    <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brandGold: '#D4AF37',
-                        brandDark: '#070908',
-                        brandCard: '#0f1411',
-                        brandBorder: '#1e2923',
+                        coral: {
+                            500: '#F07563',
+                            600: '#E05F4C',
+                        },
+                        sage: {
+                            500: '#4A6B5D',
+                            600: '#3B574B',
+                        },
+                        lightBg: '#F9FAFB',
                     },
                     fontFamily: {
-                        heading: ['Syne', 'sans-serif'],
-                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
                     }
                 }
             }
@@ -37,250 +41,251 @@
     </script>
 
     <style>
-        body {
-            background-color: #070908;
-            color: #E2E8F0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            cursor: none; /* Custom Cursor enabled */
-        }
-        
-        /* Grid Background Effect */
-        .bg-grid-pattern {
-            background-size: 50px 50px;
+        /* Minimalist Light Background Grid Line Effect */
+        .bg-subtle-grid {
+            background-size: 80px 80px;
             background-image: 
-                linear-gradient(to right, rgba(212, 175, 55, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+                linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
         }
 
-        /* Ambient Glow */
-        .glow-orb {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(0,0,0,0) 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        /* Glassmorphic Card */
-        .glass-card {
-            background: rgba(15, 20, 17, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-        }
-        .glass-card:hover {
-            border-color: rgba(212, 175, 55, 0.5);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+        /* Subtle Geometric Background Overlay */
+        .bg-geometric-lines {
+            background: radial-gradient(circle at 10% 20%, rgba(240, 117, 99, 0.03) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(74, 107, 93, 0.03) 0%, transparent 40%);
         }
     </style>
 </head>
-<body class="overflow-x-hidden selection:bg-brandGold selection:text-brandDark">
+<body class="bg-lightBg text-slate-800 font-sans antialiased overflow-x-hidden bg-subtle-grid bg-geometric-lines min-h-screen flex flex-col justify-between">
 
-    <!-- Custom Animated Cursor -->
-    <div id="cursor-dot" class="fixed w-3 h-3 bg-brandGold rounded-full pointer-events-none z-[9999] transition-transform duration-75 ease-out -translate-x-1/2 -translate-y-1/2"></div>
-    <div id="cursor-ring" class="fixed w-10 h-10 border border-brandGold/50 rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out -translate-x-1/2 -translate-y-1/2"></div>
-
-    <!-- Background Grid & Glows -->
-    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
-    <div class="glow-orb -top-40 -left-40"></div>
-    <div class="glow-orb top-1/2 -right-40"></div>
-
-    <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 w-full z-50 px-6 lg:px-16 py-6 transition-all duration-500" id="navbar">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass-card px-8 py-4 rounded-full">
-            <a href="#" class="font-heading text-2xl font-extrabold tracking-wider text-brandGold flex items-center gap-2">
-                <span class="inline-block w-3 h-3 bg-brandGold rounded-full animate-ping"></span>
-                GULL OF GROUP
+    <!-- Header / Navbar -->
+    <header class="w-full border-b border-slate-200/60 bg-white/70 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-coral-500 to-sage-500 flex items-center justify-center text-white font-bold text-sm shadow-md group-hover:scale-105 transition-transform">
+                    G
+                </div>
+                <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900">Gull Of Group</span>
             </a>
-            
-            <nav class="hidden md:flex gap-8 text-xs uppercase tracking-widest text-slate-400 font-semibold">
-                <a href="#about" class="hover:text-brandGold transition-colors duration-300">Overview</a>
-                <a href="#kingdoms" class="hover:text-brandGold transition-colors duration-300">Kingdoms</a>
-                <a href="#stats" class="hover:text-brandGold transition-colors duration-300">Impact</a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-600">
+                <a href="#" class="hover:text-coral-500 transition-colors">Services</a>
+                <a href="#" class="hover:text-coral-500 transition-colors">Technologies</a>
+                <a href="#" class="hover:text-coral-500 transition-colors">Industries</a>
+                <a href="#" class="text-coral-500 font-bold border-b-2 border-coral-500 pb-1">AI Development</a>
+                <a href="#" class="hover:text-coral-500 transition-colors">Company</a>
+                <a href="#" class="hover:text-coral-500 transition-colors">Case Studies</a>
             </nav>
 
-            <a href="#contact" class="px-6 py-2.5 rounded-full bg-brandGold text-brandDark font-bold text-xs uppercase tracking-wider hover:bg-white transition-all duration-300 shadow-lg shadow-brandGold/20">
-                Contact HQ
+            <!-- Call To Action Button -->
+            <a href="#" class="px-5 py-2.5 rounded-lg bg-coral-500 hover:bg-coral-600 text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-coral-500/20 transition-all hover:shadow-lg hover:-translate-y-0.5">
+                Book A Strategy Session
             </a>
         </div>
     </header>
 
-    <!-- Main Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 z-10">
-        <div class="max-w-5xl mx-auto text-center space-y-8">
+    <!-- Main Content Hero Section -->
+    <main class="max-w-7xl mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
+        
+        <!-- Left Content Column -->
+        <div class="lg:col-span-6 space-y-6">
             
-            <div class="hero-anim inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brandGold/30 bg-brandGold/10 text-brandGold text-xs uppercase tracking-widest font-semibold">
-                👑 One Brand. Three Kingdoms. Infinite Scale.
+            <div class="hero-el inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-coral-500 bg-coral-500/10 px-3 py-1.5 rounded-md border border-coral-500/20">
+                <span class="w-2 h-2 rounded-full bg-coral-500 animate-pulse"></span>
+                Internal Service Deep Dive
             </div>
 
-            <h1 class="hero-anim font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight tracking-tight">
-                Architecting <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGold via-amber-200 to-yellow-600">
-                    Digital Empires.
+            <h1 class="hero-el font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
+                Enterprise AI: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-sage-600 to-coral-500">
+                    Beyond the Basics
                 </span>
             </h1>
 
-            <p class="hero-anim text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-                <strong class="text-white font-medium">Gull Of Group</strong> unites Web Engineering, E-Commerce Infrastructure, and B2B Growth Engines under one unified corporate vision.
+            <p class="hero-el text-slate-600 text-base lg:text-lg leading-relaxed max-w-xl font-normal">
+                Move past the hype to deploy core, scalable AI solutions. We design, build, and integrate proprietary machine learning models and custom data pipelines that solve mission-critical business problems with production-grade efficiency.
             </p>
 
-            <div class="hero-anim flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-                <a href="#kingdoms" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brandGold text-brandDark font-bold text-sm uppercase tracking-wider hover:scale-105 transition-all duration-300 shadow-xl shadow-brandGold/20">
-                    Explore Divisions ↓
+            <!-- Action Buttons -->
+            <div class="hero-el flex flex-wrap gap-4 pt-2">
+                <a href="#" class="px-7 py-3.5 rounded-lg bg-coral-500 hover:bg-coral-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-coral-500/25 transition-all hover:-translate-y-0.5">
+                    Get Started
                 </a>
-                <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-full border border-slate-700 hover:border-brandGold text-white font-medium text-sm tracking-wider transition-all duration-300">
-                    Corporate Vision
+                <a href="#" class="px-7 py-3.5 rounded-lg bg-white border border-sage-500 text-sage-600 hover:bg-sage-50 font-bold text-xs uppercase tracking-wider transition-all hover:-translate-y-0.5 shadow-sm">
+                    Our Methodology
                 </a>
             </div>
 
-            <!-- Stats Bar -->
-            <div id="stats" class="hero-anim grid grid-cols-3 gap-6 pt-16 max-w-3xl mx-auto border-t border-slate-800/80">
-                <div>
-                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white">03</h2>
-                    <p class="text-xs uppercase tracking-widest text-slate-500 mt-1">Focused Divisions</p>
-                </div>
-                <div>
-                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brandGold">25+</h2>
-                    <p class="text-xs uppercase tracking-widest text-slate-500 mt-1">Enterprise Services</p>
-                </div>
-                <div>
-                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white">100%</h2>
-                    <p class="text-xs uppercase tracking-widest text-slate-500 mt-1">Synergy Engine</p>
+            <!-- Enterprise Capabilities Cards -->
+            <div class="pt-8">
+                <h3 class="hero-el text-xs font-extrabold uppercase tracking-widest text-slate-900 mb-4">
+                    Our Enterprise AI Capabilities
+                </h3>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    
+                    <!-- Capability 1 -->
+                    <div class="cap-card bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md hover:border-coral-500/50 transition-all group relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="p-2 rounded-lg bg-coral-500/10 text-coral-500">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
+                            </div>
+                            <span class="text-[10px] font-bold text-coral-500 bg-coral-50 px-1.5 py-0.5 rounded">01</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-slate-900 mb-1">Predictive Analytics</h4>
+                        <p class="text-[11px] text-slate-500 leading-snug">Leverage historical data to forecast trends and optimize resource allocation.</p>
+                    </div>
+
+                    <!-- Capability 2 -->
+                    <div class="cap-card bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md hover:border-coral-500/50 transition-all group relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="p-2 rounded-lg bg-coral-500/10 text-coral-500">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                            </div>
+                            <span class="text-[10px] font-bold text-coral-500 bg-coral-50 px-1.5 py-0.5 rounded">02</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-slate-900 mb-1">Natural Language</h4>
+                        <p class="text-[11px] text-slate-500 leading-snug">Automate content classification, sentiment analysis, and conversational tools.</p>
+                    </div>
+
+                    <!-- Capability 3 -->
+                    <div class="cap-card bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md hover:border-coral-500/50 transition-all group relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="p-2 rounded-lg bg-coral-500/10 text-coral-500">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            </div>
+                            <span class="text-[10px] font-bold text-coral-500 bg-coral-50 px-1.5 py-0.5 rounded">03</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-slate-900 mb-1">Computer Vision</h4>
+                        <p class="text-[11px] text-slate-500 leading-snug">Implement image recognition, defect detection, and spatial intelligence.</p>
+                    </div>
+
                 </div>
             </div>
 
         </div>
-    </section>
 
-    <!-- Three Kingdoms Cards Section -->
-    <section id="kingdoms" class="relative z-10 py-24 px-6 max-w-7xl mx-auto">
-        
-        <div class="text-center space-y-4 mb-20 section-title">
-            <span class="text-brandGold text-xs font-semibold uppercase tracking-widest">Structure & Capability</span>
-            <h2 class="font-heading text-4xl md:text-6xl font-extrabold text-white">The Three Kingdoms</h2>
-            <p class="text-slate-400 max-w-xl mx-auto text-sm">Organized into specialized divisions to deliver maximum authority and speed.</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Right Column: Interactive Neural Visual Globe -->
+        <div class="lg:col-span-6 relative flex items-center justify-center">
             
-            <!-- Kingdom 01 -->
-            <div class="kingdom-card glass-card p-8 rounded-3xl transition-all duration-500 group relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/10 rounded-full blur-2xl group-hover:bg-sky-500/20 transition-all"></div>
-                
-                <div class="flex justify-between items-start mb-8">
-                    <div>
-                        <span class="text-xs text-slate-500 font-mono tracking-widest uppercase">Kingdom 01</span>
-                        <h3 class="font-heading text-3xl font-bold text-sky-400 mt-1">Gull Web</h3>
-                        <p class="text-xs text-slate-400 mt-0.5">Software & Web Development</p>
-                    </div>
-                    <span class="w-3 h-3 rounded-full bg-sky-400 shadow-lg shadow-sky-400/50"></span>
+            <!-- Global Node Labels -->
+            <div class="absolute inset-0 pointer-events-none z-10 flex flex-col justify-between p-4 text-[11px] font-mono font-bold text-slate-400">
+                <div class="flex justify-between">
+                    <span>LONDON // 51.5074° N</span>
+                    <span>TOKYO // 35.6762° E</span>
                 </div>
-
-                <ul class="space-y-3 text-sm text-slate-300">
-                    <li class="flex items-center gap-3"><span class="text-sky-400">❖</span> Custom Web Applications</li>
-                    <li class="flex items-center gap-3"><span class="text-sky-400">❖</span> E-Commerce Stores (Shopify/Woo)</li>
-                    <li class="flex items-center gap-3"><span class="text-sky-400">❖</span> UI/UX & High-Converting Funnels</li>
-                    <li class="flex items-center gap-3"><span class="text-sky-400">❖</span> API Integration & Automation</li>
-                    <li class="flex items-center gap-3"><span class="text-sky-400">❖</span> Technical SEO & Speed Optimization</li>
-                </ul>
+                <div class="flex justify-between">
+                    <span>NEW YORK // 40.7128° W</span>
+                    <span>DUBAI // 25.2048° E</span>
+                </div>
             </div>
 
-            <!-- Kingdom 02 -->
-            <div class="kingdom-card glass-card p-8 rounded-3xl transition-all duration-500 group relative overflow-hidden border-brandGold/30">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-all"></div>
-                
-                <div class="flex justify-between items-start mb-8">
-                    <div>
-                        <span class="text-xs text-slate-500 font-mono tracking-widest uppercase">Kingdom 02</span>
-                        <h3 class="font-heading text-3xl font-bold text-amber-400 mt-1">Gull Commerce</h3>
-                        <p class="text-xs text-slate-400 mt-0.5">Amazon & Scale Ecosystem</p>
-                    </div>
-                    <span class="w-3 h-3 rounded-full bg-amber-400 shadow-lg shadow-amber-400/50"></span>
-                </div>
-
-                <ul class="space-y-3 text-sm text-slate-300">
-                    <li class="flex items-center gap-3"><span class="text-amber-400">❖</span> Amazon Listing Optimization & SEO</li>
-                    <li class="flex items-center gap-3"><span class="text-amber-400">❖</span> Full PPC & Advertising Management</li>
-                    <li class="flex items-center gap-3"><span class="text-amber-400">❖</span> Storefront & A+ Content Design</li>
-                    <li class="flex items-center gap-3"><span class="text-amber-400">❖</span> FBA Inventory & Operations</li>
-                    <li class="flex items-center gap-3"><span class="text-amber-400">❖</span> Multi-Channel Launch Strategy</li>
-                </ul>
-            </div>
-
-            <!-- Kingdom 03 -->
-            <div class="kingdom-card glass-card p-8 rounded-3xl transition-all duration-500 group relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all"></div>
-                
-                <div class="flex justify-between items-start mb-8">
-                    <div>
-                        <span class="text-xs text-slate-500 font-mono tracking-widest uppercase">Kingdom 03</span>
-                        <h3 class="font-heading text-3xl font-bold text-indigo-400 mt-1">Gull Outreach</h3>
-                        <p class="text-xs text-slate-400 mt-0.5">B2B Growth & Lead Gen</p>
-                    </div>
-                    <span class="w-3 h-3 rounded-full bg-indigo-400 shadow-lg shadow-indigo-400/50"></span>
-                </div>
-
-                <ul class="space-y-3 text-sm text-slate-300">
-                    <li class="flex items-center gap-3"><span class="text-indigo-400">❖</span> LinkedIn Automated Outreach</li>
-                    <li class="flex items-center gap-3"><span class="text-indigo-400">❖</span> High-Deliverability Cold Email</li>
-                    <li class="flex items-center gap-3"><span class="text-indigo-400">❖</span> B2B Prospecting & Verification</li>
-                    <li class="flex items-center gap-3"><span class="text-indigo-400">❖</span> Sales Funnel & CRM Setup</li>
-                    <li class="flex items-center gap-3"><span class="text-indigo-400">❖</span> Appointment Setting Systems</li>
-                </ul>
+            <!-- Canvas Graphic Container -->
+            <div class="w-full aspect-square max-w-[500px] relative rounded-full border border-slate-200/80 bg-white/40 backdrop-blur-sm shadow-xl flex items-center justify-center p-6">
+                <canvas id="neuralCanvas" class="w-full h-full"></canvas>
             </div>
 
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="relative z-10 border-t border-slate-800/60 py-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-500">
-            <div class="font-heading text-lg font-bold text-brandGold tracking-wider">GULL OF GROUP</div>
-            <p>© All Rights Reserved. Engineered for Global Scale.</p>
+    </main>
+
+    <!-- Footer Bar Widgets -->
+    <footer class="max-w-7xl mx-auto px-6 py-6 w-full flex items-center justify-between text-xs text-slate-500">
+        <div class="flex items-center gap-2 bg-sage-500/10 text-sage-600 px-3 py-1.5 rounded-full font-medium">
+            <svg class="w-4 h-4 text-sage-500" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16a1 1 0 001 1h2a1 1 0 100-2H9a1 1 0 00-1 1zM12 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            Powered by Enterprise AI Architecture
+        </div>
+
+        <div>
+            © Gull Of Group. All Rights Reserved.
         </div>
     </footer>
 
-    <!-- JavaScript For High-Level Interactive Magic -->
+    <!-- JavaScript for Neural Interactive Graphic & Animations -->
     <script>
-        // 1. Custom Smooth Cursor Motion
-        const cursorDot = document.getElementById('cursor-dot');
-        const cursorRing = document.getElementById('cursor-ring');
-
-        window.addEventListener('mousemove', (e) => {
-            const { clientX: x, clientY: y } = e;
-            cursorDot.style.left = `${x}px`;
-            cursorDot.style.top = `${y}px`;
-            
-            cursorRing.animate({
-                left: `${x}px`,
-                top: `${y}px`
-            }, { duration: 500, fill: "forwards" });
+        // Entrance GSAP Stagger Animations
+        gsap.from(".hero-el", {
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.12,
+            ease: "power2.out"
         });
 
-        // 2. GSAP Animations on Load & Scroll
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Hero Entrance
-        gsap.from(".hero-anim", {
-            y: 50,
+        gsap.from(".cap-card", {
+            y: 40,
             opacity: 0,
-            duration: 1,
+            duration: 0.8,
             stagger: 0.15,
-            ease: "power3.out"
+            delay: 0.5,
+            ease: "power2.out"
         });
 
-        // Cards Scroll Animation
-        gsap.from(".kingdom-card", {
-            scrollTrigger: {
-                trigger: "#kingdoms",
-                start: "top 75%",
-            },
-            y: 80,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.2,
-            ease: "power3.out"
-        });
+        // Neural Node Network Canvas Script
+        const canvas = document.getElementById('neuralCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const nodes = [];
+        const nodeCount = 28;
+
+        for (let i = 0; i < nodeCount; i++) {
+            nodes.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.8,
+                vy: (Math.random() - 0.5) * 0.8,
+                radius: Math.random() * 3 + 2
+            });
+        }
+
+        function drawNeuralNetwork() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Connect nodes with dynamic lines
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 110) {
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.strokeStyle = `rgba(74, 107, 93, ${1 - dist / 110})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            // Draw nodes
+            nodes.forEach(node => {
+                node.x += node.vx;
+                node.y += node.vy;
+
+                if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+                if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#F07563';
+                ctx.fill();
+            });
+
+            requestAnimationFrame(drawNeuralNetwork);
+        }
+
+        drawNeuralNetwork();
     </script>
 </body>
 </html>
