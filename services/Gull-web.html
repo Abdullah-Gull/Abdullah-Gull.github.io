@@ -1,674 +1,750 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gull Of Group - Enterprise AI Solutions</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gull Of Group - Enterprise AI Solutions</title>
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
 
-    <!-- GSAP for Smooth Entrance Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: { 300:'#c4b0f5', 400:'#a480ef', 500:'#8b3fe0', 600:'#7226c9', 700:'#5a1aa3', 800:'#3e1273', 900:'#240a4a' },
+          gold:  { 300:'#f3d9a4', 400:'#e8c079', 500:'#dba54e', 600:'#bb8635' },
+          ink:   { 900:'#050208', 800:'#0a0512', 700:'#0f0a1a', 600:'#170f26', 500:'#221833' },
+        },
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          heading: ['Plus Jakarta Sans', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        coral: { 500: '#F07563', 600: '#E05F4C' },
-                        sage: { 500: '#4A6B5D', 600: '#3B574B' },
-                        lightBg: '#F9FAFB',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Plus Jakarta Sans', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+<style>
+  :root{
+    --glow-core: rgba(139,63,224,0.55);
+    --glow-mid: rgba(90,26,163,0.28);
+  }
+  html{scroll-behavior:smooth;}
+  body{ background:#050208; }
 
-    <style>
-        .bg-subtle-grid {
-            background-size: 80px 80px;
-            background-image:
-                linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-        }
-        .bg-geometric-lines {
-            background: radial-gradient(circle at 10% 20%, rgba(240, 117, 99, 0.03) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 80%, rgba(74, 107, 93, 0.03) 0%, transparent 40%);
-        }
+  .bg-luxury-glow{
+    background:
+      radial-gradient(60% 55% at 50% 38%, var(--glow-core) 0%, var(--glow-mid) 38%, transparent 70%),
+      radial-gradient(90% 60% at 85% 0%, rgba(219,165,78,0.10) 0%, transparent 55%),
+      #050208;
+  }
+  .bg-grain{
+    background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
 
-        /* ===== Mega Menu ===== */
-        .nav-item { position: relative; }
-        .mega-panel {
-            position: absolute;
-            top: calc(100% + 14px);
-            left: 50%;
-            transform: translateX(-50%) translateY(8px);
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: opacity .22s ease, transform .22s ease, visibility .22s;
-            z-index: 60;
-        }
-        .nav-item.open .mega-panel {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-            transform: translateX(-50%) translateY(0);
-        }
-        .nav-trigger .chevron { transition: transform .2s ease; }
-        .nav-item.open .nav-trigger .chevron { transform: rotate(180deg); }
-        .nav-item.open .nav-trigger { color: #F07563; }
+  /* ===== Header / Mega menu (full width overlay) ===== */
+  header{ position:relative; z-index:70; }
 
-        .mega-col-title {
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            color: #94a3b8;
-            margin-bottom: .65rem;
-        }
-        .mega-link {
-            display: flex;
-            gap: .65rem;
-            align-items: flex-start;
-            padding: .5rem .6rem;
-            border-radius: .55rem;
-            transition: background .15s ease, transform .15s ease;
-        }
-        .mega-link:hover { background: rgba(240,117,99,0.07); transform: translateX(2px); }
-        .mega-link .mega-icon {
-            flex-shrink: 0;
-            width: 28px; height: 28px;
-            border-radius: 8px;
-            background: rgba(74,107,93,0.08);
-            color: #4A6B5D;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .mega-link:hover .mega-icon { background: #F07563; color: #fff; }
-        .mega-link-title { font-size: 12.5px; font-weight: 700; color: #0f172a; }
-        .mega-link-sub { font-size: 11px; color: #64748b; line-height: 1.3; margin-top: 1px; }
+  .nav-trigger{ position:relative; }
+  .nav-trigger .chevron{ transition: transform .2s ease; }
+  .nav-item.open .nav-trigger .chevron{ transform: rotate(180deg); }
+  .nav-item.open .nav-trigger{ color:#e8c079; }
+  .nav-trigger::after{
+    content:''; position:absolute; left:0; right:0; bottom:-2px; height:2px;
+    background:linear-gradient(90deg,#dba54e,#8b3fe0); transform:scaleX(0); transform-origin:left;
+    transition:transform .25s ease;
+  }
+  .nav-item.open .nav-trigger::after{ transform:scaleX(1); }
 
-        /* ===== Mobile Menu ===== */
-        #mobileOverlay {
-            transition: opacity .25s ease;
-        }
-        #mobileMenu {
-            transition: transform .3s cubic-bezier(.4,0,.2,1);
-        }
-        .mobile-acc-panel {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height .3s ease;
-        }
-        .mobile-acc-btn .chevron { transition: transform .25s ease; }
-        .mobile-acc-btn.open .chevron { transform: rotate(180deg); }
-        .mobile-acc-btn.open + .mobile-acc-panel { max-height: 600px; }
+  #megaScrim{
+    position:fixed; inset:0; top:0; z-index:60; background:rgba(3,1,8,.6); backdrop-filter:blur(3px);
+    opacity:0; pointer-events:none; transition:opacity .25s ease;
+  }
+  #megaScrim.show{ opacity:1; pointer-events:auto; }
 
-        @media (max-width: 1023px) {
-            .desktop-nav, .mega-panel { display: none !important; }
-        }
-    </style>
+  #megaContainer{
+    position:absolute; top:100%; left:0; width:100%;
+    background:rgba(10,5,18,0.98);
+    border-top:1px solid rgba(139,63,224,0.25);
+    box-shadow:0 40px 80px -30px rgba(0,0,0,.85);
+    opacity:0; visibility:hidden; pointer-events:none; transform:translateY(-10px);
+    transition:opacity .22s ease, transform .22s ease, visibility .22s;
+    z-index:65; max-height:82vh; overflow-y:auto;
+  }
+  #megaContainer.open{ opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
+  .mega-content{ display:none; }
+  .mega-content.active{ display:grid; }
+
+  .mega-col-title{
+    font-size:10px; font-weight:800; letter-spacing:.09em; text-transform:uppercase;
+    color:#8a7aa8; margin-bottom:.6rem;
+  }
+  .mega-row{
+    display:flex; align-items:center; gap:.55rem;
+    padding:.4rem .5rem; border-radius:.5rem; font-size:12.5px; font-weight:600;
+    color:#d8cfe8; transition:background .15s ease, color .15s ease, transform .15s ease;
+  }
+  .mega-row:hover{ background:rgba(139,63,224,0.14); color:#f3d9a4; transform:translateX(3px); }
+  .mega-row .dot{ width:4px; height:4px; border-radius:99px; background:#8b3fe0; flex-shrink:0; }
+
+  .mega-more{
+    display:inline-flex; align-items:center; gap:.3rem; font-size:11px; font-weight:800;
+    color:#a480ef; letter-spacing:.03em; margin-top:.4rem; padding:.3rem .5rem;
+  }
+  .mega-more:hover{ color:#e8c079; }
+
+  .mega-cta{
+    border-radius:1rem; padding:1.25rem;
+    background:linear-gradient(155deg,#5a1aa3,#8b3fe0 60%, #bb8635);
+    display:flex; flex-direction:column; justify-content:space-between; height:100%;
+    box-shadow:0 20px 40px -18px rgba(139,63,224,.6);
+  }
+
+  /* ===== Mobile drawer (advanced) ===== */
+  #mobileOverlay{ transition:opacity .25s ease; }
+  #mobileMenu{ transition:transform .35s cubic-bezier(.4,0,.2,1); }
+  .mobile-acc-panel{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .3s ease; }
+  .mobile-acc-panel > div{ overflow:hidden; }
+  .mobile-acc-btn.open + .mobile-acc-panel{ grid-template-rows:1fr; }
+  .mobile-acc-btn .chevron{ transition:transform .25s ease; }
+  .mobile-acc-btn.open .chevron{ transform:rotate(180deg); }
+  .mobile-acc-btn.open{ color:#e8c079; }
+  .mobile-icon{
+    width:30px; height:30px; border-radius:9px; flex-shrink:0;
+    background:rgba(139,63,224,.15); color:#c4b0f5;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+  }
+  @media (max-width:1023px){
+    .desktop-nav, #megaContainer, #megaScrim{ display:none !important; }
+  }
+</style>
 </head>
-<body class="bg-lightBg text-slate-800 font-sans antialiased overflow-x-hidden bg-subtle-grid bg-geometric-lines min-h-screen flex flex-col justify-between">
+<body class="text-slate-200 font-sans antialiased overflow-x-hidden bg-luxury-glow bg-grain min-h-screen flex flex-col justify-between">
 
-    <!-- Header / Navbar -->
-    <header class="w-full border-b border-slate-200/60 bg-white/70 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+<div id="megaScrim"></div>
 
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group shrink-0">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-coral-500 to-sage-500 flex items-center justify-center text-white font-bold text-sm shadow-md group-hover:scale-105 transition-transform">
-                    G
-                </div>
-                <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900">Gull Of Group</span>
-            </a>
+<!-- Header / Navbar -->
+<header class="w-full border-b border-brand-500/15 bg-[#0a0512]/75 backdrop-blur-md sticky top-0">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-            <!-- Desktop Navigation with Mega Menus -->
-            <nav class="desktop-nav hidden lg:flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-slate-600">
+    <a href="#" class="flex items-center gap-3 group shrink-0">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-gold-500 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/30 group-hover:scale-105 transition-transform">G</div>
+      <span class="font-heading font-extrabold text-xl tracking-tight text-white">Gull Of Group</span>
+    </a>
 
-                <!-- AI Development -->
-                <div class="nav-item">
-                    <button class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-coral-500 hover:bg-coral-500/5 transition-colors text-coral-500 border-b-2 border-coral-500">
-                        AI Development
-                        <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div class="mega-panel w-[640px] bg-white rounded-2xl shadow-2xl border border-slate-200/70 p-6 grid grid-cols-3 gap-6">
-                        <div>
-                            <div class="mega-col-title">AI Services</div>
-                            <a href="#" class="mega-link">
-                                <span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
-                                <span><span class="mega-link-title block">AI Development Services</span><span class="mega-link-sub block">Build ML and LLM based intelligent systems</span></span>
-                            </a>
-                            <a href="#" class="mega-link">
-                                <span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg></span>
-                                <span><span class="mega-link-title block">Voice and Chatbots</span><span class="mega-link-sub block">AI-powered conversations</span></span>
-                            </a>
-                            <a href="#" class="mega-link">
-                                <span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></span>
-                                <span><span class="mega-link-title block">Computer Vision</span><span class="mega-link-sub block">Image and video solutions</span></span>
-                            </a>
-                            <a href="#" class="mega-link">
-                                <span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></span>
-                                <span><span class="mega-link-title block">Generative AI</span><span class="mega-link-sub block">Custom LLM solutions</span></span>
-                            </a>
-                        </div>
-                        <div>
-                            <div class="mega-col-title">By Business Size</div>
-                            <a href="#" class="mega-link">
-                                <span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2M5 21H3m4-14h6m-6 4h6m-6 4h6"/></svg></span>
-                                <span><span class="mega-link-title block">SMB AI Solutions</span><span class="mega-link-sub block">Budget-friendly AI for growing businesses</span></span>
-                            </a>
-                            <a href="#" class="mega-link">
-                                <span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2M5 21H3m14-9h2m-2 4h2M9 7h1m-1 4h1m-1 4h1"/></svg></span>
-                                <span><span class="mega-link-title block">Enterprise AI Solutions</span><span class="mega-link-sub block">Strategic AI deployment at scale</span></span>
-                            </a>
-                            <div class="mega-col-title mt-5">Learn More</div>
-                            <a href="#" class="mega-link">
-                                <span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></span>
-                                <span><span class="mega-link-title block">AI Case Studies</span><span class="mega-link-sub block">See our AI projects in production</span></span>
-                            </a>
-                        </div>
-                        <div class="bg-gradient-to-br from-sage-600 to-sage-500 rounded-xl p-5 flex flex-col justify-between text-white">
-                            <div>
-                                <span class="text-[10px] font-bold uppercase tracking-widest text-white/70">Get Started</span>
-                                <p class="font-heading font-bold text-sm mt-2 leading-snug">Book a Free AI Consultation</p>
-                                <p class="text-[11px] text-white/70 mt-1 leading-snug">Discuss your AI project with our experts</p>
-                            </div>
-                            <a href="#" class="mt-4 inline-flex items-center gap-1 text-xs font-bold text-white">
-                                Schedule a Call
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav hidden lg:flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-slate-300">
+      <div class="nav-item">
+        <button data-panel="ai" class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gold-400 hover:bg-brand-500/10 transition-colors">
+          AI Development
+          <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+      <div class="nav-item">
+        <button data-panel="services" class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gold-400 hover:bg-brand-500/10 transition-colors">
+          Services
+          <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+      <div class="nav-item">
+        <button data-panel="tech" class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gold-400 hover:bg-brand-500/10 transition-colors">
+          Technologies
+          <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+      <div class="nav-item">
+        <button data-panel="industries" class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gold-400 hover:bg-brand-500/10 transition-colors">
+          Industries
+          <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+      <div class="nav-item">
+        <button data-panel="company" class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gold-400 hover:bg-brand-500/10 transition-colors">
+          Company
+          <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+      <a href="#" class="px-3 py-2 rounded-lg hover:text-gold-400 hover:bg-brand-500/10 transition-colors">Case Studies</a>
+    </nav>
 
-                <!-- Services -->
-                <div class="nav-item">
-                    <button class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-coral-500 hover:bg-coral-500/5 transition-colors">
-                        Services
-                        <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div class="mega-panel w-[640px] bg-white rounded-2xl shadow-2xl border border-slate-200/70 p-6 grid grid-cols-3 gap-6">
-                        <div>
-                            <div class="mega-col-title">How We Work</div>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 100-8 4 4 0 000 8zm6 3c0-1.1-.9-2-2-2H7a2 2 0 00-2 2"/></svg></span><span><span class="mega-link-title block">Dedicated Teams</span><span class="mega-link-sub block">Full-time engineers embedded in your team</span></span></a>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span><span><span class="mega-link-title block">Virtual CTO</span><span class="mega-link-sub block">Senior technical leadership on demand</span></span></a>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"/></svg></span><span><span class="mega-link-title block">Software Staffing</span><span class="mega-link-sub block">Scale your team with vetted engineers</span></span></a>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></span><span><span class="mega-link-title block">Project Management</span><span class="mega-link-sub block">End-to-end delivery management</span></span></a>
-                        </div>
-                        <div>
-                            <div class="mega-col-title">Development Areas</div>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m0 16v1"/></svg></span><span><span class="mega-link-title block">AI Development</span><span class="mega-link-sub block">Custom AI and ML solutions</span></span></a>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1.5 3 4 3h8c2.5 0 4-1 4-3V7"/></svg></span><span><span class="mega-link-title block">Data Engineering</span><span class="mega-link-sub block">Pipelines, warehouses and analytics</span></span></a>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 8l-4 4 4 4"/></svg></span><span><span class="mega-link-title block">Custom Software</span><span class="mega-link-sub block">Tailored software for your business</span></span></a>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m-4 4h6"/></svg></span><span><span class="mega-link-title block">Web App Development</span><span class="mega-link-sub block">Modern web applications</span></span></a>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a1 1 0 001-1V4a1 1 0 00-1-1H8a1 1 0 00-1 1v16a1 1 0 001 1z"/></svg></span><span><span class="mega-link-title block">Mobile App Development</span><span class="mega-link-sub block">iOS and Android apps</span></span></a>
-                        </div>
-                        <div class="bg-gradient-to-br from-coral-600 to-coral-500 rounded-xl p-5 flex flex-col justify-between text-white">
-                            <div>
-                                <span class="text-[10px] font-bold uppercase tracking-widest text-white/70">Get Started</span>
-                                <p class="font-heading font-bold text-sm mt-2 leading-snug">Build Intelligent Apps</p>
-                                <p class="text-[11px] text-white/70 mt-1 leading-snug">Talk to our engineering team today</p>
-                            </div>
-                            <a href="#" class="mt-4 inline-flex items-center gap-1 text-xs font-bold text-white">
-                                Talk to us
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <a href="#" class="hidden lg:inline-flex px-5 py-2.5 rounded-lg bg-gradient-to-r from-brand-500 to-brand-700 hover:from-brand-400 hover:to-brand-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-500/30 transition-all hover:-translate-y-0.5 shrink-0">
+      Book A Strategy Session
+    </a>
 
-                <!-- Technologies -->
-                <div class="nav-item">
-                    <button class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-coral-500 hover:bg-coral-500/5 transition-colors">
-                        Technologies
-                        <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div class="mega-panel w-[560px] bg-white rounded-2xl shadow-2xl border border-slate-200/70 p-6 grid grid-cols-2 gap-x-8 gap-y-5">
-                        <div>
-                            <div class="mega-col-title">AI Platforms</div>
-                            <div class="grid grid-cols-2 gap-x-2 text-[12px] font-semibold text-slate-700">
-                                <a href="#" class="py-1.5 hover:text-coral-500">OpenAI</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Anthropic</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Gemini</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">LLaMA</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Qwen</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Deepseek</a>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="mega-col-title">Languages &amp; Frameworks</div>
-                            <div class="grid grid-cols-2 gap-x-2 text-[12px] font-semibold text-slate-700">
-                                <a href="#" class="py-1.5 hover:text-coral-500">Python</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Golang</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Node</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Rust</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">React</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Next.js</a>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="mega-col-title">Mobile &amp; Game</div>
-                            <div class="grid grid-cols-2 gap-x-2 text-[12px] font-semibold text-slate-700">
-                                <a href="#" class="py-1.5 hover:text-coral-500">iOS</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Android</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">React Native</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Flutter</a>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="mega-col-title">Cloud Platforms</div>
-                            <div class="grid grid-cols-2 gap-x-2 text-[12px] font-semibold text-slate-700">
-                                <a href="#" class="py-1.5 hover:text-coral-500">AWS</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Azure</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">GCP</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Kubernetes</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <button id="hamburgerBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-brand-500/25 text-slate-200" aria-label="Open menu">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
 
-                <!-- Industries -->
-                <div class="nav-item">
-                    <button class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-coral-500 hover:bg-coral-500/5 transition-colors">
-                        Industries
-                        <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div class="mega-panel w-[560px] bg-white rounded-2xl shadow-2xl border border-slate-200/70 p-6 grid grid-cols-2 gap-6">
-                        <div>
-                            <div class="mega-col-title">Industries</div>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7a2 2 0 012-2h2a2 2 0 012 2v10"/></svg></span><span><span class="mega-link-title block">Fintech</span><span class="mega-link-sub block">Launch next-gen financial products</span></span></a>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/></svg></span><span><span class="mega-link-title block">Education</span><span class="mega-link-sub block">Transform student outcomes with AI</span></span></a>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"/></svg></span><span><span class="mega-link-title block">Enterprise Software</span><span class="mega-link-sub block">Unify your enterprise systems</span></span></a>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></span><span><span class="mega-link-title block">Healthcare Services</span><span class="mega-link-sub block">Improve clinical &amp; operational workflows</span></span></a>
-                        </div>
-                        <div>
-                            <div class="mega-col-title">Departments</div>
-                            <div class="grid grid-cols-2 gap-x-2 text-[12px] font-semibold text-slate-700">
-                                <a href="#" class="py-1.5 hover:text-coral-500">Customer Support</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Finance</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">HR</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Legal</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Marketing</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Operations</a>
-                                <a href="#" class="py-1.5 hover:text-coral-500">Procurement</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <!-- Full-width Mega Panel (single shared container, overlays page) -->
+  <div id="megaContainer">
+    <div class="max-w-7xl mx-auto px-6 py-9">
 
-                <!-- Company -->
-                <div class="nav-item">
-                    <button class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-coral-500 hover:bg-coral-500/5 transition-colors">
-                        Company
-                        <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div class="mega-panel w-[600px] bg-white rounded-2xl shadow-2xl border border-slate-200/70 p-6 grid grid-cols-3 gap-6">
-                        <div>
-                            <div class="mega-col-title">About Gull Of Group</div>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span><span><span class="mega-link-title block">About Us</span><span class="mega-link-sub block">Who we are</span></span></a>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/></svg></span><span><span class="mega-link-title block">Founder's Letter</span><span class="mega-link-sub block">What we believe</span></span></a>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></span><span><span class="mega-link-title block">Awards</span><span class="mega-link-sub block">Recognition and accolades</span></span></a>
-                        </div>
-                        <div>
-                            <div class="mega-col-title">Social Proof</div>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6h15M6 12h15M6 18h15M3 6h.01M3 12h.01M3 18h.01"/></svg></span><span><span class="mega-link-title block">Clients</span><span class="mega-link-sub block">Companies we've delivered for</span></span></a>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></span><span><span class="mega-link-title block">Case Studies</span><span class="mega-link-sub block">Results of our work</span></span></a>
-                            <div class="mega-col-title mt-5">Careers</div>
-                            <a href="#" class="mega-link"><span class="mega-icon"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87"/></svg></span><span><span class="mega-link-title block">Join Our Team</span><span class="mega-link-sub block">Explore open positions</span></span></a>
-                        </div>
-                        <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-5 flex flex-col justify-between text-white">
-                            <div>
-                                <span class="text-[10px] font-bold uppercase tracking-widest text-white/60">Get Started</span>
-                                <p class="font-heading font-bold text-sm mt-2 leading-snug">Discuss Your Project</p>
-                                <p class="text-[11px] text-white/60 mt-1 leading-snug">Talk to our team about your goals</p>
-                            </div>
-                            <a href="#" class="mt-4 inline-flex items-center gap-1 text-xs font-bold text-coral-400">
-                                Schedule a Call
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case Studies (simple link) -->
-                <a href="#" class="px-3 py-2 rounded-lg hover:text-coral-500 hover:bg-coral-500/5 transition-colors">Case Studies</a>
-            </nav>
-
-            <!-- Desktop CTA -->
-            <a href="#" class="hidden lg:inline-flex px-5 py-2.5 rounded-lg bg-coral-500 hover:bg-coral-600 text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-coral-500/20 transition-all hover:shadow-lg hover:-translate-y-0.5 shrink-0">
-                Book A Strategy Session
-            </a>
-
-            <!-- Mobile Hamburger -->
-            <button id="hamburgerBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-700" aria-label="Open menu">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            </button>
+      <!-- AI DEVELOPMENT -->
+      <div id="panel-ai" class="mega-content grid grid-cols-4 gap-8">
+        <div class="col-span-1">
+          <div class="mega-col-title">AI Services</div>
+          <a href="#" class="mega-row"><span class="dot"></span>AI Development Services</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Voice and Chatbots</a>
+          <a href="#" class="mega-row"><span class="dot"></span>AI Agents</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Computer Vision</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Generative AI</a>
+          <a href="#" class="mega-row"><span class="dot"></span>LLM Fine Tuning</a>
+          <a href="#" class="mega-row"><span class="dot"></span>NLP Development</a>
+          <a href="#" class="mega-row"><span class="dot"></span>MLOps</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Multi Modal AI</a>
+          <a href="#" class="mega-row"><span class="dot"></span>RAG Development</a>
         </div>
-    </header>
-
-    <!-- Mobile Overlay + Slide-in Menu -->
-    <div id="mobileOverlay" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[70] opacity-0 pointer-events-none lg:hidden"></div>
-
-    <aside id="mobileMenu" class="fixed top-0 right-0 h-full w-[86%] max-w-sm bg-white z-[80] shadow-2xl translate-x-full lg:hidden flex flex-col">
-        <div class="flex items-center justify-between px-5 py-4 border-b border-slate-200">
-            <div class="flex items-center gap-2.5">
-                <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-coral-500 to-sage-500 flex items-center justify-center text-white font-bold text-xs">G</div>
-                <span class="font-heading font-extrabold text-base tracking-tight text-slate-900">Gull Of Group</span>
-            </div>
-            <button id="closeMobileBtn" class="w-9 h-9 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600" aria-label="Close menu">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-            </button>
+        <div class="col-span-1">
+          <div class="mega-col-title">By Business Size</div>
+          <a href="#" class="mega-row"><span class="dot"></span>SMB AI Solutions</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Enterprise AI Solutions</a>
+          <div class="mega-col-title mt-6">Learn More</div>
+          <a href="#" class="mega-row"><span class="dot"></span>AI Case Studies</a>
+          <a href="#" class="mega-row"><span class="dot"></span>AI Blog &amp; Insights</a>
         </div>
-
-        <div class="flex-1 overflow-y-auto px-3 py-3">
-
-            <!-- AI Development -->
-            <div class="border-b border-slate-100">
-                <button class="mobile-acc-btn w-full flex items-center justify-between px-2.5 py-3.5 text-sm font-bold text-slate-900">
-                    AI Development
-                    <svg class="chevron w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="mobile-acc-panel pl-3 pb-2">
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">AI Development Services</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Voice and Chatbots</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Computer Vision</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Generative AI</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Enterprise AI Solutions</a>
-                </div>
-            </div>
-
-            <!-- Services -->
-            <div class="border-b border-slate-100">
-                <button class="mobile-acc-btn w-full flex items-center justify-between px-2.5 py-3.5 text-sm font-bold text-slate-900">
-                    Services
-                    <svg class="chevron w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="mobile-acc-panel pl-3 pb-2">
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Dedicated Teams</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Virtual CTO</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Web App Development</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Mobile App Development</a>
-                </div>
-            </div>
-
-            <!-- Technologies -->
-            <div class="border-b border-slate-100">
-                <button class="mobile-acc-btn w-full flex items-center justify-between px-2.5 py-3.5 text-sm font-bold text-slate-900">
-                    Technologies
-                    <svg class="chevron w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="mobile-acc-panel pl-3 pb-2">
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">OpenAI / Anthropic / Gemini</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Python / Node / React</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">iOS / Android / Flutter</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">AWS / Azure / GCP</a>
-                </div>
-            </div>
-
-            <!-- Industries -->
-            <div class="border-b border-slate-100">
-                <button class="mobile-acc-btn w-full flex items-center justify-between px-2.5 py-3.5 text-sm font-bold text-slate-900">
-                    Industries
-                    <svg class="chevron w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="mobile-acc-panel pl-3 pb-2">
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Fintech</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Education</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Enterprise Software</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Healthcare Services</a>
-                </div>
-            </div>
-
-            <!-- Company -->
-            <div class="border-b border-slate-100">
-                <button class="mobile-acc-btn w-full flex items-center justify-between px-2.5 py-3.5 text-sm font-bold text-slate-900">
-                    Company
-                    <svg class="chevron w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="mobile-acc-panel pl-3 pb-2">
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">About Us</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Founder's Letter</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Clients</a>
-                    <a href="#" class="block px-2.5 py-2 text-[13px] font-semibold text-slate-600">Join Our Team</a>
-                </div>
-            </div>
-
-            <a href="#" class="block px-2.5 py-3.5 text-sm font-bold text-slate-900 border-b border-slate-100">Case Studies</a>
+        <div class="col-span-1">
+          <div class="mega-col-title">AI Products</div>
+          <a href="#" class="mega-row">
+            <span class="dot"></span>SmartArticleBot
+            <svg class="w-3 h-3 ml-auto opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <p class="text-[11px] text-slate-500 px-2 mt-1 leading-snug">SEO content written and published on autopilot.</p>
         </div>
-
-        <div class="p-4 border-t border-slate-200">
-            <a href="#" class="block text-center px-5 py-3.5 rounded-lg bg-coral-500 text-white font-bold text-xs uppercase tracking-wider shadow-md">
-                Book A Strategy Session
-            </a>
+        <div class="mega-cta">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-white/70">Get Started</span>
+            <p class="font-heading font-bold text-sm mt-2 leading-snug text-white">Book a Free AI Consultation</p>
+            <p class="text-[11px] text-white/70 mt-1 leading-snug">Discuss your AI project with our experts</p>
+          </div>
+          <a href="#" class="mt-4 inline-flex items-center gap-1 text-xs font-bold text-white">
+            Schedule a Call
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
         </div>
-    </aside>
+      </div>
 
-    <!-- Main Content Hero Section -->
-    <main class="max-w-7xl mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
-
-        <!-- Left Content Column -->
-        <div class="lg:col-span-6 space-y-6">
-
-            <div class="hero-el inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-coral-500 bg-coral-500/10 px-3 py-1.5 rounded-md border border-coral-500/20">
-                <span class="w-2 h-2 rounded-full bg-coral-500 animate-pulse"></span>
-                Internal Service Deep Dive
-            </div>
-
-            <h1 class="hero-el font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
-                Enterprise AI: <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-sage-600 to-coral-500">
-                    Beyond the Basics
-                </span>
-            </h1>
-
-            <p class="hero-el text-slate-600 text-base lg:text-lg leading-relaxed max-w-xl font-normal">
-                Move past the hype to deploy core, scalable AI solutions. We design, build, and integrate proprietary machine learning models and custom data pipelines that solve mission-critical business problems with production-grade efficiency.
-            </p>
-
-            <div class="hero-el flex flex-wrap gap-4 pt-2">
-                <a href="#" class="px-7 py-3.5 rounded-lg bg-coral-500 hover:bg-coral-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-coral-500/25 transition-all hover:-translate-y-0.5">
-                    Get Started
-                </a>
-                <a href="#" class="px-7 py-3.5 rounded-lg bg-white border border-sage-500 text-sage-600 hover:bg-sage-50 font-bold text-xs uppercase tracking-wider transition-all hover:-translate-y-0.5 shadow-sm">
-                    Our Methodology
-                </a>
-            </div>
-
-            <div class="pt-8">
-                <h3 class="hero-el text-xs font-extrabold uppercase tracking-widest text-slate-900 mb-4">
-                    Our Enterprise AI Capabilities
-                </h3>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-
-                    <div class="cap-card bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md hover:border-coral-500/50 transition-all group relative overflow-hidden">
-                        <div class="flex justify-between items-start mb-3">
-                            <div class="p-2 rounded-lg bg-coral-500/10 text-coral-500">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
-                            </div>
-                            <span class="text-[10px] font-bold text-coral-500 bg-coral-50 px-1.5 py-0.5 rounded">01</span>
-                        </div>
-                        <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-slate-900 mb-1">Predictive Analytics</h4>
-                        <p class="text-[11px] text-slate-500 leading-snug">Leverage historical data to forecast trends and optimize resource allocation.</p>
-                    </div>
-
-                    <div class="cap-card bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md hover:border-coral-500/50 transition-all group relative overflow-hidden">
-                        <div class="flex justify-between items-start mb-3">
-                            <div class="p-2 rounded-lg bg-coral-500/10 text-coral-500">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-                            </div>
-                            <span class="text-[10px] font-bold text-coral-500 bg-coral-50 px-1.5 py-0.5 rounded">02</span>
-                        </div>
-                        <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-slate-900 mb-1">Natural Language</h4>
-                        <p class="text-[11px] text-slate-500 leading-snug">Automate content classification, sentiment analysis, and conversational tools.</p>
-                    </div>
-
-                    <div class="cap-card bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md hover:border-coral-500/50 transition-all group relative overflow-hidden">
-                        <div class="flex justify-between items-start mb-3">
-                            <div class="p-2 rounded-lg bg-coral-500/10 text-coral-500">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                            </div>
-                            <span class="text-[10px] font-bold text-coral-500 bg-coral-50 px-1.5 py-0.5 rounded">03</span>
-                        </div>
-                        <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-slate-900 mb-1">Computer Vision</h4>
-                        <p class="text-[11px] text-slate-500 leading-snug">Implement image recognition, defect detection, and spatial intelligence.</p>
-                    </div>
-
-                </div>
-            </div>
-
+      <!-- SERVICES -->
+      <div id="panel-services" class="mega-content grid grid-cols-4 gap-8">
+        <div class="col-span-1">
+          <div class="mega-col-title">How We Work</div>
+          <a href="#" class="mega-row"><span class="dot"></span>Dedicated Teams</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Virtual CTO</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Software Staffing</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Project Management</a>
+          <a href="#" class="mega-more">More Services
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
         </div>
-
-        <!-- Right Column: Interactive Neural Visual Globe -->
-        <div class="lg:col-span-6 relative flex items-center justify-center">
-
-            <div class="absolute inset-0 pointer-events-none z-10 flex flex-col justify-between p-4 text-[11px] font-mono font-bold text-slate-400">
-                <div class="flex justify-between">
-                    <span>LONDON // 51.5074° N</span>
-                    <span>TOKYO // 35.6762° E</span>
-                </div>
-                <div class="flex justify-between">
-                    <span>NEW YORK // 40.7128° W</span>
-                    <span>DUBAI // 25.2048° E</span>
-                </div>
-            </div>
-
-            <div class="w-full aspect-square max-w-[500px] relative rounded-full border border-slate-200/80 bg-white/40 backdrop-blur-sm shadow-xl flex items-center justify-center p-6">
-                <canvas id="neuralCanvas" class="w-full h-full"></canvas>
-            </div>
-
+        <div class="col-span-1">
+          <div class="mega-col-title">Development Areas</div>
+          <a href="#" class="mega-row"><span class="dot"></span>AI Development</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Data Engineering</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Custom Software Development</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Web App Development</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Mobile App Development</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Cloud &amp; DevOps</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Game Development</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Chatbot Development</a>
         </div>
+        <div class="col-span-1">
+          <div class="mega-col-title">Development Stage</div>
+          <a href="#" class="mega-row"><span class="dot"></span>Project Discovery</a>
+          <a href="#" class="mega-row"><span class="dot"></span>MVP Development</a>
+          <a href="#" class="mega-row"><span class="dot"></span>POC Development</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Frontend Development</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Back End Development</a>
+        </div>
+        <div class="mega-cta">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-white/70">Get Started</span>
+            <p class="font-heading font-bold text-sm mt-2 leading-snug text-white">Build Intelligent Apps</p>
+            <p class="text-[11px] text-white/70 mt-1 leading-snug">Talk to our engineering team today</p>
+          </div>
+          <a href="#" class="mt-4 inline-flex items-center gap-1 text-xs font-bold text-white">
+            Talk to Us
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
 
-    </main>
+      <!-- TECHNOLOGIES -->
+      <div id="panel-tech" class="mega-content grid grid-cols-4 gap-8">
+        <div class="col-span-1">
+          <div class="mega-col-title">AI Platforms</div>
+          <a href="#" class="mega-row"><span class="dot"></span>OpenAI</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Anthropic</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Gemini</a>
+          <a href="#" class="mega-row"><span class="dot"></span>LLaMA</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Qwen</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Deepseek</a>
+          <a href="#" class="mega-more">Technologies
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+        <div class="col-span-1">
+          <div class="mega-col-title">Languages &amp; Frameworks</div>
+          <div class="grid grid-cols-2 gap-x-1">
+            <a href="#" class="mega-row"><span class="dot"></span>Python</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Golang</a>
+            <a href="#" class="mega-row"><span class="dot"></span>C#</a>
+            <a href="#" class="mega-row"><span class="dot"></span>.Net</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Ruby</a>
+            <a href="#" class="mega-row"><span class="dot"></span>PHP</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Node</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Java</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Rust</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Django</a>
+            <a href="#" class="mega-row"><span class="dot"></span>pyTorch</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Tensorflow</a>
+          </div>
+          <div class="mega-col-title mt-5">Frontend</div>
+          <div class="grid grid-cols-2 gap-x-1">
+            <a href="#" class="mega-row"><span class="dot"></span>React</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Angular</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Next.js</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Vue.js</a>
+          </div>
+          <a href="#" class="mega-more">Developer Skills
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+        <div class="col-span-1">
+          <div class="mega-col-title">Mobile &amp; Game</div>
+          <a href="#" class="mega-row"><span class="dot"></span>iOS</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Android</a>
+          <a href="#" class="mega-row"><span class="dot"></span>React Native</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Flutter</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Unreal</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Unity</a>
+        </div>
+        <div class="col-span-1">
+          <div class="mega-col-title">Cloud Platforms</div>
+          <a href="#" class="mega-row"><span class="dot"></span>AWS</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Azure</a>
+          <a href="#" class="mega-row"><span class="dot"></span>GCP</a>
+          <div class="mega-col-title mt-5">Data &amp; DevOps</div>
+          <a href="#" class="mega-row"><span class="dot"></span>Databricks</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Snowflake</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Kubernetes</a>
+        </div>
+      </div>
 
-    <!-- Footer Bar Widgets -->
-    <footer class="max-w-7xl mx-auto px-6 py-6 w-full flex items-center justify-between text-xs text-slate-500">
-        <div class="flex items-center gap-2 bg-sage-500/10 text-sage-600 px-3 py-1.5 rounded-full font-medium">
-            <svg class="w-4 h-4 text-sage-500" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16a1 1 0 001 1h2a1 1 0 100-2H9a1 1 0 00-1 1zM12 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-            Powered by Enterprise AI Architecture
+      <!-- INDUSTRIES -->
+      <div id="panel-industries" class="mega-content grid grid-cols-3 gap-8">
+        <div class="col-span-2">
+          <div class="mega-col-title">Industries</div>
+          <div class="grid grid-cols-2 gap-x-6">
+            <a href="#" class="mega-row"><span class="dot"></span>CRM</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Education</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Enterprise Software</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Fintech</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Game Development</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Healthcare Services</a>
+            <a href="#" class="mega-row"><span class="dot"></span>High Frequency Trading</a>
+            <a href="#" class="mega-row"><span class="dot"></span>IoT</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Media &amp; Entertainment</a>
+            <a href="#" class="mega-row"><span class="dot"></span>Manufacturing</a>
+            <a href="#" class="mega-row"><span class="dot"></span>SaaS</a>
+          </div>
+        </div>
+        <div class="col-span-1">
+          <div class="mega-col-title">Departments</div>
+          <a href="#" class="mega-row"><span class="dot"></span>Customer Support</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Finance</a>
+          <a href="#" class="mega-row"><span class="dot"></span>HR</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Legal</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Marketing</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Operations</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Procurement</a>
+        </div>
+      </div>
+
+      <!-- COMPANY -->
+      <div id="panel-company" class="mega-content grid grid-cols-4 gap-8">
+        <div class="col-span-1">
+          <div class="mega-col-title">About Gull Of Group</div>
+          <a href="#" class="mega-row"><span class="dot"></span>About Us</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Founder's Letter</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Awards</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Security</a>
+        </div>
+        <div class="col-span-1">
+          <div class="mega-col-title">Social Proof</div>
+          <a href="#" class="mega-row"><span class="dot"></span>Clients</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Case Studies</a>
+          <div class="mega-col-title mt-6">Careers</div>
+          <a href="#" class="mega-row"><span class="dot"></span>Join Our Team</a>
+        </div>
+        <div class="col-span-1">
+          <div class="mega-col-title">Resources</div>
+          <a href="#" class="mega-row"><span class="dot"></span>Blog</a>
+          <a href="#" class="mega-row"><span class="dot"></span>AI Newsletter</a>
+        </div>
+        <div class="mega-cta">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-white/70">Get Started</span>
+            <p class="font-heading font-bold text-sm mt-2 leading-snug text-white">Discuss Your Project</p>
+            <p class="text-[11px] text-white/70 mt-1 leading-snug">Talk to our team about your goals</p>
+          </div>
+          <a href="#" class="mt-4 inline-flex items-center gap-1 text-xs font-bold text-white">
+            Schedule a Call
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Overlay + Drawer -->
+<div id="mobileOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[80] opacity-0 pointer-events-none lg:hidden"></div>
+
+<aside id="mobileMenu" class="fixed top-0 right-0 h-full w-[88%] max-w-sm bg-[#0a0512] border-l border-brand-500/20 z-[90] shadow-2xl translate-x-full lg:hidden flex flex-col">
+  <div class="flex items-center justify-between px-5 py-4 border-b border-brand-500/15">
+    <div class="flex items-center gap-2.5">
+      <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-gold-500 flex items-center justify-center text-white font-bold text-xs">G</div>
+      <span class="font-heading font-extrabold text-base tracking-tight text-white">Gull Of Group</span>
+    </div>
+    <button id="closeMobileBtn" class="w-9 h-9 flex items-center justify-center rounded-lg border border-brand-500/25 text-slate-300" aria-label="Close menu">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <div class="flex-1 overflow-y-auto px-3 py-3">
+
+    <div class="border-b border-white/5">
+      <button class="mobile-acc-btn w-full flex items-center gap-3 px-2.5 py-3.5 text-sm font-bold text-white">
+        <span class="mobile-icon"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
+        AI Development
+        <svg class="chevron w-4 h-4 text-slate-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="mobile-acc-panel"><div class="pl-[3.1rem] pb-2 grid gap-0.5">
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">AI Development Services</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">AI Agents</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Computer Vision</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Generative AI</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">LLM Fine Tuning</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">RAG Development</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">SMB / Enterprise AI Solutions</a>
+      </div></div>
+    </div>
+
+    <div class="border-b border-white/5">
+      <button class="mobile-acc-btn w-full flex items-center gap-3 px-2.5 py-3.5 text-sm font-bold text-white">
+        <span class="mobile-icon"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 100-8 4 4 0 000 8z"/></svg></span>
+        Services
+        <svg class="chevron w-4 h-4 text-slate-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="mobile-acc-panel"><div class="pl-[3.1rem] pb-2 grid gap-0.5">
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Dedicated Teams</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Virtual CTO</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Web &amp; Mobile App Development</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Cloud &amp; DevOps</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">MVP / POC Development</a>
+      </div></div>
+    </div>
+
+    <div class="border-b border-white/5">
+      <button class="mobile-acc-btn w-full flex items-center gap-3 px-2.5 py-3.5 text-sm font-bold text-white">
+        <span class="mobile-icon"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707"/></svg></span>
+        Technologies
+        <svg class="chevron w-4 h-4 text-slate-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="mobile-acc-panel"><div class="pl-[3.1rem] pb-2 grid gap-0.5">
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">OpenAI / Anthropic / Gemini / Deepseek</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Python / Node / Rust / Golang</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">React / Next.js / Vue.js</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">iOS / Android / Flutter / Unity</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">AWS / Azure / GCP / Kubernetes</a>
+      </div></div>
+    </div>
+
+    <div class="border-b border-white/5">
+      <button class="mobile-acc-btn w-full flex items-center gap-3 px-2.5 py-3.5 text-sm font-bold text-white">
+        <span class="mobile-icon"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"/></svg></span>
+        Industries
+        <svg class="chevron w-4 h-4 text-slate-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="mobile-acc-panel"><div class="pl-[3.1rem] pb-2 grid gap-0.5">
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Fintech &amp; High Frequency Trading</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Healthcare Services</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">SaaS &amp; Enterprise Software</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Education &amp; IoT</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Departments (HR, Legal, Finance...)</a>
+      </div></div>
+    </div>
+
+    <div class="border-b border-white/5">
+      <button class="mobile-acc-btn w-full flex items-center gap-3 px-2.5 py-3.5 text-sm font-bold text-white">
+        <span class="mobile-icon"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+        Company
+        <svg class="chevron w-4 h-4 text-slate-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="mobile-acc-panel"><div class="pl-[3.1rem] pb-2 grid gap-0.5">
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">About Us</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Founder's Letter</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Security</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Clients &amp; Case Studies</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Blog &amp; AI Newsletter</a>
+        <a href="#" class="block px-2.5 py-1.5 text-[13px] font-semibold text-slate-300">Join Our Team</a>
+      </div></div>
+    </div>
+
+    <a href="#" class="flex items-center gap-3 px-2.5 py-3.5 text-sm font-bold text-white">
+      <span class="mobile-icon"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></span>
+      Case Studies
+    </a>
+  </div>
+
+  <div class="p-4 border-t border-brand-500/15">
+    <a href="#" class="block text-center px-5 py-3.5 rounded-lg bg-gradient-to-r from-brand-500 to-brand-700 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-500/30">
+      Book A Strategy Session
+    </a>
+  </div>
+</aside>
+
+<!-- Main Content Hero Section -->
+<main class="max-w-7xl mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
+
+  <div class="lg:col-span-6 space-y-6">
+
+    <div class="hero-el inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gold-400 bg-gold-500/10 px-3 py-1.5 rounded-md border border-gold-500/25">
+      <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+      Internal Service Deep Dive
+    </div>
+
+    <h1 class="hero-el font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.15] tracking-tight">
+      Enterprise AI: <br>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-300 to-gold-400">
+        Beyond the Basics
+      </span>
+    </h1>
+
+    <p class="hero-el text-slate-400 text-base lg:text-lg leading-relaxed max-w-xl font-normal">
+      Move past the hype to deploy core, scalable AI solutions. We design, build, and integrate proprietary machine learning models and custom data pipelines that solve mission-critical business problems with production-grade efficiency.
+    </p>
+
+    <div class="hero-el flex flex-wrap gap-4 pt-2">
+      <a href="#" class="px-7 py-3.5 rounded-lg bg-gradient-to-r from-brand-500 to-brand-700 hover:from-brand-400 hover:to-brand-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-500/30 transition-all hover:-translate-y-0.5">
+        Get Started
+      </a>
+      <a href="#" class="px-7 py-3.5 rounded-lg bg-transparent border border-gold-500/50 text-gold-400 hover:bg-gold-500/10 font-bold text-xs uppercase tracking-wider transition-all hover:-translate-y-0.5">
+        Our Methodology
+      </a>
+    </div>
+
+    <div class="pt-8">
+      <h3 class="hero-el text-xs font-extrabold uppercase tracking-widest text-white mb-4">
+        Our Enterprise AI Capabilities
+      </h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="cap-card bg-[#0d0716]/80 border border-brand-500/15 rounded-xl p-4 shadow-lg hover:shadow-brand-500/20 hover:border-gold-500/40 transition-all group relative overflow-hidden">
+          <div class="flex justify-between items-start mb-3">
+            <div class="p-2 rounded-lg bg-brand-500/15 text-brand-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
+            </div>
+            <span class="text-[10px] font-bold text-gold-400 bg-gold-500/10 px-1.5 py-0.5 rounded">01</span>
+          </div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-white mb-1">Predictive Analytics</h4>
+          <p class="text-[11px] text-slate-400 leading-snug">Leverage historical data to forecast trends and optimize resource allocation.</p>
         </div>
 
-        <div>
-            © Gull Of Group. All Rights Reserved.
+        <div class="cap-card bg-[#0d0716]/80 border border-brand-500/15 rounded-xl p-4 shadow-lg hover:shadow-brand-500/20 hover:border-gold-500/40 transition-all group relative overflow-hidden">
+          <div class="flex justify-between items-start mb-3">
+            <div class="p-2 rounded-lg bg-brand-500/15 text-brand-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+            </div>
+            <span class="text-[10px] font-bold text-gold-400 bg-gold-500/10 px-1.5 py-0.5 rounded">02</span>
+          </div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-white mb-1">Natural Language</h4>
+          <p class="text-[11px] text-slate-400 leading-snug">Automate content classification, sentiment analysis, and conversational tools.</p>
         </div>
-    </footer>
 
-    <!-- JavaScript for Neural Interactive Graphic, Animations & Header Interactivity -->
-    <script>
-        // Entrance GSAP Stagger Animations
-        gsap.from(".hero-el", { y: 30, opacity: 0, duration: 0.8, stagger: 0.12, ease: "power2.out" });
-        gsap.from(".cap-card", { y: 40, opacity: 0, duration: 0.8, stagger: 0.15, delay: 0.5, ease: "power2.out" });
+        <div class="cap-card bg-[#0d0716]/80 border border-brand-500/15 rounded-xl p-4 shadow-lg hover:shadow-brand-500/20 hover:border-gold-500/40 transition-all group relative overflow-hidden">
+          <div class="flex justify-between items-start mb-3">
+            <div class="p-2 rounded-lg bg-brand-500/15 text-brand-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            </div>
+            <span class="text-[10px] font-bold text-gold-400 bg-gold-500/10 px-1.5 py-0.5 rounded">03</span>
+          </div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-white mb-1">Computer Vision</h4>
+          <p class="text-[11px] text-slate-400 leading-snug">Implement image recognition, defect detection, and spatial intelligence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        // Neural Node Network Canvas Script
-        const canvas = document.getElementById('neuralCanvas');
-        const ctx = canvas.getContext('2d');
-        function resizeCanvas() {
-            canvas.width = canvas.parentElement.clientWidth;
-            canvas.height = canvas.parentElement.clientHeight;
+  <!-- Right Column: Interactive Neural Visual Globe -->
+  <div class="lg:col-span-6 relative flex items-center justify-center">
+    <div class="absolute inset-0 pointer-events-none z-10 flex flex-col justify-between p-4 text-[11px] font-mono font-bold text-slate-500">
+      <div class="flex justify-between">
+        <span>LONDON // 51.5074° N</span>
+        <span>TOKYO // 35.6762° E</span>
+      </div>
+      <div class="flex justify-between">
+        <span>NEW YORK // 40.7128° W</span>
+        <span>DUBAI // 25.2048° E</span>
+      </div>
+    </div>
+
+    <div class="w-full aspect-square max-w-[500px] relative rounded-full border border-brand-500/25 bg-[#0d0716]/50 backdrop-blur-sm shadow-2xl shadow-brand-700/30 flex items-center justify-center p-6">
+      <canvas id="neuralCanvas" class="w-full h-full"></canvas>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="max-w-7xl mx-auto px-6 py-6 w-full flex items-center justify-between text-xs text-slate-500 border-t border-white/5">
+  <div class="flex items-center gap-2 bg-brand-500/10 text-brand-300 px-3 py-1.5 rounded-full font-medium">
+    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16a1 1 0 001 1h2a1 1 0 100-2H9a1 1 0 00-1 1zM12 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+    Powered by Enterprise AI Architecture
+  </div>
+  <div>© Gull Of Group. All Rights Reserved.</div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- GSAP entrance (skipped politely if reduced motion / gsap not yet loaded) ----
+  window.addEventListener('load', function(){
+    if (!reduceMotion && window.gsap) {
+      gsap.from(".hero-el", { y: 26, opacity: 0, duration: .7, stagger: .1, ease: "power2.out" });
+      gsap.from(".cap-card", { y: 32, opacity: 0, duration: .7, stagger: .12, delay: .4, ease: "power2.out" });
+    }
+  });
+
+  // ---- Neural node network canvas ----
+  var canvas = document.getElementById('neuralCanvas');
+  var ctx = canvas.getContext('2d', { alpha: true });
+  var nodes = [], nodeCount = 26, raf;
+
+  function resizeCanvas(){
+    var r = canvas.parentElement.getBoundingClientRect();
+    canvas.width = r.width; canvas.height = r.height;
+  }
+  function seedNodes(){
+    nodes.length = 0;
+    for (var i=0;i<nodeCount;i++){
+      nodes.push({
+        x: Math.random()*canvas.width, y: Math.random()*canvas.height,
+        vx:(Math.random()-.5)*.7, vy:(Math.random()-.5)*.7, r: Math.random()*3+2
+      });
+    }
+  }
+  resizeCanvas(); seedNodes();
+
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){ resizeCanvas(); }, 150);
+  }, { passive:true });
+
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for (var i=0;i<nodes.length;i++){
+      for (var j=i+1;j<nodes.length;j++){
+        var dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y;
+        var dist=Math.sqrt(dx*dx+dy*dy);
+        if (dist<110){
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x,nodes[i].y);
+          ctx.lineTo(nodes[j].x,nodes[j].y);
+          ctx.strokeStyle = 'rgba(139,63,224,'+(1-dist/110)*0.7+')';
+          ctx.lineWidth = .8;
+          ctx.stroke();
         }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+      }
+    }
+    nodes.forEach(function(n){
+      n.x+=n.vx; n.y+=n.vy;
+      if (n.x<0||n.x>canvas.width) n.vx*=-1;
+      if (n.y<0||n.y>canvas.height) n.vy*=-1;
+      ctx.beginPath();
+      ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+      ctx.fillStyle = '#dba54e';
+      ctx.fill();
+    });
+    raf = requestAnimationFrame(draw);
+  }
+  draw();
 
-        const nodes = [];
-        const nodeCount = 28;
-        for (let i = 0; i < nodeCount; i++) {
-            nodes.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.8,
-                vy: (Math.random() - 0.5) * 0.8,
-                radius: Math.random() * 3 + 2
-            });
-        }
-        function drawNeuralNetwork() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < nodes.length; i++) {
-                for (let j = i + 1; j < nodes.length; j++) {
-                    const dx = nodes[i].x - nodes[j].x;
-                    const dy = nodes[i].y - nodes[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 110) {
-                        ctx.beginPath();
-                        ctx.moveTo(nodes[i].x, nodes[i].y);
-                        ctx.lineTo(nodes[j].x, nodes[j].y);
-                        ctx.strokeStyle = `rgba(74, 107, 93, ${1 - dist / 110})`;
-                        ctx.lineWidth = 0.8;
-                        ctx.stroke();
-                    }
-                }
-            }
-            nodes.forEach(node => {
-                node.x += node.vx;
-                node.y += node.vy;
-                if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
-                if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
-                ctx.beginPath();
-                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-                ctx.fillStyle = '#F07563';
-                ctx.fill();
-            });
-            requestAnimationFrame(drawNeuralNetwork);
-        }
-        drawNeuralNetwork();
+  // ---- Desktop full-width mega menu ----
+  var navItems = Array.prototype.slice.call(document.querySelectorAll('.nav-item'));
+  var megaContainer = document.getElementById('megaContainer');
+  var megaScrim = document.getElementById('megaScrim');
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.mega-content'));
 
-        // ===== Desktop Mega Menu logic (click to open, click outside to close) =====
-        const navItems = document.querySelectorAll('.nav-item');
-        navItems.forEach(item => {
-            const trigger = item.querySelector('.nav-trigger');
-            if (!trigger) return;
-            trigger.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isOpen = item.classList.contains('open');
-                navItems.forEach(i => i.classList.remove('open'));
-                if (!isOpen) item.classList.add('open');
-            });
-        });
-        document.addEventListener('click', () => {
-            navItems.forEach(i => i.classList.remove('open'));
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') navItems.forEach(i => i.classList.remove('open'));
-        });
+  function closeMega(){
+    navItems.forEach(function(i){ i.classList.remove('open'); });
+    megaContainer.classList.remove('open');
+    megaScrim.classList.remove('show');
+  }
+  function openMega(item, key){
+    navItems.forEach(function(i){ i.classList.remove('open'); });
+    panels.forEach(function(p){ p.classList.toggle('active', p.id === 'panel-'+key); });
+    item.classList.add('open');
+    megaContainer.classList.add('open');
+    megaScrim.classList.add('show');
+  }
+  navItems.forEach(function(item){
+    var trigger = item.querySelector('.nav-trigger');
+    if (!trigger) return;
+    trigger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var key = trigger.getAttribute('data-panel');
+      var isOpen = item.classList.contains('open');
+      isOpen ? closeMega() : openMega(item, key);
+    });
+  });
+  document.addEventListener('click', closeMega);
+  megaContainer.addEventListener('click', function(e){ e.stopPropagation(); });
+  megaScrim.addEventListener('click', closeMega);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMega(); });
 
-        // ===== Mobile Menu open/close =====
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const closeMobileBtn = document.getElementById('closeMobileBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileOverlay = document.getElementById('mobileOverlay');
+  // ---- Mobile drawer ----
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var closeMobileBtn = document.getElementById('closeMobileBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileOverlay = document.getElementById('mobileOverlay');
 
-        function openMobileMenu() {
-            mobileMenu.classList.remove('translate-x-full');
-            mobileOverlay.classList.remove('opacity-0', 'pointer-events-none');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeMobileMenu() {
-            mobileMenu.classList.add('translate-x-full');
-            mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
-            document.body.style.overflow = '';
-        }
-        hamburgerBtn.addEventListener('click', openMobileMenu);
-        closeMobileBtn.addEventListener('click', closeMobileMenu);
-        mobileOverlay.addEventListener('click', closeMobileMenu);
+  function openMobile(){
+    mobileMenu.classList.remove('translate-x-full');
+    mobileOverlay.classList.remove('opacity-0','pointer-events-none');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobile(){
+    mobileMenu.classList.add('translate-x-full');
+    mobileOverlay.classList.add('opacity-0','pointer-events-none');
+    document.body.style.overflow = '';
+  }
+  hamburgerBtn.addEventListener('click', openMobile);
+  closeMobileBtn.addEventListener('click', closeMobile);
+  mobileOverlay.addEventListener('click', closeMobile);
 
-        // ===== Mobile Accordion logic =====
-        document.querySelectorAll('.mobile-acc-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const wasOpen = btn.classList.contains('open');
-                document.querySelectorAll('.mobile-acc-btn').forEach(b => b.classList.remove('open'));
-                if (!wasOpen) btn.classList.add('open');
-            });
-        });
-    </script>
+  document.querySelectorAll('.mobile-acc-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var wasOpen = btn.classList.contains('open');
+      document.querySelectorAll('.mobile-acc-btn').forEach(function(b){ b.classList.remove('open'); });
+      if (!wasOpen) btn.classList.add('open');
+    });
+  });
+})();
+</script>
 </body>
 </html>
