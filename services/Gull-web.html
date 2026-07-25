@@ -7,6 +7,7 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,11 +21,20 @@
           brand: { 300:'#c4b0f5', 400:'#a480ef', 500:'#8b3fe0', 600:'#7226c9', 700:'#5a1aa3', 800:'#3e1273', 900:'#240a4a' },
           gold:  { 300:'#f3d9a4', 400:'#e8c079', 500:'#dba54e', 600:'#bb8635' },
           ink:   { 900:'#050208', 800:'#0a0512', 700:'#0f0a1a', 600:'#170f26', 500:'#221833' },
-        },
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-          heading: ['Plus Jakarta Sans', 'sans-serif'],
+          /* Footer used these names directly (bg-brandDark, text-brandGold, etc.)
+             but they were never registered in the config, so Tailwind's CDN
+             build silently produced no CSS for them. Mapped to the same
+             hex values already used elsewhere so the footer matches the rest
+             of the page exactly. */
+          brandDark:   '#050208',
+          brandViolet: '#8b3fe0',
+          brandGold:   '#dba54e',
+          borderViolet:'rgba(139,63,224,0.18)',
         }
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Plus Jakarta Sans', 'sans-serif'],
       }
     }
   }
@@ -130,6 +140,23 @@
   }
   @media (max-width:1023px){
     .desktop-nav, #megaContainer, #megaScrim{ display:none !important; }
+  }
+
+  /* ===== Footer ===== */
+  .footer-glow{
+    background: radial-gradient(circle at 50% 100%, rgba(139, 63, 224, 0.15) 0%, transparent 65%), #050208;
+  }
+  .footer-link{
+    transition: all 0.2s ease-in-out;
+    color: #94a3b8;
+  }
+  .footer-link:hover{
+    color: #dba54e;
+    transform: translateX(3px);
+  }
+  @media (max-width: 767px){
+    .mobile-accordion-content{ display:none; }
+    .mobile-accordion-content.active{ display:block; }
   }
 </style>
 </head>
@@ -610,14 +637,147 @@
   </div>
 </main>
 
-<!-- Footer -->
-<footer class="max-w-7xl mx-auto px-6 py-6 w-full flex items-center justify-between text-xs text-slate-500 border-t border-white/5">
-  <div class="flex items-center gap-2 bg-brand-500/10 text-brand-300 px-3 py-1.5 rounded-full font-medium">
-    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16a1 1 0 001 1h2a1 1 0 100-2H9a1 1 0 00-1 1zM12 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-    Powered by Enterprise AI Architecture
-  </div>
-  <div>© Gull Of Group. All Rights Reserved.</div>
+<!-- Start: Enterprise Dark Luxury Footer -->
+<footer class="w-full footer-glow text-slate-400 border-t border-borderViolet pt-12 md:pt-16 pb-8 relative overflow-hidden">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- TOP FOOTER SECTION -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-0 pb-12">
+
+            <!-- BRAND & HEADQUARTERS (Left Column) -->
+            <div class="md:col-span-4 md:pr-8 space-y-5 md:border-r border-borderViolet">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brandViolet to-purple-900 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-brandViolet/20 group-hover:scale-105 transition-transform">
+                        G
+                    </div>
+                    <span class="font-heading font-extrabold text-xl tracking-tight text-white">Gull Of Group</span>
+                </a>
+
+                <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+                    Building core scalable AI solutions, deep learning models, and production-grade architectures for modern global enterprises.
+                </p>
+
+                <div class="pt-2">
+                    <h5 class="text-[10px] uppercase font-bold tracking-widest text-brandGold mb-2">Headquarters</h5>
+                    <p class="text-xs text-slate-300 font-mono">280 W 175th St<br>New York, NY 10030</p>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex items-center gap-3 pt-2">
+                    <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-brandGold hover:border-brandGold/50 transition">
+                        <i class="fa-brands fa-linkedin-in text-xs"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-brandGold hover:border-brandGold/50 transition">
+                        <i class="fa-brands fa-github text-xs"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-brandGold hover:border-brandGold/50 transition">
+                        <i class="fa-brands fa-x-twitter text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: COLUMNS -->
+            <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+
+                <!-- COLUMN 1: SERVICES -->
+                <div class="border-b md:border-b-0 md:border-r border-borderViolet py-4 md:py-0 md:px-6">
+                    <div class="accordion-header flex justify-between items-center cursor-pointer md:cursor-default mb-4">
+                        <h4 class="font-heading font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span> Services
+                        </h4>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-500 md:hidden toggle-icon transition-transform"></i>
+                    </div>
+                    <ul class="mobile-accordion-content space-y-2.5 text-xs font-medium md:block">
+                        <li><a href="#" class="footer-link inline-block">All Services</a></li>
+                        <li><a href="#" class="footer-link inline-block">Dedicated Teams</a></li>
+                        <li><a href="#" class="footer-link inline-block">Software Staffing</a></li>
+                        <li><a href="#" class="footer-link inline-block">Project Management</a></li>
+                        <li><a href="#" class="footer-link inline-block">Virtual CTO</a></li>
+                        <li><a href="#" class="footer-link inline-block">Shopify Plus Agency</a></li>
+                        <li><a href="#" class="footer-link inline-block">Voice Chatbots</a></li>
+                        <li><a href="#" class="footer-link inline-block">Enterprise Search</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 2: EXPERTISE -->
+                <div class="border-b md:border-b-0 md:border-r border-borderViolet py-4 md:py-0 md:px-6">
+                    <div class="accordion-header flex justify-between items-center cursor-pointer md:cursor-default mb-4">
+                        <h4 class="font-heading font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brandViolet"></span> Expertise
+                        </h4>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-500 md:hidden toggle-icon transition-transform"></i>
+                    </div>
+                    <ul class="mobile-accordion-content space-y-2.5 text-xs font-medium md:block">
+                        <li><a href="#" class="footer-link inline-block">Artificial Intelligence</a></li>
+                        <li><a href="#" class="footer-link inline-block">Custom Software Dev</a></li>
+                        <li><a href="#" class="footer-link inline-block">Web App Development</a></li>
+                        <li><a href="#" class="footer-link inline-block">Mobile Development</a></li>
+                        <li><a href="#" class="footer-link inline-block">AI Chatbots</a></li>
+                        <li><a href="#" class="footer-link inline-block">Data Engineering</a></li>
+                        <li><a href="#" class="footer-link inline-block">Cloud Services</a></li>
+                        <li><a href="#" class="footer-link inline-block">Industry Expertise</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 3: ABOUT -->
+                <div class="border-b md:border-b-0 md:border-r border-borderViolet py-4 md:py-0 md:px-6">
+                    <div class="accordion-header flex justify-between items-center cursor-pointer md:cursor-default mb-4">
+                        <h4 class="font-heading font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span> About
+                        </h4>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-500 md:hidden toggle-icon transition-transform"></i>
+                    </div>
+                    <ul class="mobile-accordion-content space-y-2.5 text-xs font-medium md:block">
+                        <li><a href="#" class="footer-link inline-block">Clients</a></li>
+                        <li><a href="#" class="footer-link inline-block">Join Us</a></li>
+                        <li><a href="#" class="footer-link inline-block">Values</a></li>
+                        <li><a href="#" class="footer-link inline-block">About Us</a></li>
+                        <li><a href="#" class="footer-link inline-block">Awards</a></li>
+                        <li><a href="#" class="footer-link inline-block">Referral Program</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 4: RESOURCES -->
+                <div class="py-4 md:py-0 md:pl-6">
+                    <div class="accordion-header flex justify-between items-center cursor-pointer md:cursor-default mb-4">
+                        <h4 class="font-heading font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brandViolet"></span> Resources
+                        </h4>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-500 md:hidden toggle-icon transition-transform"></i>
+                    </div>
+                    <ul class="mobile-accordion-content space-y-2.5 text-xs font-medium md:block">
+                        <li><a href="#" class="footer-link inline-block">Why Outsource</a></li>
+                        <li><a href="#" class="footer-link inline-block">Why Nearshore</a></li>
+                        <li><a href="#" class="footer-link inline-block">Insights</a></li>
+                        <li><a href="#" class="footer-link inline-block">Newsletter</a></li>
+                        <li><a href="#" class="footer-link inline-block">Tools</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BOTTOM SUB-FOOTER -->
+        <div class="pt-8 border-t border-borderViolet flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brandViolet/10 text-brandGold border border-brandGold/30 font-semibold text-[11px]">
+                    <i class="fa-solid fa-shield-halved text-xs"></i> SOC 2 Compliant
+                </span>
+                <a href="#" class="text-slate-400 hover:text-white transition underline decoration-brandViolet underline-offset-4">See how we handle your data</a>
+            </div>
+
+            <div class="text-slate-500 font-mono text-[11px] text-center sm:text-right">
+                © 2026 <span class="text-slate-300 font-semibold">Gull Of Group LLC</span>. All Rights Reserved. | <a href="#" class="hover:text-slate-300 transition">Privacy Policy</a>
+            </div>
+
+        </div>
+
+    </div>
 </footer>
+<!-- End: Enterprise Dark Luxury Footer -->
 
 <script>
 (function(){
@@ -700,8 +860,6 @@
   }
   function openMega(item, key){
     navItems.forEach(function(i){ i.classList.remove('open'); });
-    // Force exactly one panel visible via inline style — guards against any
-    // stylesheet load-order/cascade conflicts (e.g. Tailwind's CDN styles).
     panels.forEach(function(p){ p.style.display = (p.id === 'panel-'+key) ? 'grid' : 'none'; });
     item.classList.add('open');
     megaContainer.classList.add('open');
@@ -749,202 +907,27 @@
       if (!wasOpen) btn.classList.add('open');
     });
   });
+
+  // ---- Footer mobile accordion ----
+  document.querySelectorAll('.accordion-header').forEach(function(header){
+    header.addEventListener('click', function(){
+      if (window.innerWidth < 768) {
+        var content = header.nextElementSibling;
+        var icon = header.querySelector('.toggle-icon');
+        var isOpen = content.classList.contains('active');
+
+        document.querySelectorAll('.mobile-accordion-content').forEach(function(c){ c.classList.remove('active'); });
+        document.querySelectorAll('.toggle-icon').forEach(function(i){ i.style.transform = 'rotate(0deg)'; });
+
+        if (!isOpen) {
+          content.classList.add('active');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      }
+    });
+  });
 })();
 </script>
 
-    <style>
-        /* Dark Luxury Background & Glow Effect */
-        .footer-glow {
-            background: radial-gradient(circle at 50% 100%, rgba(139, 63, 224, 0.15) 0%, transparent 65%), #050208;
-        }
-        
-        /* High Contrast Professional Link Styles */
-        .footer-link {
-            transition: all 0.2s ease-in-out;
-            color: #94a3b8;
-        }
-        .footer-link:hover {
-            color: #dba54e;
-            transform: translateX(3px);
-        }
-
-        /* Mobile Accordion Smooth Collapsing */
-        @media (max-width: 767px) {
-            .mobile-accordion-content {
-                display: none;
-            }
-            .mobile-accordion-content.active {
-                display: block;
-            }
-        }
-    </style>
-<body class="bg-brandDark text-slate-100 font-sans min-h-screen flex flex-col justify-end">
-
-    <!-- Start: Enterprise Dark Luxury Footer -->
-    <footer class="w-full footer-glow text-slate-400 border-t border-borderViolet pt-12 md:pt-16 pb-8 relative overflow-hidden">
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <!-- TOP FOOTER SECTION -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-0 pb-12">
-                
-                <!-- BRAND & HEADQUARTERS (Left Column) -->
-                <div class="md:col-span-4 md:pr-8 space-y-5 md:border-r border-borderViolet">
-                    <a href="#" class="flex items-center gap-3 group">
-                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brandViolet to-purple-900 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-brandViolet/20 group-hover:scale-105 transition-transform">
-                            G
-                        </div>
-                        <span class="font-heading font-extrabold text-xl tracking-tight text-white">Gull Of Group</span>
-                    </a>
-
-                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
-                        Building core scalable AI solutions, deep learning models, and production-grade architectures for modern global enterprises.
-                    </p>
-
-                    <div class="pt-2">
-                        <h5 class="text-[10px] uppercase font-bold tracking-widest text-brandGold mb-2">Headquarters</h5>
-                        <p class="text-xs text-slate-300 font-mono">280 W 175th St<br>New York, NY 10030</p>
-                    </div>
-
-                    <!-- Social Icons -->
-                    <div class="flex items-center gap-3 pt-2">
-                        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-brandGold hover:border-brandGold/50 transition">
-                            <i class="fa-brands fa-linkedin-in text-xs"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-brandGold hover:border-brandGold/50 transition">
-                            <i class="fa-brands fa-github text-xs"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-brandGold hover:border-brandGold/50 transition">
-                            <i class="fa-brands fa-x-twitter text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- RIGHT SIDE: COLUMNS WITH SAMSUNG STYLE BORDER LINES -->
-                <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
-                    
-                    <!-- COLUMN 1: SERVICES -->
-                    <div class="border-b md:border-b-0 md:border-r border-borderViolet py-4 md:py-0 md:px-6">
-                        <div class="accordion-header flex justify-between items-center cursor-pointer md:cursor-default mb-4">
-                            <h4 class="font-heading font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span> Services
-                            </h4>
-                            <i class="fa-solid fa-chevron-down text-xs text-slate-500 md:hidden toggle-icon transition-transform"></i>
-                        </div>
-                        <ul class="mobile-accordion-content space-y-2.5 text-xs font-medium md:block">
-                            <li><a href="#" class="footer-link inline-block">All Services</a></li>
-                            <li><a href="#" class="footer-link inline-block">Dedicated Teams</a></li>
-                            <li><a href="#" class="footer-link inline-block">Software Staffing</a></li>
-                            <li><a href="#" class="footer-link inline-block">Project Management</a></li>
-                            <li><a href="#" class="footer-link inline-block">Virtual CTO</a></li>
-                            <li><a href="#" class="footer-link inline-block">Shopify Plus Agency</a></li>
-                            <li><a href="#" class="footer-link inline-block">Voice Chatbots</a></li>
-                            <li><a href="#" class="footer-link inline-block">Enterprise Search</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- COLUMN 2: EXPERTISE -->
-                    <div class="border-b md:border-b-0 md:border-r border-borderViolet py-4 md:py-0 md:px-6">
-                        <div class="accordion-header flex justify-between items-center cursor-pointer md:cursor-default mb-4">
-                            <h4 class="font-heading font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brandViolet"></span> Expertise
-                            </h4>
-                            <i class="fa-solid fa-chevron-down text-xs text-slate-500 md:hidden toggle-icon transition-transform"></i>
-                        </div>
-                        <ul class="mobile-accordion-content space-y-2.5 text-xs font-medium md:block">
-                            <li><a href="#" class="footer-link inline-block">Artificial Intelligence</a></li>
-                            <li><a href="#" class="footer-link inline-block">Custom Software Dev</a></li>
-                            <li><a href="#" class="footer-link inline-block">Web App Development</a></li>
-                            <li><a href="#" class="footer-link inline-block">Mobile Development</a></li>
-                            <li><a href="#" class="footer-link inline-block">AI Chatbots</a></li>
-                            <li><a href="#" class="footer-link inline-block">Data Engineering</a></li>
-                            <li><a href="#" class="footer-link inline-block">Cloud Services</a></li>
-                            <li><a href="#" class="footer-link inline-block">Industry Expertise</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- COLUMN 3: ABOUT -->
-                    <div class="border-b md:border-b-0 md:border-r border-borderViolet py-4 md:py-0 md:px-6">
-                        <div class="accordion-header flex justify-between items-center cursor-pointer md:cursor-default mb-4">
-                            <h4 class="font-heading font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span> About
-                            </h4>
-                            <i class="fa-solid fa-chevron-down text-xs text-slate-500 md:hidden toggle-icon transition-transform"></i>
-                        </div>
-                        <ul class="mobile-accordion-content space-y-2.5 text-xs font-medium md:block">
-                            <li><a href="#" class="footer-link inline-block">Clients</a></li>
-                            <li><a href="#" class="footer-link inline-block">Join Us</a></li>
-                            <li><a href="#" class="footer-link inline-block">Values</a></li>
-                            <li><a href="#" class="footer-link inline-block">About Us</a></li>
-                            <li><a href="#" class="footer-link inline-block">Awards</a></li>
-                            <li><a href="#" class="footer-link inline-block">Referral Program</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- COLUMN 4: RESOURCES -->
-                    <div class="py-4 md:py-0 md:pl-6">
-                        <div class="accordion-header flex justify-between items-center cursor-pointer md:cursor-default mb-4">
-                            <h4 class="font-heading font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brandViolet"></span> Resources
-                            </h4>
-                            <i class="fa-solid fa-chevron-down text-xs text-slate-500 md:hidden toggle-icon transition-transform"></i>
-                        </div>
-                        <ul class="mobile-accordion-content space-y-2.5 text-xs font-medium md:block">
-                            <li><a href="#" class="footer-link inline-block">Why Outsource</a></li>
-                            <li><a href="#" class="footer-link inline-block">Why Nearshore</a></li>
-                            <li><a href="#" class="footer-link inline-block">Insights</a></li>
-                            <li><a href="#" class="footer-link inline-block">Newsletter</a></li>
-                            <li><a href="#" class="footer-link inline-block">Tools</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- BOTTOM SUB-FOOTER -->
-            <div class="pt-8 border-t border-borderViolet flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-                
-                <div class="flex items-center gap-3">
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brandViolet/10 text-brandGold border border-brandGold/30 font-semibold text-[11px]">
-                        <i class="fa-solid fa-shield-halved text-xs"></i> SOC 2 Compliant
-                    </span>
-                    <a href="#" class="text-slate-400 hover:text-white transition underline decoration-brandViolet underline-offset-4">See how we handle your data</a>
-                </div>
-
-                <div class="text-slate-500 font-mono text-[11px] text-center sm:text-right">
-                    © 2026 <span class="text-slate-300 font-semibold">Gull Of Group LLC</span>. All Rights Reserved. | <a href="#" class="hover:text-slate-300 transition">Privacy Policy</a>
-                </div>
-
-            </div>
-
-        </div>
-    </footer>
-
-    <!-- Clean Mobile Accordion Logic -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const headers = document.querySelectorAll('.accordion-header');
-
-            headers.forEach(header => {
-                header.addEventListener('click', () => {
-                    if (window.innerWidth < 768) {
-                        const content = header.nextElementSibling;
-                        const icon = header.querySelector('.toggle-icon');
-                        
-                        const isOpen = content.classList.contains('active');
-
-                        document.querySelectorAll('.mobile-accordion-content').forEach(c => c.classList.remove('active'));
-                        document.querySelectorAll('.toggle-icon').forEach(i => i.style.transform = 'rotate(0deg)');
-
-                        if (!isOpen) {
-                            content.classList.add('active');
-                            if (icon) icon.style.transform = 'rotate(180deg)';
-                        }
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
