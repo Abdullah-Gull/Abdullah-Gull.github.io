@@ -79,8 +79,11 @@
     z-index:65; max-height:82vh; overflow-y:auto;
   }
   #megaContainer.open{ opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
-  .mega-content{ display:none; }
-  .mega-content.active{ display:grid; }
+  /* Panel visibility is controlled directly via JS (element.style.display),
+     NOT a CSS class — Tailwind's CDN stylesheet injects itself after this
+     <style> block and was beating a class-based .mega-content{display:none}
+     rule in the cascade, which made every panel render stacked on top of
+     each other at once. Inline style always wins regardless of load order. */
 
   .mega-col-title{
     font-size:10px; font-weight:800; letter-spacing:.09em; text-transform:uppercase;
@@ -192,7 +195,7 @@
     <div class="max-w-7xl mx-auto px-6 py-9">
 
       <!-- AI DEVELOPMENT -->
-      <div id="panel-ai" class="mega-content grid grid-cols-4 gap-8">
+      <div id="panel-ai" class="mega-content grid grid-cols-4 gap-8" style="display:none">
         <div class="col-span-1">
           <div class="mega-col-title">AI Services</div>
           <a href="#" class="mega-row"><span class="dot"></span>AI Development Services</a>
@@ -236,7 +239,7 @@
       </div>
 
       <!-- SERVICES -->
-      <div id="panel-services" class="mega-content grid grid-cols-4 gap-8">
+      <div id="panel-services" class="mega-content grid grid-cols-4 gap-8" style="display:none">
         <div class="col-span-1">
           <div class="mega-col-title">How We Work</div>
           <a href="#" class="mega-row"><span class="dot"></span>Dedicated Teams</a>
@@ -280,7 +283,7 @@
       </div>
 
       <!-- TECHNOLOGIES -->
-      <div id="panel-tech" class="mega-content grid grid-cols-4 gap-8">
+      <div id="panel-tech" class="mega-content grid grid-cols-4 gap-8" style="display:none">
         <div class="col-span-1">
           <div class="mega-col-title">AI Platforms</div>
           <a href="#" class="mega-row"><span class="dot"></span>OpenAI</a>
@@ -342,7 +345,7 @@
       </div>
 
       <!-- INDUSTRIES -->
-      <div id="panel-industries" class="mega-content grid grid-cols-3 gap-8">
+      <div id="panel-industries" class="mega-content grid grid-cols-3 gap-8" style="display:none">
         <div class="col-span-2">
           <div class="mega-col-title">Industries</div>
           <div class="grid grid-cols-2 gap-x-6">
@@ -372,7 +375,7 @@
       </div>
 
       <!-- COMPANY -->
-      <div id="panel-company" class="mega-content grid grid-cols-4 gap-8">
+      <div id="panel-company" class="mega-content grid grid-cols-4 gap-8" style="display:none">
         <div class="col-span-1">
           <div class="mega-col-title">About Gull Of Group</div>
           <a href="#" class="mega-row"><span class="dot"></span>About Us</a>
@@ -697,7 +700,9 @@
   }
   function openMega(item, key){
     navItems.forEach(function(i){ i.classList.remove('open'); });
-    panels.forEach(function(p){ p.classList.toggle('active', p.id === 'panel-'+key); });
+    // Force exactly one panel visible via inline style — guards against any
+    // stylesheet load-order/cascade conflicts (e.g. Tailwind's CDN styles).
+    panels.forEach(function(p){ p.style.display = (p.id === 'panel-'+key) ? 'grid' : 'none'; });
     item.classList.add('open');
     megaContainer.classList.add('open');
     megaScrim.classList.add('show');
