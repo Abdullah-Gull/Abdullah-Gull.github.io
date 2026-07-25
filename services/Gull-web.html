@@ -782,11 +782,14 @@
   "use strict";
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ---- GSAP entrance (skipped politely if reduced motion / gsap not yet loaded) ----
-  window.addEventListener('load', function(){
+  // ---- GSAP entrance (subtle slide-in only — never hides content via opacity,
+  // so nothing can render as a blank/invisible gap if a screenshot or slow
+  // network catches it mid-animation). Runs on DOMContentLoaded, not 'load',
+  // so it doesn't wait on slow external image downloads (e.g. the logo). ----
+  document.addEventListener('DOMContentLoaded', function(){
     if (!reduceMotion && window.gsap) {
-      gsap.from(".hero-el", { y: 26, opacity: 0, duration: .7, stagger: .1, ease: "power2.out" });
-      gsap.from(".cap-card", { y: 32, opacity: 0, duration: .7, stagger: .12, delay: .4, ease: "power2.out" });
+      gsap.from(".hero-el", { y: 18, duration: .5, stagger: .08, ease: "power2.out" });
+      gsap.from(".cap-card", { y: 18, duration: .5, stagger: .1, delay: .2, ease: "power2.out" });
     }
   });
 
