@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gull Of Group - Luxury Enterprise Footer</title>
+    <title>Gull Of Group - Footer</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,7 +24,7 @@
                         brandDark: '#050208',
                         brandViolet: '#8b3fe0',
                         brandGold: '#dba54e',
-                        borderViolet: 'rgba(139, 63, 224, 0.15)',
+                        borderViolet: 'rgba(139, 63, 224, 0.18)',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -36,45 +36,44 @@
     </script>
 
     <style>
-        /* Midnight Violet Glow Effects */
+        /* Dark Luxury Background & Glow Effect */
         .footer-glow {
-            background: radial-gradient(circle at 50% 100%, rgba(139, 63, 224, 0.12) 0%, transparent 60%), #050208;
+            background: radial-gradient(circle at 50% 100%, rgba(139, 63, 224, 0.15) 0%, transparent 65%), #050208;
         }
         
-        /* Interactive Gold Gradient Text on Hover */
+        /* High Contrast Professional Link Styles */
         .footer-link {
             transition: all 0.2s ease-in-out;
-            color: #9ca3af;
+            color: #94a3b8;
         }
         .footer-link:hover {
             color: #dba54e;
             transform: translateX(3px);
         }
 
-        /* Accordion transition for mobile */
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
-        }
-        .accordion-content.open {
-            max-height: 500px;
-            transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+        /* Mobile Accordion Smooth Collapsing */
+        @media (max-width: 767px) {
+            .mobile-accordion-content {
+                display: none;
+            }
+            .mobile-accordion-content.active {
+                display: block;
+            }
         }
     </style>
 </head>
 <body class="bg-brandDark text-slate-100 font-sans min-h-screen flex flex-col justify-end">
 
     <!-- Start: Enterprise Dark Luxury Footer -->
-    <footer class="w-full footer-glow text-slate-400 border-t border-borderViolet pt-12 lg:pt-16 pb-8 relative overflow-hidden">
+    <footer class="w-full footer-glow text-slate-400 border-t border-borderViolet pt-12 md:pt-16 pb-8 relative overflow-hidden">
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <!-- TOP FOOTER SECTION: Brand Info & Columns with Samsung-style Vertical Borders -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 pb-12">
+            <!-- TOP FOOTER SECTION -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-0 pb-12">
                 
                 <!-- BRAND & HEADQUARTERS (Left Column) -->
-                <div class="lg:col-span-4 lg:pr-8 space-y-5 lg:border-r border-borderViolet">
+                <div class="md:col-span-4 md:pr-8 space-y-5 md:border-r border-borderViolet">
                     <a href="#" class="flex items-center gap-3 group">
                         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brandViolet to-purple-900 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-brandViolet/20 group-hover:scale-105 transition-transform">
                             G
@@ -105,18 +104,18 @@
                     </div>
                 </div>
 
-                <!-- RIGHT SIDE: Codieshub Columns with Samsung Style Borders -->
-                <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+                <!-- RIGHT SIDE: COLUMNS WITH SAMSUNG STYLE BORDER LINES -->
+                <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
                     
                     <!-- COLUMN 1: SERVICES -->
-                    <div class="border-b lg:border-b-0 lg:border-r border-borderViolet py-4 sm:py-0 lg:px-6">
-                        <button class="accordion-btn w-full flex justify-between items-center lg:cursor-default font-heading font-extrabold text-xs uppercase tracking-wider text-white mb-3 focus:outline-none">
-                            <span class="flex items-center gap-2">
+                    <div class="border-b md:border-b-0 md:border-r border-borderViolet py-4 md:py-0 md:px-6">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer md:cursor-default mb-4">
+                            <h4 class="font-heading font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
                                 <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span> Services
-                            </span>
-                            <i class="fa-solid fa-chevron-down text-xs text-slate-500 lg:hidden transition-transform duration-200"></i>
-                        </button>
-                        <ul class="accordion-content space-y-2.5 text-xs font-medium lg:block">
+                            </h4>
+                            <i class="fa-solid fa-chevron-down text-xs text-slate-500 md:hidden toggle-icon transition-transform"></i>
+                        </div>
+                        <ul class="mobile-accordion-content space-y-2.5 text-xs font-medium md:block">
                             <li><a href="#" class="footer-link inline-block">All Services</a></li>
                             <li><a href="#" class="footer-link inline-block">Dedicated Teams</a></li>
                             <li><a href="#" class="footer-link inline-block">Software Staffing</a></li>
@@ -129,14 +128,14 @@
                     </div>
 
                     <!-- COLUMN 2: EXPERTISE -->
-                    <div class="border-b lg:border-b-0 lg:border-r border-borderViolet py-4 sm:py-0 lg:px-6">
-                        <button class="accordion-btn w-full flex justify-between items-center lg:cursor-default font-heading font-extrabold text-xs uppercase tracking-wider text-white mb-3 focus:outline-none">
-                            <span class="flex items-center gap-2">
+                    <div class="border-b md:border-b-0 md:border-r border-borderViolet py-4 md:py-0 md:px-6">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer md:cursor-default mb-4">
+                            <h4 class="font-heading font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
                                 <span class="w-1.5 h-1.5 rounded-full bg-brandViolet"></span> Expertise
-                            </span>
-                            <i class="fa-solid fa-chevron-down text-xs text-slate-500 lg:hidden transition-transform duration-200"></i>
-                        </button>
-                        <ul class="accordion-content space-y-2.5 text-xs font-medium lg:block">
+                            </h4>
+                            <i class="fa-solid fa-chevron-down text-xs text-slate-500 md:hidden toggle-icon transition-transform"></i>
+                        </div>
+                        <ul class="mobile-accordion-content space-y-2.5 text-xs font-medium md:block">
                             <li><a href="#" class="footer-link inline-block">Artificial Intelligence</a></li>
                             <li><a href="#" class="footer-link inline-block">Custom Software Dev</a></li>
                             <li><a href="#" class="footer-link inline-block">Web App Development</a></li>
@@ -149,14 +148,14 @@
                     </div>
 
                     <!-- COLUMN 3: ABOUT -->
-                    <div class="border-b lg:border-b-0 lg:border-r border-borderViolet py-4 sm:py-0 lg:px-6">
-                        <button class="accordion-btn w-full flex justify-between items-center lg:cursor-default font-heading font-extrabold text-xs uppercase tracking-wider text-white mb-3 focus:outline-none">
-                            <span class="flex items-center gap-2">
+                    <div class="border-b md:border-b-0 md:border-r border-borderViolet py-4 md:py-0 md:px-6">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer md:cursor-default mb-4">
+                            <h4 class="font-heading font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
                                 <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span> About
-                            </span>
-                            <i class="fa-solid fa-chevron-down text-xs text-slate-500 lg:hidden transition-transform duration-200"></i>
-                        </button>
-                        <ul class="accordion-content space-y-2.5 text-xs font-medium lg:block">
+                            </h4>
+                            <i class="fa-solid fa-chevron-down text-xs text-slate-500 md:hidden toggle-icon transition-transform"></i>
+                        </div>
+                        <ul class="mobile-accordion-content space-y-2.5 text-xs font-medium md:block">
                             <li><a href="#" class="footer-link inline-block">Clients</a></li>
                             <li><a href="#" class="footer-link inline-block">Join Us</a></li>
                             <li><a href="#" class="footer-link inline-block">Values</a></li>
@@ -167,14 +166,14 @@
                     </div>
 
                     <!-- COLUMN 4: RESOURCES -->
-                    <div class="py-4 sm:py-0 lg:pl-6">
-                        <button class="accordion-btn w-full flex justify-between items-center lg:cursor-default font-heading font-extrabold text-xs uppercase tracking-wider text-white mb-3 focus:outline-none">
-                            <span class="flex items-center gap-2">
+                    <div class="py-4 md:py-0 md:pl-6">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer md:cursor-default mb-4">
+                            <h4 class="font-heading font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
                                 <span class="w-1.5 h-1.5 rounded-full bg-brandViolet"></span> Resources
-                            </span>
-                            <i class="fa-solid fa-chevron-down text-xs text-slate-500 lg:hidden transition-transform duration-200"></i>
-                        </button>
-                        <ul class="accordion-content space-y-2.5 text-xs font-medium lg:block">
+                            </h4>
+                            <i class="fa-solid fa-chevron-down text-xs text-slate-500 md:hidden toggle-icon transition-transform"></i>
+                        </div>
+                        <ul class="mobile-accordion-content space-y-2.5 text-xs font-medium md:block">
                             <li><a href="#" class="footer-link inline-block">Why Outsource</a></li>
                             <li><a href="#" class="footer-link inline-block">Why Nearshore</a></li>
                             <li><a href="#" class="footer-link inline-block">Insights</a></li>
@@ -187,17 +186,17 @@
 
             </div>
 
-            <!-- BOTTOM SUB-FOOTER: SOC 2 Compliant + Copyright -->
-            <div class="pt-8 border-t border-borderViolet/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+            <!-- BOTTOM SUB-FOOTER -->
+            <div class="pt-8 border-t border-borderViolet flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
                 
                 <div class="flex items-center gap-3">
-                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-brandViolet/10 text-brandGold border border-brandGold/30 font-semibold text-[11px]">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brandViolet/10 text-brandGold border border-brandGold/30 font-semibold text-[11px]">
                         <i class="fa-solid fa-shield-halved text-xs"></i> SOC 2 Compliant
                     </span>
                     <a href="#" class="text-slate-400 hover:text-white transition underline decoration-brandViolet underline-offset-4">See how we handle your data</a>
                 </div>
 
-                <div class="text-slate-500 font-mono text-[11px] text-center md:text-right">
+                <div class="text-slate-500 font-mono text-[11px] text-center sm:text-right">
                     © 2026 <span class="text-slate-300 font-semibold">Gull Of Group LLC</span>. All Rights Reserved. | <a href="#" class="hover:text-slate-300 transition">Privacy Policy</a>
                 </div>
 
@@ -205,30 +204,26 @@
 
         </div>
     </footer>
-    <!-- End Footer -->
 
-    <!-- Mobile Accordion Script -->
+    <!-- Clean Mobile Accordion Logic -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const accordionBtns = document.querySelectorAll('.accordion-btn');
+            const headers = document.querySelectorAll('.accordion-header');
 
-            accordionBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Mobile view check
-                    if (window.innerWidth < 1024) {
-                        const content = btn.nextElementSibling;
-                        const icon = btn.querySelector('i');
+            headers.forEach(header => {
+                header.addEventListener('click', () => {
+                    if (window.innerWidth < 768) {
+                        const content = header.nextElementSibling;
+                        const icon = header.querySelector('.toggle-icon');
+                        
+                        const isOpen = content.classList.contains('active');
 
-                        // Toggle active state
-                        const isOpen = content.classList.contains('open');
-
-                        // Close other accordions
-                        document.querySelectorAll('.accordion-content').forEach(item => item.classList.remove('open'));
-                        document.querySelectorAll('.accordion-btn i').forEach(i => i.style.transform = 'rotate(0deg)');
+                        document.querySelectorAll('.mobile-accordion-content').forEach(c => c.classList.remove('active'));
+                        document.querySelectorAll('.toggle-icon').forEach(i => i.style.transform = 'rotate(0deg)');
 
                         if (!isOpen) {
-                            content.classList.add('open');
-                            if(icon) icon.style.transform = 'rotate(180deg)';
+                            content.classList.add('active');
+                            if (icon) icon.style.transform = 'rotate(180deg)';
                         }
                     }
                 });
