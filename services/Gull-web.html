@@ -444,11 +444,18 @@
 <div id="mobileOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[80] opacity-0 pointer-events-none lg:hidden"></div>
 
 <aside id="mobileMenu" class="fixed top-0 right-0 h-full w-[88%] max-w-sm bg-[#0a0512] border-l border-brand-500/20 z-[90] shadow-2xl translate-x-full lg:hidden flex flex-col">
-  <div class="flex items-center justify-between px-5 py-4 border-b border-brand-500/15">
-    <div class="flex items-center gap-2.5">
-      <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-gold-500 flex items-center justify-center text-white font-bold text-xs">G</div>
-      <span class="font-heading font-extrabold text-base tracking-tight text-white">Gull Of Group</span>
-    </div>
+  <!-- Mobile Drawer Header with Logo -->
+<div class="flex items-center justify-between px-5 py-4 border-b border-brand-500/15">
+    
+    <!-- Transparent Full Logo for Mobile Drawer -->
+    <a href="#" class="inline-flex items-center shrink-0">
+        <img src="https://abdullah-gull.github.io/services/ChatGPT_Image_Jul_26__2026__01_23_06_AM-removebg-preview.png" alt="Gull Of Group" 
+             class="h-8 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(139,63,224,0.35)]">
+    </a>
+
+    <!-- Aapka Mobile Menu Close Button Yahan Hoga -->
+
+</div>
     <button id="closeMobileBtn" class="w-9 h-9 flex items-center justify-center rounded-lg border border-brand-500/25 text-slate-300" aria-label="Close menu">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
@@ -647,13 +654,15 @@
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-0 pb-12">
 
             <!-- BRAND & HEADQUARTERS (Left Column) -->
-            <div class="md:col-span-4 md:pr-8 space-y-5 md:border-r border-borderViolet">
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brandViolet to-purple-900 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-brandViolet/20 group-hover:scale-105 transition-transform">
-                        G
-                    </div>
-                    <span class="font-heading font-extrabold text-xl tracking-tight text-white">Gull Of Group</span>
-                </a>
+<div class="md:col-span-4 md:pr-8 space-y-5 md:border-r border-borderViolet">
+    
+    <!-- Footer Transparent Logo -->
+    <a href="#" class="inline-flex items-center shrink-0 group">
+        <img src="https://abdullah-gull.github.io/services/ChatGPT_Image_Jul_26__2026__01_23_06_AM-removebg-preview.png" 
+             alt="Gull Of Group" 
+             class="h-11 sm:h-13 w-auto object-contain filter drop-shadow-[0_0_15px_rgba(139,63,224,0.35)] group-hover:drop-shadow-[0_0_20px_rgba(219,165,78,0.5)] group-hover:scale-105 transition-all duration-300">
+    </a>
+</div>
 
                 <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
                     Building core scalable AI solutions, deep learning models, and production-grade architectures for modern global enterprises.
