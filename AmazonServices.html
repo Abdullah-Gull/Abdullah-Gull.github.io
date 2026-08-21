@@ -544,57 +544,85 @@
   </div>
 </section>
 
-<!-- =========================================================
-     MARKETPLACE LOGO SLIDER (previously wrapped in a broken
-     <script> tag so the whole section never rendered — fixed)
-     ========================================================= -->
-<style>
-    .marketplace-slider-section { background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%); padding: 100px 0; overflow: hidden; position: relative; }
-    .marketplace-container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-    .marketplace-header { text-align: center; margin-bottom: 60px; }
-    .marketplace-title { font-size: 42px; font-weight: 800; color: var(--light-text); margin-bottom: 16px; letter-spacing: -0.5px; }
-    .marketplace-title span { background: linear-gradient(135deg, #FF8C00, #FFB84D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .marketplace-subtitle { font-size: 18px; color: var(--subtle-gray); line-height: 1.6; max-width: 600px; margin: 0 auto; }
-    .marketplace-track-wrapper { position: relative; overflow: hidden; padding: 40px 0; }
-    .marketplace-track-wrapper::before, .marketplace-track-wrapper::after { content: ''; position: absolute; top: 0; width: 200px; height: 100%; z-index: 10; pointer-events: none; }
-    .marketplace-track-wrapper::before { left: 0; background: linear-gradient(to right, var(--dark-bg), transparent); }
-    .marketplace-track-wrapper::after { right: 0; background: linear-gradient(to left, var(--dark-bg), transparent); }
-    .marketplace-track { display: flex; gap: 24px; animation: scroll-marketplace 40s linear infinite; will-change: transform; }
-    .marketplace-track:hover { animation-play-state: paused; }
-    .marketplace-box { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6)); border: 1px solid var(--border-color); border-radius: 50px; padding: 20px 50px; min-width: 220px; text-align: center; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; white-space: nowrap; }
-    .marketplace-box span { color: var(--light-text); font-size: 16px; font-weight: 700; letter-spacing: 0.5px; transition: all 0.3s var(--transition-smooth); }
-    .marketplace-box:hover { background: linear-gradient(135deg, #FF8C00, #FFB84D); transform: translateY(-8px) scale(1.08); box-shadow: 0 16px 48px rgba(255, 140, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1); border-color: rgba(255, 140, 0, 0.5); }
-    .marketplace-box:hover span { color: #fff; font-weight: 800; }
-    @keyframes scroll-marketplace { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-220px * 7 - 24px * 7)); } }
-    @media (max-width: 1024px) { .marketplace-title { font-size: 36px; } .marketplace-subtitle { font-size: 16px; } .marketplace-slider-section { padding: 80px 0; } .marketplace-box { padding: 16px 40px; min-width: 180px; } .marketplace-box span { font-size: 14px; } }
-    @media (max-width: 768px) { .marketplace-header { margin-bottom: 40px; } .marketplace-title { font-size: 28px; margin-bottom: 12px; } .marketplace-subtitle { font-size: 14px; } .marketplace-slider-section { padding: 60px 0; } .marketplace-track-wrapper { padding: 30px 0; } .marketplace-track-wrapper::before, .marketplace-track-wrapper::after { width: 100px; } .marketplace-box { padding: 14px 32px; min-width: 160px; gap: 8px; } .marketplace-box span { font-size: 13px; } }
-    @media (max-width: 480px) { .marketplace-header { margin-bottom: 30px; } .marketplace-title { font-size: 22px; margin-bottom: 10px; } .marketplace-subtitle { font-size: 12px; } .marketplace-slider-section { padding: 40px 0; } .marketplace-track-wrapper { padding: 20px 0; } .marketplace-track-wrapper::before, .marketplace-track-wrapper::after { width: 80px; } .marketplace-track { gap: 16px; } .marketplace-box { padding: 12px 24px; min-width: 140px; gap: 6px; } .marketplace-box span { font-size: 12px; } }
-</style>
+<section class="relative bg-black py-10 sm:py-12 border-b-4 border-orange-500/70 overflow-hidden">
+  <div id="marqueeViewport" class="overflow-hidden [mask-image:linear-gradient(to_right,transparent_0,#000_6%,#000_94%,transparent_100%)]">
+    <div id="marqueeTrack" class="flex items-center gap-16 sm:gap-20 lg:gap-24 w-max px-8 animate-marquee">
 
-<section class="marketplace-slider-section" aria-label="Marketplaces I work with">
-  <div class="marketplace-container marketplace-header">
-    <h2 class="marketplace-title">Marketplaces I <span>Manage & Scale</span></h2>
-    <p class="marketplace-subtitle">From Amazon to Etsy, I help brands grow across every major marketplace.</p>
-  </div>
-  <div class="marketplace-track-wrapper">
-    <div class="marketplace-track" aria-hidden="true">
-      <div class="marketplace-box"><span>Amazon</span></div>
-      <div class="marketplace-box"><span>Shopify</span></div>
-      <div class="marketplace-box"><span>Wayfair</span></div>
-      <div class="marketplace-box"><span>Walmart</span></div>
-      <div class="marketplace-box"><span>Home Depot</span></div>
-      <div class="marketplace-box"><span>eBay</span></div>
-      <div class="marketplace-box"><span>Etsy</span></div>
-      <div class="marketplace-box"><span>Amazon</span></div>
-      <div class="marketplace-box"><span>Shopify</span></div>
-      <div class="marketplace-box"><span>Wayfair</span></div>
-      <div class="marketplace-box"><span>Walmart</span></div>
-      <div class="marketplace-box"><span>Home Depot</span></div>
-      <div class="marketplace-box"><span>eBay</span></div>
-      <div class="marketplace-box"><span>Etsy</span></div>
+      <!-- Base logo set — JS below auto-duplicates this for a seamless loop -->
+      <a href="#" class="marquee-pill shrink-0 flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity duration-300">
+        <img src="https://cdn.simpleicons.org/amazon/FFFFFF" alt="Amazon" loading="lazy" class="h-8 sm:h-10 lg:h-11 w-auto object-contain" onerror="this.remove()">
+        <span class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">amazon</span>
+      </a>
+
+      <a href="#" class="marquee-pill shrink-0 flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity duration-300">
+        <img src="https://cdn.simpleicons.org/walmart/FFFFFF" alt="Walmart" loading="lazy" class="h-8 sm:h-10 lg:h-11 w-auto object-contain" onerror="this.remove()">
+        <span class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">Walmart</span>
+      </a>
+
+      <a href="#" class="marquee-pill shrink-0 flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity duration-300">
+        <img src="https://cdn.simpleicons.org/shopify/FFFFFF" alt="Shopify" loading="lazy" class="h-8 sm:h-10 lg:h-11 w-auto object-contain" onerror="this.remove()">
+        <span class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">Shopify</span>
+      </a>
+
+      <a href="#" class="marquee-pill shrink-0 flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity duration-300">
+        <img src="https://cdn.simpleicons.org/ebay/FFFFFF" alt="eBay" loading="lazy" class="h-8 sm:h-10 lg:h-11 w-auto object-contain" onerror="this.remove()">
+        <span class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">eBay</span>
+      </a>
+
+      <a href="#" class="marquee-pill shrink-0 flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity duration-300">
+        <img src="https://cdn.simpleicons.org/etsy/FFFFFF" alt="Etsy" loading="lazy" class="h-8 sm:h-10 lg:h-11 w-auto object-contain" onerror="this.remove()">
+        <span class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">Etsy</span>
+      </a>
+
+      <a href="#" class="marquee-pill shrink-0 flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity duration-300">
+        <img src="https://cdn.simpleicons.org/wayfair/FFFFFF" alt="Wayfair" loading="lazy" class="h-8 sm:h-10 lg:h-11 w-auto object-contain" onerror="this.remove()">
+        <span class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">Wayfair</span>
+      </a>
+
+      <a href="#" class="marquee-pill shrink-0 flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity duration-300">
+        <img src="https://cdn.simpleicons.org/thehomedepot/FFFFFF" alt="Home Depot" loading="lazy" class="h-8 sm:h-10 lg:h-11 w-auto object-contain" onerror="this.remove()">
+        <span class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">Home Depot</span>
+      </a>
+
     </div>
   </div>
 </section>
+
+<script>
+  // Auto-clones the logo set until the track is at least 2x the viewport
+  // width, so the -50% loop is always perfectly seamless — and pauses on
+  // hover/touch.
+  (function () {
+    const viewport = document.getElementById('marqueeViewport');
+    const track = document.getElementById('marqueeTrack');
+    if (!viewport || !track) return;
+
+    function buildLoop() {
+      const originals = Array.from(track.children).filter(el => !el.dataset.clone);
+      track.innerHTML = '';
+      originals.forEach(el => track.appendChild(el));
+
+      let guard = 0;
+      while (track.scrollWidth < viewport.clientWidth * 2 && guard < 10) {
+        originals.forEach(el => {
+          const clone = el.cloneNode(true);
+          clone.dataset.clone = 'true';
+          clone.setAttribute('aria-hidden', 'true');
+          track.appendChild(clone);
+        });
+        guard++;
+      }
+    }
+
+    buildLoop();
+    window.addEventListener('resize', buildLoop);
+
+    viewport.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+    viewport.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
+    viewport.addEventListener('touchstart', () => track.style.animationPlayState = 'paused', { passive: true });
+    viewport.addEventListener('touchend', () => track.style.animationPlayState = 'running');
+  })();
+</script>
 
 <!-- =========================================================
      SERVICES TABS
