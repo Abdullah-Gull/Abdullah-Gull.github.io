@@ -1,140 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah Gull - Scaling Amazon Brands Globally</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandOrange: '#FF6600',
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-white text-gray-900 font-sans antialiased">
-
-    <!-- Header / Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <!-- Logo / Brand -->
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-full bg-orange-100 border border-brandOrange/30 flex items-center justify-center text-brandOrange font-bold text-lg">
-                    AG
-                </div>
-                <span class="text-lg font-bold tracking-tight text-gray-900">Abdullah Gull</span>
-            </div>
-
-            <!-- Navigation Links -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
-                <a href="#" class="text-brandOrange font-semibold">Home</a>
-                <a href="#" class="hover:text-brandOrange transition-colors">About us</a>
-                <a href="#" class="hover:text-brandOrange transition-colors">Services <i class="fa-solid fa-chevron-down text-xs ml-1"></i></a>
-                <a href="#" class="hover:text-brandOrange transition-colors">Blog</a>
-                <a href="#" class="hover:text-brandOrange transition-colors">Contact us</a>
-            </nav>
-
-            <!-- Call to Action Button -->
-            <div>
-                <a href="#contact" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-medium text-sm transition-all duration-300">
-                    Get In Touch
-                </a>
-            </div>
-
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <!-- Left Column: Content & Description -->
-            <div class="lg:col-span-7 space-y-8">
-                <div class="space-y-4">
-                    <span class="inline-block px-3.5 py-1.5 rounded-full bg-orange-50 text-brandOrange text-xs font-bold uppercase tracking-wider border border-orange-100">
-                        E-Commerce Architecture & Scaling
-                    </span>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 leading-[1.15]">
-                        Abdullah Gull: <br class="hidden sm:inline">
-                        <span class="text-brandOrange">Scaling Amazon Brands Globally</span>
-                    </h1>
-                </div>
-
-                <p class="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl border-l-4 border-brandOrange pl-4">
-                    Abdullah Gull provides performance-driven Amazon Ecosystem Scaling, specializing in Algorithmic PPC Optimization, Advanced SEO, High-Converting Listing Architecture, and Full Account Management. By taking complete charge of your Seller Central or Vendor Central operations, I enable you to focus entirely on product innovation and manufacturing.
-                </p>
-
-                <!-- CTA Buttons -->
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="#audit" class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-brandOrange text-white font-bold text-sm tracking-wide hover:bg-orange-600 transition-all shadow-lg shadow-brandOrange/20 hover:scale-[1.02]">
-                        <span>GET FREE AMAZON AUDIT</span>
-                        <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-                    </a>
-                    <a href="#problem" class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl border border-gray-300 text-gray-800 bg-white hover:border-gray-900 font-bold text-sm tracking-wide transition-all">
-                        <span>SOLVE AN AMAZON PROBLEM</span>
-                        <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Right Column: Visual Mockup / Phone Dashboard -->
-            <div class="lg:col-span-5 relative flex justify-center items-center">
-                <!-- Decorative background blur -->
-                <div class="absolute w-72 h-72 bg-orange-100 rounded-full blur-3xl -z-10"></div>
-                
-                <div class="relative w-full max-w-md bg-gray-50 border border-gray-200 rounded-3xl p-6 shadow-2xl">
-                    <!-- Phone Frame mockup UI -->
-                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm space-y-6">
-                        <div class="flex items-center justify-between border-b border-gray-100 pb-3">
-                            <div class="flex items-center space-x-2">
-                                <span class="text-lg">🇺🇸</span>
-                                <span class="text-xs font-bold text-gray-700">Amazon Seller</span>
-                            </div>
-                            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Live Metrics</span>
-                        </div>
-
-                        <div>
-                            <p class="text-xs text-gray-400 font-medium uppercase tracking-wider">Market Sales</p>
-                            <div class="flex items-baseline space-x-3 mt-1">
-                                <span class="text-3xl font-black text-gray-900">20M <span class="text-sm font-semibold text-gray-500">USD</span></span>
-                                <span class="text-xs font-bold text-brandOrange bg-orange-50 px-2 py-1 rounded-full">↑ 162%</span>
-                            </div>
-                        </div>
-
-                        <!-- Mini Bar Chart Simulation -->
-                        <div class="h-28 bg-orange-50/50 rounded-xl p-3 flex items-end justify-between gap-2 border border-orange-100">
-                            <div class="w-full bg-brandOrange/30 rounded-t h-[40%]"></div>
-                            <div class="w-full bg-brandOrange/40 rounded-t h-[55%]"></div>
-                            <div class="w-full bg-brandOrange/60 rounded-t h-[70%]"></div>
-                            <div class="w-full bg-brandOrange/80 rounded-t h-[85%]"></div>
-                            <div class="w-full bg-brandOrange rounded-t h-[100%]"></div>
-                        </div>
-
-                        <div class="space-y-2 pt-2">
-                            <div class="p-3 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-between text-xs font-medium text-gray-700">
-                                <span><i class="fa-solid fa-box text-brandOrange mr-2"></i> Active Products</span>
-                                <span class="font-bold text-gray-900">142</span>
-                            </div>
-                            <div class="p-3 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-between text-xs font-medium text-gray-700">
-                                <span><i class="fa-solid fa-chart-pie text-brandOrange mr-2"></i> Strategy ROI</span>
-                                <span class="font-bold text-emerald-600">Optimized</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-</body>
-</html>
+<!-- ========================================================= 
+    HERO SECTION (WHITE & GRAY THEME)
+========================================================= -->
+<section class="relative bg-white text-gray-900 py-14 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12 overflow-hidden border-b border-gray-100">
+  
+  <!-- Subtle Dot Grid Background for Light Theme -->
+  <div class="absolute inset-0 z-0 opacity-40" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 30px 30px;" aria-hidden="true"></div>
+  
+  <div class="max-w-[1400px] mx-auto relative z-10 flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-16">
+    
+    <!-- Left Content Column -->
+    <div class="w-full lg:w-[45%] text-center lg:text-left">
+      <h1 class="font-['Manrope'] font-extrabold tracking-tight mb-6 lg:mb-8 leading-[1.05] lg:leading-[0.95] text-[34px] sm:text-[46px] md:text-[58px] lg:text-[80px] text-gray-900">
+        Abdullah Gull:<br>
+        <span class="text-[#FF9900]">Scaling Amazon Brands Globally</span>
+      </h1>
+      
+      <p class="text-gray-600 mb-8 lg:mb-10 border-l-4 border-[#FF9900] pl-5 lg:pl-6 leading-relaxed text-left text-sm sm:text-base mx-auto lg:mx-0 max-w-[520px] lg:max-w-none">
+        Abdullah Gull provides performance-driven Amazon Ecosystem Scaling, specializing in Algorithmic PPC Optimization, Advanced SEO, High-Converting Listing Architecture, and Full Account Management. By taking complete charge of your Seller Central or Vendor Central operations, I enable you to focus entirely on product innovation and manufacturing.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 items-center lg:items-start justify-center lg:justify-start">
+        <a href="audit.html" class="w-full sm:w-auto bg-[#FF9900] text-white px-6 py-3.5 sm:px-8 sm:py-4 font-bold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-orange-600 transition-all shadow-md shadow-orange-500/20">
+          GET FREE AMAZON AUDIT <span aria-hidden="true">→</span>
+        </a>
+        <a href="contact.html" class="w-full sm:w-auto border-2 border-[#FF9900] text-[#FF9900] px-6 py-3.5 sm:px-8 sm:py-4 font-bold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-[#FF9900] hover:text-white transition-all">
+          SOLVE AN AMAZON PROBLEM <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Right Image Column -->
+    <div class="w-full max-w-[320px] sm:max-w-[420px] lg:max-w-none lg:w-[50%] h-[300px] sm:h-[400px] lg:h-[500px] relative">
+      <img
+        src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg-removebg-preview-removebg-preview.png"
+        alt="Abdullah Gull, Amazon PPC and SEO consultant"
+        width="700" height="700" fetchpriority="high"
+        class="w-full h-full object-contain lg:object-cover lg:scale-110 lg:translate-x-4 drop-shadow-xl">
+    </div>
+    
+  </div>
+</section>
