@@ -332,17 +332,26 @@
     color: #14151A !important;
   }
   body.light-theme p { color: #5B5D66 !important; }
+  body.light-theme .text-brand-text { color: #14151A !important; }
+  body.light-theme .bg-brand-bg { background-color: #FFFFFF !important; }
+  body.light-theme .text-brand-muted { color: #5B5D66 !important; }
 
   /* Header */
-  body.light-theme #headerCapsule { background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(243,244,247,0.9)); border-color: #E3E4E9; box-shadow: 0 8px 32px rgba(20,21,26,0.08); }
-  body.light-theme #desktopHeaderWrap.scrolled #headerCapsule { background: linear-gradient(135deg, rgba(255,255,255,0.97), rgba(243,244,247,0.97)); }
-  body.light-theme .desktop-nav-link { color: #5B5D66; }
-  body.light-theme #mobileHeaderWrap, body.light-theme #mobileHeaderWrap.scrolled { background: #FFFFFF; border-color: #E3E4E9; }
-  body.light-theme #mobileMenu { background: #FFFFFF; }
-  body.light-theme .mobile-nav-link, body.light-theme #mobileMenu a { color: #14151A; }
-  body.light-theme #megaPanel { background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(243,244,247,0.98)); border-color: #E3E4E9; }
-  body.light-theme #megaPanel a, body.light-theme #megaPanel h3.text-brand-orange { color: #5B5D66; }
-  body.light-theme #megaPanel h3 { color: var(--primary-orange); }
+  body.light-theme #headerCapsule { background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(243,244,247,0.92)) !important; border-color: #E3E4E9 !important; box-shadow: 0 8px 32px rgba(20,21,26,0.08) !important; }
+  body.light-theme #desktopHeaderWrap.scrolled #headerCapsule { background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(243,244,247,0.98)) !important; box-shadow: 0 8px 32px rgba(20,21,26,0.12) !important; }
+  body.light-theme .desktop-nav-link { color: #5B5D66 !important; }
+  body.light-theme .desktop-nav-link:hover, body.light-theme .desktop-nav-link.bg-brand-orange { color: #fff !important; }
+  body.light-theme #mobileHeaderWrap { background: #FFFFFF !important; border-color: #E3E4E9 !important; }
+  body.light-theme #mobileHeaderWrap.scrolled { background: #FFFFFF !important; box-shadow: 0 4px 20px rgba(20,21,26,0.1) !important; }
+  body.light-theme #mobileHeaderWrap span, body.light-theme #mobileHeaderWrap a:not(.text-brand-orange) { color: #14151A !important; }
+  body.light-theme #mobileMenuToggle, body.light-theme #mobileMenuClose { background: var(--primary-orange) !important; }
+  body.light-theme #mobileMenuToggle svg, body.light-theme #mobileMenuClose svg { color: #fff !important; }
+  body.light-theme #mobileMenu { background: #FFFFFF !important; }
+  body.light-theme .mobile-nav-link, body.light-theme #mobileMenu a { color: #14151A !important; }
+  body.light-theme .mobile-nav-link.text-brand-orange, body.light-theme #mobileMenu a.text-brand-orange { color: var(--primary-orange) !important; }
+  body.light-theme #megaPanel { background: linear-gradient(135deg, rgba(255,255,255,0.99), rgba(243,244,247,0.99)) !important; border-color: #E3E4E9 !important; }
+  body.light-theme #megaPanel a, body.light-theme #megaPanel h3.text-brand-orange { color: #5B5D66 !important; }
+  body.light-theme #megaPanel h3 { color: var(--primary-orange) !important; }
   body.light-theme .mega-service-title, body.light-theme .mega-panel-side-title { color: #14151A !important; }
   body.light-theme .mega-service-desc, body.light-theme .mega-panel-side-desc, body.light-theme .mega-panel-side-list li { color: #5B5D66 !important; }
   body.light-theme .desktop-nav-link.bg-brand-orange, body.light-theme .mobile-nav-link.text-brand-orange { color: #fff !important; }
@@ -440,7 +449,18 @@
   body.light-theme [class*="brightness-0"][class*="invert"] { filter: none !important; opacity: 0.75; }
 
   /* FAQ icon circles that were dark by default */
-  body.light-theme .faq-icon.bg-zinc-900 { background: #F3F4F7 !important; color: #5B5D66 !important; }
+  body.light-theme .faq-icon.bg-zinc-900 { background: #F3F4F7 !important; color: #5B5D66 !important; border-color: #E3E4E9 !important; }
+  body.light-theme .faq-item { box-shadow: 0 4px 16px rgba(20,21,26,0.04); }
+  body.light-theme .faq-item:hover { border-color: rgba(255,140,0,0.3) !important; }
+
+  /* "Amazon Ads Advanced Partner" side card — was unreadable (text flipped
+     dark but its own background stayed dark too) */
+  body.light-theme #advancedPartnerCard {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F3F4F7 100%) !important;
+    border-color: #E3E4E9 !important;
+    box-shadow: 0 20px 50px rgba(20,21,26,0.08) !important;
+  }
+  body.light-theme #advancedPartnerCard [class*="bg-zinc-800"] { background-color: #E3E4E9 !important; }
 
   /* Marketplace Mastery heading gradient text needs a visible base on light bg */
   body.light-theme h2.text-transparent.bg-clip-text { -webkit-text-fill-color: initial; background: linear-gradient(90deg, #14151A, #4a4b52, var(--primary-orange)); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -448,6 +468,9 @@
   /* Back to top button */
   body.light-theme #backToTopBtn { background: #14151A; color: #fff; border-color: #E3E4E9; }
   body.light-theme #backToTopBtn:hover { background: var(--primary-orange); color: #fff; }
+
+  body.light-theme .social-link { color: #fff !important; }
+  body.light-theme .social-link:hover { filter: brightness(1.08); }
 
   /* ============================================================
      THEME TOGGLE BUTTON
@@ -632,11 +655,11 @@
           </button>
 
           <div id="megaPanel"
-               class="mega-menu-panel absolute top-[70px] left-1/2 w-[980px] max-w-[92vw]
-                      grid grid-cols-[1.3fr_1fr] gap-8 p-9 rounded-2xl
+               class="mega-menu-panel absolute top-[70px] left-1/2 w-[1100px] max-w-[94vw]
+                      grid grid-cols-[1.3fr_1fr] gap-8 p-10 rounded-2xl
                       bg-gradient-to-br from-brand-secondary/95 to-brand-border/90
                       backdrop-blur-xl border border-brand-border border-t-2 border-t-brand-orange
-                      shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+                      shadow-[0_30px_80px_rgba(0,0,0,0.55)]">
 
             <div class="grid grid-cols-2 gap-x-8 gap-y-1">
               <a href="services.html" class="mega-service-item group flex items-start gap-3 py-3">
@@ -978,20 +1001,21 @@
      ========================================================= -->
 <style>
   .trust-brands-section { padding: 64px 5% 72px; text-align: center; }
-  .trust-brands-eyebrow { font-size: 14px; font-weight: 600; color: var(--subtle-gray); letter-spacing: 0.3px; margin-bottom: 36px; }
-  .trust-brands-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 28px 20px; max-width: 1200px; margin: 0 auto; }
-  .trust-brand-slot { height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 10px; overflow: hidden; }
+  .trust-brands-eyebrow { font-size: 14px; font-weight: 600; color: var(--subtle-gray); letter-spacing: 0.3px; margin-bottom: 40px; }
+  .trust-brands-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px 16px; max-width: 1200px; margin: 0 auto; }
+  .trust-brand-slot { height: 68px; display: flex; align-items: center; justify-content: center; border-radius: 12px; overflow: hidden; background: var(--dark-secondary); border: 1px solid var(--border-color); transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
+  .trust-brand-slot:hover { border-color: rgba(255,140,0,0.4); transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.15); }
   .trust-brand-name {
-    font-weight: 800; font-size: 17px; letter-spacing: -0.2px; color: var(--light-text);
-    opacity: 0.55; filter: grayscale(100%); transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+    font-weight: 800; font-size: 15px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--light-text);
+    opacity: 0.92; transition: opacity 0.4s ease, color 0.4s ease, transform 0.5s ease;
     white-space: nowrap;
   }
-  .trust-brand-slot:hover .trust-brand-name { opacity: 1; filter: grayscale(0%); color: var(--primary-orange); transform: scale(1.05); }
+  .trust-brand-slot:hover .trust-brand-name { opacity: 1; color: var(--primary-orange); }
   .trust-brand-name.tb-fade-out { opacity: 0; transform: translateY(6px); }
   .trust-brand-name.tb-fade-in { animation: tb-fade-in 0.6s ease forwards; }
-  @keyframes tb-fade-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 0.55; transform: translateY(0); } }
+  @keyframes tb-fade-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 0.92; transform: translateY(0); } }
   @media (max-width: 1024px) { .trust-brands-grid { grid-template-columns: repeat(4, 1fr); } }
-  @media (max-width: 640px) { .trust-brands-grid { grid-template-columns: repeat(3, 1fr); gap: 22px 14px; } .trust-brand-name { font-size: 14px; } }
+  @media (max-width: 640px) { .trust-brands-grid { grid-template-columns: repeat(3, 1fr); gap: 14px 10px; } .trust-brand-name { font-size: 12px; } .trust-brand-slot { height: 56px; } }
 </style>
 
 <section class="trust-brands-section" aria-label="Brands and sellers I've worked with">
@@ -1140,6 +1164,7 @@
     <p class="exp-subtitle">A closer look at how each engagement is run — from storefront setup, to data-driven ad testing, to the account-health guarantees that keep your Amazon business safe.</p>
   </div>
 
+  <div class="why-block-panel">
   <div class="why-block">
     <div class="why-block-text">
       <h3>Build a High-Converting Amazon Storefront</h3>
@@ -1155,7 +1180,9 @@
       <img src="https://abdullah-gull.github.io/images/seller-central-image-abdullah-gull.jpg" alt="Amazon storefront and listing dashboard" loading="lazy" width="640" height="420">
     </div>
   </div>
+  </div>
 
+  <div class="why-block-panel">
   <div class="why-block reverse">
     <div class="why-block-text">
       <h3>A/B Testing & Data-Driven Ad Decisions</h3>
@@ -1171,7 +1198,9 @@
       <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" alt="Abdullah Gull reviewing PPC campaign analytics" loading="lazy" width="640" height="420">
     </div>
   </div>
+  </div>
 
+  <div class="why-block-panel">
   <div class="why-block">
     <div class="why-block-text">
       <h3>Why Choose Abdullah Gull for Account Health & Speed</h3>
@@ -1187,15 +1216,18 @@
       <img src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg-removebg-preview-removebg-preview.png" alt="Abdullah Gull, Amazon PPC and SEO consultant" loading="lazy" width="640" height="420" class="why-block-cutout">
     </div>
   </div>
+  </div>
 </section>
 
 <style>
-    .why-blocks-section { padding: 88px 8% 40px; background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%); color: var(--light-text); position: relative; overflow: hidden; }
-    .why-blocks-header { max-width: 720px; margin: 0 auto 64px; text-align: center; }
+    .why-blocks-section { padding: 88px 0 40px; background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%); color: var(--light-text); position: relative; overflow: hidden; }
+    .why-blocks-header { max-width: 720px; margin: 0 auto 64px; text-align: center; padding: 0 8%; }
     .why-blocks-header .exp-title { font-size: 44px; margin-bottom: 20px; font-weight: 800; color: var(--light-text); letter-spacing: -1px; }
     .exp-title .highlight { background: linear-gradient(135deg, #FF8C00, #FFB84D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .why-blocks-header .exp-subtitle { font-size: 17px; color: var(--subtle-gray); line-height: 1.8; }
-    .why-block { max-width: 1300px; margin: 0 auto 72px; display: flex; align-items: center; gap: 64px; }
+    .why-block-panel { padding: 56px 8%; }
+    .why-block-panel:nth-child(even) { background: rgba(255,140,0,0.03); }
+    .why-block { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; gap: 64px; }
     .why-block.reverse { flex-direction: row-reverse; }
     .why-block-text { flex: 1; min-width: 0; }
     .why-block-text h3 { font-size: 30px; font-weight: 800; color: var(--light-text); margin-bottom: 16px; letter-spacing: -0.4px; }
@@ -1205,11 +1237,11 @@
     .why-block-list li i { color: var(--primary-orange); width: 20px; text-align: center; }
     .why-block-btn { display: inline-block; border: 2px solid var(--primary-orange); color: var(--primary-orange); padding: 13px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.3s var(--transition-smooth); }
     .why-block-btn:hover { background: var(--primary-orange); color: #fff; transform: translateY(-3px); }
-    .why-block-media { flex: 1; min-width: 0; border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 20px 50px rgba(0,0,0,0.25); background: var(--dark-secondary); }
+    .why-block-media { flex: 1; min-width: 0; border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 20px 50px rgba(0,0,0,0.2); background: var(--dark-secondary); }
     .why-block-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .why-block-media img.why-block-cutout { object-fit: contain; padding: 20px; }
-    @media (max-width: 1024px) { .why-block, .why-block.reverse { flex-direction: column; gap: 32px; } .why-blocks-header .exp-title { font-size: 36px; } }
-    @media (max-width: 480px) { .why-blocks-section { padding: 60px 5% 20px; } .why-block-text h3 { font-size: 24px; } .why-blocks-header { margin-bottom: 44px; } .why-block { margin-bottom: 48px; } }
+    @media (max-width: 1024px) { .why-block, .why-block.reverse { flex-direction: column; gap: 32px; } .why-blocks-header .exp-title { font-size: 36px; } .why-block-panel { padding: 44px 6%; } }
+    @media (max-width: 480px) { .why-blocks-section { padding: 60px 0 20px; } .why-block-text h3 { font-size: 24px; } .why-blocks-header { margin-bottom: 44px; } .why-block-panel { padding: 36px 5%; } }
 </style>
 
 
@@ -1821,7 +1853,7 @@
       </div>
 
       <div class="lg:col-span-5 flex flex-col h-full">
-        <div class="relative bg-gradient-to-b from-zinc-900 to-black p-8 sm:p-10 rounded-[32px] border border-zinc-800 shadow-2xl overflow-hidden group flex flex-col justify-between h-full flex-grow">
+        <div id="advancedPartnerCard" class="relative bg-gradient-to-b from-zinc-900 to-black p-8 sm:p-10 rounded-[32px] border border-zinc-800 shadow-2xl overflow-hidden group flex flex-col justify-between h-full flex-grow">
           <div class="absolute -inset-px rounded-[32px] bg-gradient-to-b from-[#ff8c00]/25 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" aria-hidden="true"></div>
           <div class="relative z-10 flex flex-col items-center text-center space-y-6 flex-grow justify-center">
             <div class="bg-white p-6 rounded-3xl w-64 h-64 shadow-[0_0_50px_rgba(255,140,0,0.12)] flex flex-col items-center justify-center space-y-3 transform group-hover:scale-[1.02] transition-transform duration-500">
@@ -2068,8 +2100,6 @@
     e.stopPropagation();
     megaPanel.classList.contains('open') ? closeMegaMenu() : openMegaMenu();
   });
-  servicesWrapper.addEventListener('mouseenter', openMegaMenu);
-  servicesWrapper.addEventListener('mouseleave', closeMegaMenu);
   document.addEventListener('click', (e) => { if (!servicesWrapper.contains(e.target)) closeMegaMenu(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMegaMenu(); });
 
