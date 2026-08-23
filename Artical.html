@@ -26,7 +26,6 @@
   .navbar{
     display:flex;
     align-items:center;
-    justify-content:space-between;
     max-width:1400px;
     margin:0 auto;
     padding:0 24px;
@@ -43,16 +42,14 @@
     font-size:16px;
     letter-spacing:.2px;
     white-space:nowrap;
-    flex:0 0 auto;
+    flex:1 1 0;
   }
   .logo svg{width:20px;height:20px;fill:var(--accent);}
 
-  /* centered nav */
+  /* centered nav — flanked by two equal flex:1 siblings so it stays visually centered
+     without using transform (transform would break position:fixed children) */
   .nav-items{
-    position:absolute;
-    left:50%;
-    top:0;
-    transform:translateX(-50%);
+    flex:0 0 auto;
     display:flex;
     align-items:center;
     gap:8px;
@@ -94,8 +91,9 @@
   .nav-right{
     display:flex;
     align-items:center;
+    justify-content:flex-end;
     gap:14px;
-    flex:0 0 auto;
+    flex:1 1 0;
   }
   .icon-btn{
     background:none;border:none;color:var(--text-dim);
