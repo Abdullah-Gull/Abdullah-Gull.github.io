@@ -10,7 +10,8 @@
     --bg-panel:#0c0c0d;
     --text:#f5f5f7;
     --text-dim:#a1a1a6;
-    --accent:#f5a623;
+    --accent:#ff5a1f;
+    --accent-light:#ff7a45;
     --border:#1d1d1f;
   }
   *{box-sizing:border-box;}
@@ -36,15 +37,21 @@
   .logo{
     display:flex;
     align-items:center;
-    gap:8px;
+    gap:10px;
     color:var(--text);
     font-weight:700;
     font-size:16px;
     letter-spacing:.2px;
     white-space:nowrap;
     flex:1 1 0;
+    text-decoration:none;
   }
-  .logo svg{width:20px;height:20px;fill:var(--accent);}
+  .logo img{
+    height:34px;
+    width:auto;
+    display:block;
+    object-fit:contain;
+  }
 
   /* centered nav — flanked by two equal flex:1 siblings so it stays visually centered
      without using transform (transform would break position:fixed children) */
@@ -118,8 +125,8 @@
     transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
   }
   .get-in-touch:hover{
-    background:#ffb733;
-    box-shadow:0 4px 16px rgba(245,166,35,.35);
+    background:var(--accent-light);
+    box-shadow:0 4px 16px rgba(255,90,31,.4);
   }
   .get-in-touch svg{width:14px;height:14px;}
 
@@ -245,6 +252,125 @@
     font-size:12px;color:#d7d7db;line-height:1.4;display:block;
   }
 
+  /* ===== SEARCH OVERLAY ===== */
+  .search-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(6px);
+    z-index:200;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    padding-top:min(14vh, 120px);
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .25s ease, visibility 0s linear .25s;
+  }
+  .search-overlay.active{
+    opacity:1;
+    visibility:visible;
+    transition:opacity .25s ease;
+  }
+  .search-box{
+    width:min(640px, 90vw);
+    background:#0c0c0d;
+    border:1px solid var(--border);
+    border-radius:16px;
+    box-shadow:0 30px 70px rgba(0,0,0,.6);
+    overflow:hidden;
+    transform:translateY(-14px);
+    opacity:0;
+    transition:transform .3s cubic-bezier(.16,1,.3,1), opacity .3s ease;
+  }
+  .search-overlay.active .search-box{
+    transform:translateY(0);
+    opacity:1;
+  }
+  .search-input-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:18px 20px;
+    border-bottom:1px solid var(--border);
+  }
+  .search-input-row svg{
+    width:18px;height:18px;
+    color:var(--text-dim);
+    flex:0 0 auto;
+  }
+  #searchInput{
+    flex:1;
+    background:none;
+    border:none;
+    outline:none;
+    color:var(--text);
+    font-size:16px;
+    font-family:inherit;
+  }
+  #searchInput::placeholder{color:#5a5a5e;}
+  .search-close{
+    background:none;border:none;color:var(--text-dim);
+    cursor:pointer;padding:4px;display:flex;
+    transition:color .2s ease;
+  }
+  .search-close:hover{color:var(--text);}
+  .search-close svg{width:16px;height:16px;}
+
+  .search-results{
+    max-height:min(50vh, 420px);
+    overflow-y:auto;
+    padding:8px;
+  }
+  .search-hint{
+    color:#5a5a5e;
+    font-size:13px;
+    padding:24px 16px;
+    text-align:center;
+    margin:0;
+  }
+  .search-empty{
+    color:#5a5a5e;
+    font-size:13px;
+    padding:24px 16px;
+    text-align:center;
+    margin:0;
+  }
+  .search-group{
+    padding:10px 12px 4px;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.6px;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .search-result{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:11px 12px;
+    border-radius:8px;
+    color:var(--text);
+    text-decoration:none;
+    font-size:14px;
+    transition:background .15s ease;
+  }
+  .search-result:hover, .search-result.active{
+    background:#1a1a1b;
+  }
+  .search-result .sr-tag{
+    font-size:10px;
+    color:var(--text-dim);
+    white-space:nowrap;
+    flex:0 0 auto;
+  }
+  .search-result mark{
+    background:none;
+    color:var(--accent);
+    font-weight:600;
+  }
+
   /* ===== MOBILE ===== */
   .hamburger{
     display:none;
@@ -328,10 +454,9 @@
 
 <header>
   <div class="navbar">
-    <div class="logo">
-      <svg viewBox="0 0 24 24"><path d="M12 2 L14.5 8.5 L21.5 9 L16 13.5 L18 21 L12 17 L6 21 L8 13.5 L2.5 9 L9.5 8.5 Z"/></svg>
-      BRAND
-    </div>
+    <a href="#" class="logo">
+      <img src="https://abdullah-gull.github.io/images/Abdullah_Gull-removebg-preview.png" alt="Brand logo">
+    </a>
 
     <ul class="nav-items" id="navItems">
       <li class="nav-item"><a href="#">Home</a></li>
@@ -471,7 +596,7 @@
     </ul>
 
     <div class="nav-right">
-      <button class="icon-btn" aria-label="Search">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
       <a class="get-in-touch" href="#">
@@ -486,7 +611,23 @@
 </header>
 
 <div style="min-height:60vh;display:flex;align-items:center;justify-content:center;color:#3a3a3c;font-size:13px;text-align:center;padding:0 20px;">
-  Hover (desktop) or tap (mobile) "Services" / "Category" / "Industry" to open the mega menu
+  Hover (desktop) or tap (mobile) "Services" / "Category" / "Industry" to open the mega menu — or tap the search icon
+</div>
+
+<!-- ===== SEARCH OVERLAY ===== -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search the whole site..." autocomplete="off">
+      <button class="search-close" id="searchClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="search-results" id="searchResults">
+      <p class="search-hint">Start typing to search across Services, Category, Industry and more.</p>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -565,6 +706,121 @@
       const wrap = o.querySelector('.mega-wrap');
       if(wrap) wrap.style.height = '';
     });
+  });
+  // ===== SITE SEARCH (auto-built from every nav / mega-menu link on the page) =====
+  function buildSearchIndex(){
+    const index = [];
+    document.querySelectorAll('.nav-items > .nav-item').forEach(topItem=>{
+      const topLink = topItem.querySelector(':scope > a, :scope > .nav-link');
+      const topLabel = topLink ? topLink.textContent.trim().replace(/\s+/g,' ') : '';
+
+      const megaCols = topItem.querySelectorAll('.mega-col');
+      if(megaCols.length){
+        megaCols.forEach(col=>{
+          const groupTitle = col.querySelector('h4') ? col.querySelector('h4').textContent.trim() : topLabel;
+          col.querySelectorAll('ul li a').forEach(a=>{
+            index.push({
+              title: a.textContent.trim().replace(/\s+/g,' '),
+              group: groupTitle,
+              section: topLabel,
+              href: a.getAttribute('href') || '#'
+            });
+          });
+        });
+      } else if(topLabel){
+        index.push({
+          title: topLabel,
+          group: 'Page',
+          section: topLabel,
+          href: topLink.getAttribute('href') || '#'
+        });
+      }
+      // feature cards (category expertise etc.)
+      topItem.querySelectorAll('.feature-card .fc-text strong').forEach(strong=>{
+        index.push({
+          title: strong.textContent.trim(),
+          group: 'Featured',
+          section: topLabel,
+          href: '#'
+        });
+      });
+    });
+    return index;
+  }
+
+  const searchIndex = buildSearchIndex();
+  const searchBtn = document.getElementById('searchBtn');
+  const searchOverlay = document.getElementById('searchOverlay');
+  const searchInput = document.getElementById('searchInput');
+  const searchClose = document.getElementById('searchClose');
+  const searchResults = document.getElementById('searchResults');
+
+  function highlight(text, query){
+    if(!query) return text;
+    const idx = text.toLowerCase().indexOf(query.toLowerCase());
+    if(idx === -1) return text;
+    return text.slice(0,idx) + '<mark>' + text.slice(idx, idx+query.length) + '</mark>' + text.slice(idx+query.length);
+  }
+
+  function renderResults(query){
+    if(!query){
+      searchResults.innerHTML = '<p class="search-hint">Start typing to search across Services, Category, Industry and more.</p>';
+      return;
+    }
+    const q = query.toLowerCase();
+    const matches = searchIndex.filter(item =>
+      item.title.toLowerCase().includes(q) ||
+      item.group.toLowerCase().includes(q) ||
+      item.section.toLowerCase().includes(q)
+    ).slice(0, 40);
+
+    if(!matches.length){
+      searchResults.innerHTML = '<p class="search-empty">No results for "' + query + '"</p>';
+      return;
+    }
+
+    // group by section for display
+    const grouped = {};
+    matches.forEach(m=>{
+      if(!grouped[m.section]) grouped[m.section] = [];
+      grouped[m.section].push(m);
+    });
+
+    let html = '';
+    Object.keys(grouped).forEach(section=>{
+      html += '<div class="search-group">' + section + '</div>';
+      grouped[section].forEach(m=>{
+        html += '<a class="search-result" href="' + m.href + '">' +
+          '<span>' + highlight(m.title, query) + '</span>' +
+          '<span class="sr-tag">' + m.group + '</span>' +
+        '</a>';
+      });
+    });
+    searchResults.innerHTML = html;
+  }
+
+  function openSearch(){
+    searchOverlay.classList.add('active');
+    searchInput.value = '';
+    renderResults('');
+    setTimeout(()=>searchInput.focus(), 80);
+  }
+  function closeSearch(){
+    searchOverlay.classList.remove('active');
+  }
+
+  searchBtn.addEventListener('click', openSearch);
+  searchClose.addEventListener('click', closeSearch);
+  searchOverlay.addEventListener('click', (e)=>{
+    if(e.target === searchOverlay) closeSearch();
+  });
+  searchInput.addEventListener('input', (e)=> renderResults(e.target.value.trim()));
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape' && searchOverlay.classList.contains('active')) closeSearch();
+    if((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k'){
+      e.preventDefault();
+      openSearch();
+    }
   });
 </script>
 
