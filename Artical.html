@@ -192,6 +192,12 @@
       .mega-panel-side-btn { display: block; text-align: center; background: linear-gradient(135deg, #FF8C00, #FFB84D); color: #fff; padding: 11px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 13px; margin-bottom: 14px; transition: all 0.3s var(--transition-smooth); }
       .mega-panel-side-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(255,140,0,0.3); }
       .mega-panel-side-link { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--primary-orange); font-weight: 600; text-decoration: none; margin-top: auto; }
+      .category-feature-card { display: block; text-decoration: none; background: rgba(255,140,0,0.04); border: 1px solid var(--border-color); border-radius: 14px; padding: 14px; transition: border-color 0.25s ease, transform 0.25s ease; }
+      .category-feature-card:hover { border-color: rgba(255,140,0,0.4); transform: translateY(-3px); }
+      .category-feature-card img { width: 100%; height: 110px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; }
+      .category-feature-card h5 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 14.5px; color: var(--light-text); margin-bottom: 4px; }
+      .category-feature-card p { font-size: 11.5px; color: var(--subtle-gray) !important; line-height: 1.5; margin: 0; }
+      @media (max-width: 1024px) { #categoryPanel { grid-template-columns: 1fr; } }
       .mega-panel-side-link:hover { color: #FFB84D; }
       @media (max-width: 1024px) { #megaPanel { grid-template-columns: 1fr; } .mega-panel-side { border-left: none; border-top: 1px solid var(--border-color); padding-left: 0; padding-top: 24px; margin-top: 8px; } }
 
@@ -312,194 +318,7 @@
   }
 ]
     </script>
-<style id="theme-toggle-styles">
-  /* ============================================================
-     LIGHT THEME (toggled via body.light-theme)
-     ============================================================ */
-  body.light-theme {
-    --dark-bg: #FFFFFF;
-    --dark-secondary: #F3F4F7;
-    --light-text: #14151A;
-    --subtle-gray: #5B5D66;
-    --border-color: #E3E4E9;
-    background-color: #FFFFFF !important;
-    background-image:
-      radial-gradient(circle at 10% 8%, rgba(255,140,0,0.07) 0%, transparent 35%),
-      radial-gradient(circle at 90% 22%, rgba(255,140,0,0.06) 0%, transparent 40%),
-      radial-gradient(circle at 50% 96%, rgba(255,140,0,0.05) 0%, transparent 35%),
-      radial-gradient(#EAEBEE 1px, transparent 1px) !important;
-    background-size: auto, auto, auto, 32px 32px !important;
-    color: #14151A !important;
-  }
-  body.light-theme p { color: #5B5D66 !important; }
-  body.light-theme .text-brand-text { color: #14151A !important; }
-  body.light-theme .bg-brand-bg { background-color: #FFFFFF !important; }
-  body.light-theme .text-brand-muted { color: #5B5D66 !important; }
-
-  /* Header */
-  body.light-theme #headerCapsule { background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(243,244,247,0.92)) !important; border-color: #E3E4E9 !important; box-shadow: 0 8px 32px rgba(20,21,26,0.08) !important; }
-  body.light-theme #desktopHeaderWrap.scrolled #headerCapsule { background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(243,244,247,0.98)) !important; box-shadow: 0 8px 32px rgba(20,21,26,0.12) !important; }
-  body.light-theme .desktop-nav-link { color: #5B5D66 !important; }
-  body.light-theme .desktop-nav-link:hover, body.light-theme .desktop-nav-link.bg-brand-orange { color: #fff !important; }
-  body.light-theme #mobileHeaderWrap { background: #FFFFFF !important; border-color: #E3E4E9 !important; }
-  body.light-theme #mobileHeaderWrap.scrolled { background: #FFFFFF !important; box-shadow: 0 4px 20px rgba(20,21,26,0.1) !important; }
-  body.light-theme #mobileHeaderWrap span, body.light-theme #mobileHeaderWrap a:not(.text-brand-orange) { color: #14151A !important; }
-  body.light-theme #mobileMenuToggle, body.light-theme #mobileMenuClose { background: var(--primary-orange) !important; }
-  body.light-theme #mobileMenuToggle svg, body.light-theme #mobileMenuClose svg { color: #fff !important; }
-  body.light-theme #mobileMenu { background: #FFFFFF !important; }
-  body.light-theme .mobile-nav-link, body.light-theme #mobileMenu a { color: #14151A !important; }
-  body.light-theme .mobile-nav-link.text-brand-orange, body.light-theme #mobileMenu a.text-brand-orange { color: var(--primary-orange) !important; }
-  body.light-theme #megaPanel { background: linear-gradient(135deg, rgba(255,255,255,0.99), rgba(243,244,247,0.99)) !important; border-color: #E3E4E9 !important; }
-  body.light-theme #megaPanel a, body.light-theme #megaPanel h3.text-brand-orange { color: #5B5D66 !important; }
-  body.light-theme #megaPanel h3 { color: var(--primary-orange) !important; }
-  body.light-theme .mega-service-title, body.light-theme .mega-panel-side-title { color: #14151A !important; }
-  body.light-theme .mega-service-desc, body.light-theme .mega-panel-side-desc, body.light-theme .mega-panel-side-list li { color: #5B5D66 !important; }
-  body.light-theme .desktop-nav-link.bg-brand-orange, body.light-theme .mobile-nav-link.text-brand-orange { color: #fff !important; }
-
-  /* Generic dark surface -> light surface (hex-arbitrary + tailwind gray/zinc/black backgrounds) */
-  body.light-theme [class*="bg-[#"],
-  body.light-theme [class*="bg-black"],
-  body.light-theme [class*="bg-zinc-9"],
-  body.light-theme [class*="bg-zinc-8"] {
-    background-color: #FFFFFF !important;
-  }
-  body.light-theme section#strategy-hub,
-  body.light-theme section[class*="bg-[#0b0b0b]"] { background-color: #FAFAFB !important; }
-  body.light-theme #premium-results-split,
-  body.light-theme #premium-faq-section { background-color: #FAFAFB !important; }
-
-  /* Hardcoded rgba(26,27,31,..) card gradients used across services/expertise/roadmap/testimonials —
-     these don't use CSS vars so they need explicit light-mode overrides */
-  body.light-theme .tab-content-box,
-  body.light-theme .tab-btn,
-  body.light-theme .feature-card,
-  body.light-theme .timeline-card,
-  body.light-theme .metric-card {
-    background: #FFFFFF !important;
-    border-color: #E3E4E9 !important;
-    box-shadow: 0 8px 24px rgba(20,21,26,0.06) !important;
-  }
-  body.light-theme .tab-btn.active {
-    background: linear-gradient(135deg, rgba(255,140,0,0.16), rgba(255,140,0,0.06)) !important;
-  }
-  body.light-theme .tab-panel h3,
-  body.light-theme .timeline-card h3,
-  body.light-theme .feature-card h3,
-  body.light-theme .metric-card h4 { color: #14151A !important; }
-  body.light-theme .tab-panel p,
-  body.light-theme .tabs-main-desc,
-  body.light-theme .timeline-card p,
-  body.light-theme .feature-card p,
-  body.light-theme .metric-card p,
-  body.light-theme .exp-subtitle,
-  body.light-theme .section-desc { color: #5B5D66 !important; }
-  body.light-theme .tab-features li { background: linear-gradient(135deg, rgba(255,140,0,0.10), rgba(255,140,0,0.04)) !important; color: #5B5D66 !important; }
-  body.light-theme .feature-icon, body.light-theme .metric-icon { background: linear-gradient(135deg, rgba(255,140,0,0.12), rgba(255,140,0,0.04)) !important; }
-
-  /* Card / tile surfaces inside those sections become soft light cards */
-  body.light-theme .strategy-card,
-  body.light-theme #grid-seller > div,
-  body.light-theme #grid-vendor > div,
-  body.light-theme .faq-item,
-  body.light-theme [id="tab-indicator"] ~ button,
-  body.light-theme #btn-seller, body.light-theme #btn-vendor,
-  body.light-theme [class*="bg-zinc-900/30"],
-  body.light-theme .marquee-pill {
-    background: #FFFFFF !important;
-    border-color: #E3E4E9 !important;
-  }
-  body.light-theme .strategy-card, body.light-theme #grid-seller > div, body.light-theme #grid-vendor > div {
-    box-shadow: 0 8px 24px rgba(20,21,26,0.06) !important;
-  }
-  body.light-theme .faq-item { background: #FFFFFF !important; }
-  body.light-theme .active-faq { background-color: rgba(255,140,0,0.04) !important; }
-  body.light-theme #tab-indicator { background: linear-gradient(to right, var(--primary-orange), #e07b00); }
-
-  /* Text colors: flip light/muted text to dark-readable */
-  body.light-theme [class*="text-white"],
-  body.light-theme [class*="text-zinc-1"],
-  body.light-theme [class*="text-zinc-2"],
-  body.light-theme [class*="text-zinc-3"],
-  body.light-theme [class*="text-zinc-9"],
-  body.light-theme [class*="text-gray-3"] { color: #14151A !important; }
-  body.light-theme [class*="text-zinc-4"],
-  body.light-theme [class*="text-zinc-5"],
-  body.light-theme [class*="text-gray-4"] { color: #5B5D66 !important; }
-  body.light-theme .faq-toggle span:nth-child(2) { color: #14151A !important; }
-
-  /* Borders */
-  body.light-theme [class*="border-zinc-7"],
-  body.light-theme [class*="border-zinc-8"],
-  body.light-theme [class*="border-zinc-9"] { border-color: #E3E4E9 !important; }
-
-  /* Hero */
-  body.light-theme section.bg-\[\#050505\] h1 { color: #14151A; }
-  body.light-theme section.bg-\[\#050505\] a.border-\[\#FF9900\] { color: var(--primary-orange); }
-
-  /* AI verify section (fixed hex, not tailwind classes) */
-  body.light-theme .ai-verify-section { background: linear-gradient(135deg, #FFFFFF 0%, #F3F4F7 100%) !important; }
-  body.light-theme .ai-title { color: #14151A !important; }
-  body.light-theme .ai-subtitle { color: #5B5D66 !important; }
-  body.light-theme .ai-hybrid-pill { background: #F3F4F7; box-shadow: 0 4px 15px rgba(20,21,26,0.08); }
-  body.light-theme .ai-hybrid-pill:hover { background: #FFFFFF; }
-
-  /* Results split trust marquee tiles + logos meant for dark bg */
-  body.light-theme #premium-results-split [class*="border-zinc-900/30"],
-  body.light-theme #premium-results-split .h-24 { background: #FFFFFF !important; border-color: #E3E4E9 !important; }
-  body.light-theme [class*="brightness-0"][class*="invert"] { filter: none !important; opacity: 0.75; }
-
-  /* FAQ icon circles that were dark by default */
-  body.light-theme .faq-icon.bg-zinc-900 { background: #F3F4F7 !important; color: #5B5D66 !important; border-color: #E3E4E9 !important; }
-  body.light-theme .faq-item { box-shadow: 0 4px 16px rgba(20,21,26,0.04); }
-  body.light-theme .faq-item:hover { border-color: rgba(255,140,0,0.3) !important; }
-
-  /* "Amazon Ads Advanced Partner" side card — was unreadable (text flipped
-     dark but its own background stayed dark too) */
-  body.light-theme #advancedPartnerCard {
-    background: linear-gradient(180deg, #FFFFFF 0%, #F3F4F7 100%) !important;
-    border-color: #E3E4E9 !important;
-    box-shadow: 0 20px 50px rgba(20,21,26,0.08) !important;
-  }
-  body.light-theme #advancedPartnerCard [class*="bg-zinc-800"] { background-color: #E3E4E9 !important; }
-
-  /* Marketplace Mastery heading gradient text needs a visible base on light bg */
-  body.light-theme h2.text-transparent.bg-clip-text { -webkit-text-fill-color: initial; background: linear-gradient(90deg, #14151A, #4a4b52, var(--primary-orange)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-
-  /* Back to top button */
-  body.light-theme #backToTopBtn { background: #14151A; color: #fff; border-color: #E3E4E9; }
-  body.light-theme #backToTopBtn:hover { background: var(--primary-orange); color: #fff; }
-
-  body.light-theme .social-link { color: #fff !important; }
-  body.light-theme .social-link:hover { filter: brightness(1.08); }
-
-  /* ============================================================
-     THEME TOGGLE BUTTON
-     ============================================================ */
-  #themeToggleBtn {
-    position: fixed;
-    right: 24px;
-    bottom: 96px;
-    z-index: 1200;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #1A1B1F, #0B0C0E);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-    cursor: pointer;
-    transition: all 0.3s var(--transition-smooth);
-  }
-  #themeToggleBtn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 30px rgba(255,140,0,0.25); border-color: rgba(255,140,0,0.4); }
-  #themeToggleBtn svg { width: 22px; height: 22px; transition: opacity 0.25s ease, transform 0.4s ease; }
-  #themeToggleBtn .icon-sun { color: #FFB84D; position: absolute; opacity: 0; transform: rotate(-90deg) scale(0.5); }
-  #themeToggleBtn .icon-moon { color: #F5F5F7; position: absolute; opacity: 1; transform: rotate(0) scale(1); }
-  body.light-theme #themeToggleBtn { background: linear-gradient(135deg, #FFFFFF, #F3F4F7); border-color: #E3E4E9; box-shadow: 0 8px 24px rgba(20,21,26,0.12); }
-  body.light-theme #themeToggleBtn .icon-sun { opacity: 1; transform: rotate(0) scale(1); }
-  body.light-theme #themeToggleBtn .icon-moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
-
+<style id="floating-widget-styles">
   /* ============================================================
      WHATSAPP FLOATING BUTTON
      ============================================================ */
@@ -525,8 +344,6 @@
     0%, 100% { box-shadow: 0 8px 24px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.4); }
     50% { box-shadow: 0 8px 24px rgba(37,211,102,0.4), 0 0 0 10px rgba(37,211,102,0); }
   }
-  #themeToggleBtn { bottom: 96px; }
-  #whatsappFloatBtn { bottom: 24px; }
 
   /* ============================================================
      AI ASSISTANT CHAT WIDGET (free, on-site, reads page content)
@@ -534,7 +351,7 @@
   #chatFloatBtn {
     position: fixed;
     right: 24px;
-    bottom: 168px;
+    bottom: 96px;
     z-index: 1200;
     width: 56px;
     height: 56px;
@@ -557,7 +374,7 @@
   #chatPanel {
     position: fixed;
     right: 24px;
-    bottom: 234px;
+    bottom: 162px;
     z-index: 1199;
     width: 340px;
     max-width: calc(100vw - 32px);
@@ -597,9 +414,8 @@
 
   @media (max-width: 480px) {
     #whatsappFloatBtn { right: 16px; bottom: 16px; width: 50px; height: 50px; }
-    #themeToggleBtn { right: 16px; bottom: 78px; width: 46px; height: 46px; }
-    #chatFloatBtn { right: 16px; bottom: 140px; width: 50px; height: 50px; }
-    #chatPanel { right: 16px; bottom: 198px; width: calc(100vw - 32px); }
+    #chatFloatBtn { right: 16px; bottom: 78px; width: 50px; height: 50px; }
+    #chatPanel { right: 16px; bottom: 136px; width: calc(100vw - 32px); }
   }
 </style>
 
@@ -612,22 +428,26 @@
 <header id="desktopHeaderWrap" class="hidden lg:block fixed top-0 inset-x-0 z-[999] w-full pt-5">
   <div class="max-w-6xl mx-auto px-6">
     <div id="headerCapsule" class="relative flex items-center justify-between gap-6
-                bg-gradient-to-br from-brand-secondary/50 to-brand-border/30
+                bg-gradient-to-br from-brand-secondary/70 to-brand-border/40
                 backdrop-blur-xl border border-brand-border
                 rounded-capsule px-6 py-3
-                shadow-[0_8px_32px_rgba(0,0,0,0.4)]
-                hover:border-brand-orange/20
-                hover:shadow-[0_8px_32px_rgba(255,140,0,0.1)]">
+                shadow-[0_10px_40px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.04)]
+                hover:border-brand-orange/25
+                hover:shadow-[0_10px_40px_rgba(255,140,0,0.12),inset_0_1px_0_rgba(255,255,255,0.06)]">
+      <div class="absolute inset-x-6 -top-px h-px bg-gradient-to-r from-transparent via-brand-orange/50 to-transparent pointer-events-none"></div>
 
       <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="Abdullah Gull home">
         <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg"
              alt="Abdullah Gull, Amazon PPC and E-commerce Consultant"
              width="40" height="40" fetchpriority="high"
              class="w-10 h-10 rounded-full object-cover border-2 border-brand-orange
-                    shadow-[0_0_20px_rgba(255,140,0,0.1)] transition-all duration-300
-                    hover:shadow-[0_0_30px_rgba(255,140,0,0.3)] hover:scale-105">
-        <span class="font-bold text-[18px] tracking-tight">
-          Abdullah <span class="text-brand-orange">Gull</span>
+                    shadow-[0_0_20px_rgba(255,140,0,0.15)] transition-all duration-300
+                    hover:shadow-[0_0_30px_rgba(255,140,0,0.35)] hover:scale-105">
+        <span class="flex flex-col leading-none">
+          <span class="font-bold text-[18px] tracking-tight">
+            Abdullah <span class="text-brand-orange">Gull</span>
+          </span>
+          <span class="hidden xl:block text-[10px] font-semibold uppercase tracking-[0.12em] text-brand-muted mt-1">Amazon Ads Advanced Partner</span>
         </span>
       </a>
 
@@ -734,11 +554,56 @@
           </div>
         </div>
 
+        <div class="relative" id="categoryWrapper">
+          <button id="categoryToggle" type="button"
+             class="desktop-nav-link flex items-center gap-1 px-[18px] py-[10px] rounded-full text-sm font-medium
+                    text-brand-muted transition-colors duration-300
+                    hover:text-white hover:bg-brand-orange hover:font-semibold"
+             aria-expanded="false" aria-controls="categoryPanel">
+            Category Expertise
+            <svg class="w-3 h-3 mt-px transition-transform duration-300" id="categoryChevron"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+
+          <div id="categoryPanel"
+               class="mega-menu-panel absolute top-[70px] left-1/2 w-[880px] max-w-[92vw]
+                      grid grid-cols-[1fr_1fr_1fr] gap-6 p-9 rounded-2xl
+                      bg-gradient-to-br from-brand-secondary/95 to-brand-border/90
+                      backdrop-blur-xl border border-brand-border border-t-2 border-t-brand-orange
+                      shadow-[0_30px_80px_rgba(0,0,0,0.55)]">
+
+            <div class="col-span-1 flex flex-col gap-1">
+              <h3 class="text-brand-orange text-[13px] font-bold uppercase tracking-wider mb-2">Specialized Niche Categories</h3>
+              <a href="services.html" class="mega-service-item group flex items-center gap-2 py-2"><i class="fa fa-arrow-circle-right text-brand-orange text-xs" aria-hidden="true"></i><span class="mega-service-title !mb-0">Beauty & Skincare</span></a>
+              <a href="services.html" class="mega-service-item group flex items-center gap-2 py-2"><i class="fa fa-arrow-circle-right text-brand-orange text-xs" aria-hidden="true"></i><span class="mega-service-title !mb-0">Consumables & Grocery</span></a>
+              <a href="services.html" class="mega-service-item group flex items-center gap-2 py-2"><i class="fa fa-arrow-circle-right text-brand-orange text-xs" aria-hidden="true"></i><span class="mega-service-title !mb-0">Consumer Packaged Goods (CPG)</span></a>
+              <a href="services.html" class="mega-service-item group flex items-center gap-2 py-2"><i class="fa fa-arrow-circle-right text-brand-orange text-xs" aria-hidden="true"></i><span class="mega-service-title !mb-0">Hard Line Goods & Electronics</span></a>
+              <a href="services.html" class="mega-service-item group flex items-center gap-2 py-2"><i class="fa fa-arrow-circle-right text-brand-orange text-xs" aria-hidden="true"></i><span class="mega-service-title !mb-0">Home & Kitchen Essentials</span></a>
+              <a href="services.html" class="mega-service-item group flex items-center gap-2 py-2"><i class="fa fa-arrow-circle-right text-brand-orange text-xs" aria-hidden="true"></i><span class="mega-service-title !mb-0">Apparel & Leather Goods</span></a>
+              <a href="services.html" class="mega-service-item group flex items-center gap-2 py-2"><i class="fa fa-arrow-circle-right text-brand-orange text-xs" aria-hidden="true"></i><span class="mega-service-title !mb-0">Health & Supplements</span></a>
+            </div>
+
+            <a href="services.html" class="category-feature-card">
+              <img src="https://abdullah-gull.github.io/images/jungle-scout-affiliate-program.jpg" alt="Grow your supplement brand on Amazon" loading="lazy">
+              <h5>Grow your supplement brand</h5>
+              <p>Thrive in Amazon's supplement category with a battle-tested PPC and SEO growth strategy.</p>
+            </a>
+
+            <a href="services.html" class="category-feature-card">
+              <img src="https://abdullah-gull.github.io/images/OG_image_Squid_Ink.png" alt="Sell beauty products on Amazon" loading="lazy">
+              <h5>Sell beauty products on Amazon</h5>
+              <p>Improve your brand's presence and grow market share in competitive beauty & skincare niches.</p>
+            </a>
+          </div>
+        </div>
+
         <a href="blog.html" data-nav-link data-page="blog" class="desktop-nav-link px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted transition-colors duration-300 hover:text-white hover:bg-brand-orange hover:font-semibold">Blog</a>
         <a href="contact.html" data-nav-link data-page="contact" class="desktop-nav-link px-[18px] py-[10px] rounded-full text-sm font-medium text-brand-muted transition-colors duration-300 hover:text-white hover:bg-brand-orange hover:font-semibold">Contact us</a>
       </nav>
 
-      <a href="meeting.html" class="shrink-0 text-brand-orange border border-brand-orange rounded-full px-[22px] py-[10px] text-[13px] font-bold tracking-wide transition-all duration-300 hover:text-white hover:bg-brand-orange hover:shadow-[0_8px_24px_rgba(255,140,0,0.3)]">Get In Touch</a>
+      <a href="meeting.html" class="shrink-0 flex items-center gap-2 bg-gradient-to-r from-brand-orange to-[#FFB84D] text-black rounded-full px-[22px] py-[10px] text-[13px] font-bold tracking-wide transition-all duration-300 shadow-[0_6px_18px_rgba(255,140,0,0.25)] hover:shadow-[0_10px_28px_rgba(255,140,0,0.4)] hover:-translate-y-0.5">Get In Touch <i class="fa-solid fa-arrow-right text-[11px]" aria-hidden="true"></i></a>
     </div>
   </div>
 </header>
@@ -852,6 +717,24 @@
       </div>
     </div>
 
+    <div class="accordion-item border-b border-brand-border">
+      <button type="button" class="accordion-trigger w-full flex items-center justify-between py-4 text-[15px] font-medium text-left">
+        Category Expertise
+        <svg class="accordion-icon w-4 h-4 text-brand-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <div class="flex flex-col pb-3 pl-3">
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Beauty & Skincare</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Consumables & Grocery</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Consumer Packaged Goods (CPG)</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Hard Line Goods & Electronics</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Home & Kitchen Essentials</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Apparel & Leather Goods</a>
+          <a href="services.html" class="py-2 text-sm text-brand-muted">Health & Supplements</a>
+        </div>
+      </div>
+    </div>
+
     <a href="services.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">All services</a>
     <a href="meeting.html" class="block py-4 border-b border-brand-border text-[15px] font-medium">Book a coaching call</a>
     <a href="blog.html" data-nav-link data-page="blog" class="mobile-nav-link block py-4 border-b border-brand-border text-[15px] font-medium">Blog</a>
@@ -918,7 +801,7 @@
     @media (max-width: 480px) { #marqueeTrack { gap: 40px !important; } }
 </style>
 
-<section class="relative bg-black py-10 sm:py-12 border-b-4 border-orange-500/70 overflow-hidden">
+<section id="marqueeSection" class="relative bg-black py-10 sm:py-12 border-b-4 border-orange-500/70 overflow-hidden">
   <div id="marqueeViewport" class="overflow-hidden [mask-image:linear-gradient(to_right,transparent_0,#000_6%,#000_94%,transparent_100%)]">
     <div id="marqueeTrack" class="flex items-center gap-16 sm:gap-20 lg:gap-24 w-max px-8 animate-marquee">
 
@@ -1767,87 +1650,105 @@
           <p class="text-zinc-400 text-sm max-w-xl font-medium pt-1">Everything you need to know about working with me and scaling your Amazon business.</p>
         </div>
 
-        <div class="space-y-4 flex-grow mt-6">
-          <div class="faq-item group border border-zinc-800 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden active-faq" data-open="true">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300" aria-expanded="true">
-              <div class="flex items-center gap-5"><span class="faq-number font-mono text-sm font-bold text-[#ff8c00] transition-colors duration-300">01</span><span class="text-sm sm:text-base font-bold text-zinc-100 group-hover:text-white transition-colors duration-300">What's included in your Amazon audit?</span></div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-[#ff8c00] text-zinc-950 transition-all duration-300 transform rotate-180"><svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l-7 7-7-7"/></svg></div>
+        <div class="space-y-3 flex-grow mt-6">
+          <div class="faq-item active-faq" data-open="true">
+            <button class="faq-toggle w-full flex items-center justify-between gap-4 p-5 text-left transition-colors duration-300" aria-expanded="true">
+              <span class="faq-question">What's included in your Amazon audit?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-[500px]">
-              <div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1"><p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">Our comprehensive audit includes account analysis, competitor benchmarking, PPC campaign review, listing optimization assessment, keyword research, and a detailed growth roadmap. You'll receive a full report with actionable recommendations.</p></div>
+            <div class="faq-content transition-all duration-300 ease-in-out max-h-[600px]">
+              <p class="faq-answer">Our comprehensive audit includes account analysis, competitor benchmarking, PPC campaign review, listing optimization assessment, keyword research, and a detailed growth roadmap. You'll receive a full report with actionable recommendations.</p>
             </div>
           </div>
 
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300" aria-expanded="false">
-              <div class="flex items-center gap-5"><span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">02</span><span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">How long does it take to see results?</span></div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform"><svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l-7 7-7-7"/></svg></div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle w-full flex items-center justify-between gap-4 p-5 text-left transition-colors duration-300" aria-expanded="false">
+              <span class="faq-question">How long does it take to see results?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0"><div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1"><p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">PPC results appear within 2-4 weeks as we optimize campaigns. SEO takes 6-12 weeks for significant ranking improvements. Most clients see 20-40% improvement in sales within the first 90 days with combined strategies.</p></div></div>
+            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
+              <p class="faq-answer">PPC results appear within 2-4 weeks as we optimize campaigns. SEO takes 6-12 weeks for significant ranking improvements. Most clients see 20-40% improvement in sales within the first 90 days with combined strategies.</p>
+            </div>
           </div>
 
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300" aria-expanded="false">
-              <div class="flex items-center gap-5"><span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">03</span><span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">Do you work with new sellers or established brands?</span></div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform"><svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l-7 7-7-7"/></svg></div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle w-full flex items-center justify-between gap-4 p-5 text-left transition-colors duration-300" aria-expanded="false">
+              <span class="faq-question">Do you work with new sellers or established brands?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0"><div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1"><p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">I work with both! Whether you're launching your first product or scaling an established brand, I customize strategies based on your current stage. New sellers benefit from foundational optimization, while established brands focus on advanced scaling.</p></div></div>
+            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
+              <p class="faq-answer">I work with both! Whether you're launching your first product or scaling an established brand, I customize strategies based on your current stage. New sellers benefit from foundational optimization, while established brands focus on advanced scaling.</p>
+            </div>
           </div>
 
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300" aria-expanded="false">
-              <div class="flex items-center gap-5"><span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">04</span><span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">What's your pricing model?</span></div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform"><svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l-7 7-7-7"/></svg></div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle w-full flex items-center justify-between gap-4 p-5 text-left transition-colors duration-300" aria-expanded="false">
+              <span class="faq-question">What's your pricing model?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0"><div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1"><p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">I offer flexible models: monthly retainers for ongoing management, project-based fees for specific services, and performance-based options. Most clients invest $2,000-$10,000+ monthly depending on scope and goals. Let's discuss what works for you.</p></div></div>
+            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
+              <p class="faq-answer">I offer flexible models: monthly retainers for ongoing management, project-based fees for specific services, and performance-based options. Most clients invest $2,000-$10,000+ monthly depending on scope and goals. Let's discuss what works for you.</p>
+            </div>
           </div>
 
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300" aria-expanded="false">
-              <div class="flex items-center gap-5"><span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">05</span><span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">Can you manage multiple marketplaces besides Amazon?</span></div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform"><svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l-7 7-7-7"/></svg></div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle w-full flex items-center justify-between gap-4 p-5 text-left transition-colors duration-300" aria-expanded="false">
+              <span class="faq-question">Can you manage multiple marketplaces besides Amazon?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0"><div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1"><p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">Yes! I specialize in Amazon but also manage Shopify, Walmart, eBay, and other platforms. Multi-platform strategy maximizes your reach and diversifies revenue. We can create integrated campaigns across channels for cohesive brand presence.</p></div></div>
+            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
+              <p class="faq-answer">Yes! I specialize in Amazon but also manage Shopify, Walmart, eBay, and other platforms. Multi-platform strategy maximizes your reach and diversifies revenue. We can create integrated campaigns across channels for cohesive brand presence.</p>
+            </div>
           </div>
 
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300" aria-expanded="false">
-              <div class="flex items-center gap-5"><span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">06</span><span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">How do you measure success and ROI?</span></div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform"><svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l-7 7-7-7"/></svg></div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle w-full flex items-center justify-between gap-4 p-5 text-left transition-colors duration-300" aria-expanded="false">
+              <span class="faq-question">How do you measure success and ROI?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0"><div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1"><p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">We track KPIs including sales growth, ACOS, conversion rate, keyword rankings, and revenue. Monthly reports break down performance metrics, actionable insights, and next steps. Success is measured by your profitability and market expansion goals.</p></div></div>
+            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
+              <p class="faq-answer">We track KPIs including sales growth, ACOS, conversion rate, keyword rankings, and revenue. Monthly reports break down performance metrics, actionable insights, and next steps. Success is measured by your profitability and market expansion goals.</p>
+            </div>
           </div>
 
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300" aria-expanded="false">
-              <div class="flex items-center gap-5"><span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">07</span><span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">Do you offer consulting or only management?</span></div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform"><svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l-7 7-7-7"/></svg></div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle w-full flex items-center justify-between gap-4 p-5 text-left transition-colors duration-300" aria-expanded="false">
+              <span class="faq-question">Do you offer consulting or only management?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0"><div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1"><p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">Both! I offer one-on-one coaching calls, strategic consulting for specific challenges, training workshops, and full account management. Choose the support level that fits your needs and budget.</p></div></div>
+            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
+              <p class="faq-answer">Both! I offer one-on-one coaching calls, strategic consulting for specific challenges, training workshops, and full account management. Choose the support level that fits your needs and budget.</p>
+            </div>
           </div>
 
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300" aria-expanded="false">
-              <div class="flex items-center gap-5"><span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">08</span><span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">What makes you different from other Amazon agencies?</span></div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform"><svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l-7 7-7-7"/></svg></div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle w-full flex items-center justify-between gap-4 p-5 text-left transition-colors duration-300" aria-expanded="false">
+              <span class="faq-question">What makes you different from other Amazon agencies?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0"><div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1"><p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">I combine strategic expertise with hands-on management. No cookie-cutter approaches — every strategy is custom-built for your brand. With 150+ clients and $2M+ in revenue generated, I deliver proven results with dedicated attention and transparency.</p></div></div>
+            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
+              <p class="faq-answer">I combine strategic expertise with hands-on management. No cookie-cutter approaches — every strategy is custom-built for your brand. With 150+ clients and $2M+ in revenue generated, I deliver proven results with dedicated attention and transparency.</p>
+            </div>
           </div>
 
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300" aria-expanded="false">
-              <div class="flex items-center gap-5"><span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">09</span><span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">How often do we communicate?</span></div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform"><svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l-7 7-7-7"/></svg></div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle w-full flex items-center justify-between gap-4 p-5 text-left transition-colors duration-300" aria-expanded="false">
+              <span class="faq-question">How often do we communicate, and how do I reach you?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0"><div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1"><p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">Monthly strategy calls, weekly performance updates, and always available via email for urgent matters. We maintain transparent communication so you're always informed on your account status and next steps.</p></div></div>
+            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
+              <p class="faq-answer">Monthly strategy calls, weekly performance updates, and I'm always available via email for urgent matters. You can reach me directly at <span class="faq-contact-highlight">+92 317 9834286</span> or <span class="faq-contact-highlight">abdullahgullwork@outlook.com</span> — I aim to reply within 24 hours.</p>
+            </div>
           </div>
 
-          <div class="faq-item group border border-zinc-900 bg-zinc-900/10 rounded-2xl transition-all duration-300 overflow-hidden" data-open="false">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left transition-colors duration-300" aria-expanded="false">
-              <div class="flex items-center gap-5"><span class="faq-number font-mono text-sm font-bold text-zinc-500 transition-colors duration-300">10</span><span class="text-sm sm:text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">What's the first step to getting started?</span></div>
-              <div class="faq-icon flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 transition-all duration-300 transform"><svg class="w-4 h-4 stroke-current fill-none stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l-7 7-7-7"/></svg></div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle w-full flex items-center justify-between gap-4 p-5 text-left transition-colors duration-300" aria-expanded="false">
+              <span class="faq-question">What's the first step to getting started?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-content transition-all duration-300 ease-in-out max-h-0"><div class="px-5 pb-6 pl-14 border-l-2 border-[#ff8c00] ml-7 mb-1"><p class="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium">Schedule a free consultation call! We'll discuss your goals, current challenges, and how I can help. If it's a good fit, we'll create a custom proposal. No pressure — just genuine conversations about scaling your business.</p></div></div>
+            <div class="faq-content transition-all duration-300 ease-in-out max-h-0">
+              <p class="faq-answer">Schedule a free consultation call! We'll discuss your goals, current challenges, and how I can help. Call or WhatsApp <span class="faq-contact-highlight">+92 317 9834286</span>, or email <span class="faq-contact-highlight">abdullahgullwork@outlook.com</span> — no pressure, just a genuine conversation about scaling your business.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1885,7 +1786,17 @@
 </section>
 
 <style>
-  .active-faq { border-color: rgba(255, 140, 0, 0.4) !important; background-color: rgba(255, 140, 0, 0.02) !important; }
+  .faq-item { border: 1px solid var(--border-color); background: rgba(255,255,255,0.02); border-radius: 16px; overflow: hidden; transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; }
+  .faq-item:hover { border-color: rgba(255,140,0,0.35); }
+  .faq-item.active-faq { border-color: rgba(255,140,0,0.5); background: rgba(255,140,0,0.04); }
+  .faq-toggle { background: transparent; border: none; cursor: pointer; font: inherit; }
+  .faq-question { font-size: 15px; font-weight: 700; color: var(--light-text); transition: color 0.25s ease; }
+  .faq-item.active-faq .faq-question, .faq-toggle:hover .faq-question { color: var(--primary-orange); }
+  .faq-icon { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 400; line-height: 1; color: var(--primary-orange); border: 1.5px solid rgba(255,140,0,0.35); background: rgba(255,140,0,0.08); transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease; }
+  .faq-item.active-faq .faq-icon { transform: rotate(135deg); background: var(--primary-orange); color: #fff; border-color: var(--primary-orange); }
+  .faq-content { max-height: 0; overflow: hidden; }
+  .faq-answer { padding: 0 24px 22px 24px; font-size: 13.5px; color: var(--subtle-gray); line-height: 1.75; }
+  .faq-contact-highlight { color: var(--primary-orange); font-weight: 700; white-space: nowrap; }
 </style>
 
 <!-- =========================================================
@@ -1920,9 +1831,18 @@
      FOOTER
      ========================================================= -->
 <footer class="footer-section">
+    <div class="footer-cta-strip">
+      <div class="footer-cta-text">
+        <h3>Ready to scale your Amazon brand?</h3>
+        <p>Get a free, no-obligation audit of your account — usually delivered within 48 hours.</p>
+      </div>
+      <a href="audit.html" class="footer-cta-btn">Get Your Free Audit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+
     <div class="footer-wrapper">
         <div class="footer-left">
             <div class="footer-brand"><h2 class="brand-name">Abdullah <span class="highlight">Gull</span></h2></div>
+            <p class="footer-tagline">Amazon Ads Advanced Partner helping e-commerce brands scale profitably through data-driven PPC, SEO, and full-service account management.</p>
 
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/abdullah-gull-amazon/" class="social-link linkedin" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
@@ -2017,8 +1937,15 @@
 </footer>
 
 <style>
-    .footer-section { background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%); color: var(--light-text); padding: 80px 5% 40px; border-top: 1px solid var(--border-color); position: relative; overflow: hidden; }
+    .footer-section { background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%); color: var(--light-text); padding: 0 5% 40px; border-top: 1px solid var(--border-color); position: relative; overflow: hidden; }
     .footer-section::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 80%; height: 1px; background: linear-gradient(90deg, transparent, var(--primary-orange), transparent); }
+    .footer-cta-strip { max-width: 1400px; margin: 56px auto 64px; background: linear-gradient(120deg, rgba(255,140,0,0.14), rgba(255,140,0,0.03)); border: 1px solid rgba(255,140,0,0.25); border-radius: 24px; padding: 36px 44px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; position: relative; z-index: 2; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+    .footer-cta-text h3 { font-size: 24px; font-weight: 800; color: var(--light-text); margin-bottom: 6px; letter-spacing: -0.3px; }
+    .footer-cta-text p { font-size: 14px; color: var(--subtle-gray) !important; margin: 0; }
+    .footer-cta-btn { flex-shrink: 0; display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #FF8C00, #FFB84D); color: #050505; font-weight: 800; font-size: 14px; padding: 15px 30px; border-radius: 50px; text-decoration: none; box-shadow: 0 10px 28px rgba(255,140,0,0.3); transition: all 0.3s var(--transition-smooth); }
+    .footer-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(255,140,0,0.4); }
+    .footer-tagline { font-size: 13.5px; color: var(--subtle-gray) !important; line-height: 1.7; max-width: 300px; }
+    @media (max-width: 768px) { .footer-cta-strip { margin: 40px auto 44px; padding: 28px 24px; flex-direction: column; align-items: flex-start; } .footer-cta-btn { width: 100%; justify-content: center; } }
     .footer-wrapper { max-width: 1400px; margin: 0 auto 60px; display: grid; grid-template-columns: 280px 1fr; gap: 80px; position: relative; z-index: 2; }
     .footer-left { display: flex; flex-direction: column; gap: 28px; }
     .brand-name { font-size: 24px; font-weight: 900; color: var(--light-text); margin: 0; letter-spacing: -0.5px; }
@@ -2080,28 +2007,46 @@
      PAGE SCRIPTS (all combined at the end, no duplicates)
      ========================================================= -->
 <script>
-  // Mega menu (desktop)
-  const servicesWrapper = document.getElementById('servicesWrapper');
-  const servicesToggle  = document.getElementById('servicesToggle');
-  const servicesChevron = document.getElementById('servicesChevron');
-  const megaPanel       = document.getElementById('megaPanel');
+  // Mega menus (desktop) — generic click-toggle handler for both
+  // "Services" and "Category Expertise". Click-only (no hover), so a
+  // menu stays open until the trigger is clicked again, another menu
+  // is opened, a click lands outside, or Escape is pressed.
+  function setupMegaMenu(wrapperId, toggleId, chevronId, panelId) {
+    const wrapper = document.getElementById(wrapperId);
+    const toggle  = document.getElementById(toggleId);
+    const chevron = document.getElementById(chevronId);
+    const panel   = document.getElementById(panelId);
+    if (!wrapper || !toggle || !panel) return null;
 
-  function openMegaMenu() {
-    megaPanel.classList.add('open');
-    servicesToggle.setAttribute('aria-expanded', 'true');
-    servicesChevron.style.transform = 'rotate(180deg)';
+    function open() {
+      panel.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+      if (chevron) chevron.style.transform = 'rotate(180deg)';
+    }
+    function close() {
+      panel.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (chevron) chevron.style.transform = 'rotate(0deg)';
+    }
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = panel.classList.contains('open');
+      allMegaMenus.forEach(m => { if (m.close !== close) m.close(); });
+      isOpen ? close() : open();
+    });
+    return { wrapper, open, close };
   }
-  function closeMegaMenu() {
-    megaPanel.classList.remove('open');
-    servicesToggle.setAttribute('aria-expanded', 'false');
-    servicesChevron.style.transform = 'rotate(0deg)';
-  }
-  servicesToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    megaPanel.classList.contains('open') ? closeMegaMenu() : openMegaMenu();
+
+  const allMegaMenus = [];
+  allMegaMenus.push(setupMegaMenu('servicesWrapper', 'servicesToggle', 'servicesChevron', 'megaPanel'));
+  allMegaMenus.push(setupMegaMenu('categoryWrapper', 'categoryToggle', 'categoryChevron', 'categoryPanel'));
+
+  document.addEventListener('click', (e) => {
+    allMegaMenus.forEach(m => { if (m && !m.wrapper.contains(e.target)) m.close(); });
   });
-  document.addEventListener('click', (e) => { if (!servicesWrapper.contains(e.target)) closeMegaMenu(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMegaMenu(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') allMegaMenus.forEach(m => m && m.close());
+  });
 
   // Mobile full-screen menu
   const mobileMenu       = document.getElementById('mobileMenu');
@@ -2265,59 +2210,34 @@
     faqItems.forEach(item => {
       const toggleButton = item.querySelector('.faq-toggle');
       const contentDiv = item.querySelector('.faq-content');
-      const iconDiv = item.querySelector('.faq-icon');
-      const numberSpan = item.querySelector('.faq-number');
-      const titleText = item.querySelector('.faq-toggle span:nth-child(2)');
 
       contentDiv.style.maxHeight = item.getAttribute('data-open') === 'true' ? contentDiv.scrollHeight + 'px' : '0px';
 
       toggleButton.addEventListener('click', () => {
         const isCurrentlyOpen = item.getAttribute('data-open') === 'true';
+
         faqItems.forEach(otherItem => {
           if (otherItem !== item) {
             otherItem.setAttribute('data-open', 'false');
             otherItem.classList.remove('active-faq');
             otherItem.querySelector('.faq-content').style.maxHeight = '0px';
             otherItem.querySelector('.faq-toggle').setAttribute('aria-expanded', 'false');
-            otherItem.querySelector('.faq-icon').classList.remove('rotate-180', 'bg-[#ff8c00]', 'text-zinc-950');
-            otherItem.querySelector('.faq-icon').classList.add('bg-zinc-900', 'border-zinc-800', 'text-zinc-400');
-            otherItem.querySelector('.faq-number').classList.replace('text-[#ff8c00]', 'text-zinc-500');
-            otherItem.querySelector('.faq-toggle span:nth-child(2)').classList.replace('text-zinc-100', 'text-zinc-300');
           }
         });
 
-        if (isCurrentlyOpen) {
-          item.setAttribute('data-open', 'false');
-          item.classList.remove('active-faq');
-          contentDiv.style.maxHeight = '0px';
-          toggleButton.setAttribute('aria-expanded', 'false');
-          iconDiv.classList.remove('rotate-180', 'bg-[#ff8c00]', 'text-zinc-950');
-          iconDiv.classList.add('bg-zinc-900', 'border-zinc-800', 'text-zinc-400');
-          numberSpan.classList.replace('text-[#ff8c00]', 'text-zinc-500');
-          titleText.classList.replace('text-zinc-100', 'text-zinc-300');
-        } else {
-          item.setAttribute('data-open', 'true');
-          item.classList.add('active-faq');
-          contentDiv.style.maxHeight = contentDiv.scrollHeight + 'px';
-          toggleButton.setAttribute('aria-expanded', 'true');
-          iconDiv.classList.add('rotate-180', 'bg-[#ff8c00]', 'text-zinc-950');
-          iconDiv.classList.remove('bg-zinc-900', 'border-zinc-800', 'text-zinc-400');
-          numberSpan.classList.replace('text-zinc-500', 'text-[#ff8c00]');
-          titleText.classList.replace('text-zinc-300', 'text-zinc-100');
-        }
+        item.setAttribute('data-open', isCurrentlyOpen ? 'false' : 'true');
+        item.classList.toggle('active-faq', !isCurrentlyOpen);
+        toggleButton.setAttribute('aria-expanded', String(!isCurrentlyOpen));
+        contentDiv.style.maxHeight = isCurrentlyOpen ? '0px' : contentDiv.scrollHeight + 'px';
       });
     });
   });
 </script>
 
-<!-- =========================================================
-     THEME TOGGLE + WHATSAPP FLOATING BUTTONS
-     ========================================================= -->
-<button id="themeToggleBtn" type="button" aria-label="Toggle light and dark theme" title="Toggle theme">
-  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-</button>
 
+<!-- =========================================================
+     WHATSAPP FLOATING BUTTON
+     ========================================================= -->
 <a id="whatsappFloatBtn" href="https://wa.me/923179834286?text=Hi%20Abdullah%2C%20I%27d%20like%20to%20talk%20about%20Amazon%20PPC%2FSEO." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.867.517 3.615 1.415 5.106L2 22l5.03-1.386A9.94 9.94 0 0012.001 22C17.524 22 22 17.523 22 12S17.524 2 12.001 2zm0 18.09a8.05 8.05 0 01-4.396-1.297l-.315-.198-3.157.87.847-3.078-.206-.317A8.06 8.06 0 013.91 12c0-4.465 3.628-8.09 8.091-8.09 4.465 0 8.09 3.625 8.09 8.09s-3.625 8.09-8.09 8.09z"/></svg>
 </a>
@@ -2463,19 +2383,6 @@
     });
     document.addEventListener('click', (e) => {
       if (panel.classList.contains('open') && !panel.contains(e.target) && !floatBtn.contains(e.target)) closeChat();
-    });
-  })();
-</script>
-
-<script>
-  // Theme toggle: persists choice in localStorage, defaults to dark.
-  (function () {
-    const btn = document.getElementById('themeToggleBtn');
-    const stored = localStorage.getItem('ag-theme');
-    if (stored === 'light') document.body.classList.add('light-theme');
-    btn.addEventListener('click', () => {
-      document.body.classList.toggle('light-theme');
-      localStorage.setItem('ag-theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
     });
   })();
 </script>
