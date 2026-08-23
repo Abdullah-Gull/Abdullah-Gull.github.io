@@ -177,9 +177,38 @@
       /* Hero */
       .hero-eyebrow { letter-spacing: 0.5px; }
 
+      /* Mega menu (redesigned: icon + title + desc grid, trust side panel) */
+      .mega-service-item { border-radius: 12px; padding-left: 8px; padding-right: 8px; margin-left: -8px; margin-right: -8px; transition: background 0.25s ease; }
+      .mega-service-item:hover { background: rgba(255,140,0,0.08); }
+      .mega-service-icon { flex-shrink: 0; width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: rgba(255,140,0,0.12); color: var(--primary-orange); font-size: 15px; margin-top: 2px; }
+      .mega-service-title { display: block; font-size: 14px; font-weight: 700; color: var(--light-text); margin-bottom: 3px; }
+      .mega-service-desc { display: block; font-size: 12.5px; color: var(--subtle-gray); line-height: 1.5; }
+      .mega-panel-side { border-left: 1px solid var(--border-color); padding-left: 32px; display: flex; flex-direction: column; }
+      .mega-panel-side-title { font-size: 17px; font-weight: 800; color: var(--light-text); margin-bottom: 10px; letter-spacing: -0.2px; }
+      .mega-panel-side-desc { font-size: 12.5px; color: var(--subtle-gray); line-height: 1.6; margin-bottom: 18px; }
+      .mega-panel-side-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+      .mega-panel-side-list li { display: flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; color: var(--light-text); }
+      .mega-panel-side-list li i { color: var(--primary-orange); }
+      .mega-panel-side-btn { display: block; text-align: center; background: linear-gradient(135deg, #FF8C00, #FFB84D); color: #fff; padding: 11px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 13px; margin-bottom: 14px; transition: all 0.3s var(--transition-smooth); }
+      .mega-panel-side-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(255,140,0,0.3); }
+      .mega-panel-side-link { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--primary-orange); font-weight: 600; text-decoration: none; margin-top: auto; }
+      .mega-panel-side-link:hover { color: #FFB84D; }
+      @media (max-width: 1024px) { #megaPanel { grid-template-columns: 1fr; } .mega-panel-side { border-left: none; border-top: 1px solid var(--border-color); padding-left: 0; padding-top: 24px; margin-top: 8px; } }
+
       /* Reduced motion respect (accessibility + avoids penalizing users who disabled animation) */
       @media (prefers-reduced-motion: reduce) {
         * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+      }
+
+      /* Tighter, more consistent rhythm between sections (was 120px, felt gappy) */
+      .services-tabs, .expertise-section, .modern-process-section, .testimonial-section-gold { padding-top: 88px; padding-bottom: 88px; }
+      .ai-verify-section { padding-top: 88px !important; padding-bottom: 88px !important; }
+      #strategy-hub, #premium-faq-section { padding-top: 72px !important; padding-bottom: 72px !important; }
+      #premium-results-split { padding-top: 56px !important; padding-bottom: 56px !important; }
+      section.py-20 { padding-top: 64px !important; padding-bottom: 64px !important; }
+      @media (max-width: 768px) {
+        .services-tabs, .expertise-section, .modern-process-section, .testimonial-section-gold, .ai-verify-section { padding-top: 60px; padding-bottom: 60px; }
+        #strategy-hub, #premium-faq-section { padding-top: 48px !important; padding-bottom: 48px !important; }
       }
     </style>
 
@@ -314,10 +343,12 @@
   body.light-theme #megaPanel { background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(243,244,247,0.98)); border-color: #E3E4E9; }
   body.light-theme #megaPanel a, body.light-theme #megaPanel h3.text-brand-orange { color: #5B5D66; }
   body.light-theme #megaPanel h3 { color: var(--primary-orange); }
+  body.light-theme .mega-service-title, body.light-theme .mega-panel-side-title { color: #14151A !important; }
+  body.light-theme .mega-service-desc, body.light-theme .mega-panel-side-desc, body.light-theme .mega-panel-side-list li { color: #5B5D66 !important; }
   body.light-theme .desktop-nav-link.bg-brand-orange, body.light-theme .mobile-nav-link.text-brand-orange { color: #fff !important; }
 
   /* Generic dark surface -> light surface (hex-arbitrary + tailwind gray/zinc/black backgrounds) */
-  body.light-theme [class*="bg-[#0"],
+  body.light-theme [class*="bg-[#"],
   body.light-theme [class*="bg-black"],
   body.light-theme [class*="bg-zinc-9"],
   body.light-theme [class*="bg-zinc-8"] {
@@ -327,6 +358,34 @@
   body.light-theme section[class*="bg-[#0b0b0b]"] { background-color: #FAFAFB !important; }
   body.light-theme #premium-results-split,
   body.light-theme #premium-faq-section { background-color: #FAFAFB !important; }
+
+  /* Hardcoded rgba(26,27,31,..) card gradients used across services/expertise/roadmap/testimonials —
+     these don't use CSS vars so they need explicit light-mode overrides */
+  body.light-theme .tab-content-box,
+  body.light-theme .tab-btn,
+  body.light-theme .feature-card,
+  body.light-theme .timeline-card,
+  body.light-theme .metric-card {
+    background: #FFFFFF !important;
+    border-color: #E3E4E9 !important;
+    box-shadow: 0 8px 24px rgba(20,21,26,0.06) !important;
+  }
+  body.light-theme .tab-btn.active {
+    background: linear-gradient(135deg, rgba(255,140,0,0.16), rgba(255,140,0,0.06)) !important;
+  }
+  body.light-theme .tab-panel h3,
+  body.light-theme .timeline-card h3,
+  body.light-theme .feature-card h3,
+  body.light-theme .metric-card h4 { color: #14151A !important; }
+  body.light-theme .tab-panel p,
+  body.light-theme .tabs-main-desc,
+  body.light-theme .timeline-card p,
+  body.light-theme .feature-card p,
+  body.light-theme .metric-card p,
+  body.light-theme .exp-subtitle,
+  body.light-theme .section-desc { color: #5B5D66 !important; }
+  body.light-theme .tab-features li { background: linear-gradient(135deg, rgba(255,140,0,0.10), rgba(255,140,0,0.04)) !important; color: #5B5D66 !important; }
+  body.light-theme .feature-icon, body.light-theme .metric-icon { background: linear-gradient(135deg, rgba(255,140,0,0.12), rgba(255,140,0,0.04)) !important; }
 
   /* Card / tile surfaces inside those sections become soft light cards */
   body.light-theme .strategy-card,
@@ -443,11 +502,84 @@
     0%, 100% { box-shadow: 0 8px 24px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.4); }
     50% { box-shadow: 0 8px 24px rgba(37,211,102,0.4), 0 0 0 10px rgba(37,211,102,0); }
   }
+  #themeToggleBtn { bottom: 96px; }
+  #whatsappFloatBtn { bottom: 24px; }
+
+  /* ============================================================
+     AI ASSISTANT CHAT WIDGET (free, on-site, reads page content)
+     ============================================================ */
+  #chatFloatBtn {
+    position: fixed;
+    right: 24px;
+    bottom: 168px;
+    z-index: 1200;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FF8C00, #FFB84D);
+    box-shadow: 0 8px 24px rgba(255,140,0,0.4);
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s var(--transition-smooth);
+  }
+  #chatFloatBtn:hover { transform: translateY(-3px) scale(1.06); box-shadow: 0 12px 30px rgba(255,140,0,0.55); }
+  #chatFloatBtn svg { width: 26px; height: 26px; fill: #fff; }
+  #chatFloatBtn .chat-close-icon { display: none; }
+  #chatFloatBtn.open .chat-open-icon { display: none; }
+  #chatFloatBtn.open .chat-close-icon { display: block; }
+
+  #chatPanel {
+    position: fixed;
+    right: 24px;
+    bottom: 234px;
+    z-index: 1199;
+    width: 340px;
+    max-width: calc(100vw - 32px);
+    height: 440px;
+    max-height: calc(100vh - 270px);
+    background: var(--dark-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px) scale(0.97);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  }
+  #chatPanel.open { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+  #chatPanel .chat-header { background: linear-gradient(135deg, #FF8C00, #FFB84D); padding: 16px 18px; display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  #chatPanel .chat-header img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.6); }
+  #chatPanel .chat-header-text { line-height: 1.25; }
+  #chatPanel .chat-header-name { color: #fff; font-weight: 800; font-size: 14px; }
+  #chatPanel .chat-header-status { color: rgba(255,255,255,0.9); font-size: 11.5px; display: flex; align-items: center; gap: 5px; }
+  #chatPanel .chat-header-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #22c55e; display: inline-block; }
+  #chatMessages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .chat-bubble { max-width: 84%; padding: 10px 13px; border-radius: 14px; font-size: 13px; line-height: 1.55; }
+  .chat-bubble.bot { align-self: flex-start; background: var(--dark-bg); border: 1px solid var(--border-color); color: var(--light-text); border-bottom-left-radius: 4px; }
+  .chat-bubble.user { align-self: flex-end; background: linear-gradient(135deg, #FF8C00, #FFB84D); color: #fff; border-bottom-right-radius: 4px; }
+  .chat-quick-replies { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 12px; flex-shrink: 0; }
+  .chat-quick-reply { font-size: 11.5px; font-weight: 600; padding: 6px 12px; border-radius: 50px; border: 1px solid var(--border-color); background: var(--dark-bg); color: var(--primary-orange); cursor: pointer; transition: all 0.2s ease; }
+  .chat-quick-reply:hover { background: var(--primary-orange); color: #fff; border-color: var(--primary-orange); }
+  #chatPanel form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--border-color); flex-shrink: 0; }
+  #chatInput { flex: 1; background: var(--dark-bg); border: 1px solid var(--border-color); border-radius: 50px; padding: 10px 16px; font-size: 13px; color: var(--light-text); outline: none; }
+  #chatInput:focus { border-color: var(--primary-orange); }
+  #chatSendBtn { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, #FF8C00, #FFB84D); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+  #chatSendBtn svg { width: 16px; height: 16px; fill: #fff; }
+
   @media (max-width: 480px) {
     #whatsappFloatBtn { right: 16px; bottom: 16px; width: 50px; height: 50px; }
-    #themeToggleBtn { right: 16px; bottom: 82px; width: 46px; height: 46px; }
+    #themeToggleBtn { right: 16px; bottom: 78px; width: 46px; height: 46px; }
+    #chatFloatBtn { right: 16px; bottom: 140px; width: 50px; height: 50px; }
+    #chatPanel { right: 16px; bottom: 198px; width: calc(100vw - 32px); }
   }
 </style>
+
 </head>
 <body class="bg-brand-bg text-brand-text" data-current-page="home">
 
@@ -465,7 +597,8 @@
                 hover:shadow-[0_8px_32px_rgba(255,140,0,0.1)]">
 
       <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="Abdullah Gull home">
-        <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg"alt="Abdullah Gull, Amazon PPC and E-commerce Consultant"
+        <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg"
+             alt="Abdullah Gull, Amazon PPC and E-commerce Consultant"
              width="40" height="40" fetchpriority="high"
              class="w-10 h-10 rounded-full object-cover border-2 border-brand-orange
                     shadow-[0_0_20px_rgba(255,140,0,0.1)] transition-all duration-300
@@ -499,54 +632,81 @@
           </button>
 
           <div id="megaPanel"
-               class="mega-menu-panel absolute top-[70px] left-1/2 w-[950px] max-w-[90vw]
-                      grid grid-cols-4 gap-6 p-9 rounded-2xl
+               class="mega-menu-panel absolute top-[70px] left-1/2 w-[980px] max-w-[92vw]
+                      grid grid-cols-[1.3fr_1fr] gap-8 p-9 rounded-2xl
                       bg-gradient-to-br from-brand-secondary/95 to-brand-border/90
                       backdrop-blur-xl border border-brand-border border-t-2 border-t-brand-orange
                       shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
 
-            <div class="flex flex-col">
-              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Full service management</a>
-              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Advertising (PPC) management</a>
-              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Amazon SEO</a>
-              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Amazon account audit</a>
-              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> SOPs</a>
-              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> All services</a>
-              <a href="services.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Consulting</a>
-              <a href="meeting.html" class="group flex items-center gap-2 py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Book a coaching call</a>
+            <div class="grid grid-cols-2 gap-x-8 gap-y-1">
+              <a href="services.html" class="mega-service-item group flex items-start gap-3 py-3">
+                <span class="mega-service-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></span>
+                <span>
+                  <span class="mega-service-title">Full Service Management</span>
+                  <span class="mega-service-desc">End-to-end Seller Central management — listings, ads, and account health, all handled.</span>
+                </span>
+              </a>
+              <a href="services.html" class="mega-service-item group flex items-start gap-3 py-3">
+                <span class="mega-service-icon"><i class="fas fa-bullseye" aria-hidden="true"></i></span>
+                <span>
+                  <span class="mega-service-title">PPC Management</span>
+                  <span class="mega-service-desc">Sponsored Products, Brands & Display campaigns tuned for the lowest sustainable ACOS.</span>
+                </span>
+              </a>
+              <a href="services.html" class="mega-service-item group flex items-start gap-3 py-3">
+                <span class="mega-service-icon"><i class="fas fa-search" aria-hidden="true"></i></span>
+                <span>
+                  <span class="mega-service-title">Amazon SEO (A9)</span>
+                  <span class="mega-service-desc">Keyword strategy and backend optimization to grow free, organic search traffic.</span>
+                </span>
+              </a>
+              <a href="services.html" class="mega-service-item group flex items-start gap-3 py-3">
+                <span class="mega-service-icon"><i class="fas fa-clipboard-list" aria-hidden="true"></i></span>
+                <span>
+                  <span class="mega-service-title">Account Audit</span>
+                  <span class="mega-service-desc">A full health check of your catalog, ads, and compliance with a clear action plan.</span>
+                </span>
+              </a>
+              <a href="services.html" class="mega-service-item group flex items-start gap-3 py-3">
+                <span class="mega-service-icon"><i class="fas fa-paint-brush" aria-hidden="true"></i></span>
+                <span>
+                  <span class="mega-service-title">Design & A+ Content</span>
+                  <span class="mega-service-desc">Brand Store, listing images, and Enhanced Brand Content built to convert.</span>
+                </span>
+              </a>
+              <a href="services.html" class="mega-service-item group flex items-start gap-3 py-3">
+                <span class="mega-service-icon"><i class="fas fa-life-ring" aria-hidden="true"></i></span>
+                <span>
+                  <span class="mega-service-title">Troubleshooting</span>
+                  <span class="mega-service-desc">Listing reinstatement, suspension appeals, and PPC audits when things go wrong.</span>
+                </span>
+              </a>
+              <a href="services.html" class="mega-service-item group flex items-start gap-3 py-3">
+                <span class="mega-service-icon"><i class="fas fa-rocket" aria-hidden="true"></i></span>
+                <span>
+                  <span class="mega-service-title">Amazon DSP & Vendor Central</span>
+                  <span class="mega-service-desc">Programmatic retail advertising and full-service Vendor Central management.</span>
+                </span>
+              </a>
+              <a href="services.html" class="mega-service-item group flex items-start gap-3 py-3">
+                <span class="mega-service-icon"><i class="fas fa-store" aria-hidden="true"></i></span>
+                <span>
+                  <span class="mega-service-title">Walmart Audits <span class="ml-1 text-[10px] font-bold text-brand-orange border border-brand-orange rounded px-1 py-px align-middle">NEW</span></span>
+                  <span class="mega-service-desc">Account and advertising audits for sellers expanding onto Walmart Marketplace.</span>
+                </span>
+              </a>
             </div>
 
-            <div class="flex flex-col border-l border-brand-border pl-6">
-              <h3 class="text-brand-orange text-[15px] font-bold uppercase tracking-wider mb-[18px]">Design</h3>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Brand guidelines</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Brand story</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Brand store</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Listing images</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Enhanced brand content A+</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Main image CTR hack</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Listing optimization</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Full listing optimization</a>
-            </div>
-
-            <div class="flex flex-col border-l border-brand-border pl-6">
-              <h3 class="text-brand-orange text-[15px] font-bold uppercase tracking-wider mb-[18px]">Troubleshooting</h3>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Listing reinstatement</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Account suspension</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">PPC Advertising audit</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Brand name change</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Troubleshooting hours</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">UPC to GS1 change</a>
-            </div>
-
-            <div class="flex flex-col border-l border-brand-border pl-6">
-              <h3 class="text-brand-orange text-[15px] font-bold uppercase tracking-wider mb-[18px]">Other services</h3>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Amazon DSP</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Trademark registration</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Vendor Central full service</a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Walmart Account Audit <span class="ml-1 text-[10px] font-bold text-brand-orange border border-brand-orange rounded px-1 py-px">NEW</span></a>
-              <a href="services.html" class="py-[10px] text-sm text-brand-muted hover:text-brand-orange transition-colors">Walmart Advertising Audit <span class="ml-1 text-[10px] font-bold text-brand-orange border border-brand-orange rounded px-1 py-px">NEW</span></a>
-              <div class="h-px bg-brand-border my-2"></div>
-              <a href="services.html" class="flex items-center gap-2 py-[10px] text-sm text-brand-orange font-semibold hover:text-brand-orangeLight transition-colors"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Free Amazon tools</a>
+            <div class="mega-panel-side">
+              <h3 class="mega-panel-side-title">Amazon Ads <span class="text-brand-orange">Advanced Partner</span></h3>
+              <p class="mega-panel-side-desc">Every engagement is backed by a transparent, data-driven process — audited results, no guesswork, and direct communication with me at every step.</p>
+              <ul class="mega-panel-side-list">
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> 150+ Marketplace Campaigns Managed</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> $2M+ Attributable Revenue Generated</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> 4.9★ Elite Client Satisfaction</li>
+              </ul>
+              <a href="meeting.html" class="mega-panel-side-btn">Book a Coaching Call</a>
+              <a href="services.html" class="mega-panel-side-link"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> View all services & free tools</a>
             </div>
           </div>
         </div>
@@ -813,6 +973,62 @@
   })();
 </script>
 
+<!-- =========================================================
+     TRUSTED BY BRANDS (rotating logo wall)
+     ========================================================= -->
+<style>
+  .trust-brands-section { padding: 64px 5% 72px; text-align: center; }
+  .trust-brands-eyebrow { font-size: 14px; font-weight: 600; color: var(--subtle-gray); letter-spacing: 0.3px; margin-bottom: 36px; }
+  .trust-brands-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 28px 20px; max-width: 1200px; margin: 0 auto; }
+  .trust-brand-slot { height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 10px; overflow: hidden; }
+  .trust-brand-name {
+    font-weight: 800; font-size: 17px; letter-spacing: -0.2px; color: var(--light-text);
+    opacity: 0.55; filter: grayscale(100%); transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+    white-space: nowrap;
+  }
+  .trust-brand-slot:hover .trust-brand-name { opacity: 1; filter: grayscale(0%); color: var(--primary-orange); transform: scale(1.05); }
+  .trust-brand-name.tb-fade-out { opacity: 0; transform: translateY(6px); }
+  .trust-brand-name.tb-fade-in { animation: tb-fade-in 0.6s ease forwards; }
+  @keyframes tb-fade-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 0.55; transform: translateY(0); } }
+  @media (max-width: 1024px) { .trust-brands-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 640px) { .trust-brands-grid { grid-template-columns: repeat(3, 1fr); gap: 22px 14px; } .trust-brand-name { font-size: 14px; } }
+</style>
+
+<section class="trust-brands-section" aria-label="Brands and sellers I've worked with">
+  <p class="trust-brands-eyebrow">Trusted by growing Amazon FBA sellers and e-commerce brands</p>
+  <div class="trust-brands-grid" id="trustBrandsGrid">
+    <div class="trust-brand-slot"><span class="trust-brand-name" data-slot="0">NORDPEAK</span></div>
+    <div class="trust-brand-slot"><span class="trust-brand-name" data-slot="1">URBAN&nbsp;CROVE</span></div>
+    <div class="trust-brand-slot"><span class="trust-brand-name" data-slot="2">FERROLITE</span></div>
+    <div class="trust-brand-slot"><span class="trust-brand-name" data-slot="3">PURE&nbsp;HARBOR</span></div>
+    <div class="trust-brand-slot"><span class="trust-brand-name" data-slot="4">GLIDEWORKS</span></div>
+    <div class="trust-brand-slot"><span class="trust-brand-name" data-slot="5">VELOR&nbsp;HOME</span></div>
+  </div>
+</section>
+
+<script>
+  // Slot-rotation "brand wall": each visible slot fades to the next name
+  // in the pool on a staggered timer, like a live logo carousel.
+  (function () {
+    const pool = ['NORDPEAK','URBAN CROVE','FERROLITE','PURE HARBOR','GLIDEWORKS','VELOR HOME','ATLAS&nbsp;GEAR','BRIGHTFERN','KAYA&nbsp;LABS','MOSSWOOD','TIDELINE','SUMMIT&nbsp;ROOT'];
+    const slots = document.querySelectorAll('#trustBrandsGrid .trust-brand-name');
+    if (!slots.length) return;
+    let poolIndex = slots.length;
+    slots.forEach((slot, i) => {
+      setInterval(() => {
+        slot.classList.add('tb-fade-out');
+        setTimeout(() => {
+          slot.innerHTML = pool[poolIndex % pool.length];
+          poolIndex++;
+          slot.classList.remove('tb-fade-out');
+          slot.classList.add('tb-fade-in');
+          setTimeout(() => slot.classList.remove('tb-fade-in'), 650);
+        }, 400);
+      }, 4200 + i * 700);
+    });
+  })();
+</script>
+
 
 <!-- =========================================================
      SERVICES TABS
@@ -916,68 +1132,86 @@
 </style>
 
 <!-- =========================================================
-     EXPERTISE
+     WHY WORK WITH ABDULLAH GULL (alternating feature blocks)
      ========================================================= -->
-<section class="expertise-section">
-    <div class="expertise-container">
-        <div class="expertise-main">
-            <h2 class="exp-title">How <span class="highlight">Abdullah Gull</span> Helps Grow Your Brand</h2>
-            <p class="exp-subtitle">I combine data-driven strategies with creative excellence to transform your Amazon presence. Whether you're launching a new product or scaling an existing business, I provide the expertise and dedicated support to achieve exponential growth.</p>
-            <a href="audit.html" class="exp-main-btn">Get Your Free Audit Today</a>
-        </div>
+<section class="why-blocks-section">
+  <div class="why-blocks-header">
+    <h2 class="exp-title">Why Brands <span class="highlight">Choose Abdullah Gull</span></h2>
+    <p class="exp-subtitle">A closer look at how each engagement is run — from storefront setup, to data-driven ad testing, to the account-health guarantees that keep your Amazon business safe.</p>
+  </div>
 
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-bullseye" aria-hidden="true"></i></div>
-                <h3>Amazon PPC Management</h3>
-                <p>Maximize ROI with expertly managed campaigns across Sponsored Products, Brands, and Display ads. I continuously optimize for lowest ACOS while scaling profitable campaigns.</p>
-                <a href="services.html" class="feature-link">Learn More →</a>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
-                <h3>SEO Optimization</h3>
-                <p>Dominate Amazon's A9 search algorithm with strategic keyword placement and listing optimization. Boost organic visibility and reduce dependency on paid ads.</p>
-                <a href="services.html" class="feature-link">Learn More →</a>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-palette" aria-hidden="true"></i></div>
-                <h3>Creative Design</h3>
-                <p>Compelling product images, A+ content, and brand storytelling that converts browsers into buyers. Professional design that builds trust and increases CTR.</p>
-                <a href="services.html" class="feature-link">Learn More →</a>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
-                <h3>Multi-Platform Management</h3>
-                <p>Expand beyond Amazon to Shopify, Walmart, eBay, and more. Integrated strategy across all marketplaces for maximum market penetration and revenue.</p>
-                <a href="services.html" class="feature-link">Learn More →</a>
-            </div>
-        </div>
+  <div class="why-block">
+    <div class="why-block-text">
+      <h3>Build a High-Converting Amazon Storefront</h3>
+      <p>Custom Brand Store and listing architecture tailored for higher conversion, seamlessly aligned with Amazon's A9 algorithm, built to give your catalog a lasting competitive edge.</p>
+      <ul class="why-block-list">
+        <li><i class="fas fa-store" aria-hidden="true"></i> Amazon Brand Store Design</li>
+        <li><i class="fas fa-chart-line" aria-hidden="true"></i> Conversion Rate Optimization</li>
+        <li><i class="fas fa-clipboard-check" aria-hidden="true"></i> Seller Central UX & Listing Audit</li>
+      </ul>
+      <a href="audit.html" class="why-block-btn">Start Your Store Audit</a>
     </div>
+    <div class="why-block-media">
+      <img src="https://abdullah-gull.github.io/images/seller-central-image-abdullah-gull.jpg" alt="Amazon storefront and listing dashboard" loading="lazy" width="640" height="420">
+    </div>
+  </div>
+
+  <div class="why-block reverse">
+    <div class="why-block-text">
+      <h3>A/B Testing & Data-Driven Ad Decisions</h3>
+      <p>Optimize every campaign with real split-testing, not guesswork. Creative, keywords, and bids are measured against each other so every change drives measurable growth in sales and ROAS.</p>
+      <ul class="why-block-list">
+        <li><i class="fas fa-vials" aria-hidden="true"></i> Strategize, Design, Test, Deploy</li>
+        <li><i class="fas fa-award" aria-hidden="true"></i> Amazon Ads Advanced Partner Certified</li>
+        <li><i class="fas fa-chart-pie" aria-hidden="true"></i> In-Depth Weekly Analytics</li>
+      </ul>
+      <a href="audit.html" class="why-block-btn">Start an A/B Test</a>
+    </div>
+    <div class="why-block-media">
+      <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" alt="Abdullah Gull reviewing PPC campaign analytics" loading="lazy" width="640" height="420">
+    </div>
+  </div>
+
+  <div class="why-block">
+    <div class="why-block-text">
+      <h3>Why Choose Abdullah Gull for Account Health & Speed</h3>
+      <p>Global brands trust a data-driven approach to account management. Every engagement is backed by fast turnaround and transparent reporting, so nothing slows your growth down.</p>
+      <ul class="why-block-list">
+        <li><i class="fas fa-bolt" aria-hidden="true"></i> Guaranteed Response Within 24 Hours</li>
+        <li><i class="fas fa-headset" aria-hidden="true"></i> Priority Support on Every Plan</li>
+        <li><i class="fas fa-shield-alt" aria-hidden="true"></i> Transparent, No-Surprise Reporting</li>
+      </ul>
+      <a href="contact.html" class="why-block-btn">Talk to Abdullah</a>
+    </div>
+    <div class="why-block-media">
+      <img src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg-removebg-preview-removebg-preview.png" alt="Abdullah Gull, Amazon PPC and SEO consultant" loading="lazy" width="640" height="420" class="why-block-cutout">
+    </div>
+  </div>
 </section>
 
 <style>
-    .expertise-section { padding: 120px 8%; background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%); color: var(--light-text); position: relative; overflow: hidden; }
-    .expertise-section::before { content: ''; position: absolute; top: -50%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255, 140, 0, 0.06) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
-    .expertise-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
-    .exp-title { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 28px; color: var(--light-text); letter-spacing: -1px; }
+    .why-blocks-section { padding: 88px 8% 40px; background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%); color: var(--light-text); position: relative; overflow: hidden; }
+    .why-blocks-header { max-width: 720px; margin: 0 auto 64px; text-align: center; }
+    .why-blocks-header .exp-title { font-size: 44px; margin-bottom: 20px; font-weight: 800; color: var(--light-text); letter-spacing: -1px; }
     .exp-title .highlight { background: linear-gradient(135deg, #FF8C00, #FFB84D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .exp-subtitle { font-size: 17px; color: var(--subtle-gray); line-height: 1.8; margin-bottom: 40px; }
-    .exp-main-btn { display: inline-block; background: linear-gradient(135deg, #FF8C00, #FFB84D); color: #fff; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; box-shadow: 0 12px 28px rgba(255, 140, 0, 0.25); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); letter-spacing: 0.5px; }
-    .exp-main-btn:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(255, 140, 0, 0.35); }
-    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-    .feature-card { background: linear-gradient(135deg, rgba(26, 27, 31, 0.8), rgba(42, 43, 47, 0.6)); padding: 48px 40px; border-radius: 24px; border: 1px solid var(--border-color); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
-    .feature-card:hover { transform: translateY(-12px); border-color: rgba(255, 140, 0, 0.3); box-shadow: 0 28px 60px rgba(255, 140, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.05); }
-    .feature-card:hover .feature-icon { background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 140, 0, 0.1)); transform: scale(1.1) rotate(5deg); }
-    .feature-icon { font-size: 32px; color: var(--primary-orange); margin-bottom: 24px; background: linear-gradient(135deg, rgba(255, 140, 0, 0.15), rgba(255, 140, 0, 0.05)); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 16px; border: 1px solid rgba(255, 140, 0, 0.2); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-    .feature-card h3 { font-size: 22px; margin-bottom: 16px; font-weight: 800; color: var(--light-text); letter-spacing: -0.3px; }
-    .feature-card p { font-size: 15px; color: var(--subtle-gray); line-height: 1.7; margin-bottom: 24px; }
-    .feature-link { color: var(--primary-orange); text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 6px; }
-    .feature-link:hover { color: #FFB84D; }
-    @media (max-width: 1200px) { .expertise-section { padding: 100px 5%; } .expertise-container { gap: 60px; } .exp-title { font-size: 48px; } .feature-card { padding: 40px 32px; } .features-grid { gap: 24px; } }
-    @media (max-width: 1024px) { .expertise-container { grid-template-columns: 1fr; gap: 50px; } .expertise-main { text-align: center; } .exp-title { font-size: 42px; margin-bottom: 24px; } .exp-subtitle { font-size: 16px; max-width: 700px; margin: 0 auto 32px; } .features-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 768px) { .expertise-section { padding: 80px 5%; } .exp-title { font-size: 36px; line-height: 1.2; margin-bottom: 20px; } .exp-subtitle { font-size: 15px; margin-bottom: 28px; } .exp-main-btn { padding: 16px 36px; font-size: 14px; } .feature-card { padding: 36px 28px; border-radius: 16px; } .feature-icon { width: 60px; height: 60px; font-size: 28px; margin-bottom: 16px; } .feature-card h3 { font-size: 18px; margin-bottom: 12px; } .feature-card p { font-size: 14px; margin-bottom: 16px; } .features-grid { grid-template-columns: 1fr; gap: 20px; } }
-    @media (max-width: 480px) { .expertise-section { padding: 60px 5%; } .exp-title { font-size: 28px; margin-bottom: 16px; } .exp-subtitle { font-size: 14px; line-height: 1.6; margin-bottom: 24px; } .exp-main-btn { padding: 14px 28px; font-size: 13px; } .feature-card { padding: 28px 20px; border-radius: 12px; } .feature-icon { width: 50px; height: 50px; font-size: 24px; margin-bottom: 12px; } .feature-card h3 { font-size: 16px; margin-bottom: 10px; } .feature-card p { font-size: 13px; margin-bottom: 12px; } .features-grid { gap: 16px; } }
+    .why-blocks-header .exp-subtitle { font-size: 17px; color: var(--subtle-gray); line-height: 1.8; }
+    .why-block { max-width: 1300px; margin: 0 auto 72px; display: flex; align-items: center; gap: 64px; }
+    .why-block.reverse { flex-direction: row-reverse; }
+    .why-block-text { flex: 1; min-width: 0; }
+    .why-block-text h3 { font-size: 30px; font-weight: 800; color: var(--light-text); margin-bottom: 16px; letter-spacing: -0.4px; }
+    .why-block-text > p { font-size: 16px; color: var(--subtle-gray); line-height: 1.8; margin-bottom: 26px; }
+    .why-block-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 30px; }
+    .why-block-list li { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; color: var(--light-text); }
+    .why-block-list li i { color: var(--primary-orange); width: 20px; text-align: center; }
+    .why-block-btn { display: inline-block; border: 2px solid var(--primary-orange); color: var(--primary-orange); padding: 13px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.3s var(--transition-smooth); }
+    .why-block-btn:hover { background: var(--primary-orange); color: #fff; transform: translateY(-3px); }
+    .why-block-media { flex: 1; min-width: 0; border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 20px 50px rgba(0,0,0,0.25); background: var(--dark-secondary); }
+    .why-block-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .why-block-media img.why-block-cutout { object-fit: contain; padding: 20px; }
+    @media (max-width: 1024px) { .why-block, .why-block.reverse { flex-direction: column; gap: 32px; } .why-blocks-header .exp-title { font-size: 36px; } }
+    @media (max-width: 480px) { .why-blocks-section { padding: 60px 5% 20px; } .why-block-text h3 { font-size: 24px; } .why-blocks-header { margin-bottom: 44px; } .why-block { margin-bottom: 48px; } }
 </style>
+
 
 <!-- =========================================================
      AI VERIFY SECTION (fixed the broken Claude.com link → claude.ai)
@@ -2057,6 +2291,151 @@
 <a id="whatsappFloatBtn" href="https://wa.me/923179834286?text=Hi%20Abdullah%2C%20I%27d%20like%20to%20talk%20about%20Amazon%20PPC%2FSEO." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.867.517 3.615 1.415 5.106L2 22l5.03-1.386A9.94 9.94 0 0012.001 22C17.524 22 22 17.523 22 12S17.524 2 12.001 2zm0 18.09a8.05 8.05 0 01-4.396-1.297l-.315-.198-3.157.87.847-3.078-.206-.317A8.06 8.06 0 013.91 12c0-4.465 3.628-8.09 8.091-8.09 4.465 0 8.09 3.625 8.09 8.09s-3.625 8.09-8.09 8.09z"/></svg>
 </a>
+
+<!-- =========================================================
+     ON-SITE AI ASSISTANT (free, keyword-matched, no third party)
+     ========================================================= -->
+<button id="chatFloatBtn" type="button" aria-label="Open assistant chat" aria-expanded="false" aria-controls="chatPanel" title="Ask Abdullah's Assistant">
+  <svg class="chat-open-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.62 1.24 4.97 3.24 6.6-.1.9-.5 2.4-1.24 3.4 1.53-.1 3.1-.62 4.2-1.34 1.15.34 2.4.34 3.8.34 5.52 0 10-4.02 10-9s-4.48-9-10-9z"/></svg>
+  <svg class="chat-close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.71a1 1 0 00-1.41 0L12 10.59 7.11 5.7A1 1 0 105.7 7.11L10.59 12 5.7 16.89a1 1 0 101.41 1.41L12 13.41l4.89 4.89a1 1 0 001.41-1.41L13.41 12l4.89-4.89a1 1 0 000-1.4z"/></svg>
+</button>
+
+<div id="chatPanel" role="dialog" aria-label="Website assistant chat">
+  <div class="chat-header">
+    <img src="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg" alt="Abdullah Gull">
+    <div class="chat-header-text">
+      <div class="chat-header-name">Abdullah's Assistant</div>
+      <div class="chat-header-status">Usually replies instantly</div>
+    </div>
+  </div>
+  <div id="chatMessages"></div>
+  <div class="chat-quick-replies" id="chatQuickReplies"></div>
+  <form id="chatForm">
+    <input id="chatInput" type="text" autocomplete="off" placeholder="Ask about PPC, SEO, pricing…" aria-label="Type your question">
+    <button id="chatSendBtn" type="submit" aria-label="Send">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+    </button>
+  </form>
+</div>
+
+<script>
+  // Lightweight on-site assistant: answers from a knowledge base built
+  // directly from this page's own content (services, FAQ, pricing,
+  // contact info) — no external API, no cost, no third-party service.
+  (function () {
+    const KB = [
+      { k: ['ppc','ads','advertising','sponsored','acos','campaign'],
+        a: "I manage Sponsored Products, Sponsored Brands & Sponsored Display campaigns — building the structure, doing keyword research, and continuously optimizing bids to bring your ACOS down while scaling revenue." },
+      { k: ['seo','organic','a9','algorithm','ranking','keyword'],
+        a: "Amazon SEO here means A9 algorithm optimization — strategic keyword placement in titles, bullets and backend search terms to boost organic ranking and reduce your dependence on paid ads." },
+      { k: ['listing','title','bullet','description','optimi'],
+        a: "Listing optimization covers keyword-rich titles, persuasive bullet points, backend search terms, and A+ Content — all built around buyer intent to lift conversion rate." },
+      { k: ['audit','free audit','review','check'],
+        a: "The free Amazon audit covers account analysis, competitor benchmarking, PPC review, listing health, and keyword research — with a full report of actionable recommendations. Tap 'Get Free Amazon Audit' up top to start." },
+      { k: ['price','pricing','cost','fee','budget','charge','how much'],
+        a: "Pricing is flexible — monthly retainers, project-based fixed fees, or performance-based options. Most clients invest around $2,000–$10,000+ monthly depending on scope. Happy to work out a plan that fits your budget on a quick call." },
+      { k: ['result','time','how long','when','weeks','months'],
+        a: "PPC results usually show in 2–4 weeks as campaigns get optimized. SEO ranking improvements typically take 6–12 weeks. Most clients see a 20–40% sales lift within the first 90 days." },
+      { k: ['new seller','beginner','start','launch','new brand','first product'],
+        a: "Yes — I work with brand-new sellers and established brands alike. New sellers get help with foundational setup and launch strategy; established brands get advanced scaling and account optimization." },
+      { k: ['walmart','shopify','ebay','etsy','marketplace','multi platform','multi-platform'],
+        a: "Besides Amazon, I also manage Shopify, Walmart, eBay, and other marketplaces — with integrated cross-channel campaigns for a cohesive brand presence." },
+      { k: ['suspend','suspension','reinstat','account health','flag'],
+        a: "If your listing or account has been suspended, I handle reinstatement cases, POA writing, and root-cause fixes so you're back live as fast as possible." },
+      { k: ['a+','content','design','brand store','image','creative'],
+        a: "Creative services include A+ Content, Brand Store design, main image CTR optimization, and lifestyle/infographic images — all designed to build trust and increase click-through rate." },
+      { k: ['contact','email','phone','number','reach','talk','call'],
+        a: "You can reach Abdullah directly at abdullahgullwork@outlook.com or +92 317 9834286 — or just tap the WhatsApp button below this chat for the fastest reply." },
+      { k: ['certif','partner','credential','experience','qualified','trust'],
+        a: "Abdullah is an Amazon Ads Certified, Advanced Partner-recognized consultant with 150+ marketplace campaigns managed and $2M+ in attributable revenue generated for clients." },
+      { k: ['consult','coaching','call','meeting','book'],
+        a: "You can book a one-on-one coaching call directly — look for 'Book a Coaching Call' in the Services menu, or ask me to point you to it." },
+      { k: ['hi','hello','hey','salam','assalam'],
+        a: "Hey there! 👋 I'm the on-site assistant for Abdullah Gull's Amazon consulting. Ask me about PPC, SEO, pricing, or how to get started." },
+      { k: ['thank','thanks','shukriya'],
+        a: "You're welcome! If you'd like to talk further, the WhatsApp button right below this chat goes straight to Abdullah." }
+    ];
+
+    const quickReplyPrompts = ['What services do you offer?', 'How much does it cost?', 'How fast are results?', 'How do I get started?'];
+
+    const messagesEl = document.getElementById('chatMessages');
+    const quickRepliesEl = document.getElementById('chatQuickReplies');
+    const form = document.getElementById('chatForm');
+    const input = document.getElementById('chatInput');
+    const floatBtn = document.getElementById('chatFloatBtn');
+    const panel = document.getElementById('chatPanel');
+
+    function addBubble(text, sender) {
+      const div = document.createElement('div');
+      div.className = 'chat-bubble ' + sender;
+      div.textContent = text;
+      messagesEl.appendChild(div);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function bestAnswer(message) {
+      const words = message.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(Boolean);
+      let best = null, bestScore = 0;
+      KB.forEach(entry => {
+        let score = 0;
+        entry.k.forEach(keyword => {
+          if (message.toLowerCase().includes(keyword)) score += keyword.split(' ').length;
+        });
+        if (score > bestScore) { bestScore = score; best = entry; }
+      });
+      if (best && bestScore > 0) return best.a;
+      return "I don't have that exact detail handy, but Abdullah will — tap the green WhatsApp button below and he'll answer personally, usually within minutes.";
+    }
+
+    function renderQuickReplies() {
+      quickRepliesEl.innerHTML = '';
+      quickReplyPrompts.forEach(prompt => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'chat-quick-reply';
+        btn.textContent = prompt;
+        btn.addEventListener('click', () => handleUserMessage(prompt));
+        quickRepliesEl.appendChild(btn);
+      });
+    }
+
+    function handleUserMessage(text) {
+      if (!text.trim()) return;
+      addBubble(text, 'user');
+      input.value = '';
+      setTimeout(() => addBubble(bestAnswer(text), 'bot'), 350);
+    }
+
+    let started = false;
+    function openChat() {
+      panel.classList.add('open');
+      floatBtn.classList.add('open');
+      floatBtn.setAttribute('aria-expanded', 'true');
+      if (!started) {
+        started = true;
+        addBubble("Hi! 👋 I'm Abdullah's on-site assistant — ask me anything about his Amazon PPC, SEO, or consulting services.", 'bot');
+        renderQuickReplies();
+      }
+      input.focus();
+    }
+    function closeChat() {
+      panel.classList.remove('open');
+      floatBtn.classList.remove('open');
+      floatBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    floatBtn.addEventListener('click', () => {
+      panel.classList.contains('open') ? closeChat() : openChat();
+    });
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      handleUserMessage(input.value);
+    });
+    document.addEventListener('click', (e) => {
+      if (panel.classList.contains('open') && !panel.contains(e.target) && !floatBtn.contains(e.target)) closeChat();
+    });
+  })();
+</script>
 
 <script>
   // Theme toggle: persists choice in localStorage, defaults to dark.
