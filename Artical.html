@@ -4,628 +4,264 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mega Menu Header</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          accent: {
+            DEFAULT: '#ff7a3d',   // softer, easier-on-the-eyes orange
+            light:   '#ff9c66',
+            dark:    '#e6631f',
+          },
+          panel: '#0c0c0d',
+          line: '#1d1d1f',
+        },
+        fontFamily: {
+          sans: ['-apple-system','BlinkMacSystemFont','"Segoe UI"','Helvetica','Arial','sans-serif'],
+        }
+      }
+    }
+  }
+</script>
 <style>
-  :root{
-    --bg:#000000;
-    --bg-panel:#0c0c0d;
-    --text:#f5f5f7;
-    --text-dim:#a1a1a6;
-    --accent:#ff5a1f;
-    --accent-light:#ff7a45;
-    --border:#1d1d1f;
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;background:#000; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;}
-
-  /* ===== HEADER ===== */
-  header{
-    position:relative;
-    background:var(--bg);
-    border-bottom:1px solid var(--border);
-    z-index:100;
-  }
-  .navbar{
-    display:flex;
-    align-items:center;
-    max-width:1400px;
-    margin:0 auto;
-    padding:0 24px;
-    height:60px;
-    position:relative;
-  }
-
-  .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:var(--text);
-    font-weight:700;
-    font-size:16px;
-    letter-spacing:.2px;
-    white-space:nowrap;
-    flex:1 1 0;
-    text-decoration:none;
-  }
-  .logo img{
-    height:34px;
-    width:auto;
-    display:block;
-    object-fit:contain;
-  }
-
-  /* centered nav — flanked by two equal flex:1 siblings so it stays visually centered
-     without using transform (transform would break position:fixed children) */
-  .nav-items{
-    flex:0 0 auto;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    list-style:none;
-    margin:0;padding:0;
-    height:100%;
-  }
-  .nav-item{
-    position:static;
-    height:100%;
-    display:flex;
-    align-items:center;
-  }
-  .nav-item > a{
-    color:var(--text-dim);
-    text-decoration:none;
-    font-size:13px;
-    font-weight:500;
-    letter-spacing:.2px;
-    padding:10px 14px;
-    display:flex;
-    align-items:center;
-    gap:5px;
-    transition:color .2s ease;
-    cursor:pointer;
-    white-space:nowrap;
-    border-radius:6px;
-  }
-  .nav-item > a .chev{
-    width:9px;height:9px;
-    transition:transform .25s ease;
-    opacity:.7;
-    flex:0 0 auto;
-  }
-  .nav-item:hover > a,
-  .nav-item.open > a{color:var(--text);}
-  .nav-item.open > a .chev{transform:rotate(180deg);}
-
-  .nav-right{
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap:14px;
-    flex:1 1 0;
-  }
-  .icon-btn{
-    background:none;border:none;color:var(--text-dim);
-    cursor:pointer;padding:6px;display:flex;align-items:center;
-    transition:color .2s ease;
-  }
-  .icon-btn:hover{color:var(--text);}
-  .icon-btn svg{width:16px;height:16px;}
-
-  .get-in-touch{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    background:var(--accent);
-    color:#000;
-    font-size:13px;
-    font-weight:600;
-    padding:9px 16px;
-    border-radius:20px;
-    text-decoration:none;
-    white-space:nowrap;
-    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
-  }
-  .get-in-touch:hover{
-    background:var(--accent-light);
-    box-shadow:0 4px 16px rgba(255,90,31,.4);
-  }
-  .get-in-touch svg{width:14px;height:14px;}
-
-  /* ===== MEGA MENU PANEL (full width, fixed under header) ===== */
+  /* A handful of things Tailwind utilities can't express cleanly:
+     smooth height-based mega-menu animation, focus outline, scrollbar. */
   .mega-wrap{
-    position:fixed;
-    top:60px;
-    left:0;
-    right:0;
-    width:100%;
-    height:0;
-    overflow:hidden;
-    background:linear-gradient(180deg,#0d0d0e 0%, #050505 100%);
-    border-bottom:1px solid var(--border);
-    box-shadow:0 30px 60px rgba(0,0,0,.55);
-    z-index:99;
-
-    /* hidden by default */
-    visibility:hidden;
-    opacity:0;
-    pointer-events:none;
-    transition:
-      height .55s cubic-bezier(.16,1,.3,1),
-      opacity .35s ease,
-      visibility 0s linear .55s;
+    transition: height .55s cubic-bezier(.16,1,.3,1), opacity .35s ease, visibility 0s linear .55s;
   }
   .nav-item.open .mega-wrap{
-    visibility:visible;
-    opacity:1;
-    pointer-events:auto;
-    transition:
-      height .55s cubic-bezier(.16,1,.3,1),
-      opacity .4s ease;
+    transition: height .55s cubic-bezier(.16,1,.3,1), opacity .4s ease;
   }
   .mega-inner{
-    max-width:1200px;
-    margin:0 auto;
-    padding:64px 40px 72px;
-    display:grid;
-    gap:64px;
-    opacity:0;
-    transform:translateY(14px);
-    transition:opacity .45s ease .08s, transform .5s cubic-bezier(.16,1,.3,1) .08s;
+    transition: opacity .45s ease .08s, transform .5s cubic-bezier(.16,1,.3,1) .08s;
   }
-  .nav-item.open .mega-inner{
-    opacity:1;
-    transform:translateY(0);
-  }
-  .mega-inner.cols-4{grid-template-columns:repeat(4,1fr);}
-  .mega-inner.cols-3{grid-template-columns:1.15fr 1fr 1fr;}
-
-  .mega-col h4{
-    color:#6e6e73;
-    font-size:11px;
-    font-weight:600;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    margin:0 0 22px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-  .mega-col h4 .dot{
-    width:5px;height:5px;border-radius:50%;
-    background:var(--accent);
-    display:inline-block;
-    flex:0 0 auto;
-  }
-  .mega-col ul{
-    list-style:none;margin:0;padding:0;
-    display:flex;flex-direction:column;gap:16px;
-  }
-  .mega-col ul li a{
-    color:var(--text);
-    text-decoration:none;
-    font-size:15px;
-    font-weight:400;
-    line-height:1.4;
-    letter-spacing:.1px;
-    display:flex;
-    align-items:center;
-    gap:6px;
-    transition:color .2s ease, opacity .2s ease, transform .2s ease;
-  }
-  .mega-col ul li a:hover{color:var(--accent);transform:translateX(3px);}
-  .mega-col ul li a .badge{
-    font-size:9px;
-    font-weight:700;
-    color:#000;
-    background:var(--accent);
-    padding:2px 6px;
-    border-radius:8px;
-    letter-spacing:.3px;
-  }
-
-  .feature-card{
-    position:relative;
-    border-radius:14px;
-    overflow:hidden;
-    height:170px;
-    display:flex;
-    align-items:flex-end;
-    background-size:cover;
-    background-position:center;
-    background-color:#1a1a1a;
-    isolation:isolate;
-  }
-  .feature-card::after{
-    content:"";
-    position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.88) 100%);
-    z-index:0;
-  }
-  .feature-card .fc-text{
-    position:relative;z-index:1;
-    padding:18px;
-    color:#fff;
-  }
-  .feature-card .fc-text strong{
-    display:block;font-size:14px;margin-bottom:4px;
-  }
-  .feature-card .fc-text span{
-    font-size:12px;color:#d7d7db;line-height:1.4;display:block;
-  }
-
-  /* ===== SEARCH OVERLAY ===== */
-  .search-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.75);
-    backdrop-filter:blur(6px);
-    z-index:200;
-    display:flex;
-    align-items:flex-start;
-    justify-content:center;
-    padding-top:min(14vh, 120px);
-    opacity:0;
-    visibility:hidden;
-    transition:opacity .25s ease, visibility 0s linear .25s;
-  }
-  .search-overlay.active{
-    opacity:1;
-    visibility:visible;
-    transition:opacity .25s ease;
-  }
-  .search-box{
-    width:min(640px, 90vw);
-    background:#0c0c0d;
-    border:1px solid var(--border);
-    border-radius:16px;
-    box-shadow:0 30px 70px rgba(0,0,0,.6);
-    overflow:hidden;
-    transform:translateY(-14px);
-    opacity:0;
-    transition:transform .3s cubic-bezier(.16,1,.3,1), opacity .3s ease;
-  }
-  .search-overlay.active .search-box{
-    transform:translateY(0);
-    opacity:1;
-  }
-  .search-input-row{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:18px 20px;
-    border-bottom:1px solid var(--border);
-  }
-  .search-input-row svg{
-    width:18px;height:18px;
-    color:var(--text-dim);
-    flex:0 0 auto;
-  }
-  #searchInput{
-    flex:1;
-    background:none;
-    border:none;
-    outline:none;
-    color:var(--text);
-    font-size:16px;
-    font-family:inherit;
-  }
-  #searchInput::placeholder{color:#5a5a5e;}
-  .search-close{
-    background:none;border:none;color:var(--text-dim);
-    cursor:pointer;padding:4px;display:flex;
-    transition:color .2s ease;
-  }
-  .search-close:hover{color:var(--text);}
-  .search-close svg{width:16px;height:16px;}
-
-  .search-results{
-    max-height:min(50vh, 420px);
-    overflow-y:auto;
-    padding:8px;
-  }
-  .search-hint{
-    color:#5a5a5e;
-    font-size:13px;
-    padding:24px 16px;
-    text-align:center;
-    margin:0;
-  }
-  .search-empty{
-    color:#5a5a5e;
-    font-size:13px;
-    padding:24px 16px;
-    text-align:center;
-    margin:0;
-  }
-  .search-group{
-    padding:10px 12px 4px;
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:.6px;
-    text-transform:uppercase;
-    color:var(--accent);
-  }
-  .search-result{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    padding:11px 12px;
-    border-radius:8px;
-    color:var(--text);
-    text-decoration:none;
-    font-size:14px;
-    transition:background .15s ease;
-  }
-  .search-result:hover, .search-result.active{
-    background:#1a1a1b;
-  }
-  .search-result .sr-tag{
-    font-size:10px;
-    color:var(--text-dim);
-    white-space:nowrap;
-    flex:0 0 auto;
-  }
-  .search-result mark{
-    background:none;
-    color:var(--accent);
-    font-weight:600;
-  }
-
-  /* ===== MOBILE ===== */
-  .hamburger{
-    display:none;
-    flex-direction:column;
-    justify-content:center;
-    gap:5px;
-    background:none;
-    border:none;
-    cursor:pointer;
-    padding:8px;
-  }
-  .hamburger span{
-    width:22px;height:2px;background:var(--text);display:block;
-    transition:transform .25s ease, opacity .2s ease;
-  }
-  .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-  .hamburger.active span:nth-child(2){opacity:0;}
-  .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
-  @media (max-width:900px){
-    .nav-items{
-      position:fixed;
-      top:60px;
-      left:0;
-      right:0;
-      transform:none;
-      flex-direction:column;
-      align-items:stretch;
-      background:var(--bg);
-      height:auto;
-      max-height:0;
-      overflow:hidden;
-      transition:max-height .3s ease;
-      gap:0;
-      border-bottom:1px solid var(--border);
-    }
-    .nav-items.mobile-open{
-      max-height:calc(100vh - 60px);
-      overflow-y:auto;
-    }
-    .nav-item{
-      height:auto;
-      flex-direction:column;
-      align-items:stretch;
-      border-bottom:1px solid var(--border);
-    }
-    .nav-item > a{
-      padding:16px 24px;
-      justify-content:space-between;
-      width:100%;
-    }
-    .mega-wrap{
-      position:static;
-      box-shadow:none;
-      border-bottom:none;
-      visibility:visible;
-      opacity:1;
-      transform:none;
-      pointer-events:auto;
-      max-height:0;
-      overflow:hidden;
-      transition:max-height .3s ease;
-      background:#050505;
-    }
-    .nav-item.open .mega-wrap{
-      max-height:2000px;
-    }
-    .mega-inner.cols-4,
-    .mega-inner.cols-3{
-      grid-template-columns:1fr;
-      padding:8px 24px 24px;
-      gap:24px;
-    }
-    .feature-card{height:120px;}
-    .hamburger{display:flex;}
-    .get-in-touch span.label{display:none;}
-  }
+  .nav-item.open .mega-inner{ opacity:1; transform:translateY(0); }
+  .search-overlay{ transition: opacity .25s ease, visibility 0s linear .25s; }
+  .search-overlay.active{ transition: opacity .25s ease; }
+  .search-box{ transition: transform .3s cubic-bezier(.16,1,.3,1), opacity .3s ease; }
+  ::-webkit-scrollbar{ width:8px; height:8px; }
+  ::-webkit-scrollbar-thumb{ background:#2a2a2c; border-radius:8px; }
+  mark{ background:none; color:#ff9c66; font-weight:600; }
+  .nav-item.open .chev{ transform: rotate(180deg); }
+  .nav-item.open > a{ color:#ffffff; }
 </style>
 </head>
-<body>
+<body class="bg-black font-sans m-0 p-0">
 
-<header>
-  <div class="navbar">
-    <a href="#" class="logo">
-      <img src="https://abdullah-gull.github.io/images/Abdullah_Gull-removebg-preview.png" alt="Brand logo">
+<header class="relative bg-black border-b border-line z-[100]">
+  <div class="navbar max-w-[1400px] mx-auto px-6 h-20 flex items-center relative">
+
+    <!-- LOGO -->
+    <a href="#" class="flex-1 flex items-center min-w-0">
+      <img
+        src="https://abdullah-gull.github.io/images/Abdullah_Gull-removebg-preview.png"
+        alt="Brand logo"
+        class="h-16 md:h-20 w-auto max-w-[220px] object-contain shrink-0">
     </a>
 
-    <ul class="nav-items" id="navItems">
-      <li class="nav-item"><a href="#">Home</a></li>
+    <!-- CENTER NAV -->
+    <ul id="navItems" class="nav-items flex-none flex items-center gap-2 h-full list-none m-0 p-0">
+      <li class="nav-item h-full flex items-center">
+        <a href="#" class="text-neutral-400 hover:text-white text-[13px] font-medium tracking-wide px-3.5 py-2.5 rounded-md whitespace-nowrap transition-colors">Home</a>
+      </li>
 
-      <li class="nav-item" data-menu="services">
-        <a href="#" class="nav-link">Services
-          <svg class="chev" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <li class="nav-item h-full flex items-center relative" data-menu="services">
+        <a href="#" class="nav-link flex items-center gap-1.5 text-neutral-400 hover:text-white text-[13px] font-medium tracking-wide px-3.5 py-2.5 rounded-md whitespace-nowrap cursor-pointer transition-colors">
+          Services
+          <svg class="chev w-2.5 h-2.5 opacity-70 transition-transform duration-300" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <div class="mega-wrap">
-          <div class="mega-inner cols-4">
-            <div class="mega-col">
-              <h4><span class="dot"></span>Full Service</h4>
-              <ul>
-                <li><a href="#">Full service management</a></li>
-                <li><a href="#">Advertising (PPC) management</a></li>
-                <li><a href="#">Amazon SEO</a></li>
-                <li><a href="#">Amazon account audit</a></li>
-                <li><a href="#">SOPs</a></li>
-                <li><a href="#">All services</a></li>
-                <li><a href="#">Consulting</a></li>
-                <li><a href="#">Book a coaching call</a></li>
+        <div class="mega-wrap fixed left-0 right-0 w-full h-0 overflow-hidden bg-gradient-to-b from-panel to-black border-b border-line shadow-[0_30px_60px_rgba(0,0,0,0.55)] z-[99] invisible opacity-0 pointer-events-none" style="top:80px;">
+          <div class="mega-inner max-w-[1200px] mx-auto px-10 py-16 grid grid-cols-4 gap-16 opacity-0 translate-y-3.5">
+            <div>
+              <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Full Service
+              </h4>
+              <ul class="flex flex-col gap-4 list-none m-0 p-0">
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Full service management</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Advertising (PPC) management</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Amazon SEO</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Amazon account audit</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">SOPs</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">All services</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Consulting</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Book a coaching call</a></li>
               </ul>
             </div>
-            <div class="mega-col">
-              <h4><span class="dot"></span>Design</h4>
-              <ul>
-                <li><a href="#">Brand guidelines</a></li>
-                <li><a href="#">Brand story</a></li>
-                <li><a href="#">Brand store</a></li>
-                <li><a href="#">Listing images</a></li>
-                <li><a href="#">Enhanced brand content A+</a></li>
-                <li><a href="#">Main image CTR hack</a></li>
-                <li><a href="#">Listing optimization</a></li>
-                <li><a href="#">Full listing optimization</a></li>
+            <div>
+              <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Design
+              </h4>
+              <ul class="flex flex-col gap-4 list-none m-0 p-0">
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Brand guidelines</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Brand story</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Brand store</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Listing images</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Enhanced brand content A+</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Main image CTR hack</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Listing optimization</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Full listing optimization</a></li>
               </ul>
             </div>
-            <div class="mega-col">
-              <h4><span class="dot"></span>Troubleshooting</h4>
-              <ul>
-                <li><a href="#">Listing reinstatement</a></li>
-                <li><a href="#">Account suspension</a></li>
-                <li><a href="#">PPC advertising audit</a></li>
-                <li><a href="#">Brand name change</a></li>
-                <li><a href="#">Troubleshooting hours</a></li>
-                <li><a href="#">UPC to GS1 change</a></li>
-                <li><a href="#">Remote fulfillment with FBA setup</a></li>
+            <div>
+              <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Troubleshooting
+              </h4>
+              <ul class="flex flex-col gap-4 list-none m-0 p-0">
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Listing reinstatement</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Account suspension</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">PPC advertising audit</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Brand name change</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Troubleshooting hours</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">UPC to GS1 change</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Remote fulfillment with FBA setup</a></li>
               </ul>
             </div>
-            <div class="mega-col">
-              <h4><span class="dot"></span>Other Services</h4>
-              <ul>
-                <li><a href="#">Amazon DSP</a></li>
-                <li><a href="#">Trademark registration</a></li>
-                <li><a href="#">Vendor Central full service</a></li>
-                <li><a href="#">Walmart full service management <span class="badge">NEW</span></a></li>
-                <li><a href="#">Walmart account audit <span class="badge">NEW</span></a></li>
-                <li><a href="#">Walmart advertising audit <span class="badge">NEW</span></a></li>
-                <li><a href="#">Free Amazon resources</a></li>
+            <div>
+              <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Other Services
+              </h4>
+              <ul class="flex flex-col gap-4 list-none m-0 p-0">
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Amazon DSP</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Trademark registration</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Vendor Central full service</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Walmart full service management <span class="text-[9px] font-bold text-black bg-accent px-1.5 py-0.5 rounded-full tracking-wide">NEW</span></a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Walmart account audit <span class="text-[9px] font-bold text-black bg-accent px-1.5 py-0.5 rounded-full tracking-wide">NEW</span></a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Walmart advertising audit <span class="text-[9px] font-bold text-black bg-accent px-1.5 py-0.5 rounded-full tracking-wide">NEW</span></a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Free Amazon resources</a></li>
               </ul>
             </div>
           </div>
         </div>
       </li>
 
-      <li class="nav-item" data-menu="category">
-        <a href="#" class="nav-link">Category
-          <svg class="chev" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <li class="nav-item h-full flex items-center relative" data-menu="category">
+        <a href="#" class="nav-link flex items-center gap-1.5 text-neutral-400 hover:text-white text-[13px] font-medium tracking-wide px-3.5 py-2.5 rounded-md whitespace-nowrap cursor-pointer transition-colors">
+          Category
+          <svg class="chev w-2.5 h-2.5 opacity-70 transition-transform duration-300" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <div class="mega-wrap">
-          <div class="mega-inner cols-3">
-            <div class="mega-col">
-              <h4><span class="dot"></span>Category Expertise</h4>
-              <ul>
-                <li><a href="#">Beauty Products</a></li>
-                <li><a href="#">Consumables</a></li>
-                <li><a href="#">Consumer Packaged Goods</a></li>
-                <li><a href="#">Hard Line Goods</a></li>
-                <li><a href="#">Home and Kitchen</a></li>
-                <li><a href="#">Soft Line Goods</a></li>
-                <li><a href="#">Supplements</a></li>
+        <div class="mega-wrap fixed left-0 right-0 w-full h-0 overflow-hidden bg-gradient-to-b from-panel to-black border-b border-line shadow-[0_30px_60px_rgba(0,0,0,0.55)] z-[99] invisible opacity-0 pointer-events-none" style="top:80px;">
+          <div class="mega-inner max-w-[1200px] mx-auto px-10 py-16 grid grid-cols-[1.15fr_1fr_1fr] gap-16 opacity-0 translate-y-3.5">
+            <div>
+              <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Category Expertise
+              </h4>
+              <ul class="flex flex-col gap-4 list-none m-0 p-0">
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Beauty Products</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Consumables</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Consumer Packaged Goods</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Hard Line Goods</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Home and Kitchen</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Soft Line Goods</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Supplements</a></li>
               </ul>
             </div>
-            <div class="feature-card" style="background-image:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=60')">
-              <div class="fc-text">
-                <strong>Grow your supplement brand</strong>
-                <span>Thrive on Amazon's supplement category with our battle-tested growth strategy.</span>
+            <div class="relative rounded-2xl overflow-hidden h-[170px] flex items-end bg-cover bg-center bg-neutral-900" style="background-image:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=60')">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+              <div class="relative z-[1] p-5 text-white">
+                <strong class="block text-sm mb-1">Grow your supplement brand</strong>
+                <span class="block text-xs text-neutral-300 leading-relaxed">Thrive on Amazon's supplement category with our battle-tested growth strategy.</span>
               </div>
             </div>
-            <div class="feature-card" style="background-image:url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=60')">
-              <div class="fc-text">
-                <strong>Sell your beauty products on Amazon</strong>
-                <span>Improve your brand's presence and grow market share in competitive beauty niches.</span>
+            <div class="relative rounded-2xl overflow-hidden h-[170px] flex items-end bg-cover bg-center bg-neutral-900" style="background-image:url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=60')">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+              <div class="relative z-[1] p-5 text-white">
+                <strong class="block text-sm mb-1">Sell your beauty products on Amazon</strong>
+                <span class="block text-xs text-neutral-300 leading-relaxed">Improve your brand's presence and grow market share in competitive beauty niches.</span>
               </div>
             </div>
           </div>
         </div>
       </li>
 
-      <li class="nav-item" data-menu="industry">
-        <a href="#" class="nav-link">Industry
-          <svg class="chev" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <li class="nav-item h-full flex items-center relative" data-menu="industry">
+        <a href="#" class="nav-link flex items-center gap-1.5 text-neutral-400 hover:text-white text-[13px] font-medium tracking-wide px-3.5 py-2.5 rounded-md whitespace-nowrap cursor-pointer transition-colors">
+          Industry
+          <svg class="chev w-2.5 h-2.5 opacity-70 transition-transform duration-300" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <div class="mega-wrap">
-          <div class="mega-inner cols-3">
-            <div class="mega-col">
-              <h4><span class="dot"></span>Industries We Serve</h4>
-              <ul>
-                <li><a href="#">E-commerce Brands</a></li>
-                <li><a href="#">Manufacturers</a></li>
-                <li><a href="#">Private Label Sellers</a></li>
-                <li><a href="#">Wholesale Distributors</a></li>
-                <li><a href="#">Startups &amp; DTC</a></li>
+        <div class="mega-wrap fixed left-0 right-0 w-full h-0 overflow-hidden bg-gradient-to-b from-panel to-black border-b border-line shadow-[0_30px_60px_rgba(0,0,0,0.55)] z-[99] invisible opacity-0 pointer-events-none" style="top:80px;">
+          <div class="mega-inner max-w-[1200px] mx-auto px-10 py-16 grid grid-cols-[1.15fr_1fr_1fr] gap-16 opacity-0 translate-y-3.5">
+            <div>
+              <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Industries We Serve
+              </h4>
+              <ul class="flex flex-col gap-4 list-none m-0 p-0">
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">E-commerce Brands</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Manufacturers</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Private Label Sellers</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Wholesale Distributors</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Startups &amp; DTC</a></li>
               </ul>
             </div>
-            <div class="mega-col">
-              <h4><span class="dot"></span>Marketplaces</h4>
-              <ul>
-                <li><a href="#">Amazon Sellers</a></li>
-                <li><a href="#">Walmart Sellers</a></li>
-                <li><a href="#">Multi-channel Retailers</a></li>
+            <div>
+              <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Marketplaces
+              </h4>
+              <ul class="flex flex-col gap-4 list-none m-0 p-0">
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Amazon Sellers</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Walmart Sellers</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Multi-channel Retailers</a></li>
               </ul>
             </div>
-            <div class="mega-col">
-              <h4><span class="dot"></span>Business Size</h4>
-              <ul>
-                <li><a href="#">Enterprise Brands</a></li>
-                <li><a href="#">Growing Businesses</a></li>
-                <li><a href="#">New Sellers</a></li>
+            <div>
+              <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Business Size
+              </h4>
+              <ul class="flex flex-col gap-4 list-none m-0 p-0">
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Enterprise Brands</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Growing Businesses</a></li>
+                <li><a href="#" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">New Sellers</a></li>
               </ul>
             </div>
           </div>
         </div>
       </li>
 
-      <li class="nav-item"><a href="#">About</a></li>
-      <li class="nav-item"><a href="#">Contact Us</a></li>
+      <li class="nav-item h-full flex items-center">
+        <a href="#" class="text-neutral-400 hover:text-white text-[13px] font-medium tracking-wide px-3.5 py-2.5 rounded-md whitespace-nowrap transition-colors">About</a>
+      </li>
+      <li class="nav-item h-full flex items-center">
+        <a href="#" class="text-neutral-400 hover:text-white text-[13px] font-medium tracking-wide px-3.5 py-2.5 rounded-md whitespace-nowrap transition-colors">Contact Us</a>
+      </li>
     </ul>
 
-    <div class="nav-right">
-      <button class="icon-btn" id="searchBtn" aria-label="Search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <!-- RIGHT SIDE -->
+    <div class="flex-1 flex items-center justify-end gap-4">
+      <button id="searchBtn" aria-label="Search" class="bg-transparent border-none text-neutral-400 hover:text-white cursor-pointer p-1.5 flex items-center transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
-      <a class="get-in-touch" href="#">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l9 6 9-6M3 8v10h18V8M3 8l9-4 9 4"/></svg>
+      <a href="#" class="flex items-center gap-2 bg-accent hover:bg-accent-light text-black text-[13px] font-semibold px-4 py-2.5 rounded-full whitespace-nowrap transition-all hover:shadow-[0_4px_16px_rgba(255,122,61,0.4)]">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l9 6 9-6M3 8v10h18V8M3 8l9-4 9 4"/></svg>
         <span class="label">Get in touch</span>
       </a>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <button id="hamburgerBtn" aria-label="Menu" class="hidden flex-col justify-center gap-1.5 bg-transparent border-none cursor-pointer p-2">
+        <span class="hb-line w-6 h-0.5 bg-white block transition-transform"></span>
+        <span class="hb-line w-6 h-0.5 bg-white block transition-opacity"></span>
+        <span class="hb-line w-6 h-0.5 bg-white block transition-transform"></span>
       </button>
     </div>
+
   </div>
 </header>
 
-<div style="min-height:60vh;display:flex;align-items:center;justify-content:center;color:#3a3a3c;font-size:13px;text-align:center;padding:0 20px;">
+<div class="min-h-[60vh] flex items-center justify-center text-neutral-700 text-[13px] text-center px-5">
   Hover (desktop) or tap (mobile) "Services" / "Category" / "Industry" to open the mega menu — or tap the search icon
 </div>
 
 <!-- ===== SEARCH OVERLAY ===== -->
-<div class="search-overlay" id="searchOverlay">
-  <div class="search-box">
-    <div class="search-input-row">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" id="searchInput" placeholder="Search the whole site..." autocomplete="off">
-      <button class="search-close" id="searchClose" aria-label="Close">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+<div id="searchOverlay" class="search-overlay fixed inset-0 bg-black/75 backdrop-blur-md z-[200] flex items-start justify-center opacity-0 invisible" style="padding-top:min(14vh,120px);">
+  <div class="search-box w-[min(640px,90vw)] bg-panel border border-line rounded-2xl shadow-[0_30px_70px_rgba(0,0,0,0.6)] overflow-hidden -translate-y-3.5 opacity-0">
+    <div class="flex items-center gap-3 px-5 py-4 border-b border-line">
+      <svg class="w-[18px] h-[18px] text-neutral-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search the whole site..." autocomplete="off"
+        class="flex-1 bg-transparent border-none outline-none text-white text-base placeholder-neutral-600">
+      <button id="searchClose" aria-label="Close" class="bg-transparent border-none text-neutral-400 hover:text-white cursor-pointer p-1 flex transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
-    <div class="search-results" id="searchResults">
-      <p class="search-hint">Start typing to search across Services, Category, Industry and more.</p>
+    <div id="searchResults" class="max-h-[min(50vh,420px)] overflow-y-auto p-2">
+      <p class="text-neutral-600 text-[13px] py-6 px-4 text-center m-0">Start typing to search across Services, Category, Industry and more.</p>
     </div>
   </div>
 </div>
@@ -636,22 +272,48 @@
   const hamburger = document.getElementById('hamburgerBtn');
   const navList = document.getElementById('navItems');
 
+  function setMegaVisible(item, visible){
+    const wrap = item.querySelector('.mega-wrap');
+    if(!wrap) return;
+    if(visible){
+      wrap.classList.remove('invisible','opacity-0','pointer-events-none');
+      wrap.classList.add('visible','opacity-100','pointer-events-auto');
+    } else {
+      wrap.classList.add('invisible','opacity-0','pointer-events-none');
+      wrap.classList.remove('visible','opacity-100','pointer-events-auto');
+    }
+  }
+  function setInnerVisible(item, visible){
+    const inner = item.querySelector('.mega-inner');
+    if(!inner) return;
+    if(visible){
+      inner.classList.remove('opacity-0','translate-y-3.5');
+      inner.classList.add('opacity-100','translate-y-0');
+    } else {
+      inner.classList.add('opacity-0','translate-y-3.5');
+      inner.classList.remove('opacity-100','translate-y-0');
+    }
+  }
+
   function closeAll(except){
     navItems.forEach(o=>{
       if(o!==except){
         o.classList.remove('open');
         const wrap = o.querySelector('.mega-wrap');
         if(wrap && !isTouch.matches) wrap.style.height = '0px';
+        setMegaVisible(o, false);
+        setInnerVisible(o, false);
       }
     });
   }
 
   function openItem(item){
     item.classList.add('open');
+    setMegaVisible(item, true);
+    setInnerVisible(item, true);
     if(!isTouch.matches){
       const wrap = item.querySelector('.mega-wrap');
       const inner = item.querySelector('.mega-inner');
-      // measure natural height then animate to it
       wrap.style.height = inner.scrollHeight + 'px';
     }
   }
@@ -661,7 +323,6 @@
     const wrap = item.querySelector('.mega-wrap');
     let closeTimer;
 
-    // Desktop hover
     item.addEventListener('mouseenter',()=>{
       if(isTouch.matches) return;
       clearTimeout(closeTimer);
@@ -673,40 +334,108 @@
       closeTimer=setTimeout(()=>{
         item.classList.remove('open');
         wrap.style.height = '0px';
+        setMegaVisible(item, false);
+        setInnerVisible(item, false);
       },150);
     });
 
-    // Click / tap toggle (works for mobile, and as a fallback on desktop)
     link.addEventListener('click',(e)=>{
       if(isTouch.matches){
         e.preventDefault();
         const isOpen = item.classList.contains('open');
         closeAll(item);
-        item.classList.toggle('open', !isOpen);
+        if(isOpen){
+          item.classList.remove('open');
+          setMegaVisible(item,false);
+          setInnerVisible(item,false);
+          wrap.style.height = '0px';
+        } else {
+          item.classList.add('open');
+          setMegaVisible(item,true);
+          setInnerVisible(item,true);
+          wrap.style.height = item.querySelector('.mega-inner').scrollHeight + 'px';
+        }
       }
     });
   });
 
   hamburger.addEventListener('click',()=>{
     hamburger.classList.toggle('active');
+    const lines = hamburger.querySelectorAll('.hb-line');
+    const active = hamburger.classList.contains('active');
+    lines[0].style.transform = active ? 'translateY(7px) rotate(45deg)' : '';
+    lines[1].style.opacity = active ? '0' : '1';
+    lines[2].style.transform = active ? 'translateY(-7px) rotate(-45deg)' : '';
+
     navList.classList.toggle('mobile-open');
-    if(!navList.classList.contains('mobile-open')){
+    if(navList.classList.contains('mobile-open')){
+      navList.classList.remove('hidden');
+      navList.style.maxHeight = 'calc(100vh - 80px)';
+    } else {
+      navList.style.maxHeight = '0px';
       closeAll(null);
     }
   });
 
-  // close menus if window resizes across breakpoint
   window.addEventListener('resize',()=>{
     if(!isTouch.matches){
       navList.classList.remove('mobile-open');
+      navList.style.maxHeight = '';
       hamburger.classList.remove('active');
+      const lines = hamburger.querySelectorAll('.hb-line');
+      lines.forEach(l=>{ l.style.transform=''; l.style.opacity='1'; });
     }
     navItems.forEach(o=>{
       o.classList.remove('open');
       const wrap = o.querySelector('.mega-wrap');
       if(wrap) wrap.style.height = '';
+      setMegaVisible(o,false);
+      setInnerVisible(o,false);
     });
   });
+
+  // ===== MOBILE responsive layout switch =====
+  function applyResponsive(){
+    if(isTouch.matches){
+      navList.classList.add('fixed','left-0','right-0','flex-col','items-stretch','bg-black','border-b','border-line','overflow-hidden');
+      navList.classList.remove('flex-row','items-center');
+      navList.style.top = '80px';
+      navList.style.maxHeight = navList.classList.contains('mobile-open') ? 'calc(100vh - 80px)' : '0px';
+      navList.style.transition = 'max-height .3s ease';
+      navList.style.height = 'auto';
+      navList.style.gap = '0px';
+      hamburger.classList.remove('hidden');
+      hamburger.classList.add('flex');
+
+      navItems.forEach(item=>{
+        const wrap = item.querySelector('.mega-wrap');
+        wrap.classList.remove('fixed');
+        wrap.classList.add('relative');
+        wrap.style.top = '0';
+        wrap.style.boxShadow='none';
+        wrap.style.transition = 'height .3s ease';
+      });
+    } else {
+      navList.classList.remove('fixed','left-0','right-0','flex-col','items-stretch','bg-black','border-b','border-line','overflow-hidden','mobile-open');
+      navList.style.top = '';
+      navList.style.maxHeight = '';
+      navList.style.height = '';
+      navList.style.gap = '';
+      hamburger.classList.add('hidden');
+      hamburger.classList.remove('flex');
+
+      navItems.forEach(item=>{
+        const wrap = item.querySelector('.mega-wrap');
+        wrap.classList.add('fixed');
+        wrap.classList.remove('relative');
+        wrap.style.top = '80px';
+        wrap.style.transition = '';
+      });
+    }
+  }
+  applyResponsive();
+  window.addEventListener('resize', applyResponsive);
+
   // ===== SITE SEARCH (auto-built from every nav / mega-menu link on the page) =====
   function buildSearchIndex(){
     const index = [];
@@ -714,10 +443,11 @@
       const topLink = topItem.querySelector(':scope > a, :scope > .nav-link');
       const topLabel = topLink ? topLink.textContent.trim().replace(/\s+/g,' ') : '';
 
-      const megaCols = topItem.querySelectorAll('.mega-col');
+      const megaCols = topItem.querySelectorAll('.mega-wrap > div > div');
       if(megaCols.length){
         megaCols.forEach(col=>{
-          const groupTitle = col.querySelector('h4') ? col.querySelector('h4').textContent.trim() : topLabel;
+          const h4 = col.querySelector('h4');
+          const groupTitle = h4 ? h4.textContent.trim() : topLabel;
           col.querySelectorAll('ul li a').forEach(a=>{
             index.push({
               title: a.textContent.trim().replace(/\s+/g,' '),
@@ -728,21 +458,10 @@
           });
         });
       } else if(topLabel){
-        index.push({
-          title: topLabel,
-          group: 'Page',
-          section: topLabel,
-          href: topLink.getAttribute('href') || '#'
-        });
+        index.push({ title: topLabel, group: 'Page', section: topLabel, href: topLink.getAttribute('href') || '#' });
       }
-      // feature cards (category expertise etc.)
-      topItem.querySelectorAll('.feature-card .fc-text strong').forEach(strong=>{
-        index.push({
-          title: strong.textContent.trim(),
-          group: 'Featured',
-          section: topLabel,
-          href: '#'
-        });
+      topItem.querySelectorAll('.mega-wrap strong').forEach(strong=>{
+        index.push({ title: strong.textContent.trim(), group: 'Featured', section: topLabel, href: '#' });
       });
     });
     return index;
@@ -754,6 +473,7 @@
   const searchInput = document.getElementById('searchInput');
   const searchClose = document.getElementById('searchClose');
   const searchResults = document.getElementById('searchResults');
+  const searchBox = document.querySelector('.search-box');
 
   function highlight(text, query){
     if(!query) return text;
@@ -764,7 +484,7 @@
 
   function renderResults(query){
     if(!query){
-      searchResults.innerHTML = '<p class="search-hint">Start typing to search across Services, Category, Industry and more.</p>';
+      searchResults.innerHTML = '<p class="text-neutral-600 text-[13px] py-6 px-4 text-center m-0">Start typing to search across Services, Category, Industry and more.</p>';
       return;
     }
     const q = query.toLowerCase();
@@ -775,11 +495,10 @@
     ).slice(0, 40);
 
     if(!matches.length){
-      searchResults.innerHTML = '<p class="search-empty">No results for "' + query + '"</p>';
+      searchResults.innerHTML = '<p class="text-neutral-600 text-[13px] py-6 px-4 text-center m-0">No results for "' + query + '"</p>';
       return;
     }
 
-    // group by section for display
     const grouped = {};
     matches.forEach(m=>{
       if(!grouped[m.section]) grouped[m.section] = [];
@@ -788,11 +507,11 @@
 
     let html = '';
     Object.keys(grouped).forEach(section=>{
-      html += '<div class="search-group">' + section + '</div>';
+      html += '<div class="px-3 pt-2.5 pb-1 text-[10px] font-bold tracking-wider uppercase text-accent">' + section + '</div>';
       grouped[section].forEach(m=>{
-        html += '<a class="search-result" href="' + m.href + '">' +
+        html += '<a href="' + m.href + '" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-white text-sm no-underline hover:bg-neutral-800 transition-colors">' +
           '<span>' + highlight(m.title, query) + '</span>' +
-          '<span class="sr-tag">' + m.group + '</span>' +
+          '<span class="text-[10px] text-neutral-500 whitespace-nowrap shrink-0">' + m.group + '</span>' +
         '</a>';
       });
     });
@@ -800,20 +519,24 @@
   }
 
   function openSearch(){
-    searchOverlay.classList.add('active');
+    searchOverlay.classList.remove('invisible','opacity-0');
+    searchOverlay.classList.add('active','opacity-100');
+    searchBox.classList.remove('-translate-y-3.5','opacity-0');
+    searchBox.classList.add('translate-y-0','opacity-100');
     searchInput.value = '';
     renderResults('');
     setTimeout(()=>searchInput.focus(), 80);
   }
   function closeSearch(){
-    searchOverlay.classList.remove('active');
+    searchOverlay.classList.add('invisible','opacity-0');
+    searchOverlay.classList.remove('active','opacity-100');
+    searchBox.classList.add('-translate-y-3.5','opacity-0');
+    searchBox.classList.remove('translate-y-0','opacity-100');
   }
 
   searchBtn.addEventListener('click', openSearch);
   searchClose.addEventListener('click', closeSearch);
-  searchOverlay.addEventListener('click', (e)=>{
-    if(e.target === searchOverlay) closeSearch();
-  });
+  searchOverlay.addEventListener('click', (e)=>{ if(e.target === searchOverlay) closeSearch(); });
   searchInput.addEventListener('input', (e)=> renderResults(e.target.value.trim()));
   document.addEventListener('keydown', (e)=>{
     if(e.key === 'Escape' && searchOverlay.classList.contains('active')) closeSearch();
