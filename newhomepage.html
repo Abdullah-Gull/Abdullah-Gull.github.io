@@ -357,7 +357,12 @@
   #chatPanel .chat-header-text { line-height: 1.25; }
   #chatPanel .chat-header-name { color: #fff; font-weight: 800; font-size: 14px; }
   #chatPanel .chat-header-status { color: rgba(255,255,255,0.9); font-size: 11.5px; display: flex; align-items: center; gap: 5px; }
-  #chatPanel .chat-header-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #22c55e; display: inline-block; }
+  #chatPanel .chat-header-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--dot-color, #22c55e); display: inline-block; transition: background 0.3s ease; }
+  .chat-bubble.chat-typing { display: flex; gap: 4px; align-items: center; padding: 14px 16px; }
+  .chat-bubble.chat-typing::after { content: none; }
+  .chat-typing { color: transparent !important; position: relative; }
+  .chat-typing::before { content: '●●●'; position: absolute; left: 13px; top: 50%; transform: translateY(-50%); letter-spacing: 3px; color: var(--subtle-gray); font-size: 10px; animation: chat-typing-pulse 1.2s ease-in-out infinite; }
+  @keyframes chat-typing-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
   #chatMessages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
   .chat-bubble { max-width: 84%; padding: 10px 13px; border-radius: 14px; font-size: 13px; line-height: 1.55; }
   .chat-bubble.bot { align-self: flex-start; background: var(--dark-bg); border: 1px solid var(--border-color); color: var(--light-text); border-bottom-left-radius: 4px; }
@@ -400,10 +405,75 @@
   .nav-item.open > a{ color:#ffffff; }
   #megaHeader ::-webkit-scrollbar{ width:8px; height:8px; }
   #megaHeader ::-webkit-scrollbar-thumb{ background:#2a2a2c; border-radius:8px; }
+  #searchResults a.search-result-active{ background: rgba(255,140,0,0.12); }
+
+  /* ---- Sticky header: stays put at the top of the viewport, never
+     scrolls away with the page. A spacer below holds its place. ---- */
+  #megaHeader { position: fixed; top: 0; left: 0; right: 0; transition: box-shadow 0.3s ease, background 0.3s ease; }
+  #megaHeader.scrolled { box-shadow: 0 8px 30px rgba(0,0,0,0.5); background: #000; }
+  #headerSpacer { height: 80px; }
+
+  /* ---- Mobile nav (<=900px): hand-written, does NOT rely on
+     Tailwind utility classes being toggled at runtime (that was the
+     bug — classes added purely via JS are never compiled by the
+     Tailwind CDN script, so they had zero effect). ---- */
   @media (max-width: 900px) {
     #megaHeader .navbar { height: 72px; }
-    #megaHeader .mega-wrap { top: 72px !important; }
-    #navItems.mobile-open { top: 72px !important; }
+    #headerSpacer { height: 72px; }
+
+    #hamburgerBtn { display: flex !important; }
+
+    #navItems {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      z-index: 998;
+      flex-direction: column;
+      align-items: stretch;
+      background: #000;
+      border-bottom: 1px solid var(--line, #1d1d1f);
+      overflow-y: auto;
+      max-height: 0;
+      height: auto;
+      gap: 0;
+      transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    #navItems.mobile-open { max-height: calc(100vh - 72px); }
+
+    #navItems .nav-item {
+      width: 100%;
+      height: auto;
+      flex-direction: column;
+      align-items: stretch;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    #navItems .nav-item > a,
+    #navItems .nav-item > .nav-link {
+      width: 100%;
+      padding: 16px 24px;
+      justify-content: space-between;
+    }
+
+    #navItems .mega-wrap {
+      position: static;
+      top: 0 !important;
+      width: 100%;
+      box-shadow: none;
+      border: none;
+      background: rgba(255,140,0,0.04);
+      transition: height 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    #navItems .mega-inner {
+      max-width: none !important;
+      grid-template-columns: 1fr !important;
+      padding: 8px 24px 20px !important;
+      gap: 28px !important;
+    }
+    #navItems .mega-inner > a[style*="background-image"] { height: 130px !important; }
+  }
+  @media (min-width: 901px) {
+    #hamburgerBtn { display: none !important; }
   }
 </style>
 
@@ -588,8 +658,9 @@
 
     <!-- RIGHT SIDE -->
     <div class="flex-1 flex items-center justify-end gap-4">
-      <button id="searchBtn" aria-label="Search" class="bg-transparent border-none text-neutral-400 hover:text-white cursor-pointer p-1.5 flex items-center transition-colors">
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <button id="searchBtn" aria-label="Search the site" class="flex items-center gap-2 bg-transparent border border-line hover:border-accent/50 text-neutral-400 hover:text-white cursor-pointer pl-3 pr-2 py-1.5 rounded-full transition-colors">
+        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span class="kbd-hint hidden md:inline-flex items-center gap-0.5 text-[10px] font-semibold text-neutral-500 border border-line rounded px-1.5 py-0.5">⌘K</span>
       </button>
       <a href="meeting.html" class="flex items-center gap-2 bg-accent hover:bg-accent-light text-black text-[13px] font-semibold px-4 py-2.5 rounded-full whitespace-nowrap transition-all hover:shadow-[0_4px_16px_rgba(255,140,0,0.4)]">
         <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l9 6 9-6M3 8v10h18V8M3 8l9-4 9 4"/></svg>
@@ -604,6 +675,7 @@
 
   </div>
 </header>
+<div id="headerSpacer"></div>
 
 <!-- ===== SEARCH OVERLAY ===== -->
 <div id="searchOverlay" class="search-overlay fixed inset-0 bg-black/75 backdrop-blur-md z-[1300] flex items-start justify-center opacity-0 invisible" style="padding-top:min(14vh,120px);">
@@ -818,7 +890,7 @@
 <!-- =========================================================
      SERVICES TABS
      ========================================================= -->
-<section class="services-tabs">
+<section id="services-section" class="services-tabs">
     <div class="tabs-container">
         <div class="services-header">
             <h2 class="tabs-main-title">Expert <span class="highlight">Amazon</span> Services by Abdullah Gull</h2>
@@ -919,7 +991,7 @@
 <!-- =========================================================
      WHY WORK WITH ABDULLAH GULL (alternating feature blocks)
      ========================================================= -->
-<section class="why-blocks-section">
+<section id="why-choose-section" class="why-blocks-section">
   <div class="why-blocks-header">
     <h2 class="exp-title">Why Brands <span class="highlight">Choose Abdullah Gull</span></h2>
     <p class="exp-subtitle">A closer look at how each engagement is run — from storefront setup, to data-driven ad testing, to the account-health guarantees that keep your Amazon business safe.</p>
@@ -1148,7 +1220,7 @@
 <!-- =========================================================
      STRATEGIC ROADMAP
      ========================================================= -->
-<section class="modern-process-section">
+<section id="roadmap-section" class="modern-process-section">
     <div class="layout-grid">
         <div class="timeline-content">
             <h2 class="section-title">Strategic Growth <span class="orange-highlight">Roadmap</span></h2>
@@ -1224,7 +1296,7 @@
 <!-- =========================================================
      MARKETPLACE MASTERY (Seller / Vendor Central tabs)
      ========================================================= -->
-<section class="bg-[#0b0b0b] text-white py-20 px-6 sm:px-12 lg:px-24 selection:bg-[#ff8c00] selection:text-black">
+<section id="marketplace-mastery-section" class="bg-[#0b0b0b] text-white py-20 px-6 sm:px-12 lg:px-24 selection:bg-[#ff8c00] selection:text-black">
   <div class="max-w-7xl mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <h2 class="text-4xl sm:text-5xl font-black tracking-tight mb-6 uppercase text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-[#ff8c00]">Marketplace Mastery Services</h2>
@@ -1336,7 +1408,7 @@
 <!-- =========================================================
      TESTIMONIALS
      ========================================================= -->
-<section class="testimonial-section-gold">
+<section id="testimonials-section" class="testimonial-section-gold">
     <div class="testi-container">
         <div class="testi-left">
             <span class="sub-title">Trusted Partner</span>
@@ -2014,46 +2086,32 @@
   });
 
   function applyHeaderResponsive(){
-    const topOffset = isTouch.matches ? '72px' : '80px';
-    if(isTouch.matches){
-      navList.classList.add('fixed','left-0','right-0','flex-col','items-stretch','bg-black','border-b','border-line','overflow-hidden');
-      navList.classList.remove('flex-row','items-center');
-      navList.style.top = topOffset;
-      navList.style.maxHeight = navList.classList.contains('mobile-open') ? 'calc(100vh - 72px)' : '0px';
-      navList.style.transition = 'max-height .3s ease';
-      navList.style.height = 'auto';
-      navList.style.gap = '0px';
-      hamburger.classList.remove('hidden');
-      hamburger.classList.add('flex');
-
-      navItems.forEach(item=>{
-        const wrap = item.querySelector('.mega-wrap');
-        wrap.classList.remove('fixed');
-        wrap.classList.add('relative');
-        wrap.style.top = '0';
-        wrap.style.boxShadow='none';
-        wrap.style.transition = 'height .3s ease';
-      });
-    } else {
-      navList.classList.remove('fixed','left-0','right-0','flex-col','items-stretch','bg-black','border-b','border-line','overflow-hidden','mobile-open');
-      navList.style.top = '';
+    // Mobile layout is now handled entirely by CSS media queries above —
+    // this just resets inline state when crossing the mobile/desktop
+    // breakpoint so submenus don't get stuck half-open.
+    navItems.forEach(item=>{
+      item.classList.remove('open');
+      const wrap = item.querySelector('.mega-wrap');
+      if (wrap) wrap.style.height = '';
+      setMegaVisible(item, false);
+      setInnerVisible(item, false);
+    });
+    if (!isTouch.matches) {
+      navList.classList.remove('mobile-open');
       navList.style.maxHeight = '';
-      navList.style.height = '';
-      navList.style.gap = '';
-      hamburger.classList.add('hidden');
-      hamburger.classList.remove('flex');
-
-      navItems.forEach(item=>{
-        const wrap = item.querySelector('.mega-wrap');
-        wrap.classList.add('fixed');
-        wrap.classList.remove('relative');
-        wrap.style.top = topOffset;
-        wrap.style.transition = '';
-      });
+      hamburger.classList.remove('active');
+      const lines = hamburger.querySelectorAll('.hb-line');
+      lines.forEach(l=>{ l.style.transform=''; l.style.opacity='1'; });
     }
   }
   applyHeaderResponsive();
   window.addEventListener('resize', applyHeaderResponsive);
+
+  // Sticky header — subtle shadow once the page has scrolled
+  const megaHeaderEl = document.getElementById('megaHeader');
+  window.addEventListener('scroll', () => {
+    if (megaHeaderEl) megaHeaderEl.classList.toggle('scrolled', window.scrollY > 12);
+  }, { passive: true });
 
   // ===== SITE SEARCH (auto-built from every nav / mega-menu link) =====
   function buildSearchIndex(){
@@ -2083,6 +2141,25 @@
         index.push({ title: strong.textContent.trim(), group: 'Featured', section: topLabel, href: '#' });
       });
     });
+
+    // FAQ questions — genuinely useful to find directly from search
+    document.querySelectorAll('.faq-question').forEach(q=>{
+      index.push({ title: q.textContent.trim(), group: 'FAQ', section: 'Frequently Asked Questions', href: '#premium-faq-section' });
+    });
+
+    // Key on-page sections, so a search for e.g. "roadmap" or "testimonials" jumps there
+    [
+      ['services-section', 'Amazon Services', 'PPC, SEO, Listing Optimization, Storefront Design & more'],
+      ['why-choose-section', 'Why Choose Abdullah Gull', 'Storefront setup, A/B testing, account health'],
+      ['strategy-hub', 'PPC vs SEO Strategy', 'How paid and organic strategy work together'],
+      ['roadmap-section', 'Strategic Growth Roadmap', 'The 3-step process: Onboarding, Optimization, Monitoring'],
+      ['marketplace-mastery-section', 'Marketplace Mastery', 'Seller Central and Vendor Central services'],
+      ['testimonials-section', 'Client Testimonials', 'Reviews from Amazon sellers and brands'],
+      ['premium-results-split', 'Results', '45+ brands managed, $150k+ monthly revenue generated'],
+    ].forEach(([id, title, desc])=>{
+      if (document.getElementById(id)) index.push({ title, group: desc, section: 'On this page', href: '#' + id });
+    });
+
     return index;
   }
 
@@ -2156,7 +2233,30 @@
   searchBtn.addEventListener('click', openSearch);
   searchClose.addEventListener('click', closeSearch);
   searchOverlay.addEventListener('click', (e)=>{ if(e.target === searchOverlay) closeSearch(); });
+  searchResults.addEventListener('click', (e)=>{ if(e.target.closest('a')) closeSearch(); });
   searchInput.addEventListener('input', (e)=> renderSearchResults(e.target.value.trim()));
+
+  // Up/Down to move through results, Enter to open the highlighted one
+  let activeResultIndex = -1;
+  function updateActiveResult(delta){
+    const links = Array.from(searchResults.querySelectorAll('a'));
+    if(!links.length) return;
+    links.forEach(l=>l.classList.remove('search-result-active'));
+    activeResultIndex = (activeResultIndex + delta + links.length) % links.length;
+    links[activeResultIndex].classList.add('search-result-active');
+    links[activeResultIndex].scrollIntoView({ block: 'nearest' });
+  }
+  searchInput.addEventListener('keydown', (e)=>{
+    if(e.key === 'ArrowDown'){ e.preventDefault(); updateActiveResult(1); }
+    else if(e.key === 'ArrowUp'){ e.preventDefault(); updateActiveResult(-1); }
+    else if(e.key === 'Enter'){
+      const active = searchResults.querySelector('a.search-result-active') || searchResults.querySelector('a');
+      if(active){ e.preventDefault(); active.click(); }
+    } else {
+      activeResultIndex = -1;
+    }
+  });
+
   document.addEventListener('keydown', (e)=>{
     if(e.key === 'Escape' && searchOverlay.classList.contains('active')) closeSearch();
     if((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k'){
@@ -2327,44 +2427,85 @@
 </div>
 
 <script>
-  // Lightweight on-site assistant: answers from a knowledge base built
-  // directly from this page's own content (services, FAQ, pricing,
-  // contact info) — no external API, no cost, no third-party service.
+  // On-site assistant — trained on this website's own content (services,
+  // categories, industries, FAQ, pricing, credentials, business hours).
+  // No external API, no cost, no third-party service; everything runs
+  // client-side in the browser.
   (function () {
+    // ---- Business hours: Mon–Fri, 9:00 AM–5:00 PM Pakistan Time (PKT,
+    // UTC+5, no DST) — computed from the visitor's device clock via UTC,
+    // so it's correct regardless of the visitor's own timezone. ----
+    function getBusinessStatus() {
+      const now = new Date();
+      let pktHour = now.getUTCHours() + 5;
+      let pktDay = now.getUTCDay(); // 0=Sun..6=Sat
+      if (pktHour >= 24) { pktHour -= 24; pktDay = (pktDay + 1) % 7; }
+      const isWeekday = pktDay >= 1 && pktDay <= 5;
+      const isWorkingHour = pktHour >= 9 && pktHour < 17;
+      return { open: isWeekday && isWorkingHour, pktHour, pktDay };
+    }
+    function businessHoursLine() {
+      const s = getBusinessStatus();
+      return s.open
+        ? "We're online right now — Abdullah's team works Monday–Friday, 9:00 AM–5:00 PM (PKT)."
+        : "We're currently offline (Monday–Friday, 9:00 AM–5:00 PM PKT — closed Saturday & Sunday), but send your message and Abdullah will reply as soon as he's back.";
+    }
+
+    // ---- Knowledge base: each entry has weighted trigger phrases and an
+    // answer. Longer / more specific phrases score higher so a precise
+    // question beats a vague keyword overlap. ----
     const KB = [
-      { k: ['ppc','ads','advertising','sponsored','acos','campaign'],
-        a: "I manage Sponsored Products, Sponsored Brands & Sponsored Display campaigns — building the structure, doing keyword research, and continuously optimizing bids to bring your ACOS down while scaling revenue." },
-      { k: ['seo','organic','a9','algorithm','ranking','keyword'],
-        a: "Amazon SEO here means A9 algorithm optimization — strategic keyword placement in titles, bullets and backend search terms to boost organic ranking and reduce your dependence on paid ads." },
-      { k: ['listing','title','bullet','description','optimi'],
+      { k: [['ppc',2],['sponsored products',3],['sponsored brands',3],['sponsored display',3],['acos',3],['ad campaign',2],['advertising',2],['ads',1]],
+        a: "I manage Sponsored Products, Sponsored Brands & Sponsored Display campaigns — building the structure, researching keywords, and continuously optimizing bids to bring your ACOS down while scaling revenue." },
+      { k: [['seo',2],['a9',3],['organic ranking',3],['algorithm',2],['keyword ranking',2],['search ranking',2],['organic',1]],
+        a: "Amazon SEO here means A9 algorithm optimization — strategic keyword placement in titles, bullets, and backend search terms to boost organic ranking and reduce how much you depend on paid ads." },
+      { k: [['listing optimization',3],['product listing',2],['title',1],['bullet point',2],['description',1],['optimi',1]],
         a: "Listing optimization covers keyword-rich titles, persuasive bullet points, backend search terms, and A+ Content — all built around buyer intent to lift conversion rate." },
-      { k: ['audit','free audit','review','check'],
-        a: "The free Amazon audit covers account analysis, competitor benchmarking, PPC review, listing health, and keyword research — with a full report of actionable recommendations. Tap 'Get Free Amazon Audit' up top to start." },
-      { k: ['price','pricing','cost','fee','budget','charge','how much'],
+      { k: [['free audit',3],['audit',2],['account review',2],['account check',2]],
+        a: "The free Amazon audit covers account analysis, competitor benchmarking, PPC review, listing health, and keyword research — with a full report of actionable recommendations. Tap 'Get Free Amazon Audit' at the top of the page to start." },
+      { k: [['pricing',3],['price',2],['cost',2],['fee',2],['budget',2],['charge',2],['how much',3],['retainer',2]],
         a: "Pricing is flexible — monthly retainers, project-based fixed fees, or performance-based options. Most clients invest around $2,000–$10,000+ monthly depending on scope. Happy to work out a plan that fits your budget on a quick call." },
-      { k: ['result','time','how long','when','weeks','months'],
+      { k: [['how long',3],['how fast',3],['results take',3],['when will i see',3],['weeks',1],['months',1],['timeline',2]],
         a: "PPC results usually show in 2–4 weeks as campaigns get optimized. SEO ranking improvements typically take 6–12 weeks. Most clients see a 20–40% sales lift within the first 90 days." },
-      { k: ['new seller','beginner','start','launch','new brand','first product'],
+      { k: [['new seller',3],['beginner',2],['just starting',2],['launch',1],['new brand',2],['first product',2],['first time selling',3]],
         a: "Yes — I work with brand-new sellers and established brands alike. New sellers get help with foundational setup and launch strategy; established brands get advanced scaling and account optimization." },
-      { k: ['walmart','shopify','ebay','etsy','marketplace','multi platform','multi-platform'],
+      { k: [['walmart',3],['shopify',3],['ebay',3],['etsy',3],['multi platform',3],['multi-channel',3],['other marketplace',2],['marketplace',1]],
         a: "Besides Amazon, I also manage Shopify, Walmart, eBay, and other marketplaces — with integrated cross-channel campaigns for a cohesive brand presence." },
-      { k: ['suspend','suspension','reinstat','account health','flag'],
-        a: "If your listing or account has been suspended, I handle reinstatement cases, POA writing, and root-cause fixes so you're back live as fast as possible." },
-      { k: ['a+','content','design','brand store','image','creative'],
+      { k: [['suspend',3],['suspension',3],['reinstat',3],['account health',2],['flagged',2],['deactivat',3]],
+        a: "If your listing or account has been suspended, I handle reinstatement cases, plan-of-action writing, and root-cause fixes so you're back live as fast as possible." },
+      { k: [['a+ content',3],['brand store',2],['design',1],['main image',2],['ctr',2],['creative',1],['infographic',2]],
         a: "Creative services include A+ Content, Brand Store design, main image CTR optimization, and lifestyle/infographic images — all designed to build trust and increase click-through rate." },
-      { k: ['contact','email','phone','number','reach','talk','call'],
-        a: "You can reach Abdullah directly at abdullahgullwork@outlook.com or +92 317 9834286 — or just tap the WhatsApp button below this chat for the fastest reply." },
-      { k: ['certif','partner','credential','experience','qualified','trust'],
-        a: "Abdullah is an Amazon Ads Certified, Advanced Partner-recognized consultant with 150+ marketplace campaigns managed and $2M+ in attributable revenue generated for clients." },
-      { k: ['consult','coaching','call','meeting','book'],
-        a: "You can book a one-on-one coaching call directly — look for 'Book a Coaching Call' in the Services menu, or ask me to point you to it." },
-      { k: ['hi','hello','hey','salam','assalam'],
-        a: "Hey there! 👋 I'm the on-site assistant for Abdullah Gull's Amazon consulting. Ask me about PPC, SEO, pricing, or how to get started." },
-      { k: ['thank','thanks','shukriya'],
-        a: "You're welcome! If you'd like to talk further, the WhatsApp button right below this chat goes straight to Abdullah." }
+      { k: [['dsp',3],['programmatic',2],['vendor central',3],['retail advertising',2]],
+        a: "For larger or 1P sellers, I also handle Amazon DSP (programmatic retail advertising) and full-service Vendor Central management." },
+      { k: [['trademark',3],['brand registry',2],['ip complaint',2],['brand registration',2]],
+        a: "I can help with trademark registration support and Amazon Brand Registry setup, which unlocks A+ Content, Brand Store, and stronger IP protection for your listings." },
+      { k: [['beauty',2],['skincare',2],['supplement',3],['cpg',3],['consumer packaged goods',3],['electronics',2],['home and kitchen',2],['apparel',2],['leather',1],['grocery',2],['consumables',2],['category',1],['niche',2]],
+        a: "I work across most Amazon categories — Beauty & Skincare, Supplements & Health, CPG & Consumables, Electronics, Home & Kitchen, and Apparel — with strategy tailored to each niche's compliance and buyer-intent quirks. Check 'Category Expertise' in the menu for details." },
+      { k: [['industry',2],['manufacturer',2],['private label',3],['wholesale',2],['distributor',2],['dtc',2],['enterprise',2],['small business',2],['startup',2]],
+        a: "I work with e-commerce brands, manufacturers, private label sellers, wholesale distributors, and DTC startups — from brand-new sellers to enterprise-scale accounts. See the 'Industry' menu for the full breakdown." },
+      { k: [['contact',2],['email',2],['phone',2],['number',1],['reach you',3],['talk to',2],['call you',2],['whatsapp',2]],
+        a: "You can reach Abdullah directly at abdullahgullwork@outlook.com or +92 317 9834286 — or just tap the green WhatsApp button below this chat for the fastest reply." },
+      { k: [['business hours',3],['open now',3],['are you open',3],['working hours',3],['office hours',3],['available now',2],['what time',2]],
+        a: null, dynamic: businessHoursLine },
+      { k: [['certif',2],['advanced partner',3],['credential',2],['experience',1],['qualified',2],['trust',1],['track record',2]],
+        a: "Abdullah is an Amazon Ads Certified, Advanced Partner-recognized consultant with 150+ marketplace campaigns managed and $2M+ in attributable revenue generated for clients — rated 4.9★ by clients." },
+      { k: [['coaching call',3],['book a call',3],['consult',2],['meeting',2],['schedule',2],['book',1]],
+        a: "You can book a one-on-one coaching call directly — look for 'Book a Coaching Call' under the Services menu, or I can point you straight to it." },
+      { k: [['communicat',2],['reporting',2],['weekly report',3],['update',1],['how often',2]],
+        a: "Communication is monthly strategy calls plus weekly performance updates, and I'm reachable by email or WhatsApp any time for urgent matters — usually replying within 24 hours." },
+      { k: [['different',2],['why choose',3],['why you',3],['competitor',2],['other agenc',2],['better than',2]],
+        a: "No cookie-cutter approaches — every strategy is custom-built for your brand, with transparent reporting and 150+ clients / $2M+ in revenue generated as proof it works." },
+      { k: [['get started',3],['first step',3],['how do i start',3],['sign up',2],['onboard',2]],
+        a: "Easiest first step: grab the free Amazon audit or a coaching call from the menu, or just message +92 317 9834286 on WhatsApp — no pressure, just a real conversation about your goals." },
+      { k: [['hi','hello','hey','salam','assalam o alaikum','asalam']],
+        a: "Hey there! 👋 I'm Abdullah Gull's on-site assistant. Ask me about PPC, SEO, pricing, categories, or how to get started." },
+      { k: [['thank','thanks','shukriya','jazakallah']],
+        a: "You're welcome! If you'd like to talk further, the WhatsApp button right below this chat goes straight to Abdullah." },
+      { k: [['are you real',2],['are you human',2],['are you a bot',2],['ai',1],['robot',2]],
+        a: "I'm an automated assistant trained on this site's content — free, instant, and available 24/7. For anything I can't answer, Abdullah himself is one WhatsApp message away." }
     ];
 
-    const quickReplyPrompts = ['What services do you offer?', 'How much does it cost?', 'How fast are results?', 'How do I get started?'];
+    const quickReplyPrompts = ['What services do you offer?', 'How much does it cost?', 'Are you open right now?', 'How do I get started?'];
 
     const messagesEl = document.getElementById('chatMessages');
     const quickRepliesEl = document.getElementById('chatQuickReplies');
@@ -2372,6 +2513,7 @@
     const input = document.getElementById('chatInput');
     const floatBtn = document.getElementById('chatFloatBtn');
     const panel = document.getElementById('chatPanel');
+    const statusEl = document.querySelector('#chatPanel .chat-header-status');
 
     function addBubble(text, sender) {
       const div = document.createElement('div');
@@ -2381,18 +2523,30 @@
       messagesEl.scrollTop = messagesEl.scrollHeight;
     }
 
+    function showTyping() {
+      const div = document.createElement('div');
+      div.className = 'chat-bubble bot chat-typing';
+      div.textContent = '···';
+      messagesEl.appendChild(div);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+      return div;
+    }
+
+    // Scores every KB entry by how much of the user's message its trigger
+    // phrases cover; multi-word phrases score higher than single words,
+    // and an exact phrase match is weighted heaviest.
     function bestAnswer(message) {
-      const words = message.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(Boolean);
+      const msg = message.toLowerCase().trim();
       let best = null, bestScore = 0;
       KB.forEach(entry => {
         let score = 0;
-        entry.k.forEach(keyword => {
-          if (message.toLowerCase().includes(keyword)) score += keyword.split(' ').length;
+        entry.k.forEach(([phrase, weight]) => {
+          if (msg.includes(phrase)) score += weight * (1 + phrase.split(' ').length * 0.3);
         });
         if (score > bestScore) { bestScore = score; best = entry; }
       });
-      if (best && bestScore > 0) return best.a;
-      return "I don't have that exact detail handy, but Abdullah will — tap the green WhatsApp button below and he'll answer personally, usually within minutes.";
+      if (best && bestScore > 0) return best.dynamic ? best.dynamic() : best.a;
+      return "I don't have that exact detail handy, but Abdullah will — tap the green WhatsApp button below and he'll answer personally, usually within minutes. (" + businessHoursLine() + ")";
     }
 
     function renderQuickReplies() {
@@ -2411,7 +2565,17 @@
       if (!text.trim()) return;
       addBubble(text, 'user');
       input.value = '';
-      setTimeout(() => addBubble(bestAnswer(text), 'bot'), 350);
+      const typingBubble = showTyping();
+      setTimeout(() => {
+        typingBubble.remove();
+        addBubble(bestAnswer(text), 'bot');
+      }, 450 + Math.random() * 350);
+    }
+
+    function updateStatusLine() {
+      if (!statusEl) return;
+      statusEl.textContent = getBusinessStatus().open ? 'Online now — replies instantly' : 'Offline — leaves a message for Abdullah';
+      statusEl.style.setProperty('--dot-color', getBusinessStatus().open ? '#22c55e' : '#8E8E93');
     }
 
     let started = false;
@@ -2419,9 +2583,10 @@
       panel.classList.add('open');
       floatBtn.classList.add('open');
       floatBtn.setAttribute('aria-expanded', 'true');
+      updateStatusLine();
       if (!started) {
         started = true;
-        addBubble("Hi! 👋 I'm Abdullah's on-site assistant — ask me anything about his Amazon PPC, SEO, or consulting services.", 'bot');
+        addBubble("Hi! 👋 I'm Abdullah's on-site assistant, trained on this whole website — ask me about PPC, SEO, categories, pricing, or how to get started.", 'bot');
         renderQuickReplies();
       }
       input.focus();
@@ -2441,6 +2606,9 @@
     });
     document.addEventListener('click', (e) => {
       if (panel.classList.contains('open') && !panel.contains(e.target) && !floatBtn.contains(e.target)) closeChat();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && panel.classList.contains('open')) closeChat();
     });
   })();
 </script>
