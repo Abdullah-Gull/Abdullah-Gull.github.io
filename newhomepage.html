@@ -114,7 +114,6 @@
           radial-gradient(circle at 50% 96%, rgba(255,140,0,0.04) 0%, transparent 35%),
           radial-gradient(#1c1d20 1px, transparent 1px);
         background-size: auto, auto, auto, 32px 32px;
-        background-attachment: fixed;
         color: var(--light-text);
         line-height: 1.6;
       }
@@ -488,7 +487,7 @@
       <img
         src="https://abdullah-gull.github.io/images/Abdullah_Gull__1_-removebg-preview.png"
         alt="Abdullah Gull — Amazon PPC & SEO Consultant"
-        class="h-11 md:h-20 w-auto max-w-[150px] md:max-w-[220px] object-contain shrink-0">
+        class="h-14 md:h-20 w-auto max-w-[190px] md:max-w-[220px] object-contain shrink-0">
     </a>
 
     <!-- CENTER NAV -->
@@ -740,7 +739,7 @@
       </div>
     </div>
 
-    <div class="w-full max-w-[380px] sm:max-w-[440px] lg:max-w-none lg:w-[50%] h-[360px] sm:h-[420px] lg:h-[500px] relative">
+    <div class="w-full aspect-square sm:aspect-[5/4.3] lg:aspect-auto lg:max-w-none lg:w-[50%] lg:h-[500px] relative">
       <img
         src="https://abdullah-gull.github.io/images/abdullah-gull-amazon.jpg-removebg-preview-removebg-preview.png"
         alt="Abdullah Gull, Amazon PPC and SEO consultant"
@@ -879,23 +878,29 @@
 <script>
   // Slot-rotation "brand wall": each visible slot fades to the next name
   // in the pool on a staggered timer, like a live logo carousel.
+  // (Single interval driving all slots — lighter than one timer per slot.)
   (function () {
     const pool = ['NORDPEAK','URBAN CROVE','FERROLITE','PURE HARBOR','GLIDEWORKS','VELOR HOME','ATLAS&nbsp;GEAR','BRIGHTFERN','KAYA&nbsp;LABS','MOSSWOOD','TIDELINE','SUMMIT&nbsp;ROOT'];
     const slots = document.querySelectorAll('#trustBrandsGrid .trust-brand-name');
     if (!slots.length) return;
     let poolIndex = slots.length;
-    slots.forEach((slot, i) => {
-      setInterval(() => {
-        slot.classList.add('tb-fade-out');
-        setTimeout(() => {
-          slot.innerHTML = pool[poolIndex % pool.length];
-          poolIndex++;
-          slot.classList.remove('tb-fade-out');
-          slot.classList.add('tb-fade-in');
-          setTimeout(() => slot.classList.remove('tb-fade-in'), 650);
-        }, 400);
-      }, 4200 + i * 700);
-    });
+
+    function rotateSlot(slot) {
+      slot.classList.add('tb-fade-out');
+      setTimeout(() => {
+        slot.innerHTML = pool[poolIndex % pool.length];
+        poolIndex++;
+        slot.classList.remove('tb-fade-out');
+        slot.classList.add('tb-fade-in');
+        setTimeout(() => slot.classList.remove('tb-fade-in'), 650);
+      }, 400);
+    }
+
+    let cycle = 0;
+    setInterval(() => {
+      rotateSlot(slots[cycle % slots.length]);
+      cycle++;
+    }, 900);
   })();
 </script>
 
@@ -1203,7 +1208,7 @@
         </div>
       </div>
 
-      <div class="strategy-card group relative bg-zinc-900/30 border-2 border-[#ff8c00]/50 rounded-2xl p-7 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#ff8c00]/10 overflow-hidden backdrop-blur-sm">
+      <div class="strategy-card group relative bg-zinc-900/30 border-2 border-[#ff8c00]/50 rounded-2xl p-7 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#ff8c00]/10 overflow-hidden">
         <div>
           <div class="absolute top-0 left-0 w-full h-1 bg-[#ff8c00]"></div>
           <div class="flex items-center gap-4 mb-6 pb-4 border-b border-[#ff8c00]/20">
@@ -1317,7 +1322,7 @@
     </div>
 
     <div class="flex justify-center mb-16">
-      <div class="bg-[#141414] border border-zinc-800 p-2 rounded-2xl flex relative max-w-md w-full shadow-2xl backdrop-blur-md">
+      <div class="bg-[#141414] border border-zinc-800 p-2 rounded-2xl flex relative max-w-md w-full shadow-2xl">
         <div id="tab-indicator" class="absolute top-2 bottom-2 left-2 w-[calc(50%-8px)] bg-gradient-to-r from-[#ff8c00] to-[#e07b00] rounded-xl transition-all duration-300 ease-out z-0 shadow-lg shadow-[#ff8c00]/20"></div>
         <button onclick="switchTab('seller')" id="btn-seller" class="flex-1 text-center py-3 rounded-xl font-bold text-sm uppercase tracking-wider transition-colors duration-200 z-10 text-black">Seller Central</button>
         <button onclick="switchTab('vendor')" id="btn-vendor" class="flex-1 text-center py-3 rounded-xl font-bold text-sm uppercase tracking-wider transition-colors duration-200 z-10 text-gray-400 hover:text-white">Vendor Central</button>
@@ -1784,7 +1789,8 @@
         <h3>Subscribe for Amazon growth tips</h3>
         <p>PPC playbooks, SEO updates, and account-health alerts — no spam, unsubscribe any time.</p>
       </div>
-      <form id="newsletterForm" class="footer-newsletter-form" novalidate>
+      <form id="newsletterForm" class="footer-newsletter-form" novalidate
+            action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <div class="footer-newsletter-field">
           <label for="newsletterName">First Name<span aria-hidden="true">*</span></label>
           <input type="text" id="newsletterName" name="name" placeholder="Type your name" required autocomplete="given-name">
@@ -2234,24 +2240,38 @@
       return;
     }
     const q = query.toLowerCase();
-    const matches = searchIndex.filter(item =>
-      item.title.toLowerCase().includes(q) ||
-      item.group.toLowerCase().includes(q) ||
-      item.section.toLowerCase().includes(q)
-    ).slice(0, 40);
+    const scored = searchIndex
+      .map(item => {
+        const title = item.title.toLowerCase();
+        let score = 0;
+        if (title === q) score = 100;
+        else if (title.startsWith(q)) score = 80;
+        else if (title.includes(q)) score = 50;
+        else if (item.group.toLowerCase().includes(q)) score = 20;
+        else if (item.section.toLowerCase().includes(q)) score = 10;
+        return { item, score };
+      })
+      .filter(r => r.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .map(r => r.item)
+      .slice(0, 40);
 
-    if(!matches.length){
-      searchResults.innerHTML = '<p class="text-neutral-600 text-[13px] py-6 px-4 text-center m-0">No results for "' + query + '"</p>';
+    if(!scored.length){
+      searchResults.innerHTML =
+        '<div class="text-center py-8 px-4">' +
+          '<p class="text-neutral-500 text-[13px] m-0 mb-3">No results for "' + query.replace(/</g,'&lt;') + '"</p>' +
+          '<a href="https://wa.me/923179834286" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-accent text-[12.5px] font-semibold no-underline">Ask on WhatsApp instead <i class="fa-solid fa-arrow-right text-[10px]"></i></a>' +
+        '</div>';
       return;
     }
 
     const grouped = {};
-    matches.forEach(m=>{
+    scored.forEach(m=>{
       if(!grouped[m.section]) grouped[m.section] = [];
       grouped[m.section].push(m);
     });
 
-    let html = '';
+    let html = '<div class="px-3 pt-1 pb-2 text-[11px] text-neutral-600">' + scored.length + (scored.length === 1 ? ' result' : ' results') + '</div>';
     Object.keys(grouped).forEach(section=>{
       html += '<div class="px-3 pt-2.5 pb-1 text-[10px] font-bold tracking-wider uppercase text-accent">' + section + '</div>';
       grouped[section].forEach(m=>{
@@ -2284,7 +2304,12 @@
   searchClose.addEventListener('click', closeSearch);
   searchOverlay.addEventListener('click', (e)=>{ if(e.target === searchOverlay) closeSearch(); });
   searchResults.addEventListener('click', (e)=>{ if(e.target.closest('a')) closeSearch(); });
-  searchInput.addEventListener('input', (e)=> renderSearchResults(e.target.value.trim()));
+  let searchDebounce;
+  searchInput.addEventListener('input', (e)=> {
+    clearTimeout(searchDebounce);
+    const val = e.target.value.trim();
+    searchDebounce = setTimeout(() => renderSearchResults(val), 120);
+  });
 
   // Up/Down to move through results, Enter to open the highlighted one
   let activeResultIndex = -1;
@@ -2664,26 +2689,65 @@
 </script>
 
 <script>
-  // Newsletter subscribe — instant client-side handling, no page reload.
-  // Note: this UI is ready for a real email provider (Mailchimp, Formspree,
-  // etc.); wire the fetch/POST in here whenever a backend is connected.
+  // Newsletter subscribe — real delivery via Formspree (fast, AJAX, no
+  // page reload). To go live: create a free form at https://formspree.io,
+  // then replace YOUR_FORM_ID in the <form action="..."> above with the
+  // ID Formspree gives you. Until that's done, submissions fall back to
+  // opening a pre-filled email draft so nothing is ever a dead end.
   (function () {
     const form = document.getElementById('newsletterForm');
     const msg = document.getElementById('newsletterMsg');
+    const btn = form ? form.querySelector('.footer-newsletter-btn') : null;
     if (!form) return;
-    form.addEventListener('submit', (e) => {
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = document.getElementById('newsletterName').value.trim();
       const email = document.getElementById('newsletterEmail').value.trim();
       const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
       if (!name || !emailValid) {
         msg.textContent = 'Please enter your name and a valid email.';
         msg.style.color = '#ff6b6b';
         return;
       }
-      msg.textContent = `Thanks, ${name}! You're on the list.`;
-      msg.style.color = 'var(--primary-orange)';
-      form.reset();
+
+      const endpoint = form.getAttribute('action');
+      const originalLabel = btn.textContent;
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      if (endpoint.includes('YOUR_FORM_ID')) {
+        // Formspree not connected yet — open a pre-filled email as a safety net.
+        window.location.href = `mailto:abdullahgullwork@outlook.com?subject=${encodeURIComponent('Newsletter signup — ' + name)}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email)}`;
+        msg.textContent = 'Opening your email app to send this to Abdullah…';
+        msg.style.color = 'var(--primary-orange)';
+        btn.textContent = originalLabel;
+        btn.disabled = false;
+        return;
+      }
+
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        if (res.ok) {
+          msg.textContent = `Thanks, ${name}! You're on the list.`;
+          msg.style.color = 'var(--primary-orange)';
+          form.reset();
+        } else {
+          msg.textContent = 'Something went wrong — please try again or message us on WhatsApp.';
+          msg.style.color = '#ff6b6b';
+        }
+      } catch (err) {
+        msg.textContent = 'Network issue — please try again or message us on WhatsApp.';
+        msg.style.color = '#ff6b6b';
+      } finally {
+        btn.textContent = originalLabel;
+        btn.disabled = false;
+      }
     });
   })();
 </script>
