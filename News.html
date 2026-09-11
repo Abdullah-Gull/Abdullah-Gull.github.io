@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenAI Full Replica with Footer & Pricing</title>
+    <title>Abdullah Gull — Amazon PPC & SEO Consultant</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,283 +12,329 @@
                 extend: {
                     colors: {
                         background: '#000000',
+                        panel: '#0a0a0a',
+                        line: '#222222',
+                        accent: '#ff8c00',
+                        'accent-light': '#ffa533',
                     }
                 }
             }
         }
     </script>
     <style>
-        .dropdown-menu {
-            transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
-            transform: translateY(-10px);
+        .mega-wrap {
+            transition: opacity 0.25s ease, visibility 0.25s ease, height 0.25s ease;
         }
-        .group:hover .dropdown-menu {
+        .nav-item:hover .mega-wrap {
+            height: auto;
             opacity: 1;
             visibility: visible;
+            pointer-events: auto;
+        }
+        .nav-item:hover .mega-inner {
+            opacity: 1;
             transform: translateY(0);
+            transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+        }
+        .nav-item:hover .chev {
+            transform: rotate(180deg);
         }
     </style>
 </head>
-<body class="bg-background text-white font-sans antialiased selection:bg-white selection:text-black min-h-screen flex flex-col justify-between relative">
+<body class="bg-background text-white font-sans antialiased min-h-screen flex flex-col justify-between relative selection:bg-accent selection:text-black">
 
-    <!-- Background Overlay with Blue Tint on Hover -->
-    <div id="hover-overlay" class="fixed inset-0 bg-[#071326]/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+    <!-- OpenAI Style Blue/Dark Tint Overlay on Hover -->
+    <div id="hover-overlay" class="fixed inset-0 bg-[#071326]/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 z-[90]"></div>
 
-    <!-- Header & Navigation Bar -->
-    <div class="relative z-50 border-b border-white/10 bg-black">
-        <header class="w-full px-6 py-4 flex items-center justify-between max-w-[1728px] mx-auto">
-            <div class="flex items-center gap-10">
-                <span class="text-xl font-bold tracking-tight cursor-pointer">OpenAI</span>
+    <!-- Header -->
+    <header id="megaHeader" class="relative bg-black border-b border-line z-[999]">  
+        <div class="navbar max-w-[1400px] mx-auto px-6 h-20 flex items-center relative">
+            <!-- LOGO -->    
+            <a href="index.html" class="flex-1 flex items-center min-w-0" aria-label="Abdullah Gull home">      
+                <img src="https://abdullah-gull.github.io/images/Abdullah_Gull__1_-removebg-preview.png" alt="Abdullah Gull — Amazon PPC & SEO Consultant" class="h-14 md:h-20 w-auto max-w-[190px] md:max-w-[220px] object-contain shrink-0">    
+            </a>
+            
+            <!-- CENTER NAV -->    
+            <ul id="navItems" class="nav-items flex-none hidden lg:flex items-center gap-2 h-full list-none m-0 p-0">      
+                <li class="nav-item h-full flex items-center">        
+                    <a href="index.html" class="text-neutral-400 hover:text-white text-[13px] font-medium tracking-wide px-3.5 py-2.5 rounded-md whitespace-nowrap transition-colors">Home</a>      
+                </li>
                 
-                <nav class="hidden lg:flex items-center gap-8 text-sm text-gray-300">
-                    <!-- Research Dropdown -->
-                    <div class="group h-full flex items-center py-2 cursor-pointer">
-                        <span class="hover:text-white transition group-hover:text-white">Research</span>
-                        <div class="dropdown-menu absolute top-full left-0 w-full bg-black border-b border-white/10 px-16 py-16 opacity-0 invisible z-50">
-                            <div class="max-w-[1728px] mx-auto grid grid-cols-4 gap-12">
-                                <div>
-                                    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-6">Explore Research</h3>
-                                    <ul class="space-y-4 text-2xl font-medium tracking-tight">
-                                        <li><a href="#" class="hover:text-gray-400 transition">Research Index</a></li>
-                                        <li><a href="#" class="hover:text-gray-400 transition">Research Overview</a></li>
-                                        <li><a href="#" class="hover:text-gray-400 transition">Economic Research</a></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-6">Latest Advancements</h3>
-                                    <ul class="space-y-3 text-lg font-medium text-gray-200">
-                                        <li><a href="#" class="hover:text-white transition">GPT-6</a></li>
-                                        <li><a href="#" class="hover:text-white transition">GPT-5.6</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Services Mega Menu -->
+                <li class="nav-item h-full flex items-center relative" data-menu="services">        
+                    <a href="#" class="nav-link flex items-center gap-1.5 text-neutral-400 hover:text-white text-[13px] font-medium tracking-wide px-3.5 py-2.5 rounded-md whitespace-nowrap cursor-pointer transition-colors">          
+                        Services          
+                        <svg class="chev w-2.5 h-2.5 opacity-70 transition-transform duration-300" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>        
+                    </a>        
+                    <div class="mega-wrap fixed left-0 right-0 w-full h-0 overflow-hidden bg-gradient-to-b from-panel to-black border-b border-line shadow-[0_30px_60px_rgba(0,0,0,0.55)] z-[99] invisible opacity-0 pointer-events-none" style="top:80px;">          
+                        <div class="mega-inner max-w-[1200px] mx-auto px-10 py-16 grid grid-cols-4 gap-16 opacity-0 translate-y-3.5">            
+                            <div>              
+                                <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">                
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Full Service              
+                                </h4>              
+                                <ul class="flex flex-col gap-4 list-none m-0 p-0">                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Full service management</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Advertising (PPC) management</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Amazon SEO</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Amazon account audit</a></li>              
+                                </ul>            
+                            </div>            
+                            <div>              
+                                <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">                
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Design              
+                                </h4>              
+                                <ul class="flex flex-col gap-4 list-none m-0 p-0">                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Brand guidelines</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Brand story</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Brand store</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Listing images</a></li>              
+                                </ul>            
+                            </div>            
+                            <div>              
+                                <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">                
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Troubleshooting              
+                                </h4>              
+                                <ul class="flex flex-col gap-4 list-none m-0 p-0">                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Listing reinstatement</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Account suspension</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">PPC advertising audit</a></li>              
+                                </ul>            
+                            </div>            
+                            <div>              
+                                <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">                
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Other Services              </h4>              
+                                <ul class="flex flex-col gap-4 list-none m-0 p-0">                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Amazon DSP</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Trademark registration</a></li>              
+                                </ul>            
+                            </div>          
+                        </div>        
+                    </div>      
+                </li>
 
-                    <a href="#" class="hover:text-white transition">Products</a>
-                    <a href="#" class="hover:text-white transition">Business</a>
-                    <a href="#" class="hover:text-white transition">Developers</a>
-                    <a href="#" class="hover:text-white transition">Company</a>
-                    <a href="#" class="hover:text-white transition">Foundation</a>
-                </nav>
-            </div>
+                <!-- Category Expertise Mega Menu -->
+                <li class="nav-item h-full flex items-center relative" data-menu="category">        
+                    <a href="#" class="nav-link flex items-center gap-1.5 text-neutral-400 hover:text-white text-[13px] font-medium tracking-wide px-3.5 py-2.5 rounded-md whitespace-nowrap cursor-pointer transition-colors">          
+                        Category Expertise          
+                        <svg class="chev w-2.5 h-2.5 opacity-70 transition-transform duration-300" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>        
+                    </a>        
+                    <div class="mega-wrap fixed left-0 right-0 w-full h-0 overflow-hidden bg-gradient-to-b from-panel to-black border-b border-line shadow-[0_30px_60px_rgba(0,0,0,0.55)] z-[99] invisible opacity-0 pointer-events-none" style="top:80px;">          
+                        <div class="mega-inner max-w-[1200px] mx-auto px-10 py-16 grid grid-cols-[1.15fr_1fr_1fr] gap-16 opacity-0 translate-y-3.5">            
+                            <div>              
+                                <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">                
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Specialized Niche Categories              
+                                </h4>              
+                                <ul class="flex flex-col gap-4 list-none m-0 p-0">                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Beauty & Skincare</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Consumables & Grocery</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Health & Supplements</a></li>              
+                                </ul>            
+                            </div>            
+                            <a href="services.html" class="relative rounded-2xl overflow-hidden h-[170px] flex items-end bg-cover bg-center bg-neutral-900" style="background-image:url('https://abdullah-gull.github.io/images/jungle-scout-affiliate-program.jpg')">              
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>              
+                                <div class="relative z-[1] p-5 text-white">                
+                                    <strong class="block text-sm mb-1">Grow your supplement brand</strong>                
+                                    <span class="block text-xs text-neutral-300 leading-relaxed">Thrive on Amazon's supplement category.</span>              
+                                </div>            
+                            </a>            
+                            <a href="services.html" class="relative rounded-2xl overflow-hidden h-[170px] flex items-end bg-cover bg-center bg-neutral-900" style="background-image:url('https://abdullah-gull.github.io/images/OG_image_Squid_Ink.png')">              
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>              
+                                <div class="relative z-[1] p-5 text-white">                
+                                    <strong class="block text-sm mb-1">Sell your beauty products</strong>                
+                                    <span class="block text-xs text-neutral-300 leading-relaxed">Improve your brand's presence on Amazon.</span>              
+                                </div>            
+                            </a>          
+                        </div>        
+                    </div>      
+                </li>
 
-            <!-- Right Actions -->
-            <div class="flex items-center gap-4">
-                <button id="search-open-btn" class="text-gray-300 hover:text-white p-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"></path></svg>
-                </button>
-                <button class="bg-[#1a1a1a] text-white text-sm font-medium px-4 py-2 rounded-full border border-white/10 flex items-center gap-2 hover:bg-[#262626] transition">
-                    Log in 
-                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
-                <button class="bg-white text-black text-sm font-medium px-5 py-2 rounded-full hover:bg-gray-200 transition flex items-center gap-1.5">
-                    Try ChatGPT 
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"></path></svg>
-                </button>
+                <!-- Industry Mega Menu -->
+                <li class="nav-item h-full flex items-center relative" data-menu="industry">        
+                    <a href="#" class="nav-link flex items-center gap-1.5 text-neutral-400 hover:text-white text-[13px] font-medium tracking-wide px-3.5 py-2.5 rounded-md whitespace-nowrap cursor-pointer transition-colors">          
+                        Industry          
+                        <svg class="chev w-2.5 h-2.5 opacity-70 transition-transform duration-300" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>        
+                    </a>        
+                    <div class="mega-wrap fixed left-0 right-0 w-full h-0 overflow-hidden bg-gradient-to-b from-panel to-black border-b border-line shadow-[0_30px_60px_rgba(0,0,0,0.55)] z-[99] invisible opacity-0 pointer-events-none" style="top:80px;">          
+                        <div class="mega-inner max-w-[1200px] mx-auto px-10 py-16 grid grid-cols-3 gap-16 opacity-0 translate-y-3.5">            
+                            <div>              
+                                <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">                
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Industries We Serve              
+                                </h4>              
+                                <ul class="flex flex-col gap-4 list-none m-0 p-0">                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">E-commerce Brands</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Manufacturers</a></li>              
+                                </ul>            
+                            </div>            
+                            <div>              
+                                <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">                
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Marketplaces              
+                                </h4>              
+                                <ul class="flex flex-col gap-4 list-none m-0 p-0">                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Amazon Sellers</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Walmart Sellers</a></li>              
+                                </ul>            
+                            </div>            
+                            <div>              
+                                <h4 class="flex items-center gap-2 text-neutral-500 text-[11px] font-semibold tracking-widest uppercase mb-5">                
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>Business Size              
+                                </h4>              
+                                <ul class="flex flex-col gap-4 list-none m-0 p-0">                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Enterprise Brands</a></li>                
+                                    <li><a href="services.html" class="flex items-center gap-1.5 text-white hover:text-accent hover:translate-x-1 text-[15px] transition-all">Growing Businesses</a></li>              
+                                </ul>            
+                            </div>          
+                        </div>        
+                    </div>      
+                </li>
+
+                <li class="nav-item h-full flex items-center">        
+                    <a href="about.html" class="text-neutral-400 hover:text-white text-[13px] font-medium tracking-wide px-3.5 py-2.5 rounded-md whitespace-nowrap transition-colors">About</a>      
+                </li>      
+                <li class="nav-item h-full flex items-center">        
+                    <a href="contact.html" class="text-neutral-400 hover:text-white text-[13px] font-medium tracking-wide px-3.5 py-2.5 rounded-md whitespace-nowrap transition-colors">Contact Us</a>      
+                </li>    
+            </ul>
+
+            <!-- RIGHT SIDE -->    
+            <div class="flex-1 flex items-center justify-end gap-4">      
+                <button id="searchBtn" aria-label="Search the site" class="header-search-btn flex items-center gap-2 bg-transparent border border-line hover:border-accent/50 text-neutral-400 hover:text-white cursor-pointer pl-3 pr-2 py-1.5 rounded-full transition-colors">        
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>        
+                    <span class="kbd-hint hidden md:inline-flex items-center gap-0.5 text-[10px] font-semibold text-neutral-500 border border-line rounded px-1.5 py-0.5">⌘K</span>      
+                </button>      
+                <a href="meeting.html" class="header-cta-btn flex items-center gap-2 bg-accent hover:bg-accent-light text-black text-[13px] font-semibold px-4 py-2.5 rounded-full whitespace-nowrap transition-all hover:shadow-[0_4px_16px_rgba(255,140,0,0.4)]">        
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l9 6 9-6M3 8v10h18V8M3 8l9-4 9 4"/></svg>        
+                    <span class="label">Get in touch</span>      
+                </a>      
+                <button id="hamburgerBtn" aria-label="Menu" class="lg:hidden flex flex-col justify-center gap-1.5 bg-transparent border-none cursor-pointer p-2">        
+                    <span class="hb-line w-6 h-0.5 bg-white block transition-transform"></span>        
+                    <span class="hb-line w-6 h-0.5 bg-white block transition-opacity"></span>        
+                    <span class="hb-line w-6 h-0.5 bg-white block transition-transform"></span>      
+                </button>    
             </div>
-        </header>
+        </div>
+    </header>
+
+    <!-- SEARCH OVERLAY -->
+    <div id="searchOverlay" class="search-overlay fixed inset-0 bg-black/75 backdrop-blur-md z-[1300] flex items-start justify-center opacity-0 invisible transition-all duration-300" style="padding-top:min(14vh,120px);">  
+        <div class="search-box w-[min(640px,90vw)] bg-panel border border-line rounded-2xl shadow-[0_30px_70px_rgba(0,0,0,0.6)] overflow-hidden">    
+            <div class="flex items-center gap-3 px-5 py-4 border-b border-line">      
+                <svg class="w-[18px] h-[18px] text-neutral-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>      
+                <input type="text" id="searchInput" placeholder="Search the whole site..." autocomplete="off" class="flex-1 bg-transparent border-none outline-none text-white text-base placeholder-neutral-600">      
+                <button id="searchClose" aria-label="Close" class="bg-transparent border-none text-neutral-400 hover:text-white cursor-pointer p-1 flex transition-colors">        
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>      
+                </button>    
+            </div>    
+            <div id="searchResults" class="max-h-[min(50vh,420px)] overflow-y-auto p-4">      
+                <p class="text-neutral-600 text-[13px] py-6 px-4 text-center m-0">Start typing to search across Services, Categories, and more.</p>    
+            </div>  
+        </div>
     </div>
 
-    <!-- Search Modal -->
-    <div id="search-modal" class="fixed inset-0 bg-black/90 backdrop-blur-xl z-50 hidden flex flex-col px-6 pt-12">
-        <div class="max-w-3xl mx-auto w-full flex justify-end">
-            <button id="search-close-btn" class="text-gray-400 hover:text-white text-sm uppercase tracking-wider">Close [Esc]</button>
-        </div>
-        <div class="max-w-3xl mx-auto w-full mt-10">
-            <div class="relative border-b border-white/20 pb-4 flex items-center">
-                <svg class="w-6 h-6 text-gray-400 mr-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"></path></svg>
-                <input type="text" placeholder="Search OpenAI..." class="w-full bg-transparent text-2xl md:text-3xl text-white placeholder-gray-600 focus:outline-none">
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content Placeholder -->
-    <main class="flex-grow flex items-center justify-center text-gray-600 py-32 z-10">
-        <p class="text-sm">Yahan aapka main content aayega...</p>
+    <!-- Main Content Area Placeholder -->
+    <main class="flex-grow flex items-center justify-center text-neutral-500 py-32 z-10">
+        <p class="text-sm">Your website content goes here...</p>
     </main>
 
-    <!-- Exact Footer Match from Screenshots -->
-    <footer class="w-full bg-black border-t border-white/10 px-6 md:px-16 pt-20 pb-12 z-10">
-        <!-- Top Interactive Pricing Input Row (From image_be0c48.png) -->
-        <div class="max-w-[1728px] mx-auto pb-20 border-b border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <!-- Complete OpenAI-Style Footer (With Pricing Input & Links) -->
+    <footer class="w-full bg-black border-t border-line px-6 md:px-16 pt-20 pb-12 z-10">
+        <!-- Ask about pricing input row -->
+        <div class="max-w-[1728px] mx-auto pb-20 border-b border-line flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div class="w-full relative flex items-center">
-                <input type="text" placeholder="Ask about pricing" class="w-full bg-transparent text-4xl md:text-6xl font-light text-gray-400 placeholder-gray-500 focus:outline-none pb-4 border-b border-transparent focus:border-white transition">
-                <button class="absolute right-0 bottom-6 w-12 h-12 rounded-full bg-[#1a1a1a] hover:bg-white hover:text-black text-gray-400 flex items-center justify-center transition">
+                <input type="text" placeholder="Ask about pricing" class="w-full bg-transparent text-4xl md:text-6xl font-light text-neutral-400 placeholder-neutral-600 focus:outline-none pb-4 border-b border-transparent focus:border-white transition">
+                <button class="absolute right-0 bottom-6 w-12 h-12 rounded-full bg-neutral-900 hover:bg-white hover:text-black text-neutral-400 flex items-center justify-center transition">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
                 </button>
             </div>
         </div>
 
-        <!-- Main Footer Links Grid (From image_be0ca5.png) -->
-        <div class="max-w-[1728px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 text-sm text-gray-400 pt-16">
-            
-            <!-- Research Column -->
+        <!-- Multi-column Footer Links -->
+        <div class="max-w-[1728px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 text-sm text-neutral-400 pt-16">
             <div class="space-y-8">
                 <div>
-                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Research</h4>
+                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-white transition">Research Index</a></li>
-                        <li><a href="#" class="hover:text-white transition">Research Overview</a></li>
-                        <li><a href="#" class="hover:text-white transition">Economic Research</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Latest Advancements</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-white transition">GPT-6</a></li>
-                        <li><a href="#" class="hover:text-white transition">GPT-5.6</a></li>
-                        <li><a href="#" class="hover:text-white transition">GPT-5.5</a></li>
-                        <li><a href="#" class="hover:text-white transition">GPT-5.4</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Safety</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-white transition">Safety Approach</a></li>
-                        <li><a href="#" class="hover:text-white transition">Deployment Safety &rarr;</a></li>
-                        <li><a href="#" class="hover:text-white transition">Security & Privacy</a></li>
-                        <li><a href="#" class="hover:text-white transition">Trust & Transparency</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Full Service Management</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">PPC Advertising</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Amazon SEO</a></li>
                     </ul>
                 </div>
             </div>
-
-            <!-- Products Column -->
             <div class="space-y-8">
                 <div>
-                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Products</h4>
+                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Categories</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-white transition">ChatGPT &rarr;</a></li>
-                        <li><a href="#" class="hover:text-white transition">ChatGPT Business &rarr;</a></li>
-                        <li><a href="#" class="hover:text-white transition">ChatGPT Enterprise &rarr;</a></li>
-                        <li><a href="#" class="hover:text-white transition">ChatGPT for Education &rarr;</a></li>
-                        <li><a href="#" class="hover:text-white transition">Codex</a></li>
-                        <li><a href="#" class="hover:text-white transition">Release Notes</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">API Platform</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-white transition">Overview</a></li>
-                        <li><a href="#" class="hover:text-white transition">API Log In &rarr;</a></li>
-                        <li><a href="#" class="hover:text-white transition">Docs &rarr;</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Beauty & Skincare</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Health & Supplements</a></li>
                     </ul>
                 </div>
             </div>
-
-            <!-- Business & Developers Column -->
             <div class="space-y-8">
                 <div>
-                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Business</h4>
+                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Industry</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-white transition">Overview</a></li>
-                        <li><a href="#" class="hover:text-white transition">Solutions</a></li>
-                        <li><a href="#" class="hover:text-white transition">Resources</a></li>
-                        <li><a href="#" class="hover:text-white transition">Customer Stories</a></li>
-                        <li><a href="#" class="hover:text-white transition">Partner Network</a></li>
-                        <li><a href="#" class="hover:text-white transition">Contact Sales</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Developers</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-white transition">Apps SDK &rarr;</a></li>
-                        <li><a href="#" class="hover:text-white transition">Open Models</a></li>
-                        <li><a href="#" class="hover:text-white transition">Docs &rarr;</a></li>
-                        <li><a href="#" class="hover:text-white transition">Resources &rarr;</a></li>
-                        <li><a href="#" class="hover:text-white transition">Developer Forum &rarr;</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">E-commerce Brands</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Amazon Sellers</a></li>
                     </ul>
                 </div>
             </div>
-
-            <!-- Company & Support Column -->
             <div class="space-y-8">
                 <div>
                     <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Company</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
-                        <li><a href="#" class="hover:text-white transition">Our Charter</a></li>
-                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
-                        <li><a href="#" class="hover:text-white transition">News</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
                     </ul>
                 </div>
+            </div>
+            <div class="space-y-8">
                 <div>
                     <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Support</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-white transition">Help Center &rarr;</a></li>
+                        <li><a href="meeting.html" class="hover:text-white transition">Book a Call &rarr;</a></li>
                     </ul>
                 </div>
             </div>
-
-            <!-- More & Policies Column -->
-            <div class="space-y-8">
-                <div>
-                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">More</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-white transition">Stories</a></li>
-                        <li><a href="#" class="hover:text-white transition">Academy</a></li>
-                        <li><a href="#" class="hover:text-white transition">Supply Co.</a></li>
-                        <li><a href="#" class="hover:text-white transition">Livestreams</a></li>
-                        <li><a href="#" class="hover:text-white transition">Podcast</a></li>
-                        <li><a href="#" class="hover:text-white transition">RSS</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Terms & Policies</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-white transition">Terms of Use</a></li>
-                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white transition">Other Policies</a></li>
-                    </ul>
-                </div>
-            </div>
-
         </div>
 
-        <!-- Footer Bottom Bar (Social Icons, Copyright, Language Selector) -->
-        <div class="max-w-[1728px] mx-auto mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-6">
-            <!-- Social Media Icons -->
-            <div class="flex items-center gap-6 text-gray-400">
-                <a href="#" class="hover:text-white transition">X</a>
-                <a href="#" class="hover:text-white transition">YouTube</a>
+        <!-- Footer Bottom Bar -->
+        <div class="max-w-[1728px] mx-auto mt-20 pt-8 border-t border-line flex flex-col md:flex-row items-center justify-between text-xs text-neutral-500 gap-6">
+            <div class="flex items-center gap-6 text-neutral-400">
                 <a href="#" class="hover:text-white transition">LinkedIn</a>
                 <a href="#" class="hover:text-white transition">GitHub</a>
-                <a href="#" class="hover:text-white transition">Instagram</a>
-                <a href="#" class="hover:text-white transition">TikTok</a>
-                <a href="#" class="hover:text-white transition">Discord</a>
             </div>
-
-            <!-- Copyright & Manage Cookies -->
             <div class="flex items-center gap-6">
-                <span>OpenAI &copy; 2015–2026</span>
+                <span>Abdullah Gull &copy; 2026</span>
                 <a href="#" class="hover:text-white transition">Manage Cookies</a>
             </div>
-
-            <!-- Language Button -->
             <div>
-                <button class="bg-[#1a1a1a] text-gray-300 px-4 py-2 rounded-full border border-white/10 flex items-center gap-2 hover:bg-[#262626] transition">
+                <button class="bg-neutral-900 text-neutral-300 px-4 py-2 rounded-full border border-line flex items-center gap-2 hover:bg-neutral-800 transition">
                     <span class="w-2 h-2 rounded-full bg-green-500"></span> English (United States)
                 </button>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript Actions -->
+    <!-- Script to toggle blue overlay and search modal -->
     <script>
-        const navGroups = document.querySelectorAll('.group');
+        const navItems = document.querySelectorAll('.nav-item[data-menu]');
         const overlay = document.getElementById('hover-overlay');
 
-        navGroups.forEach(group => {
-            group.addEventListener('mouseenter', () => { overlay.style.opacity = '1'; });
-            group.addEventListener('mouseleave', () => { overlay.style.opacity = '0'; });
+        navItems.forEach(item => {
+            item.addEventListener('mouseenter', () => { overlay.style.opacity = '1'; });
+            item.addEventListener('mouseleave', () => { overlay.style.opacity = '0'; });
         });
 
-        const searchOpenBtn = document.getElementById('search-open-btn');
-        const searchCloseBtn = document.getElementById('search-close-btn');
-        const searchModal = document.getElementById('search-modal');
+        const searchBtn = document.getElementById('searchBtn');
+        const searchClose = document.getElementById('searchClose');
+        const searchOverlay = document.getElementById('searchOverlay');
 
-        searchOpenBtn.addEventListener('click', () => { searchModal.classList.remove('hidden'); });
-        searchCloseBtn.addEventListener('click', () => { searchModal.classList.add('hidden'); });
+        searchBtn.addEventListener('click', () => {
+            searchOverlay.classList.remove('opacity-0', 'invisible');
+            document.getElementById('searchInput').focus();
+        });
+        searchClose.addEventListener('click', () => {
+            searchOverlay.classList.add('opacity-0', 'invisible');
+        });
     </script>
 </body>
 </html>
