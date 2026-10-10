@@ -745,9 +745,32 @@
   }
   .svc-hero > * { position: relative; z-index: 1; }
   .cal-embed-container { border: 1px solid rgba(255,140,0,0.25); box-shadow: 0 0 40px rgba(255,140,0,0.06); }
+  .svc-hero-arc {
+    position: absolute; top: 50%; left: -200px; width: 460px; height: 460px;
+    transform: translateY(-50%); border-radius: 50%;
+    background: conic-gradient(from 160deg, rgba(255,140,0,0.3), transparent 55%);
+    filter: blur(44px); opacity: 0.55; pointer-events: none; z-index: 0;
+  }
+  .svc-hero-arc-ring {
+    position: absolute; top: 50%; left: -170px; width: 390px; height: 390px;
+    transform: translateY(-50%); border-radius: 50%;
+    border: 1px solid rgba(255,140,0,0.22); pointer-events: none; z-index: 0;
+  }
+  .svc-hero-badge {
+    position: absolute; top: 24px; right: 24px; width: 40px; height: 40px; border-radius: 12px;
+    border: 1px solid rgba(255,140,0,0.3); background: rgba(255,140,0,0.06);
+    display: flex; align-items: center; justify-content: center; z-index: 1;
+    animation: svc-badge-float 4s ease-in-out infinite;
+  }
+  @keyframes svc-badge-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 </style>
 <section class="svc-hero relative bg-black text-white pt-16 pb-16 px-6 sm:pt-20 sm:pb-20 sm:px-8 lg:pt-24 lg:pb-24 lg:px-16 overflow-hidden">
   <div class="absolute inset-0 z-0 opacity-30" style="background-image: radial-gradient(#333 1px, transparent 1px); background-size: 30px 30px;" aria-hidden="true"></div>
+  <div class="svc-hero-arc" aria-hidden="true"></div>
+  <div class="svc-hero-arc-ring" aria-hidden="true"></div>
+  <div class="svc-hero-badge" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8L12 2z" fill="#FF8C00"/></svg>
+  </div>
   <div class="relative z-10 max-w-[1300px] mx-auto grid lg:grid-cols-[1fr_440px] gap-12 lg:gap-14 items-start">
     <div class="pt-2">
       <span class="inline-flex items-center gap-2 mb-5 border border-zinc-800 bg-zinc-900/60 px-4 py-1.5 rounded-full text-[#ff8c00] text-[11px] font-bold uppercase tracking-widest">
@@ -1109,7 +1132,7 @@
       <a href="meeting.html" class="inline-flex items-center gap-2 bg-[#FF8C00] text-black px-7 py-3.5 rounded-full font-bold text-sm mt-8 hover:bg-white transition-all duration-300">Talk to Abdullah <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="order-first lg:order-last">
-      <img src="https://placehold.co/560x420/0a0a0a/FF8C00?text=PPC+Dashboard&font=roboto" alt="Expert Amazon PPC Management" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
+      <img src="https://abdullah-gull.github.io/images/storefront-with-abdullah.gift.gif" alt="Expert Amazon PPC Management" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
     </div>
   </div>
   <div class="max-w-[1100px] mx-auto mt-10">
@@ -1127,7 +1150,7 @@
       <a href="meeting.html" class="inline-flex items-center gap-2 bg-[#FF8C00] text-black px-7 py-3.5 rounded-full font-bold text-sm mt-8 hover:bg-white transition-all duration-300">Talk to Abdullah <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="order-first lg:order-last">
-      <img src="https://placehold.co/560x420/0a0a0a/FF8C00?text=Amazon+Search+Ranking&font=roboto" alt="Amazon SEO" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
+      <img src="https://abdullah-gull.github.io/images/storefront-with-abdullah.gift.gif" alt="Amazon SEO" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
     </div>
   </div>
   <div class="max-w-[1100px] mx-auto mt-10">
@@ -1145,7 +1168,7 @@
       <a href="meeting.html" class="inline-flex items-center gap-2 bg-[#FF8C00] text-black px-7 py-3.5 rounded-full font-bold text-sm mt-8 hover:bg-white transition-all duration-300">Talk to Abdullah <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="order-first lg:order-last">
-      <img src="https://placehold.co/560x420/0a0a0a/FF8C00?text=Brand+Design&font=roboto" alt="Amazon Design" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
+      <img src="https://abdullah-gull.github.io/images/storefront-with-abdullah.gift.gif" alt="Amazon Design" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
     </div>
   </div>
   <div class="max-w-[1100px] mx-auto mt-10">
@@ -1163,7 +1186,7 @@
       <a href="meeting.html" class="inline-flex items-center gap-2 bg-[#FF8C00] text-black px-7 py-3.5 rounded-full font-bold text-sm mt-8 hover:bg-white transition-all duration-300">Talk to Abdullah <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="order-first lg:order-last">
-      <img src="https://placehold.co/560x420/0a0a0a/FF8C00?text=Catalog+Management&font=roboto" alt="Amazon Merchandising" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
+      <img src="https://abdullah-gull.github.io/images/storefront-with-abdullah.gift.gif" alt="Amazon Merchandising" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
     </div>
   </div>
   <div class="max-w-[1100px] mx-auto mt-10">
@@ -1177,11 +1200,11 @@
     <div>
       <span class="text-[#ff8c00] text-[12px] font-bold uppercase tracking-widest">Catalog Troubleshooting</span>
       <h2 class="text-2xl sm:text-3xl font-black tracking-tight mt-3 mb-5">Catalog Troubleshooting</h2>
-      <p class="text-zinc-400 text-[15px] leading-relaxed">Amazon can be complicated to navigate, even for seasoned sellers. Add in policy updates and notoriously bad seller support, and it can get troublesome quickly. With over five years of troubleshooting experience, I'm confident I can help.</p><div class="grid sm:grid-cols-2 gap-x-8 gap-y-3 my-6 max-w-xl"><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">Price Strategy</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">UPC to GS1 Barcode Changes</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">Negative Seller Feedback</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">Listing Reinstatement</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">Parentages</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">New Product Creation</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">Brand Name Changes</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">Other Amazon Issues</span></div></div><div class="grid sm:grid-cols-2 gap-x-10 gap-y-8 mt-8"><div><h4 class="text-white font-bold text-[15px] mb-2">Price Strategy</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">There are a variety of pricing strategies that can be used to attract customers, increase sales, and maintain competitiveness — among them dynamic pricing, competitive pricing, bundling, promotions, and subscriptions.</p></div><div><h4 class="text-white font-bold text-[15px] mb-2">Parentages</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">By setting up parentages, we connect variations such as color or size to the same listing. This gives customers improved options to purchase. Parentage setup or recreation involves a complex process that requires you to have familiarity with Amazon flat files — I run this the right way to reduce the risk of deleting your Amazon catalog data.</p></div><div><h4 class="text-white font-bold text-[15px] mb-2">New Product Creation</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">Adding new products to Amazon's catalog has never been easier. New problems can often get lost in the process of gaining approvals, using the right product identifiers, submitting the necessary documents, and correctly filling all the fields required by Amazon — luckily, with your own specialist handling the complexity, you're free to focus on growing your business.</p></div><div><h4 class="text-white font-bold text-[15px] mb-2">UPC to GS1 Barcode Changes</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">Amazon requires sellers to use GS1 UPC codes to be fully compliant and prevent listings from disappearing. I'll update these to stay compliant and prevent problems before they happen.</p></div><div><h4 class="text-white font-bold text-[15px] mb-2">Negative Seller Feedback</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">Once a single star review hits your account, I'll do my best to remove it. Please note that we say "attempt" as it's a numbers game, but I can't promise every review gets removed, we can confidently say that many of them will.</p></div><div><h4 class="text-white font-bold text-[15px] mb-2">Brand Name Changes</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">A brand name change can occur for many reasons. You might need to do it as a result of optimizing your catalog or adding a newly registered brand. Unfortunately, Amazon doesn't make it easy to change your brand name — sometimes this simple task can lead to hours of work. Luckily, if you're a newly registered seller, you might run into problems connecting your listings to your brands, I prevent this from happening — and if you're already selling using A+ content or brand stores, I know how to deal with tricky brand name changes and brand-side issues, so you can get peace of mind.</p></div></div>
+      <p class="text-zinc-400 text-[15px] leading-relaxed">Amazon can be complicated to navigate, even for seasoned sellers. Add in policy updates and notoriously bad seller support, and it can get troublesome quickly. With over five years of troubleshooting experience, I'm confident I can help.</p><div class="grid sm:grid-cols-2 gap-x-8 gap-y-3 my-6 max-w-xl"><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">Price Strategy</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">UPC to GS1 Barcode Changes</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">Negative Seller Feedback</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">Listing Reinstatement</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">Parentages</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">New Product Creation</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">Brand Name Changes</span></div><div class="flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="shrink-0"><circle cx="10" cy="10" r="10" fill="#FF8C00" fill-opacity="0.15"/><path d="M6 10.5l2.5 2.5 5.5-6" stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="text-zinc-300 text-[13.5px]">Other Amazon Issues</span></div></div><div class="grid sm:grid-cols-2 gap-x-10 gap-y-8 mt-8"><div><h4 class="text-white font-bold text-[15px] mb-2">Price Strategy</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">There are a variety of pricing strategies that can be used to attract customers, increase sales, and maintain competitiveness — among them dynamic pricing, competitive pricing, bundling, promotions, and subscriptions.</p></div><div><h4 class="text-white font-bold text-[15px] mb-2">Parentages</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">By setting up parentages, we connect variations such as color or size to the same listing. This gives customers improved options to purchase. Parentage setup or recreation involves a complex process that requires you to have familiarity with Amazon flat files — I run this the right way to reduce the risk of deleting your Amazon catalog data.</p></div><div><h4 class="text-white font-bold text-[15px] mb-2">New Product Creation</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">Adding new products to Amazon's catalog has never been easier. New problems can often get lost in the process of gaining approvals, using the right product identifiers, submitting the necessary documents, and correctly filling all the fields required by Amazon — luckily, with your own specialist handling the complexity, you're free to focus on growing your business.</p></div><div><h4 class="text-white font-bold text-[15px] mb-2">UPC to GS1 Barcode Changes</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">Amazon requires sellers to use GS1 UPC codes to be fully compliant and prevent listings from disappearing. I'll update these to stay compliant and prevent problems before they happen.</p></div><div><h4 class="text-white font-bold text-[15px] mb-2">Negative Seller Feedback</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">Once a single star review hits your account, I'll do my best to remove it. Please note that we say "attempt" as it's a numbers game, but I can't promise every review gets removed, we can confidently say that many of them will.</p></div><div><h4 class="text-white font-bold text-[15px] mb-2">Brand Name Changes</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">A brand name change can occur for many reasons. You might need to do it as a result of optimizing your catalog or adding a newly registered brand. Unfortunately, Amazon doesn't make it easy to change your brand name — sometimes this simple task can lead to hours of work. Luckily, if you're a newly registered seller, you might run into problems connecting your listings to your brands, I prevent this from happening — and if you're already selling using A+ content or brand stores, I know how to deal with tricky brand name changes and brand-side issues, so you can get peace of mind.</p></div><div><h4 class="text-white font-bold text-[15px] mb-2">Listing Reinstatement</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">Every Amazon seller will eventually deal with a listing suspension or takedown. If your top-selling ASIN has been deactivated, or you're seeing a "Page not found" error, you'll need a reliable specialist to get your listing back up. I have years of experience with reinstating listings on Amazon — I know exactly what steps to take, and how to construct and submit an effective Plan of Action (POA) that meets Amazon's requirements to get your listing back up and running. The faster we get your listing back online, the faster you'll make sales again.</p></div><div><h4 class="text-white font-bold text-[15px] mb-2">Other Amazon Issues</h4><p class="text-zinc-400 text-[13.5px] leading-relaxed">Seller Central changes and grows every day. With that come bugs and errors that can affect your listings and ultimately your sales. I know how to fix virtually any error on Seller Central — from a broken categorization that can lead to a drop in search rankings to image bugs that can suppress your listing. I can also fix tricky A+ Content or Store rejection errors, get items suspended from advertising running again, remove poor seller feedback that can hurt your buy box rating, and get rid of nearly every other common error that comes with selling on Amazon.</p></div></div>
       <a href="meeting.html" class="inline-flex items-center gap-2 bg-[#FF8C00] text-black px-7 py-3.5 rounded-full font-bold text-sm mt-8 hover:bg-white transition-all duration-300">Talk to Abdullah <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="order-first lg:order-last">
-      <img src="https://placehold.co/560x420/0a0a0a/FF8C00?text=Catalog+Troubleshooting&font=roboto" alt="Catalog Troubleshooting" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
+      <img src="https://abdullah-gull.github.io/images/storefront-with-abdullah.gift.gif" alt="Catalog Troubleshooting" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
     </div>
   </div>
   <div class="max-w-[1100px] mx-auto mt-10">
@@ -1199,7 +1222,7 @@
       <a href="meeting.html" class="inline-flex items-center gap-2 bg-[#FF8C00] text-black px-7 py-3.5 rounded-full font-bold text-sm mt-8 hover:bg-white transition-all duration-300">Talk to Abdullah <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="order-first lg:order-last">
-      <img src="https://placehold.co/560x420/0a0a0a/FF8C00?text=Main+Image+CTR&font=roboto" alt="Main Image Optimized for Amazon CTR" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
+      <img src="https://abdullah-gull.github.io/images/storefront-with-abdullah.gift.gif" alt="Main Image Optimized for Amazon CTR" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
     </div>
   </div>
   <div class="max-w-[1100px] mx-auto mt-10">
@@ -1217,7 +1240,7 @@
       <a href="meeting.html" class="inline-flex items-center gap-2 bg-[#FF8C00] text-black px-7 py-3.5 rounded-full font-bold text-sm mt-8 hover:bg-white transition-all duration-300">Talk to Abdullah <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="order-first lg:order-last">
-      <img src="https://placehold.co/560x420/0a0a0a/FF8C00?text=Platform+Management&font=roboto" alt="Amazon Platform Management" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
+      <img src="https://abdullah-gull.github.io/images/storefront-with-abdullah.gift.gif" alt="Amazon Platform Management" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
     </div>
   </div>
   <div class="max-w-[1100px] mx-auto mt-10">
@@ -1235,7 +1258,7 @@
       <a href="meeting.html" class="inline-flex items-center gap-2 bg-[#FF8C00] text-black px-7 py-3.5 rounded-full font-bold text-sm mt-8 hover:bg-white transition-all duration-300">Talk to Abdullah <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="order-first lg:order-last">
-      <img src="https://placehold.co/560x420/0a0a0a/FF8C00?text=Reporting+Dashboard&font=roboto" alt="Reporting and Monitoring" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
+      <img src="https://abdullah-gull.github.io/images/storefront-with-abdullah.gift.gif" alt="Reporting and Monitoring" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
     </div>
   </div>
   <div class="max-w-[1100px] mx-auto mt-10">
@@ -1253,7 +1276,7 @@
       <a href="meeting.html" class="inline-flex items-center gap-2 bg-[#FF8C00] text-black px-7 py-3.5 rounded-full font-bold text-sm mt-8 hover:bg-white transition-all duration-300">Talk to Abdullah <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="order-first lg:order-last">
-      <img src="https://placehold.co/560x420/0a0a0a/FF8C00?text=Account+Audit&font=roboto" alt="Seller Central Account Audit" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
+      <img src="https://abdullah-gull.github.io/images/storefront-with-abdullah.gift.gif" alt="Seller Central Account Audit" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
     </div>
   </div>
   <div class="max-w-[1100px] mx-auto mt-10">
@@ -1271,7 +1294,7 @@
       <a href="meeting.html" class="inline-flex items-center gap-2 bg-[#FF8C00] text-black px-7 py-3.5 rounded-full font-bold text-sm mt-8 hover:bg-white transition-all duration-300">Talk to Abdullah <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="order-first lg:order-last">
-      <img src="https://placehold.co/560x420/0a0a0a/FF8C00?text=Shipping+Plans&font=roboto" alt="Amazon Shipping Plans" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
+      <img src="https://abdullah-gull.github.io/images/storefront-with-abdullah.gift.gif" alt="Amazon Shipping Plans" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
     </div>
   </div>
   <div class="max-w-[1100px] mx-auto mt-10">
@@ -1289,7 +1312,7 @@
       <a href="meeting.html" class="inline-flex items-center gap-2 bg-[#FF8C00] text-black px-7 py-3.5 rounded-full font-bold text-sm mt-8 hover:bg-white transition-all duration-300">Talk to Abdullah <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="order-first lg:order-last">
-      <img src="https://placehold.co/560x420/0a0a0a/FF8C00?text=Copywriting&font=roboto" alt="Copywriting for Amazon Listings" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
+      <img src="https://abdullah-gull.github.io/images/storefront-with-abdullah.gift.gif" alt="Copywriting for Amazon Listings" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
     </div>
   </div>
   <div class="max-w-[1100px] mx-auto mt-10">
@@ -1307,7 +1330,7 @@
       <a href="meeting.html" class="inline-flex items-center gap-2 bg-[#FF8C00] text-black px-7 py-3.5 rounded-full font-bold text-sm mt-8 hover:bg-white transition-all duration-300">Talk to Abdullah <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="order-first lg:order-last">
-      <img src="https://placehold.co/560x420/0a0a0a/FF8C00?text=Market+Share+Growth&font=roboto" alt="Market Share Growth" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
+      <img src="https://abdullah-gull.github.io/images/storefront-with-abdullah.gift.gif" alt="Market Share Growth" loading="lazy" decoding="async" class="w-full rounded-2xl border border-zinc-800 object-cover">
     </div>
   </div>
   <div class="max-w-[1100px] mx-auto mt-10">
