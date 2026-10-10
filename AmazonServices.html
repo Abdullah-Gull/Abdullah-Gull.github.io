@@ -13,14 +13,18 @@
     <link rel="canonical" href="https://abdullah-gull.github.io/about.html">
 
     <!-- Open Graph -->
+    <meta property="og:locale" content="en_US">
     <meta property="og:type" content="profile">
     <meta property="og:title" content="About Abdullah Gull - Amazon PPC & SEO Consultant">
     <meta property="og:description" content="Amazon Ads Advanced Partner with 8+ years of Amazon experience — the story, credentials, and mission behind Abdullah Gull.">
     <meta property="og:image" content="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg">
+    <meta property="og:image:width" content="480">
+    <meta property="og:image:height" content="560">
     <meta property="og:url" content="https://abdullah-gull.github.io/about.html">
     <meta property="og:site_name" content="About Abdullah Gull - Amazon PPC & SEO Consultant">
     <meta property="profile:first_name" content="Abdullah">
     <meta property="profile:last_name" content="Gull">
+    <meta property="article:modified_time" content="2026-10-10T09:00:00+00:00">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -28,6 +32,8 @@
     <meta name="twitter:description" content="Amazon Ads Advanced Partner with 8+ years of Amazon experience.">
     <meta name="twitter:image" content="https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg">
     <meta name="twitter:site" content="@abdullahgullamz">
+    <meta name="twitter:label1" content="Time to read">
+    <meta name="twitter:data1" content="4 minutes">
     <meta name="theme-color" content="#0B0C0E">
 
     <!-- Preconnects: only the origins actually used, so the browser opens
@@ -286,10 +292,33 @@
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": "https://abdullah-gull.github.io/about.html#breadcrumb",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://abdullah-gull.github.io/" },
       { "@type": "ListItem", "position": 2, "name": "About", "item": "https://abdullah-gull.github.io/about.html" }
     ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://abdullah-gull.github.io/#website",
+    "url": "https://abdullah-gull.github.io/",
+    "name": "Abdullah Gull - Amazon PPC & SEO Consultant",
+    "publisher": { "@id": "https://abdullah-gull.github.io/#person" },
+    "inLanguage": "en-US"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://abdullah-gull.github.io/about.html#webpage",
+    "url": "https://abdullah-gull.github.io/about.html",
+    "name": "About Abdullah Gull - Amazon PPC & SEO Consultant",
+    "description": "Meet Abdullah Gull — Amazon Ads Advanced Partner and author with 8+ years of Amazon experience helping e-commerce brands scale through PPC and SEO.",
+    "isPartOf": { "@id": "https://abdullah-gull.github.io/#website" },
+    "primaryImageOfPage": "https://abdullah-gull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg",
+    "inLanguage": "en-US",
+    "breadcrumb": { "@id": "https://abdullah-gull.github.io/about.html#breadcrumb" },
+    "about": { "@id": "https://abdullah-gull.github.io/#person" }
   }
 ]
     </script>
@@ -760,9 +789,32 @@
     border: 1px solid rgba(255,140,0,0.3); background: rgba(255,140,0,0.04);
     border-radius: 18px; backdrop-filter: blur(6px);
   }
+  .about-hero-arc {
+    position: absolute; top: 50%; left: -180px; width: 420px; height: 420px;
+    transform: translateY(-50%); border-radius: 50%;
+    background: conic-gradient(from 200deg, rgba(255,140,0,0.35), transparent 55%);
+    filter: blur(40px); opacity: 0.6; pointer-events: none; z-index: 0;
+  }
+  .about-hero-arc-ring {
+    position: absolute; top: 50%; left: -160px; width: 360px; height: 360px;
+    transform: translateY(-50%); border-radius: 50%;
+    border: 1px solid rgba(255,140,0,0.25); pointer-events: none; z-index: 0;
+  }
+  .about-hero-badge {
+    position: absolute; top: 28px; right: 28px; width: 40px; height: 40px; border-radius: 12px;
+    border: 1px solid rgba(255,140,0,0.3); background: rgba(255,140,0,0.06);
+    display: flex; align-items: center; justify-content: center; z-index: 1;
+    animation: about-badge-float 4s ease-in-out infinite;
+  }
+  @keyframes about-badge-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 </style>
 <section class="about-glow-hero relative bg-black text-white pt-20 pb-16 px-6 sm:pt-24 sm:pb-20 sm:px-8 lg:pt-32 lg:pb-24 lg:px-12 overflow-hidden text-center">
   <div class="absolute inset-0 z-0 opacity-40" style="background-image: radial-gradient(#333 1px, transparent 1px); background-size: 30px 30px;" aria-hidden="true"></div>
+  <div class="about-hero-arc" aria-hidden="true"></div>
+  <div class="about-hero-arc-ring" aria-hidden="true"></div>
+  <div class="about-hero-badge" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8L12 2z" fill="#FF8C00"/></svg>
+  </div>
   <div class="relative z-10 max-w-[820px] mx-auto">
     <span class="inline-flex items-center gap-2 mb-6 border border-zinc-800 bg-zinc-900/60 px-4 py-1.5 rounded-full text-[#ff8c00] text-[11px] font-bold uppercase tracking-widest">
       Our Purpose &amp; Who I Am
@@ -1089,10 +1141,47 @@
 <!-- =========================================================
      AUTHOR / BOOK
      ========================================================= -->
+<style>
+  .book-cover-wrap { perspective: 1200px; }
+  .book-cover {
+    position: relative; width: 168px; height: 240px; border-radius: 6px 10px 10px 6px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 55%, #000 100%);
+    border: 1px solid rgba(255,140,0,0.3);
+    box-shadow: -10px 0 0 -2px #000, -14px 10px 36px rgba(0,0,0,0.6), 0 0 40px rgba(255,140,0,0.08);
+    transform: rotateY(-18deg) rotateX(2deg);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 20px 16px; overflow: hidden;
+  }
+  .book-cover-wrap:hover .book-cover { transform: rotateY(-8deg) rotateX(1deg) scale(1.02); box-shadow: -10px 0 0 -2px #000, -18px 14px 44px rgba(0,0,0,0.65), 0 0 56px rgba(255,140,0,0.16); }
+  .book-cover::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 10px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.6), transparent);
+  }
+  .book-cover::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 75% 15%, rgba(255,140,0,0.18), transparent 55%);
+  }
+  .book-cover-badge {
+    position: relative; z-index: 1; align-self: flex-start;
+    border: 1px solid rgba(255,140,0,0.4); color: #FF8C00; font-size: 8px; font-weight: 800;
+    letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 7px; border-radius: 4px;
+    background: rgba(255,140,0,0.08);
+  }
+  .book-cover-title { position: relative; z-index: 1; }
+  .book-cover-spine-line { position: relative; z-index: 1; width: 28px; height: 2px; background: #FF8C00; margin-top: 10px; }
+</style>
 <section class="bg-black text-white py-16 sm:py-20 px-6 sm:px-8 lg:px-16">
-  <div class="max-w-[1000px] mx-auto flex flex-col md:flex-row items-center gap-10">
-    <div class="w-36 h-52 sm:w-40 sm:h-56 shrink-0 rounded-xl bg-gradient-to-br from-zinc-800 to-black border border-zinc-700 flex items-center justify-center text-center p-4">
-      <span class="text-[#FF8C00] font-black text-sm leading-snug">AMAZON<br>SELLING<br><span class="text-white text-[11px] font-medium">— the book —</span></span>
+  <div class="max-w-[1000px] mx-auto flex flex-col md:flex-row items-center gap-12">
+    <div class="book-cover-wrap shrink-0">
+      <div class="book-cover">
+        <span class="book-cover-badge">By Abdullah Gull</span>
+        <div class="book-cover-title">
+          <div class="text-white font-black text-[22px] leading-[1.05] tracking-tight">Amazon<br>Selling</div>
+          <div class="book-cover-spine-line"></div>
+          <p class="text-zinc-400 text-[10px] font-semibold uppercase tracking-widest mt-2">A Practical Guide for Sellers</p>
+        </div>
+      </div>
     </div>
     <div class="text-center md:text-left">
       <span class="text-[#ff8c00] text-[13px] font-bold uppercase tracking-widest">Author</span>
