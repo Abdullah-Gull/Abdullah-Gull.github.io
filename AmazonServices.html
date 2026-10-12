@@ -2,72 +2,77 @@
 <html lang="ur">
 <head>
   <meta charset="UTF-8">
-  <title>Dynamic Favicon Status</title>
-  
-  <!-- Aapka Custom Favicon Link -->
-  <link rel="icon" id="favicon" href="https://abdullah-gull.github.io/images/new-facon.jpg.png">
-
+  <title>Image Background Tab Status</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      padding-top: 100px;
-      transition: background-color 0.4s ease;
-      background-color: white; /* Normal / Default Background */
+      padding-top: 80px;
+      background-color: #f0f2f5; 
     }
 
-    /* Active Tab Background (Green) */
-    body.online {
-      background-color: #2ec4b6; 
-      color: white;
-    }
-
-    .status-card {
+    /* Image Box - Default (Offline / Grey Background) */
+    .image-box {
       display: inline-block;
-      padding: 20px 40px;
-      border-radius: 10px;
-      background: rgba(0, 0, 0, 0.05);
-      font-size: 24px;
+      padding: 15px;
+      background-color: #cccccc; /* Grey Background */
+      border-radius: 12px;
+      transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    /* Jab user tab par ho (Online / Green Background) */
+    .image-box.online {
+      background-color: #2ec4b6; /* Green Background */
+      box-shadow: 0 0 25px rgba(46, 196, 182, 0.7); /* Glow effect */
+    }
+
+    /* Tasweer ki styling */
+    .image-box img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .status-text {
+      margin-top: 25px;
+      font-size: 22px;
       font-weight: bold;
+      color: #333;
     }
   </style>
 </head>
 <body>
 
-  <div class="status-card">
-    Status: <span id="status-text">Checking...</span>
+  <!-- Tasweer aur uska background container -->
+  <div class="image-box" id="imageBox">
+    <img src="https://abdullah-gull.github.io/images/new-facon.jpg.png" alt="Profile">
   </div>
 
+  <div class="status-text" id="statusText">Status: Checking...</div>
+
   <script>
-    const favicon = document.getElementById('favicon');
+    const imageBox = document.getElementById('imageBox');
+    const statusText = document.getElementById('statusText');
 
-    // Aapka apna favicon link (Jab user tab par ho)
-    const activeFavicon = "https://abdullah-gull.github.io/images/new-facon.jpg.png";
-    
-    // Offline hone par agar koi doosri image lagani ho toh uska link yahan dalein (Warna isko khali bhi chhod sakte hain)
-    const inactiveFavicon = "https://abdullah-gull.github.io/images/new-facon.jpg.png"; // Ya koi doosra offline icon link
-
-    function updateVisibility() {
+    function updateTabStatus() {
       if (document.visibilityState === 'visible') {
-        // Jab user isi tab par ho
-        document.body.classList.add('online');
-        document.getElementById('status-text').innerText = 'Online 🟢';
-        document.title = "🟢 Aap Is Page Par Hain";
-        favicon.href = activeFavicon;
+        // Jab user ishi tab par ho (Green Background)
+        imageBox.classList.add('online');
+        statusText.innerText = "Status: Online (Active Tab)";
       } else {
-        // Jab user kisi doosre tab par chala jaye
-        document.body.classList.remove('online');
-        document.getElementById('status-text').innerText = 'Offline 🔴';
-        document.title = "🔴 Wapas Aayein!";
-        favicon.href = inactiveFavicon;
+        // Jab user doosre tab par chala jaye (Grey Background)
+        imageBox.classList.remove('online');
+        statusText.innerText = "Status: Offline (Inactive Tab)";
       }
     }
 
     // Page load hone par status set karein
-    updateVisibility();
+    updateTabStatus();
 
-    // Tab visibility change hone par event listen karein
-    document.addEventListener('visibilitychange', updateVisibility);
+    // Tab switch hone par event trigger hoga
+    document.addEventListener('visibilitychange', updateTabStatus);
   </script>
 
 </body>
