@@ -1,60 +1,17 @@
-<!DOCTYPE html>
-<html lang="ur">
-<head>
-  <meta charset="UTF-8">
-  <title>Aapka Page Title</title>
-
-  <!-- Favicon Tag -->
-  <link rel="icon" id="dynamic-favicon" href="https://abdullah-gull.github.io/images/new-facon.jpg.png">
-
-  <script>
-    const imageUrl = "https://abdullah-gull.github.io/images/new-facon.jpg.png";
-
-    // Dynamic Favicon generate karne ka function
-    function setFaviconWithBg(bgColor) {
-      const canvas = document.createElement('canvas');
-      canvas.width = 64;
-      canvas.height = 64;
-      const ctx = canvas.getContext('2d');
-
-      const img = new Image();
-      img.crossOrigin = "Anonymous"; // CORS issue fix ke liye
-      img.src = imageUrl;
-
-      img.onload = () => {
-        // 1. Pehle canvas par Green/Grey Background fill karein
-        ctx.fillStyle = bgColor;
-        ctx.fillRect(0, 0, 64, 64);
-
-        // 2. Us ke upar aapki photo draw karein
-        ctx.drawImage(img, 4, 4, 56, 56);
-
-        // 3. Tab favicon link update karein
-        const faviconLink = document.getElementById('dynamic-favicon');
-        if (faviconLink) {
-          faviconLink.href = canvas.toDataURL('image/png');
-        }
-      };
-    }
-
-    function updateFavicon() {
-      if (document.visibilityState === 'visible') {
-        // Active Tab -> Green Background (#2ec4b6 ya #28a745)
-        setFaviconWithBg('#2ec4b6');
-      } else {
-        // Inactive Tab -> Grey Background (#888888)
-        setFaviconWithBg('#888888');
-      }
-    }
-
-    // Load aur Visibility Event listeners
-    window.addEventListener('DOMContentLoaded', updateFavicon);
-    document.addEventListener('visibilitychange', updateFavicon);
-  </script>
-</head>
-<body>
-
-  <!-- Aapka baaki saara main page content yahan aayega -->
-
-</body>
-</html>
+<link rel="icon" id="dyn-fav" href="https://abdullah-gull.github.io/images/new-facon.jpg.png">
+<script>
+  const imgUrl = "https://abdullah-gull.github.io/images/new-facon.jpg.png";
+  function setFav(bg) {
+    let c = document.createElement('canvas'); c.width = c.height = 64;
+    let ctx = c.getContext('2d'), img = new Image();
+    img.crossOrigin = "Anonymous"; img.src = imgUrl;
+    img.onload = () => {
+      ctx.fillStyle = bg; ctx.fillRect(0, 0, 64, 64);
+      ctx.drawImage(img, 4, 4, 56, 56);
+      document.getElementById('dyn-fav').href = c.toDataURL();
+    };
+  }
+  const checkVis = () => setFav(document.visibilityState === 'visible' ? '#2ec4b6' : '#888888');
+  document.addEventListener('visibilitychange', checkVis);
+  checkVis();
+</script>
