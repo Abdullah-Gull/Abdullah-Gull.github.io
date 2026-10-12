@@ -770,6 +770,37 @@
   .aud-final-cta .aud-cta-btn:hover { background:#1A1B1F; }
   .aud-final-cta .aud-qty-row { justify-content:center; }
   .aud-final-cta .aud-qty-label { text-align:center; }
+
+  /* Cart drawer */
+  .aud-cart-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:9998; opacity:0; pointer-events:none; transition:opacity .25s ease; }
+  .aud-cart-overlay.is-open { opacity:1; pointer-events:auto; }
+  .aud-cart-drawer { position:fixed; top:0; right:0; bottom:0; width:100%; max-width:420px; background:#fff; z-index:9999; transform:translateX(100%); transition:transform .3s ease; display:flex; flex-direction:column; box-shadow:-20px 0 50px rgba(0,0,0,0.35); }
+  .aud-cart-drawer.is-open { transform:translateX(0); }
+  .aud-cart-head { display:flex; align-items:center; justify-content:space-between; padding:20px 22px; border-bottom:1px solid #eee; }
+  .aud-cart-head h3 { display:flex; align-items:center; gap:8px; font-size:17px; font-weight:800; color:#0B0C0E; margin:0; }
+  .aud-cart-head h3 svg { width:20px; height:20px; color:#0B0C0E; }
+  .aud-cart-close { background:none; border:none; font-size:20px; cursor:pointer; color:#555; line-height:1; padding:4px; }
+  .aud-cart-body { flex:1; overflow-y:auto; padding:18px 22px; }
+  .aud-cart-item { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 0; border-bottom:1px solid #f0f0f0; }
+  .aud-cart-item-name { font-size:14.5px; font-weight:700; color:#0B0C0E; }
+  .aud-cart-item-sub { font-size:12.5px; color:#8a8a8a; margin-top:3px; }
+  .aud-cart-foot { border-top:1px solid #eee; padding:18px 22px 22px; }
+  .aud-cart-subtotal { display:flex; align-items:center; justify-content:space-between; font-weight:800; font-size:15px; color:#0B0C0E; margin-bottom:4px; }
+  .aud-cart-note { font-size:12px; color:#9a9a9a; margin-bottom:16px; }
+  .aud-cart-btn { display:block; width:100%; text-align:center; padding:13px; border-radius:10px; font-weight:800; font-size:14px; cursor:pointer; border:none; margin-bottom:10px; }
+  .aud-cart-btn.secondary { background:#fff; color:#0B0C0E; border:1.5px solid #0B0C0E; }
+  .aud-cart-btn.primary { background:#0B0C0E; color:#fff; }
+  .aud-cart-btn.primary:hover { background:#FF8C00; color:#0B0C0E; }
+  .aud-checkout-form { display:none; flex-direction:column; gap:12px; }
+  .aud-checkout-form.is-active { display:flex; }
+  .aud-checkout-form label { font-size:12.5px; font-weight:700; color:#0B0C0E; display:block; margin-bottom:5px; }
+  .aud-checkout-form input, .aud-checkout-form textarea { width:100%; border:1.5px solid #e2e2e2; border-radius:9px; padding:10px 12px; font-size:13.5px; color:#0B0C0E; font-family:inherit; }
+  .aud-checkout-form textarea { resize:vertical; min-height:70px; }
+  .aud-cart-success { display:none; text-align:center; padding:30px 10px; }
+  .aud-cart-success.is-active { display:block; }
+  .aud-cart-success svg { width:46px; height:46px; color:#15a34a; margin-bottom:14px; }
+  .aud-cart-success h4 { font-size:16px; font-weight:800; color:#0B0C0E; margin-bottom:8px; }
+  .aud-cart-success p { font-size:13px; color:#8a8a8a; line-height:1.6; }
 </style>
 
 <!-- =========================================================
@@ -799,10 +830,10 @@
           <span class="aud-qty-label">Audit how many accounts?</span>
           <div class="aud-qty-box">
             <button type="button" onclick="(function(el){var i=el.nextElementSibling;i.value=Math.max(1,(parseInt(i.value)||1)-1);})(this)">&minus;</button>
-            <input type="text" value="1" inputmode="numeric" aria-label="Number of accounts">
+            <input type="text" id="audQtyHero" value="1" inputmode="numeric" aria-label="Number of accounts">
             <button type="button" onclick="(function(el){var i=el.previousElementSibling;i.value=(parseInt(i.value)||1)+1;})(this)">+</button>
           </div>
-          <a href="contact.html#quoteRequestForm" class="aud-cta-btn">Get An Account Audit <span aria-hidden="true">&rarr;</span></a>
+          <button type="button" class="aud-cta-btn" onclick="openAuditCart('audQtyHero')">Get An Account Audit <span aria-hidden="true">&rarr;</span></button>
         </div>
       </div>
       <div class="aud-hero-mock">
@@ -961,14 +992,191 @@
         <span class="aud-qty-label">Audit how many accounts?</span>
         <div class="aud-qty-box">
           <button type="button" onclick="(function(el){var i=el.nextElementSibling;i.value=Math.max(1,(parseInt(i.value)||1)-1);})(this)">&minus;</button>
-          <input type="text" value="1" inputmode="numeric" aria-label="Number of accounts">
+          <input type="text" id="audQtyFinal" value="1" inputmode="numeric" aria-label="Number of accounts">
           <button type="button" onclick="(function(el){var i=el.previousElementSibling;i.value=(parseInt(i.value)||1)+1;})(this)">+</button>
         </div>
-        <a href="contact.html#quoteRequestForm" class="aud-cta-btn">Get an Account Audit <span aria-hidden="true">&rarr;</span></a>
+        <button type="button" class="aud-cta-btn" onclick="openAuditCart('audQtyFinal')">Get an Account Audit <span aria-hidden="true">&rarr;</span></button>
       </div>
     </div>
   </div>
 </section>
+
+<!-- =========================================================
+     CART-STYLE AUDIT REQUEST DRAWER
+     ========================================================= -->
+<div class="aud-cart-overlay" id="audCartOverlay" onclick="closeAuditCart()"></div>
+<div class="aud-cart-drawer" id="audCartDrawer" role="dialog" aria-modal="true" aria-label="Amazon account audit request">
+
+  <!-- Cart view -->
+  <div id="audCartView">
+    <div class="aud-cart-head">
+      <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 2l1.5 4M18 2l-1.5 4M3 7h18l-1.5 11a2 2 0 01-2 1.8H6.5a2 2 0 01-2-1.8L3 7z"/></svg> Your Audit Request</h3>
+      <button class="aud-cart-close" onclick="closeAuditCart()" aria-label="Close">&times;</button>
+    </div>
+    <div class="aud-cart-body">
+      <div class="aud-cart-item">
+        <div>
+          <div class="aud-cart-item-name">Amazon Account Audit</div>
+          <div class="aud-cart-item-sub" id="audCartLine">1 &times; $1,000 = $1,000</div>
+        </div>
+        <div class="aud-qty-box">
+          <button type="button" onclick="audCartChangeQty(-1)">&minus;</button>
+          <input type="text" id="audCartQty" value="1" inputmode="numeric" aria-label="Number of accounts" oninput="audCartSyncFromInput()">
+          <button type="button" onclick="audCartChangeQty(1)">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="aud-cart-foot">
+      <div class="aud-cart-subtotal"><span>Total</span><span id="audCartTotal">$1,000</span></div>
+      <p class="aud-cart-note">No payment is taken here — this sends your audit request straight to Abdullah, who'll follow up by email to confirm scope and payment.</p>
+      <button class="aud-cart-btn primary" onclick="audShowCheckout()">Request This Audit &rarr;</button>
+      <button class="aud-cart-btn secondary" onclick="closeAuditCart()">Continue Browsing</button>
+    </div>
+  </div>
+
+  <!-- Checkout / contact details view -->
+  <div id="audCheckoutView" style="display:none;">
+    <div class="aud-cart-head">
+      <h3>Your Details</h3>
+      <button class="aud-cart-close" onclick="closeAuditCart()" aria-label="Close">&times;</button>
+    </div>
+    <div class="aud-cart-body">
+      <form class="aud-checkout-form is-active" id="audCheckoutForm">
+        <div>
+          <label for="audName">Your name</label>
+          <input type="text" id="audName" name="name" required>
+        </div>
+        <div>
+          <label for="audEmail">Work email</label>
+          <input type="email" id="audEmail" name="email" required>
+        </div>
+        <div>
+          <label for="audStore">Amazon storefront / brand name</label>
+          <input type="text" id="audStore" name="storefront">
+        </div>
+        <div>
+          <label for="audNotes">Anything specific you'd like reviewed? (optional)</label>
+          <textarea id="audNotes" name="notes"></textarea>
+        </div>
+        <input type="hidden" name="service" value="Amazon Account Audit">
+        <input type="hidden" name="accounts" id="audHiddenQty" value="1">
+        <input type="hidden" name="total" id="audHiddenTotal" value="$1,000">
+        <input type="hidden" name="_subject" value="New Amazon Account Audit Request">
+      </form>
+    </div>
+    <div class="aud-cart-foot">
+      <div class="aud-cart-subtotal"><span>Total</span><span id="audCheckoutTotal">$1,000</span></div>
+      <button class="aud-cart-btn primary" id="audSubmitBtn" onclick="audSubmitCheckout()">Send Request to Abdullah</button>
+      <button class="aud-cart-btn secondary" onclick="audShowCart()">&larr; Back</button>
+    </div>
+  </div>
+
+  <!-- Success view -->
+  <div id="audSuccessView" class="aud-cart-success" style="display:none;">
+    <div style="padding:30px 22px; text-align:center;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12.5l2.5 2.5L16 9"/></svg>
+      <h4>Request sent</h4>
+      <p>Your audit request landed directly in Abdullah's inbox. He'll reply by email within 24&ndash;48 hours to confirm scope and next steps.</p>
+      <button class="aud-cart-btn primary" style="margin-top:18px;" onclick="closeAuditCart()">Done</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var sourceInputId = null;
+
+    window.openAuditCart = function(fromId){
+      sourceInputId = fromId;
+      var sourceVal = fromId ? (parseInt(document.getElementById(fromId).value) || 1) : 1;
+      document.getElementById('audCartQty').value = sourceVal;
+      audShowCart();
+      audUpdateCartTotals();
+      document.getElementById('audCartOverlay').classList.add('is-open');
+      document.getElementById('audCartDrawer').classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    };
+
+    window.closeAuditCart = function(){
+      document.getElementById('audCartOverlay').classList.remove('is-open');
+      document.getElementById('audCartDrawer').classList.remove('is-open');
+      document.body.style.overflow = '';
+      setTimeout(function(){
+        audShowCart();
+        document.getElementById('audCheckoutForm').reset();
+      }, 300);
+    };
+
+    window.audShowCart = function(){
+      document.getElementById('audCartView').style.display = 'block';
+      document.getElementById('audCheckoutView').style.display = 'none';
+      document.getElementById('audSuccessView').style.display = 'none';
+    };
+
+    window.audShowCheckout = function(){
+      document.getElementById('audCartView').style.display = 'none';
+      document.getElementById('audCheckoutView').style.display = 'block';
+      document.getElementById('audSuccessView').style.display = 'none';
+      audUpdateCartTotals();
+    };
+
+    window.audCartChangeQty = function(delta){
+      var input = document.getElementById('audCartQty');
+      var v = Math.max(1, (parseInt(input.value) || 1) + delta);
+      input.value = v;
+      audUpdateCartTotals();
+    };
+
+    window.audCartSyncFromInput = function(){
+      var input = document.getElementById('audCartQty');
+      var v = Math.max(1, parseInt(input.value) || 1);
+      input.value = v;
+      audUpdateCartTotals();
+    };
+
+    window.audUpdateCartTotals = function(){
+      var qty = Math.max(1, parseInt(document.getElementById('audCartQty').value) || 1);
+      var total = qty * 1000;
+      var totalStr = '$' + total.toLocaleString('en-US');
+      document.getElementById('audCartLine').textContent = qty + ' × $1,000 = ' + totalStr;
+      document.getElementById('audCartTotal').textContent = totalStr;
+      document.getElementById('audCheckoutTotal').textContent = totalStr;
+      document.getElementById('audHiddenQty').value = qty;
+      document.getElementById('audHiddenTotal').value = totalStr;
+      if (sourceInputId && document.getElementById(sourceInputId)) {
+        document.getElementById(sourceInputId).value = qty;
+      }
+    };
+
+    window.audSubmitCheckout = function(){
+      var form = document.getElementById('audCheckoutForm');
+      if (!form.reportValidity()) return;
+      var btn = document.getElementById('audSubmitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      var data = new FormData(form);
+      fetch('https://formspree.io/f/mojpjjqk', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res){
+        btn.disabled = false;
+        btn.textContent = 'Send Request to Abdullah';
+        if (res.ok) {
+          document.getElementById('audCartView').style.display = 'none';
+          document.getElementById('audCheckoutView').style.display = 'none';
+          document.getElementById('audSuccessView').style.display = 'block';
+        } else {
+          alert('Something went wrong sending your request — please try again or email abdullahgullwork@outlook.com directly.');
+        }
+      }).catch(function(){
+        btn.disabled = false;
+        btn.textContent = 'Send Request to Abdullah';
+        alert('Something went wrong sending your request — please try again or email abdullahgullwork@outlook.com directly.');
+      });
+    };
+  })();
+</script>
 
 </main>
 
