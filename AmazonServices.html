@@ -1,17 +1,8 @@
-<link rel="icon" id="dyn-fav" href="https://abdullah-gull.github.io/images/new-facon.jpg.png">
+<link rel="icon" id="f">
 <script>
-  const imgUrl = "https://abdullah-gull.github.io/images/new-facon.jpg.png";
-  function setFav(bg) {
-    let c = document.createElement('canvas'); c.width = c.height = 64;
-    let ctx = c.getContext('2d'), img = new Image();
-    img.crossOrigin = "Anonymous"; img.src = imgUrl;
-    img.onload = () => {
-      ctx.fillStyle = bg; ctx.fillRect(0, 0, 64, 64);
-      ctx.drawImage(img, 4, 4, 56, 56);
-      document.getElementById('dyn-fav').href = c.toDataURL();
-    };
-  }
-  const checkVis = () => setFav(document.visibilityState === 'visible' ? '#2ec4b6' : '#888888');
-  document.addEventListener('visibilitychange', checkVis);
-  checkVis();
+  let u="https://abdullah-gull.github.io/images/Abdullah-Gull-Portrait-Banner.jpg.png",
+      s=document.createElement('script'),
+      x=(c)=>(i=new Image(),i.crossOrigin="anonymous",i.src=u,i.onload=()=>{let t=document.createElement('canvas');t.width=t.height=64;let d=t.getContext('2d');d.fillStyle=c;d.fillRect(0,0,64,64);d.drawImage(i,4,4,56,56);document.getElementById('f').href=t.toDataURL()});
+  document.addEventListener('visibilitychange',()=>x(document.visibilityState==='visible'?'#2ec4b6':'#888888'));
+  x('#2ec4b6');
 </script>
