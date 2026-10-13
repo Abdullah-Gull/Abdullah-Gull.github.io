@@ -1,7 +1,19 @@
 <link rel="icon" id="f">
 <script>
-  let u="https://abdullah-gull.github.io/images/Abdullah-Gull-Portrait-Banner.jpg.png",
-  x=(c)=>{let i=new Image();i.crossOrigin="anonymous";i.src=u;i.onload=()=>{let t=document.createElement('canvas');t.width=t.height=64;let d=t.getContext('2d');d.fillStyle=c;d.fillRect(0,0,64,64);d.drawImage(i,0,0,64,64);document.getElementById('f').href=t.toDataURL()}};
-  document.addEventListener('visibilitychange',()=>x(document.visibilityState==='visible'?'#2ec4b6':'#888888'));
-  x('#2ec4b6');
+  function updateFavicon() {
+    let isOnline = document.visibilityState === 'visible';
+    let bgColor = isOnline ? '%232ec4b6' : '%23888888'; // Active = Green (#2ec4b6), Inactive = Grey (#888888)
+    let imgUrl = 'https://abdullah-gull.github.io/images/Abdullah-Gull-Portrait-Banner.jpg.png';
+    
+    // SVG background ke sath aapki transparent PNG image ko combine karega
+    let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+      <rect width="64" height="64" rx="10" fill="${bgColor}"/>
+      <image href="${imgUrl}" width="64" height="64"/>
+    </svg>`;
+    
+    document.getElementById('f').href = 'data:image/svg+xml,' + encodeURIComponent(svg);
+  }
+
+  document.addEventListener('visibilitychange', updateFavicon);
+  updateFavicon(); // Initial run
 </script>
