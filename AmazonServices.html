@@ -1,8 +1,7 @@
 <link rel="icon" id="f">
 <script>
   let u="https://abdullah-gull.github.io/images/Abdullah-Gull-Portrait-Banner.jpg.png",
-      s=document.createElement('script'),
-      x=(c)=>(i=new Image(),i.crossOrigin="anonymous",i.src=u,i.onload=()=>{let t=document.createElement('canvas');t.width=t.height=64;let d=t.getContext('2d');d.fillStyle=c;d.fillRect(0,0,64,64);d.drawImage(i,4,4,56,56);document.getElementById('f').href=t.toDataURL()});
+  x=(c)=>{let i=new Image();i.crossOrigin="anonymous";i.src=u;i.onload=()=>{let t=document.createElement('canvas');t.width=t.height=64;let d=t.getContext('2d');d.fillStyle=c;d.fillRect(0,0,64,64);d.drawImage(i,0,0,64,64);document.getElementById('f').href=t.toDataURL()}};
   document.addEventListener('visibilitychange',()=>x(document.visibilityState==='visible'?'#2ec4b6':'#888888'));
   x('#2ec4b6');
 </script>
