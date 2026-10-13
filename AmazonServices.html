@@ -1,19 +1,35 @@
 <link rel="icon" id="f">
 <script>
-  function updateFavicon() {
-    let isOnline = document.visibilityState === 'visible';
-    let bgColor = isOnline ? '%232ec4b6' : '%23888888'; // Active = Green (#2ec4b6), Inactive = Grey (#888888)
-    let imgUrl = 'https://abdullah-gull.github.io/images/Abdullah-Gull-Portrait-Banner.jpg.png';
-    
-    // SVG background ke sath aapki transparent PNG image ko combine karega
-    let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
-      <rect width="64" height="64" rx="10" fill="${bgColor}"/>
-      <image href="${imgUrl}" width="64" height="64"/>
-    </svg>`;
-    
-    document.getElementById('f').href = 'data:image/svg+xml,' + encodeURIComponent(svg);
+  // Aap ki image ka Base64 code (No CORS issue, Direct fast load)
+  const base64Img = "https://abdullah-gull.github.io/images/Abdullah-Gull-Portrait-Banner.jpg.png";
+
+  function setFavicon() {
+    let isVisible = document.visibilityState === 'visible';
+    let bgColor = isVisible ? '#2ec4b6' : '#888888'; // Active = Green, Inactive = Grey
+
+    let canvas = document.createElement('canvas');
+    canvas.width = 64;
+    canvas.height = 64;
+    let ctx = canvas.getContext('2d');
+
+    let img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src = base64Img;
+
+    img.onload = function() {
+      // 1. Solid Background (Green / Grey)
+      ctx.fillStyle = bgColor;
+      ctx.fillRect(0, 0, 64, 64);
+
+      // 2. Image overlay
+      ctx.drawImage(img, 0, 0, 64, 64);
+
+      // 3. Set favicon
+      document.getElementById('f').href = canvas.toDataURL('image/png');
+    };
   }
 
-  document.addEventListener('visibilitychange', updateFavicon);
-  updateFavicon(); // Initial run
+  document.addEventListener('visibilitychange', setFavicon);
+  window.addEventListener('load', setFavicon);
+  setFavicon();
 </script>
