@@ -249,14 +249,14 @@
       {
         "@type": "Offer",
         "name": "Seller Central Consulting — 5 Sessions",
-        "price": "449",
+        "price": "350",
         "priceCurrency": "USD",
         "description": "5 one-on-one Seller Central consulting sessions covering strategy, PPC, and account growth."
       },
       {
         "@type": "Offer",
         "name": "Vendor Central Consulting — 5 Sessions",
-        "price": "549",
+        "price": "399",
         "priceCurrency": "USD",
         "description": "5 one-on-one Vendor Central consulting sessions covering onboarding, inventory, and retail advertising."
       }
@@ -753,13 +753,13 @@
   .bgc-check-list li { display:flex; align-items:flex-start; gap:9px; color:#cfcfd4; font-size:13.5px; }
   .bgc-check-list li svg { color:#FF8C00; width:18px; height:18px; flex-shrink:0; margin-top:1px; }
 
-  .bgc-hero-card { position:relative; border-radius:20px; overflow:hidden; max-width:460px; margin:0 auto; height:100%; min-height:420px; }
-  .bgc-hero-card img { width:100%; height:100%; min-height:420px; object-fit:cover; display:block; border-radius:20px; }
+  .bgc-hero-card { position:relative; max-width:520px; margin:0 auto; border:0; background:none; }
+  .bgc-hero-card img { width:100%; height:auto; display:block; border:0; border-radius:0; }
 
   .bgc-pricing-grid { display:grid; grid-template-columns:1fr; gap:24px; margin-top:44px; max-width:860px; margin-left:auto; margin-right:auto; }
   @media (min-width: 760px) { .bgc-pricing-grid { grid-template-columns: 1fr 1fr; } }
   .bgc-pricing-card { background:#16171c; border:1px solid #2a2b2f; border-radius:18px; padding:26px; }
-  .bgc-pricing-card-img { width:100%; height:170px; object-fit:cover; border-radius:12px; display:block; margin-bottom:16px; }
+  .bgc-pricing-card-img { width:100%; height:auto; display:block; border:0; border-radius:0; margin:0 0 16px; }
   .bgc-pricing-card .tag { display:inline-block; background:rgba(255,140,0,0.12); color:#FF8C00; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; padding:5px 10px; border-radius:999px; margin-bottom:12px; }
   .bgc-pricing-card h3 { color:#fff; font-size:19px; font-weight:800; margin-bottom:10px; }
   .bgc-pricing-card p.desc { color:#8E8E93; font-size:13px; line-height:1.6; margin-bottom:16px; }
@@ -876,15 +876,15 @@
         <p class="desc">For brands selling directly on Amazon. We'll cover Seller Central strategy, PPC structure, and account growth.</p>
         <div class="bgc-session-opts" data-card="seller">
           <label class="bgc-session-opt is-selected">
-            <span class="opt-label"><input type="radio" name="bgcSellerSessions" value="5" data-price="449" checked> 5 sessions</span>
+            <span class="opt-label"><input type="radio" name="bgcSellerSessions" value="5" data-price="350" checked> 5 sessions</span>
             <span class="opt-price">$350</span>
           </label>
           <label class="bgc-session-opt">
-            <span class="opt-label"><input type="radio" name="bgcSellerSessions" value="10" data-price="799"> 10 sessions</span>
+            <span class="opt-label"><input type="radio" name="bgcSellerSessions" value="10" data-price="699"> 10 sessions</span>
             <span class="opt-price">$699</span>
           </label>
           <label class="bgc-session-opt">
-            <span class="opt-label"><input type="radio" name="bgcSellerSessions" value="15" data-price="1099"> 15 sessions</span>
+            <span class="opt-label"><input type="radio" name="bgcSellerSessions" value="15" data-price="999"> 15 sessions</span>
             <span class="opt-price">$999</span>
           </label>
         </div>
@@ -903,15 +903,15 @@
         <p class="desc">For brands selling wholesale to Amazon. We'll cover vendor onboarding, inventory, and retail advertising.</p>
         <div class="bgc-session-opts" data-card="vendor">
           <label class="bgc-session-opt is-selected">
-            <span class="opt-label"><input type="radio" name="bgcVendorSessions" value="5" data-price="549" checked> 5 sessions</span>
+            <span class="opt-label"><input type="radio" name="bgcVendorSessions" value="5" data-price="399" checked> 5 sessions</span>
             <span class="opt-price">$399</span>
           </label>
           <label class="bgc-session-opt">
-            <span class="opt-label"><input type="radio" name="bgcVendorSessions" value="10" data-price="949"> 10 sessions</span>
+            <span class="opt-label"><input type="radio" name="bgcVendorSessions" value="10" data-price="799"> 10 sessions</span>
             <span class="opt-price">$799</span>
           </label>
           <label class="bgc-session-opt">
-            <span class="opt-label"><input type="radio" name="bgcVendorSessions" value="15" data-price="1299"> 15 sessions</span>
+            <span class="opt-label"><input type="radio" name="bgcVendorSessions" value="15" data-price="1199"> 15 sessions</span>
             <span class="opt-price">$1,199</span>
           </label>
         </div>
@@ -1078,7 +1078,7 @@
       </div>
     </div>
     <div class="bgc-cart-foot">
-      <div class="bgc-cart-subtotal"><span>Total</span><span id="bgcCartTotal">$449</span></div>
+      <div class="bgc-cart-subtotal"><span>Total</span><span id="bgcCartTotal">$350</span></div>
       <p class="bgc-cart-note">No payment is taken here — this sends your request straight to Abdullah, who'll follow up by email to confirm scope and payment.</p>
       <button class="bgc-cart-btn primary" onclick="bgcShowCheckout()">Request This Package &rarr;</button>
       <button class="bgc-cart-btn secondary" onclick="closeConsultCart()">Continue Browsing</button>
@@ -1110,12 +1110,12 @@
         </div>
         <input type="hidden" name="service" id="bgcHiddenService" value="Seller Central Consulting">
         <input type="hidden" name="sessions" id="bgcHiddenSessions" value="5">
-        <input type="hidden" name="total" id="bgcHiddenTotal" value="$449">
+        <input type="hidden" name="total" id="bgcHiddenTotal" value="$350">
         <input type="hidden" name="_subject" value="New Amazon Brand Growth Consulting Request">
       </form>
     </div>
     <div class="bgc-cart-foot">
-      <div class="bgc-cart-subtotal"><span>Total</span><span id="bgcCheckoutTotal">$449</span></div>
+      <div class="bgc-cart-subtotal"><span>Total</span><span id="bgcCheckoutTotal">$350</span></div>
       <button class="bgc-cart-btn primary" id="bgcSubmitBtn" onclick="bgcSubmitCheckout()">Send Request to Abdullah</button>
       <button class="bgc-cart-btn secondary" onclick="bgcShowCart()">&larr; Back</button>
     </div>
@@ -1141,7 +1141,7 @@
       for (var i = 0; i < radios.length; i++) {
         if (radios[i].checked) return { sessions: radios[i].value, price: radios[i].getAttribute('data-price') };
       }
-      return { sessions: '5', price: type === 'seller' ? '449' : '549' };
+      return { sessions: '5', price: type === 'seller' ? '350' : '399' };
     }
 
     function refreshSelectedStyles(card){
